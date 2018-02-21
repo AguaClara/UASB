@@ -137,4 +137,4 @@ NRGMin = EnergyProduction(BGMin)
 print("Total minutes of stove use produced per day are between", NRGMax[0], "and", NRGMax[1], "\n"
       "Total minutes of stove use produced per day are between", NRGAvg[0], "and", NRGAvg[1], "\n"
       "Total minutes of stove use produced per day are between", NRGMin[0], "and", NRGMin[1])
-```
+``` 
