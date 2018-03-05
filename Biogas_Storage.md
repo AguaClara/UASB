@@ -7,9 +7,27 @@ Following the proposed designs of the EPA P3 Phase I UASB proposal, the team has
 
 For these reasons, the team is proposing a floating gas holder system that is detached from the reactor system. These have been widely implemented in [short term gas storage](http://www.susana.org/_resources/documents/default/2-1799-biogasplants.pdf) While this is a necessary step on the small scale, it is not necessarily the case for larger UASB reactors.
 
+| Parameters | Value | Basis of Design |
+| :-------: | :--------: | :--------------: |
+Wastewater Generation ```WW_gen```| 3 ml/s | Rule of thumb from Monroe
+Hydraulic Retention Time ```HRT``` |4 hrs | Previous lab test and literature review
+| Removal Efficiency | 0.7 | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
+| Percent of COD directed to Sludge Production ```Y_obs```| 0.11 to 0.23 | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
+| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
+| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
+
 ### UASB Size
 #### Function
 ```python
+from aide_design.play import*
+import math
+
+Diameter = 3 * u.ft
+Height = 7 * u.ft
+COD_Load_min = 100 * u.mg/u.L
+COD_Load_mid = 200 * u.mg/u.L
+COD_Load_max = 300 * u.mg/u.L
+
 def UASBSize(diam, height):
     """Takes the inputs of diameter and height. The bottom of the UASB is sloped
     at 60 degrees with a 3 inch space across the bottom of the UASB. Assumes that half the reactor
@@ -52,32 +70,40 @@ UASB_design = UASBSize(Diameter, Height)
 Flow_design = UASB_design[2]
 ```
 
-### Biogas Calculation
+### Biogas Production Calculation
 #### Function
 ```python
-#Calculate Biogas Rate of Production (L/s) in UASB
-def BiogasProd(Q, COD_Load, Temp):
-    COD_rem = COD_Load * 0.7 #Assuming x% efficency of COD removal and conversion in reactor
-    COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load) #Remember to define the variables further up
+
+#Calculate Biogas Rate of Production (L/s and L/day) in UASB
+def BiogasFlow(Q, COD_Load, Temp):
+    # Calculating methane production by mass
+    COD_Load = COD_Load.to(u.g / u.L)
+    COD_rem = COD_Load * 0.7 # Assuming 70% efficency of COD removal and conversion in reactor
+    Y_obs = 0.23 # Upper limit of sludge production
+    COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load)
+    # Calculating correction factor for operational temperature of the reactor
     T = Temp.to(u.degK)
     P = 1 * u.atm
     K_COD = 64 * (u.g / u.mol)
     R = 0.08206 * ((u.atm * u.L) / (u.mol * u.degK))
-    K = 
+    K = (P * K_COD) / (R * T)
+    #Calculate the volumetric flow rate of methane production
+    Q_CH4 = COD_CH4 / K # per second
+    Q_day = Q_CH4 * 86400 * (u.s / u.day) # per day
 
-    BGMax = COD_rem * 0.378 *(u.ml/u.mg) #Theoretical Productiom, from Fall 2014 UASB team report
-    BGMin = COD_rem * 0.06 *(u.ml/u.mg) #Production using minimum value from Van Lier report
-    BGAvg = COD_rem * 0.16 *(u.ml/u.mg) #Production using average value from Spring 2014 tests
-    return [BGMax, BGAvg, BGMin]
+    print("The volumetric methane production is per second is", Q_CH4, "\n" "The volumetric methane production is per second is", Q_day)
+    return [Q_CH4, Q_day]
 ```
 
 #### Outputs
 ```python
-# Maximum and minimum amount of biogas produced
-Biogas = BiogasProd(Flow_design, COD_Load_mid)
-BGMax = Biogas[0]
-BGAvg = Biogas[1]
-BGMin = Biogas[2]
-print("Maximum biogas production is", BGMax, "\n" "Average biogas production is", BGAvg, "\n"
-      "Minimum biogas production is", BGMin)
+# Amount of biogas production per second and per day
+Temp = 25 * u.degC  # Assuming mesophilic conditions
+Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp)
+#Calculating size of storage device
+Size_Stor = Q_Biogas[1].to(u.gal / u.day) * (u.day)
+print("The size of the storage container to store one day worth of biogas production should be at least", Size_Stor)
 ```
+
+### Conclusions
+Based on the outputs of the calculations, it is very possible to utilize a prefabricated container to store biogas produced.  More specifically, an inverted [plastic industrial drum](http://www.thecarycompany.com/containers/drums/plastic) placed on the top of the UASB reactor to capture biogas that is produced.
