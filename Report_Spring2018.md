@@ -16,7 +16,7 @@ Briefly summarize your previous work, goals and objectives, what you have accomp
 Explain how the completion of your challenge will affect AguaClara and the mission of providing safe drinking water (or sustainable wastewater treatment!). If this is a continuing team, how will your contribution build upon previous research? What needs to be further discovered or defined? If this is a new team, what prompted the inclusion of this team?
 
 ## Literature Review and Previous Work
-Zac Edit - Briefly outline the previous work done by the UASB team up until the Phase I grant, then focus on the design work done last semester
+Zac Edit - Briefly outline the previous work done by the UASB team up until the Phase I grant, then focus on the design work done last semester.
 
 Discuss what is already known about your research area based on both external work and that of past AguaClara Teams. Connect your objectives with what is already known and explain what additional contribution you intend to make. Make sure to add APA formatted in-text citations. If you mention the author(s) in your sentence, you can simply give the year of publication.[(Logan et. al. 1987)](http://www.jstor.org/stable/pdf/25043431.pdf?acceptTC=true)
 
