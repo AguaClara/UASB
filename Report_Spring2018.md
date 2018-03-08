@@ -3,7 +3,7 @@
 #### March 9th, 2018
 
 ## Abstract
-Briefly summarize your previous work, goals and objectives, what you have accomplished, and future work. (100 words max)
+The Upflow Anaerobic Sludge Blanket (UASB) team focuses on designing pilot scale UASB systems for primary wastewater treatment in Honduras.  This manual details our complete design process, including each component system of the UASB and how we decided on the final design.  This semester, we have focused on finishing our design process, so that fabrication can take place over Summer 2018.
 
 ## Introduction
 Explain how the completion of your challenge will affect AguaClara and the mission of providing safe drinking water (or sustainable wastewater treatment!). If this is a continuing team, how will your contribution build upon previous research? What needs to be further discovered or defined? If this is a new team, what prompted the inclusion of this team?
