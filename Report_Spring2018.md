@@ -36,6 +36,10 @@ A useful by product of this process is biogas, a mixture of methane, carbon diox
 
 After water runs through the digestion zone, it rises to the setting zone.  Here, excess solids that escaped the digestion zone are deflected downwards back to the sludge blanket.  Clarified wastewater leaves through an effluent line and is taken to further treatment systems.  
 
+![Front_View](https://github.com/AguaClara/UASB/blob/master/Images/AC_FrontView.PNG?raw=true)
+
+![Side_View](https://github.com/AguaClara/UASB/blob/master/Images/AC_SideView.PNG?raw=true)
+
 The AguaClara design deviates from the standard design in a number of way.  First is the scale of the system.  Most UASB reactors used in domestic or industrial settings are much larger than our pilot scale system, and handle much larger organic loads.  While the given principles will still hold, we are working on a fundamentally different scale from previous UASB reactors.
 
 Another change from previous UASB systems is the addition of a sludge weir system.  This sludge weir is a downward angled tube connected to the reactor, connected at the interface between the digestion and settling zones.  This tube can be emptied with a valve when necessary.  This sludge weir will be an important feature for the testing process, as it will allow direct samples of the sludge blanket to be taken.  Functionally, it will also allow us to control the height of the sludge blanket and remove excess material if necessary. More details are in the [Sludge Sampling Section](#Sludge-Sampling-and-Removal-System).
