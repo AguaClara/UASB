@@ -22,7 +22,24 @@ Discuss what is already known about your research area based on both external wo
 
 ## Design Manual
 
+
+
 ### UASB Basics
+
+An Upflow Anaerobic Sludge Blanket reactor is a primary wastewater treatment reactor that uses anaerobic biological treatment to treat wastewater.  Water flows into the reactor from the bottom section, and flows upwards at a slow velocity.  This water first passes through the sludge blanket, a collection of methanogenic bacteria that accumulate into small spherical granules, forming a "blanket" of biological material.  As wastewater flows through this biological volume, known as the digestion zone, the bacteria break down organic matter for their metabolic processes.  This reduces both Biochemical Oxygen Demand (BOD) and Total Suspended Solids (TSS) of the wastewater.
+
+![Conventional_UASB](https://github.com/AguaClara/UASB/blob/master/Images/Conventional_UASB.PNG?raw=true)
+
+<p align="center">Figure One: A Conventional UASB Design </p>
+
+A useful by product of this process is biogas, a mixture of methane, carbon dioxide, and some trace gases.  After production in the digestion zone, methane floats upwards through the water and is caught in the cone of the Gas Liquid Solid Separator.  From there, it is funneled upwards into a storage vehicle where it can later be burned for heat or energy generation.  More details on the biogas capture and usage can be found in the [Biogas Capture](#Biogas-Capture-System) section of the manual.
+
+After water runs through the digestion zone, it rises to the setting zone.  Here, excess solids that escaped the digestion zone are deflected downwards back to the sludge blanket.  Clarified wastewater leaves through an effluent line and is taken to further treatment systems.  
+
+The AguaClara design deviates from the standard design in a number of way.  First is the scale of the system.  Most UASB reactors used in domestic or industrial settings are much larger than our pilot scale system, and handle much larger organic loads.  While the given principles will still hold, we are working on a fundamentally different scale from previous UASB reactors.
+
+Another change from previous UASB systems is the addition of a sludge weir system.  This sludge weir is a downward angled tube connected to the reactor, connected at the interface between the digestion and settling zones.  This tube can be emptied with a valve when necessary.  This sludge weir will be an important feature for the testing process, as it will allow direct samples of the sludge blanket to be taken.  Functionally, it will also allow us to control the height of the sludge blanket and remove excess material if necessary. More details are in the [Sludge Sampling Section](#Sludge-Sampling-and-Removal-System).
+
 
 
 ### Size and Flow Calculations
