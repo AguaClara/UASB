@@ -78,7 +78,8 @@ Flow_design = UASB_design[2]
 def BiogasFlow(Q, COD_Load, Temp):
     # Calculating methane production by mass
     COD_Load = COD_Load.to(u.g / u.L)
-    COD_rem = COD_Load * 0.7 # Assuming 70% efficency of COD removal and conversion in reactor
+    COD_eff = 0.7
+    COD_rem = COD_Load * COD_eff # Assuming 70% efficency of COD removal and conversion in reactor
     Y_obs = 0.23 # Upper limit of sludge production
     COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load)
     # Calculating correction factor for operational temperature of the reactor

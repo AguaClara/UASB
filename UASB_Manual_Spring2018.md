@@ -4,7 +4,7 @@
 #### March 9, 2018
 
 ## Abstract
-Briefly summarize your previous work, goals and objectives, what you have accomplished, and future work. (100 words max)
+Since Spring 2017, the AguaClara UASB has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal.  Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.
 
 ## Introduction
 ***May have to edit to better bit the context of what we're getting at***
@@ -102,12 +102,59 @@ def UASBSize(diam, height):
     print('The number of people served by this reactor if only blackwater is treated is', people_served_BW)
     return output
 
-UASB = UASBSize(3*u.ft, 7*u.ft)
+Diameter = 3 * u.ft
+Height = 7 * u.ft
+UASB_design = UASBSize(Diameter, Height)
 ````
 
 ### Influent Flow System
 
 ### Biogas Capture System
+#### Design Parameters
+| Parameters | Value | Basis of Design |
+| :-------: | :--------: | :--------------: |
+| COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
+| Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
+| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
+| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
+
+#### Code
+```python
+#Calculate Biogas Rate of Production (L/s and L/day) in UASB
+def BiogasFlow(Q, COD_Load, Temp):
+    # Calculating methane production by mass
+    COD_Load = COD_Load.to(u.g / u.L)
+    COD_eff = 0.7 # Assuming 70% efficency of COD removal and conversion in reactor
+    COD_rem = COD_Load * COD_eff
+    Y_obs = 0.23 # Upper limit of sludge production
+    COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load)
+    # Calculating correction factor for operational temperature of the reactor
+    T = Temp.to(u.degK)
+    P = 1 * u.atm
+    K_COD = 64 * (u.g / u.mol)
+    R = 0.08206 * ((u.atm * u.L) / (u.mol * u.degK))
+    K = (P * K_COD) / (R * T)
+    #Calculate the volumetric flow rate of methane production
+    Q_CH4 = COD_CH4 / K # per second
+    Q_day = Q_CH4 * 86400 * (u.s / u.day) # per day
+
+    print("The volumetric methane production is per second is", Q_CH4, "\n" "The volumetric methane production is per second is", Q_day)
+    return [Q_CH4, Q_day]
+
+# Flow rate through UASB reactor
+Flow_design = UASB_design[2]
+# Amount of biogas production per second and per day
+Temp = 25 * u.degC  # Assuming mesophilic conditions
+#Approximate loading rates for domestic wastewater
+COD_Load_min = 100 * (u.mg / u.L)
+COD_Load_mid = 200 * (u.mg / u.L)
+COD_Load_max = 300 * (u.mg / u.L)
+
+Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp)
+#Calculating size of storage device
+Size_Store = Q_Biogas[1].to(u.gal / u.day) * (u.day)
+print("The size of the storage container to store one day worth of biogas production should be at least", Size_Store)
+```
 
 ### Sludge Sampling and Removal System
 
