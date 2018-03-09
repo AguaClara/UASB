@@ -28,16 +28,15 @@ Since this proposal, there has been ongoing work to determine the parameter and 
 ### Conventional Wastewater Treatment Options
 Municipal and industrial wastewater can be treated via biological, chemical oxidation, or thermal oxidation treatment processes. Biological treatment is commonly used because the latter two treatment options require higher capital investment and operational costs ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). The two main types of biological treatment are the activated sludge process and anaerobic digestion. When compared to the activated sludge process, anaerobic digestion yields less sludge and reduces energy input ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). Although there are some drawbacks to anaerobic digestion such as long solids retention time (SRT) and insufficient nutrient removal, the reduced energy input renders it the most feasible technology for communities in the global south ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
-### Details of UASBs
+### UASB Basics
+
+![Conventional_UASB](https://github.com/AguaClara/UASB/blob/master/Images/Conventional_UASB.PNG?raw=true)
+
+<p align="center">Figure One: A Conventional UASB Design </p>
+
 Upflow anaerobic sludge blanket (UASB) reactors are one example of high-rate anaerobic digesters. UASBs are used as primary clarification of wastewater, and therefore require post-treatment options such as trickling filters and secondary clarifiers to achieve ideal reduction of chemical oxygen demand (COD), suspended solids (SS), and nutrients ([Abbasi et. al, 2012](https://www.sciencedirect.com/science/article/pii/S1364032111005533)). High-rate anaerobic digesters, such as UASBs, are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). Due to these advantages, UASB reactors were chosen as the basis for preliminary wastewater treatment design for communities in the global south.
 
-### Problems Associated with UASBs
-***Please add to this section with literature on the influent system and some details on how they can be improved***
-Conventional UASB reactors utilize an invert funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas (carbon dioxide and methane) that is produced during anaerobic digestion ([Narnoli et. al, 1997](https://www.sciencedirect.com/science/article/pii/S0043135497809876)). The design of the GLSS, however, is not gas-tight because gas can escape around the edges of the GLSS and escape from the system.  Since methane is a potent greenhouse gas, the biogas should be captured to reduce negative environmental impacts ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).  
 
-To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of these bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of COD and BOD and increase the overall effectiveness of UASB technologies ([Subramanyam et. al 2013](https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347)).  To prevent biomass escape and increase sludge retention, parallel plates, akin to those in AguaClara drinking water treatment facilties, can be used ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
-
-Sludge, along with fats, oils, and grease (FOG) can also escape the sludge blanket and accumulate at the water surface open to the atmosphere, forming a filamentous layer of bacteria ([Van Lier 2010](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf), [Lettinga 1991](http://wst.iwaponline.com/content/24/8/87)). This is problematic because the exit weir skims the water surface in traditional systems, which allows for these solids to escape untreated.  
 
 ## Design Process
 
@@ -58,7 +57,7 @@ def Good_Func(input_code):
 This document can be used to determine the number of people served based on size of UASB design. The reactor will have a 60 $$ $^{\circ}$ $$ sloped bottom for structural integrity, primarily based on the designs of the 1 L/s plant. The reactor will thus have a reduced volume from the two cylindrical hooves that have been removed from housing active granules.
 
 #### Design Parameters
-|               Design Parameter                |        Value        |                                         Basis of Design                                         |
+|               Design Parameter                |        Value        |                                         Justification of Parameter                                          |
 |:---------------------------------------------:|:-------------------:|:-----------------------------------------------------------------------------------------------------------:|
 |      Hydraulic Residence Time ```HRT```       |        4 hrs        |                  From tracer tests conducted in [Fall 2016](https://www.overleaf.com/read/dnxfsrwdxbdf#/21165144/) and minimum values in literature ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).               |
 | Wastewater Generation per Person ```WW_gen``` |       3 mL/s        |                                          Rule of Thumb from Monroe                                          |
@@ -117,16 +116,13 @@ UASB_design = UASBSize(Diameter, Height)
 ### Influent Flow System
 
 ### Biogas Capture System
-Biogas, which is comprised mostly of methane and carbon dioxide, generated from anaerobic digestion offers a good resource for energy recovery.  On large scale applications, it can be used for electricity generation while on small scale uses, it can be used for cooking.
-
-The following calculations can be used to approximate the amount of biogas generated from a UASB to help determine an appropriate size for the biogas capture system.
 #### Design Parameters
 | Parameters | Value | Basis of Design |
 | :-------: | :--------: | :--------------: |
 | COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
 | Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
-| Pressure ```P```| 1 atm | Biogas produced will be stored at approximately atmospheric pressure |
-| Temperature ```T``` | 25 $^{\circ}$ C | Assuming the reactor will be under mesophilic conditions |
+| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
+| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
 
 #### Code
 ```python
@@ -169,8 +165,6 @@ print("The size of the storage container to store one day worth of biogas produc
 ### Sludge Sampling and Removal System
 
 ### Effluent Flow System
-
-
 
 ### Other Considerations
 
