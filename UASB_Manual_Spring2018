@@ -16,6 +16,13 @@ Discuss what is already known about your research area based on both external wo
 ## Design Process
 
 ### Size and Flow calculations
+The following should be the general organization of the sections.  The header right under the name of the file name should include a background on the file/justification for its use and why we made it.
+#### Design Parameters
+Place a table here with the design parameter, the value for it, and the justification with a hyperlink, kinda like this
+| Design Parameter | Value | Justification of Parameter |
+| :----------------: | :-----: | :-------------: |
+| Hydraulic Residence Time ```HRT```| 4 hrs | From tracer tests conducted in Fall 2016 and minimum values in literature |
+#### Code
 
 ### Influent Flow System
 
