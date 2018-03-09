@@ -7,6 +7,7 @@
 Since Spring 2017, the AguaClara UASB has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal.  Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.
 
 ## Introduction
+***May have to edit to better bit the context of what we're attempting to do which is design work but this offers a good source of context of WW treatment in general and where our project fits***
 The contamination of ground and surface water sources by wastewater has adverse environmental and health affects. First, the biological degradation of wastewater by aerobic microbes lowers the dissolved oxygen content in natural waterways, preventing aquatic life from thriving and potentially creating dead zones. Additionally, it increases waterborne fecal matter content and increases the risk of exposure to pathogens ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). The latter is of particular concern to individuals in the global south, as communities downstream of wastewater outfalls often have inadequate drinking water treatment.
 
 Wastewater can also be an opportunity for energy recovery. According to recent estimates, the energy potential of wastewater and biosolids is more than ten times the energy needed for treatment ([Ghoneim et. al,  2016](http://ieeexplore.ieee.org/document/7577509/?reload=true)). Most wastewater treatment facilities in the US do not optimize the recovery of energy and resources from biosolids ([Ghoneim et. al,  2016](http://ieeexplore.ieee.org/document/7577509/?reload=true)). While it is important to develop wastewater treatment technology to optimize current wastewater treatment for all individuals, the focus of this research was on small communities in the global south. Such communities do not have widespread wastewater infrastructure, and therefore much of the wastewater is left untreated.
@@ -35,6 +36,10 @@ Municipal and industrial wastewater can be treated via biological, chemical oxid
 
 Upflow anaerobic sludge blanket (UASB) reactors are one example of high-rate anaerobic digesters. UASBs are used as primary clarification of wastewater, and therefore require post-treatment options such as trickling filters and secondary clarifiers to achieve ideal reduction of chemical oxygen demand (COD), suspended solids (SS), and nutrients ([Abbasi et. al, 2012](https://www.sciencedirect.com/science/article/pii/S1364032111005533)). High-rate anaerobic digesters, such as UASBs, are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). Due to these advantages, UASB reactors were chosen as the basis for preliminary wastewater treatment design for communities in the global south.
 
+<<<<<<< HEAD
+=======
+To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of these bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of COD and BOD and increase the overall effectiveness of UASB technologies ([Subramanyam et. al 2013](https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347)).  To prevent biomass escape and increase sludge retention, parallel plates, akin to those in AguaClara drinking water treatment facilities, can be used ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
+>>>>>>> 934bb481c28442ca5c27c07465131279dfe86ae2
 
 
 ## Design Process
@@ -42,7 +47,10 @@ Upflow anaerobic sludge blanket (UASB) reactors are one example of high-rate ana
 ### Example Aspect of UASB
 *Introduce the background for the particular set of calculation/code*
 #### Design Parameters
-*Place a table here with the design parameter, the value for it, and the justification with a hyperlink, kinda like this*
+*Place a table here with the design parameter (followed by the variable name in the code), the value for it, and the justification with a hyperlink, kinda like this*
+| Design Parameter | Value | Basis of Design |
+|:----------------:|:-----:|:---------------:|
+| Poop ```poop```  | 17 jillion liters |  I'm lactose intolerant               |
 #### Code
 *Insert your code here*
 ```python
