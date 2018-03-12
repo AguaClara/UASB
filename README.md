@@ -18,6 +18,9 @@ In the Spring 2018 semester, the UASB team will be working on finalizing designs
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Sring 2017 onwards.  More information on lab scale research can be located on the AguaClara Google Drive both under "Active Subteams" and "Archived Subteams."
 
+### Spring 2018
+[Symposium Presentation](https://docs.google.com/presentation/d/1HlOt3QwduvcUE1-q1j3W2VCLtRTx1YZtRwdGuUHw1Nc/edit?usp=sharing)
+
 ### Fall 2017
 Note: The UASB team began implementing GitHub in Fall 2017. All documentation was created in Jupyter Notebook files that can be found in the UASB repository under "[Jupyter Notebook files](https://github.com/AguaClara/UASB/tree/master/Jupyter%20Notebook%20Files)"
 
