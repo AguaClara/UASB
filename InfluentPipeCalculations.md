@@ -1,5 +1,6 @@
 ```python
 from aide_design.play import*
+from UASB_size import*
 
 height_UASB = (7*u.ft).to(u.cm)
 diam_UASB = (3*u.ft).to(u.cm)
