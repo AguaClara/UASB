@@ -1,16 +1,16 @@
-## UASB Size Calculations
-#This document can be used to determine the number of people served based on size of UASB design. The reactor will have a 60 $$ $^{\circ}$ $$ sloped bottom for structural integrity, primarily based on the designs of the 1 L/s plant. The reactor will thus have a reduced volume from the two cylindrical hooves that have been removed from housing active granules.
+# UASB Size Calculations
+# This document can be used to determine the number of people served based on size of UASB design. The reactor will have a 60 $$ $^{\circ}$ $$ sloped bottom for structural integrity, primarily based on the designs of the 1 L/s plant. The reactor will thus have a reduced volume from the two cylindrical hooves that have been removed from housing active granules.
 
 from aide_design.play import*
 import math
 
 def UASBSize(diam, height):
-    """Takes the inputs of diameter and height. The bottom of the UASB is sloped
-    at 60 degrees with a 3 inch space across the bottom of the UASB. Assumes that half the reactor
-    contains the settled bed, which is used for the HRT. Returns five outputs: 1. height of the sloped
-    sides of the bottom geometry, 2. volume of sludge in the reactor, 3. flow rate,
-    4. number of people served with graywater, 5. number of people served with blackwater.
-    """
+# Takes the inputs of diameter and height. The bottom of the UASB is sloped
+#    at 60 degrees with a 3 inch space across the bottom of the UASB. Assumes that half the reactor
+#    contains the settled bed, which is used for the HRT. Returns five outputs: 1. height of the sloped
+#    sides of the bottom geometry, 2. volume of sludge in the reactor, 3. flow rate,
+#    4. number of people served with graywater, 5. number of people served with blackwater.
+
 
     WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
     WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
