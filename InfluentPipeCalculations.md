@@ -33,9 +33,9 @@ def influence_area(n_pipes, diam):
 
 def suggested_pipe_diam(flow_tot, v_exit, n_pipes):
   flow_per_pipe = flow_tot/n_pipes
-  sugg_area = flow_per_pipe/v_exit
+  sugg_area = flow_per_pipe/v_exit    
   sugg_diam = (pc.diam_circle(sugg_area)).to(u.mm)
-  print('The suggested pipe diameter is ', sugg_diam)
+  print('The suggested pipe diameter is ', sugg_diam)    
   return sugg_diam
 
 ## Area of influence calculation for 2 pipes
@@ -44,8 +44,9 @@ infl_area_UASBpipe = influence_area(num_pipes, diam_UASB)
 print('The influence area of each pipe is ', infl_area_UASBpipe)
 
 ## Pipe diameter calculation based on flow & exit velocity
-velocity_exit = 0.4 *(u.m/u.s)
-pipe_diam = suggested_pipe_diam(flow, velocity_exit, num_pipes)
+velocity_exit = 0.3 *(u.m/u.s)
+flow2 = 0.5*(u.L/u.s)
+pipe_diam = suggested_pipe_diam(flow2, velocity_exit, num_pipes)
 
 
 ```
