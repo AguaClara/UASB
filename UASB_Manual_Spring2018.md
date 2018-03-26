@@ -1,5 +1,5 @@
 
-# Upflow Anaerobic Sludge Blanket, Spring 2018
+# Upflow Anaerobic Sludge Blanket (UASB), Spring 2018
 #### Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
 #### March 9, 2018
 
@@ -371,6 +371,38 @@ Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp)
 #Calculating size of storage device
 Size_Store = Q_Biogas[1].to(u.gal / u.day) * (u.day)
 print("The size of the storage container to store one day worth of biogas production should be at least", Size_Store)
+```
+
+###Storage Size
+Safely and efficiently create short term storage for biogas produced so that it may be used
+####Code
+```python
+def Dim_Storage(day_prod, time_stor, time_fail, diam_lid):
+  """Takes the daily volume of biogas produced (volume per time), the numbers of days for desired storage, and the time required before critical lid failure and returns the volume required for the temporary storage system and the dimensions for the lid required to retain a set amount of biogas before failure"""
+
+  day_prod = day_prod.to_base_units()
+  time_stor = time_stor.to_base_units()
+  vol_stor = day_prod * time_stor
+
+  time_fail = time_fail.to_base_units()
+  vol_fail = day_prod * time_fail
+
+  diam_lid = diam_lid.to_base_units()
+  area_lid = 0.25 * math.pi * (diam_lid)**2
+  height_lid = ( vol_fail / area_lid ).to(u.ft)
+
+  return[vol_stor, height_lid]
+
+day_prod = Q_Biogas[1]
+time_stor = 2 * u.day
+time_fail = 12 * u.hr
+diam_lid = 2.5 * u.ft
+
+size_stor = Dim_Storage(day_prod, time_stor, time_fail, diam_lid)
+vol_stor = size_stor[0].to(u.gal)
+height_lid = size_stor[1]
+
+print("The storage volume required to store", time_stor, "of biogas is", vol_stor, "\n" "The height of lid to prevent failure before", time_fail, "is", height_lid)
 ```
 
 ### Sludge Sampling and Removal System
