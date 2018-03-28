@@ -1,4 +1,14 @@
 ## Biogas Storage
+Biogas is a crucial aspect of the UASB design.  Recovered biogas produced during anaerobic digestion can be captured and stored, providing a cooking or heating source for the communities.  In order to maximize biogas production, it is very important to design a gas-tight capture system within the UASB, and an easy method of removing and utilizing this biogas.  Current design work focuses on creating this system, and a future design project will be creating biogas stoves that can use this product to cook meals.
+
+Most UASB systems in place now use a gas-liquid-solid separator (pictured below).  This inverted cone collects biogas produced within the sludge blanket and diverts solids and liquids downwards to prevent contamination.  We decided to research and test differing designs, as this separator is challenging to fabricate, and difficult to attach within the reactor securely.  
+
+![Conventional UASB](https://github.com/AguaClara/UASB/blob/master/Images/Conventional_UASB.PNG?raw=true)
+
+<center>
+Figure 1: Conventional UASB system with Gas Liquid Solid Separator
+</center>
+
 Following the proposed designs of the EPA P3 Phase I UASB proposal, the team has explored the idea of a removable biogas capture lid.  This concept, however, was flawed in its designs for the following reasons:
 
 1. It is difficult to maintain a hydrostatic seal unless the lid is incredibly tall (i.e. storage volume is very large) as shown by the Spring 2017 [Final Report](https://www.overleaf.com/8107719xzjdzswjvtyj#/28623295/)
