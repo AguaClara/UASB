@@ -80,6 +80,7 @@ def UASBSize(diam, height):
 ```python
 UASB_design = UASBSize(Diameter, Height)
 Flow_design = UASB_design[2]
+print(Flow_design)
 ```
 
 ### Biogas Production Calculations
@@ -150,9 +151,9 @@ def BiogasFlow(Q, COD_Load, Temp):
     K = (P * K_COD) / (R * T)
     #Calculate the volumetric flow rate of methane production
     Q_CH4 = (COD_CH4 * (1+CO2_gas)) / K  # per second
-    Q_day = Q_CH4.to(u.day) # per day
+    Q_day = Q_CH4.to(u.L / u.day) # per day
 
-    print("The volumetric methane production is per second is", Q_CH4, "\n" "The volumetric methane production is per second is", Q_day)
+    print("The volumetric methane production is per second is", Q_CH4, "\n" "The volumetric methane production is per day is", Q_day)
     return [Q_CH4, Q_day]
 ```
 
