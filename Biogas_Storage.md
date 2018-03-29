@@ -136,7 +136,7 @@ It is important to note that this equation only gives an approximation of the ac
 #Calculate Biogas Rate of Production (L/s and L/day) in UASB
 def BiogasFlow(Q, COD_Load, Temp):
     # Calculating methane production by mass
-    CO2_% = 0.25 #percentage of other gasses in total biogas
+    CO2_gas = 0.25 #percentage of other gasses in total biogas
     COD_Load = COD_Load.to(u.g / u.L)
     COD_eff = 0.7
     COD_rem = COD_Load * COD_eff # Assuming 70% efficency of COD removal and conversion in reactor
@@ -149,7 +149,7 @@ def BiogasFlow(Q, COD_Load, Temp):
     R = 0.08206 * ((u.atm * u.L) / (u.mol * u.degK))
     K = (P * K_COD) / (R * T)
     #Calculate the volumetric flow rate of methane production
-    Q_CH4 = (COD_CH4 * (1+CO2_%)) / K * CH4_% # per second
+    Q_CH4 = (COD_CH4 * (1+CO2_gas)) / K  # per second
     Q_day = Q_CH4.to(u.day) # per day
 
     print("The volumetric methane production is per second is", Q_CH4, "\n" "The volumetric methane production is per second is", Q_day)
