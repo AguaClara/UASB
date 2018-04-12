@@ -212,6 +212,16 @@ def UASBSize(diam, height):
     contains the settled bed, which is used for the HRT. Returns five outputs: 1. height of the sloped
     sides of the bottom geometry, 2. volume of sludge in the reactor, 3. flow rate,
     4. number of people served with graywater, 5. number of people served with blackwater.
+
+    >>> from aide_design.play import*
+    >>> import math
+    >>> UASBSize(3 * u.ft, 7 * u.ft)
+    The height of the bottom geometry is 0.7259 meter
+    The volume of the sludge in the reactor is 520.8 liter
+    The flow rate of the reactor is 0.03617 liter / second
+    The number of people served by this reactor is 12
+    The number of people served by this reactor if only blackwater is treated is 60
+    [<Quantity(0.7259024934521162, 'meter')>, <Quantity(520.8127904536798, 'liter')>, <Quantity(0.036167554892616645, 'liter / second')>, 12, 60]
     """
 
     WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
@@ -239,11 +249,19 @@ def UASBSize(diam, height):
     print('The flow rate of the reactor is', flow.to(u.L/u.s))
     print('The number of people served by this reactor is', people_served)
     print('The number of people served by this reactor if only blackwater is treated is', people_served_BW)
+
     return output
+
+import doctest    
+doctest.testmod(verbose=True)
 
 Diameter = 3 * u.ft
 Height = 7 * u.ft
 UASB_design = UASBSize(Diameter, Height)
+print(UASB_design)
+
+
+
 ````
 
 ### Influent Flow System
@@ -385,8 +403,18 @@ It is important to note that this equation only gives an approximation of the ac
 
 #### Code
 ```python
-#Calculate Biogas Rate of Production (L/s and L/day) in UASB
 def BiogasFlow(Q, COD_Load, Temp):
+    """Calculates the biogas production rate from the flow rate through the reactor, the COD concentration of the influent, and the temperature of the reactor
+
+    For the doctest to pass, one must initialize the flow from UASB_design using UASB_Size(3 * u.ft, 7 * u.ft)
+
+    >>> from aide_design.play import*
+    >>> import math
+    >>> BiogasFlow(UASB_design[2], 200 * (u.mg / u.L), 25 * u.degC)
+    The volumetric methane production per second is 0.0013 liter / second
+    The volumetric methane production per second is 112.3 liter / day
+    [<Quantity(0.0012996707807037425, 'liter / second')>, <Quantity(112.29155545280335, 'liter / day')>]
+    """
     # Calculating methane production by mass
     COD_Load = COD_Load.to(u.g / u.L)
     COD_eff = 0.7 # Assuming 70% efficency of COD removal and conversion in reactor
@@ -403,12 +431,12 @@ def BiogasFlow(Q, COD_Load, Temp):
     Q_CH4 = COD_CH4 / K # per second
     Q_day = Q_CH4 * 86400 * (u.s / u.day) # per day
 
-    print("The volumetric methane production is per second is", Q_CH4, "\n" "The volumetric methane production is per second is", Q_day)
+    print("The volumetric methane production per second is", Q_CH4, "\n" "The volumetric methane production per second is", Q_day)
     return [Q_CH4, Q_day]
-#Errors in print statement above
 
 # Flow rate through UASB reactor
 Flow_design = UASB_design[2]
+print(Flow_design)
 # Amount of biogas production per second and per day
 Temp = 25 * u.degC  # Assuming mesophilic conditions
 #Approximate loading rates for domestic wastewater
@@ -418,6 +446,10 @@ COD_Load_max = 300 * (u.mg / u.L)
 
 Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp)
 #Calculating size of storage device
+print (Q_Biogas)
+
+doctest.testmod(verbose=True)
+
 Size_Store = Q_Biogas[1].to(u.gal / u.day) * (u.day)
 print("The size of the storage container to store one day worth of biogas production should be at least", Size_Store)
 ```
