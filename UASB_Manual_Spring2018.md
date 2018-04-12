@@ -334,6 +334,55 @@ Inconsistent table column labels : basis of design vs. justification
 What are mesophilic conditons?
 </div>
 
+### Biogas Production Calculations
+As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a process known as methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating like propane.  
+
+Biogas production is quantified using the following equation, taken from the [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf):
+
+$COD_{CH_4} = Q(S_o-S) - Y_{obs} Q S_o$
+
+Where:
+
+$COD_{CH_4}$ is the mass of COD converted to methane ($kgCOD_{CH4} / day$)
+
+$Q$ is the average influent flow ($m^3 / day$)
+
+$S_o$ is the influent COD concentration ($kgCOD/m^3$)
+
+$S$ is the effluent COD concentration ($kgCOD/m^3$)
+
+$Y_{obs}$ is the coefficient of solid production within the system in terms of COD (the amount of sludge created from input COD) ($kgCOD_{sludge}/kgCOD_{applied}$)
+* In the literature, $Y_{obs}$ ranges from 0.11 to 0.23.  To assume lower production, we chose the highest value for our calculations (as this is the removal of COD)
+
+Next, this methane mass can be converted to volumetric production as follows:
+
+$Q_{CH4} = \frac{COD_{CH4}}{K(t)}$
+
+Where
+
+$Q_{CH4}$ = volumetric methane production ($m^3 / day$)
+
+and
+
+$K(t)$ = correction factor for operational temp of reactor ($kgCOD/m^3$)
+
+$K(t)$ is defined using the ideal gas law:
+
+$K(t) = \frac{P * K_{COD}}{R * (273 + T)}$
+
+$P$ = atmospheric pressure (1 atm)
+
+$K_{COD}$ = COD corresponding to 1 mole of CH4 ($\frac{64g COD}{mole}$)
+
+$R$ = Ideal Gas Constant = 0.08206 ${\frac{atm*L}{mol*K}}$
+
+$T$ = Temperature ( ${^\circ}C$)
+
+Since biogas contains other gasses such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume methane is 75%, as given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf)
+
+It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
+
+
 #### Code
 ```python
 #Calculate Biogas Rate of Production (L/s and L/day) in UASB
