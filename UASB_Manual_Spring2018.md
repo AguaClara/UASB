@@ -486,6 +486,22 @@ height_lid = size_stor[1]
 print("The storage volume required to store", time_stor, "of biogas is", vol_stor, "\n" "The height of lid to prevent failure before", time_fail, "is", height_lid)
 ```
 
+### Fats, Oils and Greases (FOG) Removal System
+Typical wastewater from domestic sources contains many particles besides organic waste.  These include inorganics, such as sand, rocks, and clay that enter the wastewater system, along with organics that cannot be broken down by the anaerobic bacteria within the reactor.  Primary amongst these organics are fatty materials, including oils and greases.  These materials enter the wastewater stream primary from cooking wastes that are poured directly down drains.  
+
+Fats are typically lighter than water and hydrophobic, causing them to float to the top of the UASB reactor and accumulate within the biogas capture lid.  If not removed, they will build up in this lid and cause problems.  Therefore, a successful UASB system must include an easy removal system for these materials.  Fats removed this way in domestic wastewater treatment are typically sent to a landfill to be disposed of.
+
+For our design, the team began with trying to characterize the rate that fats would buildup within the reactor to determine how often they will need to be removed.  However, this term in incredibly variable, and depends on the character of the wastewater, how much is removed in screening, effluent, etc.  Talking with Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility, we learned that they only skim their clarifiers once a month for FOG.  Given this, the team focused on designing a simple system that can remove FOG whenever necessary.
+
+The team considered three possible systems for FOG removal:
+* A mechanical or gravitational separator before influent that captured and removed fat particles
+* Dosing of a coagulant to bind fat particles and make them easier to remove
+* An outflow pipe or siphon coming out of the removable lid with a valve to allow discharge of water containing Fats
+
+Another important note is that the system will always have a failsafe system to remove fats.  Since our biogas lid is removable, it is possible to remove this lid and manually skim fats off the top and dispose of them.  This was determined to be undesirable for a number of reasons.  First, it requires direct human input, which increases work for the community, and requires more training on usage.  Second, opening the system in this way depressurizes it, and releases any captured biogas produced within.  Finally, this requires close human contact with wastewater, which is a undesirable job and increases risk of infections or accidental discharge of wastewater.
+
+After brainstorming these options, the team quickly ruled out the first two options, and they were complicated and either required mechanical parts or chemical dosing, which go against the design philosophy of the project to make the UASB simple and cheap to install and operate.
+
 ### Sludge Sampling and Removal System
 
 Another important part of the UASB design in the sludge weir system.  The sludge weir is a tube built out of the UASB, originating at the top of the sludge blanket.  This tube has a valve at the end of the cap, allowing sampling and discharge from the UASB as necessary.  This serves two purposes.  First of all, it allows removal of material from the sludge blanket.  Given that the sludge blanket is mostly biological material, it will constantly grow with inputs of wastewater, and this allows us to control the growth as necessary.  This allows sample collection throughout the lifetime of the reactor as well.
