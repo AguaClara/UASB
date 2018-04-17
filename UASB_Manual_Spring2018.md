@@ -112,7 +112,7 @@ You have a wonderful diagram at the start of this section but never refer to it.
 Conventional UASB reactors utilize an invert funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas (carbon dioxide and methane) that is produced during anaerobic digestion ([Narnoli et. al, 1997](https://www.sciencedirect.com/science/article/pii/S0043135497809876)). The design of the GLSS, however, is not gas-tight because gas can escape around the edges of the GLSS and escape from the system.  Since methane is a potent greenhouse gas, the biogas should be captured to reduce negative environmental impacts ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 <div class="alert alert-block alert-danger">
-Biogas has already been defined 2 times before. Seeing repeats of this kinda of stuff says to me that you haven't read over it to check it.
+Biogas has already been defined 2 times before. Seeing repeats of this kinda of stuff says to me that you haven't read over it to check it. 10
 
 Do you have a diagram of how the air escapes?
 </div>
