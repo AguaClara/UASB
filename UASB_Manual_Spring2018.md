@@ -8,8 +8,8 @@ Please do not delete any of my comments. Just address them in the manual and I w
 </div>
 
 ## Abstract
-Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process. 10
-
+Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originafflly proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process. 10
+fff
 <div class="alert alert-block alert-danger">
 What does UASB mean? FIXED-jj
 
@@ -165,7 +165,7 @@ Previous work done by the 1 L/s team has shown that the bottom of the sedimentat
 How much is it overdesigned? Is there a safety factor?
 
 How would the system fail? What are the risks?
-
+fdsfsdafdsf
 How does the sloped bottom ensure structural integrity?
 </div>
 
@@ -502,17 +502,26 @@ Another important note is that the system will always have a failsafe system to 
 
 After brainstorming these options, the team quickly ruled out the first two options, and they were complicated and either required mechanical parts or chemical dosing, which go against the design philosophy of the project to make the UASB simple and cheap to install and operate.
 
+Thus, the team decided to design a small outflow pipe from the biogas lid.  In talking with Mr. Gottlieb, it seems a greater velocity will be needed to remove fat particles, as they will tend to spread over the water surface and congeal into mats.  Design for this system is still ongoing, and the team is researching siphon systems, as well as working to determine the dimensions of this pipe system.   
+
 ### Sludge Sampling and Removal System
 
-Another important part of the UASB design in the sludge weir system.  The sludge weir is a tube built out of the UASB, originating at the top of the sludge blanket.  This tube has a valve at the end of the cap, allowing sampling and discharge from the UASB as necessary.  This serves two purposes.  First of all, it allows removal of material from the sludge blanket.  Given that the sludge blanket is mostly biological material, it will constantly grow with inputs of wastewater, and this allows us to control the growth as necessary.  This allows sample collection throughout the lifetime of the reactor as well.
+![UASB_Side](/Images/Sludge_Weir.PNG)
+
+As long as it is continously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system.  
+
+The sludge weir consists of a tube jutting out of the reactor at a downwards angle, with two valves.  The first valve is in line with the reactor wall.  This valve will be left open during reactor operation, allowing excess sludge to settle into the tube over time.  The tube itself will be partially transparent, allowing direct monitoring of sludge levels and composition.  When it is necessary for sludge to be removed from the system, this valve will be shut, and the outer valve will be opened to allow discharge of sludge material.
+
+### Other Sampling Ports
+
+For testing purposes, the first model of the UASB will include multiple sampling ports placed at different heights along the reactor.  These will be similar in design to the sludge weir, but smaller in diameter, and only used for testing purposed, not large scale sludge removal.  The ultimate number and location of these system will be determined once further research into sampling techniques is complete.
+
+Another important concern for the reactor is inorganic removal.  Inorganics such as sand, rocks, plastics, and other materials will inevitably enter the wastewater stream.  Those that are not removed in the degritting system will enter the reactor.  Since these materials are often denser than water, they will settle in the reactor and remain within the system indefinitely.  In order to remove these materials, a final inorganics weir will be added to the bottom of the reactor.  While this weir will most likely only be used sporadically, it is an important system to remove materials that would otherwise build up and hinder reactor performance.  
 
 <div class="alert alert-block alert-danger">
-Refer to a diagram. It is hard to keep track of all the different parts.
+Refer to a diagram. It is hard to keep track of all the different parts.  Added -IC
 </div>
 
-Additional small sludge sampling ports will be added as necessary to ensure different areas of the blanket can be sampled properly.
-
-One final important system for design is the inorganics removal tube.  As wastewater flows into the system, materials such as sand, rocks, grit, and plastics will flow in and build up in the bottom of the reactor.  Since there is no way for these materials to be removed from the UASB, a drainage valve must be added so the reactor can periodically be cleaned.
 
 <div class="alert alert-block alert-danger">
 So the drainage vale will drain the entire UASB reactor and allow for the nonorganics to get scooped out?
@@ -622,7 +631,7 @@ Why use a list in this way?
 While these are important considerations, they do not heavily impact nor constrain the overall designs of the system.  These considerations will continued to be looked at and remedied as needed in the future.
 
 <div class="alert alert-block alert-danger">
-Do you have a final design yet? Or a list of important values that will incluence construction?
+Do you have a final design yet? Or a list of important values that will influence construction?
 
 Is there time this semester to start creating a plan for fabrication including the sequence of fabrication steps and best methods?
 
