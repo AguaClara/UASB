@@ -267,24 +267,24 @@ print(UASB_design)
 ````
 
 ### Influent Flow System
-A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, and is not an exhaustive list of our sources.
+An ideal influent flow system is designed so as to prevent clogging, and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, and is not an exhaustive list of our sources.
 
 <div class="alert alert-block alert-danger">
-Reconsider first sentence. This should be the main idea of the whole section and all it tells me if that influence pipe design is a challenge.
+Reconsider first sentence. This should be the main idea of the whole section and all it tells me if that influence pipe design is a challenge. FIXED -jj
 </div>
 
-The issues that we intend to tackle this semester regarding the influent flow into the reactor include designs to combat pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
+One challenge for an influent flow system is combatting pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
 
 <div class="alert alert-block alert-danger">
 Pick either first or third person. Do not change half way through
 
-Second half of this paragraph is strong, but it is the main point, get to it in first paragraph
+Second half of this paragraph is strong, but it is the main point, get to it in first paragraph FIXED-jj
 </div>
 
-Top influent flow was chosen over bottom influent flow in order to decrease the frequency of clogs.  In addition, top influent flow is the most common choice for domestic wastewater treatment.
+Top influent flow was chosen over bottom influent flow in order to decrease the frequency of clogs.  Bottom influent flow systems are more likely to clog if flow is low or not consistent.  This is because nonsuspended particles may settle into the pipe.  Gravity will prevent particles in a top influent system from settling in the pipe. In addition, top influent flow is the most common choice for domestic wastewater treatment.
 
 <div class="alert alert-block alert-danger">
-How does top influence flow prevent clogs?
+How does top influence flow prevent clogs? FIXED-jj
 </div>
 
 A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes.  Values range from 1-4 $m^2$ with little experimental evidence.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the reactor can be covered by at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
