@@ -1,4 +1,6 @@
 
+# HI IAN !! -jennifer
+
 # Upflow Anaerobic Sludge Blanket (UASB), Spring 2018
 #### Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
 #### March 9, 2018
@@ -265,7 +267,7 @@ print(UASB_design)
 ````
 
 ### Influent Flow System
-Influent pipe design represents a new design challenge this semester.  A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, and is not an exhaustive list of our sources.
+A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, and is not an exhaustive list of our sources.
 
 <div class="alert alert-block alert-danger">
 Reconsider first sentence. This should be the main idea of the whole section and all it tells me if that influence pipe design is a challenge.
