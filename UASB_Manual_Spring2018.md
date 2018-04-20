@@ -1,6 +1,4 @@
 
-# HI IAN !! -jennifer
-
 # Upflow Anaerobic Sludge Blanket (UASB), Spring 2018
 #### Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
 #### March 9, 2018
@@ -10,8 +8,8 @@ Please do not delete any of my comments. Just address them in the manual and I w
 </div>
 
 ## Abstract
-Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originafflly proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process. 10
-fff
+Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.
+
 <div class="alert alert-block alert-danger">
 What does UASB mean? FIXED-jj
 
@@ -23,7 +21,7 @@ What does a UASB do? FIXED-jj
 The contamination of ground and surface water sources by wastewater has adverse environmental and health affects. First, the biological degradation of wastewater by aerobic microbes lowers the dissolved oxygen content in natural waterways, preventing aquatic life from thriving and potentially creating dead zones. Additionally, it increases waterborne fecal matter content and increases the risk of exposure to pathogens ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). The latter is of particular concern to rural communities without drinking water treatment, who may live downstream of wastewater outfalls.
 
 <div class="alert alert-block alert-danger">
-Avoid "global south", the global health fellows said that it is ambigious and outdated. Consider "rural communities without drinking water treatment" FIXED-jj
+Avoid "global south", the global health fellows said that it is ambiguous and outdated. Consider "rural communities without drinking water treatment" FIXED-jj
 </div>
 
 Wastewater can also be an opportunity for energy recovery. According to recent estimates, the energy potential of wastewater and biosolids is more than ten times the energy needed for treatment. Most wastewater treatment facilities in the US do not optimize the recovery of energy and resources from biosolids ([Ghoneim et. al,  2016](http://ieeexplore.ieee.org/document/7577509/?reload=true)). While it is important to develop wastewater treatment technology to optimize current wastewater treatment for all individuals, the focus of this research was on small communities in the global south. Such communities do not have widespread wastewater infrastructure, and therefore much of the wastewater is left untreated.
@@ -92,11 +90,11 @@ What are the alternative to UASBs?
 To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of these bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of COD and BOD and increase the overall effectiveness of UASB technologies ([Subramanyam et. al 2013](https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347)).  To prevent biomass escape and increase sludge retention, parallel plates, akin to those in AguaClara drinking water treatment facilities, can be used ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 <div class="alert alert-block alert-danger">
-What are "these bacteria" you refer to in the first sentence. Precedding sentences do not mention bacteria.
+What are "these bacteria" you refer to in the first sentence. Preceding sentences do not mention bacteria.
 
 Communities plural in first sentence.
 
-You dont mention that UASBs can do COD removal until now
+You don't mention that UASBs can do COD removal until now
 
 What happens if there is not good granulation or the granules escape?
 </div>
@@ -114,7 +112,7 @@ You have a wonderful diagram at the start of this section but never refer to it.
 Conventional UASB reactors utilize an invert funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas (carbon dioxide and methane) that is produced during anaerobic digestion ([Narnoli et. al, 1997](https://www.sciencedirect.com/science/article/pii/S0043135497809876)). The design of the GLSS, however, is not gas-tight because gas can escape around the edges of the GLSS and escape from the system.  Since methane is a potent greenhouse gas, the biogas should be captured to reduce negative environmental impacts ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 <div class="alert alert-block alert-danger">
-Biogas has already been defined 2 times before. Seeing repeats of this kinda of stuff says to me that you haven't read over it to check it. 10
+Biogas has already been defined 2 times before. Seeing repeats of this kinda of stuff says to me that you haven't read over it to check it.
 
 Do you have a diagram of how the air escapes?
 </div>
@@ -130,7 +128,7 @@ Sludge, along with fats, oils, and grease (FOG) can also escape the sludge blank
 <div class="alert alert-block alert-danger">
 Is there a diagram to illustrate this?
 
-How do they esape the sludge blanket?
+How do they escape the sludge blanket?
 
 What is filamentous layer of bacteria?
 </div>
@@ -167,7 +165,7 @@ Previous work done by the 1 L/s team has shown that the bottom of the sedimentat
 How much is it overdesigned? Is there a safety factor?
 
 How would the system fail? What are the risks?
-fdsfsdafdsf
+
 How does the sloped bottom ensure structural integrity?
 </div>
 
@@ -512,7 +510,9 @@ Thus, the team decided to design a small outflow pipe from the biogas lid.  In t
 
 As long as it is continously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system.  
 
-The sludge weir consists of a tube jutting out of the reactor at a downwards angle, with two valves.  The first valve is in line with the reactor wall.  This valve will be left open during reactor operation, allowing excess sludge to settle into the tube over time.  The tube itself will be partially transparent, allowing direct monitoring of sludge levels and composition.  When it is necessary for sludge to be removed from the system, this valve will be shut, and the outer valve will be opened to allow discharge of sludge material.
+The sludge weir consists of a tube jutting out of the reactor at a downwards angle.  This weir is implemented at the top of anticipated height of the sludge blanket, so as to capture bacterial growth above this limit.  
+
+The weir is designed with two valves to control flow.  The first valve is in line with the reactor wall, and will be left open during reactor operation, allowing for excess sludge to settle into the tube over time.  Ideally, the tube itself will be partially transparent, allowing direct monitoring of sludge levels and composition without release of wastewater.  When it is necessary for sludge to be removed from the system, this valve will be shut, and the outer valve will be opened to allow discharge of sludge material.
 
 ### Other Sampling Ports
 
@@ -531,7 +531,14 @@ So the drainage vale will drain the entire UASB reactor and allow for the nonorg
 
 #### Design Parameters
 
-Design of these sections is ongoing, and the locations and dimensions of these sampling ports will be determined once flow and dimensional design is complete.
+The dimensions of the sludge weir are not incredibly important design parameters, and were thus set to values that seemed reasonable.  These systems will be tested in our first design and changed accordingly.  These parameters are set in the table below.
+
+|       Parameter        |  Value   |               Basis of Design                |
+|:----------------------:|:--------:|:--------------------------------------------:|
+|  Sludge Weir Diameter  | 6 in |     Based on Floc Hopper in 1 L/s plant      |
+|   Sludge Weir Length   |   TBD    | Based on desired volume of sludge per sample |
+| Sampling Port Diameter |   TBD    |          Based on fabrication specs          |
+| Number of Sampling Ports                       |  TBD      | Based on  number of sampling sites needed   |
 
 <div class="alert alert-block alert-danger">
 Has anything been done yet? Include what you have in the future.
@@ -550,7 +557,7 @@ In consideration of this data, the proposed designs were altered to include a tu
 Whole paragraph really unclear. There will be tube settlers inside the UASb reactor?
 </div>
 
-This document serves to calculate the size of the tube settler, the number of plates required, and the overall height of the settling arm.
+The below code serves to calculate the size of the tube settler, the number of plates required, and the overall height of the settling arm.
 
 <div class="alert alert-block alert-danger">
 Consider "This code" instead of "This document"
