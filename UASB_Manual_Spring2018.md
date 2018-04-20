@@ -18,13 +18,13 @@ What does a UASB do? FIXED-jj
 
 ## Introduction
 
-The contamination of ground and surface water sources by wastewater has adverse environmental and health affects. First, the biological degradation of wastewater by aerobic microbes lowers the dissolved oxygen content in natural waterways, preventing aquatic life from thriving and potentially creating dead zones. Additionally, it increases waterborne fecal matter content and increases the risk of exposure to pathogens ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). The latter is of particular concern to rural communities without drinking water treatment, who may live downstream of wastewater outfalls.
+The contamination of ground and surface water sources by wastewater has adverse environmental and health affects. Biological degradation of wastewater by aerobic microbes lowers the dissolved oxygen content in natural waterways, preventing aquatic life from thriving and potentially creating dead zones. Additionally, it increases waterborne fecal matter content and increases the risk of exposure to pathogens ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). The latter is of particular concern to rural communities without drinking water treatment, who may live downstream of wastewater outfalls.
 
 <div class="alert alert-block alert-danger">
 Avoid "global south", the global health fellows said that it is ambiguous and outdated. Consider "rural communities without drinking water treatment" FIXED-jj
 </div>
 
-Wastewater can also be an opportunity for energy recovery. According to recent estimates, the energy potential of wastewater and biosolids is more than ten times the energy needed for treatment. Most wastewater treatment facilities in the US do not optimize the recovery of energy and resources from biosolids ([Ghoneim et. al,  2016](http://ieeexplore.ieee.org/document/7577509/?reload=true)). While it is important to develop wastewater treatment technology to optimize current wastewater treatment for all individuals, the focus of this research was on small communities in the global south. Such communities do not have widespread wastewater infrastructure, and therefore much of the wastewater is left untreated.
+Wastewater can also be an opportunity for energy recovery. According to recent estimates, the energy potential of wastewater and biosolids is more than ten times the energy needed for treatment. Most wastewater treatment facilities in the US do not optimize the recovery of energy and resources from biosolids ([Ghoneim et. al,  2016](http://ieeexplore.ieee.org/document/7577509/?reload=true)). While it is important to develop wastewater treatment technology to optimize current wastewater treatment for all individuals, the focus of this research was on small rural communities lacking water treatment systems.
 
 <div class="alert alert-block alert-danger">
 What specific process in the breakdown of wastewater is a good opportunity for energy recovery?
@@ -38,7 +38,7 @@ Currently in the United States, effective municipal wastewater treatment facilit
 Condense in-text citations FIXED-jj
 </div>
 
-UASB reactors, used as a preliminary wastewater treatment process to clarify wastewater, remove suspended solids and reduce organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. A byproduct of the biological processes in UASB reactors is methane. Methane is a potent greenhouse gas, but if collected, can be used as a fuel or burned and safely released into the atmosphere.
+UASB reactors, used as a preliminary wastewater treatment process to clarify wastewater, remove suspended solids and reduce organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. A byproduct of the biological processes in UASB reactors is methane. Methane is a potent greenhouse gas, but if collected, can be used as a fuel, known as biogas.  In this process, methane is converted to carbon dioxide, a safer and less potent greenhouse gas.
 
 <div class="alert alert-block alert-danger">
 Move the USAB acronym definition to the first use and then delete this one. FIXED-jj
@@ -49,16 +49,16 @@ When writing lists, each term should mirror the others meaning that they should 
 </div>
 
 <!--- how we modified UASBs --->
-In January 2017, a novel pilot scale UASB reactor design was created by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design including: (1) plate settlers, (2) submerged gas collection lid, (3) sludge weir, (4) submerged exit launder, and (5) fabrication methods.
+In January 2017, a novel pilot scale UASB reactor design was created by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally.  Later sections of this manual detail these changes and quantify their impact on the design.
 
 <div class="alert alert-block alert-danger">
-Last sentence is difficult to read. Maybe go into more detail what these things really affect. Geometry? Easily fabricated?
+Last sentence is difficult to read. Maybe go into more detail what these things really affect. Geometry? Easily fabricated? fixed -IC
 </div>
 
-Since this proposal, there has been ongoing work to determine the parameter and designs of specific components of the proposed UASB reactor.  This document serves as a manual for the full design process of the proposed UASB reactor.  Eventual fabrication of a pilot scale UASB will soon follow the completion of the proposed designs.
+Since submission of this proposal, there has been ongoing work to develop the final design of the reactor.  This document details the full design process, and is written to serve as a manual for our full UASB design.  As the design is completed, additional information will be added detailing a full fabrication plan for the reactor.
 
 <div class="alert alert-block alert-danger">
-Revise last sentence.
+Revise last sentence. fixed -IC
 </div>
 
 ## Literature Review and Previous Work
@@ -508,7 +508,7 @@ Thus, the team decided to design a small outflow pipe from the biogas lid.  In t
 
 ![UASB_Side](/Images/Sludge_Weir.PNG)
 
-As long as it is continously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system.  
+As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system.  
 
 The sludge weir consists of a tube jutting out of the reactor at a downwards angle.  This weir is implemented at the top of anticipated height of the sludge blanket, so as to capture bacterial growth above this limit.  
 
@@ -551,27 +551,32 @@ Based on settling tests conducted on the lab scale UASB reactors during Summer 2
 The full cross-section of plate settlers is a new concept. Explain more
 </div>
 
-In consideration of this data, the proposed designs were altered to include a tube settler with plate inside.  This alteration served highly beneficial as it eases fabrication because it does not require a team to cut and weld two sections of pipe, and reduces fabrication time and associated costs.
+With this change in design, a new effluent system was designed that consists of a tube settler with plate settlers inside.  This design will provide comparable effluent quality to a design with plate settlers within the reactor, but will reduce fabrication time and costs.  This effluent system is pictured below.
 
 <div class="alert alert-block alert-danger">
-Whole paragraph really unclear. There will be tube settlers inside the UASb reactor?
-</div>
-
-The below code serves to calculate the size of the tube settler, the number of plates required, and the overall height of the settling arm.
-
-<div class="alert alert-block alert-danger">
-Consider "This code" instead of "This document"
-
-Label the table!
+Whole paragraph really unclear. There will be tube settlers inside the UASB reactor?
 </div>
 
 #### Design Parameters
+
+The table below lists the critical design parameters for the effluent tube.
+
+<div class="alert alert-block alert-danger">
+Label the table!
+</div>
+
 Parameter| Value | Basis of Design
 :------------- |:-------------|:--------
 Height of Sludge Blanket ```height_blanket``` | 3.5 ft| Assumed half the height of reactor
 Distance Between Plate Settlers ```plate_space```| 2.5 cm | Based on Sedimentation Tank Design
 Angle of Tube Settler ```angle``` | 60 degrees | Based on sedimentation tank design
 Thickness of Plates ```thickness_sed_plate```| 2 mm| Taken from corrugated plastic thickness
+
+The code below serves to calculate the size of the tube settler, the number of plates required, and the overall height of the settling arm.
+
+<div class="alert alert-block alert-danger">
+Consider "This code" instead of "This document"
+</div>
 
 #### Code
 ```python
@@ -629,15 +634,28 @@ Justify all assumptions in the code.
 </div>
 
 ## Future Work
-Other considerations required are for pilot scale operation: (1) an efficient removal system for fats, oils, and grease that will build up at the top of the reactor, (2) another removal system at the bottom of the reactor to prevent buildup of inorganics.
+
+A rough timeline of the project is summarized below.  The overall goal is for design work to be complete by the end of summer 2018.  During Fall 2018, the subteam will become a fabrication team and build the completed reactor.  After that the UASB will be implemented and tested at the Ithaca Wastewater Plant, and data gathered from this testing will inform future design.  Once design is complete and the system has been proven, the finished product will be shipped to Honduras for field testing, and then implemented in rural communities full time.  
+
+#### Spring 2018
+* Finish Biogas design
+* Finish FOG removal design
+* Finish Influent Flow design
+* Submit EPA grant proposal
+#### Summer 2018
+* Finish final design components (sampling ports, inorganics removal, degritting system)
+* Make complete fusion model
+* Design data collection methods
+* Make fabrication plan
+#### Fall 2018
+* Find fabrication space for UASB
+* Begin fabrication
 
 <div class="alert alert-block alert-danger">
 Revise this for clarity and understanding.
 
 Why use a list in this way?
 </div>
-
-While these are important considerations, they do not heavily impact nor constrain the overall designs of the system.  These considerations will continued to be looked at and remedied as needed in the future.
 
 <div class="alert alert-block alert-danger">
 Do you have a final design yet? Or a list of important values that will influence construction?
