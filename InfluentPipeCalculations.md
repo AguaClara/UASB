@@ -38,6 +38,10 @@ def suggested_pipe_diam(flow_tot, v_exit, n_pipes):
   print('The suggested pipe diameter is ', sugg_diam)    
   return sugg_diam
 
+# function calculates the flow in the pipe based on desired exit velocity, pipe diameter, and number of pipes
+def flow_given_pipediam(p_d, v_exit, n_pipes):
+
+
 ## Area of influence calculation for 2 pipes
 num_pipes = 2
 infl_area_UASBpipe = influence_area(num_pipes, diam_UASB)
@@ -47,6 +51,32 @@ print('The influence area of each pipe is ', infl_area_UASBpipe)
 velocity_exit = 0.3 *(u.m/u.s)
 flow2 = 0.5*(u.L/u.s)
 pipe_diam = suggested_pipe_diam(flow2, velocity_exit, num_pipes)
+
+## Pulse flow for tank w/ aperture
+def pulseflow(D_ap, H):
+  # D_ap = diameter of aperture in bottom of tank
+  # H = initial, "tipping point" height of WW
+  C_c = 0.62   # For sharp aperture-would this be true?
+  C_v = 0.97   # For water
+  g = pc.gravity
+  Q = (C_c*C_v*(pc.area_circle(D_ap))*(2*g*H)**(1/2)).to(u.L/u.s)
+  # print('The pulseflow for the given aperture area and WW height is ' , Q)
+  return Q
+
+def height_wastewater(D_ap, D_pipe):
+  C_c = 0.62   # For sharp aperture-would this be true?
+  C_v = 0.97   # For water
+  g = pc.gravity
+
+
+## Given aperture diameter & WW height, what is the necessary pipe size for 2 pipes?
+diam_ap = 10*u.cm
+Height_WW = 0.3*u.m
+flow_pulse = pulseflow(diam_ap,Height_WW)
+print(flow_pulse)
+pipe_diam_pulse = suggested_pipe_diam(flow_pulse, velocity_exit, num_pipes)
+
+## Given aperture diameter & pipe size(2 pipes), what is the necessary height of WW in tank?
 
 
 ```
