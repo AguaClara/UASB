@@ -83,6 +83,8 @@ UASB reactors are one example of high-rate anaerobic digesters. UASBs are used a
 <div class="alert alert-block alert-danger">
 Only define UASB once.
 
+
+
 Second sentence- consider just "post-treatment" rather than "post treatment options." These changes are minimal but contribute to really high level writing. Try to have the most stream-lined, concise, clear sentences possible.
 
 What are the alternative to UASBs?
