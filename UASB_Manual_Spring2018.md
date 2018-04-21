@@ -76,7 +76,7 @@ Why do the other two have higher capital costs? technology or materials.
 ### UASB Basics
 
 ![Conventional_UASB](/Images/Conventional_UASB.PNG)
-<p align="center">Figure One: A Conventional UASB Design </p>
+<p align="center">Figure 1: A Conventional UASB Design </p>
 
 UASB reactors are one example of high-rate anaerobic digesters. UASBs are used as primary clarification of wastewater, and therefore require post-treatment through trickling filters or secondary clarifiers to achieve ideal reduction of biological oxygen demand (BOD), suspended solids (SS), and nutrients ([Abbasi et. al, 2012](https://www.sciencedirect.com/science/article/pii/S1364032111005533)). High-rate anaerobic digesters, such as UASBs, are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). Due to these advantages, UASB reactors were chosen as the basis for preliminary wastewater treatment design for communities in the global south.
 
@@ -140,13 +140,13 @@ What is filamentous layer of bacteria?
 A schematic of the UASB with proposed design improvements is shown in Figure 2 and Figure 3.  Each of the following sections will briefly overview the component/aspect of interest, the design parameters associated with this component, and the code used to calculate the final parameters.  ***It must be noted that there are parts of the reactor that are still a work in progress***.  In particular, work is still being conducted on designing the influent and biogas capture systems.
 
 ![UASB_Side](/Images/AC_SideView.PNG)
-<p align="center">Figure Two: The Side View of the proposed UASB </p>
+<p align="center">Figure 2: The Side View of the proposed UASB </p>
 
 ![UASB_Side](/Images/AC_FrontView.PNG)
-<p align="center">Figure Three: The Front View of the proposed UASB </p>
+<p align="center">Figure 3: The Front View of the proposed UASB </p>
 
 <div class="alert alert-block alert-danger">
-Label Figures with numerical and not written numbers i.e. Figure 1 not Figure one
+Label Figures with numerical and not written numbers i.e. Figure 1 not Figure one -- Fixed ZC
 
 Center the diagrams
 </div>
@@ -319,7 +319,8 @@ Which of each parameter will you be using?
 
 An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
 
-| Type of Storage | Pros                                                                                                                                                                           | Cons                                                                                                                       |
+
+| Type of Storage | Pros | Cons |
 |:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
 | Gas Bag         | (1) Flexible and easy connection on top of next to reactor **(2) Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
 | Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
@@ -329,10 +330,18 @@ An important aspect of UASB design is the capture and storage of biogas produced
 Table label/title?
 </div>
 
-After consideration of these options, we decided upon the gas bag system.  Gas will flow out the top lid of the reactor through a pipe into an intermediate volume.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.
+After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
+
+Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 4.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 5.
+
+![Biogas_Close](/Images/Biogas Lid Closeup.jpg)
+<p align="center">Figure 4: Detailed view of the biogas capture lid on top of the UASB reactor.  This </p>
+
+![Biogas_Storage](/Images/Biogas Storage.jpg)
+<p align="center">Figure 2: The Side View of the proposed UASB </p>
 
 <div class="alert alert-block alert-danger">
-Is the gas bag system in use for most UASB's?
+Is the gas bag system in use for most UASB's?  Fixed -- ZC
 
 Do you have a visual for this?
 </div>
@@ -399,7 +408,7 @@ $T$ = Temperature ( ${^\circ}C$)
 
 Since biogas contains other gasses such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume methane is 75%, as given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf)
 
-It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
+It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will build up pressure.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
 
 #### Code
