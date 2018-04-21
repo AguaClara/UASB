@@ -348,52 +348,6 @@ def influence_area(n_pipes, diam):
 
 ```
 
-### Biogas Capture System
-
-An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
-
-
-| Type of Storage | Pros | Cons |
-|:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
-| Gas Bag         | (1) Flexible and easy connection on top of next to reactor **(2) Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
-| Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
-| Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate  |
-
-<div class="alert alert-block alert-danger">
-Table label/title?
-</div>
-
-After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
-
-Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 4.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 5.
-
-![Biogas_Close](/Images/Biogas Lid Closeup.jpg)
-<p align="center">Figure 4: Detailed view of the biogas capture lid on top of the UASB reactor.  This </p>
-
-![Biogas_Storage](/Images/Biogas Storage.jpg)
-<p align="center">Figure 2: The Side View of the proposed UASB </p>
-
-<div class="alert alert-block alert-danger">
-Is the gas bag system in use for most UASB's?  Fixed -- ZC
-
-Do you have a visual for this?
-</div>
-
-#### Design Parameters
-| Parameters | Value | Basis of Design |
-| :-------: | :--------: | :--------------: |
-| COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
-| Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
-| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
-| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
-
-<div class="alert alert-block alert-danger">
-Table label/title
-
-Inconsistent table column labels : basis of design vs. justification
-
-What are mesophilic conditons?
-</div>
 
 ### Biogas Production Calculations
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a process known as methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating like propane.  
@@ -443,6 +397,21 @@ Since biogas contains other gasses such as CO2, we must employ a correction fact
 
 It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will build up pressure.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
+#### Design Parameters
+| Parameters | Value | Basis of Design |
+| :-------: | :--------: | :--------------: |
+| COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
+| Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
+| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
+| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
+
+<div class="alert alert-block alert-danger">
+Table label/title
+
+Inconsistent table column labels : basis of design vs. justification
+
+What are mesophilic conditons?
+</div>
 
 #### Code
 ```python
@@ -497,8 +466,37 @@ Size_Store = Q_Biogas[1].to(u.gal / u.day) * (u.day)
 print("The size of the storage container to store one day worth of biogas production should be at least", Size_Store)
 ```
 
-###Storage Size
-Safely and efficiently create short term storage for biogas produced so that it may be used
+### Biogas Storage System
+
+An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
+
+
+| Type of Storage | Pros | Cons |
+|:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
+| Gas Bag         | (1) Flexible and easy connection on top of next to reactor **(2) Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
+| Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
+| Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate  |
+
+<div class="alert alert-block alert-danger">
+Table label/title?
+</div>
+
+After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
+
+Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 4.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 5.
+
+![Biogas_Close](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true)
+<p align="center">Figure 4: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
+
+![Biogas_Storage](/Images/Biogas Storage.jpg)
+<p align="center">Figure 5: The Side View of the proposed UASB </p>
+
+<div class="alert alert-block alert-danger">
+Is the gas bag system in use for most UASB's?  Fixed -- ZC
+
+Do you have a visual for this?
+</div>
+
 ####Code
 ```python
 def Dim_Storage(day_prod, time_stor, time_fail, diam_lid):
