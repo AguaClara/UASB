@@ -65,75 +65,77 @@ Revise last sentence. fixed -IC
 
 
 ### Conventional Wastewater Treatment Options
-Municipal and industrial wastewater can be treated via biological, chemical, or thermal oxidation treatment processes. Biological treatment is commonly used because the latter two treatment options require higher capital investment and operational costs due to dosing chemicals or energy inputs ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). The two main types of biological treatment are the activated sludge process and anaerobic digestion. When compared to the activated sludge process, anaerobic digestion yields less sludge and reduces energy input ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). Although there are some drawbacks to anaerobic digestion such as long solids retention time (SRT) and insufficient nutrient removal, the reduced energy input renders it the most feasible technology for small communities lacking proper water treatment  ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
+Municipal and industrial wastewater can be treated via biological, chemical, or thermal oxidation treatment processes. While all processes lead to the eventual breakdown of organic matter, biological treatment is more commonly used because the latter two treatment options require higher capital investment and operational costs due to  the need of complex, and chemicals or energy inputs ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). The two main types of biological treatment are the activated sludge process and anaerobic digestion. When compared to the activated sludge process, anaerobic digestion yields less sludge and reduces energy input ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). Although there are some drawbacks to anaerobic digestion such as long solids retention time (SRT) and insufficient nutrient removal, the reduced energy input renders it the most feasible technology for small communities lacking proper water treatment  ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 <div class="alert alert-block alert-danger">
-In the list in the first second, is the biological process oxidation like the other two or not?
+In the list in the first second, is the biological process oxidation like the other two or not? -- It is the same in that the final product is water with organic matter removed but the means by which it occurs is different.  I've addressed this comment by acknowledging the similarities between the three but I do not see the need to further explain the other options -- ZC
 
-Why do the other two have higher capital costs? technology or materials.
+Why do the other two have higher capital costs? technology or materials.  -- Fixed ZC
 </div>
 
 ### UASB Basics
 
 ![Conventional_UASB](/Images/Conventional_UASB.PNG)
-<p align="center">Figure 1: A Conventional UASB Design </p>
+<p align="center">Figure 1: A conventional UASB design.  Wastewater is pumped through the bottom of the reactor where it is processed by anaerobic microorganisms that are packed into sludge granules.  Spread through the bottom of the reactor allows maximized  contact with the sludge.  As the microorganisms process organic matter in the wastewater, biogas is produced and collected in a funnel structure for eventual use.  </p>
 
-UASB reactors are one example of high-rate anaerobic digesters. UASBs are used as primary clarification of wastewater, and therefore require post-treatment through trickling filters or secondary clarifiers to achieve ideal reduction of biological oxygen demand (BOD), suspended solids (SS), and nutrients ([Abbasi et. al, 2012](https://www.sciencedirect.com/science/article/pii/S1364032111005533)). High-rate anaerobic digesters, such as UASBs, are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). Due to these advantages, UASB reactors were chosen as the basis for preliminary wastewater treatment design for communities in the global south.
+UASBs utilize mixed cultures of anaerobic microorganisms to biologically process and remove organic matter (OM), chemical oxygen demand (COD), biological oxygen demand (BOD), and suspended solids (SS).  They are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization.  Due to the dispersion of influent to maximize sludge contact as shown in Figure 1, UASBs can achieve optimal levels of primary treatment quite quickly compared to other anaerobic treatment processes.  In alternative processes such as anaerobic filters, anaerobic baffled reactors, and septic tanks, water passes over an exposed surface of sludge and organic matter is treated as it diffuses through ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).   
+
+While UASBs are able to provide treatment quickly, like other anaerobic treatment methods, post-treatment is often required through trickling filters or secondary clarifiers to achieve ideal reduction BOD, COD, and nutrients ([Abbasi et. al, 2012](https://www.sciencedirect.com/science/article/pii/S1364032111005533)).
 
 <div class="alert alert-block alert-danger">
-Only define UASB once.
+Only define UASB once.  -- This redundancy is inevitable given the format of the AguaClara reports.  In scientific literature, the introduction IS the literature review which in which the authors examine the everything else that has been done. It seems as if the introduction is a mini-lit review in our format with an update on what this semester's team has already done.  I did my best to reword and provide information not clearly given before but I'm not sure how to address this comment properly given the formatting of the report sections.
 
+Second sentence- consider just "post-treatment" rather than "post treatment options." These changes are minimal but contribute to really high level writing. Try to have the most stream-lined, concise, clear sentences possible.  --  Fixed ZC
 
-
-Second sentence- consider just "post-treatment" rather than "post treatment options." These changes are minimal but contribute to really high level writing. Try to have the most stream-lined, concise, clear sentences possible.
-
-What are the alternative to UASBs?
+What are the alternative to UASBs?  -- Fixed ZC
 </div>
 
-To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of anaerobic bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of BOD and increase the overall effectiveness of UASB technologies ([Subramanyam et. al 2013](https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347)).  Without proper retention systems, these solids can be "washed out," contaminating wastewater effluent and reducing the efficiency of BOD removal within the reactor.
+
 
 <div class="alert alert-block alert-danger">
-What are "these bacteria" you refer to in the first sentence. Preceding sentences do not mention bacteria.
+What are "these bacteria" you refer to in the first sentence. Preceding sentences do not mention bacteria. -- Fixed ZC
 
-Communities plural in first sentence.
+Communities plural in first sentence. -- Fixed ZC
 
-You don't mention that UASBs can do COD removal until now
+You don't mention that UASBs can do COD removal until now  -- Fixed ZC
 
-What happens if there is not good granulation or the granules escape?
+What happens if there is not good granulation or the granules escape?  -- Fixed ZC
 </div>
 
-A useful by product of this process is biogas, a mixture of methane, carbon dioxide, and some trace gases.  After production in the digestion zone, methane floats upwards through the water and is caught in the cone of the Gas Liquid Solid Separator.  From there, it is funneled upwards into a storage vehicle where it can later be burned for heat or energy generation.  More details on the biogas capture and usage can be found in the [Biogas Capture](#Biogas-Capture-System) section of the manual.
+A useful by-product of this process is biogas, a mixture of methane, carbon dioxide, and some trace gases.  After production in the digestion zone, methane travels upwards through the water and is caught in the cone of the Gas Liquid Solid Separator.  From there, it is funneled upwards into a storage vehicle where it can later be burned for heat or energy generation.  More details on the biogas capture and usage can be found in the [Biogas Capture](#Biogas-Capture-System) section of the manual.
+
+Typically, UASB reactors are large,  cylindrical or rectangular tanks 4-5 meters in height, constructed of reinforced concrete designed as shown to Figure 1.  While UASBs are traditionally used for large-scale, centralized wastewater treatment, their mechanism of treatment is operationally simple since there are no mechanized components which eases maintenance concerns.  In addition, the standard geometry readily allows for scaling of the design ([van Lier et al., 2010](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)).  Although fixed costs for the construction can still be significant, they can be reduced through use of alternative materials such as PVC.  
+
+Due to the higher operational capacity,  opportunity for resource recovery in biogas production, and overall simplicity of the system, UASB reactors were chosen as the basis for preliminary wastewater treatment for underserved and under-resourced communities.
 
 <div class="alert alert-block alert-danger">
-by-product
+by-product -- Fixed ZC
 
-You have a wonderful diagram at the start of this section but never refer to it. You also don't give background on general geometry, scale, etc of the system or common materials. I haven't read the rest yet, but it might be a good place for that basic info.
+You have a wonderful diagram at the start of this section but never refer to it. You also don't give background on general geometry, scale, etc of the system or common materials. I haven't read the rest yet, but it might be a good place for that basic info.  -- Fixed ZC
 </div>
 
 ### Problems Associated with UASBs
 
-Conventional UASB reactors utilize an invert funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas (carbon dioxide and methane) that is produced during anaerobic digestion ([Narnoli et. al, 1997](https://www.sciencedirect.com/science/article/pii/S0043135497809876)). The design of the GLSS, however, is not gas-tight because gas can escape around the edges of the GLSS and escape from the system.  Since methane is a potent greenhouse gas, the biogas should be captured to reduce negative environmental impacts ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
+Conventional UASB reactors utilize an invert funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas  that is produced ([Narnoli et. al, 1997](https://www.sciencedirect.com/science/article/pii/S0043135497809876)). The design of the GLSS, however, is not gas-tight due to the free surface on the perimeter of the gas separator system as shown in Figure 1.  Gas that is able to travel around the edges of the GLSS can readily escape from the system.  Since methane is a potent greenhouse gas, the biogas should be captured to reduce negative environmental impacts ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 <div class="alert alert-block alert-danger">
-Biogas has already been defined 2 times before. Seeing repeats of this kinda of stuff says to me that you haven't read over it to check it.
+Biogas has already been defined 2 times before. Seeing repeats of this kinda of stuff says to me that you haven't read over it to check it.  --  Fixed ZC
 
-Do you have a diagram of how the air escapes?
+Do you have a diagram of how the air escapes?  -- No but I hope rewording the paragraph gives a better idea of how gas can escape rather than having to insert a zoom-in of Figure 1 -- ZC
 </div>
 
-To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of these bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of COD and BOD and increase the overall effectiveness of UASB technologies ([Subramanyam et. al 2013](https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347)).  To prevent biomass escape and increase sludge retention, parallel plates, akin to those in AguaClara drinking water treatment facilties, can be used ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
+To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of these bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of COD and BOD and increase the overall effectiveness of UASB technologies ([Subramanyam et. al 2013](https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347)).  To prevent biomass escape and increase sludge retention, parallel plates, akin to those in AguaClara drinking water treatment facilities, can be used ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 <div class="alert alert-block alert-danger">
-This is the same exact paragraph as used in the previous section.
+This is the same exact paragraph as used in the previous section.  -- Fixed, got rid of previous paragraph -- ZC
 </div>
 
-Sludge, along with fats, oils, and grease (FOG) can also escape the sludge blanket and accumulate at the water surface open to the atmosphere, forming a filamentous layer of bacteria ([Van Lier 2010](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf), [Lettinga 1991](http://wst.iwaponline.com/content/24/8/87)). This is problematic because the exit weir skims the water surface in traditional systems, which allows for these solids to escape untreated.
+Due to differences in density inactive sludge, along with fats, oils, and grease (FOG) can also rise through the reactor and accumulate at the water surface open to the atmosphere, forming a thick layer of solid material which can be labor intensive to clean ([Van Lier et al.,  2010](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf), [Lettinga 1991](http://wst.iwaponline.com/content/24/8/87)). This is also problematic as the exit weir skims the water surface in traditional systems, which allows for these solids to escape untreated.
 
 <div class="alert alert-block alert-danger">
-Is there a diagram to illustrate this?
+How do they escape the sludge blanket?  Dead sludge and FOG is less dense than active sludge -- ZC
 
-How do they escape the sludge blanket?
-
-What is filamentous layer of bacteria?
+What is filamentous layer of bacteria?  --  this referred to the solid matter built up on the surface, corrected to be more generally understandable -- ZC
 </div>
 
 ## Methods and Design Process
@@ -150,11 +152,11 @@ A schematic of the UASB with proposed design improvements is shown in Figure 2 a
 <div class="alert alert-block alert-danger">
 Label Figures with numerical and not written numbers i.e. Figure 1 not Figure one -- Fixed ZC
 
-Center the diagrams
+Center the diagrams -- There is something wrong with the Markdown formatting that I cannot for the life of me center this diagram.  I've looked on StackOverflow as well but according to users there is no built-in Markdown syntax that will allow for image centering-- ZC
 </div>
 
 ### Size and Flow
- One of the primary concerns associated with large scale construction with PVC is structural stability.  However, due to the complexities and time requirements needed, the team did not conduct a structural analysis.  Instead, the geometry for the pilot scale UASB reactor will be loosely based on that of the 1 L/s sedimentation tank.
+ Due to the fabrication experience AguaClara accumulated from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead failure.  Due to the complexities and time requirements required to determine the feasibility of this approach, the team did not conduct a structural analysis.  Instead, the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank.
 
  <div class="alert alert-block alert-danger">
  Why is that satisfactory? Where can I get more information about the 1 L/s geometry and structure?
@@ -181,10 +183,10 @@ Why must it be noted that hydraulic residence time is based on contact time with
 </div>
 
 #### Design Parameters
-|               Design Parameter                |        Value        |                                         Justification of Parameter                                          |
+|Design Parameter|Value|Justification of Parameter|
 |:---------------------------------------------:|:-------------------:|:-----------------------------------------------------------------------------------------------------------:|
-|      Hydraulic Residence Time ```HRT```       |        4 hrs        |                  From tracer tests conducted in [Fall 2016](https://www.overleaf.com/read/dnxfsrwdxbdf#/21165144/) and minimum values in literature ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).               |
-| Wastewater Generation per Person ```WW_gen``` |       3 mL/s        |                                          Rule of Thumb from Monroe                                          |
+|Hydraulic Residence Time ```HRT```|4 hrs| From tracer tests conducted in [Fall 2016](https://www.overleaf.com/read/dnxfsrwdxbdf#/21165144/) and minimum values in literature ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).|
+| Wastewater Generation per Person ```WW_gen``` |3 mL/s|Rule of Thumb from Monroe|
 |   Blackwater Generation per person ```WW_gen_bw``` |         0.6 mL/s        |               20% of mixed wastewater  From Prof. Richardson's estimation                       |
 |             Center Space of Base              |        3 in         | Based on the [1 L/s plant design](https://www.overleaf.com/6186375zdpjfc) (more info in their Google Drive) |
 |                  Slope Angle                  | 60 $$ $^{\circ}$ $$ |                  Based on the [1 L/s plant design](https://www.overleaf.com/6186375zdpjfc)                  |
@@ -192,7 +194,7 @@ Why must it be noted that hydraulic residence time is based on contact time with
 |             Height of the Reactor             |       7 feet        |                               Based on the maximum ceiling height of the lab                                |
 
 <div class="alert alert-block alert-danger">
-The code for the table is very funky - try to make it more organized.
+The code for the table is very funky - try to make it more organized.  --  Markdown makes these funky spaces in the code automatically when I indent to go to the next line.  I have cleaned it up but they tend to appear again when ever the table is messed with.  If the screen were wider, each line would appear appropriately formatted on the code side. -- ZC
 
 I don't understand the "20% of mixed wastewater from Prof. Richardson's estimation"  for the blackwater generation per person. 20% of what?
 
@@ -398,19 +400,19 @@ Since biogas contains other gasses such as CO2, we must employ a correction fact
 It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will build up pressure.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
 #### Design Parameters
-| Parameters | Value | Basis of Design |
+| Parameters | Value | Justification of Design |
 | :-------: | :--------: | :--------------: |
 | COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
 | Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
 | Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
-| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
+| Temperature ```T``` | 25 $^{\circ}$ C | Assuming optimal biological conditions |
 
 <div class="alert alert-block alert-danger">
 Table label/title
 
-Inconsistent table column labels : basis of design vs. justification
+Inconsistent table column labels : basis of design vs. justification  -- Fixed ZC
 
-What are mesophilic conditons?
+What are mesophilic conditons? Fixed -- ZC
 </div>
 
 #### Code
@@ -488,13 +490,13 @@ Schematically, gas will flow out the top lid of the reactor through a pipe into 
 ![Biogas_Close](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true)
 <p align="center">Figure 4: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
 
-![Biogas_Storage](/Images/Biogas Storage.jpg)
-<p align="center">Figure 5: The Side View of the proposed UASB </p>
+![Biogas_Storage](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Storage.jpg?raw=true)
+<p align="center">Figure 5: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
 
 <div class="alert alert-block alert-danger">
 Is the gas bag system in use for most UASB's?  Fixed -- ZC
 
-Do you have a visual for this?
+Do you have a visual for this?  Fixed -- ZC
 </div>
 
 ####Code
