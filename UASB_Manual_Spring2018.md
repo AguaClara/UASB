@@ -83,6 +83,8 @@ UASB reactors are one example of high-rate anaerobic digesters. UASBs are used a
 <div class="alert alert-block alert-danger">
 Only define UASB once.
 
+
+
 Second sentence- consider just "post-treatment" rather than "post treatment options." These changes are minimal but contribute to really high level writing. Try to have the most stream-lined, concise, clear sentences possible.
 
 What are the alternative to UASBs?
@@ -286,7 +288,7 @@ Top influent flow was chosen over bottom influent flow in order to decrease the 
 How does top influence flow prevent clogs? FIXED-jj
 </div>
 
-A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes.  Values range from 1-4 $m^2$ with little experimental evidence.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the reactor can be covered by at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
+A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes.  Values range from 1-4 $m^2$ (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
 
 <div class="alert alert-block alert-danger">
 What are your sources for these claims?
@@ -307,12 +309,90 @@ I do not understand what "the reactor can be covered by at least one influent pi
 | **Settling Zone Surface**                                                         |                                                                                                         |                                                                                                                                                                                                                             | **75% of total surface**                                                                                                                  |     |     |     |
 | **Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit** |    **0.20-0.30 m**                                                                                                     |               **2-3 m head loss** through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2 | **50 cm**
 
+It has been decided that the following parameters will likely be used:
+* Exit Velocity: 0.3 m/s
+* Headloss: 50 cm
+
+The rest of the parameters will be adjusted to achieve these parameters.
+
+
 <div class="alert alert-block alert-danger">
 Where is the table label for this table?
 
 Why does the code for the table look so funky? It would be very hard to edit.
 
 Which of each parameter will you be using?
+</div>
+
+### Pulse Flow into the Reactor
+It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would be necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.
+
+### Influent Flow Calculations
+
+Calculations for pulse flow have been started, but are not yet completed and so are not included in this report.
+
+```Python
+# function calculates the influence area of each pipe in the reactor
+def influence_area(n_pipes, diam):
+  ## n_pipes = number of influent pipes in UASB
+  ## diam = diameter of UASB reactor
+  ca = pc.area_circle(diam) # ca = cross sectional area at top
+  ia = ca/n_pipes           # ia = influence area
+  print('The influence area of each pipe is ', ia)
+  return ia
+
+
+  num_pipes = 2
+  infl_area_UASBpipe = influence_area(num_pipes, diam_UASB)
+  print('The influence area of each pipe is ', infl_area_UASBpipe)
+
+```
+
+### Biogas Capture System
+
+An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
+
+
+| Type of Storage | Pros | Cons |
+|:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
+| Gas Bag         | (1) Flexible and easy connection on top of next to reactor **(2) Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
+| Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
+| Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate  |
+
+<div class="alert alert-block alert-danger">
+Table label/title?
+</div>
+
+After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
+
+Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 4.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 5.
+
+![Biogas_Close](/Images/Biogas Lid Closeup.jpg)
+<p align="center">Figure 4: Detailed view of the biogas capture lid on top of the UASB reactor.  This </p>
+
+![Biogas_Storage](/Images/Biogas Storage.jpg)
+<p align="center">Figure 2: The Side View of the proposed UASB </p>
+
+<div class="alert alert-block alert-danger">
+Is the gas bag system in use for most UASB's?  Fixed -- ZC
+
+Do you have a visual for this?
+</div>
+
+#### Design Parameters
+| Parameters | Value | Basis of Design |
+| :-------: | :--------: | :--------------: |
+| COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
+| Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
+| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
+| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
+
+<div class="alert alert-block alert-danger">
+Table label/title
+
+Inconsistent table column labels : basis of design vs. justification
+
+What are mesophilic conditons?
 </div>
 
 ### Biogas Production Calculations
@@ -363,21 +443,6 @@ Since biogas contains other gasses such as CO2, we must employ a correction fact
 
 It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will build up pressure.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
-#### Design Parameters
-| Parameters | Value | Justification of Parameter |
-| :-------: | :--------: | :--------------: |
-| COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
-| Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
-| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
-| Temperature ```T``` | 25 $^{\circ}$ C | Assuming mesophilic conditions |
-
-<div class="alert alert-block alert-danger">
-Table label/title
-
-Inconsistent table column labels : basis of design vs. justification  Fixed ZC
-
-What are mesophilic conditons?
-</div>
 
 #### Code
 ```python
@@ -432,36 +497,8 @@ Size_Store = Q_Biogas[1].to(u.gal / u.day) * (u.day)
 print("The size of the storage container to store one day worth of biogas production should be at least", Size_Store)
 ```
 
-### Biogas Storage System
-
-An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system and storage.  These three options, along with Pros and Cons are detailed in the table below.
-
-
-| Type of Storage | Pros | Cons |
-|:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
-| Gas Bag         | (1) Flexible and easy connection on top of next to reactor **(2) Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
-| Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
-| Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate  |
-
-<div class="alert alert-block alert-danger">
-Table label/title?
-</div>
-
-After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
-
-Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 4.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 5.
-
-![Biogas_Close](/Images/Biogas Lid Closeup.jpg)
-<p align="center">Figure 4: Detailed view of the removable biogas capture lid on top of the UASB.  If excessgas is allowed to accumulate, gas pressure will force the free surface within the reactor downward and displace water.  To minimize these events occurring, an larger storage volume is required.  </p>
-
-![Biogas_Storage](/Images/Biogas Storage.jpg)
-<p align="center">Figure 5: Schematic of the long term storage system after biogas is captured.  The system will include a check valve to prevent dangerous levels of pressurization </p>
-
-<div class="alert alert-block alert-danger">
-Is the gas bag system in use for most UASB's?  Fixed -- ZC
-
-Do you have a visual for this?  Fixed -- ZC
-</div>
+###Storage Size
+Safely and efficiently create short term storage for biogas produced so that it may be used
 ####Code
 ```python
 def Dim_Storage(day_prod, time_stor, time_fail, diam_lid):
