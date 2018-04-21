@@ -288,7 +288,7 @@ Top influent flow was chosen over bottom influent flow in order to decrease the 
 How does top influence flow prevent clogs? FIXED-jj
 </div>
 
-A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes.  Values range from 1-4 $m^2$ with little experimental evidence.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the reactor can be covered by at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
+A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes.  Values range from 1-4 $m^2$ (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
 
 <div class="alert alert-block alert-danger">
 What are your sources for these claims?
@@ -309,6 +309,13 @@ I do not understand what "the reactor can be covered by at least one influent pi
 | **Settling Zone Surface**                                                         |                                                                                                         |                                                                                                                                                                                                                             | **75% of total surface**                                                                                                                  |     |     |     |
 | **Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit** |    **0.20-0.30 m**                                                                                                     |               **2-3 m head loss** through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2 | **50 cm**
 
+It has been decided that the following parameters will likely be used:
+* Exit Velocity: 0.3 m/s
+* Headloss: 50 cm
+
+The rest of the parameters will be adjusted to achieve these parameters.
+
+
 <div class="alert alert-block alert-danger">
 Where is the table label for this table?
 
@@ -316,6 +323,30 @@ Why does the code for the table look so funky? It would be very hard to edit.
 
 Which of each parameter will you be using?
 </div>
+
+### Pulse Flow into the Reactor
+It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would be necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.
+
+### Influent Flow Calculations
+
+Calculations for pulse flow have been started, but are not yet completed and so are not included in this report.
+
+```Python
+# function calculates the influence area of each pipe in the reactor
+def influence_area(n_pipes, diam):
+  ## n_pipes = number of influent pipes in UASB
+  ## diam = diameter of UASB reactor
+  ca = pc.area_circle(diam) # ca = cross sectional area at top
+  ia = ca/n_pipes           # ia = influence area
+  print('The influence area of each pipe is ', ia)
+  return ia
+
+
+  num_pipes = 2
+  infl_area_UASBpipe = influence_area(num_pipes, diam_UASB)
+  print('The influence area of each pipe is ', infl_area_UASBpipe)
+
+```
 
 ### Biogas Capture System
 
