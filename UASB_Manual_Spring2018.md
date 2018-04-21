@@ -83,8 +83,6 @@ UASB reactors are one example of high-rate anaerobic digesters. UASBs are used a
 <div class="alert alert-block alert-danger">
 Only define UASB once.
 
-
-
 Second sentence- consider just "post-treatment" rather than "post treatment options." These changes are minimal but contribute to really high level writing. Try to have the most stream-lined, concise, clear sentences possible.
 
 What are the alternative to UASBs?
@@ -319,7 +317,7 @@ Which of each parameter will you be using?
 
 ### Biogas Capture System
 
-An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
+An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system and storage.  These three options, along with Pros and Cons are detailed in the table below.
 
 
 | Type of Storage | Pros | Cons |
@@ -337,7 +335,7 @@ After consideration of these options, the gas bag system was decided upon becaus
 Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 4.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 5.
 
 ![Biogas_Close](/Images/Biogas Lid Closeup.jpg)
-<p align="center">Figure 4: Detailed view of the biogas capture lid on top of the UASB reactor.  This </p>
+<p align="center">Figure 4: Detailed view of the removable biogas capture lid on top of the UASB.  If excessgas is allowed to accumulate, gas pressure will force the free surface within the reactor downward and displace water.  To minimize these events occurring, an larger storage volume is required.  </p>
 
 ![Biogas_Storage](/Images/Biogas Storage.jpg)
 <p align="center">Figure 2: The Side View of the proposed UASB </p>
@@ -345,11 +343,11 @@ Schematically, gas will flow out the top lid of the reactor through a pipe into 
 <div class="alert alert-block alert-danger">
 Is the gas bag system in use for most UASB's?  Fixed -- ZC
 
-Do you have a visual for this?
+Do you have a visual for this?  Fixed -- ZC
 </div>
 
 #### Design Parameters
-| Parameters | Value | Basis of Design |
+| Parameters | Value | Justification of Parameter |
 | :-------: | :--------: | :--------------: |
 | COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
 | Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
@@ -359,7 +357,7 @@ Do you have a visual for this?
 <div class="alert alert-block alert-danger">
 Table label/title
 
-Inconsistent table column labels : basis of design vs. justification
+Inconsistent table column labels : basis of design vs. justification  Fixed ZC
 
 What are mesophilic conditons?
 </div>
