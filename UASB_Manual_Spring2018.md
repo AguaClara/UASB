@@ -693,7 +693,7 @@ On April 7 and 8, members of the UASB team Ananya Gangadhar and Jennifer Jackson
 ![UASB_EPA_expo](/Images/EPA_Expo.jpg)
 <p align="center">Figure 8: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
 
-![EPA_poster](/Images/epa_poster.png)
+![EPA_poster](/Images/epa_poster.PNG)
 <p align="center">Figure 9:  The poster that was presented at the EPA Expo. </p>
 
 
