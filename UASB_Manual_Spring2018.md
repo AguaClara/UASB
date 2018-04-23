@@ -186,6 +186,7 @@ Why must it be noted that hydraulic residence time is based on contact time with
 
 #### Design Parameters
 Table 1: Design parameters for the size and flow calculations for the proposed UASB reactor.
+
 |Design Parameter|Value|Basis of Design|
 |:---------------------------------------------:|:-------------------:|:-----------------------------------------------------------------------------------------------------------:|
 |Hydraulic Residence Time ```HRT```|4 hrs| From tracer tests conducted in [Fall 2016](https://www.overleaf.com/read/dnxfsrwdxbdf#/21165144/) and minimum values in literature ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).|
@@ -405,6 +406,7 @@ It is important to note that this equation only gives an approximation of the ac
 
 #### Design Parameters
 Table 3: Design parameters for biogas production.
+
 | Parameters | Value | Basis of Design |
 | :-------: | :--------: | :--------------: |
 | COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
@@ -555,6 +557,7 @@ Thus, the team decided to design a small outflow pipe from the biogas lid.  In t
 ### Sludge Sampling and Removal System
 
 ![UASB_Side](/Images/Sludge_Weir.PNG)
+ <p align="center">Figure 5: Schematic of the sludge samping system. </p>
 
 As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system.  
 
