@@ -274,7 +274,7 @@ print(UASB_design)
 ````
 
 ### Influent Flow System
-An ideal influent flow system is designed so as to prevent clogging, and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, and is not an exhaustive list of our sources.
+An ideal influent flow system is designed so as to prevent clogging, and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, but is not an exhaustive list of our sources.
 
 <div class="alert alert-block alert-danger">
 Reconsider first sentence. This should be the main idea of the whole section and all it tells me if that influence pipe design is a challenge. FIXED -jj
@@ -294,15 +294,15 @@ Top influent flow was chosen over bottom influent flow in order to decrease the 
 How does top influence flow prevent clogs? FIXED-jj
 </div>
 
-A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes. Values range from 1-4 $m^2$ (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
+A literature review reveals a lack of knowledge in the UASB community on the area in the reactor served by each influent pipe, or the influence area. Values range from 1-4 $m^2$ (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
 
 <div class="alert alert-block alert-danger">
-What are your sources for these claims? FIXED-ag.
-*The values mentioned are provided in the table with clickable links.*
+What are your sources for these claims? FIXED-AG.
+The values mentioned are provided in the table with clickable links.
 
-What is the influence area?
+What is the influence area? FIXED-AG
 
-I do not understand what "the reactor can be covered by at least one influent pipe."
+I do not understand what "the reactor can be covered by at least one influent pipe." FIXED - I hope this is more clear -AG
 </div>
 Table 2: Literature values for parameters associated with influent control system in traditional UASB reactors.
 
@@ -332,12 +332,12 @@ Why does the code for the table look so funky? JJ - It would be very hard to edi
 Which of each parameter will you be using? FIXED -AG
 </div>
 
-### Pulse Flow into the Reactor
+#### Pulse Flow into the Reactor
 It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.
 
-### Influent Flow Calculations
+#### Influent Flow Calculations
 
-Calculations for pulse flow have been started, but are not yet completed and so are not included in this report.  Below are calculations used to determine the influence area of each pipe given the diameter and number of pipes.
+Calculations for pulse flow have been started, but are not yet completed and so will be included in the next report.  Below are calculations used to determine the influence area of each pipe given the diameter and number of pipes.
 
 ```python
 # function calculates the influence area of each pipe in the reactor
@@ -348,7 +348,6 @@ def influence_area(n_pipes, diam):
   ia = ca/n_pipes           # ia = influence area
   print('The influence area of each pipe is ', ia)
   return ia
-
 
   num_pipes = 2
   infl_area_UASBpipe = influence_area(num_pipes, diam_UASB)
