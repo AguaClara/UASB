@@ -156,7 +156,7 @@ Center the diagrams -- There is something wrong with the Markdown formatting tha
 </div>
 
 ### Size and Flow
- Due to the fabrication experience AguaClara accumulated from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead failure.  Due to the complexities and time requirements required to determine the feasibility of this approach, the team did not conduct a structural analysis.  Instead, the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank.
+ Due to the fabrication experience AguaClara accumulated from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead failure.  Due to the complexities and time requirements required to determine the feasibility of this approach, the team did not conduct a structural analysis.  Instead, the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank,  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom as shown in Figure 3.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
 
  <div class="alert alert-block alert-danger">
  Why is that satisfactory? Where can I get more information about the 1 L/s geometry and structure?
@@ -164,14 +164,13 @@ Center the diagrams -- There is something wrong with the Markdown formatting tha
  What is the basic structure of the 1 L/s sed tank? Picture?
  </div>
 
-Previous work done by the 1 L/s team has shown that the bottom of the sedimentation tank is overdesigned to ensure that there is no catastrophic failure.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom for structural integrity.
 
 <div class="alert alert-block alert-danger">
 How much is it overdesigned? Is there a safety factor?
 
 How would the system fail? What are the risks?
 
-How does the sloped bottom ensure structural integrity?
+How does the sloped bottom ensure structural integrity?  -- 
 </div>
 
 This, however, will create a unique geometry and thus reduce the volume of reactor.  The following design parameters will serve to calculate the volume of the pilot scale UASB reactor and the flow rate through system.  It must be noted that hydraulic residence time is based on contact time with the sludge.
