@@ -156,7 +156,10 @@ Center the diagrams -- There is something wrong with the Markdown formatting tha
 </div>
 
 ### Size and Flow
- Due to the fabrication experience AguaClara accumulated from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
+ Due to the fabrication experience AguaClara accumulated from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
+
+ ![1LPS](https://github.com/AguaClara/UASB/blob/master/Images/1lps_plant.PNG?raw=true)
+ <p align="center">Figure 4: Schmematic of the 1 L/s sedimentation tank (Source: Herrara et al., 2016)</p>
 
  <div class="alert alert-block alert-danger">
  Why is that satisfactory? Where can I get more information about the 1 L/s geometry and structure? -- Fixed ZC
@@ -173,35 +176,36 @@ How would the system fail? What are the risks?  -- Fixed ZC
 How does the sloped bottom ensure structural integrity?  -- I'm not entirely sure on this either, but we know that the 1LPS design is able to support the weight of 7 foot tall column of water so we're saying we just model the design since our dimensions are going to be the same .  I've removed the original sentence here as well-- ZC
 </div>
 
-This, however, will create a unique geometry and thus reduce the volume of reactor.  The following design parameters will serve to calculate the volume of the pilot scale UASB reactor and the flow rate through system.  It must be noted that hydraulic residence time is based on contact time with the sludge.
+This, however, will create a unique geometry and thus reduce the volume of reactor.  The following design parameters will serve to calculate the volume of the pilot scale UASB reactor and the flow rate through system.  It also must be noted that hydraulic residence time is based on contact time with the sludge to account for the amount of time raw wastewater spends being biologically treated rather than time in the whole reactor volume.
 
 <div class="alert alert-block alert-danger">
-Consider "the design parameters will affect the volume of the..." - Try to make sentences straight forward and less wordy
+Consider "the design parameters will affect the volume of the..." - Try to make sentences straight forward and less wordy  -- Fixed ZC
 
-Why must it be noted that hydraulic residence time is based on contact time with the sludge?
-</div>
+Why must it be noted that hydraulic residence time is based on contact time with the sludge? -- Fixed ZC
+</div>  
 
 #### Design Parameters
+Table 1: Design parameters for the size and flow calculations for the proposed UASB reactor.
 |Design Parameter|Value|Justification of Parameter|
 |:---------------------------------------------:|:-------------------:|:-----------------------------------------------------------------------------------------------------------:|
 |Hydraulic Residence Time ```HRT```|4 hrs| From tracer tests conducted in [Fall 2016](https://www.overleaf.com/read/dnxfsrwdxbdf#/21165144/) and minimum values in literature ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).|
 | Wastewater Generation per Person ```WW_gen``` |3 mL/s|Rule of Thumb from Monroe|
-|   Blackwater Generation per person ```WW_gen_bw``` |         0.6 mL/s        |               20% of mixed wastewater  From Prof. Richardson's estimation                       |
-|             Center Space of Base              |        3 in         | Based on the [1 L/s plant design](https://www.overleaf.com/6186375zdpjfc) (more info in their Google Drive) |
-|                  Slope Angle                  | 60 $$ $^{\circ}$ $$ |                  Based on the [1 L/s plant design](https://www.overleaf.com/6186375zdpjfc)                  |
+|   Blackwater Generation per person ```WW_gen_bw``` |         0.6 mL/s        |                Prof. Richardson's approximation for blackwater generation (based on idea that 20% of volume of mixed wastewater is blackwater)                       |
+|             Center Space of Base              |        3 in         | Based on semi-circle between the two sloped plates on the bottom of the [1 L/s plant design](https://www.overleaf.com/6186375zdpjfc) sedimentation tank shown in Figure 4 (more info in their Google Drive) |
+|                  Slope Angle of Base Plates                 | 60 $$ $^{\circ}$ $$ |                  Based on the sloped plates used in the bottom of the [1 L/s plant design](https://www.overleaf.com/6186375zdpjfc) sedimentation tank                 |
 |              Diameter of Reactor              |       3 feet        |             Based on size of corrugated pipe used for the body of the 1 L/s sedimentation tank              |
 |             Height of the Reactor             |       7 feet        |                               Based on the maximum ceiling height of the lab                                |
 
 <div class="alert alert-block alert-danger">
 The code for the table is very funky - try to make it more organized.  --  Markdown makes these funky spaces in the code automatically when I indent to go to the next line.  I have cleaned it up but they tend to appear again when ever the table is messed with.  If the screen were wider, each line would appear appropriately formatted on the code side. -- ZC
 
-I don't understand the "20% of mixed wastewater from Prof. Richardson's estimation"  for the blackwater generation per person. 20% of what?
+I don't understand the "20% of mixed wastewater from Prof. Richardson's estimation"  for the blackwater generation per person. 20% of what? -- I hope this is more clear -- ZC
 
-What is the center space of the base?
+What is the center space of the base?  -- Fixed ZC
 
-Slope angle of what?
+Slope angle of what? -- Fixed ZC
 
-Consider a diagram with these parameters labeled
+Consider a diagram with these parameters labeled -- I hope the addition of Figure 4 makes things more clear -- ZC
 </div>
 
 #### Code
@@ -298,6 +302,7 @@ What is the influence area?
 
 I do not understand what "the reactor can be covered by at least one influent pipe."
 </div>
+Table 2: Literature values for parameters associated with influent control system in traditional UASB reactors.
 
 | Parameter                                                                         | [Anaerobic Reactors Textbook](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f) | [Wastewater Treatment for Pollution Control and Reuse 3rd ed](http://accessengineeringlibrary.com/browse/wastewater-treatment-for-pollution-control-and-reuse-third-edition/c9780070620995ch07#c9780070620995ch07lev1sec01) | [Van Lier: Anaerobic Sewage Treatment using UASB Reactors](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
 |:--------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -332,7 +337,7 @@ It has recently been discovered that the flow into the reactor will be too small
 
 Calculations for pulse flow have been started, but are not yet completed and so are not included in this report.
 
-```Python
+```python
 # function calculates the influence area of each pipe in the reactor
 def influence_area(n_pipes, diam):
   ## n_pipes = number of influent pipes in UASB
@@ -396,9 +401,10 @@ $T$ = Temperature ( ${^\circ}C$)
 
 Since biogas contains other gasses such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume methane is 75%, as given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf)
 
-It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will build up pressure.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
+It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will dangerously pressurize flammable gas.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
 #### Design Parameters
+Table 3: Design parameters for biogas production.
 | Parameters | Value | Justification of Design |
 | :-------: | :--------: | :--------------: |
 | COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
@@ -471,26 +477,26 @@ print("The size of the storage container to store one day worth of biogas produc
 
 An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
 
-
-| Type of Storage | Pros | Cons |
+Table 4: List of advantages and disadvantages associated with different biogas storage systems.
+| Type of Storage | Advantages | Disadvantages |
 |:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
 | Gas Bag         | (1) Flexible and easy connection on top of next to reactor **(2) Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
 | Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
 | Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate  |
 
 <div class="alert alert-block alert-danger">
-Table label/title?
+Table label/title? -- Fixed ZC
 </div>
 
 After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
 
-Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 4.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 5.
+Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 5.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 6.
 
 ![Biogas_Close](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true)
-<p align="center">Figure 4: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
+<p align="center">Figure 5: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
 
 ![Biogas_Storage](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Storage.jpg?raw=true)
-<p align="center">Figure 5: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
+<p align="center">Figure 6: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
 
 <div class="alert alert-block alert-danger">
 Is the gas bag system in use for most UASB's?  Fixed -- ZC
