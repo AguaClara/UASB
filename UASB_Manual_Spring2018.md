@@ -186,7 +186,7 @@ Why must it be noted that hydraulic residence time is based on contact time with
 
 #### Design Parameters
 Table 1: Design parameters for the size and flow calculations for the proposed UASB reactor.
-|Design Parameter|Value|Justification of Parameter|
+|Design Parameter|Value|Basis of Design|
 |:---------------------------------------------:|:-------------------:|:-----------------------------------------------------------------------------------------------------------:|
 |Hydraulic Residence Time ```HRT```|4 hrs| From tracer tests conducted in [Fall 2016](https://www.overleaf.com/read/dnxfsrwdxbdf#/21165144/) and minimum values in literature ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).|
 | Wastewater Generation per Person ```WW_gen``` |3 mL/s|Rule of Thumb from Monroe|
@@ -405,7 +405,7 @@ It is important to note that this equation only gives an approximation of the ac
 
 #### Design Parameters
 Table 3: Design parameters for biogas production.
-| Parameters | Value | Justification of Design |
+| Parameters | Value | Basis of Design |
 | :-------: | :--------: | :--------------: |
 | COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
 | Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
@@ -593,25 +593,25 @@ Has anything been done yet? Include what you have in the future.
 </div>
 
 ### Effluent Flow System
-Based on settling tests conducted on the lab scale UASB reactors during Summer 2017, it was determined that a full cross section of plate settlers is not required.  Similar effluent quality can be achieved by a capture velocity that is equal to the upflow velocity, contrary to AguaClara drinking water plant designs.
+Based on settling tests conducted on the lab scale UASB reactors during Summer 2017, it was determined that a lower capture velocity than that used in AguaClara drinking water plants can sufficiently settle sludge granules and other solids in a UASB reactor (Chen, 2017). As such, fewer plate settlers are required in the UASB than in the 1 L/s plant sedimentation tank.  To reduce costs and fabrication time associated with constructing the sloped body of the 1 L/s sedimentation tank to house multiple large plates as shown in Figure 4, a new effluent and solid settling system was designed.
+
+In this system, the body of the UASB reactor would leave the 3 foot diameter corrugated pipe intact rather than having to cut, rotate, and PVC weld to achieve the bend in the body of the reactor.  Instead, a sloped tube, or tube settler, would be inserted into the side of reactor to allow effluent to leave the reactor.  Inside this tube, a smaller set of plates would be placed to promote settling as shown in Figure 2.
 
 <div class="alert alert-block alert-danger">
-The full cross-section of plate settlers is a new concept. Explain more
+The full cross-section of plate settlers is a new concept. Explain more -- Fixed ZC
 </div>
 
-With this change in design, a new effluent system was designed that consists of a tube settler with plate settlers inside.  This design will provide comparable effluent quality to a design with plate settlers within the reactor, but will reduce fabrication time and costs.  This effluent system is pictured below.
 
 <div class="alert alert-block alert-danger">
-Whole paragraph really unclear. There will be tube settlers inside the UASB reactor?
+Whole paragraph really unclear. There will be tube settlers inside the UASB reactor?  -- Yes, I hope the new description with referral to earlier figures makes this more clear -- ZC
 </div>
 
 #### Design Parameters
 
-The table below lists the critical design parameters for the effluent tube.
-
 <div class="alert alert-block alert-danger">
 Label the table!
 </div>
+The Table 6: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm.
 
 Parameter| Value | Basis of Design
 :------------- |:-------------|:--------
@@ -623,7 +623,7 @@ Thickness of Plates ```thickness_sed_plate```| 2 mm| Taken from corrugated plast
 The code below serves to calculate the size of the tube settler, the number of plates required, and the overall height of the settling arm.
 
 <div class="alert alert-block alert-danger">
-Consider "This code" instead of "This document"
+Consider "This code" instead of "This document" -- Fixed ZC
 </div>
 
 #### Code
@@ -636,8 +636,8 @@ thickness_sed_plate = 2 * u.mm
 flow = UASB_design[2]
 
 # Assumptions
-diam_sludge_weir = 6 * u.inch
-sep_dist = 12 * u.inch
+diam_sludge_weir = 6 * u.inch ## size of sludge weir used in 1L/s sed tank
+sep_dist = 12 * u.inch  ## Arbitrary distance set to constrain the available space required for the tube settler since the tube settler has to set the water level inside the reactor but also have the entrance be above the sludge blanket
 water_elevation = 6.5 * u.ft  ## figure out from previous reports
 
 
@@ -678,7 +678,7 @@ print("The number of plate settlers is", number_plate_settler.magnitude, number_
 ```
 
 <div class="alert alert-block alert-danger">
-Justify all assumptions in the code.
+Justify all assumptions in the code.  -- Fixed ZC
 </div>
 
 ## Future Work
@@ -716,8 +716,29 @@ This will be a great document for future teams! Keep letting this future audienc
 </div>
 
 ## Bibliography
-Logan, B. E., Hermanowicz, S. W., & Parker,A. S. (1987). A Fundamental Model for Trickling Filter Process Design. Journal (Water Pollution Control Federation), 59(12), 1029–1042.
+Abbasi, T., & Abbasi, S. A. (2012). Formation and impact of granules in fostering clean energy production and wastewater treatment in upflow anaerobic sludge blanket (UASB) reactors. Renewable and Sustainable Energy Reviews, 16(3), 1696–1708. https://doi.org/10.1016/j.rser.2011.11.017
+
+Chen, Z. (2017, August). Upflow Anaerobic Sludge Blanket, Summer 2017.
+
+Chong, S., Sen, T. K., Kayaalp, A., & Ang, H. M. (2012). The performance enhancements of upflow anaerobic sludge blanket (UASB) reactors for domestic sludge treatment – A State-of-the-art review. Water Research, 46(11), 3434–3470. https://doi.org/10.1016/j.watres.2012.03.066
+
+Ghoneim, W. A. M., Helal, A. A., & Wahab, M. G. A. (2016). Renewable energy resources and recovery opportunities in wastewater treatment plants. In 2016 3rd International Conference on Renewable Energies for Developing Countries (REDEC) (pp. 1–8). https://doi.org/10.1109/REDEC.2016.7577509
+
+Herrara, D., Hua, Y., Kim, S. M., & Yang, F. (2016, December). Prefabrication 1 L/s, Fall 2016.
+
+Kim, A., Chen, Y., & Evan, G. (n.d.). Upflow Anaerobic Sludge Blanket, Fall 2016.
+
+Lettinga, G., & Pol, L. W. H. (1991). UASB-Process Design for Various Types of Wastewaters. Water Science and Technology, 24(8), 87–107.
+
+Mittal, A. (2011). Biological Wastewater Treatment. Water Today. Retrieved from http://www.academia.edu/7451295/Biological_Wastewater_Treatment
+
+Narnoli, S. K., & Mehrotra, I. (1997). Sludge blanket of UASB reactor: Mathematical simulation. Water Research, 31(4), 715–726. https://doi.org/10.1016/S0043-1354(97)80987-6
+
+Subramanyam, R. (2013). Physicochemical and Morphological Characteristics of Granular Sludge in Upflow Anaerobic Sludge Blanket Reactors. Environmental Engineering Science, 30(5), 201–212. https://doi.org/10.1089/ees.2012.0347
+
+Van Lier, J. B., Vashi, A., Van Der Lubbe, J., & Heffernan, B. (2010). Anaerobic Sewage Treatment using UASB Reactors: Engineering and Operational Aspects. In Environmental Anaerobic Technology (Vols. 1–0, pp. 59–89). IMPERIAL COLLEGE PRESS. https://doi.org/10.1142/9781848165434_0004
+
 
 <div class="alert alert-block alert-danger">
-Gasp! You listed so many sources throughout this manual and only recorded one source here! Update this and include info from past teams!
+Gasp! You listed so many sources throughout this manual and only recorded one source here! Update this and include info from past teams!  -- Fixed ZC
 </div>
