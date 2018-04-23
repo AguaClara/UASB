@@ -283,7 +283,7 @@ Reconsider first sentence. This should be the main idea of the whole section and
 One challenge for an influent flow system is combatting pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
 
 <div class="alert alert-block alert-danger">
-Pick either first or third person. Do not change half way through
+Pick either first or third person. Do not change half way through. FIXED -AG
 
 Second half of this paragraph is strong, but it is the main point, get to it in first paragraph FIXED-jj
 </div>
@@ -294,10 +294,11 @@ Top influent flow was chosen over bottom influent flow in order to decrease the 
 How does top influence flow prevent clogs? FIXED-jj
 </div>
 
-A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes.  Values range from 1-4 $m^2$ (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
+A literature review reveals a lack of knowledge in the UASB community on the influence area of influent pipes. Values range from 1-4 $m^2$ (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered especially, as they allow for better clog detection and prevention.
 
 <div class="alert alert-block alert-danger">
-What are your sources for these claims?
+What are your sources for these claims? FIXED-ag.
+*The values mentioned are provided in the table with clickable links.*
 
 What is the influence area?
 
@@ -323,20 +324,20 @@ It has been decided that the following parameters will likely be used:
 The rest of the parameters will be adjusted to achieve these parameters.
 
 
-<div class="alert alert-block alert-danger">
-Where is the table label for this table?
+<div class="alert aleÂrt-block alert-danger">
+Where is the table label for this table? FIXED -AG
 
-Why does the code for the table look so funky? It would be very hard to edit.
+Why does the code for the table look so funky? JJ - It would be very hard to edit. It also self-indents.
 
-Which of each parameter will you be using?
+Which of each parameter will you be using? FIXED -AG
 </div>
 
 ### Pulse Flow into the Reactor
-It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would be necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.
+It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.
 
 ### Influent Flow Calculations
 
-Calculations for pulse flow have been started, but are not yet completed and so are not included in this report.
+Calculations for pulse flow have been started, but are not yet completed and so are not included in this report.  Below are calculations used to determine the influence area of each pipe given the diameter and number of pipes.
 
 ```python
 # function calculates the influence area of each pipe in the reactor
@@ -415,7 +416,7 @@ Table 3: Design parameters for biogas production.
 | Temperature ```T``` | 25 $^{\circ}$ C | Assuming optimal biological conditions |
 
 <div class="alert alert-block alert-danger">
-Table label/title
+Table label/title. Fixed ZC
 
 Inconsistent table column labels : basis of design vs. justification  -- Fixed ZC
 
@@ -558,7 +559,7 @@ Thus, the team decided to design a small outflow pipe from the biogas lid.  In t
 ### Sludge Sampling and Removal System
 
 ![UASB_Side](/Images/Sludge_Weir.PNG)
- <p align="center">Figure 5: Schematic of the sludge samping system. </p>
+ <p align="center">Figure 7: Schematic of the sludge samping system. </p>
 
 As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system.  
 
@@ -581,7 +582,7 @@ Refer to a diagram. It is hard to keep track of all the different parts.  Added 
 So the drainage vale will drain the entire UASB reactor and allow for the nonorganics to get scooped out?
 </div>
 
-#### Design Parameters
+#### Design Parameters of Sampling Ports and Sludge Weirs
 
 The dimensions of the sludge weir are not incredibly important design parameters, and were thus set to values that seemed reasonable.  These systems will be tested in our first design and changed accordingly.  These parameters are set in the table below.
 
@@ -615,7 +616,7 @@ Whole paragraph really unclear. There will be tube settlers inside the UASB reac
 <div class="alert alert-block alert-danger">
 Label the table!
 </div>
-The Table 6: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm.
+Table 6: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm.
 
 Parameter| Value | Basis of Design
 :------------- |:-------------|:--------
@@ -685,9 +686,23 @@ print("The number of plate settlers is", number_plate_settler.magnitude, number_
 Justify all assumptions in the code.  -- Fixed ZC
 </div>
 
+## 2018 EPA Expo in Washington, D.C.
+
+On April 7 and 8, members of the UASB team Ananya Gangadhar and Jennifer Jackson presented the Phase 1 UASB work at the EPA's National Sustainable Design Expo.  The Expo was part of a larger event, the USA Science and Engineering Festival at the Walter E. Washington Convention Center in Washington, D.C.  Ananya and Jennifer, along with Professor Ruth Richardson and other AguaClara members, presented the current UASB Reactor design.
+
+
+![UASB_EPA_expo](/Images/EPA_Expo.jpg)
+<p align="center">Figure 8: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
+
+![EPA_poster](/Images/epa_poster.png)
+<p align="center">Figure 9:  The poster that was presented at the EPA Expo. </p>
+
+
+
 ## Future Work
 
 A rough timeline of the project is summarized below.  The overall goal is for design work to be complete by the end of summer 2018.  During Fall 2018, the subteam will become a fabrication team and build the completed reactor.  After that the UASB will be implemented and tested at the Ithaca Wastewater Plant, and data gathered from this testing will inform future design.  Once design is complete and the system has been proven, the finished product will be shipped to Honduras for field testing, and then implemented in rural communities full time.  
+
 
 #### Spring 2018
 * Finish Biogas design
