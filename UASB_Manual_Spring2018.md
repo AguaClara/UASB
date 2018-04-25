@@ -7,7 +7,7 @@
 Please do not delete any of my comments. Just address them in the manual and I will check them on the next submission. If you disagree with a comment, then explain why in your own comment below mine.
 </div>
 
-## Abstract 
+## Abstract
 Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.
 
 <div class="alert alert-block alert-danger">
@@ -38,7 +38,7 @@ Currently in the United States, effective municipal wastewater treatment facilit
 Condense in-text citations FIXED-jj
 </div>
 
-UASB reactors, used as a preliminary wastewater treatment process to clarify wastewater, remove suspended solids and reduce organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. A byproduct of the biological processes in UASB reactors is methane. Methane is a potent greenhouse gas, but if collected, can be used as a fuel, known as biogas.  In this process, methane is converted to carbon dioxide, a safer and less potent greenhouse gas.
+UASB reactors, used as a preliminary wastewater treatment process to clarify wastewater, remove suspended solids and reduce organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a by-product on anaerobic digestion.  This methane can be captured and burned for energy production or heating.
 
 <div class="alert alert-block alert-danger">
 Move the USAB acronym definition to the first use and then delete this one. FIXED-jj
@@ -143,22 +143,36 @@ What is filamentous layer of bacteria?  --  this referred to the solid matter bu
 ### Overview of Proposed UASB and Methods
 A schematic of the UASB with proposed design improvements is shown in Figure 2 and Figure 3.  Each of the following sections will briefly overview the component/aspect of interest, the design parameters associated with this component, and the code used to calculate the final parameters.  ***It must be noted that there are parts of the reactor that are still a work in progress***.  In particular, work is still being conducted on designing the influent and biogas capture systems.
 
+<div style="text-align:center">
+
 ![UASB_Side](/Images/AC_SideView.PNG)
+
+
 <p align="center">Figure 2: The Side View of the proposed UASB </p>
+</div>
+
+<div style="text-align:center">
 
 ![UASB_Side](/Images/AC_FrontView.PNG)
-<p align="center">Figure 3: The Front View of the proposed UASB with sloped bottom geometry. </p>
+
+</div>
+
+
+<p align="center">Figure 3: The Front View of the proposed UASB with sloped bottom geometry.</p>
 
 <div class="alert alert-block alert-danger">
 Label Figures with numerical and not written numbers i.e. Figure 1 not Figure one -- Fixed ZC
 
-Center the diagrams -- There is something wrong with the Markdown formatting that I cannot for the life of me center this diagram.  I've looked on StackOverflow as well but according to users there is no built-in Markdown syntax that will allow for image centering-- ZC
+Center the diagrams -fixed IC
 </div>
 
 ### Size and Flow
  Due to the fabrication experience AguaClara accumulated from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
+<div style="text-align:center">
 
  ![1LPS](https://github.com/AguaClara/UASB/blob/master/Images/1lps_plant.PNG?raw=true)
+
+ </div>
  <p align="center">Figure 4: Schmematic of the 1 L/s sedimentation tank (Source: Herrara et al., 2016)</p>
 
  <div class="alert alert-block alert-danger">
@@ -540,16 +554,16 @@ print("The storage volume required to store", time_stor, "of biogas is", vol_sto
 ### Fats, Oils and Greases (FOG) Removal System
 Typical wastewater from domestic sources contains many particles besides organic waste.  These include inorganics, such as sand, rocks, and clay that enter the wastewater system, along with organics that cannot be broken down by the anaerobic bacteria within the reactor.  Primary amongst these organics are fatty materials, including oils and greases.  These materials enter the wastewater stream primary from cooking wastes that are poured directly down drains.  
 
-Fats are typically lighter than water and hydrophobic, causing them to float to the top of the UASB reactor and accumulate within the biogas capture lid.  If not removed, they will build up in this lid and cause problems.  Therefore, a successful UASB system must include an easy removal system for these materials.  Fats removed this way in domestic wastewater treatment are typically sent to a landfill to be disposed of.
+Fats are typically lighter than water and hydrophobic, causing them to float to the top of the UASB reactor and accumulate within the biogas capture lid.  If not removed, they will build up in this lid and hinder reactor efficiency.  Therefore, a successful UASB system must include an easy removal system for these materials.  Fats removed this way in domestic wastewater treatment are typically sent to a landfill for disposal.
 
-For our design, the team began with trying to characterize the rate that fats would buildup within the reactor to determine how often they will need to be removed.  However, this term in incredibly variable, and depends on the character of the wastewater, how much is removed in screening, effluent, etc.  Talking with Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility, we learned that they only skim their clarifiers once a month for FOG.  Given this, the team focused on designing a simple system that can remove FOG whenever necessary.
+The design process began with trying to characterize the rate that fats would buildup within the reactor to determine how often they will need to be removed.  However, this term in incredibly variable, and depends on the character of the wastewater, how much is removed in screening, effluent, etc.  Talking with Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility, we learned that they only skim their clarifiers once a month for FOG.  Given this, the team focused on designing a simple system that can remove FOG whenever operators determine it is necessary.
 
 The team considered three possible systems for FOG removal:
 * A mechanical or gravitational separator before influent that captured and removed fat particles
 * Dosing of a coagulant to bind fat particles and make them easier to remove
 * An outflow pipe or siphon coming out of the removable lid with a valve to allow discharge of water containing Fats
 
-Another important note is that the system will always have a failsafe system to remove fats.  Since our biogas lid is removable, it is possible to remove this lid and manually skim fats off the top and dispose of them.  This was determined to be undesirable for a number of reasons.  First, it requires direct human input, which increases work for the community, and requires more training on usage.  Second, opening the system in this way depressurizes it, and releases any captured biogas produced within.  Finally, this requires close human contact with wastewater, which is a undesirable job and increases risk of infections or accidental discharge of wastewater.
+In addition to these methods, the system will always have a failsafe system to remove fats.  Since the biogas lid is removable, fats can be manually skimmed off the top.  This was determined to be undesirable for a number of reasons.  First, it requires direct human input, which increases work for the community, and requires more training on usage.  Second, opening the system in this way depressurizes it, and releases any captured biogas produced within.  Finally, this requires close human contact with wastewater, which is a undesirable job and increases risk of infections or accidental discharge of wastewater.
 
 After brainstorming these options, the team quickly ruled out the first two options, and they were complicated and either required mechanical parts or chemical dosing, which go against the design philosophy of the project to make the UASB simple and cheap to install and operate.
 
@@ -557,9 +571,17 @@ Thus, the team decided to design a small outflow pipe from the biogas lid.  In t
 
 ### Sludge Sampling and Removal System
 
-![UASB_Side](/Images/Sludge_Weir.PNG)
- <p align="center">Figure 7: Schematic of the sludge samping system. </p>
+<br>
+<div style="text-align:center">
 
+![UASB_Side](/Images/Sludge_Weir.PNG)
+
+
+
+
+ <p align="center">Figure 7: Schematic of the sludge sampling system. </p>
+
+</div>
 As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system.  
 
 The sludge weir consists of a tube jutting out of the reactor at a downwards angle.  This weir is implemented at the top of anticipated height of the sludge blanket, so as to capture bacterial growth above this limit.  
@@ -578,13 +600,15 @@ Refer to a diagram. It is hard to keep track of all the different parts.  Added 
 
 
 <div class="alert alert-block alert-danger">
-So the drainage vale will drain the entire UASB reactor and allow for the nonorganics to get scooped out?
+So the drainage vale will drain the entire UASB reactor and allow for the nonorganics to get scooped out? -added section to clarify IC
 </div>
 
 #### Design Parameters of Sampling Ports and Sludge Weirs
 
 The dimensions of the sludge weir are not incredibly important design parameters, and were thus set to values that seemed reasonable.  These systems will be tested in our first design and changed accordingly.  These parameters are set in the table below.
 
+
+Table 6: Design parameters for sludge sampling systems.
 |       Parameter        |  Value   |               Basis of Design                |
 |:----------------------:|:--------:|:--------------------------------------------:|
 |  Sludge Weir Diameter  | 6 in |     Based on Floc Hopper in 1 L/s plant      |
@@ -593,7 +617,7 @@ The dimensions of the sludge weir are not incredibly important design parameters
 | Number of Sampling Ports                       |  TBD      | Based on  number of sampling sites needed   |
 
 <div class="alert alert-block alert-danger">
-Has anything been done yet? Include what you have in the future.
+Has anything been done yet? Include what you have in the future. -added IC
 </div>
 
 ### Effluent Flow System
@@ -615,7 +639,7 @@ Whole paragraph really unclear. There will be tube settlers inside the UASB reac
 <div class="alert alert-block alert-danger">
 Label the table!
 </div>
-Table 6: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm.
+Table 7: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm.
 
 Parameter| Value | Basis of Design
 :------------- |:-------------|:--------
@@ -687,7 +711,7 @@ Justify all assumptions in the code.  -- Fixed ZC
 
 ## 2018 EPA Expo in Washington, D.C.
 
-On April 7 and 8, members of the UASB team Ananya Gangadhar and Jennifer Jackson presented the Phase 1 UASB work at the EPA's National Sustainable Design Expo.  The Expo was part of a larger event, the USA Science and Engineering Festival at the Walter E. Washington Convention Center in Washington, D.C.  Ananya and Jennifer, along with Professor Ruth Richardson and other AguaClara members, presented the current UASB Reactor design.
+On April 7 and 8,  UASB team members Ananya Gangadhar and Jennifer Jackson presented the Phase 1 UASB work at the EPA's National Sustainable Design Expo.  The Expo was part of a larger event, the USA Science and Engineering Festival at the Walter E. Washington Convention Center in Washington, D.C.  Ananya and Jennifer, along with Professor Ruth Richardson and other AguaClara members, presented the current UASB Reactor design.
 
 
 ![UASB_EPA_expo](/Images/EPA_Expo.jpg)
@@ -721,6 +745,7 @@ A rough timeline of the project is summarized below.  The overall goal is for de
 Revise this for clarity and understanding.
 
 Why use a list in this way?
+-revised IC
 </div>
 
 <div class="alert alert-block alert-danger">
