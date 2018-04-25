@@ -609,6 +609,7 @@ The dimensions of the sludge weir are not incredibly important design parameters
 
 
 Table 6: Design parameters for sludge sampling systems.
+
 |       Parameter        |  Value   |               Basis of Design                |
 |:----------------------:|:--------:|:--------------------------------------------:|
 |  Sludge Weir Diameter  | 6 in |     Based on Floc Hopper in 1 L/s plant      |
