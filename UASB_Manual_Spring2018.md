@@ -372,7 +372,7 @@ print("The size of the storage container to store one day worth of biogas produc
 
 ### Biogas Storage System
 
-An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below. f
+An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
 
 Table 4: List of advantages and disadvantages associated with different biogas storage systems.
 
@@ -502,6 +502,10 @@ Table 6: Design parameters for sludge sampling systems.
 |   Sludge Weir Length   |   TBD    | Based on desired volume of sludge per sample |
 | Sampling Port Diameter |   TBD    |          Based on fabrication specs          |
 | Number of Sampling Ports                       |  TBD      | Based on  number of sampling sites needed   |
+
+### Hydrogen Sulfide Removal system
+
+Add for final report 
 
 ### Effluent Flow System
 Based on settling tests conducted on the lab scale UASB reactors during Summer 2017, it was determined that a lower capture velocity than that used in AguaClara drinking water plants can sufficiently settle sludge granules and other solids in a UASB reactor (Chen, 2017). As such, fewer plate settlers are required in the UASB than in the 1 L/s plant sedimentation tank.  To reduce costs and fabrication time associated with constructing the sloped body of the 1 L/s sedimentation tank to house multiple large plates as shown in Figure 4, a new effluent and solid settling system was designed.
