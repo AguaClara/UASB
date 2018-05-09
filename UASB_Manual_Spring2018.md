@@ -90,6 +90,8 @@ A schematic of the UASB with proposed design improvements is shown in Figure 2 a
 
 <div class="alert alert-block alert-danger">
 What are the three things with dotted lines?
+
+-> They are influent pipes.  Do they really need to be labeled? -JJ
 </div>
 
 <div style="text-align:center">
@@ -431,11 +433,11 @@ Fats are typically lighter than water and hydrophobic, causing them to float to 
 Reconsider last sentence because you haven't told us what "this way" is yet. FIXED-AG
 </div>
 
-The initial stages of the design process involved characterizing the rate at which fats would buildup within the reactor to determine how often they would have to be removed. However, this buildup rate is highly variable, depending on the nature of wastewater, and FOG removal efficiency during screening. Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility (IAWWTF), informed that the IAWWTF skims its clarifiers once a month for FOG removal. With this information, the team decided to focus on designing a simple system that can remove FOG whenever the plant operators deem it necessary.
+The design process began with characterizing the rate at which fats would buildup within the reactor to determine how often they would have to be removed. However, this buildup rate is highly variable and depends on both the nature of wastewater and FOG removal efficiency during screening. Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility (IAWWTF), informed that the IAWWTF skims its clarifiers once a month for FOG removal. With this information, the team decided to focus on designing a simple system that can remove FOG whenever the plant operators deem it necessary.
 
 
 <div class="alert alert-block alert-danger">
-Consider "The design process began with characterizing the rate"
+Consider "The design process began with characterizing the rate" FIXED-JJ
 
 proofread second sentence
 
