@@ -22,7 +22,7 @@ Currently in the United States, effective municipal wastewater treatment facilit
 Avoid global south, ambiguous. FIXED-AG
 </div>
 
-UASB reactors, used as a preliminary wastewater treatment process to clarify wastewater, remove suspended solids and reduce organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a by-product of anaerobic digestion.  This methane can be captured and burned for energy production or heating.
+UASB reactors, used as a preliminary wastewater treatment process, work to clarify wastewater, remove suspended solids and reduce organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a by-product of anaerobic digestion.  This methane can be captured and burned for energy production or heating.
 
 <div class="alert alert-block alert-danger">
 change "by-product on anaerobic" to "by-product of anaerobic" FIXED-AG
@@ -31,17 +31,17 @@ change "by-product on anaerobic" to "by-product of anaerobic" FIXED-AG
 <!--- how we modified UASBs --->
 In January 2017, a novel pilot scale UASB reactor design was created by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally.  Later sections of this manual detail these changes and quantify their impact on the design.
 
-Since submission of this proposal, there has been ongoing work to develop the final design of the reactor.  This document details the full design process, and is written to serve as a manual for our full UASB design.  As the design is completed, additional information will be added detailing a full fabrication plan for the reactor.
+Since submission of this proposal, there has been ongoing work to develop the final design of the reactor.  This document details the full design process, and is written to serve as a manual for the full UASB design.  As the design is completed, additional information will be added detailing a full fabrication plan for the reactor.
 
 ## Literature Review and Previous Work
 
 ### Conventional Wastewater Treatment Options
-Municipal and industrial wastewater can be treated via biological, chemical, or thermal oxidation treatment processes. While all processes lead to the eventual breakdown of organic matter, biological treatment is more commonly used because the latter two treatment options require higher capital investment and operational costs due to  the need of complex, and chemicals or energy inputs ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). The two main types of biological treatment are the activated sludge process and anaerobic digestion. When compared to the activated sludge process, anaerobic digestion yields less sludge and reduces energy input ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). Although there are some drawbacks to anaerobic digestion such as long solids retention time (SRT) and insufficient nutrient removal, the reduced energy input renders it the most feasible technology for small communities lacking proper water treatment  ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
+Municipal and industrial wastewater can be treated via biological, chemical, or thermal oxidation treatment processes. While all processes lead to the eventual breakdown of organic matter, biological treatment is more commonly used because the latter two treatment options require higher capital investment and operational costs due to the need of complex, and chemicals or energy inputs ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). The two main types of biological treatment are the activated sludge process and anaerobic digestion. When compared to the activated sludge process, anaerobic digestion yields less sludge and reduces energy input ([Mittal et. al, 2011](http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf)). Although there are some drawbacks to anaerobic digestion such as long solids retention time (SRT) and insufficient nutrient removal, the reduced energy input renders it the most feasible technology for small communities lacking proper water treatment  ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 ### UASB Basics
 
 ![Conventional_UASB](/Images/Conventional_UASB.PNG)
-<p align="center">Figure 1: A conventional UASB design.  Wastewater is pumped through the bottom of the reactor where it is processed by anaerobic microorganisms that are packed into sludge granules.  Spread through the bottom of the reactor allows maximized  contact with the sludge.  As the microorganisms process organic matter in the wastewater, biogas is produced and collected in a funnel structure for eventual use.  </p>
+<p align="center">Figure 1: A conventional UASB design.  Wastewater is pumped through the bottom of the reactor where it is processed by anaerobic microorganisms that are packed into sludge granules. Wastewater spread through the bottom of the reactor promotes maximized contact with the sludge.  As the microorganisms process organic matter in the wastewater, biogas is produced and collected in a funnel structure for eventual use.  </p>
 
 UASBs utilize mixed cultures of anaerobic microorganisms to biologically process and remove organic matter (OM), chemical oxygen demand (COD), biological oxygen demand (BOD), and suspended solids (SS).  They are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization.  Due to the dispersion of influent to maximize sludge contact as shown in Figure 1, UASBs can achieve optimal levels of primary treatment quite quickly compared to other anaerobic treatment processes.  In alternative processes such as anaerobic filters, anaerobic baffled reactors, and septic tanks, water passes over an exposed surface of sludge and organic matter is treated as it diffuses through ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
@@ -53,7 +53,7 @@ Only define UASB once.  -- This redundancy is inevitable given the format of the
 - I can't remember writing this comment, but I might have meant defining the acronym only once, either way, I understand and will keep this comment here through the final to remind myself of it! NM
 </div>
 
-A useful by-product of this process is biogas, a mixture of methane, carbon dioxide, and some trace gases.  After production in the digestion zone, methane travels upwards through the water and is caught in the cone of the Gas Liquid Solid Separator.  From there, it is funneled upwards into a storage vehicle where it can later be burned for heat or energy generation.  More details on the biogas capture and usage can be found in the [Biogas Capture](#Biogas-Capture-System) section of the manual.
+A useful by-product of this process is biogas, a mixture of methane, carbon dioxide, and some trace gases.  After production in the digestion zone, methane travels upwards through the water and is caught in the cone of the Gas-Liquid-Solid Separator (GLSS).  From there, it is funneled upwards into a storage vehicle where it can later be burned for heat or energy generation.  More details on the biogas capture and usage can be found in the [Biogas Capture](#Biogas-Capture-System) section of the manual.
 
 Typically, UASB reactors are large,  cylindrical or rectangular tanks 4-5 meters in height, constructed of reinforced concrete designed as shown to Figure 1.  While UASBs are traditionally used for large-scale, centralized wastewater treatment, their mechanism of treatment is operationally simple since there are no mechanized components which eases maintenance concerns.  In addition, the standard geometry readily allows for scaling of the design ([van Lier et al., 2010](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)).  Although fixed costs for the construction can still be significant, they can be reduced through use of alternative materials such as PVC.
 
@@ -61,7 +61,7 @@ Due to the higher operational capacity,  opportunity for resource recovery in bi
 
 ### Problems Associated with UASBs
 
-Conventional UASB reactors utilize an invert funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas  that is produced ([Narnoli et. al, 1997](https://www.sciencedirect.com/science/article/pii/S0043135497809876)). The design of the GLSS, however, is not gas-tight due to the free surface on the perimeter of the gas separator system as shown in Figure 1.  Gas that is able to travel around the edges of the GLSS can readily escape from the system.  Since methane is a potent greenhouse gas, the biogas should be captured to reduce negative environmental impacts ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
+Conventional UASB reactors utilize an invert funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas that is produced ([Narnoli et. al, 1997](https://www.sciencedirect.com/science/article/pii/S0043135497809876)). The design of the GLSS, however, is not gas-tight due to the free surface on the perimeter of the gas separator system as shown in Figure 1.  Gas that is able to travel around the edges of the GLSS can readily escape from the system.  Since methane is a potent greenhouse gas, the biogas should be captured to reduce negative environmental impacts ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
 To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of COD and BOD and increase the overall effectiveness of UASB technologies ([Subramanyam et. al 2013](https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347)).  To prevent biomass escape and increase sludge retention, parallel plates, akin to those in AguaClara drinking water treatment facilities, can be used ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
 
@@ -108,7 +108,7 @@ Center the diagrams -fixed IC
 </div>
 
 ### Size and Flow
- Due to the fabrication experience AguaClara accumulated from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
+From  fabrication experience AguaClara gained from in-house construction of the 1 L/s drinking water treatment plant, the scale of the pilot UASB reactor was loosely based on the size and scale of the 1  L/s sedimentation tank. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
 <div style="text-align:center">
 
  ![1LPS](https://github.com/AguaClara/UASB/blob/master/Images/1lps_plant.PNG?raw=true)
@@ -229,6 +229,10 @@ It has been decided that the following parameters will likely be used:
 * Exit Velocity: 0.3 m/s
 * Headloss: 50 cm
 
+<div class="alert alert-block alert-danger">
+Clarify what the 50 cm of headloss is explicity referring to - headloss through what?
+</div>
+
 The rest of the parameters will be adjusted to achieve these parameters.
 
 #### Pulse Flow into the Reactor
@@ -257,6 +261,10 @@ def influence_area(n_pipes, diam):
 
 ### Biogas Production Calculations
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a process known as methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating like propane.
+
+<div class="alert alert-block alert-danger">
+There are multiple degradation steps before methanogenesis happens - might be worth mentioning them for clarity.
+</div>
 
 Biogas production is quantified using the following equation, taken from the [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf):
 
