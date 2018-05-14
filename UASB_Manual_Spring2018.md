@@ -260,7 +260,9 @@ def influence_area(n_pipes, diam):
 It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The two options are explored below.
 
 #### Pulse Flow: Tipping bucket
+The inspiration for the tipping bucket design came from the design of a rain gauge.  A demonstration of how it works can be seen [here](https://www.youtube.com/watch?v=qzKWzTe7CEg).  The benefit of this design is that no splitting of flow is needed, since each tip of the bucket will tip into one of the 2 influent pipes.  
 
+**How to fabricate?**
 
 
 
