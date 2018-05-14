@@ -237,12 +237,9 @@ Clarify what the 50 cm of headloss is explicity referring to - headloss through 
 
 The rest of the parameters will be adjusted to achieve these parameters.
 
-#### Pulse Flow into the Reactor
-It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.
-
 #### Influent Flow Calculations
 
-Calculations for pulse flow have been started, but are not yet completed and so will be included in the next report.  Below are calculations used to determine the influence area of each pipe given the diameter and number of pipes.
+Below are calculations used to determine the influence area of each pipe given the diameter and number of pipes.
 
 ```python
 # function calculates the influence area of each pipe in the reactor
@@ -259,6 +256,13 @@ def influence_area(n_pipes, diam):
   print('The influence area of each pipe is ', infl_area_UASBpipe)
 
 ```
+#### Pulse Flow into the Reactor
+It has recently been discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved. Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The two options are explored below.
+
+#### Pulse Flow: Tipping bucket
+
+
+
 
 
 ### Biogas Production Calculations
