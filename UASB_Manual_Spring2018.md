@@ -267,10 +267,13 @@ So far, the current design solves the problems of flow splitting and deposition 
 
 Values still need to decided for the volume of the buckets, the funnel, and the pipes.  The bucket volume determines how often the bucket will tip, and how big the pulse to the reactor will be.  Tipping will ideally be minimized, since the more the bucket tips, the faster parts will wear down and need to be replaced.  The volume should not be too large, or particles may have a chance to settle while they are in the bucket.  Initial calculations are being done to determine how large of a pulse flow will be needed.  
 
+![Tipping Bucket Design 1](/Images/Tipping_Bucket_Drawing_1.png)
+<p align="center">Figure 5: A conceptual illustration of the dual tipping bucket design. </p>
+
 #### Pulse Flow: Siphon
 An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design, which is illustrated on Github, involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Monroe suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
 
-The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Ruth Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Mornoe and is illustrated on Github.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also allows notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor. 
+The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Ruth Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Mornoe and is illustrated on Github.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also allows notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.
 
 ### Biogas Production Calculations
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a process known as methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating like propane.
@@ -408,10 +411,10 @@ After consideration of these options, the gas bag system was decided upon becaus
 Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 5.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 6.
 
 ![Biogas_Close](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true)
-<p align="center">Figure 5: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
+<p align="center">Figure 6: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
 
 ![Biogas_Storage](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Storage.jpg?raw=true)
-<p align="center">Figure 6: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
+<p align="center">Figure 7: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
 
 ####Code
 ```python
@@ -493,7 +496,7 @@ Cool idea. so the sludge weir is the new design with skimming off the top as bac
 
 
 
- <p align="center">Figure 7: Schematic of the sludge sampling system. </p>
+ <p align="center">Figure 8: Schematic of the sludge sampling system. </p>
 
 </div>
 As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system (see Figure 7).
@@ -605,10 +608,10 @@ On April 7 and 8,  UASB team members Ananya Gangadhar and Jennifer Jackson prese
 
 
 ![UASB_EPA_expo](/Images/EPA_Expo.jpg)
-<p align="center">Figure 8: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
+<p align="center">Figure 9: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
 
 ![EPA_poster](/Images/epa_poster.PNG)
-<p align="center">Figure 9:  The poster that was presented at the EPA Expo. </p>
+<p align="center">Figure 10:  The poster that was presented at the EPA Expo. </p>
 
 
 
