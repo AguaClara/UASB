@@ -215,6 +215,12 @@ A literature review reveals a lack of knowledge in the UASB community on the are
 Remove "especially" at the end of the last sentence. FIXED-AG
 </div>
 
+![Slanted Straight Pipes Influent](/Images/rigid_slanted_infl_pipes.jpg)
+<p align="center">Figure 5: Schematic of a top-influent 2 pipe system.  Flexible tubing is being considered over rigid PVC for ease of construction.  The flexible tubing would be held in place at the bottom of the reactor. </p>
+
+
+
+
 Table 2: Literature values for parameters associated with influent control system in traditional UASB reactors.
 
 | Parameter                                                                         | [Anaerobic Reactors Textbook](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f) | [Wastewater Treatment for Pollution Control and Reuse 3rd ed](http://accessengineeringlibrary.com/browse/wastewater-treatment-for-pollution-control-and-reuse-third-edition/c9780070620995ch07#c9780070620995ch07lev1sec01) | [Van Lier: Anaerobic Sewage Treatment using UASB Reactors](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
@@ -234,8 +240,7 @@ It has been decided that the following parameters an exit velocity of 0.3 m/s wi
 Clarify what the 50 cm of headloss is explicity referring to - headloss through what?
 </div>
 
-![Slanted Straight Pipes Influent](/Images/rigid_slanted_infl_pipes.jpg)
-<p align="center">Figure XX: Schematic of a top-influent 2 pipe system.  Flexible tubing is being considered over rigid PVC for ease of construction.  The flexible tubing would be held in place at the bottom of the reactor. </p>
+
 
 #### Influent Flow Calculations
 
@@ -261,7 +266,7 @@ It was discovered that the flow into the reactor will be too small for a continu
 
 #### Pulse Flow: Tipping bucket
 ![Tipping Bucket Design 1](/Images/Tipping_Bucket_Drawing_1.png)
-<p align="center">Figure XX: A conceptual illustration of the dual tipping bucket design, created from PVC elbows.  As one bucket tips, the other fills up.  </p>
+<p align="center">Figure 6: A conceptual illustration of the dual tipping bucket design, created from PVC elbows.  As one bucket tips, the other fills up.  </p>
 
 The inspiration for the tipping bucket design came from Ed Gottlieb, who referenced [tipping bucket systems ](https://www.youtube.com/watch?v=WdxXrvV6Lqo) that can be found in waterparks.  After discussion, the a new design was developed that inspired by rain gauges.  A demonstration of how it works can be seen [here](https://www.youtube.com/watch?v=qzKWzTe7CEg).  While the rain gauge continuously dumps water, this system would hold the wastewater until it contains enough water to deliver an adequate pulse flow.  It then dumps the water into funnels that connect to the influent pipes to the reactor.  This alternating, two-way design was chosen over a single tipping bucket for a number of reasons.  
 
@@ -271,7 +276,7 @@ Values still need to decided for the volume of the buckets, the funnel, and the 
 
 #### Pulse Flow: Siphon
 ![Siphon](/Images/Siphon.jpg)
-<p align="center">Figure XX: Proposed design for a siphon as a means to deliver pulse flow to the reactor. </p>
+<p align="center">Figure 7: Proposed design for a siphon as a means to deliver pulse flow to the reactor. </p>
 
 An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Monroe suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
 
@@ -413,10 +418,10 @@ After consideration of these options, the gas bag system was decided upon becaus
 Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 5.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 6.
 
 ![Biogas_Close](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true)
-<p align="center">Figure 6: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
+<p align="center">Figure 8: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
 
 ![Biogas_Storage](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Storage.jpg?raw=true)
-<p align="center">Figure 7: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
+<p align="center">Figure 9: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
 
 ####Code
 ```python
@@ -498,7 +503,7 @@ Cool idea. so the sludge weir is the new design with skimming off the top as bac
 
 
 
- <p align="center">Figure 8: Schematic of the sludge sampling system. </p>
+ <p align="center">Figure 10: Schematic of the sludge sampling system. </p>
 
 </div>
 As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system (see Figure 7).
@@ -610,10 +615,10 @@ On April 7 and 8,  UASB team members Ananya Gangadhar and Jennifer Jackson prese
 
 
 ![UASB_EPA_expo](/Images/EPA_Expo.jpg)
-<p align="center">Figure 9: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
+<p align="center">Figure 11: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
 
 ![EPA_poster](/Images/epa_poster.PNG)
-<p align="center">Figure 10:  The poster that was presented at the EPA Expo. </p>
+<p align="center">Figure 12:  The poster that was presented at the EPA Expo. </p>
 
 
 
