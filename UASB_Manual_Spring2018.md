@@ -215,7 +215,7 @@ A literature review reveals a lack of knowledge in the UASB community on the are
 Remove "especially" at the end of the last sentence. FIXED-AG
 </div>
 
-![Slanted Straight Pipes Influent](/Images/rigid_slanted_infl_pipes.jpg)
+![Slanted Straight Pipes Influent](/Images/rigid_slanted_infl_pipes.PNG)
 <p align="center">Figure 5: Schematic of a top-influent 2 pipe system.  Flexible tubing is being considered over rigid PVC for ease of construction.  The flexible tubing would be held in place at the bottom of the reactor. </p>
 
 
@@ -275,7 +275,7 @@ So far, the current design solves the problems of flow splitting and deposition 
 Values still need to decided for the volume of the buckets, the funnel, and the pipes.  The bucket volume determines how often the bucket will tip, and how big the pulse to the reactor will be.  Tipping will ideally be minimized, since the more the bucket tips, the faster parts will wear down and need to be replaced.  The volume should not be too large, or particles may have a chance to settle while they are in the bucket.  Initial calculations are being done to determine how large of a pulse flow will be needed.  
 
 #### Pulse Flow: Siphon
-![Siphon](/Images/Siphon.jpg)
+![Siphon](/Images/Siphon.PNG)
 <p align="center">Figure 7: Proposed design for a siphon as a means to deliver pulse flow to the reactor. </p>
 
 An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Monroe suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
