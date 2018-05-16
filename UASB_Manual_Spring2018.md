@@ -200,7 +200,6 @@ print(UASB_design)
 ### Influent Flow System
 An ideal influent flow system is designed to prevent clogging, and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, but is not an exhaustive list of our sources
 
-
 <div class="alert alert-block alert-danger">
 Consider "designed to prevent clogging" in the first sentence. FIXED-AG
 </div>
