@@ -69,7 +69,7 @@ To successfully process organic waste, UASB reactors heavily rely on the accumul
 remove "these" from before bacteria because you aren't directly talking about bacteria before that sentence. FIXED-AG
 </div>
 
-Differences in density can cause surface buildup of fats, oils and grease (FOG) in the inactuve sludge. The FOG can accumulate at the water surface open to the atmosphere, forming a thick layer of solid material which can be labor intensive to clean ([Van Lier et al.,  2010](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf), [Lettinga 1991](http://wst.iwaponline.com/content/24/8/87)). This is also problematic as the exit weir skims the water surface in traditional systems, which allows for these solids to escape untreated.
+Differences in density can cause surface buildup of fats, oils and grease (FOG) in the inactuve sludge. The FOG can accumulate at the water surface open to the atmosphere, forming a thick layer of solid material which can be labor intensive to clean ([Van Lier et al.,  2010](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf), [Lettinga 1991](http://wst.iwaponline.com/content/24/8/87)). For UASB systems with an exit weir systems, this material can escape through these systems, polluting the effluent.  
 
 <div class="alert alert-block alert-danger">
 Add in comma in first sentence. FIXED-Just reworded the sentence. Hopefully, this is clearer. -AG
