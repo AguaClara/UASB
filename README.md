@@ -19,8 +19,8 @@ In the Spring 2018 semester, the UASB team will be working on finalizing designs
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Sring 2017 onwards.  More information on lab scale research can be located on the AguaClara Google Drive both under "Active Subteams" and "Archived Subteams."
 
 ### Spring 2018
-[UASB Deisgn Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)
-[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10)
+[UASB Deisgn Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)  
+[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10)  
 [Symposium Presentation](https://docs.google.com/presentation/d/1HlOt3QwduvcUE1-q1j3W2VCLtRTx1YZtRwdGuUHw1Nc/edit?usp=sharing)
 
 ### Fall 2017
