@@ -62,14 +62,8 @@ A schematic of the UASB with proposed design improvements is shown in Figure 2 a
 
 ![UASB_Side](/Images/AC_SideView.PNG)
 
-
 <p align="center">Figure 2: The Side View of the proposed UASB </p>
-</div>
 
-<div class="alert alert-block alert-danger">
-What are the three things with dotted lines?
-
--> They are influent pipes.  Do they really need to be labeled? -JJ
 </div>
 
 <div style="text-align:center">
@@ -81,20 +75,15 @@ What are the three things with dotted lines?
 
 <p align="center">Figure 3: The Front View of the proposed UASB with sloped bottom geometry.</p>
 
-<div class="alert alert-block alert-danger">
-Label Figures with numerical and not written numbers i.e. Figure 1 not Figure one -- Fixed ZC
-
-Center the diagrams -fixed IC
-</div>
-
 ### Size and Flow
 
-The scale and dimensions of the pilot UASB reactor were loosely based on the size and scale of the 1  L/s sedimentation tank, using experience gained in fabrication of the 1 L/s system. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
+The scale and dimensions of the pilot UASB reactor were loosely based on the size and scale of the 1  L/s sedimentation tank, using experience gained from fabrication. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
 <div style="text-align:center">
 
  ![1LPS](https://github.com/AguaClara/UASB/blob/master/Images/1lps_plant.PNG?raw=true)
 
  </div>
+
  <p align="center">Figure 4: Schmematic of the 1 L/s sedimentation tank (Source: Herrara et al., 2016)</p>
 
 This, however, will create a unique geometry and thus reduce the volume of reactor.  The following design parameters will serve to calculate the volume of the pilot scale UASB reactor and the flow rate through system.  It also must be noted that hydraulic residence time is based on contact time with the sludge to account for the amount of time raw wastewater spends being biologically treated rather than time in the whole reactor volume.
@@ -180,11 +169,7 @@ print(UASB_design)
 
 
 ### Influent Flow System
-An ideal influent flow system is designed to prevent clogging, and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. A table below includes relevant values, but is not an exhaustive list of our sources
-
-<div class="alert alert-block alert-danger">
-Consider "designed to prevent clogging" in the first sentence. FIXED-AG
-</div>
+An ideal influent flow system is designed to prevent clogging and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. Table 2 includes relevant values, but is not an exhaustive list of our sources
 
 One challenge for an influent flow system is combatting pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
 
@@ -192,36 +177,29 @@ Top influent flow was chosen over bottom influent flow in order to decrease the 
 
 A literature review reveals a lack of knowledge in the UASB community on the area in the reactor served by each influent pipe, or the influence area. Values range from 1-4 $m^2$ (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 $m^2$, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered, as they allow for better clog detection and prevention.
 
-<div class="alert alert-block alert-danger">
-Remove "especially" at the end of the last sentence. FIXED-AG
-</div>
+<div style="text-align:center">
 
 ![Slanted Straight Pipes Influent](/Images/rigid_slanted_infl_pipes.PNG)
-<p align="center">Figure 5: Schematic of a top-influent 2 pipe system.  Flexible tubing is being considered over rigid PVC for ease of construction.  The flexible tubing would be held in place at the bottom of the reactor. </p>
 
-
-
-
-Table 2: Literature values for parameters associated with influent control system in traditional UASB reactors.
-
-| Parameter                                                                         | [Anaerobic Reactors Textbook](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f) | [Wastewater Treatment for Pollution Control and Reuse 3rd ed](http://accessengineeringlibrary.com/browse/wastewater-treatment-for-pollution-control-and-reuse-third-edition/c9780070620995ch07#c9780070620995ch07lev1sec01) | [Van Lier: Anaerobic Sewage Treatment using UASB Reactors](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
-|:--------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descending Sewage Velocity**                                                    | **$\leq$0.2 m/s**                                                                                       |                                                                                                                                                                                                                             |                                                                                                                                           |     |     |     |
-| **Diameter of pipe**                                                              | **75-100 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             | **100 mm** (to allow gas bubbles to rise)                                                                                                 |     |     |     |
-| **Nozzle Diameter**                                                               | **40-500 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             |                                                                                                                                           |     |     |     |
-| **Exit Velocity**                                                                 | **$\geq$0.40 m/s**                                                                                      |                                                                                                                                                                                                                             | **over 0.3 m/s**                                                                                                                                |     |     |     |
-| **Apertures**                                                                     | **2 openings with 25mm × 40mm cross section**                                                           | See Aperture Design Problem 7.12.1.6                                                                                                                                                                                        | Single outlet point per pipe (for identification of clogs)                                                                                |     |     |     |
-| **Influence Area**                                                                | **2.0-3.0 $m^2$ for COD 400-600 mg/L**                                                                  | **1 point per 3.7-4.0 $m^2$ floor area**                                                                                                                                                                                    | **1-4 $m^2$ per feed point**                                                                                                              |     |     |     |
-| **Settling Zone Surface**                                                         |                                                                                                         |                                                                                                                                                                                                                             | **75% of total surface**                                                                                                                  |     |     |     |
-| **Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit** |    **0.20-0.30 m**                                                                                                     |               **2-3 m head loss** through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2 | **50 cm**
-
-It has been decided that the following parameters an exit velocity of 0.3 m/s will likely be used.
-
-<div class="alert alert-block alert-danger">
-Clarify what the 50 cm of headloss is explicity referring to - headloss through what?
 </div>
 
+<p align="center">Figure 5: Schematic of a top-influent 2 pipe system.  Flexible tubing is being considered over rigid PVC for ease of construction.  The flexible tubing would be held in place at the bottom of the reactor. </p>
 
+<p align="center">
+Table 2: Literature values for parameters associated with influent control system in traditional UASB reactors. </p>
+
+| Parameter     | [Anaerobic Reactors Textbook](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f) | [Wastewater Treatment for Pollution Control and Reuse 3rd ed](http://accessengineeringlibrary.com/browse/wastewater-treatment-for-pollution-control-and-reuse-third-edition/c9780070620995ch07#c9780070620995ch07lev1sec01) | [Van Lier: Anaerobic Sewage Treatment using UASB Reactors](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
+|:--------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descending Sewage Velocity**                                                    | **$\leq$0.2 m/s**                                                                                       |                                                                                                                                                                                                                             |                                                                                                                                           |    
+| **Diameter of pipe**                                                              | **75-100 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             | **100 mm** (to allow gas bubbles to rise)                                                                                               
+| **Nozzle Diameter**                                                               | **40-500 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             |                                                                                                                                           |    
+| **Exit Velocity**                                                                 | **$\geq$0.40 m/s**                                                                                      |                                                                                                                                                                                                                             | **over 0.3 m/s**                                                                                                                                |    
+| **Apertures**                                                                     | **2 openings with 25mm × 40mm cross section**                                                           | See Aperture Design Problem 7.12.1.6                                                                                                                                                                                        | Single outlet point per pipe (for identification of clogs)                                                                                |     
+| **Influence Area**                                                                | **2.0-3.0 $m^2$ for COD 400-600 mg/L**                                                                  | **1 point per 3.7-4.0 $m^2$ floor area**                                                                                                                                                                                    | **1-4 $m^2$ per feed point**                                                                                                              |    
+| **Settling Zone Surface**                                                         |                                                                                                         |                                                                                                                                                                                                                             | **75% of total surface**                                                                                                                  |    
+| **Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit** |    **0.20-0.30 m**                                                                                                     |               **2-3 m head loss** through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2 | **50 cm**
+
+It has been decided that from the following parameters an exit velocity of 0.3 m/s will likely be used.
 
 #### Influent Flow Calculations
 
@@ -243,7 +221,7 @@ def influence_area(n_pipes, diam):
 
 ```
 #### Pulse Flow into the Reactor
-It was discovered that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that some sort of holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  These incremental flows will be small compared to the overall height of the sludge bed.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved.  Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The designs will be constructed as full-scale bench top tests to be performed over the summer, so that each can be compared.  The three proposed options are explored below.
+Initial calculations showed that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  These incremental flows will be small compared to the overall height of the sludge bed.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved.  Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The designs will be constructed as full-scale bench top tests to be performed over the summer, so that each can be compared.  The three proposed options are explored below.
 
 #### Pulse Flow: Tipping bucket
 ![Tipping Bucket Design 1](/Images/Tipping_Bucket_Drawing_1.png)
@@ -253,22 +231,18 @@ The inspiration for the tipping bucket design came from Ed Gottlieb, who referen
 
 So far, the current design solves the problems of flow splitting and deposition of solids due to incomplete tipping of bucket.  The benefit of the 2-bucket design is that no splitting of flow is needed, since each tip of the bucket will alternate flow between the two influent pipes. The main challenge with this design is that it does not allow for more than 2 influent pipes, and thus makes scaling up a significant issue.  Deposition of solids in the buckets is solved by using curved bottoms, allowing the buckets to tip completely, and eliminating a corner in which solids could settle. The design involves precise cutting of 4-6 inch diameter elbows.  2 design ideas are being considered - the plan is to test both at the same time in order to compare.  The pivot would be created by 2 pieces of flat PVC glued to the sides of the elbows, with a rod through them.  
 
-Values still need to decided for the volume of the buckets, the funnel, and the pipes.  The bucket volume determines how often the bucket will tip, and how big the pulse to the reactor will be.  Tipping will ideally be minimized, since the more the bucket tips, the faster parts will wear down and need to be replaced.  The volume should not be too large, or particles may have a chance to settle while they are in the bucket.  Initial calculations are being done to determine how large of a pulse flow will be needed.  
+Design values still need to be determined for the volume of the buckets, the funnel, and the pipes.  The bucket volume determines how often the bucket will tip, and how big the pulse to the reactor will be.  Tipping will ideally be minimized, since the more the bucket tips, the faster parts will wear down and need to be replaced.  The volume should not be too large, or particles may have a chance to settle while they are in the bucket.  Initial calculations are being done to determine how large of a pulse flow will be needed.  
 
 #### Pulse Flow: Siphon
 ![Siphon](/Images/Siphon.PNG)
 <p align="center">Figure 7: Proposed design for a siphon as a means to deliver pulse flow to the reactor. </p>
 
-An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Monroe suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
+An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Dr. Weber-Shirk suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
 
-The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Ruth Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Mornoe and is illustrated above.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.
+The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Dr. Weber-Shirk and is illustrated above.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.
 
 ### Biogas Production Calculations
-As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a process known as methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating like propane.
-
-<div class="alert alert-block alert-danger">
-There are multiple degradation steps before methanogenesis happens - might be worth mentioning them for clarity.
-</div>
+As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.
 
 Biogas production is quantified using the following equation, taken from the [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf):
 
@@ -312,10 +286,6 @@ $R$ = Ideal Gas Constant = 0.08206 ${\frac{atm*L}{mol*K}}$
 $T$ = Temperature ( ${^\circ}C$)
 
 Since biogas contains other gasses such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume that biogas is composed 75% of methane, as given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).
-
-<div class="alert alert-block alert-danger">
-Write that methane is 75% of the biogas for completeness. FIXED-AG
-</div>
 
 It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will dangerously pressurize flammable gas.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
@@ -396,7 +366,7 @@ Table 4: List of advantages and disadvantages associated with different biogas s
 
 After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
 
-Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 5.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 6.
+Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 5.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 9.
 
 ![Biogas_Close](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true)
 <p align="center">Figure 8: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
@@ -439,40 +409,19 @@ Typical wastewater from domestic sources contains many particles besides organic
 
 Fats are typically lighter than water and hydrophobic, causing them to float to the top of the UASB reactor and accumulate within the biogas capture lid.  If not removed, they will build up in this lid and hinder reactor efficiency.  Therefore, a successful UASB system must include an easy removal system for these materials.  Fats removed during domestic wastewater treatment are typically sent to a landfill for disposal.
 
-<div class="alert alert-block alert-danger">
-Reconsider last sentence because you haven't told us what "this way" is yet. FIXED-AG
-</div>
-
-The design process began with characterizing the rate at which fats would buildup within the reactor to determine how often they would have to be removed. However, this buildup rate is highly variable and depends on both the nature of wastewater and FOG removal efficiency during screening. Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility (IAWWTF), informed that the IAWWTF skims its clarifiers once a month for FOG removal. With this information, the team decided to focus on designing a simple system that can remove FOG whenever the plant operators deem it necessary.
-
-
-<div class="alert alert-block alert-danger">
-Consider "The design process began with characterizing the rate" FIXED-JJ
-
-proofread second sentence
-
-Don't switch to first person when you have been using third person otherwise.
-FIXED- Rephrased the entire paragraph for clarity. - AG
-</div>
+The design process began with characterizing the rate at which fats would buildup within the reactor to determine how often they would have to be removed. However, this buildup rate is highly variable and depends on both the nature of wastewater and FOG removal efficiency during screening. Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility (IAWWTF), informed the team that the IAWWTF skims its clarifiers once a month for FOG removal. With this information, the team decided to focus on designing a simple system that can remove FOG whenever the plant operators deem it necessary.
 
 The team considered three possible systems for FOG removal:
 * A mechanical or gravitational separator before influent that captured and removed fat particles
 * Dosing of a coagulant to bind fat particles and make them easier to remove
 * An outflow pipe or siphon coming out of the removable lid with a valve to allow discharge of water containing fats
 
-<div class="alert alert-block alert-danger">
-Don't capitalize fats. FIXED-AG
-</div>
-
-In addition to these methods, the system will always have a failsafe system to remove fats.  Since the biogas lid is removable, fats can be manually skimmed off the top.  This was determined to be undesirable for a number of reasons.  First, it requires direct human input, which increases work for the community, and requires more training on usage.  Second, opening the system in this way depressurizes it, and releases any captured biogas produced within.  Finally, this requires close human contact with wastewater, which is a undesirable job and increases risk of infections or accidental discharge of wastewater.
-
 After brainstorming these options, the team quickly ruled out the first two options, and they were complicated and either required mechanical parts or chemical dosing, which go against the design philosophy of the project to make the UASB simple and cheap to install and operate.
 
 Thus, the team decided to design a small outflow pipe from the biogas lid.  In talking with Mr. Gottlieb, it seems a greater velocity will be needed to remove fat particles, as they will tend to spread over the water surface and congeal into mats.  Design for this system is still ongoing, and the team is researching siphon systems, as well as working to determine the dimensions of this pipe system.
 
-<div class="alert alert-block alert-danger">
-Cool idea. so the sludge weir is the new design with skimming off the top as back-up? It might flow better to put the paragraph describing the failsafe method after this paragraph since it would happen after you new method failed.
-</div>
+In addition to these methods, the system will always have a failsafe system to remove fats.  Since the biogas lid is removable, fats can be manually skimmed off the top.  This was determined to be undesirable for a number of reasons.  First, it requires direct human input, which increases work for the community, and requires more training on usage.  Second, opening the system in this way depressurizes it, and releases any captured biogas produced within.  Finally, this requires close human contact with wastewater, which is a undesirable job and increases risk of infections or accidental discharge of wastewater.  However it offers a removal option if errors occur with designed systems.
+
 
 ### Sludge Sampling and Removal System
 
@@ -481,17 +430,12 @@ Cool idea. so the sludge weir is the new design with skimming off the top as bac
 
 ![UASB_Side](/Images/Sludge_Weir.PNG)
 
-
-
-
  <p align="center">Figure 10: Schematic of the sludge sampling system. </p>
 
 </div>
-As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system (see Figure 7).
 
-<div class="alert alert-block alert-danger">
-Reference figure 7. FIXED-AG
-</div>
+As long as it is continuously fed wastewater as "food", the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system (see Figure 10).
+
 
 The sludge weir consists of a tube jutting out of the reactor at a downwards angle.  This weir is implemented at the top of anticipated height of the sludge blanket, so as to capture bacterial growth above this limit.
 
@@ -507,19 +451,26 @@ Another important concern for the reactor is inorganic removal. Inorganics such 
 
 The dimensions of the sludge weir are not incredibly important design parameters, and were thus set to values that seemed reasonable.  These systems will be tested in our first design and changed accordingly.  These parameters are set in the table below.
 
-
+<p align="center">
 Table 6: Design parameters for sludge sampling systems.
+</p>
 
 |       Parameter        |  Value   |               Basis of Design                |
 |:----------------------:|:--------:|:--------------------------------------------:|
 |  Sludge Weir Diameter  | 6 in |     Based on Floc Hopper in 1 L/s plant      |
-|   Sludge Weir Length   |   TBD    | Based on desired volume of sludge per sample |
-| Sampling Port Diameter |   TBD    |          Based on fabrication specs          |
-| Number of Sampling Ports                       |  TBD      | Based on  number of sampling sites needed   |
+|   Sludge Weir Length   |   To be determined    | Based on desired volume of sludge per sample |
+| Sampling Port Diameter |   To be determined    |          Based on fabrication specs          |
+| Number of Sampling Ports                       |  To be determined      | Based on  number of sampling sites needed   |
 
 ### Hydrogen Sulfide Removal system
 
-Add for final report
+Another important aspect of design is a removal system for hydrogen sulfide ($H_2 S$).  Hydrogen sulfide is naturally produced in anaerobic digestion of sulphates, which occur in low quantities in typical wastewater.  Hydrogen sulfide is highly flammable, toxic, and corrosive, making it very dangerous in large qualities within the reactor.  
+
+Hydrogen sulfide is typically removed using an oxidizing agent, such as iron oxide or biological sources such as crop husks.  These can be incorporated into the reactor in multiple ways including:
+* Dosing of a chemical compound in the influent of the reactor
+* Exposing biogas to solid oxidizing agents such as steel wool
+
+Design of this section is ongoing, but will likely involve a solid oxidizing agent to reduce costs and complexities associated with chemical dosing.
 
 ### Effluent Flow System
 Based on settling tests conducted on the lab scale UASB reactors during Summer 2017, it was determined that a lower capture velocity than that used in AguaClara drinking water plants can sufficiently settle sludge granules and other solids in a UASB reactor (Chen, 2017). As such, fewer plate settlers are required in the UASB than in the 1 L/s plant sedimentation tank.  To reduce costs and fabrication time associated with constructing the sloped body of the 1 L/s sedimentation tank to house multiple large plates as shown in Figure 4, a new effluent and solid settling system was designed.
@@ -527,8 +478,8 @@ Based on settling tests conducted on the lab scale UASB reactors during Summer 2
 In this system, the body of the UASB reactor would leave the 3 foot diameter corrugated pipe intact rather than having to cut, rotate, and PVC weld to achieve the bend in the body of the reactor.  Instead, a sloped tube, or tube settler, would be inserted into the side of reactor to allow effluent to leave the reactor.  Inside this tube, a smaller set of plates would be placed to promote settling as shown in Figure 2.
 
 #### Design Parameters
-
-Table 7: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm.
+<p align="center">
+Table 7: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm. </p>
 
 Parameter| Value | Basis of Design
 :------------- |:-------------|:--------
@@ -594,36 +545,26 @@ print("The number of plate settlers is", number_plate_settler.magnitude, number_
 
 On April 7 and 8,  UASB team members Ananya Gangadhar and Jennifer Jackson presented the Phase 1 UASB work at the EPA's National Sustainable Design Expo.  The Expo was part of a larger event, the USA Science and Engineering Festival at the Walter E. Washington Convention Center in Washington, D.C.  Ananya and Jennifer, along with Professor Ruth Richardson and other AguaClara members, presented the current UASB Reactor design.
 
-
 ![UASB_EPA_expo](/Images/EPA_Expo.jpg)
 <p align="center">Figure 11: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
 
 ![EPA_poster](/Images/epa_poster.PNG)
 <p align="center">Figure 12:  The poster that was presented at the EPA Expo. </p>
 
-
-
 ## Future Work
 
 A rough timeline of the project is summarized below.  The overall goal is for design work to be complete by the end of Summer 2018.  During Fall 2018, the subteam will become a fabrication team and build the completed reactor.  After that the UASB will be implemented and tested at the Ithaca Wastewater Plant, and data gathered from this testing will inform future design.  Once design is complete and the system has been proven, the finished product will be shipped to Honduras for field testing, and then implemented in rural communities full time.
 
-<div class="alert alert-block alert-danger">
-Capitalize Summer 2018. FIXED-AG
-</div>
-
-#### Spring 2018
-* Finish Biogas design
-* Finish FOG removal design
-* Finish Influent Flow design
-* Submit EPA grant proposal
 #### Summer 2018
-* Finish final design components (sampling ports, inorganics removal, degritting system)
+* Conduct benchtop tests for influent system
+* Finish final design components (sampling ports, inorganics removal, degritting system, hydrogen sulfide removal)
 * Make complete fusion model
 * Design data collection methods
 * Make fabrication plan
+
 #### Fall 2018
 * Find fabrication space for UASB
-* Begin fabrication
+* Fabricate Reactor
 
 ## Bibliography
 Abbasi, T., & Abbasi, S. A. (2012). Formation and impact of granules in fostering clean energy production and wastewater treatment in upflow anaerobic sludge blanket (UASB) reactors. Renewable and Sustainable Energy Reviews, 16(3), 1696–1708. https://doi.org/10.1016/j.rser.2011.11.017
