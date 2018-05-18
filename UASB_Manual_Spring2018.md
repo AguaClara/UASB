@@ -1,7 +1,7 @@
 
 # Upflow Anaerobic Sludge Blanket (UASB), Spring 2018
 #### Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
-#### April 20, 2018
+#### May 18, 2018
 
 
 ## Abstract
@@ -199,7 +199,7 @@ Table 2: Literature values for parameters associated with influent control syste
 | **Settling Zone Surface**                                                         |                                                                                                         |                                                                                                                                                                                                                             | **75% of total surface**                                                                                                                  |    
 | **Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit** |    **0.20-0.30 m**                                                                                                     |               **2-3 m head loss** through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2 | **50 cm**
 
-It has been decided that from the following parameters an exit velocity of 0.3 m/s will likely be used.
+It has been decided that from the following parameters an exit velocity of 0.3 m/s (Van Lier et al., 2010) will likely be used.
 
 #### Influent Flow Calculations
 
@@ -221,7 +221,7 @@ def influence_area(n_pipes, diam):
 
 ```
 #### Pulse Flow into the Reactor
-Initial calculations showed that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb from the Ithaca Area Wastewater Treatment Facility in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  These incremental flows will be small compared to the overall height of the sludge bed.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved.  Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The designs will be constructed as full-scale bench top tests to be performed over the summer, so that each can be compared.  The three proposed options are explored below.
+Initial calculations showed that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb, the Industrial Pretreatment Coordinator at the Ithaca Area Wastewater Treatment Facility, in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  These incremental flows will be small compared to the overall height of the sludge bed.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved.  Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The designs will be constructed as full-scale bench top tests to be performed over the summer, so that each can be compared.  The three proposed options are explored below.
 
 #### Pulse Flow: Tipping bucket
 ![Tipping Bucket Design 1](/Images/Tipping_Bucket_Drawing_1.png)
