@@ -374,7 +374,7 @@ Schematically, gas will flow out the top lid of the reactor through a pipe into 
 ![Biogas_Storage](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Storage.jpg?raw=true)
 <p align="center">Figure 9: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
 
-####Code
+#### Code
 ```python
 def Dim_Storage(day_prod, time_stor, time_fail, diam_lid):
   """Takes the daily volume of biogas produced (volume per time), the numbers of days for desired storage, and the time required before critical lid failure and returns the volume required for the temporary storage system and the dimensions for the lid required to retain a set amount of biogas before failure"""
