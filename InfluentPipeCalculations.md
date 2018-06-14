@@ -1,6 +1,7 @@
 ```python
 pwd
-cd UASB/
+cd C:\\Users\\EN-CE-AC\\github\\UASB
+# cd UASB/
 from aide_design.play import*
 from UASB_size import*
 
@@ -26,17 +27,18 @@ def influence_area(n_pipes, diam):
   ## diam = diameter of UASB reactor
   ca = pc.area_circle(diam) # ca = cross sectional area at top
   ia = ca/n_pipes           # ia = influence area
-  print('The influence area of each pipe is ', ia)
   return ia
 
 # function calculates the pipe diameter based on flow, desired exit velocity, and number of pipes
 
 def suggested_pipe_diam(flow_tot, v_exit, n_pipes):
   flow_per_pipe = flow_tot/n_pipes
-  sugg_area = flow_per_pipe/v_exit    
+  sugg_area = flow_per_pipe/v_exit
   sugg_diam = (pc.diam_circle(sugg_area)).to(u.mm)
   print('The suggested pipe diameter is ', sugg_diam)    
   return sugg_diam
+
+
 
 # function calculates the flow in the pipe based on desired exit velocity, pipe diameter, and number of pipes
 def flow_given_pipediam(p_d, v_exit, n_pipes):
@@ -49,7 +51,7 @@ print('The influence area of each pipe is ', infl_area_UASBpipe)
 
 ## Pipe diameter calculation based on flow & exit velocity
 velocity_exit = 0.3 *(u.m/u.s)
-flow2 = 0.5*(u.L/u.s)
+flow2 = 0.08*(u.L/u.s)
 pipe_diam = suggested_pipe_diam(flow2, velocity_exit, num_pipes)
 
 ## Pulse flow for tank w/ aperture
