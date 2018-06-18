@@ -275,10 +275,13 @@ min_HRT = 4 * u.hr
 Q_avg = vol / min_HRT
 print(Q_avg.to(u.L/u.s))
 
+#Determine pipe inner diameter based on nominal diameter
+nom_diam = 3  * u.inch
+pipe_diam = pipe.ID_sch40(nom_diam)
+print(pipe_diam.to(u.mm))
 #Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
-exit_vel = .5 * u.m / u.s
-pipe_diam = 50 * u.mm
-pipe_flow = exit_vel * math.pi * (pipe_diam ** 2) / 4
+exit_vel = 1 * u.m / u.s
+pipe_flow = exit_vel * pc.area_circle(pipe_diam)
 pipe_length = (diam / 2) + height + hydraulic_head
 Kminor = 4
 Temp = 23 * u.degC #average temp in Honduras
@@ -290,6 +293,7 @@ print(total_hl)
 #Calculate volume needed per dump of tipping bucket
 dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
 print(dump_amount.to(u.L))
+
 
 ```
 
