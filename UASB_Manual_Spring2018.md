@@ -143,7 +143,7 @@ def UASBSize(diam, height):
     vol_cyl_wedge = height_cyl_wedge * (diam/2)**2 / 3 * ((
         3*math.sin(phi) - 3*phi*math.cos(phi) - math.sin(phi)**3)/(1-math.cos(phi)))
     vol_reactor = (math.pi * (diam / 2)**2 * height) - (2 * vol_cyl_wedge)
-    vol_sludge = (math.pi * (diam / 2)**2 * height / 2) - (2 * vol_cyl_wedge)
+    vol_sludge = (math.pi * (diam / 2)**2 * height * 0.7) - (2 * vol_cyl_wedge)
 
     flow = vol_reactor / HRT
     people_served = int(flow / WW_gen)       #People served per reactor
@@ -154,7 +154,7 @@ def UASBSize(diam, height):
     print("The height of the bottom geometry is",height_cyl_wedge.to(u.m))
     print("The volume of the reactor is",vol_reactor.to(u.L))
     print('The volume of the sludge in the reactor is', vol_sludge.to(u.L))
-    print('The flow rate of the reactor is', flow.to(u.L/u.s))
+    print('The average flow rate of the reactor is', flow.to(u.L/u.s))
     print('The number of people served by this reactor is', people_served)
     print('The number of people served by this reactor if only blackwater is treated is', people_served_BW)
 
@@ -254,12 +254,47 @@ Over summer of 2018, the UASB team worked on designing these systems in preparat
 | Parameter      | Value | Constrained? | Justification |
 |:-------------- |:----- | ------------ | ------------- |
 | Reactor Volume | 1221 Liters | Yes  | Based on max diameter and height to allow fabrication |
-| Sludge Volume  |       |              |               |
+| Sludge Volume  |  |  
+|HRT   |  >4hrs |   | based on literature  |
+|Average Flow Rate   | <0.08 L/s  |   |   |
+|Exit Velocity   | >0.03 m/s  |   
 
+#### Code
 
+```python
 
+from aide_design.play import*
+import math
+
+# Calculate size and flow dimensions
+diam = 3* u.ft
+height = 7 * u.ft
+UASB_design = UASBSize(diam, height)
+vol = UASB_design[1]
+min_HRT = 4 * u.hr
+Q_avg = vol / min_HRT
+print(Q_avg.to(u.L/u.s))
+
+#Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
+exit_vel = .5 * u.m / u.s
+pipe_diam = 50 * u.mm
+pipe_flow = exit_vel * math.pi * (pipe_diam ** 2) / 4
+pipe_length = (diam / 2) + height + hydraulic_head
+Kminor = 4
+Temp = 23 * u.degC #average temp in Honduras
+Nu = pc.viscosity_kinematic(Temp)
+Pipe_Rough = 0.0015 * u.mm
+total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
+print(total_hl)
+
+#Calculate volume needed per dump of tipping bucket
+dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
+print(dump_amount.to(u.L))
+
+```
 
 ### Biogas Production Calculations
+
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.
 
 Biogas production is quantified using the following equation, taken from the [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf):
