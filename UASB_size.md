@@ -26,6 +26,7 @@ def UASBSize(diam, height):
     vol_cyl_wedge = height_cyl_wedge * (diam/2)**2 / 3 * ((
         3*math.sin(phi) - 3*phi*math.cos(phi) - math.sin(phi)**3)/(1-math.cos(phi)))
     vol_reactor = (math.pi * (diam / 2)**2 * height / 2) - (2 * vol_cyl_wedge)
+    vol_reactor_total =
 
     flow = vol_reactor / HRT
     people_served = int(flow / WW_gen)       #People served per reactor

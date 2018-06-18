@@ -129,6 +129,7 @@ def UASBSize(diam, height):
     [<Quantity(0.7259024934521162, 'meter')>, <Quantity(520.8127904536798, 'liter')>, <Quantity(0.036167554892616645, 'liter / second')>, 12, 60]
     """
 
+
     WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
     WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
     HRT = 4 * u.hr               #Hydraulic Residence Time, determined from lab scale tests
@@ -173,7 +174,7 @@ print(UASB_design)
 ### Influent Flow System
 An ideal influent flow system is designed to prevent clogging and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. Table 2 includes relevant values, but is not an exhaustive list of our sources
 
-One challenge for an influent flow system is combatting pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
+One challenge for an influent flow system is combating pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
 
 Top influent flow was chosen over bottom influent flow in order to decrease the frequency of clogs.  Bottom influent flow systems are more likely to clog if flow is low or not consistent.  This is because non-suspended particles may settle into the pipe.  Gravity will prevent particles in a top influent system from settling in the pipe. In addition, top influent flow is the most common choice for domestic wastewater treatment.
 
@@ -242,6 +243,21 @@ Design values still need to be determined for the volume of the buckets, the fun
 An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Dr. Weber-Shirk suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
 
 The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Dr. Weber-Shirk and is illustrated above.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.
+
+#### Influent System Design
+
+Over summer of 2018, the UASB team worked on designing these systems in preparation for fabrication for the fall.  This process began with determining the critical design parameters that constrained the design, which are summarized in table X below.  
+
+
+<p align="center">Table X: Design parameters for UASB hydraulics </p>
+
+| Parameter      | Value | Constrained? | Justification |
+|:-------------- |:----- | ------------ | ------------- |
+| Reactor Volume | 1221 Liters | Yes  | Based on max diameter and height to allow fabrication |
+| Sludge Volume  |       |              |               |
+
+
+
 
 ### Biogas Production Calculations
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.
