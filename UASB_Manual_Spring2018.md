@@ -494,6 +494,9 @@ The code below serves to calculate the size of the tube settler, the number of p
 
 #### Code
 ```python
+
+from aide_design.play import*
+
 # Design Parameters
 height_blanket = 3.5 * u.ft
 plate_space = 2.5 * u.cm
@@ -524,7 +527,7 @@ print("The velocity between the plate settlers is", velocity_plate.magnitude, ve
 
 # Parameters for tube settler
 height_tube_settler = (height_blanket + diam_sludge_weir + sep_dist + 0.5*diam_tube).to(u.inch)  # height of the center of the tube setler
-print("The height of the center of the tube settler where is attaches to the body of the reactor is",height_tube_settler.magnitude, height_tube_settler.units)
+print("The height of the center of the tube settler where it attaches to the body of the reactor is",height_tube_settler.magnitude, height_tube_settler.units)
 
 length_tube_settler_vertical = (water_elevation - height_tube_settler).to(u.inch)
 print("The vertical length of the tube settler is", length_tube_settler_vertical.magnitude, length_tube_settler_vertical.units)
@@ -532,8 +535,8 @@ print("The vertical length of the tube settler is", length_tube_settler_vertical
 length_tube_settler = (length_tube_settler_vertical / np.sin(angle)).to(u.cm)
 print("The length of the tube setter is",length_tube_settler.magnitude, length_tube_settler.units)
 
-projected_area = (((length_tube_settler * np.cos(angle)
-                  ) + (plate_space/np.sin(angle))) * diam_tube).to(u.m**2)
+projected_area = (((length_tube_settler * np.cos(angle))
+                + (plate_space/np.sin(angle))) * diam_tube).to(u.m**2)
 print("The projected area of the plates is", projected_area.magnitude, projected_area.units)
 
 velocity_capture = (plate_space.to(u.mm) * velocity_plate_up.to(u.mm/u.s))/(length_tube_settler.to(u.mm) * np.sin(angle) * np.cos(angle) + plate_space.to(u.mm))
