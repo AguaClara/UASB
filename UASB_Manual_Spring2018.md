@@ -254,10 +254,16 @@ Over summer of 2018, the UASB team worked on designing these systems in preparat
 | Parameter      | Value | Constrained? | Justification |
 |:-------------- |:----- | ------------ | ------------- |
 | Reactor Volume | 1221 Liters | Yes  | Based on max diameter and height to allow fabrication |
-| Sludge Volume  |  |  
-|HRT   |  >4hrs |   | based on literature  |
-|Average Flow Rate   | <0.08 L/s  |   |   |
-|Exit Velocity   | >0.03 m/s  |   
+| Sludge Volume  | ~850 Liters | No | Roughly 70% of Reactor Volume.  Needs to be better constrained based on location of tube settler. |
+| HRT |  >4hrs | Yes, minimum  | Based on literature and lab scale test.  | |
+| Average Flow Rate   | <0.08 L/s  | Yes, Maximum | Q = Volume / Hydraulic Residence Time  |
+| Minimum Exit Velocity   | >0.03 m/s  | Yes | Minimum velocity needed to scour settling particles |    
+| Maximum Exit Velocity | <= 1 m/s | No | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined. |  
+| | | | | | |
+
+
+
+
 
 #### Code
 
@@ -267,7 +273,7 @@ from aide_design.play import*
 import math
 
 # Calculate size and flow dimensions
-diam = 3* u.ft
+diam = 3 * u.ft
 height = 7 * u.ft
 UASB_design = UASBSize(diam, height)
 vol = UASB_design[1]
@@ -279,20 +285,26 @@ print(Q_avg.to(u.L/u.s))
 nom_diam = 3  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
+
 #Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
 exit_vel = 1 * u.m / u.s
 pipe_flow = exit_vel * pc.area_circle(pipe_diam)
-pipe_length = (diam / 2) + height + hydraulic_head
+pipe_length = (diam / 2) + height
 Kminor = 4
 Temp = 23 * u.degC #average temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
 Pipe_Rough = 0.0015 * u.mm
 total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
-print(total_hl)
+print(total_hl.to(u.cm))
 
 #Calculate volume needed per dump of tipping bucket
-dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
-print(dump_amount.to(u.L))
+
+dump_volume = 5 *u.L
+filltime = dump_volume / Q_avg
+print(filltime.to(u.min))
+
+#dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
+#print(dump_amount.to(u.L))
 
 
 ```
@@ -568,34 +580,34 @@ diam_tube = np.array([8,10]) * u.inch
 B = (plate_space + thickness_sed_plate).to(u.cm)
 
 velocity_active_up = (flow * np.sin(angle)/(pc.area_circle(diam_tube))).to(u.mm/u.s)
-print("The vertical velocity component beneath the plate settlers is", velocity_active_up.magnitude,velocity_active_up.units )
+print("The vertical velocity component beneath the plate settlers is in the range", velocity_active_up.magnitude,velocity_active_up.units )
 
 velocity_plate_up = velocity_active_up * B / plate_space
-print("The vertical velocity component between the plate settlers is", velocity_plate_up.magnitude, velocity_plate_up.units)
+print("The vertical velocity component between the plate settlers is in the range", velocity_plate_up.magnitude, velocity_plate_up.units)
 
 velocity_plate = (velocity_plate_up / np.sin(angle)).to(u.mm/u.s)
-print("The velocity between the plate settlers is", velocity_plate.magnitude, velocity_plate.units)
+print("The velocity between the plate settlers is in the range", velocity_plate.magnitude, velocity_plate.units)
 
 
 # Parameters for tube settler
 height_tube_settler = (height_blanket + diam_sludge_weir + sep_dist + 0.5*diam_tube).to(u.inch)  # height of the center of the tube setler
-print("The height of the center of the tube settler where is attaches to the body of the reactor is",height_tube_settler.magnitude, height_tube_settler.units)
+print("The height of the center of the tube settler where is attaches to the body of the reactor is in the range",height_tube_settler.magnitude, height_tube_settler.units)
 
 length_tube_settler_vertical = (water_elevation - height_tube_settler).to(u.inch)
-print("The vertical length of the tube settler is", length_tube_settler_vertical.magnitude, length_tube_settler_vertical.units)
+print("The vertical length of the tube settler is in the range", length_tube_settler_vertical.magnitude, length_tube_settler_vertical.units)
 
 length_tube_settler = (length_tube_settler_vertical / np.sin(angle)).to(u.cm)
-print("The length of the tube setter is",length_tube_settler.magnitude, length_tube_settler.units)
+print("The length of the tube setter is in the range",length_tube_settler.magnitude, length_tube_settler.units)
 
 projected_area = (((length_tube_settler * np.cos(angle)
                   ) + (plate_space/np.sin(angle))) * diam_tube).to(u.m**2)
-print("The projected area of the plates is", projected_area.magnitude, projected_area.units)
+print("The projected area of the plates is in the range", projected_area.magnitude, projected_area.units)
 
 velocity_capture = (plate_space.to(u.mm) * velocity_plate_up.to(u.mm/u.s))/(length_tube_settler.to(u.mm) * np.sin(angle) * np.cos(angle) + plate_space.to(u.mm))
-print("The capture veloctiy is", velocity_capture.magnitude, velocity_capture.units)
+print("The capture veloctiy is in the range", velocity_capture.magnitude, velocity_capture.units)
 
 number_plate_settler = np.floor(diam_tube / (plate_space.to(u.inch) + thickness_sed_plate.to(u.inch)))
-print("The number of plate settlers is", number_plate_settler.magnitude, number_plate_settler.units)
+print("The number of plate settlers is in the range", number_plate_settler.magnitude, number_plate_settler.units)
 ```
 
 ## 2018 EPA Expo in Washington, D.C.
