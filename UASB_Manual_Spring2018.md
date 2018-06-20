@@ -1,7 +1,11 @@
 
-# Upflow Anaerobic Sludge Blanket (UASB), Spring 2018
-#### Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
-#### May 18, 2018
+# Upflow Anaerobic Sludge Blanket (UASB) Design Manual
+
+
+#### Spring 2018:
+Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
+#### Summer 2018:
+Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
 
 ## Abstract
@@ -74,6 +78,8 @@ A schematic of the UASB with proposed design improvements is shown in Figure 2 a
 
 
 <p align="center">Figure 3: The Front View of the proposed UASB with sloped bottom geometry.</p>
+
+### Degritting System
 
 ### Size and Flow
 
@@ -195,9 +201,9 @@ Table 2: Literature values for parameters associated with influent control syste
 |:--------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Descending Sewage Velocity**                                                    | **$\leq$0.2 m/s**                                                                                       |                                                                                                                                                                                                                             |                                                                                                                                           |    
 | **Diameter of pipe**                                                              | **75-100 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             | **100 mm** (to allow gas bubbles to rise)                                                                                               
-| **Nozzle Diameter**                                                               | **40-50 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             |                                                                                                                                           |    
-| **Exit Velocity**                                                                 | **$\geq$0.40 m/s**                                                                                      |                                                                                                                                                                                                                             | **over 0.3 m/s**                                                                                                                                |    
-| **Apertures**                                                                     | **2 openings with 25mm × 40mm cross section**                                                           | See Aperture Design Problem 7.12.1.6                                                                                                                                                                                        | Single outlet point per pipe (for identification of clogs)                                                                                |     
+| **Nozzle Diameter**                                                               | **40-50 mm** (from practical experience)                                                               |                                                           |                                                                                                                                           |    
+| **Exit Velocity**    | **$\geq$0.40 m/s**   |     | **over 0.3 m/s**  |    
+|**Apertures**  | **2 openings with 25mm × 40mm cross section** | See Aperture Design Problem 7.12.1.6   | Single outlet point per pipe (for identification of clogs)   |
 | **Influence Area**                                                                | **2.0-3.0 $m^2$ for COD 400-600 mg/L**                                                                  | **1 point per 3.7-4.0 $m^2$ floor area**                                                                                                                                                                                    | **1-4 $m^2$ per feed point**                                                                                                              |    
 | **Settling Zone Surface**                                                         |                                                                                                         |                                                                                                                                                                                                                             | **75% of total surface**                                                                                                                  |    
 | **Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit** |    **0.20-0.30 m**                                                                                                     |               **2-3 m head loss** through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2 | **50 cm**
@@ -246,7 +252,7 @@ The main challenges to this design include geometry, clogging, and flow division
 
 #### Influent System Design
 
-Over summer of 2018, the UASB team worked on designing these systems in preparation for fabrication for the fall.  This process began with determining the critical design parameters that constrained the design, which are summarized in table X below.  
+Over the Summer of 2018, the UASB team worked on designing these systems in preparation for fabrication for the fall.  This process began with determining the critical design parameters that constrained the design, which are summarized in table X below.  
 
 
 <p align="center">Table X: Design parameters for UASB hydraulics </p>
@@ -255,20 +261,24 @@ Over summer of 2018, the UASB team worked on designing these systems in preparat
 |:-------------- |:----- | ------------ | ------------- |
 | Reactor Volume | 1221 Liters | Yes  | Based on max diameter and height to allow fabrication |
 | Sludge Volume  | ~850 Liters | No | Roughly 70% of Reactor Volume.  Needs to be better constrained based on location of tube settler. |
-| HRT |  >4hrs | Yes, minimum  | Based on literature and lab scale test.  | |
-| Average Flow Rate   | <0.08 L/s  | Yes, Maximum | Q = Volume / Hydraulic Residence Time  |
-| Minimum Exit Velocity   | >0.03 m/s  | Yes | Minimum velocity needed to scour settling particles |    
-| Maximum Exit Velocity | <= 1 m/s | No | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined. |  
-| | | | | | |
+| HRT | $\geq$ 4hrs | Yes, minimum  | Based on literature and lab scale test.  | |
+| Average Flow Rate   | $\leq$ 0.08 L/s  | Yes, Maximum | Q = Volume / Hydraulic Residence Time  |
+| Minimum Exit Velocity   | $\geq$ 0.03 m/s   | Yes | Minimum velocity needed to scour settling particles |    
+| Maximum Exit Velocity | $\leq$ 1 m/s | No | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined. |  
+| Influent Pipe Inner Diameter | 75 - 100mm  | No | Based on literature values to prevent clogging in pipes.  Some flexibility. |
+| Influent Pipe Length | ~8.5 feet | Yes| Roughly equal to height of reactor plus half of diameter (see influent pipe geometry) |
+| ||||
 
+Initially, design included another design parameter, descending sewage velocity.  This value was constrained below 0.2 m/s the average rising velocity of air bubbles, in order to prevent these air bubbles brought in from the pulse flow from entering the reactor ([Anaerobic Reactors, 2007](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f)).  However, design of a large influent tank where the pulse flow enters, where the descending velocity would be much lower than 0.2 m/s, solves this problems without constraining pipe diameter or hydraulic head.  
 
-
-
+Given these input parameters, we can solve for the headloss necessary to achieve desired flow using the following code:
 
 #### Code
 
 ```python
+# Calculates headloss in influent system based on dimensions of reactor
 
+# Import required functions
 from aide_design.play import*
 import math
 
@@ -286,7 +296,7 @@ nom_diam = 3  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
 
-#Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
+# Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
 exit_vel = 1 * u.m / u.s
 pipe_flow = exit_vel * pc.area_circle(pipe_diam)
 pipe_length = (diam / 2) + height
@@ -297,9 +307,9 @@ Pipe_Rough = 0.0015 * u.mm
 total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
 print(total_hl.to(u.cm))
 
-#Calculate volume needed per dump of tipping bucket
+# Given volume of tipping bucket, determine time to fill bucket
 
-dump_volume = 5 *u.L
+dump_volume = 5 * u.L
 filltime = dump_volume / Q_avg
 print(filltime.to(u.min))
 
@@ -308,6 +318,15 @@ print(filltime.to(u.min))
 
 
 ```
+
+### Entrance Tank design
+
+### Tipping Bucket Design
+
+### Influent Pipe Geometry
+
+
+
 
 ### Biogas Production Calculations
 
