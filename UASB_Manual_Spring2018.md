@@ -292,7 +292,8 @@ Q_avg = vol / min_HRT
 print(Q_avg.to(u.L/u.s))
 
 #Determine pipe inner diameter based on nominal diameter
-nom_diam = 3  * u.inch
+
+nom_diam = 2  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
 
@@ -309,14 +310,15 @@ print(total_hl.to(u.cm))
 
 # Given volume of tipping bucket, determine time to fill bucket
 
-dump_volume = 5 * u.L
+dump_volume = 20 * u.L
 filltime = dump_volume / Q_avg
 print(filltime.to(u.min))
 
 #dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
 #print(dump_amount.to(u.L))
 
-
+bucket_diam = 30 * u.cm
+tank_width = 35 * u.cm
 ```
 
 ### Entrance Tank design
