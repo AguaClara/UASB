@@ -309,16 +309,20 @@ print(total_hl.to(u.cm))
 
 # Given volume of tipping bucket, determine time to fill bucket
 
-dump_volume = 20 * u.L
-filltime = dump_volume / Q_avg
+dump_vol = 20 * u.L
+filltime = dump_vol / Q_avg
 print(filltime.to(u.min))
 
 
 #dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
 #print(dump_amount.to(u.L))
 
+# Calculate dimensions of storage tank
 bucket_diam = 30 * u.cm
-tank_width = 35 * u.cm
+tank_width = 35 * u.cm #add 5 cm extra room
+tank_len = (dump_vol) / (total_hl * tank_width)
+
+print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
 ```
 
 ### Entrance Tank design
