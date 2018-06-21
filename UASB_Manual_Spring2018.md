@@ -267,7 +267,6 @@ Over the Summer of 2018, the UASB team worked on designing these systems in prep
 | Maximum Exit Velocity | $\leq$ 1 m/s | No | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined. |  
 | Influent Pipe Inner Diameter | 75 - 100mm  | No | Based on literature values to prevent clogging in pipes.  Some flexibility. |
 | Influent Pipe Length | ~8.5 feet | Yes| Roughly equal to height of reactor plus half of diameter (see influent pipe geometry) |
-| ||||
 
 Initially, design included another design parameter, descending sewage velocity.  This value was constrained below 0.2 m/s the average rising velocity of air bubbles, in order to prevent these air bubbles brought in from the pulse flow from entering the reactor ([Anaerobic Reactors, 2007](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f)).  However, design of a large influent tank where the pulse flow enters, where the descending velocity would be much lower than 0.2 m/s, solves this problems without constraining pipe diameter or hydraulic head.  
 
@@ -283,8 +282,8 @@ from aide_design.play import*
 import math
 
 # Calculate size and flow dimensions
-diam = 3 * u.ft
 height = 7 * u.ft
+diam = 3 * u.ft
 UASB_design = UASBSize(diam, height)
 vol = UASB_design[1]
 min_HRT = 4 * u.hr
@@ -312,6 +311,7 @@ print(total_hl.to(u.cm))
 dump_volume = 5 * u.L
 filltime = dump_volume / Q_avg
 print(filltime.to(u.min))
+
 
 #dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
 #print(dump_amount.to(u.L))
