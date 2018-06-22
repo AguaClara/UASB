@@ -292,7 +292,7 @@ print(Q_avg.to(u.L/u.s))
 
 #Determine pipe inner diameter based on nominal diameter
 
-nom_diam = 2  * u.inch
+nom_diam = 3  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
 
@@ -306,6 +306,13 @@ Nu = pc.viscosity_kinematic(Temp)
 Pipe_Rough = 0.0015 * u.mm
 total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
 print(total_hl.to(u.cm))
+
+
+SA = (15*u.L) / (30*u.cm)
+print(SA.to(u.cm**2))
+
+
+
 
 # Given volume of tipping bucket, determine time to fill bucket
 
@@ -335,6 +342,11 @@ print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", ex
 
 ### Influent Pipe Geometry
 
+An important constraint of influent flow control is the geometry of the pipes, i.e. how they enter the reactor, and how they deliver the wastewater into the reactor.  Due to the settled bed nature of the UASB, this geometry is incredibly important, as for maximum efficiency the wastewater should be evenly distributed throughout the settled bed so that all granules are receiving wastewater.  This also prevents potential dead zones within the reactor.  Additionally, high exit velocities from the pipe can create direct paths through the reactor, short circuiting the system.
+
+To prevent direct paths through the sludge blanket to the upper effluent lines, influent pipes entering the reactor will be pointed downwards and towards the V-shaped plates in the bottom of the reactor.  This will ideally serve to reduce the velocity of the influent waste significantly, and disperse water throughout the bottom of the reactor.  One goal of the summer is to conduct basic tests of a sludge like substitute (tapioca?) as a model sludge blanket, and then add influent lines, possibly with red dye, to see the potential streamlines, and determine a possible maximum influent velocity.  
+
+As detailed in above sections, influent pipes will begin from the pulse flow control system (tipping bucket and tank), run down the side of the tank, and then enter the reactor from one side.  There are two potential designs for the pipe geometry, detailed in figures x and y below.  
 
 
 
