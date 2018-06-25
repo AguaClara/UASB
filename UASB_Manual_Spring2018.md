@@ -292,7 +292,7 @@ print(Q_avg.to(u.L/u.s))
 
 #Determine pipe inner diameter based on nominal diameter
 
-nom_diam = 3  * u.inch
+nom_diam = 2.5  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
 
@@ -312,12 +312,10 @@ SA = (15*u.L) / (30*u.cm)
 print(SA.to(u.cm**2))
 
 
-
-
 # Given volume of tipping bucket, determine time to fill bucket
 
-dump_vol = 20 * u.L
-filltime = dump_vol / Q_avg
+dump_vol = 15 * u.L
+filltime = dump_vol /
 print(filltime.to(u.min))
 
 
