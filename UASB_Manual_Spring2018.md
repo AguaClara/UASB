@@ -336,6 +336,14 @@ print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", ex
 
 ### Tipping Bucket Design
 
+The design process for the tipping bucket began with first looking for any possible engineering designs for tipping bucket systems in use today.  While tipping buckets are used in water parks and other amusement areas, we were unable to find an detailed designs of tipping bucket designs that would give us guiding information.  
+
+Without any design information, the team began by fabricating a small scale tipping bucket to get a sense for the design and operation of one of these bucket systems.  This bucket, pictured in figure X below, was made with a simple plastic bucket, with two screws drilled in to opposite sides.  These screws rested in holes from connector pieces on 80-20 bars, allowing the bucket to swing freely with little friction.  **EMBED VIDEOS INTO THIS SECTION**  
+
+While this system gave the team a better sense of how a tipping buc
+
+
+
 
 
 ### Influent Pipe Geometry
