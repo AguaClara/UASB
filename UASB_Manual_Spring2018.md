@@ -255,6 +255,13 @@ Over summer of 2018, the UASB team worked on designing these systems in preparat
 |:-------------- |:----- | ------------ | ------------- |
 | Reactor Volume | 1221 Liters | Yes  | Based on max diameter and height to allow fabrication |
 | Sludge Volume  |       |              |               |
+|HRT   |  >4hrs |   | based on literature  |
+|Average Flow Rate   | <0.08 L/s  |   |   |
+|Exit Velocity   | >0.03 m/s  |   |   
+
+
+
+
 
 
 
