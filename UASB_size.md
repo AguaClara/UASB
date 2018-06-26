@@ -41,10 +41,3 @@ def UASBSize(diam, height):
     print('The number of people served by this reactor if only blackwater is treated is', people_served_BW)
     return output
 ```
-
-#### Test Calculations
-The height of the reactor is limited to 7 feet due to fabrication constraint imposed by the ceiling height of the lab.  The diameter is limited to 3 feet as it is the largest pipe that can be obtained.
-
-```python
-UASB = UASBSize(3*u.ft, 7*u.ft)
-```
