@@ -12,13 +12,20 @@ One major design goal for the summer was to finish the influent system that deli
 
 #### Continuous versus Pulse Flow
 
-In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate (this is of course already a major assumption: wastewater production will rise in the day and lower at night).  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  After meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, he suggested the idea of a pulse flow system, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters.  Mr. Gottlieb suggested two possible methods to deliver the pulses: A tipping bucket system or a siphon.  
+In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  After meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, he suggested the idea of a pulse flow system, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters.  Mr. Gottlieb suggested two possible methods to deliver the pulses: A tipping bucket system or a siphon.  
 
 #### Tipping Bucket versus Siphon system
 
-**Add descriptions from spring 2018**
+(**Add descriptions from spring 2018**)
+#### Rejection of the Siphon System
 
-Ultimately, the summer team researched siphons and were unable to find any detailed engineering design guidelines on how they function and how to design for them.  Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design, rather then spending time fabricating and testing a siphon system that may not work at all.
+The summer team researched siphons and discussed with M-dawg potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow.
+
+#### Tipping Bucket System
+
+
+
+Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design, rather then spending time fabricating and testing a siphon system that may not work at all.
 
 #### Hydraulic Parameters
 
