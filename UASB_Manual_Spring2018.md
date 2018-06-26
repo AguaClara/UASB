@@ -4,8 +4,7 @@
 
 #### Spring 2018:
 Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
-#### Summer 2018:
-Ian Cullings, Isa Kaminsky, Ananya Gangadhar
+
 
 
 ## Abstract
@@ -251,84 +250,6 @@ An alternate system of delivering pulse flow, as proposed by Professor Weber-Shi
 The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Dr. Weber-Shirk and is illustrated above.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.
 
 #### Influent System Design
-
-Over the Summer of 2018, the UASB team worked on designing these systems in preparation for fabrication for the fall.  This process began with determining the critical design parameters that constrained the design, which are summarized in table X below.  
-
-
-<p align="center">Table X: Design parameters for UASB hydraulics </p>
-
-| Parameter      | Value | Constrained? | Justification |
-|:-------------- |:----- | ------------ | ------------- |
-| Reactor Volume | 1221 Liters | Yes  | Based on max diameter and height to allow fabrication |
-| Sludge Volume  | ~850 Liters | No | Roughly 70% of Reactor Volume.  Needs to be better constrained based on location of tube settler. |
-| HRT | $\geq$ 4hrs | Yes, minimum  | Based on literature and lab scale test.  | |
-| Average Flow Rate   | $\leq$ 0.08 L/s  | Yes, Maximum | Q = Volume / Hydraulic Residence Time  |
-| Minimum Exit Velocity   | $\geq$ 0.03 m/s   | Yes | Minimum velocity needed to scour settling particles |    
-| Maximum Exit Velocity | $\leq$ 1 m/s | No | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined. |  
-| Influent Pipe Inner Diameter | 75 - 100mm  | No | Based on literature values to prevent clogging in pipes.  Some flexibility. |
-| Influent Pipe Length | ~8.5 feet | Yes| Roughly equal to height of reactor plus half of diameter (see influent pipe geometry) |
-
-Initially, design included another design parameter, descending sewage velocity.  This value was constrained below 0.2 m/s the average rising velocity of air bubbles, in order to prevent these air bubbles brought in from the pulse flow from entering the reactor ([Anaerobic Reactors, 2007](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f)).  However, design of a large influent tank where the pulse flow enters, where the descending velocity would be much lower than 0.2 m/s, solves this problems without constraining pipe diameter or hydraulic head.  
-
-Given these input parameters, we can solve for the headloss necessary to achieve desired flow using the following code:
-
-#### Code
-
-```python
-# Calculates headloss in influent system based on dimensions of reactor
-
-# Import required functions
-from aide_design.play import*
-import math
-
-# Calculate size and flow dimensions
-height = 7 * u.ft
-diam = 3 * u.ft
-UASB_design = UASBSize(diam, height)
-vol = UASB_design[1]
-min_HRT = 4 * u.hr
-Q_avg = vol / min_HRT
-print(Q_avg.to(u.L/u.s))
-
-#Determine pipe inner diameter based on nominal diameter
-
-nom_diam = 2.5  * u.inch
-pipe_diam = pipe.ID_sch40(nom_diam)
-print(pipe_diam.to(u.mm))
-
-# Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
-exit_vel = 1 * u.m / u.s
-pipe_flow = exit_vel * pc.area_circle(pipe_diam)
-pipe_length = (diam / 2) + height
-Kminor = 4
-Temp = 23 * u.degC #average temp in Honduras
-Nu = pc.viscosity_kinematic(Temp)
-Pipe_Rough = 0.0015 * u.mm
-total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
-print(total_hl.to(u.cm))
-
-
-SA = (15*u.L) / (30*u.cm)
-print(SA.to(u.cm**2))
-
-
-# Given volume of tipping bucket, determine time to fill bucket
-
-dump_vol = 15 * u.L
-filltime = dump_vol /
-print(filltime.to(u.min))
-
-
-#dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
-#print(dump_amount.to(u.L))
-
-# Calculate dimensions of storage tank
-bucket_diam = 30 * u.cm
-tank_width = 35 * u.cm #add 5 cm extra room
-tank_len = (dump_vol) / (total_hl * tank_width)
-
-print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
-```
 
 ### Entrance Tank design
 
