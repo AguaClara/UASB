@@ -69,6 +69,7 @@ print(Q_avg.to(u.L/u.s))
 
 nom_diam = 2.5  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
+print(pipe_diam.to(u.mm))
 
 # Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
 exit_vel = 1 * u.m / u.s
