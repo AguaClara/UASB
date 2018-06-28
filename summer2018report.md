@@ -4,28 +4,21 @@
 
 #### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
-Over Summer of 2018, the UASB team has been continuing the design work of previous semesters to finish a complete design of a UASB wastewater treatment system.  After completion of this design, future teams will work on fabrication of the system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.  
+Over Summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.  
 
-### Influent Flow system
+### Influent Flow System
 
 One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor.
 
 #### Continuous versus Pulse Flow
 
-In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  After meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, he suggested the idea of a pulse flow system, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters.  Mr. Gottlieb suggested two possible methods to deliver the pulses: A tipping bucket system or a siphon.  
+In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, he suggested the idea of a pulse flow system, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb suggested two possible methods to deliver the pulses: A tipping bucket system or a siphon.  
 
-#### Tipping Bucket versus Siphon system
+#### Tipping Bucket versus Siphon System
 
 (**Add descriptions from spring 2018**)
-#### Rejection of the Siphon System
 
-The summer team researched siphons and discussed with M-dawg potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow.
-
-#### Tipping Bucket System
-
-
-
-Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design, rather then spending time fabricating and testing a siphon system that may not work at all.
+The summer team researched siphons and discussed with M-dawg potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design, rather then spending time fabricating and testing a siphon system that may not work at all.
 
 #### Hydraulic Parameters
 
@@ -45,6 +38,7 @@ Built within the design of the influent systems are a number of hydraulic constr
 | Influent Pipe Inner Diameter | 75 - 100mm  | No | Based on literature values to prevent clogging in pipes.  Some flexibility. |
 | Influent Pipe Length | ~8.5 feet | Yes| Roughly equal to height of reactor plus half of diameter (see influent pipe geometry) |
 |Bucket Dump Volume|~20 L| No| Constrained by both time to fill bucket (should be larger) and fraction of reactor volume (should be smaller) 20 L chosen as it is the volume of easily available buckets while fulfilling these constraints||
+|Wastewater Generation per Person   |  10.8 L/hr | No  |  Rule of Thumb From M-dawg |   |   |   |   |   |   |
 
 From these constraints, we can use the general headloss equation (including the headloss trick) for a circular pipe to determine the headloss needed to acheive our desired exit velocity, given a specific diameter of pipe.  
 
@@ -85,9 +79,15 @@ print(total_hl.to(u.cm))
 
 #### Design of Tipping Bucket system
 
-Given these parameters, the team began to plan on how to properly design the tipping bucket system.  Design began by looking into tipping bucket systems online to research their design, however since tipping buckets are generally only used in water parks, it was difficult to find any detailed design process for these systems.  At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
+Given these parameters, the team began to plan on how to properly design the tipping bucket system.  Design began by looking into tipping bucket systems online to research their design; however, since tipping buckets are generally only used in water parks, it was difficult to find any detailed design process for these systems. At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
 
-**Add photo of first tipping bucket**
+![Timmy_the_Tipping_Bucket](UASB/Images/IMG_5759.jpg)
+
+
+
+
+
+![Timmy_the_Tipping_Bucket](https://github.com/AguaClara/UASB/blob/master/Images/IMG_5759.jpg)
 
 Pictured above is our first tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
 
@@ -147,13 +147,15 @@ Next, the team considered adding more material into the bottom of the tank (addi
 
 After discussing this further with Monroe, he suggested a new design to solve this problem.  Instead of sloping the tank, he suggested keeping the tank rectangular, and adding larger pipes along the bottom which would then connect to the influent pipes.  These pipes would retain most of the volume dumped and provide the needed hydraulic head while not altering the tank geometry.  A fusion model of this model is pictured below.
 
-
+**Add fusion model of full influent system**
 
 #### Code
+
 Given these input parameters, we can solve for the headloss necessary to achieve desired flow using the following code:
 
 ```python
 # Calculates headloss in influent system based on dimensions of reactor
+
 
 # Import required functions
 from aide_design.play import*
@@ -170,7 +172,6 @@ Q_avg = vol / min_HRT
 print(Q_avg.to(u.L/u.s))
 
 # Determine pipe inner diameter based on nominal diameter
-
 nom_diam = 2.5  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
@@ -187,35 +188,50 @@ Pipe_Rough = 0.0015 * u.mm
 total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
 print(total_hl.to(u.cm))
 
-# Given volume of tipping bucket, determine time to fill bucket
-
-dump_vol = 15 * u.L
-filltime = dump_vol /
-print(filltime.to(u.min))
-
-# dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
-# print(dump_amount.to(u.L))
-
 # Calculate dimensions of storage tank
-bucket_diam = 30 * u.cm
-tank_width = 35 * u.cm #add 5 cm extra room
-tank_len = (dump_vol) / (total_hl * tank_width)
+# bucket_diam = 30 * u.cm
+#tank_width = 35 * u.cm # add 5 cm extra room
+#tank_len = (dump_vol) / (total_hl * tank_width)
 
-print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
+#print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
 ```
 
-```Python
+With this given headloss, we can solve for the dimensions of the larger pipe that will intersect with the influent pipes.  This pipe needs to fill to the required head with one dump, while still allowing a small volume of water occupy the entrance tank, allowing even flow distribution.
+
+```python
 # Determines pipe diameter needed to achieve necessary hydraulic head
 # Input hydraulic head calculated in from headloss function and volume of dump
 
-def find_pipe_diam(headloss, dump_volume):
-  pipe_area = dump_volume / headloss
-  Diameter = pc.diam_circle(pipe_area)
-  return Diameter
+def find_pipe_diam(headloss, dump_volume, tank_area, water_height):
+  pipe_filled = dump_volume - (tank_area * water_height) # amount of pipe filled with water in each dump
+  pipe_area = pipe_filled / headloss
+  diam = pc.diam_circle(pipe_area)
+  return diam
+
+# Run function for influent system dimensions
+dump_volume = 15 * u.L
+len = 60 * u.cm
+wid = 35 * u.cm
+tank_area = len * wid
+water_height = 2 * u.cm
+pipe_hl = total_hl - water_height  # headloss just within the pipe, total headloss minus the height of water within the tank
+target_diam = find_pipe_diam(pipe_hl, dump_volume, tank_area, water_height)
+print(target_diam.to(u.cm))
+# Determine nominal diameter for pipe based on inner diameters
+#NOM_diam = pipe.ND_SDR_available(target_diam, sch40)
 
 ```
 
 
+Given the pipe diameter, we now check to ensure the velocity within the pipe is below 0.2 m/s, to allow air bubbles to escape.  
+
+```python
+# Calculate the maximum velocity through the large diameter pipe when hydraulic head is largest after a dump
+pipe_A = pc.area_circle(target_diam)
+FlowRate = pc.flow_pipe(target_diam, total_hl, pipe_hl, )
+
+
+```
 
 
 
