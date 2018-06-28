@@ -81,12 +81,6 @@ print(total_hl.to(u.cm))
 
 Given these parameters, the team began to plan on how to properly design the tipping bucket system.  Design began by looking into tipping bucket systems online to research their design; however, since tipping buckets are generally only used in water parks, it was difficult to find any detailed design process for these systems. At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
 
-![Timmy_the_Tipping_Bucket](UASB/Images/IMG_5759.jpg)
-
-
-
-
-
 ![Timmy_the_Tipping_Bucket](https://github.com/AguaClara/UASB/blob/master/Images/IMG_5759.jpg)
 
 Pictured above is our first tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
@@ -128,7 +122,7 @@ Summarized in a table:
 |Width|35 cm |30 cm for bucket diameter plus 5 cm for both pivot pieces|
 |Length|$\geq$ 60 cm|Height of bucket plus extra space to allow free rotation.  Requires closer examination in fusion|
 
-**Add image of tank and bucket clearly defining l,w,h**
+![Schematic of Influent System](https://github.com/AguaClara/UASB/blob/ff3b4e844a16a686811ad80eee5941520a022939/Images/Influent%20Geo%20Slant.png)
 
 The team began by designing the tank as a simple, rectangular box.  However, given the constraints on the dimensions of the box, it was impossible to get the required hydraulic head gain from bucket, as summarized in the code below:
 
@@ -228,8 +222,13 @@ Given the pipe diameter, we now check to ensure the velocity within the pipe is 
 ```python
 # Calculate the maximum velocity through the large diameter pipe when hydraulic head is largest after a dump
 pipe_A = pc.area_circle(target_diam)
-FlowRate = pc.flow_pipe(target_diam, total_hl, pipe_hl, )
-
+K_minor = 1 # incorporate all kinetic energy as loss through headloss trick
+Temp = 23 * u.degC # average temp in Honduras
+Nu = pc.viscosity_kinematic(Temp)
+Pipe_Rough = 0.0015 * u.mm
+FlowRate = pc.flow_pipe(target_diam, total_hl, pipe_hl, Nu, Pipe_Rough, K_minor)
+Max_vel = (FlowRate / pipe_A).to(u.m / u.s)
+print(Max_vel)
 
 ```
 
