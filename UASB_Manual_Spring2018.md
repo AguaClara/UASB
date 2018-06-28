@@ -280,6 +280,7 @@ Given these input parameters, we can solve for the headloss necessary to achieve
 # Import required functions
 from aide_design.play import*
 import math
+# Import UASBSize somehow
 
 # Calculate size and flow dimensions
 height = 7 * u.ft
@@ -292,7 +293,7 @@ print(Q_avg.to(u.L/u.s))
 
 #Determine pipe inner diameter based on nominal diameter
 
-nom_diam = 2  * u.inch
+nom_diam = 2.5  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
 
@@ -309,7 +310,7 @@ print(total_hl.to(u.cm))
 
 # Given volume of tipping bucket, determine time to fill bucket
 
-dump_vol = 20 * u.L
+dump_vol = 15 * u.L
 filltime = dump_vol / Q_avg
 print(filltime.to(u.min))
 
