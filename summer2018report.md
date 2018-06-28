@@ -143,6 +143,12 @@ head_gain = (bucket_vol / area).to(u.cm)
 print("One dump of the bucket gives", head_gain, "of hydraulic head")
 ```
 
+Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the entrance tank.  
+
+After discussing this further with Monroe, he suggested a new design to solve this problem.  Instead of sloping the tank, he suggested keeping the tank rectangular, and adding larger pipes along the bottom which would then connect to the influent pipes.  These pipes would retain most of the volume dumped and provide the needed hydraulic head while not altering the tank geometry.  A fusion model of this model is pictured below.
+
+
+
 #### Code
 Given these input parameters, we can solve for the headloss necessary to achieve desired flow using the following code:
 
@@ -163,7 +169,7 @@ min_HRT = 4 * u.hr
 Q_avg = vol / min_HRT
 print(Q_avg.to(u.L/u.s))
 
-#Determine pipe inner diameter based on nominal diameter
+# Determine pipe inner diameter based on nominal diameter
 
 nom_diam = 2.5  * u.inch
 pipe_diam = pipe.ID_sch40(nom_diam)
@@ -176,11 +182,10 @@ pipe_length = (diam / 2) + height
 Kminor = 4
 Temp = 23 * u.degC #average temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
+
 Pipe_Rough = 0.0015 * u.mm
 total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
 print(total_hl.to(u.cm))
-
-
 
 # Given volume of tipping bucket, determine time to fill bucket
 
@@ -188,8 +193,8 @@ dump_vol = 15 * u.L
 filltime = dump_vol /
 print(filltime.to(u.min))
 
-#dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
-#print(dump_amount.to(u.L))
+# dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
+# print(dump_amount.to(u.L))
 
 # Calculate dimensions of storage tank
 bucket_diam = 30 * u.cm
@@ -199,7 +204,16 @@ tank_len = (dump_vol) / (total_hl * tank_width)
 print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
 ```
 
+```Python
+# Determines pipe diameter needed to achieve necessary hydraulic head
+# Input hydraulic head calculated in from headloss function and volume of dump
 
+def find_pipe_diam(headloss, dump_volume):
+  pipe_area = dump_volume / headloss
+  Diameter = pc.diam_circle(pipe_area)
+  return Diameter
+
+```
 
 
 
