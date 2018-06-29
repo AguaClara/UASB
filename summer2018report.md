@@ -83,7 +83,7 @@ Given these parameters, the team began to plan on how to properly design the tip
 
 ![Timmy_the_Tipping_Bucket](https://github.com/AguaClara/UASB/blob/master/Images/IMG_5759.jpg)
 
-Pictured above is our first tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
+Pictured above is the first design of the tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
 
 * Location of the pivot on the bucket is very important for operation.  Height of the pieces controls how much water is collected before dumping (but if the pieces are too high, they won't dump at all).  Horizontal positioning of the pivot determines the angle the bucket rests at and how easy it is to tip.
 
@@ -100,7 +100,6 @@ This bucket is created with a 5 gallon bucket (chosen as they are easy to purcha
 The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary (important as pieces will inevitably break).
 
 Next steps for this process are to order pieces for the bucket and test it physically to determine the optimal orientation of the pivot system.
-
 
 #### Design of Influent Tank
 
@@ -171,10 +170,10 @@ pipe_diam = pipe.ID_sch40(nom_diam)
 print(pipe_diam.to(u.mm))
 
 # Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
-exit_vel = 1 * u.m / u.s
+exit_vel = 1 * u.m / u.s #maximum exit velocity at the bottom of the system, variable
 pipe_flow = exit_vel * pc.area_circle(pipe_diam)
 pipe_length = (diam / 2) + height
-Kminor = 4
+Kminor = 4 # 1 from headloss trick, plus 2 * 1.5 for the two full elbows in the influent system
 Temp = 23 * u.degC #average temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
 
@@ -215,8 +214,6 @@ print(target_diam.to(u.cm))
 #NOM_diam = pipe.ND_SDR_available(target_diam, sch40)
 
 ```
-
-
 Given the pipe diameter, we now check to ensure the velocity within the pipe is below 0.2 m/s, to allow air bubbles to escape.  
 
 ```python
@@ -233,5 +230,7 @@ print(Max_vel)
 ```
 
 
-
 ### Biogas Capture System
+
+## Fabrication manual
+The team started to write a fabrication manual this summer that will document the different ideas to
