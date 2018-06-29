@@ -229,8 +229,7 @@ print(Max_vel)
 
 ```
 
-
 ### Biogas Capture System
 
 ## Fabrication manual
-The team started to write a fabrication manual this summer that will document the different ideas to
+The team started to write a fabrication manual this summer that will document the total fabrication process so later teams can recreate the UASB system.  This working document can be found in our Github repository.
