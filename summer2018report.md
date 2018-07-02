@@ -6,9 +6,13 @@
 
 Over Summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.  
 
+**Juan's comments:** You give very little background as to what's going on, and this section does not have a title. I believe this is an 'abstract'
+
 ### Influent Flow System
 
 One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor.
+
+**Juan's comments:** I think a figure would be very useful here
 
 #### Continuous versus Pulse Flow
 
@@ -19,6 +23,8 @@ In Spring 2018, when design of the influent system began, the team began by assu
 (**Add descriptions from spring 2018**)
 
 The summer team researched siphons and discussed with M-dawg potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
+
+**Juan's comments:** Using 'M-dawg' is extremely inappropriate.
 
 #### Hydraulic Parameters
 
