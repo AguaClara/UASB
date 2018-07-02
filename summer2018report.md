@@ -200,7 +200,7 @@ def find_pipe_diam(headloss, dump_volume, tank_area, water_height):
   pipe_area = pipe_filled / headloss
   diam = pc.diam_circle(pipe_area)
   return diam
-
+  print(diam)
 # Run function for influent system dimensions
 dump_volume = 15 * u.L
 len = 60 * u.cm
@@ -232,4 +232,4 @@ print(Max_vel)
 ### Biogas Capture System
 
 ## Fabrication manual
-The team started to write a fabrication manual this summer that will document the total fabrication process so later teams can recreate the UASB system.  This working document can be found in our Github repository.
+The team started to write a fabrication manual this summer that will document the total fabrication process so later teams can recreate the UASB system. This working document can be found in our Github repository.

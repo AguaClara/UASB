@@ -32,12 +32,14 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 * **Pros**: Less shearing.
 * **Cons**: Drilling holes makes the bucket vulnerable to leaks. Ease of replacement is still an issue.
 
-3. 
+3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
+
+**(Insert design drawing here)**
 
 
 
 ### Holding Tank
-
+The plan is to order a heavy duty pre-fabricated rectangular holding tank. 
 
 ## UASB reactor
 
