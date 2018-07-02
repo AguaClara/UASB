@@ -108,18 +108,6 @@ The next steps for this process are to order pieces for the bucket and test it p
 Another crucial part of the design  is the influent tank.  This tank will capture all wastewater from the tipping bucket, and distribute it evenly across both influent pipes from flow control.  To prevent any splashing of wastewater, this tipping bucket will be completely contained within the influent tank.
 
 The crucial design aspects of the tank are listed below:
-<<<<<<< HEAD
-=======
-
->>>>>>> 675b6974a10b11ddfa739d708fc86542cda3e4e5
-* The tank must be tall enough to completely contain the tipping bucket, and prevent any "splashing" of wastewater out of the tank
-* The tank must be just wide enough to contain the bucket and the two brackets. The wider the tank, the more material required for the pivot bars, and the less structural strength of the bucket (due to more torque on each bar).
-* The dimensions of the tank must be such that they create the required amount of hydraulic head from one dump of the tipping bucket.  This can be constrained by adding or removing material from the bottom of the tank to increase water height added per volume of a dump
-* The tank must evenly split flow between the two pipes.  The geometry of the pipes can be changed based on where the water is dumped, but most importantly there should always be a small volume of water in the tank at all times.
-* There should always be a small section of the tank where the descending sewage velocity is below 0.2 m/s to allow air bubbles to escape.    
-* The tank should be easy to source, that is it can be purchased at the correct dimensions, or fabricated simply
-<<<<<<< HEAD
-=======
 
 * The tank **must be tall enough** to completely contain the tipping bucket, and prevent any "splashing" of wastewater out of the tank
 * The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for the pivot bars, and reduce the structural strength of the bucket (by creating more torque on each bar)
@@ -127,8 +115,6 @@ The crucial design aspects of the tank are listed below:
 * The tank **must evenly split flow between the two pipes**.  This can be designed for by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out.
 * There should always be a small section of the tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.    
 * The tank should be **easy to source**, that is it can be purchased at the correct dimensions, or fabricated simply
-
->>>>>>> 675b6974a10b11ddfa739d708fc86542cda3e4e5
 
 Summarized in a table:
 
@@ -206,13 +192,8 @@ print(total_hl.to(u.cm))
 #print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
 ```
 
-<<<<<<< HEAD
+
 With this given headloss,  the dimensions of the larger pipe that will intersect with the influent pipes can be solved for.  This pipe needs to fill to the required head with one dump, while still allowing a small volume of water occupy the entrance tank, allowing even flow distribution.
-=======
-
-With this given headloss, the dimensions of the larger pipe that will intersect with the influent pipes can be solved for.  This pipe needs to fill to the required head with one dump, while still allowing a small volume of water occupy the entrance tank, allowing even flow distribution.
-
->>>>>>> 675b6974a10b11ddfa739d708fc86542cda3e4e5
 
 ```python
 # Determines pipe diameter needed to achieve necessary hydraulic head
@@ -258,9 +239,5 @@ print(Max_vel)
 The team has begun preliminary discussions with M-dawg regarding the Biogas Capture system, and will be having
 
 ## Fabrication manual
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 675b6974a10b11ddfa739d708fc86542cda3e4e5
 The team started to write a fabrication manual this summer that will document the total fabrication process so later teams can recreate the UASB system. This working document can be found in our Github repository.
