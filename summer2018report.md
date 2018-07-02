@@ -139,9 +139,12 @@ The crucial design aspects of the tank are listed below:
 * The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for the pivot bars, and reduce the structural strength of the bucket (by creating more torque on each bar)
 * The dimensions of the tank must be such that they **create the required amount of hydraulic head from one dump of the tipping bucket**.  This can be constrained by adding or removing material from the bottom of the tank to increase water height added per volume of a dump
 * **_Juan's comments:_** what do you mean adding or removing material? What kind of material are you adding or removing? How are you removing material from a tank?
-* The tank **must evenly split flow between the two pipes**.  This can be designed for by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out.
+* The tank **must evenly split flow between the two pipes**.  This can be designed ~~for~~ by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out.
+* **_Juan's comments:_** Why? I believe this point should be combined with the next one.
 * There should always be a small section of the tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.    
 * The tank should be **easy to source**, that is it can be purchased at the correct dimensions, or fabricated simply
+
+**_Juan's comments:_** Some of the bullet points end in punctuation, some don't.
 
 
 Summarized in a table:
@@ -165,12 +168,15 @@ bucket_vol = 15 * u.L
 head_gain = (bucket_vol / area).to(u.cm)
 print("One dump of the bucket gives", head_gain, "of hydraulic head")
 ```
+Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the entrance tank.
 
-Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the entrance tank.  
+**_Juan's comments:_** Ah now your reference to adding material makes more sense. This explanation of adding material should be included before you talk about it in the bullet point above.
 
 After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would be kept rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.  These pipes would retain most of the volume dumped and provide the needed hydraulic head, while not altering the tank geometry.  A fusion model of this model is pictured below.
 
 ![Schematic of Influent System](https://github.com/AguaClara/UASB/blob/ff3b4e844a16a686811ad80eee5941520a022939/Images/Influent%20Geo%20Slant.png)
+
+**_Juan's comments:_** This image helps a bit but I still don't quite understand how this helps your problem. I think a bit more explanation is required. The idea is to have a future team member read through this all and understand your logic, else they will not be able to understand the design.
 
 #### Code
 
@@ -221,6 +227,8 @@ print(total_hl.to(u.cm))
 
 
 With this given headloss, the dimensions of the larger pipe that will intersect with the influent pipes can be solved for.  This pipe needs to fill to the required head with one dump, while still allowing a small volume of water occupy the entrance tank, allowing even flow distribution.
+
+**_Juan's comments:_** I don't think intersect is the right word here. Remember, people who have no idea what you're doing right now will read this and be expected to understand everything perfectly. Make it easy for them!
 
 
 ```python
