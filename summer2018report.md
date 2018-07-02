@@ -12,13 +12,13 @@ One major design goal for the summer was to finish the influent system that deli
 
 #### Continuous versus Pulse Flow
 
-In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, he suggested the idea of a pulse flow system, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb suggested two possible methods to deliver the pulses: A tipping bucket system or a siphon.  
+In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were: A tipping bucket system or a siphon.  
 
 #### Tipping Bucket versus Siphon System
 
 (**Add descriptions from spring 2018**)
 
-The summer team researched siphons and discussed with M-dawg potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design, rather then spending time fabricating and testing a siphon system that may not work at all.
+The summer team researched siphons and discussed with M-dawg potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
 
 #### Hydraulic Parameters
 
@@ -40,7 +40,7 @@ Built within the design of the influent systems are a number of hydraulic constr
 |Bucket Dump Volume|~20 L| No| Constrained by both time to fill bucket (should be larger) and fraction of reactor volume (should be smaller) 20 L chosen as it is the volume of easily available buckets while fulfilling these constraints||
 |Wastewater Generation per Person   |  10.8 L/hr | No  |  Rule of Thumb From M-dawg |   |   |   |   |   |   |
 
-From these constraints, we can use the general headloss equation (including the headloss trick) for a circular pipe to determine the headloss needed to acheive our desired exit velocity, given a specific diameter of pipe.  
+From these constraints, the general headloss equation (including the headloss trick) for a circular pipe can be used to determine the headloss needed to achieve our desired exit velocity, given a specific diameter of pipe.  
 
 ```python
 # Calculates headloss in influent system based on dimensions of reactor
@@ -85,11 +85,14 @@ Given these parameters, the team began to plan on how to properly design the tip
 
 Pictured above is the first design of the tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
 
-* Location of the pivot on the bucket is very important for operation.  Height of the pieces controls how much water is collected before dumping (but if the pieces are too high, they won't dump at all).  Horizontal positioning of the pivot determines the angle the bucket rests at and how easy it is to tip.
+* Location of the pivot on the bucket is very important for operation.  Height of the pieces controls how much water is collected before dumping.  Horizontal positioning of the pivot determines the angle the bucket rests at and how soon it will tip.
 
 * The bucket needs to be designed so that it will not rest completely tipped down.  This can be achieved either by controlling the height of the bucket so that is cannot rotate completely (making it hit the bottom of the tank) or by controlling the rotation, either through adding a counterweight that will return the bucket to its main position, or adjusting the horizontal location of the pivot to ensure it will return.
 
 After discussing the design more with Monroe, the team settled on a new design, pictured below:
+
+![Tipping Bucket Fusion Model](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202018-06-29%20at%201.33.27%20PM.png)
+
 
 **Add photo of fusion model of bucket**
 
@@ -99,7 +102,7 @@ This bucket is created with a 5 gallon bucket (chosen as they are easy to purcha
 
 The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary (important as pieces will inevitably break).
 
-Next steps for this process are to order pieces for the bucket and test it physically to determine the optimal orientation of the pivot system.
+The next steps for this process are to order pieces for the bucket and test it physically to determine the optimal orientation of the pivot system.
 
 #### Design of Influent Tank
 
@@ -107,9 +110,9 @@ Another crucial part of the design  is the influent tank.  This tank will captur
 
 The crucial design aspects of the tank are listed below:
 * The tank must be tall enough to completely contain the tipping bucket, and prevent any "splashing" of wastewater out of the tank
-* The tank must be just wide enough to contain the bucket and the two brackets.  If the tank is wider, that will require more material for the pivot bars, and reduce the structural strength of the bucket (by creating more torque on each bar)
+* The tank must be just wide enough to contain the bucket and the two brackets. The wider the tank, the more material required for the pivot bars, and the less structural strength of the bucket (due to more torque on each bar).
 * The dimensions of the tank must be such that they create the required amount of hydraulic head from one dump of the tipping bucket.  This can be constrained by adding or removing material from the bottom of the tank to increase water height added per volume of a dump
-* The tank must evenly split flow between the two pipes.  This can be designed for by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out.
+* The tank must evenly split flow between the two pipes.  The geometry of the pipes can be changed based on where the water is dumped, but most importantly there should always be a small volume of water in the tank at all times.
 * There should always be a small section of the tank where the descending sewage velocity is below 0.2 m/s to allow air bubbles to escape.    
 * The tank should be easy to source, that is it can be purchased at the correct dimensions, or fabricated simply
 
@@ -138,7 +141,7 @@ print("One dump of the bucket gives", head_gain, "of hydraulic head")
 
 Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the entrance tank.  
 
-After discussing this further with Monroe, he suggested a new design to solve this problem.  Instead of sloping the tank, he suggested keeping the tank rectangular, and adding larger pipes along the bottom which would then connect to the influent pipes.  These pipes would retain most of the volume dumped and provide the needed hydraulic head while not altering the tank geometry.  A fusion model of this model is pictured below.
+After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would be kept rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.  These pipes would retain most of the volume dumped and provide the needed hydraulic head, while not altering the tank geometry.  A fusion model of this model is pictured below.
 
 **Add fusion model of full influent system**
 
@@ -189,7 +192,7 @@ print(total_hl.to(u.cm))
 #print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
 ```
 
-With this given headloss, we can solve for the dimensions of the larger pipe that will intersect with the influent pipes.  This pipe needs to fill to the required head with one dump, while still allowing a small volume of water occupy the entrance tank, allowing even flow distribution.
+With this given headloss,  the dimensions of the larger pipe that will intersect with the influent pipes can be solved for.  This pipe needs to fill to the required head with one dump, while still allowing a small volume of water occupy the entrance tank, allowing even flow distribution.
 
 ```python
 # Determines pipe diameter needed to achieve necessary hydraulic head
@@ -229,7 +232,8 @@ print(Max_vel)
 
 ```
 
+
 ### Biogas Capture System
 
 ## Fabrication manual
-The team started to write a fabrication manual this summer that will document the total fabrication process so later teams can recreate the UASB system.  This working document can be found in our Github repository.
+The team started to write a fabrication manual this summer that will document the different ideas to
