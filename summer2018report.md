@@ -1,4 +1,4 @@
-# Upflow Anaerobic Sludge Blanket (UASB) Design Manual
+# Upflow Anaerobic Sludge Blanket Research and Design Report 
 
 ## Summer 2018
 
