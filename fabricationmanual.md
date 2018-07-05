@@ -60,7 +60,7 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 
 ### Holding Tank
-The plan is to order a heavy duty pre-fabricated rectangular holding tank.
+The plan is to order a heavy duty pre-fabricated rectangular holding tank. The current dimensions 
 
 ## UASB Reactor Tank
 
