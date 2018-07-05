@@ -60,7 +60,16 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 
 ### Holding Tank
-The plan is to order a heavy duty pre-fabricated rectangular holding tank. The current dimensions 
+The holding tank can be made using a heavy duty pre-fabricated rectangular holding tank. The dimensions of the tank ordered through McMaster Carr is as follows:
+* Volume = 44 gallons (166.56 L)
+* Length = 24 inches (60.96 cm)
+* Width = 18 inches (45.72 cm)
+* Height =  24 inches (60.96 cm)
+
+Rectangular brackets welded onto the side of the holding tank will support the tipping bucket.
+**(Insert drawing of rectangular bracket)**
+
+
 
 ## UASB Reactor Tank
 
