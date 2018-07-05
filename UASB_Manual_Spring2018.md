@@ -4,8 +4,7 @@
 
 #### Spring 2018:
 Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
-#### Summer 2018:
-Ian Cullings, Isa Kaminsky, Ananya Gangadhar
+
 
 
 ## Abstract
@@ -252,79 +251,29 @@ The main challenges to this design include geometry, clogging, and flow division
 
 #### Influent System Design
 
-Over the Summer of 2018, the UASB team worked on designing these systems in preparation for fabrication for the fall.  This process began with determining the critical design parameters that constrained the design, which are summarized in table X below.  
-
-
-<p align="center">Table X: Design parameters for UASB hydraulics </p>
-
-| Parameter      | Value | Constrained? | Justification |
-|:-------------- |:----- | ------------ | ------------- |
-| Reactor Volume | 1221 Liters | Yes  | Based on max diameter and height to allow fabrication |
-| Sludge Volume  | ~850 Liters | No | Roughly 70% of Reactor Volume.  Needs to be better constrained based on location of tube settler. |
-| HRT | $\geq$ 4hrs | Yes, minimum  | Based on literature and lab scale test.  | |
-| Average Flow Rate   | $\leq$ 0.08 L/s  | Yes, Maximum | Q = Volume / Hydraulic Residence Time  |
-| Minimum Exit Velocity   | $\geq$ 0.03 m/s   | Yes | Minimum velocity needed to scour settling particles |    
-| Maximum Exit Velocity | $\leq$ 1 m/s | No | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined. |  
-| Influent Pipe Inner Diameter | 75 - 100mm  | No | Based on literature values to prevent clogging in pipes.  Some flexibility. |
-| Influent Pipe Length | ~8.5 feet | Yes| Roughly equal to height of reactor plus half of diameter (see influent pipe geometry) |
-
-Initially, design included another design parameter, descending sewage velocity.  This value was constrained below 0.2 m/s the average rising velocity of air bubbles, in order to prevent these air bubbles brought in from the pulse flow from entering the reactor ([Anaerobic Reactors, 2007](https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f)).  However, design of a large influent tank where the pulse flow enters, where the descending velocity would be much lower than 0.2 m/s, solves this problems without constraining pipe diameter or hydraulic head.  
-
-Given these input parameters, we can solve for the headloss necessary to achieve desired flow using the following code:
-
-#### Code
-
-```python
-# Calculates headloss in influent system based on dimensions of reactor
-
-# Import required functions
-from aide_design.play import*
-import math
-
-# Calculate size and flow dimensions
-height = 7 * u.ft
-diam = 3 * u.ft
-UASB_design = UASBSize(diam, height)
-vol = UASB_design[1]
-min_HRT = 4 * u.hr
-Q_avg = vol / min_HRT
-print(Q_avg.to(u.L/u.s))
-
-#Determine pipe inner diameter based on nominal diameter
-nom_diam = 3  * u.inch
-pipe_diam = pipe.ID_sch40(nom_diam)
-print(pipe_diam.to(u.mm))
-
-# Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
-exit_vel = 1 * u.m / u.s
-pipe_flow = exit_vel * pc.area_circle(pipe_diam)
-pipe_length = (diam / 2) + height
-Kminor = 4
-Temp = 23 * u.degC #average temp in Honduras
-Nu = pc.viscosity_kinematic(Temp)
-Pipe_Rough = 0.0015 * u.mm
-total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
-print(total_hl.to(u.cm))
-
-# Given volume of tipping bucket, determine time to fill bucket
-
-dump_volume = 5 * u.L
-filltime = dump_volume / Q_avg
-print(filltime.to(u.min))
-
-
-#dump_amount = 2 * total_hl * pc.area_circle(pipe_diam)
-#print(dump_amount.to(u.L))
-
-
-```
-
 ### Entrance Tank design
+
+
 
 ### Tipping Bucket Design
 
+The design process for the tipping bucket began with first looking for any possible engineering designs for tipping bucket systems in use today.  While tipping buckets are used in water parks and other amusement areas, we were unable to find an detailed designs of tipping bucket designs that would give us guiding information.  
+
+Without any design information, the team began by fabricating a small scale tipping bucket to get a sense for the design and operation of one of these bucket systems.  This bucket, pictured in figure X below, was made with a simple plastic bucket, with two screws drilled in to opposite sides.  These screws rested in holes from connector pieces on 80-20 bars, allowing the bucket to swing freely with little friction.  **EMBED VIDEOS INTO THIS SECTION**  
+
+While this system gave the team a better sense of how a tipping buc
+
+
+
+
+
 ### Influent Pipe Geometry
 
+An important constraint of influent flow control is the geometry of the pipes, i.e. how they enter the reactor, and how they deliver the wastewater into the reactor.  Due to the settled bed nature of the UASB, this geometry is incredibly important, as for maximum efficiency the wastewater should be evenly distributed throughout the settled bed so that all granules are receiving wastewater.  This also prevents potential dead zones within the reactor.  Additionally, high exit velocities from the pipe can create direct paths through the reactor, short circuiting the system.
+
+To prevent direct paths through the sludge blanket to the upper effluent lines, influent pipes entering the reactor will be pointed downwards and towards the V-shaped plates in the bottom of the reactor.  This will ideally serve to reduce the velocity of the influent waste significantly, and disperse water throughout the bottom of the reactor.  One goal of the summer is to conduct basic tests of a sludge like substitute (tapioca?) as a model sludge blanket, and then add influent lines, possibly with red dye, to see the potential streamlines, and determine a possible maximum influent velocity.  
+
+As detailed in above sections, influent pipes will begin from the pulse flow control system (tipping bucket and tank), run down the side of the tank, and then enter the reactor from one side.  There are two potential designs for the pipe geometry, detailed in figures x and y below.  
 
 
 
