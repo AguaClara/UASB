@@ -32,7 +32,7 @@ Municipal and industrial wastewater can be treated via biological, chemical, or 
 
 ### UASB Basics
 
-![Conventional_UASB](/Images/Conventional_UASB.PNG)
+![Conventional_UASB](https://github.com/AguaClara/UASB/blob/master/Images/Conventional_UASB.PNG)
 <p align="center">Figure 1: A conventional UASB design.  Wastewater is pumped through the bottom of the reactor and flows upwards through the reactor.  Contact with sludge in the bed and blanket allows anaerobic organisms to break down organic matter, cleaning the wastewater.  This process  produces biogas, which rises up through the reactor and is collected in a funnel structure for eventual use. </p>
 
 UASBs utilize mixed cultures of anaerobic microorganisms to biologically process and remove organic matter (OM), chemical oxygen demand (COD), biological oxygen demand (BOD), and suspended solids (SS).  They are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization.  Due to the dispersion of influent to maximize sludge contact as shown in Figure 1, UASBs can achieve optimal levels of primary treatment quite quickly compared to other anaerobic treatment processes.  In alternative processes such as anaerobic filters, anaerobic baffled reactors, and septic tanks, water passes over an exposed surface of sludge and organic matter is treated as it diffuses through ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)).
