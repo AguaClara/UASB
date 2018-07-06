@@ -63,7 +63,7 @@ A schematic of the UASB with proposed design improvements is shown in Figure 2 a
 
 <div style="text-align:center">
 
-![UASB_Side](/Images/AC_SideView.PNG)
+![UASB_Side](https://github.com/AguaClara/UASB/blob/master/Images/AC_SideView.PNG)
 
 <p align="center">Figure 2: The Side View of the proposed UASB </p>
 
@@ -71,7 +71,7 @@ A schematic of the UASB with proposed design improvements is shown in Figure 2 a
 
 <div style="text-align:center">
 
-![UASB_Side](/Images/AC_FrontView.PNG)
+![UASB_Front](https://github.com/AguaClara/UASB/blob/master/Images/AC_FrontView.PNG)
 
 </div>
 
@@ -232,7 +232,7 @@ def influence_area(n_pipes, diam):
 Initial calculations showed that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb, the Industrial Pretreatment Coordinator at the Ithaca Area Wastewater Treatment Facility, in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  These incremental flows will be small compared to the overall height of the sludge bed.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved.  Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The designs will be constructed as full-scale bench top tests to be performed over the summer, so that each can be compared.  The three proposed options are explored below.
 
 #### Pulse Flow: Tipping bucket
-![Tipping Bucket Design 1](/Images/Tipping_Bucket_Drawing_1.png)
+![Tipping Bucket Design 1](https://github.com/AguaClara/UASB/blob/master/Images/Tipping_Bucket_Drawing_1.png)
 <p align="center">Figure 6: A conceptual illustration of the dual tipping bucket design, created from PVC elbows.  As one bucket tips, the other fills up.  </p>
 
 The inspiration for the tipping bucket design came from Ed Gottlieb, who referenced [tipping bucket systems ](https://www.youtube.com/watch?v=WdxXrvV6Lqo) that can be found in waterparks.  After discussion, the a new design was developed that inspired by rain gauges.  A demonstration of how it works can be seen [here](https://www.youtube.com/watch?v=qzKWzTe7CEg).  While the rain gauge continuously dumps water, this system would hold the wastewater until it contains enough water to deliver an adequate pulse flow.  It then dumps the water into funnels that connect to the influent pipes to the reactor.  This alternating, two-way design was chosen over a single tipping bucket for a number of reasons.  
@@ -242,7 +242,7 @@ So far, the current design solves the problems of flow splitting and deposition 
 Design values still need to be determined for the volume of the buckets, the funnel, and the pipes.  The bucket volume determines how often the bucket will tip, and how big the pulse to the reactor will be.  Tipping will ideally be minimized, since the more the bucket tips, the faster parts will wear down and need to be replaced.  The volume should not be too large, or particles may have a chance to settle while they are in the bucket.  Initial calculations are being done to determine how large of a pulse flow will be needed.  
 
 #### Pulse Flow: Siphon
-![Siphon](/Images/Siphon.PNG)
+![Siphon](https://github.com/AguaClara/UASB/blob/master/Images/Siphon.PNG)
 <p align="center">Figure 7: Proposed design for a siphon as a means to deliver pulse flow to the reactor. </p>
 
 An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Dr. Weber-Shirk suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
@@ -465,7 +465,7 @@ In addition to these methods, the system will always have a failsafe system to r
 <br>
 <div style="text-align:center">
 
-![UASB_Side](/Images/Sludge_Weir.PNG)
+![UASB_Side](https://github.com/AguaClara/UASB/blob/master/Images/Sludge_Weir.PNG)
 
  <p align="center">Figure 10: Schematic of the sludge sampling system. </p>
 
@@ -582,10 +582,10 @@ print("The number of plate settlers is in the range", number_plate_settler.magni
 
 On April 7 and 8,  UASB team members Ananya Gangadhar and Jennifer Jackson presented the Phase 1 UASB work at the EPA's National Sustainable Design Expo.  The Expo was part of a larger event, the USA Science and Engineering Festival at the Walter E. Washington Convention Center in Washington, D.C.  Ananya and Jennifer, along with Professor Ruth Richardson and other AguaClara members, presented the current UASB Reactor design.
 
-![UASB_EPA_expo](/Images/EPA_Expo.jpg)
+![UASB_EPA_expo](https://github.com/AguaClara/UASB/blob/master/Images/EPA_Expo.jpg)
 <p align="center">Figure 11: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
 
-![EPA_poster](/Images/epa_poster.PNG)
+![EPA_poster](https://github.com/AguaClara/UASB/blob/master/Images/epa_poster.png)
 <p align="center">Figure 12:  The poster that was presented at the EPA Expo. </p>
 
 ## Future Work

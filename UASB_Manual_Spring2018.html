@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>UASB_Manual_Spring2018</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/ananyagangadhar/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="upflow-anaerobic-sludge-blanket-uasb-design-manual">Upflow Anaerobic Sludge Blanket (UASB) Design Manual</h1>
+
+<h4 class="mume-header" id="spring-2018">Spring 2018:</h4>
+
+<p>Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar</p>
+<h2 class="mume-header" id="abstract">Abstract</h2>
+
+<p>Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.</p>
+<h2 class="mume-header" id="introduction">Introduction</h2>
+
+<p>The contamination of ground and surface water sources by wastewater has adverse environmental and health affects. Biological degradation of wastewater by aerobic microbes lowers the dissolved oxygen content in natural waterways, preventing aquatic life from thriving and potentially creating dead zones. Additionally, it increases waterborne fecal matter content and increases the risk of exposure to pathogens (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>). The latter is of particular concern to rural communities without drinking water treatment, who may live downstream of wastewater outfalls.</p>
+<p>Wastewater can also be an opportunity for energy recovery. According to recent estimates, the energy potential of wastewater and biosolids is more than ten times the energy needed for treatment. Most wastewater treatment facilities in the US do not optimize the recovery of energy and resources from biosolids (<a href="http://ieeexplore.ieee.org/document/7577509/?reload=true">Ghoneim et. al,  2016</a>). While it is important to develop wastewater treatment technology to optimize current wastewater treatment for all individuals, the focus of this research was on small rural communities lacking water treatment systems.</p>
+<p>Currently in the United States, effective municipal wastewater treatment facilities have long retention times, require large land areas, and have a high fixed cost per capita. Due to economy of scales, small systems have even higher fixed costs per capita and these high fixed costs make conventional wastewater treatment systems inaccessible for small communities. Many communities across the world forgo wastewater treatment altogether due to the high cost and instead discharge untreated wastewater to the environment (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>). Research and development of small-scale and decentralized wastewater treatment methods should be prioritized in order to make wastewater treatment accessible for all communities.</p>
+<p>UASB reactors, used as a preliminary wastewater treatment process, clarify wastewater by removing suspended solids organic matter (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a by-product of anaerobic digestion.  This methane can be captured and burned for energy production or heating.</p>
+<p>In January 2017, a novel pilot scale UASB reactor design was created by AguaClara for the EPA People, Prosperity and the Planet (P3) <a href="https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing">Student Design Competition proposal</a>. This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally.  Later sections of this manual detail these changes and quantify their impact on the design.</p>
+<p>Since submission of this proposal, there has been ongoing work to develop the final design of the reactor.  This document details the full design process, and is written to serve as a manual for the full UASB design.  As the design is completed, additional information will be added detailing a full fabrication plan for the reactor.</p>
+<h2 class="mume-header" id="literature-review-and-previous-work">Literature Review and Previous Work</h2>
+
+<h3 class="mume-header" id="conventional-wastewater-treatment-options">Conventional Wastewater Treatment Options</h3>
+
+<p>Municipal and industrial wastewater can be treated via biological, chemical, or thermal oxidation treatment processes. While all processes lead to the eventual breakdown of organic matter, biological treatment is more commonly used because the latter two treatment options require higher capital investment and operational costs due to the need of complex, and chemicals or energy inputs (<a href="http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf">Mittal et. al, 2011</a>). The two main types of biological treatment are the activated sludge process and anaerobic digestion. When compared to the activated sludge process, anaerobic digestion yields less sludge and reduces energy input (<a href="http://www.watertoday.org/Article%20Archieve/Aquatech%2012.pdf">Mittal et. al, 2011</a>). Although there are some drawbacks to anaerobic digestion such as long solids retention time (SRT) and insufficient nutrient removal, the reduced energy input renders it the most feasible technology for small communities lacking proper water treatment  (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>).</p>
+<h3 class="mume-header" id="uasb-basics">UASB Basics</h3>
+
+<p><img src="../Images/Conventional_UASB.PNG" alt="Conventional_UASB"></p>
+<p align="center">Figure 1: A conventional UASB design.  Wastewater is pumped through the bottom of the reactor and flows upwards through the reactor.  Contact with sludge in the bed and blanket allows anaerobic organisms to break down organic matter, cleaning the wastewater.  This process  produces biogas, which rises up through the reactor and is collected in a funnel structure for eventual use. </p>
+<p>UASBs utilize mixed cultures of anaerobic microorganisms to biologically process and remove organic matter (OM), chemical oxygen demand (COD), biological oxygen demand (BOD), and suspended solids (SS).  They are designed to operate at short hydraulic retention times (HRT) and long solids retention time (SRT) to increase loading capacity and improve sludge stabilization.  Due to the dispersion of influent to maximize sludge contact as shown in Figure 1, UASBs can achieve optimal levels of primary treatment quite quickly compared to other anaerobic treatment processes.  In alternative processes such as anaerobic filters, anaerobic baffled reactors, and septic tanks, water passes over an exposed surface of sludge and organic matter is treated as it diffuses through (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>).</p>
+<p>A by-product of anaerobic digestion within the reactor is biogas, a mixture of methane, carbon dioxide, and some trace gases.  After production in the digestion zone, methane travels upwards through the water and is caught in the cone of the Gas-Liquid-Solid Separator (GLSS).  From there, it is funneled upwards into a storage vehicle where it can later be burned for heat or energy generation.  More details on the biogas capture and usage can be found in the <a href="#Biogas-Capture-System">Biogas Capture</a> section of the manual.</p>
+<p>While UASBs are able to provide treatment quickly, like other anaerobic treatment methods, post-treatment is often required through trickling filters or secondary clarifiers to achieve ideal reduction BOD, COD, and nutrients (<a href="https://www.sciencedirect.com/science/article/pii/S1364032111005533">Abbasi et. al, 2012</a>).</p>
+<p>Typically, UASB reactors are large,  cylindrical or rectangular tanks 4-5 meters in height, constructed of reinforced concrete designed as shown to Figure 1.  While UASBs are traditionally used for large-scale, centralized wastewater treatment, their mechanism of treatment is operationally simple since there are no mechanized components which eases maintenance concerns.  In addition, the standard geometry readily allows for scaling of the design (<a href="https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf">Van Lier et al., 2010</a>).  Although fixed costs for the construction can still be significant, they can be reduced through use of alternative materials such as PVC.</p>
+<p>Due to the higher operational capacity,  opportunity for resource recovery in biogas production, and overall simplicity of the system, UASB reactors were chosen as the basis for preliminary wastewater treatment for underserved and under-resourced communities.</p>
+<h3 class="mume-header" id="problems-associated-with-uasbs">Problems Associated with UASBs</h3>
+
+<h4 class="mume-header" id="biogas-escape">Biogas Escape</h4>
+
+<p>Conventional UASB reactors utilize an inverted funnel, known as a Gas-Liquid-Solid Separator (GLSS), to collect biogas as it is produced (<a href="https://www.sciencedirect.com/science/article/pii/S0043135497809876">Narnoli et. al, 1997</a>). The design of the GLSS, however, is not gas-tight due to the free surface on the perimeter of the gas separator system as shown in Figure 1.  Gas that is able to travel around the edges of the GLSS can readily escape from the system.  Since methane is a potent greenhouse gas, all biogas should be captured to reduce negative environmental impacts (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>).</p>
+<h4 class="mume-header" id="solids-retention">Solids Retention</h4>
+
+<p>To successfully process organic waste, UASB reactors heavily rely on the accumulation, concentration, and conglomeration of a large population of bacteria in order to form diverse microbial community known as granules.  Proper granulation and retention of these granules in a reactor is imperative to maximize the removal of COD and BOD and increase the overall effectiveness of UASB technologies (<a href="https://www.liebertpub.com/doi/abs/10.1089/ees.2012.0347">Subramanyam et. al 2013</a>).  To prevent biomass escape and increase sludge retention, a tube settler is used for the effluent line.  Parallel plates within the tube settler also increase solids retention (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>).</p>
+<h4 class="mume-header" id="fats-buildup">Fats Buildup</h4>
+
+<p>Differences in density can cause surface buildup of fats, oils and grease (FOG) in the inactive sludge. The FOG can accumulate at the water surface open to the atmosphere, forming a thick layer of solid material which can be labor intensive to clean (<a href="https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf">Van Lier et al.,  2010</a>, <a href="http://wst.iwaponline.com/content/24/8/87">Lettinga 1991</a>). For UASB systems with an exit weir systems, this material can escape through these systems, polluting the effluent.</p>
+<h2 class="mume-header" id="methods-and-design-process">Methods and Design Process</h2>
+
+<h3 class="mume-header" id="overview-of-proposed-uasb-and-methods">Overview of Proposed UASB and Methods</h3>
+
+<p>A schematic of the UASB with proposed design improvements is shown in Figure 2 and Figure 3.  The following sections give an overview of the component/aspect of interest, the design parameters associated with this component, and the code used to calculate the final parameters.  Work is ongoing on differing aspects of the design, but this manual represents the most up to date versions of the designs.</p>
+<div style="text-align:center">
+<p><img src="../Images/AC_SideView.PNG" alt="UASB_Side"></p>
+<p align="center">Figure 2: The Side View of the proposed UASB </p>
+</div>
+<div style="text-align:center">
+<p><img src="../Images/AC_FrontView.PNG" alt="UASB_Side"></p>
+</div>
+<p align="center">Figure 3: The Front View of the proposed UASB with sloped bottom geometry.</p>
+<h3 class="mume-header" id="degritting-system">Degritting System</h3>
+
+<h3 class="mume-header" id="size-and-flow">Size and Flow</h3>
+
+<p>The scale and dimensions of the pilot UASB reactor were loosely based on the size and scale of the 1  L/s sedimentation tank, using experience gained from fabrication. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 <span style="color: #ee7f49; font-weight: 500;">ParseError: KaTeX parse error: $ within math mode</span> sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report (<a href="https://www.overleaf.com/6186375zdpjfc#/20717591/">Herrara et al., 2016</a>).</p>
+<div style="text-align:center">
+<p><img src="https://github.com/AguaClara/UASB/blob/master/Images/1lps_plant.PNG?raw=true" alt="1LPS"></p>
+ </div>
+ <p align="center">Figure 4: Schmematic of the 1 L/s sedimentation tank (Source: Herrara et al., 2016)</p>
+<p>This, however, will create a unique geometry and thus reduce the volume of reactor.  The following design parameters will serve to calculate the volume of the pilot scale UASB reactor and the flow rate through system.  It also must be noted that hydraulic residence time is based on contact time with the sludge to account for the amount of time raw wastewater spends being biologically treated rather than time in the whole reactor volume.</p>
+<h4 class="mume-header" id="design-parameters">Design Parameters</h4>
+
+<p>Table 1: Design parameters for the size and flow calculations for the proposed UASB reactor.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Design Parameter</th>
+<th style="text-align:center">Value</th>
+<th style="text-align:center">Basis of Design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Hydraulic Residence Time <code>HRT</code></td>
+<td style="text-align:center">4 hrs</td>
+<td style="text-align:center">From tracer tests conducted in <a href="https://www.overleaf.com/read/dnxfsrwdxbdf#/21165144/">Fall 2016</a> and minimum values in literature (<a href="https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub">Chong et. al, 2012</a>).</td>
+</tr>
+<tr>
+<td style="text-align:center">Wastewater Generation per Person <code>WW_gen</code></td>
+<td style="text-align:center">3 mL/s</td>
+<td style="text-align:center">Rule of Thumb from Monroe</td>
+</tr>
+<tr>
+<td style="text-align:center">Blackwater Generation per person <code>WW_gen_bw</code></td>
+<td style="text-align:center">0.6 mL/s</td>
+<td style="text-align:center">Prof. Richardson's approximation for blackwater generation (based on idea that 20% of volume of mixed wastewater is blackwater)</td>
+</tr>
+<tr>
+<td style="text-align:center">Center Space of Base</td>
+<td style="text-align:center">3 in</td>
+<td style="text-align:center">Based on semi-circle between the two sloped plates on the bottom of the <a href="https://www.overleaf.com/6186375zdpjfc">1 L/s plant design</a> sedimentation tank shown in Figure 4 (more info in their Google Drive)</td>
+</tr>
+<tr>
+<td style="text-align:center">Slope Angle of Base Plates</td>
+<td style="text-align:center">60 <span style="color: #ee7f49; font-weight: 500;">ParseError: KaTeX parse error: $ within math mode</span></td>
+<td style="text-align:center">Based on the sloped plates used in the bottom of the <a href="https://www.overleaf.com/6186375zdpjfc">1 L/s plant design</a> sedimentation tank</td>
+</tr>
+<tr>
+<td style="text-align:center">Diameter of Reactor</td>
+<td style="text-align:center">3 feet</td>
+<td style="text-align:center">Based on size of corrugated pipe used for the body of the 1 L/s sedimentation tank</td>
+</tr>
+<tr>
+<td style="text-align:center">Height of the Reactor</td>
+<td style="text-align:center">7 feet</td>
+<td style="text-align:center">Based on the maximum ceiling height of the lab</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="code">Code</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">
+<span class="token keyword">from</span> aide_design<span class="token punctuation">.</span>play <span class="token keyword">import</span><span class="token operator">*</span>
+<span class="token keyword">import</span> math
+
+<span class="token keyword">def</span> <span class="token function">UASBSize</span><span class="token punctuation">(</span>diam<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Takes the inputs of diameter and height. The bottom of the UASB is sloped
+    at 60 degrees with a 3 inch space across the bottom of the UASB. Assumes that half the reactor
+    contains the settled bed, which is used for the HRT. Returns five outputs: 1. height of the sloped
+    sides of the bottom geometry, 2. volume of sludge in the reactor, 3. flow rate,
+    4. number of people served with graywater, 5. number of people served with blackwater.
+
+    >>> from aide_design.play import*
+    >>> import math
+    >>> UASBSize(3 * u.ft, 7 * u.ft)
+    The height of the bottom geometry is 0.7259 meter
+    The volume of the sludge in the reactor is 520.8 liter
+    The flow rate of the reactor is 0.03617 liter / second
+    The number of people served by this reactor is 12
+    The number of people served by this reactor if only blackwater is treated is 60
+    [&lt;Quantity(0.7259024934521162, 'meter')>, &lt;Quantity(520.8127904536798, 'liter')>, &lt;Quantity(0.036167554892616645, 'liter / second')>, 12, 60]
+    """</span>
+
+
+    WW_gen <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>mL<span class="token operator">/</span>u<span class="token punctuation">.</span>s        <span class="token comment">#Wastewater generated per person, rule of thumb from Monroe</span>
+    WW_gen_bw <span class="token operator">=</span> <span class="token number">0.6</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>mL<span class="token operator">/</span>u<span class="token punctuation">.</span>s   <span class="token comment">#Assumes 20% of mixed wastewater</span>
+    HRT <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>hr               <span class="token comment">#Hydraulic Residence Time, determined from lab scale tests</span>
+
+    centerspace <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>inch     <span class="token comment">#Center space allows for a 3 inch pipe across the bottom</span>
+    phi <span class="token operator">=</span> math<span class="token punctuation">.</span>atan<span class="token punctuation">(</span><span class="token punctuation">(</span>diam<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>centerspace<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    angle <span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>deg           <span class="token comment">#Angle of the sloped bottom</span>
+
+    height_cyl_hoof <span class="token operator">=</span> diam<span class="token operator">/</span><span class="token number">2</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>tan<span class="token punctuation">(</span>angle<span class="token punctuation">)</span>    <span class="token comment">#Hoof is if the sloped bottom meets in the centerline</span>
+    height_cyl_wedge <span class="token operator">=</span> height_cyl_hoof <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>centerspace<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>tan<span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment">#Wedge is if the sloped bottom is offset from centerline</span>
+    vol_cyl_wedge <span class="token operator">=</span> height_cyl_wedge <span class="token operator">*</span> <span class="token punctuation">(</span>diam<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">/</span> <span class="token number">3</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>
+        <span class="token number">3</span><span class="token operator">*</span>math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>phi<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">3</span><span class="token operator">*</span>phi<span class="token operator">*</span>math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>phi<span class="token punctuation">)</span> <span class="token operator">-</span> math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>phi<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>phi<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    vol_reactor <span class="token operator">=</span> <span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi <span class="token operator">*</span> <span class="token punctuation">(</span>diam <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">*</span> height<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> vol_cyl_wedge<span class="token punctuation">)</span>
+    vol_sludge <span class="token operator">=</span> <span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi <span class="token operator">*</span> <span class="token punctuation">(</span>diam <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">*</span> height <span class="token operator">*</span> <span class="token number">0.7</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> vol_cyl_wedge<span class="token punctuation">)</span>
+
+    flow <span class="token operator">=</span> vol_reactor <span class="token operator">/</span> HRT
+    people_served <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>flow <span class="token operator">/</span> WW_gen<span class="token punctuation">)</span>       <span class="token comment">#People served per reactor</span>
+    people_served_BW <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>flow <span class="token operator">/</span> WW_gen_bw<span class="token punctuation">)</span> <span class="token comment">#People served per reactor treating only blackwater</span>
+
+    output <span class="token operator">=</span> <span class="token punctuation">[</span>height_cyl_wedge<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> vol_reactor<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>L<span class="token punctuation">)</span><span class="token punctuation">,</span> flow<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>L<span class="token operator">/</span>u<span class="token punctuation">.</span>s<span class="token punctuation">)</span><span class="token punctuation">,</span> people_served<span class="token punctuation">,</span> people_served_BW<span class="token punctuation">]</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The height of the bottom geometry is"</span><span class="token punctuation">,</span>height_cyl_wedge<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The volume of the reactor is"</span><span class="token punctuation">,</span>vol_reactor<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The volume of the sludge in the reactor is'</span><span class="token punctuation">,</span> vol_sludge<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The average flow rate of the reactor is'</span><span class="token punctuation">,</span> flow<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>L<span class="token operator">/</span>u<span class="token punctuation">.</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The number of people served by this reactor is'</span><span class="token punctuation">,</span> people_served<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The number of people served by this reactor if only blackwater is treated is'</span><span class="token punctuation">,</span> people_served_BW<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> output
+
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span>verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+Diameter <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>ft
+Height <span class="token operator">=</span> <span class="token number">7</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>ft
+UASB_design <span class="token operator">=</span> UASBSize<span class="token punctuation">(</span>Diameter<span class="token punctuation">,</span> Height<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>UASB_design<span class="token punctuation">)</span>
+
+</pre><h3 class="mume-header" id="influent-flow-system">Influent Flow System</h3>
+
+<p>An ideal influent flow system is designed to prevent clogging and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. Table 2 includes relevant values, but is not an exhaustive list of our sources</p>
+<p>One challenge for an influent flow system is combating pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.</p>
+<p>Top influent flow was chosen over bottom influent flow in order to decrease the frequency of clogs.  Bottom influent flow systems are more likely to clog if flow is low or not consistent.  This is because non-suspended particles may settle into the pipe.  Gravity will prevent particles in a top influent system from settling in the pipe. In addition, top influent flow is the most common choice for domestic wastewater treatment.</p>
+<p>A literature review reveals a lack of knowledge in the UASB community on the area in the reactor served by each influent pipe, or the influence area. Values range from 1-4 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">m^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> (see table below) with little experimental evidence.  The idea is to have enough pipes so that the summed influence areas of the pipes is greater than the area of the bottom of the reactor.  Since the bottom of the proposed AguaClara reactor is less than 1 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">m^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>, the total reactor area can be covered with the influence area of at least one influent pipe.  Two influent pipes are being considered, as they allow for better clog detection and prevention.</p>
+<div style="text-align:center">
+<p><img src="../Images/rigid_slanted_infl_pipes.PNG" alt="Slanted Straight Pipes Influent"></p>
+</div>
+<p align="center">Figure 5: Schematic of a top-influent 2 pipe system.  Flexible tubing is being considered over rigid PVC for ease of construction.  The flexible tubing would be held in place at the bottom of the reactor. </p>
+<p align="center">
+Table 2: Literature values for parameters associated with influent control system in traditional UASB reactors. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left"><a href="https://drive.google.com/drive/folders/1yP48lb38n-ZQb5PtMfpcJs9RIu4wKJ1f">Anaerobic Reactors Textbook</a></th>
+<th><a href="http://accessengineeringlibrary.com/browse/wastewater-treatment-for-pollution-control-and-reuse-third-edition/c9780070620995ch07#c9780070620995ch07lev1sec01">Wastewater Treatment for Pollution Control and Reuse 3rd ed</a></th>
+<th><a href="https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf">Van Lier: Anaerobic Sewage Treatment using UASB Reactors</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Descending Sewage Velocity</strong></td>
+<td style="text-align:left"><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.63597em;"></span><span class="strut bottom" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="base"><span class="mrel">≤</span></span></span></span>0.2 m/s</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Diameter of pipe</strong></td>
+<td style="text-align:left"><strong>75-100 mm</strong> (from practical experience)</td>
+<td></td>
+<td><strong>100 mm</strong> (to allow gas bubbles to rise)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Nozzle Diameter</strong></td>
+<td style="text-align:left"><strong>40-50 mm</strong> (from practical experience)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Exit Velocity</strong></td>
+<td style="text-align:left"><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≥</mo></mrow><annotation encoding="application/x-tex">\geq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.63597em;"></span><span class="strut bottom" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="base"><span class="mrel">≥</span></span></span></span>0.40 m/s</strong></td>
+<td></td>
+<td><strong>over 0.3 m/s</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Apertures</strong></td>
+<td style="text-align:left"><strong>2 openings with 25mm × 40mm cross section</strong></td>
+<td>See Aperture Design Problem 7.12.1.6</td>
+<td>Single outlet point per pipe (for identification of clogs)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Influence Area</strong></td>
+<td style="text-align:left"><strong>2.0-3.0 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">m^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> for COD 400-600 mg/L</strong></td>
+<td><strong>1 point per 3.7-4.0 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">m^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> floor area</strong></td>
+<td><strong>1-4 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">m^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> per feed point</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Settling Zone Surface</strong></td>
+<td style="text-align:left"></td>
+<td></td>
+<td><strong>75% of total surface</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit</strong></td>
+<td style="text-align:left"><strong>0.20-0.30 m</strong></td>
+<td><strong>2-3 m head loss</strong> through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2</td>
+<td><strong>50 cm</strong></td>
+</tr>
+</tbody>
+</table>
+<p>It has been decided that from the following parameters an exit velocity of 0.3 m/s (Van Lier et al., 2010) will likely be used.</p>
+<h4 class="mume-header" id="influent-flow-calculations">Influent Flow Calculations</h4>
+
+<p>Below are calculations used to determine the influence area of each pipe given the diameter and number of pipes.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># function calculates the influence area of each pipe in the reactor</span>
+<span class="token keyword">def</span> <span class="token function">influence_area</span><span class="token punctuation">(</span>n_pipes<span class="token punctuation">,</span> diam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token comment">## n_pipes = number of influent pipes in UASB</span>
+  <span class="token comment">## diam = diameter of UASB reactor</span>
+  ca <span class="token operator">=</span> pc<span class="token punctuation">.</span>area_circle<span class="token punctuation">(</span>diam<span class="token punctuation">)</span> <span class="token comment"># ca = cross sectional area at top</span>
+  ia <span class="token operator">=</span> ca<span class="token operator">/</span>n_pipes           <span class="token comment"># ia = influence area</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The influence area of each pipe is '</span><span class="token punctuation">,</span> ia<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> ia
+
+  num_pipes <span class="token operator">=</span> <span class="token number">2</span>
+  infl_area_UASBpipe <span class="token operator">=</span> influence_area<span class="token punctuation">(</span>num_pipes<span class="token punctuation">,</span> diam_UASB<span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The influence area of each pipe is '</span><span class="token punctuation">,</span> infl_area_UASBpipe<span class="token punctuation">)</span>
+
+</pre><h4 class="mume-header" id="pulse-flow-into-the-reactor">Pulse Flow into the Reactor</h4>
+
+<p>Initial calculations showed that the flow into the reactor will be too small for a continuous flow system. An extremely small pipe would have been necessary to create the desired exit velocity from a continuous flow of 0.03 L/s.  A pulse-flow system will be explored instead, as suggested by Ed Gottlieb, the Industrial Pretreatment Coordinator at the Ithaca Area Wastewater Treatment Facility, in a meeting on April 11, 2018.  The basic idea is that a holding tank will accumulate wastewater until a certain amount is reached, releasing the water as a pulse into the reactor.  These incremental flows will be small compared to the overall height of the sludge bed.  This will achieve a much higher flow, allowing larger pipes to be used, and a higher exit velocity to be achieved.  Larger pipes are necessary to prevent clogging.  Two systems have been proposed for achieving pulse flow: a tipping bucket system, and a siphon.  The designs will be constructed as full-scale bench top tests to be performed over the summer, so that each can be compared.  The three proposed options are explored below.</p>
+<h4 class="mume-header" id="pulse-flow-tipping-bucket">Pulse Flow: Tipping bucket</h4>
+
+<p><img src="../Images/Tipping_Bucket_Drawing_1.png" alt="Tipping Bucket Design 1"></p>
+<p align="center">Figure 6: A conceptual illustration of the dual tipping bucket design, created from PVC elbows.  As one bucket tips, the other fills up.  </p>
+<p>The inspiration for the tipping bucket design came from Ed Gottlieb, who referenced <a href="https://www.youtube.com/watch?v=WdxXrvV6Lqo">tipping bucket systems </a> that can be found in waterparks.  After discussion, the a new design was developed that inspired by rain gauges.  A demonstration of how it works can be seen <a href="https://www.youtube.com/watch?v=qzKWzTe7CEg">here</a>.  While the rain gauge continuously dumps water, this system would hold the wastewater until it contains enough water to deliver an adequate pulse flow.  It then dumps the water into funnels that connect to the influent pipes to the reactor.  This alternating, two-way design was chosen over a single tipping bucket for a number of reasons.</p>
+<p>So far, the current design solves the problems of flow splitting and deposition of solids due to incomplete tipping of bucket.  The benefit of the 2-bucket design is that no splitting of flow is needed, since each tip of the bucket will alternate flow between the two influent pipes. The main challenge with this design is that it does not allow for more than 2 influent pipes, and thus makes scaling up a significant issue.  Deposition of solids in the buckets is solved by using curved bottoms, allowing the buckets to tip completely, and eliminating a corner in which solids could settle. The design involves precise cutting of 4-6 inch diameter elbows.  2 design ideas are being considered - the plan is to test both at the same time in order to compare.  The pivot would be created by 2 pieces of flat PVC glued to the sides of the elbows, with a rod through them.</p>
+<p>Design values still need to be determined for the volume of the buckets, the funnel, and the pipes.  The bucket volume determines how often the bucket will tip, and how big the pulse to the reactor will be.  Tipping will ideally be minimized, since the more the bucket tips, the faster parts will wear down and need to be replaced.  The volume should not be too large, or particles may have a chance to settle while they are in the bucket.  Initial calculations are being done to determine how large of a pulse flow will be needed.</p>
+<h4 class="mume-header" id="pulse-flow-siphon">Pulse Flow: Siphon</h4>
+
+<p><img src="../Images/Siphon.PNG" alt="Siphon"></p>
+<p align="center">Figure 7: Proposed design for a siphon as a means to deliver pulse flow to the reactor. </p>
+<p>An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Dr. Weber-Shirk suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.</p>
+<p>The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Richardson has suggested various wastewater &quot;recipes&quot; which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Dr. Weber-Shirk and is illustrated above.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank &amp; siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.</p>
+<h4 class="mume-header" id="influent-system-design">Influent System Design</h4>
+
+<h3 class="mume-header" id="entrance-tank-design">Entrance Tank design</h3>
+
+<h3 class="mume-header" id="tipping-bucket-design">Tipping Bucket Design</h3>
+
+<p>The design process for the tipping bucket began with first looking for any possible engineering designs for tipping bucket systems in use today.  While tipping buckets are used in water parks and other amusement areas, we were unable to find an detailed designs of tipping bucket designs that would give us guiding information.</p>
+<p>Without any design information, the team began by fabricating a small scale tipping bucket to get a sense for the design and operation of one of these bucket systems.  This bucket, pictured in figure X below, was made with a simple plastic bucket, with two screws drilled in to opposite sides.  These screws rested in holes from connector pieces on 80-20 bars, allowing the bucket to swing freely with little friction.  <strong>EMBED VIDEOS INTO THIS SECTION</strong></p>
+<p>While this system gave the team a better sense of how a tipping bucket</p>
+<h3 class="mume-header" id="influent-pipe-geometry">Influent Pipe Geometry</h3>
+
+<p>An important constraint of influent flow control is the geometry of the pipes, i.e. how they enter the reactor, and how they deliver the wastewater into the reactor.  Due to the settled bed nature of the UASB, this geometry is incredibly important, as for maximum efficiency the wastewater should be evenly distributed throughout the settled bed so that all granules are receiving wastewater.  This also prevents potential dead zones within the reactor.  Additionally, high exit velocities from the pipe can create direct paths through the reactor, short circuiting the system.</p>
+<p>To prevent direct paths through the sludge blanket to the upper effluent lines, influent pipes entering the reactor will be pointed downwards and towards the V-shaped plates in the bottom of the reactor.  This will ideally serve to reduce the velocity of the influent waste significantly, and disperse water throughout the bottom of the reactor.  One goal of the summer is to conduct basic tests of a sludge like substitute (tapioca?) as a model sludge blanket, and then add influent lines, possibly with red dye, to see the potential streamlines, and determine a possible maximum influent velocity.</p>
+<p>As detailed in above sections, influent pipes will begin from the pulse flow control system (tipping bucket and tank), run down the side of the tank, and then enter the reactor from one side.  There are two potential designs for the pipe geometry, detailed in figures x and y below.</p>
+<h3 class="mume-header" id="biogas-production-calculations">Biogas Production Calculations</h3>
+
+<p>As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.</p>
+<p>Biogas production is quantified using the following equation, taken from the <a href="https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf">Anaerobic Reactors</a>:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>O</mi><msub><mi>D</mi><mrow><mi>C</mi><msub><mi>H</mi><mn>4</mn></msub></mrow></msub><mo>=</mo><mi>Q</mi><mo>(</mo><msub><mi>S</mi><mi>o</mi></msub><mo>−</mo><mi>S</mi><mo>)</mo><mo>−</mo><msub><mi>Y</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub><mi>Q</mi><msub><mi>S</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">COD_{CH_4} = Q(S_o-S) - Y_{obs} Q S_o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.0001em;vertical-align:-0.2501em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31731428571428577em;"><span style="top:-2.357em;margin-left:-0.08125em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">o</span><span class="mord mathit mtight">b</span><span class="mord mathit mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord mathit">Q</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span></p>
+<p>Where:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>O</mi><msub><mi>D</mi><mrow><mi>C</mi><msub><mi>H</mi><mn>4</mn></msub></mrow></msub></mrow><annotation encoding="application/x-tex">COD_{CH_4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.93343em;vertical-align:-0.2501em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31731428571428577em;"><span style="top:-2.357em;margin-left:-0.08125em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"></span></span></span></span></span></span></span></span> is the mass of COD converted to methane (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>g</mi><mi>C</mi><mi>O</mi><msub><mi>D</mi><mrow><mi>C</mi><mi>H</mi><mn>4</mn></mrow></msub><mi mathvariant="normal">/</mi><mi>d</mi><mi>a</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">kgCOD_{CH4} / day</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.08125em;">H</span><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">/</span><span class="mord mathit">d</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit">Q</span></span></span></span> is the average influent flow (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>3</mn></msup><mi mathvariant="normal">/</mi><mi>d</mi><mi>a</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">m^3 / day</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathit">d</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">S_o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> is the influent COD concentration (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>g</mi><mi>C</mi><mi>O</mi><mi>D</mi><mi mathvariant="normal">/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">kgCOD/m^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mord">/</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span> is the effluent COD concentration (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>g</mi><mi>C</mi><mi>O</mi><mi>D</mi><mi mathvariant="normal">/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">kgCOD/m^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mord">/</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{obs}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">o</span><span class="mord mathit mtight">b</span><span class="mord mathit mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> is the coefficient of solid production within the system in terms of COD (the amount of sludge created from input COD) (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>g</mi><mi>C</mi><mi>O</mi><msub><mi>D</mi><mrow><mi>s</mi><mi>l</mi><mi>u</mi><mi>d</mi><mi>g</mi><mi>e</mi></mrow></msub><mi mathvariant="normal">/</mi><mi>k</mi><mi>g</mi><mi>C</mi><mi>O</mi><msub><mi>D</mi><mrow><mi>a</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>e</mi><mi>d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">kgCOD_{sludge}/kgCOD_{applied}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">s</span><span class="mord mathit mtight" style="margin-right:0.01968em;">l</span><span class="mord mathit mtight">u</span><span class="mord mathit mtight">d</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span><span class="mord mathit mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"></span></span></span></span></span><span class="mord">/</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight">p</span><span class="mord mathit mtight">p</span><span class="mord mathit mtight" style="margin-right:0.01968em;">l</span><span class="mord mathit mtight">i</span><span class="mord mathit mtight">e</span><span class="mord mathit mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"></span></span></span></span></span></span></span></span>)</p>
+<ul>
+<li>In the literature, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{obs}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">o</span><span class="mord mathit mtight">b</span><span class="mord mathit mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> ranges from 0.11 to 0.23.  To assume lower production, we chose the highest value for our calculations (as this is the removal of COD)</li>
+</ul>
+<p>Next, this methane mass can be converted to volumetric production as follows:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mrow><mi>C</mi><mi>H</mi><mn>4</mn></mrow></msub><mo>=</mo><mfrac><mrow><mi>C</mi><mi>O</mi><msub><mi>D</mi><mrow><mi>C</mi><mi>H</mi><mn>4</mn></mrow></msub></mrow><mrow><mi>K</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">Q_{CH4} = \frac{COD_{CH4}}{K(t)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8886359999999999em;"></span><span class="strut bottom" style="height:1.408636em;vertical-align:-0.52em;"></span><span class="base"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.08125em;">H</span><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8886359999999999em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">K</span><span class="mopen mtight">(</span><span class="mord mathit mtight">t</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewBox="0 0 400000 200" preserveAspectRatio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"></path></svg></span></span><span style="top:-3.410305em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.02778em;">O</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.02778em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.08125em;">H</span><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p>Where</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mrow><mi>C</mi><mi>H</mi><mn>4</mn></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{CH4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.08125em;">H</span><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> = volumetric methane production (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>3</mn></msup><mi mathvariant="normal">/</mi><mi>d</mi><mi>a</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">m^3 / day</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathit">d</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>)</p>
+<p>and</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">K(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">K</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span> = correction factor for operational temp of reactor (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>g</mi><mi>C</mi><mi>O</mi><mi>D</mi><mi mathvariant="normal">/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">kgCOD/m^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mord">/</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">K(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">K</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span> is defined using the ideal gas law:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>∗</mo><msub><mi>K</mi><mrow><mi>C</mi><mi>O</mi><mi>D</mi></mrow></msub></mrow><mrow><mi>R</mi><mo>∗</mo><mo>(</mo><mn>2</mn><mn>7</mn><mn>3</mn><mo>+</mo><mi>T</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">K(t) = \frac{P * K_{COD}}{R * (273 + T)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8886359999999999em;"></span><span class="strut bottom" style="height:1.408636em;vertical-align:-0.52em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">K</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8886359999999999em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span><span class="mbin mtight">∗</span><span class="mopen mtight">(</span><span class="mord mtight">2</span><span class="mord mtight">7</span><span class="mord mtight">3</span><span class="mbin mtight">+</span><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewBox="0 0 400000 200" preserveAspectRatio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"></path></svg></span></span><span style="top:-3.410305em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">P</span><span class="mbin mtight">∗</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.07153em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.02778em;">O</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span></span> = atmospheric pressure (1 atm)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>K</mi><mrow><mi>C</mi><mi>O</mi><mi>D</mi></mrow></msub></mrow><annotation encoding="application/x-tex">K_{COD}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.02778em;">O</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> = COD corresponding to 1 mole of CH4 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>6</mn><mn>4</mn><mi>g</mi><mi>C</mi><mi>O</mi><mi>D</mi></mrow><mrow><mi>m</mi><mi>o</mi><mi>l</mi><mi>e</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{64g COD}{mole}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.924439em;"></span><span class="strut bottom" style="height:1.269439em;vertical-align:-0.345em;"></span><span class="base"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.924439em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">o</span><span class="mord mathit mtight" style="margin-right:0.01968em;">l</span><span class="mord mathit mtight">e</span></span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewBox="0 0 400000 200" preserveAspectRatio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"></path></svg></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">4</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span><span class="mord mathit mtight" style="margin-right:0.07153em;">C</span><span class="mord mathit mtight" style="margin-right:0.02778em;">O</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.00773em;">R</span></span></span></span> = Ideal Gas Constant = 0.08206 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mfrac><mrow><mi>a</mi><mi>t</mi><mi>m</mi><mo>∗</mo><mi>L</mi></mrow><mrow><mi>m</mi><mi>o</mi><mi>l</mi><mo>∗</mo><mi>K</mi></mrow></mfrac></mrow></mrow><annotation encoding="application/x-tex">{\frac{atm*L}{mol*K}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.872331em;"></span><span class="strut bottom" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="base"><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">o</span><span class="mord mathit mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">∗</span><span class="mord mathit mtight" style="margin-right:0.07153em;">K</span></span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewBox="0 0 400000 200" preserveAspectRatio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"></path></svg></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight">t</span><span class="mord mathit mtight">m</span><span class="mbin mtight">∗</span><span class="mord mathit mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span> = Temperature ( <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><msup><mrow></mrow><mo>∘</mo></msup></mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">{^\circ}C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span><span class="mord mathit" style="margin-right:0.07153em;">C</span></span></span></span>)</p>
+<p>Since biogas contains other gasses such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume that biogas is composed 75% of methane, as given in <a href="https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf">Anaerobic Reactors</a>.</p>
+<p>It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an <strong>overapproximation</strong> and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will dangerously pressurize flammable gas.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.</p>
+<h4 class="mume-header" id="design-parameters-1">Design Parameters</h4>
+
+<p>Table 3: Design parameters for biogas production.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Parameters</th>
+<th style="text-align:center">Value</th>
+<th style="text-align:center">Basis of Design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">COD Removal Efficiency, <code>COD_eff</code></td>
+<td style="text-align:center">70%</td>
+<td style="text-align:center">Based on <a href="https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf">Van Lier Report</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Percent of COD directed to Sludge Production <code>Y_obs</code></td>
+<td style="text-align:center">11% to 23%</td>
+<td style="text-align:center">Based on <a href="https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf">Anaerobic Reactors</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Pressure <code>P</code></td>
+<td style="text-align:center">1 atm</td>
+<td style="text-align:center">Biogas produced will be stored at very low pressure</td>
+</tr>
+<tr>
+<td style="text-align:center">Temperature <code>T</code></td>
+<td style="text-align:center">25 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">^{\circ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.674115em;"></span><span class="strut bottom" style="height:0.674115em;vertical-align:0em;"></span><span class="base"><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∘</span></span></span></span></span></span></span></span></span></span></span></span> C</td>
+<td style="text-align:center">Assuming optimal biological conditions</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="code-1">Code</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">BiogasFlow</span><span class="token punctuation">(</span>Q<span class="token punctuation">,</span> COD_Load<span class="token punctuation">,</span> Temp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Calculates the biogas production rate from the flow rate through the reactor, the COD concentration of the influent, and the temperature of the reactor
+
+    For the doctest to pass, one must initialize the flow from UASB_design using UASB_Size(3 * u.ft, 7 * u.ft)
+
+    >>> from aide_design.play import*
+    >>> import math
+    >>> BiogasFlow(UASB_design[2], 200 * (u.mg / u.L), 25 * u.degC)
+    The volumetric methane production per second is 0.0013 liter / second
+    The volumetric methane production per second is 112.3 liter / day
+    [&lt;Quantity(0.0012996707807037425, 'liter / second')>, &lt;Quantity(112.29155545280335, 'liter / day')>]
+    """</span>
+    <span class="token comment"># Calculating methane production by mass</span>
+    COD_Load <span class="token operator">=</span> COD_Load<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>g <span class="token operator">/</span> u<span class="token punctuation">.</span>L<span class="token punctuation">)</span>
+    COD_eff <span class="token operator">=</span> <span class="token number">0.7</span> <span class="token comment"># Assuming 70% efficency of COD removal and conversion in reactor</span>
+    COD_rem <span class="token operator">=</span> COD_Load <span class="token operator">*</span> COD_eff
+    Y_obs <span class="token operator">=</span> <span class="token number">0.23</span> <span class="token comment"># Upper limit of sludge production</span>
+    COD_CH4 <span class="token operator">=</span> <span class="token punctuation">(</span>Q <span class="token operator">*</span> COD_rem<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span>Y_obs <span class="token operator">*</span> Q <span class="token operator">*</span> COD_Load<span class="token punctuation">)</span>
+    <span class="token comment"># Calculating correction factor for operational temperature of the reactor</span>
+    T <span class="token operator">=</span> Temp<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>degK<span class="token punctuation">)</span>
+    P <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>atm
+    K_COD <span class="token operator">=</span> <span class="token number">64</span> <span class="token operator">*</span> <span class="token punctuation">(</span>u<span class="token punctuation">.</span>g <span class="token operator">/</span> u<span class="token punctuation">.</span>mol<span class="token punctuation">)</span>
+    R <span class="token operator">=</span> <span class="token number">0.08206</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>u<span class="token punctuation">.</span>atm <span class="token operator">*</span> u<span class="token punctuation">.</span>L<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>u<span class="token punctuation">.</span>mol <span class="token operator">*</span> u<span class="token punctuation">.</span>degK<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    K <span class="token operator">=</span> <span class="token punctuation">(</span>P <span class="token operator">*</span> K_COD<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>R <span class="token operator">*</span> T<span class="token punctuation">)</span>
+    <span class="token comment">#Calculate the volumetric flow rate of methane production</span>
+    Q_CH4 <span class="token operator">=</span> COD_CH4 <span class="token operator">/</span> K <span class="token comment"># per second</span>
+    Q_day <span class="token operator">=</span> Q_CH4 <span class="token operator">*</span> <span class="token number">86400</span> <span class="token operator">*</span> <span class="token punctuation">(</span>u<span class="token punctuation">.</span>s <span class="token operator">/</span> u<span class="token punctuation">.</span>day<span class="token punctuation">)</span> <span class="token comment"># per day</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The volumetric methane production per second is"</span><span class="token punctuation">,</span> Q_CH4<span class="token punctuation">,</span> <span class="token string">"\n"</span> <span class="token string">"The volumetric methane production per second is"</span><span class="token punctuation">,</span> Q_day<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>Q_CH4<span class="token punctuation">,</span> Q_day<span class="token punctuation">]</span>
+
+<span class="token comment"># Flow rate through UASB reactor</span>
+Flow_design <span class="token operator">=</span> UASB_design<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Flow_design<span class="token punctuation">)</span>
+<span class="token comment"># Amount of biogas production per second and per day</span>
+Temp <span class="token operator">=</span> <span class="token number">25</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>degC  <span class="token comment"># Assuming mesophilic conditions</span>
+<span class="token comment">#Approximate loading rates for domestic wastewater</span>
+COD_Load_min <span class="token operator">=</span> <span class="token number">100</span> <span class="token operator">*</span> <span class="token punctuation">(</span>u<span class="token punctuation">.</span>mg <span class="token operator">/</span> u<span class="token punctuation">.</span>L<span class="token punctuation">)</span>
+COD_Load_mid <span class="token operator">=</span> <span class="token number">200</span> <span class="token operator">*</span> <span class="token punctuation">(</span>u<span class="token punctuation">.</span>mg <span class="token operator">/</span> u<span class="token punctuation">.</span>L<span class="token punctuation">)</span>
+COD_Load_max <span class="token operator">=</span> <span class="token number">300</span> <span class="token operator">*</span> <span class="token punctuation">(</span>u<span class="token punctuation">.</span>mg <span class="token operator">/</span> u<span class="token punctuation">.</span>L<span class="token punctuation">)</span>
+
+Q_Biogas <span class="token operator">=</span> BiogasFlow<span class="token punctuation">(</span>Flow_design<span class="token punctuation">,</span> COD_Load_mid<span class="token punctuation">,</span> Temp<span class="token punctuation">)</span>
+<span class="token comment">#Calculating size of storage device</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>Q_Biogas<span class="token punctuation">)</span>
+
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span>verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+Size_Store <span class="token operator">=</span> Q_Biogas<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>gal <span class="token operator">/</span> u<span class="token punctuation">.</span>day<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>u<span class="token punctuation">.</span>day<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The size of the storage container to store one day worth of biogas production should be at least"</span><span class="token punctuation">,</span> Size_Store<span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="biogas-storage-system">Biogas Storage System</h3>
+
+<p>An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.</p>
+<p>Table 4: List of advantages and disadvantages associated with different biogas storage systems.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type of Storage</th>
+<th style="text-align:left">Advantages</th>
+<th style="text-align:left">Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Gas Bag</td>
+<td style="text-align:left">(1) Flexible and easy connection on top of next to reactor (2) <strong>Cheap and cost effective</strong> (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume</td>
+<td style="text-align:left">(1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?</td>
+</tr>
+<tr>
+<td style="text-align:left">Fixed Lid</td>
+<td style="text-align:left">(1) Durability (2) No concerns about movement (3) Can use prefabricated barrel</td>
+<td style="text-align:left">(1) Water displaced during gas compression may need to be recaptured, requiring additional information</td>
+</tr>
+<tr>
+<td style="text-align:left">Floating Lid</td>
+<td style="text-align:left">(1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level</td>
+<td style="text-align:left">(1) Low gas production will just cause water displacement (2) Track system hard to fabricate</td>
+</tr>
+</tbody>
+</table>
+<p>After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other &quot;bag&quot; collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.</p>
+<p>Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 5.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 9.</p>
+<p><img src="https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true" alt="Biogas_Close"></p>
+<p align="center">Figure 8: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
+<p><img src="https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Storage.jpg?raw=true" alt="Biogas_Storage"></p>
+<p align="center">Figure 9: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
+<h4 class="mume-header" id="code-2">Code</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">Dim_Storage</span><span class="token punctuation">(</span>day_prod<span class="token punctuation">,</span> time_stor<span class="token punctuation">,</span> time_fail<span class="token punctuation">,</span> diam_lid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""Takes the daily volume of biogas produced (volume per time), the numbers of days for desired storage, and the time required before critical lid failure and returns the volume required for the temporary storage system and the dimensions for the lid required to retain a set amount of biogas before failure"""</span>
+
+  day_prod <span class="token operator">=</span> day_prod<span class="token punctuation">.</span>to_base_units<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  time_stor <span class="token operator">=</span> time_stor<span class="token punctuation">.</span>to_base_units<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  vol_stor <span class="token operator">=</span> day_prod <span class="token operator">*</span> time_stor
+
+  time_fail <span class="token operator">=</span> time_fail<span class="token punctuation">.</span>to_base_units<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  vol_fail <span class="token operator">=</span> day_prod <span class="token operator">*</span> time_fail
+
+  diam_lid <span class="token operator">=</span> diam_lid<span class="token punctuation">.</span>to_base_units<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  area_lid <span class="token operator">=</span> <span class="token number">0.25</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">*</span> <span class="token punctuation">(</span>diam_lid<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span>
+  height_lid <span class="token operator">=</span> <span class="token punctuation">(</span> vol_fail <span class="token operator">/</span> area_lid <span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>ft<span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span><span class="token punctuation">[</span>vol_stor<span class="token punctuation">,</span> height_lid<span class="token punctuation">]</span>
+
+day_prod <span class="token operator">=</span> Q_Biogas<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+time_stor <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>day
+time_fail <span class="token operator">=</span> <span class="token number">12</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>hr
+diam_lid <span class="token operator">=</span> <span class="token number">2.5</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>ft
+
+size_stor <span class="token operator">=</span> Dim_Storage<span class="token punctuation">(</span>day_prod<span class="token punctuation">,</span> time_stor<span class="token punctuation">,</span> time_fail<span class="token punctuation">,</span> diam_lid<span class="token punctuation">)</span>
+vol_stor <span class="token operator">=</span> size_stor<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>gal<span class="token punctuation">)</span>
+height_lid <span class="token operator">=</span> size_stor<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The storage volume required to store"</span><span class="token punctuation">,</span> time_stor<span class="token punctuation">,</span> <span class="token string">"of biogas is"</span><span class="token punctuation">,</span> vol_stor<span class="token punctuation">,</span> <span class="token string">"\n"</span> <span class="token string">"The height of lid to prevent failure before"</span><span class="token punctuation">,</span> time_fail<span class="token punctuation">,</span> <span class="token string">"is"</span><span class="token punctuation">,</span> height_lid<span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="fats-oils-and-greases-fog-removal-system">Fats, Oils and Greases (FOG) Removal System</h3>
+
+<p>Typical wastewater from domestic sources contains many particles besides organic waste.  These include inorganics such as sand, rocks and clay that enter the wastewater system, along with organics that cannot be broken down by the anaerobic bacteria within the reactor.  Primary amongst these organics are fatty materials, including oils and greases.  These materials enter the wastewater stream mostly from cooking wastes that are poured directly down drains.</p>
+<p>Fats are typically lighter than water and hydrophobic, causing them to float to the top of the UASB reactor and accumulate within the biogas capture lid.  If not removed, they will build up in this lid and hinder reactor efficiency.  Therefore, a successful UASB system must include an easy removal system for these materials.  Fats removed during domestic wastewater treatment are typically sent to a landfill for disposal.</p>
+<p>The design process began with characterizing the rate at which fats would buildup within the reactor to determine how often they would have to be removed. However, this buildup rate is highly variable and depends on both the nature of wastewater and FOG removal efficiency during screening. Ed Gottlieb, a plant operator at the Ithaca Area Wastewater Treatment Facility (IAWWTF), informed the team that the IAWWTF skims its clarifiers once a month for FOG removal. With this information, the team decided to focus on designing a simple system that can remove FOG whenever the plant operators deem it necessary.</p>
+<p>The team considered three possible systems for FOG removal:</p>
+<ul>
+<li>A mechanical or gravitational separator before influent that captured and removed fat particles</li>
+<li>Dosing of a coagulant to bind fat particles and make them easier to remove</li>
+<li>An outflow pipe or siphon coming out of the removable lid with a valve to allow discharge of water containing fats</li>
+</ul>
+<p>After brainstorming these options, the team quickly ruled out the first two options, and they were complicated and either required mechanical parts or chemical dosing, which go against the design philosophy of the project to make the UASB simple and cheap to install and operate.</p>
+<p>Thus, the team decided to design a small outflow pipe from the biogas lid.  In talking with Mr. Gottlieb, it seems a greater velocity will be needed to remove fat particles, as they will tend to spread over the water surface and congeal into mats.  Design for this system is still ongoing, and the team is researching siphon systems, as well as working to determine the dimensions of this pipe system.</p>
+<p>In addition to these methods, the system will always have a failsafe system to remove fats.  Since the biogas lid is removable, fats can be manually skimmed off the top.  This was determined to be undesirable for a number of reasons.  First, it requires direct human input, which increases work for the community, and requires more training on usage.  Second, opening the system in this way depressurizes it, and releases any captured biogas produced within.  Finally, this requires close human contact with wastewater, which is a undesirable job and increases risk of infections or accidental discharge of wastewater.  However it offers a removal option if errors occur with designed systems.</p>
+<h3 class="mume-header" id="sludge-sampling-and-removal-system">Sludge Sampling and Removal System</h3>
+
+<br>
+<div style="text-align:center">
+<p><img src="../Images/Sludge_Weir.PNG" alt="UASB_Side"></p>
+ <p align="center">Figure 10: Schematic of the sludge sampling system. </p>
+</div>
+<p>As long as it is continuously fed wastewater as &quot;food&quot;, the UASB sludge blanket will continue to grow over time, filling the sludge volume and eventually rising upwards into the effluent zone.  To control and monitor this growth, our design incorporates a sludge weir system (see Figure 10).</p>
+<p>The sludge weir consists of a tube jutting out of the reactor at a downwards angle.  This weir is implemented at the top of anticipated height of the sludge blanket, so as to capture bacterial growth above this limit.</p>
+<p>The weir is designed with two valves to control flow.  The first valve is in line with the reactor wall, and will be left open during reactor operation, allowing for excess sludge to settle into the tube over time.  Ideally, the tube itself will be partially transparent, allowing direct monitoring of sludge levels and composition without release of wastewater.  When it is necessary for sludge to be removed from the system, this valve will be shut, and the outer valve will be opened to allow discharge of sludge material.</p>
+<h3 class="mume-header" id="other-sampling-ports">Other Sampling Ports</h3>
+
+<p>For testing purposes, the first model of the UASB will include multiple sampling ports placed at different heights along the reactor.  These will be similar in design to the sludge weir, but smaller in diameter, and only used for testing purposed, not large scale sludge removal.  The ultimate number and location of these system will be determined once further research into sampling techniques is complete.</p>
+<p>Another important concern for the reactor is inorganic removal. Inorganics such as sand, rocks, plastics, and other materials will inevitably enter the wastewater stream.  Those that are not removed in the degritting system will enter the reactor.  Since these materials are often denser than water, they will settle in the reactor and remain within the system indefinitely.  In order to remove these materials, a final inorganics weir will be added to the bottom of the reactor.  While this weir will most likely only be used sporadically, it is an important system to remove materials that would otherwise build up and hinder reactor performance.</p>
+<h4 class="mume-header" id="design-parameters-of-sampling-ports-and-sludge-weirs">Design Parameters of Sampling Ports and Sludge Weirs</h4>
+
+<p>The dimensions of the sludge weir are not incredibly important design parameters, and were thus set to values that seemed reasonable.  These systems will be tested in our first design and changed accordingly.  These parameters are set in the table below.</p>
+<p align="center">
+Table 6: Design parameters for sludge sampling systems.
+</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Parameter</th>
+<th style="text-align:center">Value</th>
+<th style="text-align:center">Basis of Design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sludge Weir Diameter</td>
+<td style="text-align:center">6 in</td>
+<td style="text-align:center">Based on Floc Hopper in 1 L/s plant</td>
+</tr>
+<tr>
+<td style="text-align:center">Sludge Weir Length</td>
+<td style="text-align:center">To be determined</td>
+<td style="text-align:center">Based on desired volume of sludge per sample</td>
+</tr>
+<tr>
+<td style="text-align:center">Sampling Port Diameter</td>
+<td style="text-align:center">To be determined</td>
+<td style="text-align:center">Based on fabrication specs</td>
+</tr>
+<tr>
+<td style="text-align:center">Number of Sampling Ports</td>
+<td style="text-align:center">To be determined</td>
+<td style="text-align:center">Based on  number of sampling sites needed</td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="hydrogen-sulfide-removal-system">Hydrogen Sulfide Removal system</h3>
+
+<p>Another important aspect of design is a removal system for hydrogen sulfide (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><mi>S</mi></mrow><annotation encoding="application/x-tex">H_2 S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>).  Hydrogen sulfide is naturally produced in anaerobic digestion of sulphates, which occur in low quantities in typical wastewater.  Hydrogen sulfide is highly flammable, toxic, and corrosive, making it very dangerous in large qualities within the reactor.</p>
+<p>Hydrogen sulfide is typically removed using an oxidizing agent, such as iron oxide or biological sources such as crop husks.  These can be incorporated into the reactor in multiple ways including:</p>
+<ul>
+<li>Dosing of a chemical compound in the influent of the reactor</li>
+<li>Exposing biogas to solid oxidizing agents such as steel wool</li>
+</ul>
+<p>Design of this section is ongoing, but will likely involve a solid oxidizing agent to reduce costs and complexities associated with chemical dosing.</p>
+<h3 class="mume-header" id="effluent-flow-system">Effluent Flow System</h3>
+
+<p>Based on settling tests conducted on the lab scale UASB reactors during Summer 2017, it was determined that a lower capture velocity than that used in AguaClara drinking water plants can sufficiently settle sludge granules and other solids in a UASB reactor (Chen, 2017). As such, fewer plate settlers are required in the UASB than in the 1 L/s plant sedimentation tank.  To reduce costs and fabrication time associated with constructing the sloped body of the 1 L/s sedimentation tank to house multiple large plates as shown in Figure 4, a new effluent and solid settling system was designed.</p>
+<p>In this system, the body of the UASB reactor would leave the 3 foot diameter corrugated pipe intact rather than having to cut, rotate, and PVC weld to achieve the bend in the body of the reactor.  Instead, a sloped tube, or tube settler, would be inserted into the side of reactor to allow effluent to leave the reactor.  Inside this tube, a smaller set of plates would be placed to promote settling as shown in Figure 2.</p>
+<h4 class="mume-header" id="design-parameters-2">Design Parameters</h4>
+
+<p align="center">
+Table 7: Design parameters for calculations of the tube settler size, the number of plates required and overall height of the settling arm. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Value</th>
+<th style="text-align:left">Basis of Design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Height of Sludge Blanket <code>height_blanket</code></td>
+<td style="text-align:left">3.5 ft</td>
+<td style="text-align:left">Assumed half the height of reactor</td>
+</tr>
+<tr>
+<td style="text-align:left">Distance Between Plate Settlers <code>plate_space</code></td>
+<td style="text-align:left">2.5 cm</td>
+<td style="text-align:left">Based on Sedimentation Tank Design</td>
+</tr>
+<tr>
+<td style="text-align:left">Angle of Tube Settler <code>angle</code></td>
+<td style="text-align:left">60 degrees</td>
+<td style="text-align:left">Based on sedimentation tank design</td>
+</tr>
+<tr>
+<td style="text-align:left">Thickness of Plates <code>thickness_sed_plate</code></td>
+<td style="text-align:left">2 mm</td>
+<td style="text-align:left">Taken from corrugated plastic thickness</td>
+</tr>
+</tbody>
+</table>
+<p>The code below serves to calculate the size of the tube settler, the number of plates required, and the overall height of the settling arm.</p>
+<h4 class="mume-header" id="code-3">Code</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Design Parameters</span>
+height_blanket <span class="token operator">=</span> <span class="token number">3.5</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>ft
+plate_space <span class="token operator">=</span> <span class="token number">2.5</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>cm
+angle <span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>deg
+thickness_sed_plate <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>mm
+flow <span class="token operator">=</span> UASB_design<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Assumptions</span>
+diam_sludge_weir <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>inch <span class="token comment">## size of sludge weir used in 1L/s sed tank</span>
+sep_dist <span class="token operator">=</span> <span class="token number">12</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>inch  <span class="token comment">## Arbitrary distance set to constrain the available space required for the tube settler since the tube settler has to set the water level inside the reactor but also have the entrance be above the sludge blanket</span>
+water_elevation <span class="token operator">=</span> <span class="token number">6.5</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>ft  <span class="token comment">## figure out from previous reports</span>
+
+
+<span class="token comment"># velocity between plate settlers</span>
+diam_tube <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> u<span class="token punctuation">.</span>inch
+
+B <span class="token operator">=</span> <span class="token punctuation">(</span>plate_space <span class="token operator">+</span> thickness_sed_plate<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>cm<span class="token punctuation">)</span>
+
+velocity_active_up <span class="token operator">=</span> <span class="token punctuation">(</span>flow <span class="token operator">*</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>pc<span class="token punctuation">.</span>area_circle<span class="token punctuation">(</span>diam_tube<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>mm<span class="token operator">/</span>u<span class="token punctuation">.</span>s<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The vertical velocity component beneath the plate settlers is in the range"</span><span class="token punctuation">,</span> velocity_active_up<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span>velocity_active_up<span class="token punctuation">.</span>units <span class="token punctuation">)</span>
+
+velocity_plate_up <span class="token operator">=</span> velocity_active_up <span class="token operator">*</span> B <span class="token operator">/</span> plate_space
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The vertical velocity component between the plate settlers is in the range"</span><span class="token punctuation">,</span> velocity_plate_up<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> velocity_plate_up<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+
+velocity_plate <span class="token operator">=</span> <span class="token punctuation">(</span>velocity_plate_up <span class="token operator">/</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>mm<span class="token operator">/</span>u<span class="token punctuation">.</span>s<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The velocity between the plate settlers is in the range"</span><span class="token punctuation">,</span> velocity_plate<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> velocity_plate<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+
+
+<span class="token comment"># Parameters for tube settler</span>
+height_tube_settler <span class="token operator">=</span> <span class="token punctuation">(</span>height_blanket <span class="token operator">+</span> diam_sludge_weir <span class="token operator">+</span> sep_dist <span class="token operator">+</span> <span class="token number">0.5</span><span class="token operator">*</span>diam_tube<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>inch<span class="token punctuation">)</span>  <span class="token comment"># height of the center of the tube setler</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The height of the center of the tube settler where is attaches to the body of the reactor is in the range"</span><span class="token punctuation">,</span>height_tube_settler<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> height_tube_settler<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+
+length_tube_settler_vertical <span class="token operator">=</span> <span class="token punctuation">(</span>water_elevation <span class="token operator">-</span> height_tube_settler<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>inch<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The vertical length of the tube settler is in the range"</span><span class="token punctuation">,</span> length_tube_settler_vertical<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> length_tube_settler_vertical<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+
+length_tube_settler <span class="token operator">=</span> <span class="token punctuation">(</span>length_tube_settler_vertical <span class="token operator">/</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>cm<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The length of the tube setter is in the range"</span><span class="token punctuation">,</span>length_tube_settler<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> length_tube_settler<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+
+projected_area <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>length_tube_settler <span class="token operator">*</span> np<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>angle<span class="token punctuation">)</span>
+                  <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>plate_space<span class="token operator">/</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> diam_tube<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>m<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The projected area of the plates is in the range"</span><span class="token punctuation">,</span> projected_area<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> projected_area<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+
+velocity_capture <span class="token operator">=</span> <span class="token punctuation">(</span>plate_space<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>mm<span class="token punctuation">)</span> <span class="token operator">*</span> velocity_plate_up<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>mm<span class="token operator">/</span>u<span class="token punctuation">.</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>length_tube_settler<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>mm<span class="token punctuation">)</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>angle<span class="token punctuation">)</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>angle<span class="token punctuation">)</span> <span class="token operator">+</span> plate_space<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>mm<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The capture veloctiy is in the range"</span><span class="token punctuation">,</span> velocity_capture<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> velocity_capture<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+
+number_plate_settler <span class="token operator">=</span> np<span class="token punctuation">.</span>floor<span class="token punctuation">(</span>diam_tube <span class="token operator">/</span> <span class="token punctuation">(</span>plate_space<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>inch<span class="token punctuation">)</span> <span class="token operator">+</span> thickness_sed_plate<span class="token punctuation">.</span>to<span class="token punctuation">(</span>u<span class="token punctuation">.</span>inch<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The number of plate settlers is in the range"</span><span class="token punctuation">,</span> number_plate_settler<span class="token punctuation">.</span>magnitude<span class="token punctuation">,</span> number_plate_settler<span class="token punctuation">.</span>units<span class="token punctuation">)</span>
+</pre><h2 class="mume-header" id="2018-epa-expo-in-washington-dc">2018 EPA Expo in Washington, D.C.</h2>
+
+<p>On April 7 and 8,  UASB team members Ananya Gangadhar and Jennifer Jackson presented the Phase 1 UASB work at the EPA's National Sustainable Design Expo.  The Expo was part of a larger event, the USA Science and Engineering Festival at the Walter E. Washington Convention Center in Washington, D.C.  Ananya and Jennifer, along with Professor Ruth Richardson and other AguaClara members, presented the current UASB Reactor design.</p>
+<p><img src="../Images/EPA_Expo.jpg" alt="UASB_EPA_expo"></p>
+<p align="center">Figure 11: From left to right -  Jennifer Jackson, Ananya Gangadhar, and Sidney Lok at the EPA Expo. </p>
+<p><img src="../Images/epa_poster.PNG" alt="EPA_poster"></p>
+<p align="center">Figure 12:  The poster that was presented at the EPA Expo. </p>
+<h2 class="mume-header" id="future-work">Future Work</h2>
+
+<p>A rough timeline of the project is summarized below.  The overall goal is for design work to be complete by the end of Summer 2018.  During Fall 2018, the subteam will become a fabrication team and build the completed reactor.  After that the UASB will be implemented and tested at the Ithaca Wastewater Plant, and data gathered from this testing will inform future design.  Once design is complete and the system has been proven, the finished product will be shipped to Honduras for field testing, and then implemented in rural communities full time.</p>
+<h4 class="mume-header" id="summer-2018">Summer 2018</h4>
+
+<ul>
+<li>Conduct benchtop tests for influent system</li>
+<li>Finish final design components (sampling ports, inorganics removal, degritting system, hydrogen sulfide removal)</li>
+<li>Make complete fusion model</li>
+<li>Design data collection methods</li>
+<li>Make fabrication plan</li>
+</ul>
+<h4 class="mume-header" id="fall-2018">Fall 2018</h4>
+
+<ul>
+<li>Find fabrication space for UASB</li>
+<li>Fabricate Reactor</li>
+</ul>
+<h2 class="mume-header" id="bibliography">Bibliography</h2>
+
+<p>Abbasi, T., &amp; Abbasi, S. A. (2012). Formation and impact of granules in fostering clean energy production and wastewater treatment in upflow anaerobic sludge blanket (UASB) reactors. Renewable and Sustainable Energy Reviews, 16(3), 1696–1708. <a href="https://doi.org/10.1016/j.rser.2011.11.017">https://doi.org/10.1016/j.rser.2011.11.017</a></p>
+<p>Chen, Z. (2017, August). Upflow Anaerobic Sludge Blanket, Summer 2017.</p>
+<p>Chong, S., Sen, T. K., Kayaalp, A., &amp; Ang, H. M. (2012). The performance enhancements of upflow anaerobic sludge blanket (UASB) reactors for domestic sludge treatment – A State-of-the-art review. Water Research, 46(11), 3434–3470. <a href="https://doi.org/10.1016/j.watres.2012.03.066">https://doi.org/10.1016/j.watres.2012.03.066</a></p>
+<p>Ghoneim, W. A. M., Helal, A. A., &amp; Wahab, M. G. A. (2016). Renewable energy resources and recovery opportunities in wastewater treatment plants. In 2016 3rd International Conference on Renewable Energies for Developing Countries (REDEC) (pp. 1–8). <a href="https://doi.org/10.1109/REDEC.2016.7577509">https://doi.org/10.1109/REDEC.2016.7577509</a></p>
+<p>Herrara, D., Hua, Y., Kim, S. M., &amp; Yang, F. (2016, December). Prefabrication 1 L/s, Fall 2016.</p>
+<p>Kim, A., Chen, Y., &amp; Evan, G. (n.d.). Upflow Anaerobic Sludge Blanket, Fall 2016.</p>
+<p>Lettinga, G., &amp; Pol, L. W. H. (1991). UASB-Process Design for Various Types of Wastewaters. Water Science and Technology, 24(8), 87–107.</p>
+<p>Mittal, A. (2011). Biological Wastewater Treatment. Water Today. Retrieved from <a href="http://www.academia.edu/7451295/Biological_Wastewater_Treatment">http://www.academia.edu/7451295/Biological_Wastewater_Treatment</a></p>
+<p>Narnoli, S. K., &amp; Mehrotra, I. (1997). Sludge blanket of UASB reactor: Mathematical simulation. Water Research, 31(4), 715–726. <a href="https://doi.org/10.1016/S0043-1354(97)80987-6">https://doi.org/10.1016/S0043-1354(97)80987-6</a></p>
+<p>Subramanyam, R. (2013). Physicochemical and Morphological Characteristics of Granular Sludge in Upflow Anaerobic Sludge Blanket Reactors. Environmental Engineering Science, 30(5), 201–212. <a href="https://doi.org/10.1089/ees.2012.0347">https://doi.org/10.1089/ees.2012.0347</a></p>
+<p>Van Lier, J. B., Vashi, A., Van Der Lubbe, J., &amp; Heffernan, B. (2010). Anaerobic Sewage Treatment using UASB Reactors: Engineering and Operational Aspects. In Environmental Anaerobic Technology (Vols. 1–0, pp. 59–89). IMPERIAL COLLEGE PRESS. <a href="https://doi.org/10.1142/9781848165434_0004">https://doi.org/10.1142/9781848165434_0004</a></p>
+
+      </div>
+      
+      
+    </body>
+    
+    
+    
+    
+    
+    
+    
+  </html>
