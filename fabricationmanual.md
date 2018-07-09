@@ -24,7 +24,7 @@ For more information on the AguaClara UASB project, visit our [Github repository
 ## Screening Rack
 As of summer 2018, the plan is to use a series of mesh racks of decreasing pore sizes.
 
-More research is needed to determine the exact range of mesh rack and pore sizes. Ed from the Ithaca Area Wastewater Treatment Facility said that the 
+More research is needed to determine the exact range of mesh rack and pore sizes.
 
 It is preferable to have the screening happen a certain distance away from the reactor although the exact details of the blueprint are yet to be determined.
 
@@ -72,13 +72,10 @@ The holding tank can be made using a heavy duty pre-fabricated rectangular holdi
 Rectangular brackets welded onto the side of the holding tank will support the tipping bucket.
 **(Insert drawing of rectangular bracket)**
 
-
+## Biogas Capture Lid
 
 ## UASB Reactor Tank
 
 ## Sludge Weir
 
 ## Effluent Tube Settler
-
-
-## Biogas Capture Lid
