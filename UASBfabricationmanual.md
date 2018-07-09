@@ -2,7 +2,7 @@
 
 ## Summer 2018
 
-###Ian Cullings, Ananya Gangadhar, Isa Kaminsky
+### Ian Cullings, Ananya Gangadhar, Isa Kaminsky
 
 ## Introduction
 
@@ -18,7 +18,7 @@ The final section, assembly, details the process of assembling the UASB into a f
 
 The final goal is for this document is for it to serve as a full fabrication plan for the UASB reactors, so that they can be simply fabricated at low costs and installed abroad.  As such it will be a working document that will be constantly being updated with the latest changes in design and fabrication plans.  Any comments or suggestions on this document are always appreciated.
 
-For more information on the AguaClara UASB project, visit our [Github repository](https://github.com/AguaClara/UASB).  There you can find our research reports, design documents, and research presentations.  For more details on the specific design process, view our [Spring 2018 Research Report](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)
+For more information on the AguaClara UASB project, visit our [Github repository](https://github.com/AguaClara/UASB).  There you can find our research reports, design code, and research presentations.  The compliment to this manual is the [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/UASBdesignmanual.md), which details the entire design process.
 
 ## Screening Rack
 As of summer 2018, the plan is to use a series of mesh racks of decreasing pore sizes.
@@ -29,43 +29,49 @@ It is preferable to have the screening happen a certain distance away from the r
 
 ## Influent System
 
-*
-There were initially two options for an influent system $-$ a **tipping bucket** or a **siphon**. Due to scaling issues with modeling siphons, we decided on using a tipping bucket to deliver wastewater into the reactor.
-There is a detailed schematic of the tipping bucket mechanism available in the UASB Spring 2018 Manual.
-
 ### Tipping Bucket
-Assuming a pulse volume input of 10-20 L, we plan to use a 5-gallon bucket that will be mounted off-centered on some sort of shaft. The bucket can rotate about the shaft, and this entire setup will be enclosed within a holding tank.
+As detailed in our [Design Manual](https://github.com/AguaClara/UASB/blob/master/UASBdesignmanual.md), we settled on a single tipping bucket system built within a plastic entrance tank.  
 
-Monroe and the team came up with a couple of design choices for the tipping bucket:
-
-1. Weld two blocks of PVC to the sides of the 5-gallon bucket. Drill a rod into each block without penetrating the bucket. These rods are used to mount the bucket at a certain height inside the holding tank.
-
+#### Fusion Model
 **(Insert design drawing here)**
 
-   * **Pros**: Requires fewer materials. Is easier to fabricate.
-   * **Cons**: Will need to align both rods perfectly. The welded sections will experience considerable shear. Replacing the bucket will be challenging.
+#### Materials
 
-2. Drill two holes in the bucket at an off-centered axis. Attach two screws to the bucket through these holes and use the screws to mount the bucket in the holding tank.
+For initial fabrication of this system, we purchased the following materials:
 
-**(Insert design drawing here)**
+| Item               | Dimensions                  | Rough Cost | Link to Item                                                        |
+| ------------------ | --------------------------- | ---------- | ------------------------------------------------------------------- |
+| LLDPE Plastic Tank | 24" x 18" x 14"             | $142       | https://www.usplastic.com/catalog/item.aspx?itemid=125838&catid=960 |
+| LDPE Welding Rod  | 5/32" Diameter, 135ft       | $10        | https://www.mcmaster.com/#7889a38/=1djicjq                          |
+| LDPE Plastic Sheet | 6" x 12" x 1.5"             | $40        | https://www.mcmaster.com/#8657k337/=1djix0x                         |
+| 6.25 Gallon Bucket | 12" Diameter, 17" Height    | $7         | https://www.mcmaster.com/#4269T75                                   |
+| 12" Hose Clamp     | 12" Diameter, 1.25 cm Width | $7         | https://www.mcmaster.com/#5011t44/=1dhug64                          |
+| PVC Rod            | 1.5" Diameter, 1' Length    | $5         | https://www.mcmaster.com/#8745k22/=1dhzna2                          |
 
-* **Pros**: Less shearing.
-* **Cons**: Drilling holes makes the bucket vulnerable to leaks. Ease of replacement is still an issue.
+**Materials Notes:**  According to welding experts on the web, you can weld LDPE to LLDPE, but not HDPE to LLDPE.
 
-3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
+#### Fabrication Steps
 
-**(Insert design drawing here)**
+Tipping Bucket
+1.
+2.
 
+Entrance Tank
+1.
+2.
 
+Influent Pipes
+1.
+2.
 
-### Holding Tank
-The plan is to order a heavy duty pre-fabricated rectangular holding tank.
 
 ## UASB Reactor Tank
+Initial plans for the UASB modeled the 1 L/s plant, which used a 3 ft diameter PVC pipe as the outer base of the reactor.  However, with further exploration it was determined that a prefabricated tank could be used for the same system, offering a much cheaper alternative that could be more structurally stable and easier to build from. 
+
+
 
 ## Sludge Weir
 
 ## Effluent Tube Settler
-
 
 ## Biogas Capture Lid

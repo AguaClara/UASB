@@ -1,4 +1,4 @@
-# Upflow Anaerobic Sludge Blanket Research and Design Report 
+# Upflow Anaerobic Sludge Blanket Research and Design Report
 
 ## Summer 2018
 
@@ -19,7 +19,6 @@ One major design goal for the summer was to finish the influent system that deli
 In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were: A tipping bucket system or a siphon.  
 
 #### Tipping Bucket versus Siphon System
-
 
 The summer team researched siphons and discussed with M-dawg potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
 
@@ -49,13 +48,11 @@ Built within the design of the influent systems are a number of hydraulic constr
 
 From these constraints, the general headloss equation (including the headloss trick) for a circular pipe can be used to determine the headloss needed to achieve our desired exit velocity, given a specific diameter of pipe.  
 
-**_Juan's comments:_** `from aide_design import*` already imports math, you don't need to do that again. When you say KMinor = 4, what is your reasoning? Include a comment specifying why that is
 ```python
 # Calculates headloss in influent system based on dimensions of reactor
 
 # Import required functions
 from aide_design.play import*
-import math
 from UASB_size import*
 
 # Calculate size and flow dimensions
@@ -77,14 +74,13 @@ print(pipe_diam.to(u.mm))
 exit_vel = 1 * u.m / u.s
 pipe_flow = exit_vel * pc.area_circle(pipe_diam)
 pipe_length = (diam / 2) + height
-Kminor = 4
+Kminor = 4 #(1.5 * 2) from elbow joints in influent systems, plus 1 from headloss trick (assuming all flow out is lost kinetic energy) = 4
 Temp = 23 * u.degC #average temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
 Pipe_Rough = 0.0015 * u.mm
 total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
 print(total_hl.to(u.cm))
  ```
-
 
 #### Design of Tipping Bucket system
 
@@ -110,15 +106,11 @@ After discussing the design more with Monroe, the team settled on a new design, 
 
 **Add photo of fusion model of bucket**
 
-This bucket is created with a 5 gallon bucket (chosen as they are easy to purchase) with two circular pieces on either side, attached through a hose clamp.  These circular pieces will rest in the brackets on either side of the entrance tank, where they can roll freely to allow the bucket to dump.  This removes friction and the some of the danger of breakdown over time.
-
-**_Juan's comments:_** Circular pieces of what?
+This bucket is created with a 5 gallon bucket (chosen as they are easy to purchase) with two plastic rods on either side, attached through a hose clamp.  These circular pieces will rest in the brackets on either side of the entrance tank, where they can roll freely to allow the bucket to dump.  This removes friction and the some of the danger of breakdown over time.
 
 **Add photo of fusion model of brackets**
 
-The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary (important as pieces will inevitably break).
-
-**_Juan's comments:_** The information you included in parentheses can be instead separated with a comma and the word 'as.' Generally, using extraneous parentheses in technical writing is frowned upon.
+The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary, as important as pieces will inevitably break.
 
 The next steps for this process are to order pieces for the bucket and test it physically to determine the optimal orientation of the pivot system.
 

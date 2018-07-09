@@ -30,7 +30,7 @@ It is preferable to have the screening happen a certain distance away from the r
 
 ## Influent System
 
-*
+
 There were initially two options for an influent system $-$ a **tipping bucket** or a **siphon**. Due to scaling issues with modeling siphons, we decided on using a tipping bucket to deliver wastewater into the reactor.
 There is a detailed schematic of the tipping bucket mechanism available in the UASB Spring 2018 Manual.
 
@@ -65,6 +65,9 @@ The holding tank can be made using a heavy duty pre-fabricated rectangular holdi
 * Length = 24 inches (60.96 cm)
 * Width = 18 inches (45.72 cm)
 * Height =  24 inches (60.96 cm)
+
+**(Add photos of tank here)**
+
 
 Rectangular brackets welded onto the side of the holding tank will support the tipping bucket.
 **(Insert drawing of rectangular bracket)**
