@@ -4,7 +4,7 @@
 
 #### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
-Over Summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.  
+Over Summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.
 
 **_Juan's comments:_** You give very little background as to what's going on, and this section does not have a title. I believe this is an 'abstract'
 
@@ -112,7 +112,23 @@ This bucket is created with a 5 gallon bucket (chosen as they are easy to purcha
 
 The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary, as important as pieces will inevitably break.
 
-The next steps for this process are to order pieces for the bucket and test it physically to determine the optimal orientation of the pivot system.
+This model became the teams the first design to model the tipping bucket function.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
+
+**add diagram showing the off center pivot position**
+
+After discussing this problem further, the team considered two possible options.  The first was to purchase a square bucket to use in the same manner.  The second was to create a frame for the bucket that would provide a straight pivot without hindering tipping.  Since materials were available, and it provided much more flexibility for testing, the team moved forward with the second option.
+
+The frame is pictured below, attached to the 5-gallon bucket used within the system.  1-inch by 1-inch aluminum 80-20 bars were used to create a modular base around the bucket that could be easily extended or compressed to fit the dimensions of the bucket snugly.  
+
+**Add photo of finished bucket frame**
+
+Two additional pieces were then added extending down from the 80-20 square to the bottom of the bucket.  These pieces extended 1 inch below the bucket, allowing an L-bracket to be attached below.  This was securely attached to the bottom of the bucket, locking it in place.  When testing the bucket, this could be easily moved downwards, and the L-bracket moved up to hold the bucket in place.
+
+**Add photo of attachment system**
+
+Finally, a double sided screw piece was added to the pivot rods to allow them to attach to the 80-20 bars.  This piece was added by facing the rods with a lathe, and drilling the pieces in.  All of the this was done with the help of the shop managers.  With these pieces in, the rods can be easily moved laterally along the bucket and then tightened
+
+#### Testing the Tipping Bucket
 
 #### Design of Influent Tank
 
@@ -124,12 +140,10 @@ The crucial design aspects of the tank are listed below:
 * The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for the pivot bars, and reduce the structural strength of the bucket (by creating more torque on each bar)
 * The dimensions of the tank must be such that they **create the required amount of hydraulic head from one dump of the tipping bucket**.  This can be constrained by adding or removing material from the bottom of the tank to increase water height added per volume of a dump
 * **_Juan's comments:_** what do you mean adding or removing material? What kind of material are you adding or removing? How are you removing material from a tank?
-* The tank **must evenly split flow between the two pipes**.  This can be designed ~~for~~ by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out.
+* The tank **must evenly split flow between the two pipes**.  This can be designed ~~for~~ by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out
 * **_Juan's comments:_** Why? I believe this point should be combined with the next one.
-* There should always be a small section of the tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.    
+* There should always be a small section of the tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape
 * The tank should be **easy to source**, that is it can be purchased at the correct dimensions, or fabricated simply
-
-**_Juan's comments:_** Some of the bullet points end in punctuation, some don't.
 
 
 Summarized in a table:
