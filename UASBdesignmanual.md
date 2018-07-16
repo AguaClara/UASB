@@ -84,9 +84,17 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
 
 ###Final Tipping Bucket Design
-The team decided on a design that includes an 80/20 aluminum frame that the bucket rests inside of. The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down along the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support. There are brackets on the vertical bars that support the bottom of the bucket. Two cylindrical pieces are attached to the rectangular part of the frame and can be screwed or unscrewed to be tightened in place or loosened to be moved. These are the pivots for the tipping bucket. Placing the pivots off center cause the bucket and frame to tip as the bucket fills with water, eventually tipping to completely empty the bucket. The pivots rest in two brackets that allow the mechanism to tip. 
+The team decided on a design that includes an 80/20 aluminum frame that the bucket rests inside of. The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support. There are brackets on the vertical bars that support the bottom of the bucket. Two cylindrical pieces are attached to the rectangular part of the frame and can be screwed or unscrewed to be tightened in place or loosened to be moved. These are the pivots for the tipping bucket. Placing the pivots off center causes the bucket and frame to tip as the bucket fills with water and the center of gravity shifts, eventually tipping to completely empty the bucket. The pivots rest in two brackets that allow the mechanism to tip.
 
-Using 80/20 aluminum bars allows everything to be adjustable including the size of the surrounding rectangle, the height of the brackets, and the location of the pivots. This has proven to be especially useful during testing.
+Using 80/20 aluminum bars allows everything to be adjustable including the size of the surrounding rectangle, the height of the brackets, and the location of the pivots. This has proven to be especially useful during testing to find the ideal height of the bucket and location of the pivots.
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Labeled.png">
+<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+<p>
+<em>Tipping bucket and frame</em>
+</p>
+</center>
+
 
 ## Biogas Capture
 
