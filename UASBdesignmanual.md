@@ -33,6 +33,34 @@ Precursory searches across Honduran suppliers found tanks of similar dimensions 
 
 The current plan is to purchase an HDPE tank similar to [this](https://www.plastic-mart.com/product/17049/300-gallon-plastic-tank-rotoplas-590314-590315) for fabrication of the first reactor.  After determining the location this system will be fabricated in, a final decision will be made on the dimensions of the tank and the tank will be purchased in preparation for fabrication in Fall 2018.
 
+### Size and Dimensions
+
+
+#### Calculations
+```python
+
+from aide_design.play import*
+
+def UASBSize(diam, height):
+
+    WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
+    WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
+    HRT = 4 * u.hr               #Hydraulic Residence Time, determined from lab scale tests
+    vol_reactor = (diam/2)**2 * math.pi * height
+    flow = vol_reactor / HRT #Average flow rate through reactor given by volume and residence time
+    people_served = int(flow / WW_gen)       #People served per reactor
+    people_served_BW = int(flow / WW_gen_bw) #People served per reactor treating only blackwater
+    output = [vol_reactor.to(u.L), flow.to(u.L/u.s), people_served, people_served_BW]
+    return output
+
+Diameter = 3 * u.ft
+Height = 7 * u.ft
+UASB_design = UASBSize(Diameter, Height)
+print(UASB_design[1])
+
+
+```
+
 ## Influent System
 
 Assuming a pulse volume input of 10-20 L, we plan to use a 5-gallon bucket that will be mounted off-centered on some sort of shaft. The bucket can rotate about the shaft, and this entire setup will be enclosed within a holding tank.
@@ -112,31 +140,25 @@ It is important to note that this equation only gives an approximation of the ac
 #### Design Parameters
 Table 3: Design parameters for biogas production.
 
-| Parameters | Value | Basis of Design |
-| :-------: | :--------: | :--------------: |
-| COD Removal Efficiency, ```COD_eff``` | 70% | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)  |
-| Percent of COD directed to Sludge Production ```Y_obs```| 11% to 23% | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf) |
-| Pressure ```P```| 1 atm | Biogas produced will be stored at very low pressure |
-| Temperature ```T``` | 25 $^{\circ}$ C | Assuming optimal biological conditions |
+|                        Parameters                        |                 Value                 |                                              Basis of Design                                              |
+|:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
+|          COD Removal Efficiency, ```COD_eff```           |                  70%                  | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
+| Percent of COD directed to Sludge Production ```Y_obs``` |              23%               | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).  Chose highest value of removal to get minimum production value |
+|                     Pressure ```P```                     |                 1 atm                 |                            Biogas produced will be stored at very low pressure                            |
+|                   Temperature ```T```                    |            25 $^{\circ}$ C            |                                  Assuming optimal biological conditions                                   |
+
 
 #### Code
 ```python
+from aide_design.play import*
 def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
-    """Calculates the biogas production rate from the flow rate through the reactor, the COD concentration of the influent, the temperature of the reactor, and the removal efficieny of COD within the reactor
 
-    For the doctest to pass, one must initialize the flow from UASB_design using UASB_Size(3 * u.ft, 7 * u.ft)
-
-    >>> from aide_design.play import*
-    >>> import math
-    >>> BiogasFlow(UASB_design[2], 200 * (u.mg / u.L), 25 * u.degC)
-    The volumetric methane production per second is 0.0013 liter / second
-    The volumetric methane production per second is 112.3 liter / day
-    [<Quantity(0.0012996707807037425, 'liter / second')>, <Quantity(112.29155545280335, 'liter / day')>]
-    """
+    # Calculate ideal COD production
     COD_rem = COD_Load * COD_removal_eff #calculate COD broken down by reactor
     Y_obs = 0.23 # Upper limit of sludge production
-    COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load)
-    # Calculating correction factor for operational temperature of the reactor
+    COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load) #Gives mass CH_4 produced per unit time
+
+    # Calculate correction factor for operational temperature of the reactor
     T = Temp.to(u.degK)
     P = 1 * u.atm
     K_COD = 64 * (u.g / u.mol)
@@ -144,34 +166,34 @@ def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
     K = (P * K_COD) / (R * T)
     #Calculate the volumetric flow rate of methane production
     Q_CH4 = COD_CH4 / K # per second
-    Q_day = Q_CH4 * 86400 * (u.s / u.day) # per day
-
-    print("The volumetric methane production per second is", Q_CH4, "\n" "The volumetric methane production per second is", Q_day)
-    return [Q_CH4, Q_day]
-
-
+    return Q_CH4
 
 # Flow rate through UASB reactor
-Flow_design = UASB_design[2]
+Flow_design = UASB_design[1]
 print(Flow_design)
-# Amount of biogas production per second and per day
 Temp = 25 * u.degC  # Assuming mesophilic conditions
+Removal_eff = 0.7 # 70% removal efficiency
+
 #Approximate loading rates for domestic wastewater
 COD_Load_min = 100 * (u.mg / u.L)
 COD_Load_mid = 200 * (u.mg / u.L)
 COD_Load_max = 300 * (u.mg / u.L)
 
-Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp)
+Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp, 0.7)
 #Calculating size of storage device
-print (Q_Biogas)
-
-doctest.testmod(verbose=True)
-
-Size_Store = Q_Biogas[1].to(u.gal / u.day) * (u.day)
-print("The size of the storage container to store one day worth of biogas production should be at least", Size_Store)
+print(Q_Biogas.to(u.L/u.day))
 ```
 
 ### Biogas Storage System
+
+#### Lid design
+
+##### Design 1: Hydraulic Seal
+
+##### Design 2: Full Seal
+
+#### Capture System Design
+
 
 An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
 
@@ -185,13 +207,8 @@ Table 4: List of advantages and disadvantages associated with different biogas s
 
 After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
 
-Schematically, gas will flow out the top lid of the reactor through a pipe into an intermediate volume as shown in Figure 5.  This space will hold biogas, where it can be released into a balloon for home usage, or flared off from the container.  A check valve will also be used in order to release excess gas produced to prevent dangerous buildup and pressurization of flammable gas.  The proposed design of the system is shown in Figure 9.
+Schematically, gas will flow out the top lid of the reactor through a pipe into 
 
-![Biogas_Close](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Lid%20Closeup.jpg?raw=true)
-<p align="center">Figure 8: Detailed view of the biogas capture lid on top of the UASB reactor.  The hydraulic seal is created by setting the water level above the base of the lid.  When biogas is produced, it is trapped under the lid.  As it builds up, it displaces fluid inside the reactor and pushes the free surface down.   </p>
-
-![Biogas_Storage](https://github.com/AguaClara/UASB/blob/master/Images/Biogas%20Storage.jpg?raw=true)
-<p align="center">Figure 9: Schematic of the proposed biogas storage system.  Collection first occurs in a rigid intermediate storage unit before flowing into a flexible storage bag.  If excess biogas builds up within the unit, a check valve will release this excess to prevent the dangerous pressure buildup  </p>
 
 #### Code
 ```python
