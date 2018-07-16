@@ -83,6 +83,18 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
 
+###Final Tipping Bucket Design
+The team decided on a design that includes an 80/20 aluminum frame that the bucket rests inside of. The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support. There are brackets on the vertical bars that support the bottom of the bucket. Two cylindrical pieces are attached to the rectangular part of the frame and can be screwed or unscrewed to be tightened in place or loosened to be moved. These are the pivots for the tipping bucket. Placing the pivots off center causes the bucket and frame to tip as the bucket fills with water and the center of gravity shifts, eventually tipping to completely empty the bucket. The pivots rest in two brackets that allow the mechanism to tip.
+
+Using 80/20 aluminum bars allows everything to be adjustable including the size of the surrounding rectangle, the height of the brackets, and the location of the pivots. This has proven to be especially useful during testing to find the ideal height of the bucket and location of the pivots.
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Labeled.png">
+<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+<p>
+<em>Tipping bucket and frame</em>
+</p>
+</center>
+
 
 ## Biogas Capture
 
@@ -209,6 +221,7 @@ Table 4: List of advantages and disadvantages associated with different biogas s
 
 After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
 
+<<<<<<< HEAD
 Research is ongoing on the best type of gas bag to use.  Currently, the goal is to find a collection system that does not require pressure to inflate.  While previously the team focused on an inflatable balloon, the bag is preferable as it does not require additional pressure to inflate, and instead just increases in volume as the number of moles of gas increases.  This would require a bag with a large enough volume to hold multiple days worth of biogas.  The bag should also have some capability to stretch like a balloon, so that if it is emptied late and exposed to pressure, it will not explode.  
 
 The full collection system, pictured below, will consist of two exit valves.  The first is a manual valve leading to a tube connected to the gas bags.  Each gas bag will be sealed onto the pipe, and as gas is produced within the reactor it will enter these bags and fill them.  Once the bags are full, an operator can close the manual valve, remove the bags, add new bags in their place, and finally reopen the manual valve.  
@@ -220,6 +233,9 @@ The second exit valve is a check valve, which automatically opens when the inter
 def filltime(Q_biogas, Bag_Vol):
     bag_filltime = Bag_Vol / Q_biogas
     return filltime
+=======
+Schematically, gas will flow out the top lid of the reactor through a pipe into
+>>>>>>> d5d207dbb19d6fc36de1af79175442dfb5fd50af
 
 def Pressure_gain(Biogas_flowrate_mass, Temp, Lid_Vol, Bag_Vol):
     #Takes in flowrate of biogas in mass units, temperature, volume of lid space without fluid, and volume of bags when fully inflated and gives the initial pressure when the bags are full, and the pressure gain per unit time.
