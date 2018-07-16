@@ -140,12 +140,13 @@ It is important to note that this equation only gives an approximation of the ac
 #### Design Parameters
 Table 3: Design parameters for biogas production.
 
-|                        Parameters                        |                 Value                 |                                              Basis of Design                                              |
-|:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
-|          COD Removal Efficiency, ```COD_eff```           |                  70%                  | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
-| Percent of COD directed to Sludge Production ```Y_obs``` |              23%               | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).  Chose highest value of removal to get minimum production value |
-|                     Pressure ```P```                     |                 1 atm                 |                            Biogas produced will be stored at very low pressure                            |
-|                   Temperature ```T```                    |            25 $^{\circ}$ C            |                                  Assuming optimal biological conditions                                   |
+|                        Parameters                        |      Value      |                                                                              Basis of Design                                                                               |
+|:--------------------------------------------------------:|:---------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|          COD Removal Efficiency, ```COD_eff```           |       70%       |                                 Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)                                  |
+| Percent of COD directed to Sludge Production ```Y_obs``` |       23%       | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).  Chose highest value of removal to get minimum production value |
+|                     Pressure ```P```                     |      1 atm      |                                                            Biogas produced will be stored at very low pressure                                                             |
+|                   Temperature ```T```                    | 25 $^{\circ}$C  |                                                                   Assuming optimal biological conditions                                                                   |
+|            Methane Percentage `Methane_frac`             |       75%       |              Given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).                                                                                                                                                              |
 
 
 #### Code
@@ -156,8 +157,9 @@ def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
     # Calculate ideal COD production
     COD_rem = COD_Load * COD_removal_eff #calculate COD broken down by reactor
     Y_obs = 0.23 # Upper limit of sludge production
-    COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load) #Gives mass CH_4 produced per unit time
-
+    Biogas_flowrate_mass = (Q * COD_rem) - (Y_obs * Q * COD_Load) #Gives mass of total biogas produced per unit time
+    Methane_frac = 0.75 # Assume 75% of biogas is methane
+    Methane_flowrate_mass = Biogas_flowrate_mass * 0.75 # apply correction factor for methane percentage of biogas
     # Calculate correction factor for operational temperature of the reactor
     T = Temp.to(u.degK)
     P = 1 * u.atm
@@ -165,8 +167,8 @@ def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
     R = 0.08206 * ((u.atm * u.L) / (u.mol * u.degK))
     K = (P * K_COD) / (R * T)
     #Calculate the volumetric flow rate of methane production
-    Q_CH4 = COD_CH4 / K # per second
-    return Q_CH4
+    Methane_flowrate_vol = Methane_flowrate_mass / K # per second
+    return [Methane_flowrate_vol, Methane_flowrate_mass]
 
 # Flow rate through UASB reactor
 Flow_design = UASB_design[1]
@@ -181,7 +183,8 @@ COD_Load_max = 300 * (u.mg / u.L)
 
 Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp, 0.7)
 #Calculating size of storage device
-print(Q_Biogas.to(u.L/u.day))
+print(Q_Biogas[0].to(u.L/u.day))
+print(Q_Biogas[1].to(u.kg/u.day))
 ```
 
 ### Biogas Storage System
@@ -193,7 +196,6 @@ print(Q_Biogas.to(u.L/u.day))
 ##### Design 2: Full Seal
 
 #### Capture System Design
-
 
 An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
 
@@ -207,8 +209,34 @@ Table 4: List of advantages and disadvantages associated with different biogas s
 
 After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
 
-Schematically, gas will flow out the top lid of the reactor through a pipe into 
+Research is ongoing on the best type of gas bag to use.  Currently, the goal is to find a collection system that does not require pressure to inflate.  While previously the team focused on an inflatable balloon, the bag is preferable as it does not require additional pressure to inflate, and instead just increases in volume as the number of moles of gas increases.  This would require a bag with a large enough volume to hold multiple days worth of biogas.  The bag should also have some capability to stretch like a balloon, so that if it is emptied late and exposed to pressure, it will not explode.  
 
+The full collection system, pictured below, will consist of two exit valves.  The first is a manual valve leading to a tube connected to the gas bags.  Each gas bag will be sealed onto the pipe, and as gas is produced within the reactor it will enter these bags and fill them.  Once the bags are full, an operator can close the manual valve, remove the bags, add new bags in their place, and finally reopen the manual valve.  
+
+The second exit valve is a check valve, which automatically opens when the interior is at a certain pressure.  This valve will serve as a safety for the system by venting gas when the interior reaches too high pressure.  Calculations run below calculate the maximum pressure attained when the bags are full, or if the valve is left closed.  
+
+```python
+
+def filltime(Q_biogas, Bag_Vol):
+    bag_filltime = Bag_Vol / Q_biogas
+    return filltime
+
+def Pressure_gain(Biogas_flowrate_mass, Temp, Lid_Vol, Bag_Vol):
+    #Takes in flowrate of biogas in mass units, temperature, volume of lid space without fluid, and volume of bags when fully inflated and gives the initial pressure when the bags are full, and the pressure gain per unit time.
+
+    #Translate mass production of biogas to moles
+    Biogas_flowrate_moles = Biogas_flowrate_mass * (1 / 16.04) * (u.moles / u.grams)
+
+    #Calculate
+
+
+    return
+
+def Fluid_Pressure(WW_Height, WW_density):
+    #Takes in height of wastewater in UASB and density to give the fluid pressure at the bottom of a tank using P = pgh formula
+
+    return
+```
 
 #### Code
 ```python
