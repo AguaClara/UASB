@@ -83,7 +83,7 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
 
-###Final Tipping Bucket Design
+### Final Tipping Bucket Design
 The team decided on a design that includes an 80/20 aluminum frame that the bucket rests inside of. The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support. There are brackets on the vertical bars that support the bottom of the bucket. Two cylindrical pieces are attached to the rectangular part of the frame and can be screwed or unscrewed to be tightened in place or loosened to be moved. These are the pivots for the tipping bucket. Placing the pivots off center causes the bucket and frame to tip as the bucket fills with water and the center of gravity shifts, eventually tipping to completely empty the bucket. The pivots rest in two brackets that allow the mechanism to tip.
 
 Using 80/20 aluminum bars allows everything to be adjustable including the size of the surrounding rectangle, the height of the brackets, and the location of the pivots. This has proven to be especially useful during testing to find the ideal height of the bucket and location of the pivots.
@@ -94,7 +94,6 @@ Using 80/20 aluminum bars allows everything to be adjustable including the size 
 <em>Tipping bucket and frame</em>
 </p>
 </center>
-
 
 ## Biogas Capture
 
@@ -143,7 +142,7 @@ $K_{COD}$ = COD corresponding to 1 mole of CH4 ($\frac{64g COD}{mole}$)
 
 $R$ = Ideal Gas Constant = 0.08206 ${\frac{atm*L}{mol*K}}$
 
-$T$ = Temperature ( ${^\circ}C$)
+$T$ = Temperature (${^\circ}C$)
 
 Since biogas contains other gases such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume that biogas is composed 75% of methane, as given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).
 
@@ -228,10 +227,27 @@ The full collection system, pictured below, will consist of two exit valves.  Th
 The second exit valve is a check valve, which automatically opens when the interior is at a certain pressure.  This valve will serve as a safety for the system by venting gas when the interior reaches too high pressure.  Calculations run below calculate the maximum pressure attained when the bags are full, or if the valve is left closed.  
 
 ```python
+from aide_design.play import*
 
-def filltime(Q_biogas, Bag_Vol):
+def masstomoles_CH4(Biogas_flowrate_mass):
+  Biogas_flowrate_moles = Biogas_flowrate_mass.to(u.grams) * (1 / 16.04) * (u.moles / u.grams)
+  return Biogas_flowrate_moles
+
+def filltime(Biogas_flowrate_mass, Bag_Vol, Head_Volume, Temp):
+    #Takes in molar flowrate of biogas, Volume of attached bag and headspace in reactor, and temperature, and uses the ideal gas law to determine the time to fill each bag, and how many moles are contained in the space when full.
+
+    #Set correct units for ideal gas law
+    Temp = Temp.to(u.degK)
+    Bag_Vol = Bag_Vol.to(u.L)
+    R = 8.3145 * ((u.L * u.kPa) / (u.moles * u.degK))
+
+
+    moles_when_full =
+
     bag_filltime = Bag_Vol / Q_biogas
-    return filltime
+    return 
+
+temp = 50 * u.degK
 
 def Pressure_gain(Biogas_flowrate_mass, Temp, Lid_Vol, Bag_Vol):
     #Takes in flowrate of biogas in mass units, temperature, volume of lid space without fluid, and volume of bags when fully inflated and gives the initial pressure when the bags are full, and the pressure gain per unit time.
