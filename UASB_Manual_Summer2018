@@ -207,8 +207,18 @@ It has been decided that from the following parameters an exit velocity of 0.3 m
 
 ### Hydraulic Calculations
 
-```python
+In our design process for the influent system, we decided to first determine the necessary parameters to achieve the required flow within the reactor.  Using this information, we will be able to better constrain the parameters for the influent system such as the volume of each pulse, creating a better initial design.  The table below summarizes all required design parameters for the UASB, and whether they are set or need to be solved for.
 
+| Parameter | Set? | Min or Max | Value | Justification |
+|:--------------- |
+
+| Parameter     | Set? | Min, Max or Fixed | Value | Justification |
+|:--------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+|Volume (Without bottom Geometry) | Yes   | Fixed   |   |   |
+|Volume (With bottom Geometry)   |   |   |   |   |
+|   |   |   |   |   |
+
+```python
 Volume = UASB_design[1]
 
 
@@ -230,6 +240,7 @@ def influence_area(n_pipes, diam):
   num_pipes = 2
   infl_area_UASBpipe = influence_area(num_pipes, diam_UASB)
   print('The influence area of each pipe is ', infl_area_UASBpipe)
+
 
 ```
 #### Pulse Flow into the Reactor
@@ -312,6 +323,7 @@ Table 3: Design parameters for biogas production.
 | Temperature ```T``` | 25 $^{\circ}$ C | Assuming optimal biological conditions |
 
 #### Code
+
 ```python
 def BiogasFlow(Q, COD_Load, Temp):
     """Calculates the biogas production rate from the flow rate through the reactor, the COD concentration of the influent, and the temperature of the reactor
@@ -496,7 +508,7 @@ Table 7: Design parameters for calculations of the tube settler size, the number
 Parameter| Value | Basis of Design
 :------------- |:-------------|:--------
 Height of Sludge Blanket ```height_blanket``` | 3.5 ft| Assumed half the height of reactor
-Distance Between Plate Settlers ```plate_space```| 2.5 cm | Based on Sedimentation Tank Design
+Distance Between Plate Settlers ```plate_sp: starace```| 2.5 cm | Based on Sedimentation Tank Design
 Angle of Tube Settler ```angle``` | 60 degrees | Based on sedimentation tank design
 Thickness of Plates ```thickness_sed_plate```| 2 mm| Taken from corrugated plastic thickness
 

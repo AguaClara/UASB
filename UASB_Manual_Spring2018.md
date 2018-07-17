@@ -1,7 +1,10 @@
 
-# Upflow Anaerobic Sludge Blanket (UASB), Spring 2018
-#### Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
-#### May 18, 2018
+# Upflow Anaerobic Sludge Blanket (UASB) Design Manual
+
+
+#### Spring 2018:
+Zac Chen, Jennifer Jackson, Ian Cullings, and Ananya Gangadhar
+
 
 
 ## Abstract
@@ -75,6 +78,8 @@ A schematic of the UASB with proposed design improvements is shown in Figure 2 a
 
 <p align="center">Figure 3: The Front View of the proposed UASB with sloped bottom geometry.</p>
 
+### Degritting System
+
 ### Size and Flow
 
 The scale and dimensions of the pilot UASB reactor were loosely based on the size and scale of the 1  L/s sedimentation tank, using experience gained from fabrication. With the goal of constructing the reactor utilizing a 3 foot diameter PVC pipe and welded PVC sheets for the base, one of the primary concerns was structural stability.  While it was desirable to have a flat bottom geometry to maximize volume for biological processing, shear stress at the interface between the welded PVC sheets and pipe would lead to the rupture the bottom of the reactor.  Due to the complexities and time requirements required to determine the feasibility of this approach,  the team opted to model the bottom geometry for the pilot scale UASB reactor on that of the 1 L/s sedimentation tank since the UASB would also utilize a 3 foot diameter corrugated pipe that would support approximately a 7 foot tall column of water.  In following these designs, the pilot scale UASB reactor will also have a 60 $$ $^{\circ}$ $$ sloped bottom like the 1 L/s sedimentation tank as shown in Figure 3 and Figure 4.  More information on geometry and structure of the 1 L/s sedimentation tank can be found on the Fall 2016 1 L/s Final Report ([Herrara et al., 2016](https://www.overleaf.com/6186375zdpjfc#/20717591/)).
@@ -129,6 +134,7 @@ def UASBSize(diam, height):
     [<Quantity(0.7259024934521162, 'meter')>, <Quantity(520.8127904536798, 'liter')>, <Quantity(0.036167554892616645, 'liter / second')>, 12, 60]
     """
 
+
     WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
     WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
     HRT = 4 * u.hr               #Hydraulic Residence Time, determined from lab scale tests
@@ -142,7 +148,7 @@ def UASBSize(diam, height):
     vol_cyl_wedge = height_cyl_wedge * (diam/2)**2 / 3 * ((
         3*math.sin(phi) - 3*phi*math.cos(phi) - math.sin(phi)**3)/(1-math.cos(phi)))
     vol_reactor = (math.pi * (diam / 2)**2 * height) - (2 * vol_cyl_wedge)
-    vol_sludge = (math.pi * (diam / 2)**2 * height / 2) - (2 * vol_cyl_wedge)
+    vol_sludge = (math.pi * (diam / 2)**2 * height * 0.7) - (2 * vol_cyl_wedge)
 
     flow = vol_reactor / HRT
     people_served = int(flow / WW_gen)       #People served per reactor
@@ -153,7 +159,7 @@ def UASBSize(diam, height):
     print("The height of the bottom geometry is",height_cyl_wedge.to(u.m))
     print("The volume of the reactor is",vol_reactor.to(u.L))
     print('The volume of the sludge in the reactor is', vol_sludge.to(u.L))
-    print('The flow rate of the reactor is', flow.to(u.L/u.s))
+    print('The average flow rate of the reactor is', flow.to(u.L/u.s))
     print('The number of people served by this reactor is', people_served)
     print('The number of people served by this reactor if only blackwater is treated is', people_served_BW)
 
@@ -173,7 +179,7 @@ print(UASB_design)
 ### Influent Flow System
 An ideal influent flow system is designed to prevent clogging and to ensure an even distribution of flow throughout the reactor.  A literature review was conducted to compare the various values for reactor design parameters. Table 2 includes relevant values, but is not an exhaustive list of our sources
 
-One challenge for an influent flow system is combatting pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
+One challenge for an influent flow system is combating pipe blockages. This involves the creation of a trash rack and grit capture mechanism, calculating the optimal pipe diameter, and possibly including a nozzle or aperture at the end of the pipe to ensure high velocity flows to prevent deposition of solids.
 
 Top influent flow was chosen over bottom influent flow in order to decrease the frequency of clogs.  Bottom influent flow systems are more likely to clog if flow is low or not consistent.  This is because non-suspended particles may settle into the pipe.  Gravity will prevent particles in a top influent system from settling in the pipe. In addition, top influent flow is the most common choice for domestic wastewater treatment.
 
@@ -194,9 +200,9 @@ Table 2: Literature values for parameters associated with influent control syste
 |:--------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Descending Sewage Velocity**                                                    | **$\leq$0.2 m/s**                                                                                       |                                                                                                                                                                                                                             |                                                                                                                                           |    
 | **Diameter of pipe**                                                              | **75-100 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             | **100 mm** (to allow gas bubbles to rise)                                                                                               
-| **Nozzle Diameter**                                                               | **40-50 mm** (from practical experience)                                                               |                                                                                                                                                                                                                             |                                                                                                                                           |    
-| **Exit Velocity**                                                                 | **$\geq$0.40 m/s**                                                                                      |                                                                                                                                                                                                                             | **over 0.3 m/s**                                                                                                                                |    
-| **Apertures**                                                                     | **2 openings with 25mm × 40mm cross section**                                                           | See Aperture Design Problem 7.12.1.6                                                                                                                                                                                        | Single outlet point per pipe (for identification of clogs)                                                                                |     
+| **Nozzle Diameter**                                                               | **40-50 mm** (from practical experience)                                                               |                                                           |                                                                                                                                           |    
+| **Exit Velocity**    | **$\geq$0.40 m/s**   |     | **over 0.3 m/s**  |    
+|**Apertures**  | **2 openings with 25mm × 40mm cross section** | See Aperture Design Problem 7.12.1.6   | Single outlet point per pipe (for identification of clogs)   |
 | **Influence Area**                                                                | **2.0-3.0 $m^2$ for COD 400-600 mg/L**                                                                  | **1 point per 3.7-4.0 $m^2$ floor area**                                                                                                                                                                                    | **1-4 $m^2$ per feed point**                                                                                                              |    
 | **Settling Zone Surface**                                                         |                                                                                                         |                                                                                                                                                                                                                             | **75% of total surface**                                                                                                                  |    
 | **Distance Between Exit Mouth and Water Level in Settler/ Headloss through unit** |    **0.20-0.30 m**                                                                                                     |               **2-3 m head loss** through unit for gravity feed with distribution from top of UASB through splitter boxes and weirs to divide and regulate the feed to each inlet channel and then to downtake pipe. Also see Example 7.2 | **50 cm**
@@ -243,7 +249,36 @@ An alternate system of delivering pulse flow, as proposed by Professor Weber-Shi
 
 The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Dr. Weber-Shirk and is illustrated above.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.
 
+#### Influent System Design
+
+### Entrance Tank design
+
+
+
+### Tipping Bucket Design
+
+The design process for the tipping bucket began with first looking for any possible engineering designs for tipping bucket systems in use today.  While tipping buckets are used in water parks and other amusement areas, we were unable to find an detailed designs of tipping bucket designs that would give us guiding information.  
+
+Without any design information, the team began by fabricating a small scale tipping bucket to get a sense for the design and operation of one of these bucket systems.  This bucket, pictured in figure X below, was made with a simple plastic bucket, with two screws drilled in to opposite sides.  These screws rested in holes from connector pieces on 80-20 bars, allowing the bucket to swing freely with little friction.  **EMBED VIDEOS INTO THIS SECTION**  
+
+While this system gave the team a better sense of how a tipping buc
+
+
+
+
+
+### Influent Pipe Geometry
+
+An important constraint of influent flow control is the geometry of the pipes, i.e. how they enter the reactor, and how they deliver the wastewater into the reactor.  Due to the settled bed nature of the UASB, this geometry is incredibly important, as for maximum efficiency the wastewater should be evenly distributed throughout the settled bed so that all granules are receiving wastewater.  This also prevents potential dead zones within the reactor.  Additionally, high exit velocities from the pipe can create direct paths through the reactor, short circuiting the system.
+
+To prevent direct paths through the sludge blanket to the upper effluent lines, influent pipes entering the reactor will be pointed downwards and towards the V-shaped plates in the bottom of the reactor.  This will ideally serve to reduce the velocity of the influent waste significantly, and disperse water throughout the bottom of the reactor.  One goal of the summer is to conduct basic tests of a sludge like substitute (tapioca?) as a model sludge blanket, and then add influent lines, possibly with red dye, to see the potential streamlines, and determine a possible maximum influent velocity.  
+
+As detailed in above sections, influent pipes will begin from the pulse flow control system (tipping bucket and tank), run down the side of the tank, and then enter the reactor from one side.  There are two potential designs for the pipe geometry, detailed in figures x and y below.  
+
+
+
 ### Biogas Production Calculations
+
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.
 
 Biogas production is quantified using the following equation, taken from the [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf):
@@ -516,34 +551,34 @@ diam_tube = np.array([8,10]) * u.inch
 B = (plate_space + thickness_sed_plate).to(u.cm)
 
 velocity_active_up = (flow * np.sin(angle)/(pc.area_circle(diam_tube))).to(u.mm/u.s)
-print("The vertical velocity component beneath the plate settlers is", velocity_active_up.magnitude,velocity_active_up.units )
+print("The vertical velocity component beneath the plate settlers is in the range", velocity_active_up.magnitude,velocity_active_up.units )
 
 velocity_plate_up = velocity_active_up * B / plate_space
-print("The vertical velocity component between the plate settlers is", velocity_plate_up.magnitude, velocity_plate_up.units)
+print("The vertical velocity component between the plate settlers is in the range", velocity_plate_up.magnitude, velocity_plate_up.units)
 
 velocity_plate = (velocity_plate_up / np.sin(angle)).to(u.mm/u.s)
-print("The velocity between the plate settlers is", velocity_plate.magnitude, velocity_plate.units)
+print("The velocity between the plate settlers is in the range", velocity_plate.magnitude, velocity_plate.units)
 
 
 # Parameters for tube settler
 height_tube_settler = (height_blanket + diam_sludge_weir + sep_dist + 0.5*diam_tube).to(u.inch)  # height of the center of the tube setler
-print("The height of the center of the tube settler where it attaches to the body of the reactor is",height_tube_settler.magnitude, height_tube_settler.units)
+print("The height of the center of the tube settler where is attaches to the body of the reactor is in the range",height_tube_settler.magnitude, height_tube_settler.units)
 
 length_tube_settler_vertical = (water_elevation - height_tube_settler).to(u.inch)
-print("The vertical length of the tube settler is", length_tube_settler_vertical.magnitude, length_tube_settler_vertical.units)
+print("The vertical length of the tube settler is in the range", length_tube_settler_vertical.magnitude, length_tube_settler_vertical.units)
 
 length_tube_settler = (length_tube_settler_vertical / np.sin(angle)).to(u.cm)
-print("The length of the tube setter is",length_tube_settler.magnitude, length_tube_settler.units)
+print("The length of the tube setter is in the range",length_tube_settler.magnitude, length_tube_settler.units)
 
-projected_area = (((length_tube_settler * np.cos(angle))
-                + (plate_space/np.sin(angle))) * diam_tube).to(u.m**2)
-print("The projected area of the plates is", projected_area.magnitude, projected_area.units)
+projected_area = (((length_tube_settler * np.cos(angle)
+                  ) + (plate_space/np.sin(angle))) * diam_tube).to(u.m**2)
+print("The projected area of the plates is in the range", projected_area.magnitude, projected_area.units)
 
 velocity_capture = (plate_space.to(u.mm) * velocity_plate_up.to(u.mm/u.s))/(length_tube_settler.to(u.mm) * np.sin(angle) * np.cos(angle) + plate_space.to(u.mm))
-print("The capture veloctiy is", velocity_capture.magnitude, velocity_capture.units)
+print("The capture veloctiy is in the range", velocity_capture.magnitude, velocity_capture.units)
 
 number_plate_settler = np.floor(diam_tube / (plate_space.to(u.inch) + thickness_sed_plate.to(u.inch)))
-print("The number of plate settlers is", number_plate_settler.magnitude, number_plate_settler.units)
+print("The number of plate settlers is in the range", number_plate_settler.magnitude, number_plate_settler.units)
 ```
 
 ## 2018 EPA Expo in Washington, D.C.

@@ -13,13 +13,13 @@ Ananya Gangadhar (ag757)
 Jennifer Jackson (jkj46)
 
 ## Semester Goals:
-In the Spring 2018 semester, the UASB team will be working on finalizing designs for the pilot scale UASB intially proposed in the 2017 EPA P3 Phase I grant. More specifically, we will be designing a hydraulic inlet system, and designing, and updating the biogas capture/storage system. We will also be writing a Phase II grant to get funding for the fabrication and testing of a second pilot scale UASB.
+In the Spring 2018 semester, the UASB team will be working on finalizing designs for the pilot scale UASB initially proposed in the 2017 EPA P3 Phase I grant. More specifically, we will be designing a hydraulic inlet system, and designing, and updating the biogas capture/storage system. We will also be writing a Phase II grant to get funding for the fabrication and testing of a second pilot scale UASB.
 
 ## Links to Reports and Presentations
-Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Sring 2017 onwards.  More information on lab scale research can be located on the AguaClara Google Drive both under "Active Subteams" and "Archived Subteams."
+Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the AguaClara Google Drive both under "Active Subteams" and "Archived Subteams."
 
 ### Spring 2018
-[UASB Deisgn Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)  
+[UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)  
 [Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10)  
 [Symposium Presentation](https://docs.google.com/presentation/d/1HlOt3QwduvcUE1-q1j3W2VCLtRTx1YZtRwdGuUHw1Nc/edit?usp=sharing)
 
@@ -47,4 +47,3 @@ Note: The UASB team began implementing GitHub in Fall 2017. All documentation wa
 ### Summer 2016
 [Final Report](https://drive.google.com/file/d/0B9W8_ccC7-V-S2JfUEFla2pVWi1OakthdFM3dVg5ME1GZFhr/view)  
 [Final Presentation](https://drive.google.com/file/d/0B98kaTgmVDQ_VDExZXZGWVhwdWc/view)  
-

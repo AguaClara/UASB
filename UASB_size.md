@@ -26,6 +26,7 @@ def UASBSize(diam, height):
     vol_cyl_wedge = height_cyl_wedge * (diam/2)**2 / 3 * ((
         3*math.sin(phi) - 3*phi*math.cos(phi) - math.sin(phi)**3)/(1-math.cos(phi)))
     vol_reactor = (math.pi * (diam / 2)**2 * height / 2) - (2 * vol_cyl_wedge)
+    vol_reactor_total =
 
     flow = vol_reactor / HRT
     people_served = int(flow / WW_gen)       #People served per reactor
@@ -39,11 +40,4 @@ def UASBSize(diam, height):
     print('The number of people served by this reactor is', people_served)
     print('The number of people served by this reactor if only blackwater is treated is', people_served_BW)
     return output
-```
-
-#### Test Calculations
-The height of the reactor is limited to 7 feet due to fabrication constraint imposed by the ceiling height of the lab.  The diameter is limited to 3 feet as it is the largest pipe that can be obtained.
-
-```python
-UASB = UASBSize(3*u.ft, 7*u.ft)
 ```
