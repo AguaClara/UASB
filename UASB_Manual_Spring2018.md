@@ -1,5 +1,5 @@
 
-# Upflow Anaerobic Sludge Blanket (UASB) Design Manual
+# Upflow Anaerobic Sludge Blanket (UASB) Research Report
 
 
 #### Spring 2018:
@@ -248,33 +248,6 @@ Design values still need to be determined for the volume of the buckets, the fun
 An alternate system of delivering pulse flow, as proposed by Professor Weber-Shirk, is through a siphon.  The proposed design involves a holding tank that drains from the bottom, and is siphoned off into a flow splitter box once a certain volume in the tank is reached.  Dr. Weber-Shirk suggests a 12 mm pipe would be sufficient for siphoning, as long as the siphon is preceded by at least 6 mm screens, which is the proposed screen size for the UASB reactor.  The IAWWTF uses 6 mm screens.  The main benefits of this design are that it includes no moving parts and can be scaled for larger reactors.  
 
 The main challenges to this design include geometry, clogging, and flow division.  The current proposed geometry is U-bends, which prevent settling better than horizontal pipes.  Clogging may be a major issue with this design.  Monroe suggests at least 10 cm of head for the siphon to work, while literature suggests about 50 cm to prevent clogs.  Furthermore, it will be difficult to test the clogging issue in the lab, as testing with wastewater is infeasible.  Professor Richardson has suggested various wastewater "recipes" which may be useful for laboratory testing.  A flow splitting box/funnel was also proposed by Dr. Weber-Shirk and is illustrated above.  The design involves a box with a funnel-shaped opening to catch water from the siphon.  The box has a divider in the middle that separates the openings to two influent pipes.  The box will split the flow evenly between the two pipes as long as the volume of the pulse from the siphon reaches above the divider.  The design also notifies operators to a clog in an influent pipe, as the water on that side of the divider will not drain.  Initial calculations for the siphon design are underway.  Important values to consider are:  volume of WW held in the tank & siphon, which is equal to the volume that will dump into the flow splitter box; headloss between the flow splitter and the influent pipe discharge; diameters of the influent pipes; and required upflow velocity in the reactor.
-
-#### Influent System Design
-
-### Entrance Tank design
-
-
-
-### Tipping Bucket Design
-
-The design process for the tipping bucket began with first looking for any possible engineering designs for tipping bucket systems in use today.  While tipping buckets are used in water parks and other amusement areas, we were unable to find an detailed designs of tipping bucket designs that would give us guiding information.  
-
-Without any design information, the team began by fabricating a small scale tipping bucket to get a sense for the design and operation of one of these bucket systems.  This bucket, pictured in figure X below, was made with a simple plastic bucket, with two screws drilled in to opposite sides.  These screws rested in holes from connector pieces on 80-20 bars, allowing the bucket to swing freely with little friction.  **EMBED VIDEOS INTO THIS SECTION**  
-
-While this system gave the team a better sense of how a tipping bucket
-
-
-
-
-
-### Influent Pipe Geometry
-
-An important constraint of influent flow control is the geometry of the pipes, i.e. how they enter the reactor, and how they deliver the wastewater into the reactor.  Due to the settled bed nature of the UASB, this geometry is incredibly important, as for maximum efficiency the wastewater should be evenly distributed throughout the settled bed so that all granules are receiving wastewater.  This also prevents potential dead zones within the reactor.  Additionally, high exit velocities from the pipe can create direct paths through the reactor, short circuiting the system.
-
-To prevent direct paths through the sludge blanket to the upper effluent lines, influent pipes entering the reactor will be pointed downwards and towards the V-shaped plates in the bottom of the reactor.  This will ideally serve to reduce the velocity of the influent waste significantly, and disperse water throughout the bottom of the reactor.  One goal of the summer is to conduct basic tests of a sludge like substitute (tapioca?) as a model sludge blanket, and then add influent lines, possibly with red dye, to see the potential streamlines, and determine a possible maximum influent velocity.  
-
-As detailed in above sections, influent pipes will begin from the pulse flow control system (tipping bucket and tank), run down the side of the tank, and then enter the reactor from one side.  There are two potential designs for the pipe geometry, detailed in figures x and y below.  
-
 
 
 ### Biogas Production Calculations

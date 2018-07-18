@@ -95,6 +95,15 @@ Using 80/20 aluminum bars allows everything to be adjustable including the size 
 </p>
 </center>
 
+### Influent Pipe Geometry
+
+An important constraint of influent flow control is the geometry of the pipes, i.e. how they enter the reactor, and how they deliver the wastewater into the reactor.  Due to the settled bed nature of the UASB, this geometry is incredibly important, as for maximum efficiency the wastewater should be evenly distributed throughout the settled bed so that all granules are receiving wastewater.  This also prevents potential dead zones within the reactor.  Additionally, high exit velocities from the pipe can create direct paths through the reactor, short circuiting the system.
+
+To prevent direct paths through the sludge blanket to the upper effluent lines, influent pipes entering the reactor will be pointed downwards and towards the V-shaped plates in the bottom of the reactor.  This will ideally serve to reduce the velocity of the influent waste significantly, and disperse water throughout the bottom of the reactor.  One goal of the summer is to conduct basic tests of a sludge like substitute (tapioca?) as a model sludge blanket, and then add influent lines, possibly with red dye, to see the potential streamlines, and determine a possible maximum influent velocity.  
+
+As detailed in above sections, influent pipes will begin from the pulse flow control system (tipping bucket and tank), run down the side of the tank, and then enter the reactor from one side.  There are two potential designs for the pipe geometry, detailed in figures x and y below.  
+
+
 ## Biogas Capture
 
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.  Capturing this biogas is an important design process for the UASB, as it allows the UASB to produce a valuable product that can provide heating or cooking energy for the communities served by the UASB.
@@ -233,19 +242,20 @@ def masstomoles_CH4(Biogas_flowrate_mass):
   Biogas_flowrate_moles = Biogas_flowrate_mass.to(u.grams) * (1 / 16.04) * (u.moles / u.grams)
   return Biogas_flowrate_moles
 
-def filltime(Biogas_flowrate_mass, Bag_Vol, Head_Volume, Temp):
-    #Takes in molar flowrate of biogas, Volume of attached bag and headspace in reactor, and temperature, and uses the ideal gas law to determine the time to fill each bag, and how many moles are contained in the space when full.
+def filltime(Biogas_flowrate_moles, Bag_Vol, Head_Volume, Temp):
+    #Takes in molar flowrate of biogas, volume of attached bag and headspace in reactor, and temperature, and uses the ideal gas law to determine the time to fill each bag and how many moles are contained in the space when full.
 
     #Set correct units for ideal gas law
     Temp = Temp.to(u.degK)
     Bag_Vol = Bag_Vol.to(u.L)
-    R = 8.3145 * ((u.L * u.kPa) / (u.moles * u.degK))
+    Pressure = 1 * u.atm
+    R = .0821 * ((u.L * u.atm) / (u.moles * u.degK))
 
-
-    moles_when_full =
+    moles_when_full = (Pressure * Bag_Vol / (R * Temp)
+    )
 
     bag_filltime = Bag_Vol / Q_biogas
-    return 
+    return
 
 temp = 50 * u.degK
 
@@ -295,3 +305,8 @@ height_lid = size_stor[1]
 
 print("The storage volume required to store", time_stor, "of biogas is", vol_stor, "\n" "The height of lid to prevent failure before", time_fail, "is", height_lid)
 ```
+
+
+
+
+#### Effluent Tube Settler
