@@ -64,9 +64,22 @@ Influent Pipes
 1.
 2.
 
+####Experimental steps
+#####Tipping Bucket
+The team had to find the optimal positions for the pivots and the brackets supporting the bottom of the bucket so that the bucket would fill up with enough water and tip enough to dump all the water out. If the pivots were too far from the center, the bucket would tip before filling with enough water. If the pivots were too close, the bucket wouldn't tip enough to empty out all of the water. The team decided that a good range for the ideal amount of water to fill the bucket is 15L-25L.
+
+The team marked the center of each bar that the pivots are on and tested the tipping bucket with the pivots at certain distances from that center. The height of the brackets were adjusted as needed.
+
+To find the amount of water that was in the bucket just before tipping, the team marked on the bucket vertical heights every 1 cm and recorded the height of the water level just before tipping. The volume was found by using the water level height and bucket diameter.
+
+| Pivot distance from center | Bracket Height | Volume filled | Completely Emptied? |
+| -------------------------- | -------------- | ------------- | ------------------- |
+|                            |                |               |                     |
+|                            |                |               |                     |
+|                            |                |               |                     |
 
 ## UASB Reactor Tank
-Initial plans for the UASB modeled the 1 L/s plant, which used a 3 ft diameter PVC pipe as the outer base of the reactor.  However, with further exploration it was determined that a prefabricated tank could be used for the same system, offering a much cheaper alternative that could be more structurally stable and easier to build from. 
+Initial plans for the UASB modeled the 1 L/s plant, which used a 3 ft diameter PVC pipe as the outer base of the reactor.  However, with further exploration it was determined that a prefabricated tank could be used for the same system, offering a much cheaper alternative that could be more structurally stable and easier to build from.
 
 
 

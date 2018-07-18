@@ -83,10 +83,10 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
 
-### Final Tipping Bucket Design
-The team decided on a design that includes an 80/20 aluminum frame that the bucket rests inside of. The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support. There are brackets on the vertical bars that support the bottom of the bucket. Two cylindrical pieces are attached to the rectangular part of the frame and can be screwed or unscrewed to be tightened in place or loosened to be moved. These are the pivots for the tipping bucket. Placing the pivots off center causes the bucket and frame to tip as the bucket fills with water and the center of gravity shifts, eventually tipping to completely empty the bucket. The pivots rest in two brackets that allow the mechanism to tip.
+###Experimental Frame Design
+In order to test the tipping bucket and find the right dimensions, the team fabricated an 80/20 aluminum frame that the bucket rests inside of. The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support. There are brackets on the vertical bars that support the bottom of the bucket. Two cylindrical pieces are attached to the rectangular part of the frame and can be screwed or unscrewed to be tightened in place or loosened to be moved. These are the pivots for the tipping bucket. Placing the pivots off center causes the bucket and frame to tip as the bucket fills with water and the center of gravity shifts, eventually tipping to completely empty the bucket. The pivots rest in two brackets that allow the mechanism to tip.
 
-Using 80/20 aluminum bars allows everything to be adjustable including the size of the surrounding rectangle, the height of the brackets, and the location of the pivots. This has proven to be especially useful during testing to find the ideal height of the bucket and location of the pivots.
+Using 80/20 aluminum bars allows everything to be adjustable including the size of the surrounding rectangle, the height of the brackets, and the location of the pivots, which has allowed dimensions to be altered without needing new materials. After further experimentation, the team plans to screw the pivots directly into the bucket.
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Labeled.png">
 <img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
@@ -94,14 +94,6 @@ Using 80/20 aluminum bars allows everything to be adjustable including the size 
 <em>Tipping bucket and frame</em>
 </p>
 </center>
-
-### Influent Pipe Geometry
-
-An important constraint of influent flow control is the geometry of the pipes, i.e. how they enter the reactor, and how they deliver the wastewater into the reactor.  Due to the settled bed nature of the UASB, this geometry is incredibly important, as for maximum efficiency the wastewater should be evenly distributed throughout the settled bed so that all granules are receiving wastewater.  This also prevents potential dead zones within the reactor.  Additionally, high exit velocities from the pipe can create direct paths through the reactor, short circuiting the system.
-
-To prevent direct paths through the sludge blanket to the upper effluent lines, influent pipes entering the reactor will be pointed downwards and towards the V-shaped plates in the bottom of the reactor.  This will ideally serve to reduce the velocity of the influent waste significantly, and disperse water throughout the bottom of the reactor.  One goal of the summer is to conduct basic tests of a sludge like substitute (tapioca?) as a model sludge blanket, and then add influent lines, possibly with red dye, to see the potential streamlines, and determine a possible maximum influent velocity.  
-
-As detailed in above sections, influent pipes will begin from the pulse flow control system (tipping bucket and tank), run down the side of the tank, and then enter the reactor from one side.  There are two potential designs for the pipe geometry, detailed in figures x and y below.  
 
 
 ## Biogas Capture
@@ -151,7 +143,7 @@ $K_{COD}$ = COD corresponding to 1 mole of CH4 ($\frac{64g COD}{mole}$)
 
 $R$ = Ideal Gas Constant = 0.08206 ${\frac{atm*L}{mol*K}}$
 
-$T$ = Temperature (${^\circ}C$)
+$T$ = Temperature ( ${^\circ}C$)
 
 Since biogas contains other gases such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume that biogas is composed 75% of methane, as given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).
 
@@ -160,13 +152,12 @@ It is important to note that this equation only gives an approximation of the ac
 #### Design Parameters
 Table 3: Design parameters for biogas production.
 
-|                        Parameters                        |      Value      |                                                                              Basis of Design                                                                               |
-|:--------------------------------------------------------:|:---------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|          COD Removal Efficiency, ```COD_eff```           |       70%       |                                 Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf)                                  |
-| Percent of COD directed to Sludge Production ```Y_obs``` |       23%       | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).  Chose highest value of removal to get minimum production value |
-|                     Pressure ```P```                     |      1 atm      |                                                            Biogas produced will be stored at very low pressure                                                             |
-|                   Temperature ```T```                    | 25 $^{\circ}$C  |                                                                   Assuming optimal biological conditions                                                                   |
-|            Methane Percentage `Methane_frac`             |       75%       |              Given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).                                                                                                                                                              |
+|                        Parameters                        |                 Value                 |                                              Basis of Design                                              |
+|:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
+|          COD Removal Efficiency, ```COD_eff```           |                  70%                  | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
+| Percent of COD directed to Sludge Production ```Y_obs``` |              23%               | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).  Chose highest value of removal to get minimum production value |
+|                     Pressure ```P```                     |                 1 atm                 |                            Biogas produced will be stored at very low pressure                            |
+|                   Temperature ```T```                    |            25 $^{\circ}$ C            |                                  Assuming optimal biological conditions                                   |
 
 
 #### Code
@@ -177,9 +168,8 @@ def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
     # Calculate ideal COD production
     COD_rem = COD_Load * COD_removal_eff #calculate COD broken down by reactor
     Y_obs = 0.23 # Upper limit of sludge production
-    Biogas_flowrate_mass = (Q * COD_rem) - (Y_obs * Q * COD_Load) #Gives mass of total biogas produced per unit time
-    Methane_frac = 0.75 # Assume 75% of biogas is methane
-    Methane_flowrate_mass = Biogas_flowrate_mass * 0.75 # apply correction factor for methane percentage of biogas
+    COD_CH4 = (Q * COD_rem) - (Y_obs * Q * COD_Load) #Gives mass CH_4 produced per unit time
+
     # Calculate correction factor for operational temperature of the reactor
     T = Temp.to(u.degK)
     P = 1 * u.atm
@@ -187,8 +177,8 @@ def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
     R = 0.08206 * ((u.atm * u.L) / (u.mol * u.degK))
     K = (P * K_COD) / (R * T)
     #Calculate the volumetric flow rate of methane production
-    Methane_flowrate_vol = Methane_flowrate_mass / K # per second
-    return [Methane_flowrate_vol, Methane_flowrate_mass]
+    Q_CH4 = COD_CH4 / K # per second
+    return Q_CH4
 
 # Flow rate through UASB reactor
 Flow_design = UASB_design[1]
@@ -203,8 +193,7 @@ COD_Load_max = 300 * (u.mg / u.L)
 
 Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp, 0.7)
 #Calculating size of storage device
-print(Q_Biogas[0].to(u.L/u.day))
-print(Q_Biogas[1].to(u.kg/u.day))
+print(Q_Biogas.to(u.L/u.day))
 ```
 
 ### Biogas Storage System
@@ -216,6 +205,7 @@ print(Q_Biogas[1].to(u.kg/u.day))
 ##### Design 2: Full Seal
 
 #### Capture System Design
+
 
 An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
 
@@ -229,52 +219,8 @@ Table 4: List of advantages and disadvantages associated with different biogas s
 
 After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
 
-Research is ongoing on the best type of gas bag to use.  Currently, the goal is to find a collection system that does not require pressure to inflate.  While previously the team focused on an inflatable balloon, the bag is preferable as it does not require additional pressure to inflate, and instead just increases in volume as the number of moles of gas increases.  This would require a bag with a large enough volume to hold multiple days worth of biogas.  The bag should also have some capability to stretch like a balloon, so that if it is emptied late and exposed to pressure, it will not explode.  
+Schematically, gas will flow out the top lid of the reactor through a pipe into
 
-The full collection system, pictured below, will consist of two exit valves.  The first is a manual valve leading to a tube connected to the gas bags.  Each gas bag will be sealed onto the pipe, and as gas is produced within the reactor it will enter these bags and fill them.  Once the bags are full, an operator can close the manual valve, remove the bags, add new bags in their place, and finally reopen the manual valve.  
-
-The second exit valve is a check valve, which automatically opens when the interior is at a certain pressure.  This valve will serve as a safety for the system by venting gas when the interior reaches too high pressure.  Calculations run below calculate the maximum pressure attained when the bags are full, or if the valve is left closed.  
-
-```python
-from aide_design.play import*
-
-def masstomoles_CH4(Biogas_flowrate_mass):
-  Biogas_flowrate_moles = Biogas_flowrate_mass.to(u.grams) * (1 / 16.04) * (u.moles / u.grams)
-  return Biogas_flowrate_moles
-
-def filltime(Biogas_flowrate_moles, Bag_Vol, Head_Volume, Temp):
-    #Takes in molar flowrate of biogas, volume of attached bag and headspace in reactor, and temperature, and uses the ideal gas law to determine the time to fill each bag and how many moles are contained in the space when full.
-
-    #Set correct units for ideal gas law
-    Temp = Temp.to(u.degK)
-    Bag_Vol = Bag_Vol.to(u.L)
-    Pressure = 1 * u.atm
-    R = .0821 * ((u.L * u.atm) / (u.moles * u.degK))
-
-    moles_when_full = (Pressure * Bag_Vol / (R * Temp)
-    )
-
-    bag_filltime = Bag_Vol / Q_biogas
-    return
-
-temp = 50 * u.degK
-
-def Pressure_gain(Biogas_flowrate_mass, Temp, Lid_Vol, Bag_Vol):
-    #Takes in flowrate of biogas in mass units, temperature, volume of lid space without fluid, and volume of bags when fully inflated and gives the initial pressure when the bags are full, and the pressure gain per unit time.
-
-    #Translate mass production of biogas to moles
-    Biogas_flowrate_moles = Biogas_flowrate_mass * (1 / 16.04) * (u.moles / u.grams)
-
-    #Calculate
-
-
-    return
-
-def Fluid_Pressure(WW_Height, WW_density):
-    #Takes in height of wastewater in UASB and density to give the fluid pressure at the bottom of a tank using P = pgh formula
-
-    return
-```
 
 #### Code
 ```python
@@ -305,8 +251,3 @@ height_lid = size_stor[1]
 
 print("The storage volume required to store", time_stor, "of biogas is", vol_stor, "\n" "The height of lid to prevent failure before", time_fail, "is", height_lid)
 ```
-
-
-
-
-#### Effluent Tube Settler
