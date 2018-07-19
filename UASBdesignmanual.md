@@ -10,28 +10,30 @@ This document serves to detail the entire design process of the UASB system.  Wh
 
 ## Reactor Tank
 
-Initial design of the UASB models the 1 L/s plant closely, and thus assumed the use of a 3" diameter PVC pipe for the base of the tank, as the design required a bend in the pipe for the plate settlers.  Since the UASB system requires no bends and is completely vertical, it was proposed to use a prefabricated plastic tank instead.  
+Initial design of the UASB models the 1 L/s plant closely, and thus assumed the use of a 3' diameter PVC pipe for the base of the tank, as the design required a bend in the pipe for the plate settlers.  Since the UASB system requires no bends and is completely vertical, it was proposed to use a prefabricated plastic tank instead.  
 
-The advantages of the prefabricated tank include:
+The advantages of the prefabricated tank are:
 * Lower overall costs
-* Easier fabrication of bottom and top of tank (tank is already sealed)
-* Higher structural stability (particularly at bottom of tank)
+* Easier fabrication of bottom and top of tank (since the tank is already sealed)
+* Higher structural stability, particularly at bottom of tank
 * Possible prefabrication of inlet and outlet system
 
 The disadvantages include:
-* Tanks are harder to source outside of the US and might require shipping in
-* Since tanks are prefabricated, it becomes challenging to fabricate pieces inside the tank (which are more easily accessible in a PVC pipe)
-* Most prefab tanks are made of High Density Polyethylene (HDPE) rather than PVC.  Will require additional costs for welding rod and other materials.
+* Tanks are harder to source outside of the US and might require shipping in. However, we found manufacturers in Honduras so this should not be a huge concern.
+* Since tanks are prefabricated with lids, it becomes challenging to attach pieces inside the tank. While using a PVC pipe would provide better access to the interior of the tank, our goal is to avoid any modifications within the reactor altogether.
+* Most prefabricated tanks are made of High Density Polyethylene (HDPE) rather than PVC.  Will require additional costs for welding rod and other materials.
 
-The other design parameters are listed in the table below:
+
+*Table 1: Basic Reactor Design Parameters*
 | Parameter | Value | Constraint                                                                            |
 | --------- | ----- | ------------------------------------------------------------------------------------- |
 | Height    | ~7ft  | Max height to still fit within lab space.  Could change based on fabrication location |
 | Diameter  | 3ft   | No constraint. Chosen based on 1 L/s design   |
 
-Precursory searches across Honduran suppliers found tanks of similar dimensions in HDPE, easing that concern.  Given that, it was decided to move forward purchasing a HDPE tank and using that for the initial design.  After local testing, the team will reevaluate the design based on materials available in Honduras and make any necessary changes.
+A preliminary search among Honduran suppliers found tanks of similar dimensions made of HDPE. The team thus decided to move forward with purchasing an HDPE tank for initial design testing. After local testing, the design can be modified if needed to accommodate materials found in Honduras.
 
-The current plan is to purchase an HDPE tank similar to [this](https://www.plastic-mart.com/product/17049/300-gallon-plastic-tank-rotoplas-590314-590315) for fabrication of the first reactor.  After determining the location this system will be fabricated in, a final decision will be made on the dimensions of the tank and the tank will be purchased in preparation for fabrication in Fall 2018.
+The current plan is to purchase an HDPE tank similar to [this](https://www.plastic-mart.com/product/17049/300-gallon-plastic-tank-rotoplas-590314-590315) for fabrication of the first reactor. A final decision regarding the tank model to be used will be made in Fall 2018 after reviewing the constraints of the location we build in.
+
 
 ### Size and Dimensions
 
@@ -58,8 +60,9 @@ Height = 7 * u.ft
 UASB_design = UASBSize(Diameter, Height)
 print(UASB_design[1])
 
-
 ```
+
+
 
 ## Influent System
 
@@ -84,16 +87,53 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
 
 ###Experimental Frame Design
-In order to test the tipping bucket and find the right dimensions, the team fabricated an 80/20 aluminum frame that the bucket rests inside of. The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support. There are brackets on the vertical bars that support the bottom of the bucket. Two cylindrical pieces are attached to the rectangular part of the frame and can be screwed or unscrewed to be tightened in place or loosened to be moved. These are the pivots for the tipping bucket. Placing the pivots off center causes the bucket and frame to tip as the bucket fills with water and the center of gravity shifts, eventually tipping to completely empty the bucket. The pivots rest in two brackets that allow the mechanism to tip.
+In order to test the tipping bucket and find the right dimensions, the team fabricated a frame made of 80/20 extrusion bars that the bucket rests inside of. The benefit of using 80/20 bars is that they allow easy adjustment of the dimensions of our frame. Once the optimal orientation is decided upon after bench-top testing, the pivots can directly be screwed into the bucket minus the frame.
 
-Using 80/20 aluminum bars allows everything to be adjustable including the size of the surrounding rectangle, the height of the brackets, and the location of the pivots, which has allowed dimensions to be altered without needing new materials. After further experimentation, the team plans to screw the pivots directly into the bucket.
+The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support.
+**(Insert image of frame here)**
 
-<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Labeled.png">
-<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+There are brackets on the vertical bars that support the bottom of the bucket.
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
 <p>
-<em>Tipping bucket and frame</em>
+<em>Tipping bucket mounted on the aluminum frame</em>
 </p>
 </center>
+
+Two short cylindrical rods are attached on either side of the frame such that the frame can be adjusted to shorten or widen the distance between the rods. These rods are the pivots for the tipping bucket. Placing the pivots off-centered shifts the center of gravity of the bucket-frame system. Thus, when water fills the bucket beyond a certain height, the bucket-frame tips and empties into the tank below.
+**(insert image of pivots)**
+
+The pivots themselves are mounted on two rectangular brackets with some room to roll around. This rolling motion will greatly decrease friction as the bucket tips, which in turn will reduce mechanical wearing of the parts.
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Labeled.png">
+<p>
+<em>Cylindrical "roller pivots" mounted on rectangular brackets</em>
+</p>
+</center>
+
+### Flow Control Tests
+
+#### Optimal Flow Patterns
+
+Given that there has not been a design of a UASB on this scale, the scientific literature offered little information on flow patterns through a sludge blanket.  An understanding of flow through this system is important for the following reasons:
+
+* An exit velocity of over 0.3 m/s is required to scour waste that may settle around the pipe exits and clog the system.
+* Increasing the exit velocity can provide enough force to partially fluidize the bed, raising it up and completely surrounding it in wastewater. Fluidizing the bed increases the surface area of the granules that comes in contact with the wastewater, improving biological treatment.  This same principle is used in the [Anaerobic Fluidized Bed Reactor](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4441917/), which was investigated by AguaClara but ultimately rejected as it required pumps to run.
+* Depending on the geometry of the reactor and velocity of influent wastewater, preferential flow pathways may form in the sludge blanket.  Preferential flow reduces the contact between wastewater and the granules, and in extreme cases creates **dead zones** (areas where no wastewater enters eventually causing sludge death).  
+
+
+#### Tapioca Tests
+
+To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.  
+
+The model UASB was created with
+
+The model sludge blanket was created with
+
+
+
+
+### Influent System Geometry
+
 
 
 ## Biogas Capture
@@ -150,7 +190,7 @@ Since biogas contains other gases such as CO2, we must employ a correction facto
 It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will produce flammable gas.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
 #### Design Parameters
-Table 3: Design parameters for biogas production.
+*Table 2: Design parameters for biogas production.*
 
 |                        Parameters                        |                 Value                 |                                              Basis of Design                                              |
 |:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
@@ -207,9 +247,9 @@ print(Q_Biogas.to(u.L/u.day))
 #### Capture System Design
 
 
-An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with Pros and Cons are detailed in the table below.
+An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with their pros and cons are detailed in the table below.
 
-Table 4: List of advantages and disadvantages associated with different biogas storage systems.
+*Table 3: Comparison between different types of biogas capture systems*
 
 | Type of Storage | Advantages | Disadvantages |
 |:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
@@ -251,3 +291,5 @@ height_lid = size_stor[1]
 
 print("The storage volume required to store", time_stor, "of biogas is", vol_stor, "\n" "The height of lid to prevent failure before", time_fail, "is", height_lid)
 ```
+
+#### Effluent Tube Settler
