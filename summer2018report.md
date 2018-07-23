@@ -19,7 +19,7 @@ One major design goal for the summer was to finish the influent system that deli
 
 #### Continuous versus Pulse Flow
 
-In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly continuous rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were: A tipping bucket system or a siphon.  
+In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly constant rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were: A tipping bucket system or a siphon.  
 
 #### Tipping Bucket versus Siphon System
 
@@ -53,6 +53,8 @@ From these constraints, the general headloss equation (including the headloss tr
 
 ```python
 # Calculates headloss in influent system based on dimensions of reactor
+
+#
 
 # Import required functions
 from aide_design.play import*
@@ -194,11 +196,12 @@ Given these input parameters, we can solve for the headloss necessary to achieve
 ```python
 # Calculates headloss in influent system based on dimensions of reactor
 
+# Define UASB size function for inputs into functions
+
+
 
 # Import required functions
 from aide_design.play import*
-import math
-from UASB_size import*
 
 # Calculate size and flow dimensions
 height = 7 * u.ft

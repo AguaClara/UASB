@@ -86,7 +86,7 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
 
-###Experimental Frame Design
+### Experimental Frame Design
 In order to test the tipping bucket and find the right dimensions, the team fabricated a frame made of 80/20 extrusion bars that the bucket rests inside of. The benefit of using 80/20 bars is that they allow easy adjustment of the dimensions of our frame. Once the optimal orientation is decided upon after bench-top testing, the pivots can directly be screwed into the bucket minus the frame.
 
 The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support.
@@ -110,6 +110,72 @@ The pivots themselves are mounted on two rectangular brackets with some room to 
 </p>
 </center>
 
+### Hydraulic Calculations
+
+```python
+from aide_design.play import*
+import doctest
+
+def UASBSize(diam, height, HRT):
+    """Takes in diameter, height, and average hydraulic residence time (HRT) of model UASB.  Assumes 70% of reactor volume contains the settled bed, used for HRT. Outputs volume, required average flow rate, and the number of people served per reactor for both mixed wastewater and blackwater (pure toilet water)
+    >>> from aide_design.play import*
+    >>> UASBSize(3 * u.ft, 7 * u.ft, 4 * u.hr)
+    [<Quantity(1401.1199563135376, 'liter')>, <Quantity(0.09729999696621788, 'liter / second')>, 32, 162]
+    """
+    WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
+    WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
+    vol_reactor = (diam/2)**2 * math.pi * height
+    vol_reactor_sludge = vol_reactor * 0.7 #Assume 70% of reactor contains sludge blanket that treats wastewater
+    flow = vol_reactor / HRT #Average flow rate through reactor given by volume and residence time
+    people_served = int(flow / WW_gen)       #People served per reactor
+    people_served_BW = int(flow / WW_gen_bw) #People served per reactor treating only blackwater
+    output = [vol_reactor.to(u.L), flow.to(u.L/u.s), people_served, people_served_BW]
+    return output
+
+doctest.testmod(verbose=True)
+
+Diameter = 3 * u.ft
+Height = 7 * u.ft
+HRT = 4 * u.hr
+UASB_design = UASBSize(Diameter, Height, HRT)
+print(UASB_design)
+
+
+
+# Import required functions
+from UASB_size import*
+
+# Calculate size and flow dimensions
+height = 7 * u.ft
+diam = 3 * u.ft
+UASB_design = UASBSize(diam, height)
+vol = UASB_design[1]
+min_HRT = 4 * u.hr
+Q_avg = vol / min_HRT
+print(Q_avg.to(u.L/u.s))
+
+#Determine pipe inner diameter based on nominal diameter
+
+nom_diam = 2.5  * u.inch
+pipe_diam = pipe.ID_sch40(nom_diam)
+print(pipe_diam.to(u.mm))
+
+# Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
+exit_vel = 1 * u.m / u.s
+pipe_flow = exit_vel * pc.area_circle(pipe_diam)
+pipe_length = (diam / 2) + height
+Kminor = 4 #(1.5 * 2) from elbow joints in influent systems, plus 1 from headloss trick (assuming all flow out is lost kinetic energy) = 4
+Temp = 23 * u.degC #average temp in Honduras
+Nu = pc.viscosity_kinematic(Temp)
+Pipe_Rough = 0.0015 * u.mm
+total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
+print(total_hl.to(u.cm))
+
+
+
+```
+
+
 ### Flow Control Tests
 
 #### Optimal Flow Patterns
@@ -125,12 +191,15 @@ Given that there has not been a design of a UASB on this scale, the scientific l
 
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.  
 
-The model UASB was created with
-
+The first UASB was modeled using a simple plastic beaker.
 The model sludge blanket was created with
 
+```python
+
+# Calculate exit velocity from pipes given pipe dimensions and change in hydraulic head
 
 
+```
 
 ### Influent System Geometry
 
