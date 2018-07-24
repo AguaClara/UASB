@@ -89,13 +89,17 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 ### Experimental Frame Design
 In order to test the tipping bucket and find the right dimensions, the team fabricated a frame made of 80/20 extrusion bars that the bucket rests inside of. The benefit of using 80/20 bars is that they allow easy adjustment of the dimensions of our frame. Once the optimal orientation is decided upon after bench-top testing, the pivots can directly be screwed into the bucket minus the frame.
 
-The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support.
+The frame is made up of four bars that form a rectangle around the circumference of the bucket, two vertical bars perpendicular to the rectangle that extend parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support.
+
 **(Insert image of frame here)**
 
-There are brackets on the vertical bars that support the bottom of the bucket.
+Originally, when the height of the pivots was lowered, the vertical bars would extend further than the base of the bucket (as seen in Figure X below). This added a slight counterweight that affected the tipping of the bucket, and so the vertical bars were cut to fit the different heights of the pivot. (The weight of the bracket itself could not be eliminated.)
+
+In Figure X below, there are brackets on the vertical bars that support the bottom of the bucket. These were eliminated when the affect of the bottom bar as a counterweight was discovered.
+
 <center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
 <p>
-<em>Tipping bucket mounted on the aluminum frame</em>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
 </p>
 </center>
 
@@ -110,23 +114,32 @@ The pivots themselves are mounted on two rectangular brackets with some room to 
 </p>
 </center>
 
+*Table Z: Tipping Bucket Trial Results*
+| Trial | Horizontal Pivot Position (from center) | Vertical Position (center of pivot to base of bucket) | Height Filled | Volume Filled |
+| -------- | -------------------|-------------------- | --------- | ---------|
+| 1    |   | 10 |
+| 2 |  | 10 |  |  |
+|3   |   |   |   |   |
+|4   |   |   |   |   |
+|5   |   |   |   |   |
+|6   |   |   |   |   |
 ### Hydraulic Calculations
 
 ```python
 from aide_design.play import*
 import doctest
 
-def UASBSize(diam, height, HRT):
-    """Takes in diameter, height, and average hydraulic residence time (HRT) of model UASB.  Assumes 70% of reactor volume contains the settled bed, used for HRT. Outputs volume, required average flow rate, and the number of people served per reactor for both mixed wastewater and blackwater (pure toilet water)
+def UASB_Size(diam, height, HRT, sludge_percent):
+    """Takes in diameter, height, average hydraulic residence time (HRT), and percentage of volume occupied by sludge blanket of model UASB. Outputs volume, required average flow rate, and the number of people served per reactor for both mixed wastewater and blackwater (pure toilet water)
     >>> from aide_design.play import*
-    >>> UASBSize(3 * u.ft, 7 * u.ft, 4 * u.hr)
-    [<Quantity(1401.1199563135376, 'liter')>, <Quantity(0.09729999696621788, 'liter / second')>, 32, 162]
+    >>> UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
+    [<Quantity(1401.1199563135376, 'liter')>, <Quantity(0.06810999787635252, 'liter / second')>, 22, 113]
     """
     WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
     WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
     vol_reactor = (diam/2)**2 * math.pi * height
-    vol_reactor_sludge = vol_reactor * 0.7 #Assume 70% of reactor contains sludge blanket that treats wastewater
-    flow = vol_reactor / HRT #Average flow rate through reactor given by volume and residence time
+    vol_reactor_sludge = vol_reactor * sludge_percent #Calculate total volume of reactor containing sludge blanket, used in HRT calculation
+    flow = vol_reactor_sludge / HRT #Average flow rate through reactor given by volume and residence time
     people_served = int(flow / WW_gen)       #People served per reactor
     people_served_BW = int(flow / WW_gen_bw) #People served per reactor treating only blackwater
     output = [vol_reactor.to(u.L), flow.to(u.L/u.s), people_served, people_served_BW]
@@ -137,13 +150,41 @@ doctest.testmod(verbose=True)
 Diameter = 3 * u.ft
 Height = 7 * u.ft
 HRT = 4 * u.hr
-UASB_design = UASBSize(Diameter, Height, HRT)
+Percentage_sludge = 0.7 #Assume 70% of reactor is sludge
+UASB_design = UASB_Size(Diameter, Height, HRT, Percentage_sludge)
 print(UASB_design)
 
+def bucket_filltime(flowrate_avg, dump_vol):
+  """Takes in average flow rate into tipping bucket and the fill volume before one dump and calculates the average time it takes the bucket to fill and dump.
+  >>> from aide_design.play import*
+  >>> bucket_filltime(0.068 * (u.L/u.s), 16.26 * u.L)
+  [<Quantity(239.1, 'second')>]
+  """
+  filltime = dump_vol / flowrate_avg
+  return filltime.to(u.s)
+
+doctest.testmod(verbose=True)
+
+bucket_dump_vol = 23 * u.cm * pc.area_circle(30*u.cm)
+print(bucket_dump_vol.to(u.L))
+filltime = bucket_filltime(0.068 * u.L/u.s, bucket_dump_vol)
+print(filltime.to(u.s))
 
 
-# Import required functions
-from UASB_size import*
+
+def calculate_head(target_exitvel, ):
+"""Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.
+
+
+"""
+
+
+def head_gain_per_dump(dump_vol):
+
+
+
+  return
+
 
 # Calculate size and flow dimensions
 height = 7 * u.ft
