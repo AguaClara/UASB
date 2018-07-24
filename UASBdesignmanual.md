@@ -123,6 +123,23 @@ In Figure X below, there are brackets on the vertical bars that support the bott
 </p>
 </center>
 
+
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
+
+![Side Influent Entry System](/Images/Influent Geo Slant.png)
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
 Two short cylindrical rods are attached on either side of the frame such that the frame can be adjusted to shorten or widen the distance between the rods. These rods are the pivots for the tipping bucket. Placing the pivots off-centered shifts the center of gravity of the bucket-frame system. Thus, when water fills the bucket beyond a certain height, the bucket-frame tips and empties into the tank below.
 **(insert image of pivots)**
 
@@ -254,6 +271,31 @@ def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
 
 ```
 
+### Potential Designs
+
+Design for the influent system has not been settled on yet, and there are a few options.
+
+#### Design 1: Side Influent Pipe Entry
+
+The main working design over the summer focused on having the influent pipes enter from the side of the reactor.  Figure X below shows this system.
+
+
+
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant%20(1).jpg">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
+
+
+#### Design Two: Top Influent Pipe Entry
+
+
+
+
+
 
 ### Flow Control Tests
 
@@ -279,10 +321,6 @@ The model sludge blanket was created with
 
 
 ```
-
-### Influent System Geometry
-
-
 
 ## Biogas Capture
 
