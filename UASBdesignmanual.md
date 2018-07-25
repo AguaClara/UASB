@@ -268,7 +268,6 @@ def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
   """
   large_pipe_vel = exit_vel * (small_pipe_diam ** 2) / (large_pipe_diam ** 2)
   return large_pipe_vel
-
 ```
 
 ### Potential Designs
@@ -316,8 +315,18 @@ The first UASB was modeled using a simple plastic beaker.
 The model sludge blanket was created with
 
 ```python
+from aide_design import*
+def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
+  """
+  Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.
+  """
+  pump_Q = exit_vel_target * pipe_innerdiam * num_pipes
+  return pump_Q
 
-# Calculate exit velocity from pipes given pipe dimensions and change in hydraulic head
+#Run for target exit velocities
+#Current setup ID is .229 in (3/8 nom diam)
+
+
 
 
 ```
