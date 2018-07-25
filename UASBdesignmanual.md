@@ -317,15 +317,42 @@ The model sludge blanket was created with
 ```python
 from aide_design import*
 def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
+  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.
   """
-  Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.
-  """
-  pump_Q = exit_vel_target * pipe_innerdiam * num_pipes
+  inner_area = pc.area_circle(pipe_innerdiam)
+  pump_Q = exit_vel_target * inner_area * num_pipes
   return pump_Q
+
+def dump_percentage_bucket():
+  """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
+
+
+  """
+
+  return
+
+def dump_percentage_pump():
+  """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
+
+
+  """
+
+
+  return
+
+def find_upflow_vel():
+  """Finds upflow velocity created by one dump of tipping bucket.  Inputs flowrate and area of reactor.  Does not account for headloss within the reactor.
+
+
+  """
+
+  return
 
 #Run for target exit velocities
 #Current setup ID is .229 in (3/8 nom diam)
 
+flowrate1mps = find_pump_exitv(2 * u.m/u.s, .229 * u.inch, 1)
+print(flowrate1mps.to(u.ml/u.s))
 
 
 
