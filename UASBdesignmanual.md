@@ -152,14 +152,15 @@ The pivots themselves are mounted on two rectangular brackets with some room to 
 </center>
 
 *Table Z: Tipping Bucket Trial Results*
-| Trial | Horizontal Pivot Position (from center) | Vertical Position (center of pivot to base of bucket) | Height Filled | Volume Filled |
-| -------- | -------------------|-------------------- | --------- | ---------|
-| 1    |   | 10 |
-| 2 |  | 10 |  |  |
-|3   |   |   |   |   |
-|4   |   |   |   |   |
-|5   |   |   |   |   |
-|6   |   |   |   |   |
+| Trial | Horizontal Pivot Position (from center) | Vertical Position (center of pivot to base of bucket)  | Height Filled (cm)| Volume Filled (L)| Emptied Completely|
+| -------- | ----------------|--------------- | --------- | ---------| -------|
+| 1    | 0.25  | 16.5 | 21 | 14.8 | yes |
+| 2 | 0.5 | 16.5| 22 |  | yes|
+|3   | 0.5  | 19.3  |   |  | no|
+|4   | 0.5  | 18.5  |   |   | no |
+|5   | 0.75  |  18.5 |  22 |   | yes |
+| 6  |   0.75|   15.5|  22 |   | yes  |
+|7   |  0.5 |  15.5 | 23  |   | yes |
 
 
 #### Hydraulic Parameters
