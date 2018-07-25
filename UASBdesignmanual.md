@@ -236,15 +236,15 @@ print(filltime.to(u.s))
 
 
 
-def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp, pipe_rough):
-"""Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.  Assumes use of schedule 40 pipes.
+def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, temp, pipe_rough):
+  """Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.  Assumes use of schedule 40 pipes.
 
 
-"""
+  """
   pipe_ID = pipe.ID_sch40(nom_diam)   # Calculates pipe inner diameter from nominal diameter
   pipe_flow = target_exitvel * pc.area_circle(pipe_ID) #find flowrate based on exit velocity
-  Nu = pc.viscosity_kinematic(Temp)
-  headloss = pc.headloss(pipe_flow, pipe_ID, pipe_length, Nu, Pipe_rough, Kminor)
+  Nu = pc.viscosity_kinematic(temp)
+  headloss = pc.headloss(pipe_flow, pipe_ID, pipe_length, Nu, pipe_rough, Kminor)
   return headloss
 
 
@@ -269,6 +269,12 @@ def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
   """
   large_pipe_vel = exit_vel * (small_pipe_diam ** 2) / (large_pipe_diam ** 2)
   return large_pipe_vel
+
+def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
+  """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
+  """
+  avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
+  return avg_upflow_vel
 ```
 
 ### Potential Designs
@@ -281,7 +287,37 @@ The main working design over the summer focused on having the influent pipes ent
 
 
 
+The table below lists the design parameters for the system, which are with the below code to ensure a working model.
 
+| Parameter                  | Value     |
+| -------------------------- | --------- |
+| UASB Diameter              | 3 ft      |
+| UASB Height                | 7 ft      |
+| Tipping Bucket Dump Volume | 16 Liters |
+| Target Exit velocity       | 1 m/s     |
+|                            |           |
+
+
+
+##### Hydraulic Calculations
+Assumes you have defined all above hydraulic calculations
+```python
+
+a = 23 * u.cm * math.pi * (15 * u.cm)**2
+print(a.to(u.L))
+
+UASB_design_1 = UASB_Size(3*u.ft, 7*u.ft, 4*u.hr, 0.7) #Calculate Dimensions
+headloss_design1 = calculate_head(1*u.m/u.s, 3*u.inch, 8*u.ft, 4, 23*u.degC, 0.0015*u.mm)
+print(headloss_design1.to(u.cm))
+
+
+
+
+
+
+
+
+```
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant%20(1).jpg">
 <p>
 <em>Figure X: Tipping bucket mounted on the aluminum frame</em>
@@ -316,33 +352,41 @@ The first UASB was modeled using a simple plastic beaker.
 The model sludge blanket was created with
 
 ```python
+
+
+
 from aide_design import*
 def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
-  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.
+  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
   """
   inner_area = pc.area_circle(pipe_innerdiam)
   pump_Q = exit_vel_target * inner_area * num_pipes
   return pump_Q
 
-def dump_percentage_bucket():
+def dump_percentage_bucket(dump_volume, UASB_volume):
   """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
 
 
   """
+  bucket_percent = (dump_volume / UASB_volume) * 100
+  return bucket_percent
 
-  return
-
-def dump_percentage_pump():
+def dump_percentage_pump(pump_flowrate, pump_flowtime):
   """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
 
 
   """
+  pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
+  return pump_percent.
 
+def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
+    """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
+    """
+    avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
+    return avg_upflow_vel
 
-  return
-
-def find_upflow_vel():
-  """Finds upflow velocity created by one dump of tipping bucket.  Inputs flowrate and area of reactor.  Does not account for headloss within the reactor.
+def find_upflow():
+  """Finds average upflow velocity created by one dump of tipping bucket.  Inputs flowrate and area of reactor.  Does not account for headloss within the reactor.
 
 
   """
@@ -358,7 +402,7 @@ print(flowrate1mps.to(u.ml/u.s))
 
 
 ```
-Tapioca that had been soaked in water for 1.5 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. 
+Tapioca that had been soaked in water for 1.5 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump.
 
 
 ## Biogas Capture
