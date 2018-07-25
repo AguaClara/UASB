@@ -358,6 +358,8 @@ print(flowrate1mps.to(u.ml/u.s))
 
 
 ```
+Tapioca that had been soaked in water for 1.5 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. 
+
 
 ## Biogas Capture
 
