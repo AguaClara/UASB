@@ -41,33 +41,49 @@ The current plan is to purchase an HDPE tank similar to [this](https://www.plast
 
 #### Calculations
 ```python
-
 from aide_design.play import*
 
-def UASBSize(diam, height):
-
+def UASB_Size(diam, height, HRT, sludge_percent):
+    """Takes in diameter, height, average hydraulic residence time (HRT), and percentage of volume occupied by sludge blanket of model UASB. Outputs volume, required average flow rate, and the number of people served per reactor for both mixed wastewater and blackwater (pure toilet water)
+    >>> from aide_design.play import*
+    >>> UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
+    [<Quantity(1401.1199563135376, 'liter')>, <Quantity(0.06810999787635252, 'liter / second')>, 22, 113]
+    """
     WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
     WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
-    HRT = 4 * u.hr               #Hydraulic Residence Time, determined from lab scale tests
     vol_reactor = (diam/2)**2 * math.pi * height
-    flow = vol_reactor / HRT #Average flow rate through reactor given by volume and residence time
+    vol_reactor_sludge = vol_reactor * sludge_percent #Calculate total volume of reactor containing sludge blanket, used in HRT calculation
+    flow = vol_reactor_sludge / HRT #Average flow rate through reactor given by volume and residence time
     people_served = int(flow / WW_gen)       #People served per reactor
     people_served_BW = int(flow / WW_gen_bw) #People served per reactor treating only blackwater
     output = [vol_reactor.to(u.L), flow.to(u.L/u.s), people_served, people_served_BW]
     return output
 
-Diameter = 3 * u.ft
-Height = 7 * u.ft
-UASB_design = UASBSize(Diameter, Height)
-print(UASB_design[1])
+doctest.testmod(verbose=True)
 
+# Run with current design parameters
+UASB_design = UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
+print(UASB_design[0])
+print("The total volume of the reactor is", UASB_design[0], "\n" "The average flow rate through the system is", UASB_design[1], "\n" "The number of people served by this reactor is", UASB_design[2])
 ```
 
 
 
 ## Influent System
 
-Assuming a pulse volume input of 10-20 L, we plan to use a 5-gallon bucket that will be mounted off-centered on some sort of shaft. The bucket can rotate about the shaft, and this entire setup will be enclosed within a holding tank.
+One crucial element of the UASB design is the structure of the influent system.  This will deliver wastewater into the reactor and maintain flow to prevent clogging and overflowing.
+
+### Continuous versus Pulse Flow
+
+In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly constant rate. This was already a major assumption, as wastewater production will rise in the day and lower at night  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's suggested two possible systems: a tipping bucket or a siphon system.  
+
+### Tipping Bucket versus Siphon System
+
+The summer team researched siphons and discussed with Monroe potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
+
+### Tipping Bucket Design
+
+Based on a target pulse volume of 10-20 L, design centered around using a 5-gallon bucket for tipping.  The bucket will tip through a shaft system that is off-center, and will be mounted on a bracket system on the inside of a holding tank.  This tank will completely contain the tipping bucket so as to prevent any loss of wastewater during the dump.
 
 Monroe and the team came up with a couple of design choices for the tipping bucket:
 
@@ -85,18 +101,43 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 * **Pros**: Less shearing
 * **Cons**: Drilling holes makes the bucket vulnerable to leaks. Ease of replacement is still an issue
 
-3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed in two
+3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed into the brackets.
 
-###Experimental Frame Design
-In order to test the tipping bucket and find the right dimensions, the team fabricated a frame made of 80/20 extrusion bars that the bucket rests inside of. The benefit of using 80/20 bars is that they allow easy adjustment of the dimensions of our frame. Once the optimal orientation is decided upon after bench-top testing, the pivots can directly be screwed into the bucket minus the frame.
+* **Pros**: Easily adjustable system allows for testing multiple pivot locations
+* **Cons**: Challenging fabrication, requires extra parts
 
-The frame is made up of four bars that form a rectangle around the circumference of the bucket, two bars perpendicular to the rectangle that go down parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support.
+The team first decided to go with option 3 due to the modularity it provided.  However upon further discussion during fabrication, the team decided to fabricate a system using 80-20 bars that would be simpler to make and provide more modularity.
+
+### Experimental Frame Design
+
+The frame is made up of four bars that form a rectangle around the circumference of the bucket, two vertical bars perpendicular to the rectangle that extend parallel to the sides of the bucket, and one bar between the two vertical bars that is beneath the bucket for support.
+
 **(Insert image of frame here)**
 
-There are brackets on the vertical bars that support the bottom of the bucket.
+Originally, when the height of the pivots was lowered, the vertical bars would extend further than the base of the bucket (as seen in Figure X below). This added a slight counterweight that affected the tipping of the bucket, and so the vertical bars were cut to fit the different heights of the pivot. (The weight of the bracket itself could not be eliminated.)
+
+In Figure X below, there are brackets on the vertical bars that support the bottom of the bucket. These were eliminated when the affect of the bottom bar as a counterweight was discovered.
+
 <center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
 <p>
-<em>Tipping bucket mounted on the aluminum frame</em>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
+
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
+
+![Side Influent Entry System](/Images/Influent Geo Slant.png)
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
 </p>
 </center>
 
@@ -110,6 +151,188 @@ The pivots themselves are mounted on two rectangular brackets with some room to 
 <em>Cylindrical "roller pivots" mounted on rectangular brackets</em>
 </p>
 </center>
+
+*Table Z: Tipping Bucket Trial Results*
+| Trial | Horizontal Pivot Position (from center) | Vertical Position (center of pivot to base of bucket)  | Height Filled (cm)| Volume Filled (L)| Emptied Completely|
+| -------- | ----------------|--------------- | --------- | ---------| -------|
+| 1    | 0.25  | 16.5 | 21 | 14.8 | yes |
+| 2 | 0.5 | 16.5| 22 |  | yes|
+|3   | 0.5  | 19.3  |   |  | no|
+|4   | 0.5  | 18.5  |   |   | no |
+|5   | 0.75  |  18.5 |  22 |   | yes |
+| 6  |   0.75|   15.5|  22 |   | yes  |
+|7   |  0.5 |  15.5 | 23  |   | yes |
+
+
+#### Hydraulic Parameters
+
+Another important aspect of the influent design process was the hydraulics.  The below section details the design process and lists the hydraulic calculation to ensure proper flow through the system.
+
+Built within the design of the influent systems are a number of hydraulic constraints that must be met for the flow to work properly.  These are summarized in Table X below.
+
+<p align="center">Table X: Design parameters for UASB hydraulics </p>
+
+| Parameter                        | Value           | Constrained? | Justification                                                                                                                                                                                                |
+|:-------------------------------- |:--------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Reactor Volume                   | 1221 Liters     | Yes          | Based on max diameter and height to allow fabrication                                                                                                                                                        |
+| Sludge Volume                    | ~850 Liters     | No           | Roughly 70% of Reactor Volume.  Needs to be better constrained based on location of tube settler.                                                                                                            |
+| HRT                              | $\geq$ 4hrs     | Yes, minimum | Based on literature and lab scale test.                                                                                                                                                                      |
+| Descending Sewage Velocity       | $\leq$ 0.2 m/s  | Yes, Maximum | Maximum velocity that will allow air bubbles to rise out of reactor.  Must only be achieved in beginning of influent pipe systems, not throughout.                                                           |
+| Average Flow Rate                | $\leq$ 0.08 L/s | Yes, Maximum | Q = Volume / Hydraulic Residence Time                                                                                                                                                                        |
+| Minimum Exit Velocity            | $\geq$ 0.03 m/s | Yes          | Minimum velocity needed to scour settling particles                                                                                                                                                          |
+| Maximum Exit Velocity            | $\leq$ 1 m/s    | No           | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined.                                                                                                       |
+| Influent Pipe Inner Diameter     | 75 - 100mm      | No           | Based on literature values to prevent clogging in pipes.  Some flexibility.                                                                                                                                  |
+| Influent Pipe Length             | ~8.5 feet       | Yes          | Roughly equal to height of reactor plus half of diameter (see influent pipe geometry)                                                                                                                        |
+| Bucket Dump Volume               | ~20 L           | No           | Constraints are: time to fill bucket and relative volume to reactor capacity. A large dump volume allows more time for the bucket to fill, slowing down wear and tear. But the dump volume should also be a relatively small fraction of the total reactor volume. 20 L chosen as it is the volume of easily available buckets while fulfilling these constraints |
+| Wastewater Generation per Person | 10.8 L/hr       | No           | Rule of Thumb from Monroe   |
+
+### Hydraulic Calculations
+
+Given the constraints above, the team worked on designing a system using the tipping bucket that could meet all this criteria and be easier to fabricate.  The functions below run all necessary calculations, allowing testing of many possible systems to find the optimal solution.
+
+```python
+from aide_design.play import*
+import doctest
+
+def UASB_Size(diam, height, HRT, sludge_percent):
+    """Takes in diameter, height, average hydraulic residence time (HRT), and percentage of volume occupied by sludge blanket of model UASB. Outputs volume, required average flow rate, and the number of people served per reactor for both mixed wastewater and blackwater (pure toilet water)
+    >>> from aide_design.play import*
+    >>> UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
+    [<Quantity(1401.1199563135376, 'liter')>, <Quantity(0.06810999787635252, 'liter / second')>, 22, 113]
+    """
+    WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
+    WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
+    vol_reactor = (diam/2)**2 * math.pi * height
+    vol_reactor_sludge = vol_reactor * sludge_percent #Calculate total volume of reactor containing sludge blanket, used in HRT calculation
+    flow = vol_reactor_sludge / HRT #Average flow rate through reactor given by volume and residence time
+    people_served = int(flow / WW_gen)       #People served per reactor
+    people_served_BW = int(flow / WW_gen_bw) #People served per reactor treating only blackwater
+    output = [vol_reactor.to(u.L), flow.to(u.L/u.s), people_served, people_served_BW]
+    return output
+
+doctest.testmod(verbose=True)
+
+Diameter = 3 * u.ft
+Height = 7 * u.ft
+HRT = 4 * u.hr
+Percentage_sludge = 0.7 #Assume 70% of reactor is sludge
+UASB_design = UASB_Size(Diameter, Height, HRT, Percentage_sludge)
+print(UASB_design)
+
+def bucket_filltime(flowrate_avg, dump_vol):
+  """Takes in average flow rate into tipping bucket and the fill volume before one dump and calculates the average time it takes the bucket to fill and dump.
+  >>> from aide_design.play import*
+  >>> bucket_filltime(0.068 * (u.L/u.s), 16.26 * u.L)
+  [<Quantity(239.1, 'second')>]
+  """
+  filltime = dump_vol / flowrate_avg
+  return filltime.to(u.s)
+
+doctest.testmod(verbose=True)
+
+bucket_dump_vol = 23 * u.cm * pc.area_circle(30*u.cm)
+print(bucket_dump_vol.to(u.L))
+filltime = bucket_filltime(0.068 * u.L/u.s, bucket_dump_vol)
+print(filltime.to(u.s))
+
+
+
+def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, temp, pipe_rough):
+  """Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.  Assumes use of schedule 40 pipes.
+
+
+  """
+  pipe_ID = pipe.ID_sch40(nom_diam)   # Calculates pipe inner diameter from nominal diameter
+  pipe_flow = target_exitvel * pc.area_circle(pipe_ID) #find flowrate based on exit velocity
+  Nu = pc.viscosity_kinematic(temp)
+  headloss = pc.headloss(pipe_flow, pipe_ID, pipe_length, Nu, pipe_rough, Kminor)
+  return headloss
+
+
+def head_gain_per_dump(dump_vol, nom_diam, pipe_height, tank_width, tank_length):
+  """Determines gain in hydraulic head per dump of tipping bucket based on geometry of influent system.  Assumes all water is added first to pipes, then additional volume fills the entrance tank.  Pipe_height is total length of pipe above water level set by effluent line.  Assumes schedule 40 pipe.  For influent system with no standing water in pipes, set pipe height to 0.
+
+
+  """
+  pipe_ID = pipe.ID_sch40(nom_diam)
+  pipe_vol = pc.area_circle(pipe_ID) * pipe_height
+  if pipe_vol.to_base_units >= dump_vol.to_base_units
+    headgain = dump_vol / pc.area_circle(pipe_ID)
+  else
+    tank_fill_vol = dump_vol - pipe_vol #volume filling influent tank after pipes are full
+    tank_headgain = tank_fill_vol / tank_width * tank_length #calculate headgain from tank fill volume
+    headgain = tank_headgain + pipe_height
+  return headgain
+
+def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
+  """Check velocity of water flowing through larger influent pipe.  Inputs are velocity through the smaller pipe (exit velocity calculated above), and diameter of each pipe.  This is used to confirm that flow is below 0.2 m/s for a piece of the influent, to allow air bubbles to escape.
+
+  """
+  large_pipe_vel = exit_vel * (small_pipe_diam ** 2) / (large_pipe_diam ** 2)
+  return large_pipe_vel
+
+def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
+  """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
+  """
+  avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
+  return avg_upflow_vel
+```
+
+### Potential Designs
+
+Design for the influent system has not been settled on yet, and there are a few options.
+
+#### Design 1: Side Influent Pipe Entry
+
+The main working design over the summer focused on having the influent pipes enter from the side of the reactor.  Figure X below shows this system.
+
+
+
+The table below lists the design parameters for the system, which are with the below code to ensure a working model.
+
+| Parameter                  | Value     |
+| -------------------------- | --------- |
+| UASB Diameter              | 3 ft      |
+| UASB Height                | 7 ft      |
+| Tipping Bucket Dump Volume | 16 Liters |
+| Target Exit velocity       | 1 m/s     |
+|                            |           |
+
+
+
+##### Hydraulic Calculations
+Assumes you have defined all above hydraulic calculations
+```python
+
+a = 23 * u.cm * math.pi * (15 * u.cm)**2
+print(a.to(u.L))
+
+UASB_design_1 = UASB_Size(3*u.ft, 7*u.ft, 4*u.hr, 0.7) #Calculate Dimensions
+headloss_design1 = calculate_head(1*u.m/u.s, 3*u.inch, 8*u.ft, 4, 23*u.degC, 0.0015*u.mm)
+print(headloss_design1.to(u.cm))
+
+
+
+
+
+
+
+
+```
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant%20(1).jpg">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
+
+
+#### Design Two: Top Influent Pipe Entry
+
+
+
+
+
 
 ### Flow Control Tests
 
@@ -126,18 +349,65 @@ Given that there has not been a design of a UASB on this scale, the scientific l
 
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.  
 
-The model UASB was created with
-
+The first UASB was modeled using a simple plastic beaker.
 The model sludge blanket was created with
 
+<<<<<<< HEAD
 To replicate the dumping of the tipping bucket, we use the same code to determine the volume of each dump needed to get our same tip
+=======
+```python
+>>>>>>> 2dee251d7f7a01fa8bcbb1ae897f947e9b67bde0
 
 
 
+from aide_design import*
+def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
+  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
+  """
+  inner_area = pc.area_circle(pipe_innerdiam)
+  pump_Q = exit_vel_target * inner_area * num_pipes
+  return pump_Q
+
+def dump_percentage_bucket(dump_volume, UASB_volume):
+  """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
 
 
-### Influent System Geometry
+  """
+  bucket_percent = (dump_volume / UASB_volume) * 100
+  return bucket_percent
 
+def dump_percentage_pump(pump_flowrate, pump_flowtime):
+  """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
+
+
+  """
+  pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
+  return pump_percent.
+
+def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
+    """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
+    """
+    avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
+    return avg_upflow_vel
+
+def find_upflow():
+  """Finds average upflow velocity created by one dump of tipping bucket.  Inputs flowrate and area of reactor.  Does not account for headloss within the reactor.
+
+
+  """
+
+  return
+
+#Run for target exit velocities
+#Current setup ID is .229 in (3/8 nom diam)
+
+flowrate1mps = find_pump_exitv(2 * u.m/u.s, .229 * u.inch, 1)
+print(flowrate1mps.to(u.ml/u.s))
+
+
+
+```
+Tapioca that had been soaked in water for 1.5 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump.
 
 
 ## Biogas Capture
