@@ -24,7 +24,8 @@ The disadvantages include:
 * Most prefabricated tanks are made of High Density Polyethylene (HDPE) rather than PVC.  Will require additional costs for welding rod and other materials.
 
 
-*Table 1: Basic Reactor Design Parameters*
+<p align="center"> Table 1: Basic Reactor Design Parameters</p>
+
 | Parameter | Value | Constraint                                                                            |
 | --------- | ----- | ------------------------------------------------------------------------------------- |
 | Height    | ~7ft  | Max height to still fit within lab space.  Could change based on fabrication location |
@@ -129,6 +130,9 @@ The model UASB was created with
 
 The model sludge blanket was created with
 
+To replicate the dumping of the tipping bucket, we use the same code to determine the volume of each dump needed to get our same tip
+
+
 
 
 
@@ -190,7 +194,7 @@ Since biogas contains other gases such as CO2, we must employ a correction facto
 It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will produce flammable gas.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
 #### Design Parameters
-*Table 2: Design parameters for biogas production.*
+<center>Table 2: Design parameters for biogas production.</center>
 
 |                        Parameters                        |                 Value                 |                                              Basis of Design                                              |
 |:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
@@ -249,7 +253,7 @@ print(Q_Biogas.to(u.L/u.day))
 
 An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with their pros and cons are detailed in the table below.
 
-*Table 3: Comparison between different types of biogas capture systems*
+<center>Table 3: Comparison between different types of biogas capture systems </center>
 
 | Type of Storage | Advantages | Disadvantages |
 |:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
