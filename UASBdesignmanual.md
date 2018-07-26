@@ -10,8 +10,7 @@ This document serves to detail the entire design process of the UASB system.  Wh
 
 ## Reactor Tank
 
-Initial design of the UASB models the 1 L/s plant closely, and thus assumed the use of a 3' diameter PVC pipe for the base of the tank, as the design required a bend in the pipe for the plate settlers.  Since the UASB system requires no bends and is completely vertical, it was proposed to use a prefabricated plastic tank instead.  
-
+Initial design of the UASB models the [AguaClara 1 L/s plant](https://github.com/AguaClara/1-LPS) closely, and thus assumed the use of a 3 foot diameter PVC pipe for the base of the tank.  This design decision was made since the 1 L/s plant  as the design required a bend in the pipe for the plate settlers.  Since the UASB system is completely cylindrical, it was proposed to instead use a prefabricated cylindrical water storage tank instead.
 The advantages of the prefabricated tank are:
 * Lower overall costs
 * Easier fabrication of bottom and top of tank (since the tank is already sealed)
@@ -19,13 +18,12 @@ The advantages of the prefabricated tank are:
 * Possible prefabrication of inlet and outlet system
 
 The disadvantages include:
-* Tanks are harder to source outside of the US and might require shipping in. However, we found manufacturers in Honduras so this should not be a huge concern.
-* Since tanks are prefabricated with lids, it becomes challenging to attach pieces inside the tank. While using a PVC pipe would provide better access to the interior of the tank, our goal is to avoid any modifications within the reactor altogether.
+* Tanks are harder to source outside of the US and might require shipping in. However, HDPE tanks are made in Honduras, reducing this concern
+* Since tanks are prefabricated with lids, it becomes challenging to build systems inside the tank. While using a PVC pipe would provide better access to the interior of the tank, our goal is to avoid any modifications within the reactor altogether.
 * Most prefabricated tanks are made of High Density Polyethylene (HDPE) rather than PVC.  Will require additional costs for welding rod and other materials.
 
 
-<p align="center"> Table 1: Basic Reactor Design Parameters</p>
-
+*Table 1: Basic Reactor Design Parameters*
 | Parameter | Value | Constraint                                                                            |
 | --------- | ----- | ------------------------------------------------------------------------------------- |
 | Height    | ~7ft  | Max height to still fit within lab space.  Could change based on fabrication location |
@@ -37,7 +35,6 @@ The current plan is to purchase an HDPE tank similar to [this](https://www.plast
 
 
 ### Size and Dimensions
-
 
 #### Calculations
 ```python
@@ -103,10 +100,12 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed into the brackets.
 
+**(Insert design drawing here)**
+
 * **Pros**: Easily adjustable system allows for testing multiple pivot locations
 * **Cons**: Challenging fabrication, requires extra parts
 
-The team first decided to go with option 3 due to the modularity it provided.  However upon further discussion during fabrication, the team decided to fabricate a system using 80-20 bars that would be simpler to make and provide more modularity.
+The team first decided to go with option 3 due to the modularity it provided.  However upon further discussion during fabrication, the team decided to fabricate a frame using aluminum 80-20 bars to provide further modularity and ease fabrication.
 
 ### Experimental Frame Design
 
@@ -117,23 +116,6 @@ The frame is made up of four bars that form a rectangle around the circumference
 Originally, when the height of the pivots was lowered, the vertical bars would extend further than the base of the bucket (as seen in Figure X below). This added a slight counterweight that affected the tipping of the bucket, and so the vertical bars were cut to fit the different heights of the pivot. (The weight of the bracket itself could not be eliminated.)
 
 In Figure X below, there are brackets on the vertical bars that support the bottom of the bucket. These were eliminated when the affect of the bottom bar as a counterweight was discovered.
-
-<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
-<p>
-<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
-</p>
-</center>
-
-
-
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png">
-<p>
-<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
-</p>
-</center>
-
-
-![Side Influent Entry System](/Images/Influent Geo Slant.png)
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
 <p>
@@ -153,16 +135,28 @@ The pivots themselves are mounted on two rectangular brackets with some room to 
 </center>
 
 *Table Z: Tipping Bucket Trial Results*
-| Trial | Horizontal Pivot Position (from center) | Vertical Position (center of pivot to base of bucket)  | Height Filled (cm)| Volume Filled (L)| Emptied Completely|
+| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (center of pivot to base of bucket) (cm)  | Height Filled (cm)| Volume Filled (L)| Emptied Completely|
 | -------- | ----------------|--------------- | --------- | ---------| -------|
 | 1    | 0.25  | 16.5 | 21 | 14.8 | yes |
-| 2 | 0.5 | 16.5| 22 |  | yes|
-|3   | 0.5  | 19.3  |   |  | no|
-|4   | 0.5  | 18.5  |   |   | no |
-|5   | 0.75  |  18.5 |  22 |   | yes |
-| 6  |   0.75|   15.5|  22 |   | yes  |
-|7   |  0.5 |  15.5 | 23  |   | yes |
+| 2 | 0.5 | 16.5| 22 | 15.56 | yes|
+|3   | 0.5  | 19.3  |  x | x | no|
+|4   | 0.5  | 18.5  |  x |  x | no |
+|5   | 0.75  |  18.5 |  22 | 15.56  | yes |
+| 6  |   0.75|   15.5|  22 | 15.56  | yes  |
+|7   |  0.5 |  15.5 | 23  | 16.26  | yes |
 
+The calculation for the volume in Liters filled of the bucket is shown below.
+```python
+from aide_design.play import*
+
+bucket_height = 23 * u.cm
+bucket_diam = 30* u.cm
+area = pc.area_circle(bucket_diam)
+vol = area * bucket_height
+print(vol.to(u.L))
+
+```
+Trial 7 of the tipping bucket yielded the more successful results in that the bucket filled the most, while still emptying out all the way. Trials where the bucket did not empty completely were voided because water left in the bucket would cause a build-up of organic matter. Further testing will need to be done once a final design has been decided.
 
 #### Hydraulic Parameters
 
@@ -349,14 +343,15 @@ Given that there has not been a design of a UASB on this scale, the scientific l
 
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.  
 
-The first UASB was modeled using a simple plastic beaker.
-The model sludge blanket was created with
+The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
-<<<<<<< HEAD
-To replicate the dumping of the tipping bucket, we use the same code to determine the volume of each dump needed to get our same tip
-=======
+**(Insert Pic of Tapioca Test Setup)**
+
+Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
+
+
+
 ```python
->>>>>>> 2dee251d7f7a01fa8bcbb1ae897f947e9b67bde0
 
 
 
@@ -407,7 +402,6 @@ print(flowrate1mps.to(u.ml/u.s))
 
 
 ```
-Tapioca that had been soaked in water for 1.5 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump.
 
 
 ## Biogas Capture
@@ -464,7 +458,7 @@ Since biogas contains other gases such as CO2, we must employ a correction facto
 It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogensis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will produce flammable gas.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
 
 #### Design Parameters
-<center>Table 2: Design parameters for biogas production.</center>
+*Table 2: Design parameters for biogas production.*
 
 |                        Parameters                        |                 Value                 |                                              Basis of Design                                              |
 |:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
@@ -523,7 +517,7 @@ print(Q_Biogas.to(u.L/u.day))
 
 An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with their pros and cons are detailed in the table below.
 
-<center>Table 3: Comparison between different types of biogas capture systems </center>
+*Table 3: Comparison between different types of biogas capture systems*
 
 | Type of Storage | Advantages | Disadvantages |
 |:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
