@@ -4,6 +4,8 @@
 
 #### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
+
+### Abstract
 Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.
 
 Over the summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.
@@ -93,7 +95,12 @@ Given these parameters, the team started to design the tipping bucket system.  D
 
 **_Juan's comments:_** (RESOLVED-AG)"Given these parameters, the team began *planning the design of the tipping bucket system*" I don't think "plan on" is the best way to say that.
 
-![Timmy_the_Tipping_Bucket](https://github.com/AguaClara/UASB/blob/master/Images/IMG_5759.jpg)
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_5759.jpg">
+<p>
+<em>Timmy the Tipping Bucket</em>
+</p>
+</center>
+
 
 **_Juan's comments:_** This picture (which only shows up online, not in markdown preview) should be cleaned up a bit. It can be cropped a bit, and the background would be clear (as it can be in the lab) instead of cardboard.
 
