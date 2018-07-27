@@ -26,7 +26,9 @@ In Spring 2018, when design of the influent system began, the team began by assu
 
 #### Tipping Bucket versus Siphon System
 
-The summer team researched siphons and discussed with Monroe potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
+The summer team researched siphons and discussed with the AguaClara program director, Monroe, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.
+
+Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
 
 **_Juan's comments:_** (XD RESOLVED-AG)Using 'M-dawg' is extremely inappropriate.
 
@@ -96,20 +98,12 @@ Given these parameters, the team started to design the tipping bucket system.  D
 
 **_Juan's comments:_** (RESOLVED-AG)"Given these parameters, the team began *planning the design of the tipping bucket system*" I don't think "plan on" is the best way to say that.
 
-<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Labeled.png">
-<p>
-<em>Cylindrical "roller pivots" mounted on rectangular brackets</em>
-</p>
-</center>
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/IMG_5759%20copy.png">
 <p>
 <em>Figure 1: Timmy the Tipping Bucket</em>
 </p>
 </center>
-
-
-
 
 **_Juan's comments:_** (AG - I tried everything I could to fix it but it still doesn't show up in Markdown preview. It appears fine on GitHub though.) This picture (which only shows up online, not in markdown preview) should be cleaned up a bit. It can be cropped a bit, and the background would be clear (as it can be in the lab) instead of cardboard.
 
@@ -159,7 +153,7 @@ Another crucial part of the design  is the influent tank.  This tank will captur
 The crucial design aspects of the tank are listed below:
 
 * The tank **must be tall enough** to completely contain the tipping bucket, and prevent any "splashing" of wastewater out of the tank
-* The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for longer pivot bars, and reduce the structural strength of the bucket (since deflection of the  is proportional to some  length)
+* The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for longer pivot bars, and reduce the structural strength of the bucket (since deflection of the rod is proportional to some power of length)
 
 **_Ananya's comments:_** Is pivot bar the right technical term to use here? Aren't the rods more like rollers that also clamp the bucket? Note to self: Find the technically accurate descriptor here.
 
@@ -307,7 +301,7 @@ print(Max_vel)
 
 ### Biogas Capture System
 
-The team has begun preliminary discussions with Monroe regarding the Biogas Capture system, and will be having
+The team has begun preliminary discussions with Monroe regarding the Biogas Capture system.
 
 ## Fabrication manual
 
