@@ -316,7 +316,9 @@ print(Max_vel)
 
 Our second potential design has the influent tank directly on top of the UASB system, and the influent pipes coming straight down into the reactor.  This reduces fabrication challenges and prevents any problems with particles settling or clogging in the pipes, but requires careful design as the entrance tank is far above the resting water level.  Since the pipes will go straight through the biogas lid, this will also require the welds around the influent pipes to be gas tight.  
 
-**Design Parameters**
+**ADD IMAGE**
+
+**Design Parameters** - unfilled parameters still need to be calculated
 | Parameter                    | Value         | Notes                                                             |
 | ---------------------------- | ------------- | ----------------------------------------------------------------- |
 | UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
@@ -327,10 +329,16 @@ Our second potential design has the influent tank directly on top of the UASB sy
 | Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
 | Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
 | Small Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
-| Total Pipe Length            | 7 feet       | Roughly UASB Height                               |
-| Number of Influent Pipes     | 1             | Used to increase influence area and prevent clogs                                                                  |
+| Total Pipe Length            | 7 feet        | Roughly UASB Height                                               |
+| Number of Influent Pipes     |               | Determined from hydraulic calculations                            |
 
 
+**Hydraulic Calculations**
+```python
+
+
+
+```
 
 ### Testing the Tipping Bucket
 #### Tapioca Tests
@@ -339,6 +347,8 @@ To attempt to model and understand flow patterns within the UASB system, the tea
 Testing has begun with one influent pipe and eventually will be done with two influent pipes as well. If one influent pipe is sufficient to fluidize the sludge blanket, fabrication of the UASB would become a lot easier. However, the code would need to be updated to accommodate this change, and scaling up to larger reactors in the future would be more difficult.
 
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
+
+Most observations for this test were made qualitatively, and the system was also raised up so that a cell phone camera could be used to record flow patterns from the bottom of the system.  
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Tapioca%20Test.JPG?raw=true">
 <p>
@@ -359,15 +369,19 @@ def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
   pump_Q = exit_vel_target * inner_area * num_pipes
   return pump_Q
 
-def dump_percentage_bucket(dump_volume, UASB_volume):
-  """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
+def bucket_dump_calcs(dump_volume, UASB_height, UASB_diameter):
+  """Solves for the height of water added to the bottom of the reactor and the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
 
 
   """
+  Cross_area = pc.area_circle(UASB_diameter) #cross sectional area of c
+  UASB_volume = UASB_height * pc.area_circle(UASB_diameter)
+  height_added = dump_volume /
+
   bucket_percent = (dump_volume / UASB_volume) * 100
   return bucket_percent
 
-def dump_percentage_pump(pump_flowrate, pump_flowtime):
+def pump_dump_calcs(pump_flowrate, pump_flowtime, UASB_height, UASB_diameter):
   """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
 
 
