@@ -6,11 +6,11 @@
 
 
 ### Abstract
-Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.
+Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB.
 
 Over the summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.
 
-**_Juan's comments:_** (RESOLVED-AG) You give very little background as to what's going on, and this section does not have a title. I believe this is an 'abstract'
+**_Juan's comments: (RESOLVED-AG) You give very little background as to what's going on, and this section does not have a title. I believe this is an 'abstract'_**
 
 
 ## Influent Flow System
@@ -28,11 +28,11 @@ During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Tre
 
 #### Tipping Bucket versus Siphon System
 
-The summer team researched siphons and discussed with the AguaClara program director, Monroe, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.
+The summer team researched siphons and discussed with the AguaClara program director, Dr. Monroe Weber-Shirk, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.
 
 Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
 
-**_Juan's comments:_** (XD RESOLVED-AG) Using 'M-dawg' is extremely inappropriate.
+**_Juan's comments: (XD RESOLVED-AG) Using 'M-dawg' is extremely inappropriate._**
 
 #### Hydraulic Parameters
 
@@ -54,15 +54,15 @@ Built within the design of the influent systems are a number of hydraulic constr
 | Bucket Dump Volume               | ~20 L           | No           | Constraints are: time to fill bucket and relative volume to reactor capacity. A large dump volume allows more time for the bucket to fill, slowing down wear and tear. But the dump volume should also be a relatively small fraction of the total reactor volume. 20 L chosen as it is the volume of easily available buckets while fulfilling these constraints |
 | Wastewater Generation per Person | 10.8 L/hr       | No           | Rule of Thumb from Monroe   |
 
-**_Juan's comments:_** (RESOLVED-AG) Under 'bucket dump volume,' your 'should be larger' and 'should be smaller' are not clear. Are you referring to the time or the volume?
+**_Juan's comments: (RESOLVED-AG) Under 'bucket dump volume,' your 'should be larger' and 'should be smaller' are not clear. Are you referring to the time or the volume?_**
 
-From these constraints, the general headloss equation (including the headloss trick) for a circular pipe can be used to determine the headloss needed to achieve our desired exit velocity, given a specific diameter of pipe.  
+From these constraints, the general headloss equation (including the headloss trick) for a circular pipe can be used to determine the headloss needed to achieve the desired exit velocity, given a specific diameter of pipe.  
 
 #### Design of Tipping Bucket system
 
 Given these parameters, the team started to design the tipping bucket system.  Design began by looking into tipping bucket systems online; however, since tipping buckets are generally only used in water parks, it was difficult to find any detailed design processes for these systems. At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
 
-**_Juan's comments:_** (RESOLVED-AG)"Given these parameters, the team began *planning the design of the tipping bucket system*" I don't think "plan on" is the best way to say that.
+**_Juan's comments: (RESOLVED-AG)"Given these parameters, the team began *planning the design of the tipping bucket system*" I don't think "plan on" is the best way to say that._**
 
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/IMG_5759%20copy.png?raw=true">
@@ -71,7 +71,7 @@ Given these parameters, the team started to design the tipping bucket system.  D
 </p>
 </center>
 
-**_Juan's comments:_** (AG + IK - Fixed!) This picture (which only shows up online, not in markdown preview) should be cleaned up a bit. It can be cropped a bit, and the background would be clear (as it can be in the lab) instead of cardboard.
+**_Juan's comments: (AG + IK - Fixed!) This picture (which only shows up online, not in markdown preview) should be cleaned up a bit. It can be cropped a bit, and the background would be clear (as it can be in the lab) instead of cardboard._**
 
 Pictured above is the first design of the tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 extrusion bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
 
@@ -81,7 +81,7 @@ Pictured above is the first design of the tipping bucket system.  It was created
 
 After discussing the design more with Monroe, the team settled on a new design, pictured below:
 
-**_Juan's comments:_** (SORT OF RESOLVED - AG: I thought these labeled images might be more helpful to understand what's going on) This is cool but I have no idea what I'm looking at. Can you include one of those links online in fusion where we can spin things around and look inside? ![something like this one](https://myhub.autodesk360.com/ue28a131e/g/shares/SH7f1edQT22b515c761e7fb9f856bcad56c1) that Jonathan made of the 1 LPS plant.
+**_Juan's comments: (SORT OF RESOLVED - AG: I thought these labeled images might be more helpful to understand what's going on) This is cool but I have no idea what I'm looking at. Can you include one of those links online in fusion where we can spin things around and look inside? ![something like this one](https://myhub.autodesk360.com/ue28a131e/g/shares/SH7f1edQT22b515c761e7fb9f856bcad56c1) that Jonathan made of the 1 LPS plant._**
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Tipping_Bucket.png?raw=true">
 <p>
@@ -99,7 +99,7 @@ This bucket is created with a 5 gallon bucket (chosen as they are easy to purcha
 
 The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary, as important as pieces will inevitably break.
 
-This model became the teams the first design to model the tipping bucket function.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
+This model became the teams the first design of the tipping bucket function.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
 
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping_Bucket_Off_Centered_Pivots.png?raw=true">
@@ -263,28 +263,38 @@ def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
 
 There are two designs the team is considering for the influent system geometry.  Each is summarized below, and the design functions are utilized to check the important parameters for each system to allow the team to compare and contrast possible designs.
 
+#### Design 1: Side Entry
 
+Our first design for the system has the pipes enter from the side of the UASB, as pictured in the figure below.  This allows the influent tank to remain close to the water level, allowing water to build up in the tank with each dump.  However, a challenge of this design is supporting the influent tank, and it will need to be cleanly held in place on the side of the reactor.
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
+<p>
+<em>Figure X: Schematic of Influent System</em>
+</p>
+</center>
+
+**Design Parameters**
+| Parameter                    | Value         | Notes                                                             |
+| ---------------------------- | ------------- | ----------------------------------------------------------------- |
+| UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
+| UASB Diameter                | 3 ft          | Based on tank dimensions, unset                                   |
+| Dump Volume                  | 16 Liters     | Calculated during tipping bucket tests                            |
+| Minor Loss Coefficient       | 4             | Design includes two elbows (1.5 each) plus 1 from head loss trick |
+| Pipe Roughness               | 0.0015 mm     | Standard pipe roughness for PVC                                   |
+| Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
+| Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
+| Small Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
+| Total Pipe Length            | 10 feet       | Roughly UASB Height + UASB Diameter                               |
+| Number of Influent Pipes     | 2             | Used to increase influence area and prevent clogs                                                                  |
+
+
+**Hydraulic Code**
 ```python
-# Determines pipe diameter needed to achieve necessary hydraulic head
-# Input hydraulic head calculated in from headloss function and volume of dump
+# Requires tools are imported and functions were defined in above section
 
-def find_pipe_diam(headloss, dump_volume, tank_area, water_height):
-  pipe_filled = dump_volume - (tank_area * water_height) # amount of pipe filled with water in each dump
-  pipe_area = pipe_filled / headloss
-  diam = pc.diam_circle(pipe_area)
-  return diam
-  print(diam)
-# Run function for influent system dimensions
-dump_volume = 15 * u.L
-len = 60 * u.cm
-wid = 35 * u.cm
-tank_area = len * wid
-water_height = 2 * u.cm
-pipe_hl = total_hl - water_height  # headloss just within the pipe, total headloss minus the height of water within the tank
-target_diam = find_pipe_diam(pipe_hl, dump_volume, tank_area, water_height)
-print(target_diam.to(u.cm))
-# Determine nominal diameter for pipe based on inner diameters
-#NOM_diam = pipe.ND_SDR_available(target_diam, sch40)
+UASB_design = UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
+filltime = bucket_filltime(UASB_Size[1], 16 (* u.L))
+
 
 ```
 The team then ensured that the velocity within the pipe is below 0.2 m/s, given the pipe diameter, to allow air bubbles to escape.  
@@ -302,8 +312,28 @@ print(Max_vel)
 
 ```
 
-#### Testing the Tipping Bucket
-##### Tapioca Tests
+### Design 2: Top Entry
+
+Our second potential design has the influent tank directly on top of the UASB system, and the influent pipes coming straight down into the reactor.  This reduces fabrication challenges and prevents any problems with particles settling or clogging in the pipes, but requires careful design as the entrance tank is far above the resting water level.  Since the pipes will go straight through the biogas lid, this will also require the welds around the influent pipes to be gas tight.  
+
+**Design Parameters**
+| Parameter                    | Value         | Notes                                                             |
+| ---------------------------- | ------------- | ----------------------------------------------------------------- |
+| UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
+| UASB Diameter                | 3 ft          | Based on tank dimensions, unset                                   |
+| Dump Volume                  | 16 Liters     | Calculated during tipping bucket tests                            |
+| Minor Loss Coefficient       | 1             | Design includes two elbows (1.5 each) plus 1 from head loss trick |
+| Pipe Roughness               | 0.0015 mm     | Standard pipe roughness for PVC                                   |
+| Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
+| Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
+| Small Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
+| Total Pipe Length            | 7 feet       | Roughly UASB Height                               |
+| Number of Influent Pipes     | 1             | Used to increase influence area and prevent clogs                                                                  |
+
+
+
+### Testing the Tipping Bucket
+#### Tapioca Tests
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.
 
 Testing has begun with one influent pipe and eventually will be done with two influent pipes as well. If one influent pipe is sufficient to fluidize the sludge blanket, fabrication of the UASB would become a lot easier. However, the code would need to be updated to accommodate this change, and scaling up to larger reactors in the future would be more difficult.
