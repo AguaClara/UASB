@@ -19,9 +19,10 @@ One major design goal for the summer was to finish the influent system that deli
 
 **_Juan's comments:_** (AG - not a 100% sure I know what sort of image would be helpful here) I think a figure would be very useful here, as it is extremely difficult to understand what's going on without being able to image the reactor
 
+
 #### Continuous versus Pulse Flow
 
-In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly constant rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  
+When design of the influent system began in Spring 2018, the team assumed flow into the reactor would be continuous and at a roughly constant rate. (This is already a major assumption, as wastewater production will generally rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  
 
 During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were: A tipping bucket system or a siphon.  
 
@@ -56,42 +57,6 @@ Built within the design of the influent systems are a number of hydraulic constr
 **_Juan's comments:_** (RESOLVED-AG) Under 'bucket dump volume,' your 'should be larger' and 'should be smaller' are not clear. Are you referring to the time or the volume?
 
 From these constraints, the general headloss equation (including the headloss trick) for a circular pipe can be used to determine the headloss needed to achieve our desired exit velocity, given a specific diameter of pipe.  
-
-```python
-# Calculates headloss in influent system based on dimensions of reactor
-
-#
-
-# Import required functions
-from aide_design.play import*
-from UASB_size import*
-
-# Calculate size and flow dimensions
-height = 7 * u.ft
-diam = 3 * u.ft
-UASB_design = UASBSize(diam, height)
-vol = UASB_design[1]
-min_HRT = 4 * u.hr
-Q_avg = vol / min_HRT
-print(Q_avg.to(u.L/u.s))
-
-#Determine pipe inner diameter based on nominal diameter
-
-nom_diam = 2.5  * u.inch
-pipe_diam = pipe.ID_sch40(nom_diam)
-print(pipe_diam.to(u.mm))
-
-# Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
-exit_vel = 1 * u.m / u.s
-pipe_flow = exit_vel * pc.area_circle(pipe_diam)
-pipe_length = (diam / 2) + height
-Kminor = 4 #(1.5 * 2) from elbow joints in influent systems, plus 1 from headloss trick (assuming all flow out is lost kinetic energy) = 4
-Temp = 23 * u.degC #average temp in Honduras
-Nu = pc.viscosity_kinematic(Temp)
-Pipe_Rough = 0.0015 * u.mm
-total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
-print(total_hl.to(u.cm))
- ```
 
 #### Design of Tipping Bucket system
 
@@ -219,6 +184,14 @@ The addition of the cylindrical pipe segments serves two purposes:
 1. The flow is split into two influent pipes almost equally.
 2. Since the diameter of the cylinder segments is larger than that of the influent pipe, the descending sewage velocity in it will be lower. This allows air bubbles to escape from the wastewater which is desirable.
 
+The code below solves for the head gain for this system including the pipes.
+
+```python
+
+
+
+```
+
 **_Juan's comments:_** (RESOLVED - AG) This image helps a bit but I still don't quite understand how this helps your problem. I think a bit more explanation is required. The idea is to have a future team member read through this all and understand your logic, else they will not be able to understand the design.
 
 #### Code
@@ -318,7 +291,7 @@ print(Max_vel)
 ##### Tapioca Tests
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.
 
-Tests began with one influent pipe to see if only the one pipe could suffice. If so, then fabrication will become a lot easier. However, a good chunk of our code would need to be updated to accommodate this change.
+Testing has begun with one influent pipe and eventually will be done with two influent pipes as well. If one influent pipe is sufficient to fluidize the sludge blanket, fabrication of the UASB would become a lot easier. However, the code would need to be updated to accommodate this change, and scaling up to larger reactors in the future would be more difficult.
 
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
@@ -328,9 +301,60 @@ The first UASB was modeled using a simple plastic beaker. Tapioca that had been 
 </p>
 </center>
 
+The tests that have been performed were done at a low flow rate of 6.33 mL/s, which translates to an exit velocity of 0.2 m/s. So far, the dyed water appeared to spread out along the bottom of the beaker, rather than puncturing the tapioca blanket. Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
-Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
+Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse. Below the functions is the specific calculation used to determine the exit velocity
 
+```python
+from aide_design.play import*
+def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
+  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
+  """
+  inner_area = pc.area_circle(pipe_innerdiam)
+  pump_Q = exit_vel_target * inner_area * num_pipes
+  return pump_Q
+
+def dump_percentage_bucket(dump_volume, UASB_volume):
+  """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
+
+
+  """
+  bucket_percent = (dump_volume / UASB_volume) * 100
+  return bucket_percent
+
+def dump_percentage_pump(pump_flowrate, pump_flowtime):
+  """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
+
+
+  """
+  pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
+  return pump_percent.
+
+def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
+    """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
+    """
+    avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
+    return avg_upflow_vel
+
+#Run for target exit velocities
+#Current setup ID is 1/4 inch (3/8 nom diam) and 1/8 inch (1/4 in nom diam)
+
+flowrate1mps = find_pump_exitv(0.3 * u.m/u.s, .25 * u.inch, 1)
+print(flowrate1mps.to(u.ml/u.s))
+
+vol_dump = 24 * u.ml
+area = pc.area_circle(11*u.cm)
+height = vol_dump / area
+print((height.to(u.cm)))
+
+
+v = (6.33 * u.ml/u.s) / ((math.pi)*(.125 * u.inch)**2)
+print(v.to(u.m/u.s))
+
+v2 = find_pump_exitv(.2 * u.m/u.s, .25 * u.inch, 1)
+print(v2.to(u.ml/u.s))
+
+```
 
 ### Biogas Capture System
 
