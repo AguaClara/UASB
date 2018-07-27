@@ -4,6 +4,8 @@
 
 #### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
+
+### Abstract
 Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. This document serves as a master guide for the design process.
 
 Over the summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.
@@ -15,17 +17,22 @@ Over the summer of 2018, the UASB team's main goal has been to finish a complete
 
 One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor.
 
-**_Juan's comments:_** I think a figure would be very useful here, as it is extremely difficult to understand what's going on without being able to image the reactor
+**_Juan's comments:_** (AG - not a 100% sure I know what sort of image would be helpful here) I think a figure would be very useful here, as it is extremely difficult to understand what's going on without being able to image the reactor
+
 
 #### Continuous versus Pulse Flow
 
-In Spring 2018, when design of the influent system began, the team began by assuming flow into the reactor would be continuous and at a roughly constant rate. (This is already a major assumption, as wastewater production will rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were: A tipping bucket system or a siphon.  
+When design of the influent system began in Spring 2018, the team assumed flow into the reactor would be continuous and at a roughly constant rate. (This is already a major assumption, as wastewater production will generally rise in the day and lower at night.)  However, doing the initial calculations, this would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  
+
+During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were: A tipping bucket system or a siphon.  
 
 #### Tipping Bucket versus Siphon System
 
-The summer team researched siphons and discussed with Monroe potential design flaws, specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume. Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
+The summer team researched siphons and discussed with the AguaClara program director, Monroe, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.
 
-**_Juan's comments:_** (XD RESOLVED-AG)Using 'M-dawg' is extremely inappropriate.
+Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this, and given that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
+
+**_Juan's comments:_** (XD RESOLVED-AG) Using 'M-dawg' is extremely inappropriate.
 
 #### Hydraulic Parameters
 
@@ -42,7 +49,7 @@ Built within the design of the influent systems are a number of hydraulic constr
 | Average Flow Rate                | $\leq$ 0.08 L/s | Yes, Maximum | Q = Volume / Hydraulic Residence Time                                                                                                                                                                        |
 | Minimum Exit Velocity            | $\geq$ 0.03 m/s | Yes          | Minimum velocity needed to scour settling particles                                                                                                                                                          |
 | Maximum Exit Velocity            | $\leq$ 1 m/s    | No           | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined.                                                                                                       |
-| Influent Pipe Inner Diameter     | 75 - 100mm      | No           | Based on literature values to prevent clogging in pipes.  Some flexibility.                                                                                                                                  |
+| Influent Pipe Inner Diameter     | 75 - 100 mm      | No           | Based on literature values to prevent clogging in pipes.  Some flexibility.                                                                                                                                  |
 | Influent Pipe Length             | ~8.5 feet       | Yes          | Roughly equal to height of reactor plus half of diameter (see influent pipe geometry)                                                                                                                        |
 | Bucket Dump Volume               | ~20 L           | No           | Constraints are: time to fill bucket and relative volume to reactor capacity. A large dump volume allows more time for the bucket to fill, slowing down wear and tear. But the dump volume should also be a relatively small fraction of the total reactor volume. 20 L chosen as it is the volume of easily available buckets while fulfilling these constraints |
 | Wastewater Generation per Person | 10.8 L/hr       | No           | Rule of Thumb from Monroe   |
@@ -51,51 +58,20 @@ Built within the design of the influent systems are a number of hydraulic constr
 
 From these constraints, the general headloss equation (including the headloss trick) for a circular pipe can be used to determine the headloss needed to achieve our desired exit velocity, given a specific diameter of pipe.  
 
-```python
-# Calculates headloss in influent system based on dimensions of reactor
-
-#
-
-# Import required functions
-from aide_design.play import*
-from UASB_size import*
-
-# Calculate size and flow dimensions
-height = 7 * u.ft
-diam = 3 * u.ft
-UASB_design = UASBSize(diam, height)
-vol = UASB_design[1]
-min_HRT = 4 * u.hr
-Q_avg = vol / min_HRT
-print(Q_avg.to(u.L/u.s))
-
-#Determine pipe inner diameter based on nominal diameter
-
-nom_diam = 2.5  * u.inch
-pipe_diam = pipe.ID_sch40(nom_diam)
-print(pipe_diam.to(u.mm))
-
-# Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
-exit_vel = 1 * u.m / u.s
-pipe_flow = exit_vel * pc.area_circle(pipe_diam)
-pipe_length = (diam / 2) + height
-Kminor = 4 #(1.5 * 2) from elbow joints in influent systems, plus 1 from headloss trick (assuming all flow out is lost kinetic energy) = 4
-Temp = 23 * u.degC #average temp in Honduras
-Nu = pc.viscosity_kinematic(Temp)
-Pipe_Rough = 0.0015 * u.mm
-total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
-print(total_hl.to(u.cm))
- ```
-
 #### Design of Tipping Bucket system
 
-Given these parameters, the team started to design the tipping bucket system.  Design began by looking into tipping bucket systems online to research their design; however, since tipping buckets are generally only used in water parks, it was difficult to find any detailed design process for these systems. At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
+Given these parameters, the team started to design the tipping bucket system.  Design began by looking into tipping bucket systems online; however, since tipping buckets are generally only used in water parks, it was difficult to find any detailed design processes for these systems. At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
 
 **_Juan's comments:_** (RESOLVED-AG)"Given these parameters, the team began *planning the design of the tipping bucket system*" I don't think "plan on" is the best way to say that.
 
-![Timmy_the_Tipping_Bucket](https://github.com/AguaClara/UASB/blob/master/Images/IMG_5759.jpg)
 
-**_Juan's comments:_** This picture (which only shows up online, not in markdown preview) should be cleaned up a bit. It can be cropped a bit, and the background would be clear (as it can be in the lab) instead of cardboard.
+<center><img src="https://github.com/AguaClara/UASB/blob/master/IMG_5759%20copy.png?raw=true">
+<p>
+<em>Figure 1: Timmy the Tipping Bucket</em>
+</p>
+</center>
+
+**_Juan's comments:_** (AG + IK - Fixed!) This picture (which only shows up online, not in markdown preview) should be cleaned up a bit. It can be cropped a bit, and the background would be clear (as it can be in the lab) instead of cardboard.
 
 Pictured above is the first design of the tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 extrusion bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
 
@@ -105,35 +81,46 @@ Pictured above is the first design of the tipping bucket system.  It was created
 
 After discussing the design more with Monroe, the team settled on a new design, pictured below:
 
-![Tipping Bucket Fusion Model](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202018-06-29%20at%201.33.27%20PM.png)
+**_Juan's comments:_** (SORT OF RESOLVED - AG: I thought these labeled images might be more helpful to understand what's going on) This is cool but I have no idea what I'm looking at. Can you include one of those links online in fusion where we can spin things around and look inside? ![something like this one](https://myhub.autodesk360.com/ue28a131e/g/shares/SH7f1edQT22b515c761e7fb9f856bcad56c1) that Jonathan made of the 1 LPS plant.
 
-**_Juan's comments:_** This is cool but I have no idea what I'm looking at. Can you include one of those links online in fusion where we can spin things around and look inside? ![something like this one](https://myhub.autodesk360.com/ue28a131e/g/shares/SH7f1edQT22b515c761e7fb9f856bcad56c1) that Jonathan made of the 1 LPS plant.
-
-**Add photo of fusion model of bucket**
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Tipping_Bucket.png?raw=true">
+<p>
+<em>Figure 2: Influent System with Tipping Bucket</em>
+</p>
+</center>
 
 This bucket is created with a 5 gallon bucket (chosen as they are easy to purchase) with two plastic rods on either side, attached through a hose clamp.  These circular pieces will rest in the brackets on either side of the entrance tank, where they can roll freely to allow the bucket to dump.  This greatly reduces friction and wear of mechanical parts.
 
-**Add photo of fusion model of brackets**
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_System_Brackets_Pivots.png?raw=true">
+<p>
+<em>Figure 3: Rectangular bracket with the "roller pivot"</em>
+</p>
+</center>
 
 The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary, as important as pieces will inevitably break.
 
 This model became the teams the first design to model the tipping bucket function.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
 
-**add diagram showing the off center pivot position**
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping_Bucket_Off_Centered_Pivots.png?raw=true">
+<p>
+<em>Figure 4: Top view of tipping bucket showing the off-centered pivots</em>
+</p>
+</center>
 
 After discussing this problem further, the team considered two possible options.  The first was to purchase a square bucket to use in the same manner.  The second was to create a frame for the bucket that would provide a straight pivot without hindering tipping.  Since materials were available, and it provided much more flexibility for testing, the team moved forward with the second option.
 
 The frame is pictured below, attached to the 5-gallon bucket used within the system.  1-inch by 1-inch aluminum 80-20 bars were used to create a modular base around the bucket that could be easily extended or compressed to fit the dimensions of the bucket snugly.  
 
-**Add photo of finished bucket frame**
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+<p>
+<em>Figure 5: Tipping bucket mounted on the aluminum frame for bench top testing</em>
+</p>
+</center>
 
 Two additional pieces were then added extending down from the 80-20 square to the bottom of the bucket.  These pieces extended 1 inch below the bucket, allowing an L-bracket to be attached below.  This was securely attached to the bottom of the bucket, locking it in place.  When testing the bucket, this could be easily moved downwards, and the L-bracket moved up to hold the bucket in place.
 
-**Add photo of attachment system**
-
 Finally, a double sided screw piece was added to the pivot rods to allow them to attach to the 80-20 extrusion bars.  This piece was added by facing the rods with a lathe, and drilling the pieces in.  All of the this was done with the help of the shop managers.  With these pieces in, the rods can be easily moved laterally along the bucket and then tightened
-
-#### Testing the Tipping Bucket
 
 #### Design of Influent Tank
 
@@ -142,16 +129,15 @@ Another crucial part of the design  is the influent tank.  This tank will captur
 The crucial design aspects of the tank are listed below:
 
 * The tank **must be tall enough** to completely contain the tipping bucket, and prevent any "splashing" of wastewater out of the tank
-* The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for longer pivot bars, and reduce the structural strength of the bucket (since deflection of the  is proportional to some  length)
-
-**_Ananya's comments:_** Is pivot bar the right technical term to use here? Aren't the rods more like rollers that also clamp the bucket? Note to self: Find the technically accurate descriptor here.
+* The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for longer roller pivots, and reduce the structural strength of the bucket (since deflection of a rod is proportional to some power of length)
 
 * The dimensions of the tank must be such that they **create the required amount of hydraulic head from one dump of the tipping bucket**.  
 This can be achieved by choosing the appropriate geometry at the bottom of the tank to ensure the required height increase of the water level per volume of dump.
 
 **_Juan's comments:_** (RESOLVED-AG) What do you mean adding or removing material? What kind of material are you adding or removing? How are you removing material from a tank?
 * The tank **must evenly split flow between the two pipes**.  This can be designed by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out. This is to provide enough volume within tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.
-**_Juan's comments:_**(RESOLVED-AG) Why? I believe this point should be combined with the next one.
+
+**_Juan's comments:_** (RESOLVED-AG) Why? I believe this point should be combined with the next one.
 * The tank should be **easy to source**, that is it can be purchased at the correct dimensions, or fabricated simply
 
 
@@ -163,7 +149,12 @@ Summarized in a table:
 |Width|35 cm |30 cm for bucket diameter plus 5 cm for both pivot pieces|
 |Length|$\geq$ 60 cm|Height of bucket plus extra space to allow free rotation.  Requires closer examination in fusion|
 
-![Schematic of Influent System](https://github.com/AguaClara/UASB/blob/ff3b4e844a16a686811ad80eee5941520a022939/Images/Influent%20Geo%20Slant.png)
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
+<p>
+<em>Figure 6: Schematic of Influent System</em>
+</p>
+</center>
+
 
 The team began by designing the tank as a simple, rectangular box.  However, given the constraints on the dimensions of the box, it was impossible to get the required hydraulic head gain from bucket, as summarized in the code below:
 
@@ -181,13 +172,27 @@ Next, the team considered adding more material into the bottom of the tank (addi
 
 **_Juan's comments:_** (RESOLVED-AG) Ah now your reference to adding material makes more sense. This explanation of adding material should be included before you talk about it in the bullet point above.
 
-After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would be kept rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.  These pipes would retain most of the volume dumped and provide the needed hydraulic head, while not altering the tank geometry.  A fusion model of this model is pictured below.
+After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.
 
-**Add fusion model of full influent system**
-The benefit of this design is that it is now actually possible to achieve
-**_Ananya's comments:_** Consult Ian and Isa and finish this section!
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Geometry.png?raw=true">
+<p>
+<em>Figure 7: Close up of the influent system showing the larger cylindrical pipe segments</em>
+</p>
+</center>
 
-**_Juan's comments:_** This image helps a bit but I still don't quite understand how this helps your problem. I think a bit more explanation is required. The idea is to have a future team member read through this all and understand your logic, else they will not be able to understand the design.
+The addition of the cylindrical pipe segments serves two purposes:
+1. The flow is split into two influent pipes almost equally.
+2. Since the diameter of the cylinder segments is larger than that of the influent pipe, the descending sewage velocity in it will be lower. This allows air bubbles to escape from the wastewater which is desirable.
+
+The code below solves for the head gain for this system including the pipes.
+
+```python
+
+
+
+```
+
+**_Juan's comments:_** (RESOLVED - AG) This image helps a bit but I still don't quite understand how this helps your problem. I think a bit more explanation is required. The idea is to have a future team member read through this all and understand your logic, else they will not be able to understand the design.
 
 #### Code
 
@@ -237,10 +242,11 @@ print(total_hl.to(u.cm))
 #print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
 ```
 
+The code above will give a value for the headloss. We can then calculate the dimensions of the influent tank, and of the two larger pipe segments underneath. These calculations are yet to be finalized.
 
-With this given headloss, the dimensions of the larger pipe that will intersect with the influent pipes can be solved for.  This pipe needs to fill to the required head with one dump, while still allowing a small volume of water occupy the entrance tank, allowing even flow distribution.
+It is necessary to have a small amount of standing water in the rectangular influent tank. This is to provide an interface with sufficient surface area for the air bubbles in the wastewater to escape. Air bubbles are highly undesirable in the influent wastewater since the UASB reactor is anaerobic.
 
-**_Juan's comments:_** I don't think intersect is the right word here. Remember, people who have no idea what you're doing right now will read this and be expected to understand everything perfectly. Make it easy for them!
+**_Juan's comments:_** (RESOLVED - AG) I don't think intersect is the right word here. Remember, people who have no idea what you're doing right now will read this and be expected to understand everything perfectly. Make it easy for them!
 
 
 ```python
@@ -281,10 +287,78 @@ print(Max_vel)
 
 ```
 
+#### Testing the Tipping Bucket
+##### Tapioca Tests
+To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.
+
+Testing has begun with one influent pipe and eventually will be done with two influent pipes as well. If one influent pipe is sufficient to fluidize the sludge blanket, fabrication of the UASB would become a lot easier. However, the code would need to be updated to accommodate this change, and scaling up to larger reactors in the future would be more difficult.
+
+The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Tapioca%20Test.JPG?raw=true">
+<p>
+<em>Figure 8: Set Up of the Tapioca Experiment Using One Influent Pipe</em>
+</p>
+</center>
+
+The tests that have been performed were done at a low flow rate of 6.33 mL/s, which translates to an exit velocity of 0.2 m/s. So far, the dyed water appeared to spread out along the bottom of the beaker, rather than puncturing the tapioca blanket. Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
+
+Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse. Below the functions is the specific calculation used to determine the exit velocity
+
+```python
+from aide_design.play import*
+def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
+  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
+  """
+  inner_area = pc.area_circle(pipe_innerdiam)
+  pump_Q = exit_vel_target * inner_area * num_pipes
+  return pump_Q
+
+def dump_percentage_bucket(dump_volume, UASB_volume):
+  """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
+
+
+  """
+  bucket_percent = (dump_volume / UASB_volume) * 100
+  return bucket_percent
+
+def dump_percentage_pump(pump_flowrate, pump_flowtime):
+  """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
+
+
+  """
+  pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
+  return pump_percent.
+
+def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
+    """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
+    """
+    avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
+    return avg_upflow_vel
+
+#Run for target exit velocities
+#Current setup ID is 1/4 inch (3/8 nom diam) and 1/8 inch (1/4 in nom diam)
+
+flowrate1mps = find_pump_exitv(0.3 * u.m/u.s, .25 * u.inch, 1)
+print(flowrate1mps.to(u.ml/u.s))
+
+vol_dump = 24 * u.ml
+area = pc.area_circle(11*u.cm)
+height = vol_dump / area
+print((height.to(u.cm)))
+
+
+v = (6.33 * u.ml/u.s) / ((math.pi)*(.125 * u.inch)**2)
+print(v.to(u.m/u.s))
+
+v2 = find_pump_exitv(.2 * u.m/u.s, .25 * u.inch, 1)
+print(v2.to(u.ml/u.s))
+
+```
 
 ### Biogas Capture System
 
-The team has begun preliminary discussions with Monroe regarding the Biogas Capture system, and will be having
+The team has begun preliminary discussions with Monroe regarding the Biogas Capture system. A meeting with Ed Gottlieb from the Ithaca wastewater plant has been scheduled to discuss integrating the UASB plant into the Ithaca wastewater plant, as well as to discuss biogas collection. Research to find biogas storage bags is ongoing.
 
 ## Fabrication manual
 
