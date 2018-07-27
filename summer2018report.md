@@ -99,7 +99,7 @@ Given these parameters, the team started to design the tipping bucket system.  D
 **_Juan's comments:_** (RESOLVED-AG)"Given these parameters, the team began *planning the design of the tipping bucket system*" I don't think "plan on" is the best way to say that.
 
 
-<center><img src="https://github.com/AguaClara/UASB/blob/master/IMG_5759%20copy.png">
+<center><img src="https://github.com/AguaClara/UASB/blob/master/IMG_5759%20copy.png?raw=true">
 <p>
 <em>Figure 1: Timmy the Tipping Bucket</em>
 </p>
