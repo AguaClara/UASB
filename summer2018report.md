@@ -13,11 +13,11 @@ Over the summer of 2018, the UASB team's main goal has been to finish a complete
 **_Juan's comments:_** (RESOLVED-AG) You give very little background as to what's going on, and this section does not have a title. I believe this is an 'abstract'
 
 
-### Influent Flow System
+## Influent Flow System
 
-One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor.
+One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor from a holding tank.
 
-**_Juan's comments:_** (AG - not a 100% sure I know what sort of image would be helpful here) I think a figure would be very useful here, as it is extremely difficult to understand what's going on without being able to image the reactor
+**_Juan's comments: (AG - not a 100% sure I know what sort of image would be helpful here) I think a figure would be very useful here, as it is extremely difficult to understand what's going on without being able to image the reactor_**
 
 
 #### Continuous versus Pulse Flow
@@ -124,7 +124,7 @@ Finally, a double sided screw piece was added to the pivot rods to allow them to
 
 #### Design of Influent Tank
 
-Another crucial part of the design  is the influent tank.  This tank will capture all wastewater from the tipping bucket, and distribute it evenly across both influent pipes from flow control.  To prevent any splashing of wastewater, this tipping bucket will be completely contained within the influent tank.
+Another crucial part of the design  is the influent tank.  This tank will capture all wastewater from the tipping bucket, and distribute it evenly across both influent pipes from flow control.  To prevent any splashing of wastewater, the tipping bucket will be completely contained within the influent tank.
 
 The crucial design aspects of the tank are listed below:
 
@@ -134,10 +134,12 @@ The crucial design aspects of the tank are listed below:
 * The dimensions of the tank must be such that they **create the required amount of hydraulic head from one dump of the tipping bucket**.  
 This can be achieved by choosing the appropriate geometry at the bottom of the tank to ensure the required height increase of the water level per volume of dump.
 
-**_Juan's comments:_** (RESOLVED-AG) What do you mean adding or removing material? What kind of material are you adding or removing? How are you removing material from a tank?
-* The tank **must evenly split flow between the two pipes**.  This can be designed by changing the geometry of the pipes based on where the water is dumped, but most importantly there should always be a small volume of water in the tank even when all the water from one dump has been drained out. This is to provide enough volume within tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.
+**_Juan's comments: (RESOLVED-AG) What do you mean adding or removing material? What kind of material are you adding or removing? How are you removing material from a tank?_**
 
-**_Juan's comments:_** (RESOLVED-AG) Why? I believe this point should be combined with the next one.
+* The tank **must evenly split flow between the two pipes**.  This can be designed by changing the geometry of the pipes based on where the water is dumped, but most importantly, there should always be a small volume of water in the tank even when all the water from one dump has been drained out. This is to provide enough volume within tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.
+
+**_Juan's comments: (RESOLVED-AG) Why? I believe this point should be combined with the next one._**
+
 * The tank should be **easy to source**, that is it can be purchased at the correct dimensions, or fabricated simply
 
 
@@ -170,7 +172,7 @@ print("One dump of the bucket gives", head_gain, "of hydraulic head")
 ```
 Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the entrance tank.
 
-**_Juan's comments:_** (RESOLVED-AG) Ah now your reference to adding material makes more sense. This explanation of adding material should be included before you talk about it in the bullet point above.
+**_Juan's comments:(RESOLVED-AG) Ah now your reference to adding material makes more sense. This explanation of adding material should be included before you talk about it in the bullet point above._**
 
 After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.
 
@@ -184,69 +186,82 @@ The addition of the cylindrical pipe segments serves two purposes:
 1. The flow is split into two influent pipes almost equally.
 2. Since the diameter of the cylinder segments is larger than that of the influent pipe, the descending sewage velocity in it will be lower. This allows air bubbles to escape from the wastewater which is desirable.
 
-The code below solves for the head gain for this system including the pipes.
+
+**_Juan's comments: (RESOLVED - AG) This image helps a bit but I still don't quite understand how this helps your problem. I think a bit more explanation is required. The idea is to have a future team member read through this all and understand your logic, else they will not be able to understand the design._**
+
+### Hydraulic Code
+
+The code below calculates the important parameters for the influent system.  The parameterized functions allow for each function to be utilized for differing designs to allow the team to compare and contrast designs simply.  The functions below must be defined and then can be utilized in the following section.
 
 ```python
-
-
-
-```
-
-**_Juan's comments:_** (RESOLVED - AG) This image helps a bit but I still don't quite understand how this helps your problem. I think a bit more explanation is required. The idea is to have a future team member read through this all and understand your logic, else they will not be able to understand the design.
-
-#### Code
-
-Given these input parameters, we can solve for the headloss necessary to achieve desired flow using the following code:
-
-```python
-# Calculates headloss in influent system based on dimensions of reactor
-
-# Define UASB size function for inputs into functions
-
-
-
-# Import required functions
+# Import tools
 from aide_design.play import*
+import doctest
 
-# Calculate size and flow dimensions
-height = 7 * u.ft
-diam = 3 * u.ft
-UASB_design = UASBSize(diam, height)
-vol = UASB_design[1]
-min_HRT = 4 * u.hr
-Q_avg = vol / min_HRT
-print(Q_avg.to(u.L/u.s))
+# Define functions
+def UASB_Size(diam, height, HRT, sludge_percent):
+    """Takes in diameter, height, average hydraulic residence time (HRT), and percentage of volume occupied by sludge blanket of model UASB. Outputs volume, required average flow rate, and the number of people served per reactor for both mixed wastewater and blackwater (pure toilet water)
+    >>> from aide_design.play import*
+    >>> UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
+    [<Quantity(1401.1199563135376, 'liter')>, <Quantity(0.06810999787635252, 'liter / second')>, 22, 113]
+    """
+    WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
+    WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
+    vol_reactor = (diam/2)**2 * math.pi * height
+    vol_reactor_sludge = vol_reactor * sludge_percent #Calculate total volume of reactor containing sludge blanket, used in HRT calculation
+    flow = vol_reactor_sludge / HRT #Average flow rate through reactor given by volume and residence time
+    people_served = int(flow / WW_gen)       #People served per reactor
+    people_served_BW = int(flow / WW_gen_bw) #People served per reactor treating only blackwater
+    output = [vol_reactor.to(u.L), flow.to(u.L/u.s), people_served, people_served_BW]
+    return output
 
-# Determine pipe inner diameter based on nominal diameter
-nom_diam = 2.5  * u.inch
-pipe_diam = pipe.ID_sch40(nom_diam)
-print(pipe_diam.to(u.mm))
+def bucket_filltime(flowrate_avg, dump_vol):
+    """Takes in average flow rate into tipping bucket and the fill volume before one dump and calculates the average time it takes the bucket to fill and dump.
+    >>> from aide_design.play import*
+    >>> bucket_filltime(0.068 * (u.L/u.s), 16.26 * u.L)
+    [<Quantity(239.1, 'second')>]
+    """
+    filltime = dump_vol / flowrate_avg
+    return filltime.to(u.s)
 
-# Calculate hydraulic head needed to achieve desired exit velocity, accounting for major and minor losses
-exit_vel = 1 * u.m / u.s #maximum exit velocity at the bottom of the system, variable
-pipe_flow = exit_vel * pc.area_circle(pipe_diam)
-pipe_length = (diam / 2) + height
-Kminor = 4 # 1 from headloss trick, plus 2 * 1.5 for the two full elbows in the influent system
-Temp = 23 * u.degC #average temp in Honduras
-Nu = pc.viscosity_kinematic(Temp)
+def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp, pipe_rough):
+  """Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.  Assumes use of schedule 40 pipes.
 
-Pipe_Rough = 0.0015 * u.mm
-total_hl = pc.headloss(pipe_flow, pipe_diam, pipe_length, Nu, Pipe_Rough, Kminor)
-print(total_hl.to(u.cm))
 
-# Calculate dimensions of storage tank
-# bucket_diam = 30 * u.cm
-#tank_width = 35 * u.cm # add 5 cm extra room
-#tank_len = (dump_vol) / (total_hl * tank_width)
+  """
+  pipe_ID = pipe.ID_sch40(nom_diam)   # Calculates pipe inner diameter from nominal diameter
+  pipe_flow = target_exitvel * pc.area_circle(pipe_ID) #find flowrate based on exit velocity
+  Nu = pc.viscosity_kinematic(Temp)
+  headloss = pc.headloss(pipe_flow, pipe_ID, pipe_length, Nu, Pipe_rough, Kminor)
+  return headloss
 
-#print("For a headloss of " ,total_hl, "\n  coming from an exit velocity of ", exit_vel,  "\n Tank length is ", tank_len.to(u.cm), "\n Tank width is ", tank_width, "\n Volume per pulse is ", dump_vol)
+def head_gain_per_dump(dump_vol, nom_diam, pipe_height, tank_width, tank_length):
+  """Determines gain in hydraulic head per dump of tipping bucket based on geometry of influent system.  Assumes all water is added first to pipes, then additional volume fills the entrance tank.  Pipe_height is total length of pipe above water level set by effluent line.  Assumes schedule 40 pipe.  For influent system with no standing water in pipes, set pipe height to 0.
+
+
+  """
+  pipe_ID = pipe.ID_sch40(nom_diam)
+  pipe_vol = pc.area_circle(pipe_ID) * pipe_height
+  if pipe_vol.to_base_units >= dump_vol.to_base_units:
+    headgain = dump_vol / pc.area_circle(pipe_ID)
+  else:
+    tank_fill_vol = dump_vol - pipe_vol #volume filling influent tank after pipes are full
+    tank_headgain = tank_fill_vol / tank_width * tank_length #calculate headgain from tank fill volume
+    headgain = tank_headgain + pipe_height
+  return headgain
+
+def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
+  """Check velocity of water flowing through larger influent pipe.  Inputs are velocity through the smaller pipe (exit velocity calculated above), and diameter of each pipe.  This is used to confirm that flow is below 0.2 m/s for a piece of the influent, to allow air bubbles to escape.
+
+  """
+  large_pipe_vel = exit_vel * (small_pipe_diam ** 2) / (large_pipe_diam ** 2)
+  return large_pipe_vel
+
 ```
 
-The code above will give a value for the headloss. We can then calculate the dimensions of the influent tank, and of the two larger pipe segments underneath. These calculations are yet to be finalized.
+### Influent System Geometry
 
-It is necessary to have a small amount of standing water in the rectangular influent tank. This is to provide an interface with sufficient surface area for the air bubbles in the wastewater to escape. Air bubbles are highly undesirable in the influent wastewater since the UASB reactor is anaerobic.
-
-**_Juan's comments:_** (RESOLVED - AG) I don't think intersect is the right word here. Remember, people who have no idea what you're doing right now will read this and be expected to understand everything perfectly. Make it easy for them!
+There are two designs the team is considering for the influent system geometry.  Each is summarized below, and the design functions are utilized to check the important parameters for each system to allow the team to compare and contrast possible designs.
 
 
 ```python
