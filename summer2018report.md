@@ -322,7 +322,12 @@ Tests began with one influent pipe to see if only the one pipe could suffice. If
 
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
-**(Insert Pic of Tapioca Test Setup)**
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Tapioca%20Test.JPG?raw=true">
+<p>
+<em>Figure 8: Set Up of the Tapioca Experiment Using One Influent Pipe</em>
+</p>
+</center>
+
 
 Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
