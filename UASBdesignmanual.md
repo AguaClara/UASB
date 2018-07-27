@@ -352,10 +352,7 @@ Multiple tests will be run at different flow rates which will be calculated base
 
 
 ```python
-
-
-
-from aide_design import*
+from aide_design.play import*
 def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
   """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
   """
@@ -385,24 +382,28 @@ def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
     avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
     return avg_upflow_vel
 
-def find_upflow():
-  """Finds average upflow velocity created by one dump of tipping bucket.  Inputs flowrate and area of reactor.  Does not account for headloss within the reactor.
-
-
-  """
-
-  return
-
 #Run for target exit velocities
-#Current setup ID is .229 in (3/8 nom diam)
+#Current setup ID is 1/4 inch (3/8 nom diam) and 1/8 inch (1/4 in nom diam)
 
-flowrate1mps = find_pump_exitv(2 * u.m/u.s, .229 * u.inch, 1)
+flowrate1mps = find_pump_exitv(0.3 * u.m/u.s, .25 * u.inch, 1)
 print(flowrate1mps.to(u.ml/u.s))
 
-
+vol_dump = 24 * u.ml
+area = pc.area_circle(11*u.cm)
+height = vol_dump / area
+print((height.to(u.cm)))
 
 ```
+#### Tests to Run
 
+For 3/8 inch influent pipes:
+
+| Target Exit Velocity (m/s) | Flow Rate (ml/s) (1 Pipe) | Flow Rate (2 Pipes) |
+| -------------------------- | ------------------------- | ------------------- |
+| 0.3                        |                           |                     |
+| 1                          |                           |                     |
+| 2                          |                           |                     |
+| 5                          |                           |                     |
 
 ## Biogas Capture
 
