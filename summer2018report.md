@@ -268,7 +268,7 @@ Our first design for the system has the pipes enter from the side of the UASB, a
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
 <p>
-<em>Figure X: Schematic of Influent System</em>
+<em>Figure 8: Schematic of Influent System with side entry</em>
 </p>
 </center>
 
