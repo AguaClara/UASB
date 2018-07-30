@@ -7,7 +7,7 @@
 ## Introduction
 
 This document serves to detail the entire design process of the UASB system.  While each semester the team has worked on differing parts of the reactor, and solved different problems within, this document will collect all of these decisions into one place so that future readers can understand the design process of the UASB.  As such, this is a working document and will continuously be edited as designs are changed and new ideas are introduced.
-test
+
 ## Reactor Tank
 
 Initial design of the UASB models the [AguaClara 1 L/s plant](https://github.com/AguaClara/1-LPS) closely, and thus assumed the use of a 3 foot diameter PVC pipe for the base of the tank.  This design decision was made since the 1 L/s plant  as the design required a bend in the pipe for the plate settlers.  Since the UASB system is completely cylindrical, it was proposed to instead use a prefabricated cylindrical water storage tank instead.
@@ -345,11 +345,15 @@ To attempt to model and understand flow patterns within the UASB system, the tea
 
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
-**(Insert Pic of Tapioca Test Setup)**
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Tapioca%20Test.JPG?raw=true">
+<p>
+<em>Figure 8: Set Up of the Tapioca Experiment Using One Influent Pipe</em>
+</p>
+</center>
 
 Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
-
+Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse.
 
 ```python
 from aide_design.play import*
@@ -392,6 +396,16 @@ vol_dump = 24 * u.ml
 area = pc.area_circle(11*u.cm)
 height = vol_dump / area
 print((height.to(u.cm)))
+
+
+v = (6.33 * u.ml/u.s) / ((math.pi)*(.125 * u.inch)**2)
+print(v.to(u.m/u.s))
+
+v2 = find_pump_exitv(.2 * u.m/u.s, .25 * u.inch, 1)
+print(v2.to(u.ml/u.s))
+
+
+
 
 ```
 #### Tests to Run
