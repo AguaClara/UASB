@@ -312,7 +312,6 @@ Given that there has not been a design of a UASB on this scale, the scientific l
 
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.  
 
-<<<<<<< HEAD
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Tapioca%20Test.JPG?raw=true">
@@ -324,18 +323,13 @@ The first UASB was modeled using a simple plastic beaker. Tapioca that had been 
 Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
 Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse.
-=======
-The first UASB was modeled using a simple plastic beaker.
-The model sludge blanket was created with
->>>>>>> 9db916345ee2b226f25acde421000bbfe4377340
 
 ```python
 
 # Calculate exit velocity from pipes given pipe dimensions and change in hydraulic head
 
 
-<<<<<<< HEAD
-  """
+  
   pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
   return pump_percent.
 
@@ -366,8 +360,6 @@ print(v2.to(u.ml/u.s))
 
 
 
-=======
->>>>>>> 9db916345ee2b226f25acde421000bbfe4377340
 ```
 
 ## Biogas Capture
