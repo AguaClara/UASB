@@ -19,9 +19,9 @@ The advantages of the prefabricated tank are:
 * Possible prefabrication of inlet and outlet system
 
 The disadvantages include:
-* Tanks are harder to source outside of the US and might require shipping in. However, we found manufacturers in Honduras so this should not be a huge concern.
-* Since tanks are prefabricated with lids, it becomes challenging to attach pieces inside the tank. While using a PVC pipe would provide better access to the interior of the tank, our goal is to avoid any modifications within the reactor altogether.
-* Most prefabricated tanks are made of High Density Polyethylene (HDPE) rather than PVC.  Will require additional costs for welding rod and other materials.
+* Tanks are harder to source outside of the US and might require shipping. However, manufacturers in Honduras were found so this should not be a huge concern.
+* Since tanks are prefabricated with lids, it becomes challenging to attach pieces inside the tank. While using a PVC pipe would provide better access to the interior of the tank, the goal is to avoid any modifications within the reactor altogether.
+* Most prefabricated tanks are made of High Density Polyethylene (HDPE) rather than PVC. Additional costs will be required for welding rod and other materials.
 
 
 *Table 1: Basic Reactor Design Parameters*
@@ -123,24 +123,8 @@ In Figure X below, there are brackets on the vertical bars that support the bott
 </p>
 </center>
 
-
-
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png">
-<p>
-<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
-</p>
-</center>
-
-
-![Side Influent Entry System](/Images/Influent Geo Slant.png)
-
-<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
-<p>
-<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
-</p>
-</center>
-
 Two short cylindrical rods are attached on either side of the frame such that the frame can be adjusted to shorten or widen the distance between the rods. These rods are the pivots for the tipping bucket. Placing the pivots off-centered shifts the center of gravity of the bucket-frame system. Thus, when water fills the bucket beyond a certain height, the bucket-frame tips and empties into the tank below.
+
 **(insert image of pivots)**
 
 The pivots themselves are mounted on two rectangular brackets with some room to roll around. This rolling motion will greatly decrease friction as the bucket tips, which in turn will reduce mechanical wearing of the parts.
@@ -152,15 +136,30 @@ The pivots themselves are mounted on two rectangular brackets with some room to 
 </center>
 
 *Table Z: Tipping Bucket Trial Results*
-| Trial | Horizontal Pivot Position (from center) | Vertical Position (center of pivot to base of bucket) | Height Filled | Volume Filled |
-| -------- | -------------------|-------------------- | --------- | ---------|
-| 1    |   | 10 |
-| 2 |  | 10 |  |  |
-|3   |   |   |   |   |
-|4   |   |   |   |   |
-|5   |   |   |   |   |
-|6   |   |   |   |   |
 
+
+| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (center of pivot to base of bucket) (cm)  | Height Filled (cm)| Volume Filled (L)| Emptied Completely|
+| -------- | ----------------|--------------- | --------- | ---------| -------|
+| 1    | 0.25  | 16.5 | 21 | 14.8 | yes |
+| 2 | 0.5 | 16.5| 22 | 15.56 | yes|
+|3   | 0.5  | 19.3  |  x | x | no|
+|4   | 0.5  | 18.5  |  x |  x | no |
+|5   | 0.75  |  18.5 |  22 | 15.56  | yes |
+| 6  |   0.75|   15.5|  22 | 15.56  | yes  |
+|7   |  0.5 |  15.5 | 23  | 16.26  | yes |
+
+The calculation for the volume in Liters filled of the bucket is shown below.
+
+```python
+from aide_design.play import*
+bucket_height = 23 * u.cm
+bucket_diam = 30* u.cm
+area = pc.area_circle(bucket_diam)
+vol = area * bucket_height
+print(vol.to(u.L))
+ ```
+
+Trial 7 of the tipping bucket yielded the more successful results in that the bucket filled the most, while still emptying out all the way. Trials where the bucket did not empty completely were voided because water left in the bucket would cause a build-up of organic matter. Further testing will need to be done once a final design has been decided.
 
 #### Hydraulic Parameters
 
@@ -279,23 +278,11 @@ Design for the influent system has not been settled on yet, and there are a few 
 
 The main working design over the summer focused on having the influent pipes enter from the side of the reactor.  Figure X below shows this system.
 
-
-
-
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant%20(1).jpg">
-<p>
-<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
-</p>
-</center>
-
-
+(INCOMPLETE)
 
 #### Design Two: Top Influent Pipe Entry
 
-
-
-
-
+(INCOMPLETE)
 
 ### Flow Control Tests
 
@@ -325,42 +312,47 @@ Multiple tests will be run at different flow rates which will be calculated base
 Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse.
 
 ```python
-
+from aide_design.play import*
+def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
+  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
+  """
+  inner_area = pc.area_circle(pipe_innerdiam)
+  pump_Q = exit_vel_target * inner_area * num_pipes
+  return pump_Q
+ def dump_percentage_bucket(dump_volume, UASB_volume):
+  """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
+   """
+  bucket_percent = (dump_volume / UASB_volume) * 100
+  return bucket_percent
+ def dump_percentage_pump(pump_flowrate, pump_flowtime):
+  """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
 # Calculate exit velocity from pipes given pipe dimensions and change in hydraulic head
-
-
-  
+   """
   pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
   return pump_percent.
-
-def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
+ def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
     """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
     """
     avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
     return avg_upflow_vel
-
-#Run for target exit velocities
+ #Run for target exit velocities
 #Current setup ID is 1/4 inch (3/8 nom diam) and 1/8 inch (1/4 in nom diam)
-
-flowrate1mps = find_pump_exitv(0.3 * u.m/u.s, .25 * u.inch, 1)
+ flowrate1mps = find_pump_exitv(0.3 * u.m/u.s, .25 * u.inch, 1)
 print(flowrate1mps.to(u.ml/u.s))
-
-vol_dump = 24 * u.ml
+ vol_dump = 24 * u.ml
 area = pc.area_circle(11*u.cm)
 height = vol_dump / area
 print((height.to(u.cm)))
+ ```
+#### Tests to Run
+ For 3/8 inch influent pipes:
+ | Target Exit Velocity (m/s) | Flow Rate (ml/s) (1 Pipe) | Flow Rate (2 Pipes) |
+| -------------------------- | ------------------------- | ------------------- |
+| 0.3                        |                           |                     |
+| 1                          |                           |                     |
+| 2                          |                           |                     |
+| 5                          |                           |                     |
 
-
-v = (6.33 * u.ml/u.s) / ((math.pi)*(.125 * u.inch)**2)
-print(v.to(u.m/u.s))
-
-v2 = find_pump_exitv(.2 * u.m/u.s, .25 * u.inch, 1)
-print(v2.to(u.ml/u.s))
-
-
-
-
-```
 
 ## Biogas Capture
 
