@@ -12,7 +12,6 @@ Over the summer of 2018, the UASB team's main goal has been to finish a complete
 
 **_Juan's comments: (RESOLVED-AG) You give very little background as to what's going on, and this section does not have a title. I believe this is an 'abstract'_**
 
-
 ## Influent Flow System
 
 One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor from a holding tank.
@@ -269,7 +268,7 @@ Our first design for the system has the pipes enter from the side of the UASB, a
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
 <p>
-<em>Figure X: Schematic of Influent System</em>
+<em>Figure 8: Schematic of Influent System with side entry</em>
 </p>
 </center>
 
@@ -324,7 +323,7 @@ Our second potential design has the influent tank directly on top of the UASB sy
 | UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
 | UASB Diameter                | 3 ft          | Based on tank dimensions, unset                                   |
 | Dump Volume                  | 16 Liters     | Calculated during tipping bucket tests                            |
-| Minor Loss Coefficient       | 1             | Design includes two elbows (1.5 each) plus 1 from head loss trick |
+| Minor Loss Coefficient       | 1             |Straight pipe, 1 from headloss trick |
 | Pipe Roughness               | 0.0015 mm     | Standard pipe roughness for PVC                                   |
 | Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
 | Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
@@ -358,16 +357,28 @@ Most observations for this test were made qualitatively, and the system was also
 
 The tests that have been performed were done at a low flow rate of 6.33 mL/s, which translates to an exit velocity of 0.2 m/s. So far, the dyed water appeared to spread out along the bottom of the beaker, rather than puncturing the tapioca blanket. Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
-Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse. Below the functions is the specific calculation used to determine the exit velocity
+The functions below calculate the flow rate needed to pro
+
+Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse.
 
 ```python
+
+# Import tools
 from aide_design.play import*
-def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
+import doctest
+
+# Define functions
+def find_pump_flowrate(exit_vel_target, pipe_innerdiam, num_pipes):
   """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
   """
   inner_area = pc.area_circle(pipe_innerdiam)
   pump_Q = exit_vel_target * inner_area * num_pipes
   return pump_Q
+
+def find_pump_vel():
+
+
+  return
 
 def bucket_dump_calcs(dump_volume, UASB_height, UASB_diameter):
   """Solves for the height of water added to the bottom of the reactor and the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
@@ -376,18 +387,21 @@ def bucket_dump_calcs(dump_volume, UASB_height, UASB_diameter):
   """
   Cross_area = pc.area_circle(UASB_diameter) #cross sectional area of c
   UASB_volume = UASB_height * pc.area_circle(UASB_diameter)
-  height_added = dump_volume /
-
+  height_added = dump_volume / Cross_area
   bucket_percent = (dump_volume / UASB_volume) * 100
-  return bucket_percent
+  return [height_added, bucket_percent]
 
 def pump_dump_calcs(pump_flowrate, pump_flowtime, UASB_height, UASB_diameter):
-  """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
+  """Solves for the height added per pump run and the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump, total pump runtime, and the height and diameter of the model UASB
 
 
   """
-  pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
-  return pump_percent.
+  Vol_added = pump_flowrate * pump_flowtime
+  Cross_area = pc.area_circle(UASB_diameter)
+  height_added = Vol_added / Cross_area
+  UASB_Volume = Cross_area * UASB_height
+  pump_percent = (Vol_added / UASB_volume) * 100
+  return [height_added, bucket_percent]
 
 def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
     """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
@@ -395,6 +409,13 @@ def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
     avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
     return avg_upflow_vel
 
+#Run doctest
+doctest.testmod(verbose=True)
+
+```
+
+
+```python
 #Run for target exit velocities
 #Current setup ID is 1/4 inch (3/8 nom diam) and 1/8 inch (1/4 in nom diam)
 

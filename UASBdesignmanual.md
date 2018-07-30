@@ -10,7 +10,8 @@ This document serves to detail the entire design process of the UASB system.  Wh
 
 ## Reactor Tank
 
-Initial design of the UASB models the [AguaClara 1 L/s plant](https://github.com/AguaClara/1-LPS) closely, and thus assumed the use of a 3 foot diameter PVC pipe for the base of the tank.  This design decision was made since the 1 L/s plant  as the design required a bend in the pipe for the plate settlers.  Since the UASB system is completely cylindrical, it was proposed to instead use a prefabricated cylindrical water storage tank instead.
+Initial design of the UASB models the 1 L/s plant closely, and thus assumed the use of a 3' diameter PVC pipe for the base of the tank, as the design required a bend in the pipe for the plate settlers.  Since the UASB system requires no bends and is completely vertical, it was proposed to use a prefabricated plastic tank instead.  
+
 The advantages of the prefabricated tank are:
 * Lower overall costs
 * Easier fabrication of bottom and top of tank (since the tank is already sealed)
@@ -18,8 +19,8 @@ The advantages of the prefabricated tank are:
 * Possible prefabrication of inlet and outlet system
 
 The disadvantages include:
-* Tanks are harder to source outside of the US and might require shipping in. However, HDPE tanks are made in Honduras, reducing this concern
-* Since tanks are prefabricated with lids, it becomes challenging to build systems inside the tank. While using a PVC pipe would provide better access to the interior of the tank, our goal is to avoid any modifications within the reactor altogether.
+* Tanks are harder to source outside of the US and might require shipping in. However, we found manufacturers in Honduras so this should not be a huge concern.
+* Since tanks are prefabricated with lids, it becomes challenging to attach pieces inside the tank. While using a PVC pipe would provide better access to the interior of the tank, our goal is to avoid any modifications within the reactor altogether.
 * Most prefabricated tanks are made of High Density Polyethylene (HDPE) rather than PVC.  Will require additional costs for welding rod and other materials.
 
 
@@ -35,6 +36,7 @@ The current plan is to purchase an HDPE tank similar to [this](https://www.plast
 
 
 ### Size and Dimensions
+
 
 #### Calculations
 ```python
@@ -100,12 +102,10 @@ Monroe and the team came up with a couple of design choices for the tipping buck
 
 3. Weld two brackets onto the inner wall of the holding tank. Put a hose clamp around the bucket and mount the bucket via the clamp onto two small rollers. These rollers are placed into the brackets.
 
-**(Insert design drawing here)**
-
 * **Pros**: Easily adjustable system allows for testing multiple pivot locations
 * **Cons**: Challenging fabrication, requires extra parts
 
-The team first decided to go with option 3 due to the modularity it provided.  However upon further discussion during fabrication, the team decided to fabricate a frame using aluminum 80-20 bars to provide further modularity and ease fabrication.
+The team first decided to go with option 3 due to the modularity it provided.  However upon further discussion during fabrication, the team decided to fabricate a system using 80-20 bars that would be simpler to make and provide more modularity.
 
 ### Experimental Frame Design
 
@@ -116,6 +116,23 @@ The frame is made up of four bars that form a rectangle around the circumference
 Originally, when the height of the pivots was lowered, the vertical bars would extend further than the base of the bucket (as seen in Figure X below). This added a slight counterweight that affected the tipping of the bucket, and so the vertical bars were cut to fit the different heights of the pivot. (The weight of the bracket itself could not be eliminated.)
 
 In Figure X below, there are brackets on the vertical bars that support the bottom of the bucket. These were eliminated when the affect of the bottom bar as a counterweight was discovered.
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
+
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png">
+<p>
+<em>Figure X: Tipping bucket mounted on the aluminum frame</em>
+</p>
+</center>
+
+
+![Side Influent Entry System](/Images/Influent Geo Slant.png)
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
 <p>
@@ -135,28 +152,15 @@ The pivots themselves are mounted on two rectangular brackets with some room to 
 </center>
 
 *Table Z: Tipping Bucket Trial Results*
-| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (center of pivot to base of bucket) (cm)  | Height Filled (cm)| Volume Filled (L)| Emptied Completely|
-| -------- | ----------------|--------------- | --------- | ---------| -------|
-| 1    | 0.25  | 16.5 | 21 | 14.8 | yes |
-| 2 | 0.5 | 16.5| 22 | 15.56 | yes|
-|3   | 0.5  | 19.3  |  x | x | no|
-|4   | 0.5  | 18.5  |  x |  x | no |
-|5   | 0.75  |  18.5 |  22 | 15.56  | yes |
-| 6  |   0.75|   15.5|  22 | 15.56  | yes  |
-|7   |  0.5 |  15.5 | 23  | 16.26  | yes |
+| Trial | Horizontal Pivot Position (from center) | Vertical Position (center of pivot to base of bucket) | Height Filled | Volume Filled |
+| -------- | -------------------|-------------------- | --------- | ---------|
+| 1    |   | 10 |
+| 2 |  | 10 |  |  |
+|3   |   |   |   |   |
+|4   |   |   |   |   |
+|5   |   |   |   |   |
+|6   |   |   |   |   |
 
-The calculation for the volume in Liters filled of the bucket is shown below.
-```python
-from aide_design.play import*
-
-bucket_height = 23 * u.cm
-bucket_diam = 30* u.cm
-area = pc.area_circle(bucket_diam)
-vol = area * bucket_height
-print(vol.to(u.L))
-
-```
-Trial 7 of the tipping bucket yielded the more successful results in that the bucket filled the most, while still emptying out all the way. Trials where the bucket did not empty completely were voided because water left in the bucket would cause a build-up of organic matter. Further testing will need to be done once a final design has been decided.
 
 #### Hydraulic Parameters
 
@@ -231,15 +235,15 @@ print(filltime.to(u.s))
 
 
 
-def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, temp, pipe_rough):
-  """Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.  Assumes use of schedule 40 pipes.
+def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp, pipe_rough):
+"""Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.  Assumes use of schedule 40 pipes.
 
 
-  """
+"""
   pipe_ID = pipe.ID_sch40(nom_diam)   # Calculates pipe inner diameter from nominal diameter
   pipe_flow = target_exitvel * pc.area_circle(pipe_ID) #find flowrate based on exit velocity
-  Nu = pc.viscosity_kinematic(temp)
-  headloss = pc.headloss(pipe_flow, pipe_ID, pipe_length, Nu, pipe_rough, Kminor)
+  Nu = pc.viscosity_kinematic(Temp)
+  headloss = pc.headloss(pipe_flow, pipe_ID, pipe_length, Nu, Pipe_rough, Kminor)
   return headloss
 
 
@@ -265,11 +269,6 @@ def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
   large_pipe_vel = exit_vel * (small_pipe_diam ** 2) / (large_pipe_diam ** 2)
   return large_pipe_vel
 
-def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
-  """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
-  """
-  avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
-  return avg_upflow_vel
 ```
 
 ### Potential Designs
@@ -282,37 +281,7 @@ The main working design over the summer focused on having the influent pipes ent
 
 
 
-The table below lists the design parameters for the system, which are with the below code to ensure a working model.
 
-| Parameter                  | Value     |
-| -------------------------- | --------- |
-| UASB Diameter              | 3 ft      |
-| UASB Height                | 7 ft      |
-| Tipping Bucket Dump Volume | 16 Liters |
-| Target Exit velocity       | 1 m/s     |
-|                            |           |
-
-
-
-##### Hydraulic Calculations
-Assumes you have defined all above hydraulic calculations
-```python
-
-a = 23 * u.cm * math.pi * (15 * u.cm)**2
-print(a.to(u.L))
-
-UASB_design_1 = UASB_Size(3*u.ft, 7*u.ft, 4*u.hr, 0.7) #Calculate Dimensions
-headloss_design1 = calculate_head(1*u.m/u.s, 3*u.inch, 8*u.ft, 4, 23*u.degC, 0.0015*u.mm)
-print(headloss_design1.to(u.cm))
-
-
-
-
-
-
-
-
-```
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant%20(1).jpg">
 <p>
 <em>Figure X: Tipping bucket mounted on the aluminum frame</em>
@@ -343,6 +312,7 @@ Given that there has not been a design of a UASB on this scale, the scientific l
 
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.  
 
+<<<<<<< HEAD
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Tapioca%20Test.JPG?raw=true">
@@ -354,28 +324,17 @@ The first UASB was modeled using a simple plastic beaker. Tapioca that had been 
 Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
 Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse.
+=======
+The first UASB was modeled using a simple plastic beaker.
+The model sludge blanket was created with
+>>>>>>> 9db916345ee2b226f25acde421000bbfe4377340
 
 ```python
-from aide_design.play import*
-def find_pump_exitv(exit_vel_target, pipe_innerdiam, num_pipes):
-  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
-  """
-  inner_area = pc.area_circle(pipe_innerdiam)
-  pump_Q = exit_vel_target * inner_area * num_pipes
-  return pump_Q
 
-def dump_percentage_bucket(dump_volume, UASB_volume):
-  """Solves for the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
+# Calculate exit velocity from pipes given pipe dimensions and change in hydraulic head
 
 
-  """
-  bucket_percent = (dump_volume / UASB_volume) * 100
-  return bucket_percent
-
-def dump_percentage_pump(pump_flowrate, pump_flowtime):
-  """Solves for the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump and the total time pump is run.  
-
-
+<<<<<<< HEAD
   """
   pump_percent = ((pump_flowrate * pump_flowtime) / UASB_volume) * 100
   return pump_percent.
@@ -407,17 +366,9 @@ print(v2.to(u.ml/u.s))
 
 
 
+=======
+>>>>>>> 9db916345ee2b226f25acde421000bbfe4377340
 ```
-#### Tests to Run
-
-For 3/8 inch influent pipes:
-
-| Target Exit Velocity (m/s) | Flow Rate (ml/s) (1 Pipe) | Flow Rate (2 Pipes) |
-| -------------------------- | ------------------------- | ------------------- |
-| 0.3                        |                           |                     |
-| 1                          |                           |                     |
-| 2                          |                           |                     |
-| 5                          |                           |                     |
 
 ## Biogas Capture
 
