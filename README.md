@@ -16,11 +16,12 @@ Jennifer Jackson (jkj46)
 In the Spring 2018 semester, the UASB team will be working on finalizing designs for the pilot scale UASB initially proposed in the 2017 EPA P3 Phase I grant. More specifically, we will be designing a hydraulic inlet system, and designing, and updating the biogas capture/storage system. We will also be writing a Phase II grant to get funding for the fabrication and testing of a second pilot scale UASB.
 
 ## Links to Reports and Presentations
-Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the AguaClara Google Drive both under "Active Subteams" and "Archived Subteams."
+Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
 ### Spring 2018
+[EPA Phase II Proposal](https://drive.google.com/drive/u/0/folders/1R06KTc1YorY5BVCvEJoD1V0gNFe1B6EX)
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)  
-[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10)  
+[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10) 
 [Symposium Presentation](https://docs.google.com/presentation/d/1HlOt3QwduvcUE1-q1j3W2VCLtRTx1YZtRwdGuUHw1Nc/edit?usp=sharing)
 
 ### Fall 2017
