@@ -20,8 +20,11 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 ### Spring 2018
 [EPA Phase II Proposal](https://drive.google.com/drive/u/0/folders/1R06KTc1YorY5BVCvEJoD1V0gNFe1B6EX)
+
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)  
-[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10) 
+
+[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10)
+
 [Symposium Presentation](https://docs.google.com/presentation/d/1HlOt3QwduvcUE1-q1j3W2VCLtRTx1YZtRwdGuUHw1Nc/edit?usp=sharing)
 
 ### Fall 2017
