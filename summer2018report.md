@@ -28,7 +28,7 @@ During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Tre
 
 The summer team researched siphons and discussed with the AguaClara program director, Dr. Monroe Weber-Shirk, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.
 
-Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow. Given this lack of information and that the addition of an entrance tank required only one tipping bucket, the team settled on the tipping bucket design.
+Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow, and chose to use a tipping bucket system. An added benefit of using a tipping bucket system is that we only need to add an entrance tank and one bucket to our previous reactor design, whereas a siphon would almost certainly require some further design modifications.
 
 
 #### Hydraulic Parameters
@@ -44,11 +44,10 @@ Built within the design of the influent systems are a number of hydraulic constr
 | HRT                              | $\geq$ 4hrs     | Yes, minimum | Based on literature and lab scale test.                                                                                                                                                                      |
 | Descending Sewage Velocity       | $\leq$ 0.2 m/s  | Yes, Maximum | Maximum velocity that will allow air bubbles to rise out of reactor.  Must only be achieved in beginning of influent pipe systems, not throughout.                                                           |
 | Average Flow Rate                | $\leq$ 0.08 L/s | Yes, Maximum | Q = Volume / Hydraulic Residence Time                                                                                                                                                                        |
-| Minimum Exit Velocity            | $\geq$ 0.03 m/s | Yes          | Minimum velocity needed to scour settling particles                                                                                                                                                          |
+| Minimum Exit Velocity            | $\geq$ 0.03 m/s | Yes          | Minimum velocity needed to scour settling particles  at the end of the influent pipe                                                                                                                                                        |
 | Maximum Exit Velocity            | $\leq$ 1 m/s    | No           | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined.                                                                                                       |
 | Influent Pipe Inner Diameter     | 75 - 100 mm      | No           | Based on literature values to prevent clogging in pipes.  Some flexibility.                                                                                                                                  |
-| Influent Pipe Length             | ~8.5 feet       | Yes          | Roughly equal to height of reactor plus half of diameter (see 
-)                                                                                                                        |
+| Influent Pipe Length             | ~8.5 feet       | Yes          | Roughly equal to height of reactor plus half of diameter of reactor (see [Influent System  Geometry](#InfSysGeo))                            |
 | Bucket Dump Volume               | ~20 L           | No           | Constraints are: time to fill bucket and relative volume to reactor capacity. A large dump volume allows more time for the bucket to fill, slowing down wear and tear. But the dump volume should also be a relatively small fraction of the total reactor volume. 20 L chosen as it is the volume of easily available buckets while fulfilling these constraints |
 | Wastewater Generation per Person | 10.8 L/hr       | No           | Rule of Thumb from Monroe   |
 
@@ -243,7 +242,7 @@ def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
 
 ```
 
-### Influent System Geometry
+### Influent System Geometry <a name="InfSysGeo"></a>
 
 There are two designs the team is considering for the influent system geometry.  Each is summarized below, and the design functions are utilized to check the important parameters for each system to allow the team to compare and contrast possible designs.
 
