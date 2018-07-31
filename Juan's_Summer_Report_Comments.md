@@ -1,3 +1,6 @@
+### Comments for Summer Report 2018
+#### 30 July 2018
+
 Your report was good! Buuuuuut I have some (ok a lot) of comments.
 
 While reading this report, I kept coming back to the same idea: Your audience is AguaClarians who have never been on the UASB team before. They need to be able to look back at what you guys are doing through this report and understand perfectly and what you guys did and why you did it. If you leave the UASB team after one semester, one year, or two years, all of your work will be lost unless you document it well and perfectly clearly. I know that documenting isn't very exciting, but I also know that unless you document as you go, there is a 0% chance you'll look back on your work 2 months ago and say: "Hey, I really want to retroactively document what I did then!"
