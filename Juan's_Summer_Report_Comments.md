@@ -22,7 +22,7 @@ Here we go. Because my comments are based on line numbers, it's best to edit the
   **Line number 50**: "Roughly equal to height of reactor plus half of diameter (see influent pipe geometry)" What diameter are you referring to? Make that clear to the reader! Also "see influent pipe geometry" should link to something or should be control-f able, otherwise I don't know where to look
 
   **Line number 52**: Why should "the dump volume should also be a relatively small fraction of the total reactor volume?"
-  
+
   **Line number 52**: Head loss is two words. I know, my mine was blown too! I messed this up in a few pages of the textbook before changing them :P
 
   **Line number 63**: This figure can still be cropped more (or perhaps taken in a more flattering orientation?). The tub below the tipping bucket takes up 3/4 of a whole page length in my window. I suggest cropping the tub on the bottom, cropping most of the sides, and a bit on top as well.
@@ -32,6 +32,7 @@ Here we go. Because my comments are based on line numbers, it's best to edit the
   **Line number 79**: Yes labels are so much better! In this image you say "influent tank" but before, you've said "entrance tank." Throughout most of the document both "influent tank" and "entrance tank" are used. You should pick one and stick to it to avoid reader confusion!
 
   **Line number 83**: Sorry to nitpick here, but a 5 gallon bucket is actually 19 liters not 20, which you mentioned in the table above!
+
   **Line number 91**: I don't have a good idea of where the hose clamp goes or how it provides flexibility. Can you include and label it in one of your diagrams?
 
   **Line number 98**: I can sort of tell why the off-centered pivots are a problem. Can you make it easier for me by showing what is actually a top view of the bucket or over-exaggerating the problem?

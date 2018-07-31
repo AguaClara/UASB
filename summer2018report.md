@@ -15,6 +15,11 @@ Over the summer of 2018, the UASB team's main goal has been to finish a complete
 
 One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor from a holding tank.
 
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
+<p>
+<em>Figure 6: Schematic of Influent System</em>
+</p>
+</center>
 **_Juan's comments: (AG - not a 100% sure I know what sort of image would be helpful here) I think a figure would be very useful here, as it is extremely difficult to understand what's going on without being able to image the reactor_**
 
 
@@ -28,7 +33,7 @@ During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Tre
 
 The summer team researched siphons and discussed with the AguaClara program director, Dr. Monroe Weber-Shirk, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.
 
-Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow, and chose to use a tipping bucket system. An added benefit of using a tipping bucket system is that we only need to add an entrance tank and one bucket to our previous reactor design, whereas a siphon would almost certainly require some further design modifications.
+Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow, and chose to use a tipping bucket system. An added benefit of using a tipping bucket system is that we only need to add an influent tank and one bucket to our previous reactor design, whereas a siphon would almost certainly require some further design modifications.
 
 
 #### Hydraulic Parameters
@@ -48,11 +53,11 @@ Built within the design of the influent systems are a number of hydraulic constr
 | Maximum Exit Velocity            | $\leq$ 1 m/s    | No           | Max velocity needed to prevent preferential pathways through sludge blanket.  Still very undetermined.                                                                                                       |
 | Influent Pipe Inner Diameter     | 75 - 100 mm      | No           | Based on literature values to prevent clogging in pipes.  Some flexibility.                                                                                                                                  |
 | Influent Pipe Length             | ~8.5 feet       | Yes          | Roughly equal to height of reactor plus half of diameter of reactor (see [Influent System  Geometry](#InfSysGeo))                            |
-| Bucket Dump Volume               | ~20 L           | No           | Constraints are: time to fill bucket and relative volume to reactor capacity. A large dump volume allows more time for the bucket to fill, slowing down wear and tear. But the dump volume should also be a relatively small fraction of the total reactor volume. 20 L chosen as it is the volume of easily available buckets while fulfilling these constraints |
+| Bucket Dump Volume               | ~20 L           | No           | Constraints are: time to fill bucket and relative volume to reactor capacity. A large dump volume allows more time for the bucket to fill, slowing down wear and tear. But the dump volume should also be a relatively small fraction of the total reactor volume so as to be negligible in volume calculations. 20 L chosen as it is the volume of easily available 5-gallon buckets while fulfilling these constraints |
 | Wastewater Generation per Person | 10.8 L/hr       | No           | Rule of Thumb from Monroe   |
 
 
-From these constraints, the general headloss equation (including the headloss trick) for a circular pipe can be used to determine the headloss needed to achieve the desired exit velocity, given a specific diameter of pipe.  
+From these constraints, the general head loss equation (including the head loss trick) for a circular pipe can be used to determine the head loss needed to achieve the desired exit velocity, given a specific diameter of pipe.  
 
 #### Design of Tipping Bucket system
 
@@ -69,7 +74,7 @@ Pictured above is the first design of the tipping bucket system.  It was created
 
 * Location of the pivot on the bucket is very important for operation.  Height of the pieces controls how much water is collected before dumping.  Horizontal positioning of the pivot determines the angle the bucket rests at and how soon it will tip.
 
-* The bucket needs to be designed so that it will not rest completely tipped down.  This can be achieved either by controlling the height of the bucket so that is cannot rotate completely (making it hit the bottom of the tank) or by controlling the rotation, either through adding a counterweight that will return the bucket to its main position, or adjusting the horizontal location of the pivot to ensure it will return.
+* The bucket needs to be designed so that it will not rest completely tipped down, and return to its original position to fill in more wastewater.  This can be achieved either by controlling the height of the bucket so that is cannot rotate completely (making it hit the bottom of the tank) or by controlling the rotation. The rotation can either be controlled by adding a counterweight that will return the bucket to its original position, or adjusting the horizontal location of the pivot to ensure it will return.
 
 After discussing the design more with Monroe, the team settled on a new design, pictured below:
 
@@ -79,7 +84,7 @@ After discussing the design more with Monroe, the team settled on a new design, 
 </p>
 </center>
 
-This tipping bucket is created with a 5 gallon bucket (chosen as they are easy to purchase) with two plastic rods on either side, attached through a hose clamp.  These circular pieces will rest in the brackets on either side of the entrance tank, where they can roll freely to allow the bucket to dump.  This greatly reduces friction and wear of mechanical parts.
+This tipping bucket is created with a 5 gallon bucket (chosen as they are easy to purchase) with two plastic rods on either side, attached through a hose clamp.  These circular pieces will rest in the brackets on either side of the influent tank, where they can roll freely to allow the bucket to dump.  This greatly reduces friction and wear of mechanical parts.
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_System_Brackets_Pivots.png?raw=true">
 <p>
@@ -118,7 +123,7 @@ Another crucial part of the design  is the influent tank.  This tank will captur
 
 The crucial design aspects of the tank are listed below:
 
-* The tank **must be tall enough** to completely contain the tipping bucket, and prevent any "splashing" of wastewater out of the tank
+* The tank **must be tall enough** to completely contain the tipping bucket, and prevent any splashing of wastewater out of the tank
 
 * The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for longer roller pivots, and reduce the structural strength of the bucket (since deflection of a rod is proportional to some power of length)
 
@@ -138,11 +143,7 @@ Summarized in a table:
 |Width|35 cm |30 cm for bucket diameter plus 5 cm for both pivot pieces|
 |Length|$\geq$ 60 cm|Height of bucket plus extra space to allow free rotation.  Requires closer examination in fusion|
 
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
-<p>
-<em>Figure 6: Schematic of Influent System</em>
-</p>
-</center>
+
 
 
 The team began by designing the tank as a simple, rectangular box.  However, given the constraints on the dimensions of the box, it was impossible to get the required hydraulic head gain from bucket, as summarized in the code below:
@@ -153,15 +154,16 @@ from aide_design.play import*
 width = 35 * u.cm
 length = 60 * u.cm
 area = width * length
-bucket_vol = 15 * u.L
+bucket_vol = 15 * u.L  #Assuming the bucket fills 75%
 head_gain = (bucket_vol / area).to(u.cm)
 print("One dump of the bucket gives", head_gain, "of hydraulic head")
+# Prints: One dump of the bucket gives
 ```
-Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the entrance tank.
+Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the influent tank.
 
 After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.
 
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Geometry.png?raw=true">
+<center><img src="">
 <p>
 <em>Figure 7: Close up of the influent system showing the larger cylindrical pipe segments</em>
 </p>
@@ -208,7 +210,7 @@ def bucket_filltime(flowrate_avg, dump_vol):
     return filltime.to(u.s)
 
 def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp, pipe_rough):
-  """Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using headloss function from aide_design.  Assumes use of schedule 40 pipes.
+  """Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using head loss function from aide_design.  Assumes use of schedule 40 pipes.
 
 
   """
@@ -219,7 +221,7 @@ def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp, pipe_rou
   return headloss
 
 def head_gain_per_dump(dump_vol, nom_diam, pipe_height, tank_width, tank_length):
-  """Determines gain in hydraulic head per dump of tipping bucket based on geometry of influent system.  Assumes all water is added first to pipes, then additional volume fills the entrance tank.  Pipe_height is total length of pipe above water level set by effluent line.  Assumes schedule 40 pipe.  For influent system with no standing water in pipes, set pipe height to 0.
+  """Determines gain in hydraulic head per dump of tipping bucket based on geometry of influent system.  Assumes all water is added first to pipes, then additional volume fills the influent tank.  Pipe_height is total length of pipe above water level set by effluent line.  Assumes schedule 40 pipe.  For influent system with no standing water in pipes, set pipe height to 0.
 
 
   """
@@ -285,7 +287,7 @@ The team then ensured that the velocity within the pipe is below 0.2 m/s, given 
 ```python
 # Calculate the maximum velocity through the large diameter pipe when hydraulic head is largest after a dump
 pipe_A = pc.area_circle(target_diam)
-K_minor = 1 # incorporate all kinetic energy as loss through headloss trick
+K_minor = 1 # incorporate all kinetic energy as loss through head loss trick
 Temp = 23 * u.degC # average temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
 Pipe_Rough = 0.0015 * u.mm
@@ -297,7 +299,7 @@ print(Max_vel)
 
 ### Design 2: Top Entry
 
-Our second potential design has the influent tank directly on top of the UASB system, and the influent pipes coming straight down into the reactor.  This reduces fabrication challenges and prevents any problems with particles settling or clogging in the pipes, but requires careful design as the entrance tank is far above the resting water level.  Since the pipes will go straight through the biogas lid, this will also require the welds around the influent pipes to be gas tight.  
+Our second potential design has the influent tank directly on top of the UASB system, and the influent pipes coming straight down into the reactor.  This reduces fabrication challenges and prevents any problems with particles settling or clogging in the pipes, but requires careful design as the influent tank is far above the resting water level.  Since the pipes will go straight through the biogas lid, this will also require the welds around the influent pipes to be gas tight.  
 
 **ADD IMAGE**
 
@@ -307,7 +309,7 @@ Our second potential design has the influent tank directly on top of the UASB sy
 | UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
 | UASB Diameter                | 3 ft          | Based on tank dimensions, unset                                   |
 | Dump Volume                  | 16 Liters     | Calculated during tipping bucket tests                            |
-| Minor Loss Coefficient       | 1             |Straight pipe, 1 from headloss trick |
+| Minor Loss Coefficient       | 1             |Straight pipe, 1 from head loss trick |
 | Pipe Roughness               | 0.0015 mm     | Standard pipe roughness for PVC                                   |
 | Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
 | Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
