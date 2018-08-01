@@ -482,9 +482,9 @@ print(v2.to(u.ml/u.s))
 
 ### Biogas Capture System
 
-The team has begun preliminary discussions with Monroe regarding the Biogas Capture system. A meeting with Ed Gottlieb from the Ithaca wastewater plant has been scheduled to discuss integrating the UASB plant into the Ithaca wastewater plant, as well as to discuss biogas collection. Research to find biogas storage bags is ongoing.
+The team has begun preliminary discussions with Monroe regarding the Biogas Capture system. A meeting with Ed Gottlieb from the Ithaca wastewater plant has been scheduled for August 3, 2018 to discuss integrating the UASB plant into the Ithaca wastewater plant, as well as to discuss biogas collection. Research to find biogas storage bags is ongoing.
 
-A possible biogas balloon has been found on [Amazon](https://www.amazon.com/PUXIN-Material-Biogas-Storage-Balloon/dp/B07FKS1W6J/ref=sr_1_1?ie=UTF8&qid=1532020224&sr=8-1&keywords=biogas+bag)
+A possible biogas balloon has been found on [Amazon](https://www.amazon.com/PUXIN-Material-Biogas-Storage-Balloon/dp/B07FKS1W6J/ref=sr_1_1?ie=UTF8&qid=1532020224&sr=8-1&keywords=biogas+bag), although the details will be finalized only after the meeting with Ed.
 
 ## Fabrication Manual
 
