@@ -2,13 +2,38 @@
 
 ## Summer 2018
 
-#### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
+### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
 
-### Abstract
+## Abstract
 Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB.
 
 Over the summer of 2018, the UASB team's main goal has been to finish a complete design of a UASB wastewater treatment system, and fabricate an influent system.  Future teams will work on fabrication of the entire system and testing at the Ithaca Area Wastewater Plant before implementation in Honduras.
+
+## Introduction
+
+In many countries without proper access to wastewater treatment, such as Honduras, wastewater is directly released into the environment without treatment.  Typical domestic wastewater released this way contained organics and fecal matter which lead to many adverse affects on the environment and human health.  
+
+Organic matter within wastewater is degraded by biologically by aquatic bacteria, consuming dissolved oxygen and harming life in the process.  In extreme cases this can deplete oxygen enough to create dead zones where aquatic species like fish are killed.  Nutrients such as nitrogen and phosphorus contained in wastewater can lead to explosive algal growth in waterways, which also depletes oxygen levels and can create dead zones through a process known as [eutrophication](https://oceanservice.noaa.gov/facts/eutrophication.html).
+
+Finally, fecal matter from wastewater is a major contributor to the spread of infectious waterborne diseases including Cholera, Salmonella, and Diarrhea.  Pollution of waterways where others source their water from leads to the rapid spread of these diseases, particularly in areas downstream of other communities.
+
+Currently in the United States effective municipal wastewater treatment facilities have long retention times, require large land areas, and have a high fixed cost per capita. Implementing these systems in smaller communities leads to high fixed costs per capita and large levels of infrastructure, both of which are often unattainable for smaller communities.  Because of this, many communities across the world forgo wastewater treatment altogether and dishcharge wastewater directly into the environment.  
+
+UASB reactors, used as a preliminary wastewater treatment process, clarify wastewater by removing suspended solids organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a by-product of anaerobic digestion.  This methane can be captured and burned for energy production or heating.
+
+In January 2017, a novel pilot scale UASB reactor design was created by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally.  The team later applied for Phase II funding from the same operation to support development and implementation of addition reactors for testing.
+
+Since submission of this proposal, there has been ongoing work to develop the final design of the reactor.  This document serves to inform readers on the design progress made over Summer 2018, and serves as a resource for future AguaClara team members and collaborators on all information related to the design of the UASB.  
+
+## Previous Work
+
+The Spring 2017 team wrote and submitted Phase I of the EPA P3 proposal, detailing a proposal to design a UASB system to provide effective wastewater treatment for small rural communities without access to wastewater infrastructure.  This proposal passed Phase I funding, providing funding for building the first model UASB reactor.  The team also 
+
+The full details can be found in their [final research report](https://www.overleaf.com/8107719xzjdzswjvtyj#/28623295/)
+
+The Fall 2017
+
 
 
 ## Influent Flow System
@@ -221,7 +246,8 @@ def bucket_filltime(flowrate_avg, dump_vol):
     filltime = dump_vol / flowrate_avg
     return filltime.to(u.s)
 
-def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp, pipe_rough):
+def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp,
+pipe_rough):
   """Takes in desired exit velocity as well as pipe size and hydraulic parameters
    and calculates the hydraulic head needed to achieve this velocity
    using head loss function from aide_design.
@@ -304,13 +330,13 @@ Our first design for the system has the pipes enter from the side of the UASB, a
 
 **Hydraulic Code**
 ```python
-# Required tools are imported
-# and functions were defined in above section
+# Required tools are imported and functions are defined in "Hydraulic Code" section
 
 UASB_design = UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
-filltime = bucket_filltime(UASB_Size[1], 16 (* u.L))
+#Size: 1401 Liters, Flow Rate: 0.068 Liters/second, People served: 22, People served for only blackwater: 113
 
-
+filltime = bucket_filltime(UASB_design[1], 16 * u.L)
+#filltime: 234.9 seconds (3.915 minutes)
 ```
 The team then ensured that the velocity within the pipe is below 0.2 m/s, given the pipe diameter, to allow air bubbles to escape.  
 
