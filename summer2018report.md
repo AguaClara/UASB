@@ -287,18 +287,18 @@ Our first design for the system has the pipes enter from the side of the UASB, a
 </center>
 
 **Design Parameters**
-| Parameter                    | Value         | Notes                                                             |
-| ---------------------------- | ------------- | ----------------------------------------------------------------- |
-| UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
-| UASB Diameter                | 3 ft          | Based on tank dimensions, unset                                   |
-| Dump Volume                  | 16 Liters     | Calculated during tipping bucket tests                            |
-| Minor Loss Coefficient       | 4             | Design includes two elbows (1.5 each) plus 1 from head loss trick |
-| Pipe Roughness               | 0.0015 mm     | Standard pipe roughness for PVC                                   |
-| Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
-| Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
-| Small Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
-| Total Pipe Length            | 10 feet       | Roughly UASB Height + UASB Diameter                               |
-| Number of Influent Pipes     | 2             | Used to increase influence area and prevent clogs                 |
+| Parameter                    | Value              | Notes                                                             |
+| ---------------------------- | ------------------ | ----------------------------------------------------------------- |
+| UASB Height                  | 7 ft               | Based on tank dimensions, unset                                   |
+| UASB Diameter                | 3 ft               | Based on tank dimensions, unset                                   |
+| Dump Volume                  | 16 Liters          | Calculated during tipping bucket tests                            |
+| Minor Loss Coefficient       | 4                  | Design includes two elbows (1.5 each) plus 1 from head loss trick |
+| Pipe Roughness               | 0.0015 mm          | Standard pipe roughness for PVC                                   |
+| Temp                         | $\geq$23$^{\circ}$C | Minimum Temp in Honduras                                          |
+| Large Influent Pipe Diameter |                    | Determined through Hydraulic Code to meet specifications          |
+| Small Influent Pipe Diameter |                    | Determined through Hydraulic Code to meet specifications          |
+| Total Pipe Length            | 10 feet            | Roughly UASB Height + UASB Diameter                               |
+| Number of Influent Pipes     | 2                  | Used to increase influence area and prevent clogs                 |
 
 
 **Hydraulic Code**
@@ -360,7 +360,10 @@ Our second potential design has the influent tank directly on top of the UASB sy
 
 ### Testing the Tipping Bucket
 #### Tapioca Tests
-To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB.
+
+To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB system. Crushed tapioca was chosen to simulate the reactor sludge due to its similarity in texture and density to the actual reactor sludge.
+
+The goal of the tapioca tests is to study the flow patterns within the UASB reactor by injecting dye, and to check for conditions under which the reactor is likely to fail - either due to clogging, or due to preferential flow which may create dead zones in the sludge.
 
 Testing has begun with one influent pipe and eventually will be done with two influent pipes as well. If one influent pipe is sufficient to fluidize the sludge blanket, fabrication of the UASB would become a lot easier. However, the code would need to be updated to accommodate this change, and scaling up to larger reactors in the future would be more difficult.
 
@@ -481,6 +484,8 @@ print(v2.to(u.ml/u.s))
 
 The team has begun preliminary discussions with Monroe regarding the Biogas Capture system. A meeting with Ed Gottlieb from the Ithaca wastewater plant has been scheduled to discuss integrating the UASB plant into the Ithaca wastewater plant, as well as to discuss biogas collection. Research to find biogas storage bags is ongoing.
 
-## Fabrication manual
+A possible biogas balloon has been found on [Amazon](https://www.amazon.com/PUXIN-Material-Biogas-Storage-Balloon/dp/B07FKS1W6J/ref=sr_1_1?ie=UTF8&qid=1532020224&sr=8-1&keywords=biogas+bag)
 
-The team started to write a fabrication manual this summer that will document the total fabrication process so later teams can recreate the UASB system. This working document can be found in our Github repository.
+## Fabrication Manual
+
+The team started to write a [fabrication manual]() this summer that will document the total fabrication process so later teams can recreate the UASB system. This working document can be found in our Github repository.
