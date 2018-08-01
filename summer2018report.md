@@ -17,7 +17,7 @@ One major design goal for the summer was to finish the influent system that deli
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
 <p>
-<em>Figure 6: Schematic of Influent System</em>
+<em>Figure 1: Schematic of Influent System</em>
 </p>
 </center>
 
@@ -44,7 +44,7 @@ Built within the design of the influent systems are a number of hydraulic constr
 |:-------------------------------- |:--------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Reactor Volume                   | 1221 Liters     | Yes          | Based on max diameter and height to allow fabrication                                                                                                                                                        |
 | Sludge Volume                    | ~850 Liters     | No           | Roughly 70% of Reactor Volume.  Needs to be better constrained based on location of tube settler.                                                                                                            |
-| HRT                              | $\geq$ 4hrs     | Yes, minimum | Based on literature and lab scale test.                                                                                                                                                                      |
+| HRT                              | $\geq$ 4hrs  | Yes, minimum | Based on literature and lab scale test.                                                                                                                                                                      |
 | Descending Sewage Velocity       | $\leq$ 0.2 m/s  | Yes, Maximum | Maximum velocity that will allow air bubbles to rise out of reactor.  Must only be achieved in beginning of influent pipe systems, not throughout.                                                           |
 | Average Flow Rate                | $\leq$ 0.08 L/s | Yes, Maximum | Q = Volume / Hydraulic Residence Time                                                                                                                                                                        |
 | Minimum Exit Velocity            | $\geq$ 0.03 m/s | Yes          | Minimum velocity needed to scour settling particles  at the end of the influent pipe                                                                                                                                                        |
@@ -55,16 +55,17 @@ Built within the design of the influent systems are a number of hydraulic constr
 | Wastewater Generation per Person | 10.8 L/hr       | No           | Rule of Thumb from Monroe   |
 
 
-From these constraints, the general head loss equation (including the head loss trick) for a circular pipe can be used to determine the head loss needed to achieve the desired exit velocity, given a specific diameter of pipe.  
+From these constraints, the general head loss equation for a circular pipe can be used to determine the head loss needed to achieve the desired exit velocity, given a specific diameter of pipe.  The [head loss trick](https://aguaclara.github.io/Textbook/Review/Review_Fluid_Mechanics.html#head-loss-elevation-difference-trick) is used to do this, and has been used in all further calculations for minor loss coefficients in our design.
+
 
 #### Design of Tipping Bucket system
 
 Given these parameters, the team started to design the tipping bucket system.  Design began by looking into tipping bucket systems online; however, since tipping buckets are generally only used in water parks, it was difficult to find any detailed design processes for these systems. At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
 
 
-<center><img src="https://github.com/AguaClara/UASB/blob/master/IMG_5759%20copy.png?raw=true">
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Timmy_the_Tipping_Bucket.jpg?raw=true">
 <p>
-<em>Figure 1: Timmy the Tipping Bucket</em>
+<em>Figure 2: Timmy the Tipping Bucket</em>
 </p>
 </center>
 
@@ -78,7 +79,7 @@ After discussing the design more with Monroe, the team settled on a new design, 
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Tipping_Bucket.png?raw=true">
 <p>
-<em>Figure 2: Influent System with Tipping Bucket</em>
+<em>Figure 3: Influent System with Tipping Bucket</em>
 </p>
 </center>
 
@@ -86,7 +87,7 @@ This tipping bucket is created with a 5 gallon bucket (chosen as they are easy t
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_System_Brackets_Pivots.png?raw=true">
 <p>
-<em>Figure 3: Rectangular bracket with the "roller pivot"</em>
+<em>Figure 4: Rectangular bracket with the "roller pivot"</em>
 </p>
 </center>
 
@@ -97,7 +98,7 @@ This model became the teams the first design of the tipping bucket function.  Ho
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping_Bucket_Off_Centered_Pivots.png?raw=true">
 <p>
-<em>Figure 4: Top view of tipping bucket showing the off-centered pivots</em>
+<em>Figure 5: Top view of tipping bucket showing the off-centered pivots</em>
 </p>
 </center>
 
@@ -107,7 +108,7 @@ The frame is pictured below, attached to the 5-gallon bucket used within the sys
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
 <p>
-<em>Figure 5: Tipping bucket mounted on the aluminum frame for bench top testing</em>
+<em>Figure 6: Tipping bucket mounted on the aluminum frame for bench top testing</em>
 </p>
 </center>
 
@@ -292,7 +293,7 @@ Our first design for the system has the pipes enter from the side of the UASB, a
 | UASB Height                  | 7 ft               | Based on tank dimensions, unset                                   |
 | UASB Diameter                | 3 ft               | Based on tank dimensions, unset                                   |
 | Dump Volume                  | 16 Liters          | Calculated during tipping bucket tests                            |
-| Minor Loss Coefficient       | 4                  | Design includes two elbows (1.5 each) plus 1 from head loss trick |
+| Minor Loss Coefficient       | 4                  | Design includes two elbows (1.5 each) plus 1 |
 | Pipe Roughness               | 0.0015 mm          | Standard pipe roughness for PVC                                   |
 | Temp                         | $\geq$23$^{\circ}$C | Minimum Temp in Honduras                                          |
 | Large Influent Pipe Diameter |                    | Determined through Hydraulic Code to meet specifications          |
@@ -318,7 +319,7 @@ The team then ensured that the velocity within the pipe is below 0.2 m/s, given 
 # pipe when hydraulic head is largest after a dump
 pipe_A = pc.area_circle(target_diam)
 # incorporate all kinetic energy
-# as loss through head loss trick
+# as minor loss
 K_minor = 1
 Temp = 23 * u.degC # average temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
@@ -342,7 +343,7 @@ Our second potential design has the influent tank directly on top of the UASB sy
 | UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
 | UASB Diameter                | 3 ft          | Based on tank dimensions, unset                                   |
 | Dump Volume                  | 16 Liters     | Calculated during tipping bucket tests                            |
-| Minor Loss Coefficient       | 1             |Straight pipe, 1 from head loss trick |
+| Minor Loss Coefficient       | 1             |Straight pipe, 1  |
 | Pipe Roughness               | 0.0015 mm     | Standard pipe roughness for PVC                                   |
 | Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
 | Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
@@ -371,9 +372,9 @@ The first UASB was modeled using a simple plastic beaker. Tapioca that had been 
 
 Most observations for this test were made qualitatively, and the system was also raised up so that a cell phone camera could be used to record flow patterns from the bottom of the system.  
 
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Tapioca%20Test.JPG?raw=true">
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Tapioca%20Test.JPG?raw=true">
 <p>
-<em>Figure 8: Set Up of the Tapioca Experiment Using One Influent Pipe</em>
+<em>Figure 9: Set Up of the Tapioca Experiment Using One Influent Pipe</em>
 </p>
 </center>
 
@@ -488,4 +489,4 @@ A possible biogas balloon has been found on [Amazon](https://www.amazon.com/PUXI
 
 ## Fabrication Manual
 
-The team started to write a [fabrication manual]() this summer that will document the total fabrication process so later teams can recreate the UASB system. This working document can be found in our Github repository.
+The team started to write a [fabrication manual](https://github.com/AguaClara/UASB/blob/master/UASBfabricationmanual.md) this summer that will document the total fabrication process so later teams can recreate the UASB system. This working document can be found in our Github repository.
