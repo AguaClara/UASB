@@ -32,7 +32,7 @@ It is preferable to have the screening happen a certain distance away from the r
 
 
 There were initially two options for an influent system $-$ a **tipping bucket** or a **siphon**. Due to scaling issues with modeling siphons, we decided on using a tipping bucket to deliver wastewater into the reactor.
-There is a detailed schematic of the tipping bucket mechanism available in the UASB Spring 2018 Manual.
+There is a detailed schematic of the tipping bucket mechanism available in the [UASB Spring 2018 Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md) and the [Summer 2018 Report](https://github.com/AguaClara/UASB/blob/master/summer2018report.md).
 
 ### Tipping Bucket
 Assuming a pulse volume input of 10-20 L, we plan to use a 5-gallon bucket that will be mounted off-centered on some sort of shaft. The bucket can rotate about the shaft, and this entire setup will be enclosed within a holding tank.
