@@ -20,8 +20,6 @@ One major design goal for the summer was to finish the influent system that deli
 <em>Figure 6: Schematic of Influent System</em>
 </p>
 </center>
-**_Juan's comments: (AG - not a 100% sure I know what sort of image would be helpful here) I think a figure would be very useful here, as it is extremely difficult to understand what's going on without being able to image the reactor_**
-
 
 #### Continuous versus Pulse Flow
 
@@ -158,12 +156,12 @@ bucket_vol = 15 * u.L  #Assuming the bucket fills 75%
 head_gain = (bucket_vol / area).to(u.cm)
 print("One dump of the bucket gives", head_gain, "of hydraulic head")
 # Prints: One dump of the bucket gives
+#7.143 centimeter of hydraulic head
 ```
 Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the influent tank.
 
 After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.
-
-<center><img src="">
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Tank.jpg?raw=true">
 <p>
 <em>Figure 7: Close up of the influent system showing the larger cylindrical pipe segments</em>
 </p>
@@ -185,23 +183,36 @@ import doctest
 
 # Define functions
 def UASB_Size(diam, height, HRT, sludge_percent):
-    """Takes in diameter, height, average hydraulic residence time (HRT), and percentage of volume occupied by sludge blanket of model UASB. Outputs volume, required average flow rate, and the number of people served per reactor for both mixed wastewater and blackwater (pure toilet water)
+    """Takes in diameter, height, average hydraulic residence time (HRT),
+    and percentage of volume occupied by sludge blanket of model UASB.
+    Outputs volume, required average flow rate, and the number of people served
+     per reactor for both mixed wastewater and blackwater (pure toilet water)
     >>> from aide_design.play import*
     >>> UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
-    [<Quantity(1401.1199563135376, 'liter')>, <Quantity(0.06810999787635252, 'liter / second')>, 22, 113]
+    [<Quantity(1401.1199563135376, 'liter')>,
+     <Quantity(0.06810999787635252, 'liter / second')>, 22, 113]
     """
-    WW_gen = 3 * u.mL/u.s        #Wastewater generated per person, rule of thumb from Monroe
-    WW_gen_bw = 0.6 * u.mL/u.s   #Assumes 20% of mixed wastewater
+    WW_gen = 3 * u.mL/u.s
+    #Wastewater generated per person, rule of thumb from Monroe
+    WW_gen_bw = 0.6 * u.mL/u.s   
+    #Assumes 20% of mixed wastewater
     vol_reactor = (diam/2)**2 * math.pi * height
-    vol_reactor_sludge = vol_reactor * sludge_percent #Calculate total volume of reactor containing sludge blanket, used in HRT calculation
-    flow = vol_reactor_sludge / HRT #Average flow rate through reactor given by volume and residence time
-    people_served = int(flow / WW_gen)       #People served per reactor
-    people_served_BW = int(flow / WW_gen_bw) #People served per reactor treating only blackwater
-    output = [vol_reactor.to(u.L), flow.to(u.L/u.s), people_served, people_served_BW]
+    vol_reactor_sludge = vol_reactor * sludge_percent
+    #Calculate total volume of reactor containing sludge blanket
+    # used in HRT calculation
+    flow = vol_reactor_sludge / HRT
+    #Average flow rate through reactor given by volume and residence time
+    people_served = int(flow / WW_gen)  #People served per reactor
+    people_served_BW = int(flow / WW_gen_bw)
+    #People served per reactor treating only blackwater
+    output = [vol_reactor.to(u.L), flow.to(u.L/u.s), \
+    people_served, people_served_BW]
     return output
 
 def bucket_filltime(flowrate_avg, dump_vol):
-    """Takes in average flow rate into tipping bucket and the fill volume before one dump and calculates the average time it takes the bucket to fill and dump.
+    """Takes in average flow rate into tipping bucket and the fill volume
+    before one dump and calculates the average time it takes
+    the bucket to fill and dump.
     >>> from aide_design.play import*
     >>> bucket_filltime(0.068 * (u.L/u.s), 16.26 * u.L)
     [<Quantity(239.1, 'second')>]
@@ -210,19 +221,29 @@ def bucket_filltime(flowrate_avg, dump_vol):
     return filltime.to(u.s)
 
 def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp, pipe_rough):
-  """Takes in desired exit velocity as well as pipe size and hydraulic parameters and calculates the hydraulic head needed to achieve this velocity using head loss function from aide_design.  Assumes use of schedule 40 pipes.
+  """Takes in desired exit velocity as well as pipe size and hydraulic parameters
+   and calculates the hydraulic head needed to achieve this velocity
+   using head loss function from aide_design.
+   Assumes use of schedule 40 pipes.
 
 
   """
-  pipe_ID = pipe.ID_sch40(nom_diam)   # Calculates pipe inner diameter from nominal diameter
-  pipe_flow = target_exitvel * pc.area_circle(pipe_ID) #find flowrate based on exit velocity
+  pipe_ID = pipe.ID_sch40(nom_diam)   
+  # Calculates pipe inner diameter from nominal diameter
+  pipe_flow = target_exitvel * pc.area_circle(pipe_ID)
+  #find flowrate based on exit velocity
   Nu = pc.viscosity_kinematic(Temp)
   headloss = pc.headloss(pipe_flow, pipe_ID, pipe_length, Nu, Pipe_rough, Kminor)
   return headloss
 
 def head_gain_per_dump(dump_vol, nom_diam, pipe_height, tank_width, tank_length):
-  """Determines gain in hydraulic head per dump of tipping bucket based on geometry of influent system.  Assumes all water is added first to pipes, then additional volume fills the influent tank.  Pipe_height is total length of pipe above water level set by effluent line.  Assumes schedule 40 pipe.  For influent system with no standing water in pipes, set pipe height to 0.
-
+  """Determines gain in hydraulic head per dump of tipping bucket
+   based on geometry of influent system.  Assumes all water is
+   added first to pipes, then additional volume fills the
+   influent tank.  Pipe_height is total length of pipe above
+   water level set by effluent line.  Assumes schedule 40 pipe.
+   For influent system with no standing water in pipes,
+   set pipe height to 0.
 
   """
   pipe_ID = pipe.ID_sch40(nom_diam)
@@ -230,16 +251,23 @@ def head_gain_per_dump(dump_vol, nom_diam, pipe_height, tank_width, tank_length)
   if pipe_vol.to_base_units >= dump_vol.to_base_units:
     headgain = dump_vol / pc.area_circle(pipe_ID)
   else:
-    tank_fill_vol = dump_vol - pipe_vol #volume filling influent tank after pipes are full
-    tank_headgain = tank_fill_vol / tank_width * tank_length #calculate headgain from tank fill volume
+    tank_fill_vol = dump_vol - pipe_vol
+    #volume filling influent tank after pipes are full
+    tank_headgain = tank_fill_vol / tank_width * tank_length
+    #calculate headgain from tank fill volume
     headgain = tank_headgain + pipe_height
   return headgain
 
 def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
-  """Check velocity of water flowing through larger influent pipe.  Inputs are velocity through the smaller pipe (exit velocity calculated above), and diameter of each pipe.  This is used to confirm that flow is below 0.2 m/s for a piece of the influent, to allow air bubbles to escape.
+  """Check velocity of water flowing through larger
+  influent pipe. Inputs are velocity through the smaller pipe
+  (exit velocity calculated above), and diameter of each pipe.  
+  This is used to confirm that flow is below 0.2 m/s
+  for a piece of the influent, to allow air bubbles to escape.
 
   """
-  large_pipe_vel = exit_vel * (small_pipe_diam ** 2) / (large_pipe_diam ** 2)
+  large_pipe_vel = \
+  exit_vel * (small_pipe_diam ** 2) / (large_pipe_diam ** 2)
   return large_pipe_vel
 
 ```
@@ -275,7 +303,8 @@ Our first design for the system has the pipes enter from the side of the UASB, a
 
 **Hydraulic Code**
 ```python
-# Requires tools are imported and functions were defined in above section
+# Required tools are imported
+# and functions were defined in above section
 
 UASB_design = UASB_Size(3 * u.ft, 7 * u.ft, 4 * u.hr, 0.7)
 filltime = bucket_filltime(UASB_Size[1], 16 (* u.L))
@@ -285,13 +314,17 @@ filltime = bucket_filltime(UASB_Size[1], 16 (* u.L))
 The team then ensured that the velocity within the pipe is below 0.2 m/s, given the pipe diameter, to allow air bubbles to escape.  
 
 ```python
-# Calculate the maximum velocity through the large diameter pipe when hydraulic head is largest after a dump
+# Calculate the maximum velocity through the large diameter
+# pipe when hydraulic head is largest after a dump
 pipe_A = pc.area_circle(target_diam)
-K_minor = 1 # incorporate all kinetic energy as loss through head loss trick
+# incorporate all kinetic energy
+# as loss through head loss trick
+K_minor = 1
 Temp = 23 * u.degC # average temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
 Pipe_Rough = 0.0015 * u.mm
-FlowRate = pc.flow_pipe(target_diam, total_hl, pipe_hl, Nu, Pipe_Rough, K_minor)
+FlowRate = pc.flow_pipe \
+(target_diam, total_hl, pipe_hl, Nu, Pipe_Rough, K_minor)
 Max_vel = (FlowRate / pipe_A).to(u.m / u.s)
 print(Max_vel)
 
@@ -355,7 +388,14 @@ import doctest
 
 # Define functions
 def find_pump_flowrate(exit_vel_target, pipe_innerdiam, num_pipes):
-  """Finds flow rate for pump system to reach input exit velocity via the continuity equation Q = vA.  Inputs are flow rate generated from pump, tubing inner diameter, and total number of pipes.  Flow rate is generated from table on confluence relating pump speed, pipe diameter and flow rate.  Does not account for head losses, water pressure, or change in head as they are negligible compared to pump speed.
+  """Finds flow rate for pump system to reach input exit velocity
+  via the continuity equation Q = vA.
+  Inputs are flow rate generated from pump,
+  tubing inner diameter, and total number of pipes.  
+  Flow rate is generated from table on confluence relating
+  pump speed, pipe diameter and flow rate.  
+  Does not account for head losses, water pressure, or
+  change in head as they are negligible compared to pump speed.
   """
   inner_area = pc.area_circle(pipe_innerdiam)
   pump_Q = exit_vel_target * inner_area * num_pipes
@@ -367,7 +407,12 @@ def find_pump_vel():
   return
 
 def bucket_dump_calcs(dump_volume, UASB_height, UASB_diameter):
-  """Solves for the height of water added to the bottom of the reactor and the percentage of total volume added with each dump for tipping bucket case.  Inputs total dump volume and reactor volume.
+  """Solves for the height of water added
+  to the bottom of the reactor and the
+  percentage of total volume added with
+  each dump for tipping bucket case.  
+  Inputs total dump volume and reactor
+  volume.
 
 
   """
@@ -378,7 +423,12 @@ def bucket_dump_calcs(dump_volume, UASB_height, UASB_diameter):
   return [height_added, bucket_percent]
 
 def pump_dump_calcs(pump_flowrate, pump_flowtime, UASB_height, UASB_diameter):
-  """Solves for the height added per pump run and the dump percentage created by pump system for tapioca tests.  Inputs flowrate created by pump, total pump runtime, and the height and diameter of the model UASB
+  """Solves for the height added per pump
+  run and the dump percentage created by
+  pump system for tapioca tests.  Inputs
+  flowrate created by pump, total pump
+  runtime, and the height and diameter of
+  the model UASB
 
 
   """
@@ -390,7 +440,11 @@ def pump_dump_calcs(pump_flowrate, pump_flowtime, UASB_height, UASB_diameter):
   return [height_added, bucket_percent]
 
 def find_upflow_vel(UASB_Flowrate_avg, UASB_CrossArea):
-    """Finds average upflow velocity within the reactor using tipping bucket system.  Inputs are flowrate through reactor and the cross sectional area within the reactor.
+    """Finds average upflow velocity
+     within the reactor using tipping
+    bucket system.  Inputs are flowrate
+    through reactor and the cross
+    sectional area within the reactor.
     """
     avg_upflow_vel = UASB_Flowrate_avg / UASB_CrossArea
     return avg_upflow_vel
@@ -403,7 +457,8 @@ doctest.testmod(verbose=True)
 
 ```python
 #Run for target exit velocities
-#Current setup ID is 1/4 inch (3/8 nom diam) and 1/8 inch (1/4 in nom diam)
+#Current setup ID is 1/4 inch (3/8 nom diam)
+#and 1/8 inch (1/4 in nom diam)
 
 flowrate1mps = find_pump_exitv(0.3 * u.m/u.s, .25 * u.inch, 1)
 print(flowrate1mps.to(u.ml/u.s))
