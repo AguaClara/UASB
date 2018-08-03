@@ -4,21 +4,35 @@
 Zoe Maisel (zam7)
 
 ## Team Members:
-Zac Chen (zc76)
-
 Ian Cullings (idc25)
 
 Ananya Gangadhar (ag757)
 
-Jennifer Jackson (jkj46)
+Isa Kaminsky (imk28)
+
+Aly Storch (ats228)
 
 ## Semester Goals:
-In the Spring 2018 semester, the UASB team will be working on finalizing designs for the pilot scale UASB initially proposed in the 2017 EPA P3 Phase I grant. More specifically, we will be designing a hydraulic inlet system, and designing, and updating the biogas capture/storage system. We will also be writing a Phase II grant to get funding for the fabrication and testing of a second pilot scale UASB.
+In Summer 2018, the UASB team will be working on finishing the designs of all UASB components. More specifically, we will finalize the tipping bucket influent system dimensions, and design a biogas storage system. We will also set up benchtop tests to model flow within the UASB reactor. Should time permit, the team also aims to start fabricating the UASB reactor prototype that will be tested in the Ithaca Area Wastewater Treatment Facility in the near future.
+
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
+### Summer 2018
+[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)
+
+[UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md)
+
+[UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md)
+
+[Final Presentation](https://docs.google.com/presentation/d/1hZF6zNaL1DjUnw9Y7dfBTTy_UKkT6FQ3-bpJ3-LKSso/edit#slide=id.g3de4d76f23_0_0)
+
+[Symposium Presentation](https://docs.google.com/presentation/d/1N9mBDx0nGMsFF6kK5UOlH5CoB0236ylh6cDra5ed5VQ/edit#slide=id.p)
+
 ### Spring 2018
+[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_Manual_Spring2018.md)
+
 [EPA Phase II Proposal](https://drive.google.com/drive/u/0/folders/1R06KTc1YorY5BVCvEJoD1V0gNFe1B6EX)
 
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)  
