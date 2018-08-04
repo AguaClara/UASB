@@ -24,7 +24,7 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md)
 [UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md)
 [Final Presentation](https://docs.google.com/presentation/d/1hZF6zNaL1DjUnw9Y7dfBTTy_UKkT6FQ3-bpJ3-LKSso/edit#slide=id.g3de4d76f23_0_0)
-[Symposium Presentation](https://docs.google.com/presentation/d/1N9mBDx0nGMsFF6kK5UOlH5CoB0236ylh6cDra5ed5VQ/edit#slide=id.p)
+[Symposium Presentation](https://docs.google.com/presentation/d/1N9mBDx0nGMsFF6kK5UOlH5CoB0236ylh6cDra5ed5VQ/edit#slide=id.p) 
 
 ### Spring 2018
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_Manual_Spring2018.md)
