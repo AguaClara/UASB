@@ -20,18 +20,20 @@ In Summer 2018, the UASB team will be working on finishing the designs of all UA
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
 ### Summer 2018
-[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)
-[UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md)
-[UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md)
-[Final Presentation](https://docs.google.com/presentation/d/1hZF6zNaL1DjUnw9Y7dfBTTy_UKkT6FQ3-bpJ3-LKSso/edit#slide=id.g3de4d76f23_0_0)
-[Symposium Presentation](https://docs.google.com/presentation/d/1N9mBDx0nGMsFF6kK5UOlH5CoB0236ylh6cDra5ed5VQ/edit#slide=id.p) 
+
+[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)  
+[UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md)  
+[UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md)  
+[Final Presentation](https://docs.google.com/presentation/d/1hZF6zNaL1DjUnw9Y7dfBTTy_UKkT6FQ3-bpJ3-LKSso/edit#slide=id.g3de4d76f23_0_0)  
+[Symposium Presentation](https://docs.google.com/presentation/d/1N9mBDx0nGMsFF6kK5UOlH5CoB0236ylh6cDra5ed5VQ/edit#slide=id.p)   
 
 ### Spring 2018
-[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_Manual_Spring2018.md)
-[EPA Phase II Proposal](https://drive.google.com/drive/u/0/folders/1R06KTc1YorY5BVCvEJoD1V0gNFe1B6EX)
+
+[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_Manual_Spring2018.md)  
+[EPA Phase II Proposal](https://drive.google.com/drive/u/0/folders/1R06KTc1YorY5BVCvEJoD1V0gNFe1B6EX)  
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/UASB_Manual_Spring2018.md)  
-[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10)
-[Symposium Presentation](https://docs.google.com/presentation/d/1HlOt3QwduvcUE1-q1j3W2VCLtRTx1YZtRwdGuUHw1Nc/edit?usp=sharing)
+[Final Presentation](https://docs.google.com/presentation/d/19KDJeR3jFMpG38ATpRfZzDou6Skq2VnvoBt4Kz1KbIw/edit#slide=id.g39fe0f3437_0_10)  
+[Symposium Presentation](https://docs.google.com/presentation/d/1HlOt3QwduvcUE1-q1j3W2VCLtRTx1YZtRwdGuUHw1Nc/edit?usp=sharing)  
 
 ### Fall 2017
 Note: The UASB team began implementing GitHub in Fall 2017. All documentation was created in Jupyter Notebook files that can be found in the UASB repository under "[Jupyter Notebook files](https://github.com/AguaClara/UASB/tree/master/Jupyter%20Notebook%20Files)"
