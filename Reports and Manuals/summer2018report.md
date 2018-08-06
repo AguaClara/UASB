@@ -18,7 +18,7 @@ Organic matter within wastewater is degraded by biologically by aquatic bacteria
 
 Finally, fecal matter from wastewater is a major contributor to the spread of infectious waterborne diseases including Cholera, Salmonella, and Diarrhea.  Pollution of waterways where others source their water from leads to the rapid spread of these diseases, particularly in areas downstream of other communities.
 
-Currently in the United States effective municipal wastewater treatment facilities have long retention times, require large land areas, and have a high fixed cost per capita. Implementing these systems in smaller communities leads to high fixed costs per capita and large levels of infrastructure, both of which are often unattainable for smaller communities.  Because of this, many communities across the world forgo wastewater treatment altogether and dishcharge wastewater directly into the environment.  
+Currently in the United States effective municipal wastewater treatment facilities have long retention times, require large land areas, and have a high fixed cost per capita. Implementing these systems in smaller communities leads to high fixed costs per capita and large levels of infrastructure, both of which are often unattainable for smaller communities.  Because of this, many communities across the world forgo wastewater treatment altogether and discharge wastewater directly into the environment.  
 
 UASB reactors, used as a preliminary wastewater treatment process, clarify wastewater by removing suspended solids organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a by-product of anaerobic digestion.  This methane can be captured and burned for energy production or heating.
 
@@ -28,11 +28,9 @@ Since submission of this proposal, there has been ongoing work to develop the fi
 
 ## Previous Work
 
-The Spring 2017 team wrote and submitted Phase I of the EPA P3 proposal, detailing a proposal to design a UASB system to provide effective wastewater treatment for small rural communities without access to wastewater infrastructure.  This proposal passed Phase I funding, providing funding for building the first model UASB reactor.  The team also 
+The Spring 2017 team wrote and submitted Phase I of the EPA P3 proposal, detailing a proposal to design a UASB system to provide effective wastewater treatment for small rural communities without access to wastewater infrastructure.  This proposal passed Phase I funding, providing funding for building the first model UASB reactor.  The team also conducted studies on using plate settlers, angled plastic sheets within the reactor that capture rising particles, where they concluded that they did not significantly impact solids retention.  They also found that biogas production within the reactor did not cause solids to rise out the effluent significantly.  The full details can be found in their [final research report](https://www.overleaf.com/8107719xzjdzswjvtyj#/28623295/)
 
-The full details can be found in their [final research report](https://www.overleaf.com/8107719xzjdzswjvtyj#/28623295/)
-
-The Fall 2017
+The Fall 2017 team began the design
 
 
 
@@ -116,7 +114,7 @@ This tipping bucket is created with a 5 gallon bucket (chosen as they are easy t
 </p>
 </center>
 
-The addition of the hose clamp also allows for the pieces to be moved spatially around the bucket easily, allowing the team to test many different orientations of the pivot without drilling new holes in the bucket.  This also will allow easy replacement of the bucket system if necessary, as important as pieces will inevitably break.
+There will be a hose clamp around the bucket that the roller pivots will be attached onto. The use of a hose clamp instead of directly welding the roller pivots to the bucket allows us to adjust the position of the pivots easily during initial benchtop tests without drilling new holes in the bucket. It will also allow easy replacement of the bucket system if necessary, since components of the tipping bucket system will inevitably eventually fail.
 
 This model became the teams the first design of the tipping bucket function.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
 
@@ -508,6 +506,170 @@ print(v2.to(u.ml/u.s))
 ```
 
 ### Biogas Capture System
+
+## Biogas Capture
+
+As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.  Capturing this biogas is an important design process for the UASB, as it allows the UASB to produce a valuable product that can provide heating or cooking energy for the communities served by the UASB.
+
+This section is broken into two parts.  **Biogas Production Calculations** details our model of biogas production to quantify how much biogas is produced over time.  **Biogas Storage System** details our design of the biogas storage system.
+
+### Biogas Production Calculations
+
+Biogas production is quantified using the following equation, taken from the [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf):
+
+$COD_{CH_4} = Q(S_o-S) - Y_{obs} Q S_o$
+
+Where:
+
+$COD_{CH_4}$ is the mass of COD converted to methane ($kgCOD_{CH4} / day$)
+
+$Q$ is the average influent flow ($m^3 / day$)
+
+$S_o$ is the influent COD concentration ($kgCOD/m^3$)
+
+$S$ is the effluent COD concentration ($kgCOD/m^3$)
+
+$Y_{obs}$ is the coefficient of solid production within the system in terms of COD (the amount of sludge created from input COD) ($kgCOD_{sludge}/kgCOD_{applied}$)
+* In the literature, $Y_{obs}$ ranges from 0.11 to 0.23.  To assume lower production, we chose the highest value for our calculations (as this is the removal of COD)
+
+Next, this methane mass can be converted to volumetric production as follows:
+
+$Q_{CH4} = \frac{COD_{CH4}}{K(t)}$
+
+Where
+
+$Q_{CH4}$ = volumetric methane production ($m^3 / day$)
+
+and
+
+$K(t)$ = correction factor for operational temp of reactor ($kgCOD/m^3$)
+
+$K(t)$ is defined using the ideal gas law:
+
+$K(t) = \frac{P * K_{COD}}{R * (273 + T)}$
+
+$P$ = atmospheric pressure (1 atm)
+
+$K_{COD}$ = COD corresponding to 1 mole of CH4 ($\frac{64g COD}{mole}$)
+
+$R$ = Ideal Gas Constant = 0.08206 ${\frac{atm*L}{mol*K}}$
+
+$T$ = Temperature ( ${^\circ}C$)
+
+Since biogas contains other gases such as CO2, we must employ a correction factor to account for their contributions to the overall volume.  We assume that biogas is composed 75% of methane, as given in [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).
+
+It is important to note that this equation only gives an approximation of the actual biogas produced, and a fairly inaccurate one at that.  Methanogenesis is a very complicated biochemical process, and there are many other areas to consider that are not included in this equation, such as losses due to leakage, temperature effects, and the varying bacterial composition of the sludge blanket.  As most considerations are losses, we consider the value given by this equation an **overapproximation** and design accordingly.  For safety reasons, it is better to overestimate the volume produced rather than underestimate and design a system that will produce flammable gas.  Despite its problems, this equation still provides a good baseline value of the output biogas to inform the design process.
+
+#### Design Parameters
+*Table 2: Design parameters for biogas production.*
+
+|                        Parameters                        |                 Value                 |                                              Basis of Design                                              |
+|:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
+|          COD Removal Efficiency, ```COD_eff```           |                  70%                  | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
+| Percent of COD directed to Sludge Production ```Y_obs``` |              23%               | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).  Chose highest value of removal to get minimum production value |
+|                     Pressure ```P```                     |                 1 atm                 |                            Biogas produced will be stored at very low pressure                            |
+|                   Temperature ```T```                    |            25 $^{\circ} C$             |                                  Assuming optimal biological conditions                                   |
+
+
+#### Code
+```python
+from aide_design.play import*
+import doctest
+def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
+"""Calculates  molar, mass, and volumetric production rate of biogas within reactor.  Inputs are the flow rate of wastewater into the reactor (volume/time), the Carbonaceous Oxygen Demand of the influent wastewater (mass/volume), the average temperature inside the reactor, and the efficiency of COD removal within the system.  Mass rate conversion done using the ideal gas law.
+
+
+
+"""
+    COD_removed = COD_Load * COD_removal_eff #calculate COD broken down by reactor
+    Y_obs = 0.23 # Upper limit of sludge production
+    CH4prod_mass = (Q * COD_removed) - (Y_obs * Q * COD_Load) #Gives mass CH_4 produced per unit time
+    CH4prod_moles = CH4prod_mass * 0.0623 * (u.mole/u.g) #Convert mass to moles using flipped atomic weight
+
+    # Calculate correction factor for operational temperature of the reactor
+    Pressure = 1 * u.atm
+    K_COD = 64 * (u.g / u.mol)
+    R = 0.08206 * ((u.atm * u.L) / (u.mol * u.degK))
+    K = (P * K_COD) / (R * T)
+    #Calculate the volumetric flow rate of methane production
+    Q_CH4 = COD_CH4 / K # per second
+    return Q_CH4
+
+doctest.testmod(verbose=True)
+
+
+# Flow rate through UASB reactor
+Flow_design = UASB_design[1]
+print(Flow_design)
+Temp = 25 * u.degC  # Assuming mesophilic conditions
+Removal_eff = 0.7 # 70% removal efficiency
+
+#Approximate loading rates for domestic wastewater
+COD_Load_min = 100 * (u.mg / u.L)
+COD_Load_mid = 200 * (u.mg / u.L)
+COD_Load_max = 300 * (u.mg / u.L)
+
+Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp, 0.7)
+#Calculating size of storage device
+print(Q_Biogas.to(u.L/u.day))
+```
+
+### Biogas Storage System
+
+#### Lid design
+
+##### Design 1: Hydraulic Seal
+
+##### Design 2: Full Seal
+
+#### Capture System Design
+
+
+An important aspect of UASB design is the capture and storage of biogas produced during anaerobic digestion within the reactor.  As this gas is produced within the sludge blanket, it floats upwards through the settling zone and is captured within the lid space.  The UASB team considered many possible designs for this capture system.  These three options, along with their pros and cons are detailed in the table below.
+
+*Table 3: Comparison between different types of biogas capture systems*
+
+| Type of Storage | Advantages | Disadvantages |
+|:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
+| Gas Bag         | (1) Flexible and easy connection on top of next to reactor (2) **Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
+| Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
+| Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate  |
+
+After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
+
+Schematically, gas will flow out the top lid of the reactor through a pipe into
+
+
+#### Code
+```python
+def Dim_Storage(day_prod, time_stor, time_fail, diam_lid):
+  """Takes the daily volume of biogas produced (volume per time), the numbers of days for desired storage, and the time required before critical lid failure and returns the volume required for the temporary storage system and the dimensions for the lid required to retain a set amount of biogas before failure"""
+
+  day_prod = day_prod.to_base_units()
+  time_stor = time_stor.to_base_units()
+  vol_stor = day_prod * time_stor
+
+  time_fail = time_fail.to_base_units()
+  vol_fail = day_prod * time_fail
+
+  diam_lid = diam_lid.to_base_units()
+  area_lid = 0.25 * math.pi * (diam_lid)**2
+  height_lid = ( vol_fail / area_lid ).to(u.ft)
+
+  return[vol_stor, height_lid]
+
+day_prod = Q_Biogas[1]
+time_stor = 2 * u.day
+time_fail = 12 * u.hr
+diam_lid = 2.5 * u.ft
+
+size_stor = Dim_Storage(day_prod, time_stor, time_fail, diam_lid)
+vol_stor = size_stor[0].to(u.gal)
+height_lid = size_stor[1]
+
+print("The storage volume required to store", time_stor, "of biogas is", vol_stor, "\n" "The height of lid to prevent failure before", time_fail, "is", height_lid)
+```
+
 
 The team has begun preliminary discussions with Monroe regarding the Biogas Capture system. A meeting with Ed Gottlieb from the Ithaca wastewater plant has been scheduled for August 3, 2018 to discuss integrating the UASB plant into the Ithaca wastewater plant, as well as to discuss biogas collection. Research to find biogas storage bags is ongoing.
 
