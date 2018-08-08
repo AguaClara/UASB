@@ -5,6 +5,41 @@
 ### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
 
+## Index
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Abstract](#abstract)
+- [Introduction](#introduction)
+- [Previous Work](#previous-work)
+- [Influent Flow System](#influent-flow-system)
+  - [Tipping Bucket versus Siphon System](#tipping-bucket-versus-siphon-system)
+  - [Hydraulic Parameters](#hydraulic-parameters)
+  - [Hydraulic Code](#hydraulic-code)
+  - [Tipping Bucket Design](#tipping-bucket-design)
+  - [Influent Tank Design](#influent-tank-design)
+  - [Influent System Geometry <a name="InfSysGeo"></a>](#influent-system-geometry-a-nameinfsysgeoa)
+    - [Design 1: Side Entry](#design-1-side-entry)
+    - [Design 2: Top Entry](#design-2-top-entry)
+- [Benchtop Testing](#benchtop-testing)
+  - [Tapioca Tests](#tapioca-tests)
+    - [Goals](#goals)
+- [Biogas Capture System](#biogas-capture-system)
+- [Biogas Capture](#biogas-capture)
+  - [Biogas Production Calculations](#biogas-production-calculations)
+    - [Design Parameters](#design-parameters)
+    - [Code](#code)
+  - [Biogas Storage System](#biogas-storage-system)
+    - [Lid design](#lid-design)
+      - [Design 1: Hydraulic Seal](#design-1-hydraulic-seal)
+      - [Design 2: Full Seal](#design-2-full-seal)
+    - [Capture System Design](#capture-system-design)
+    - [Code](#code-1)
+- [Fabrication Manual](#fabrication-manual)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Abstract
 Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally proposed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB.
 
@@ -28,15 +63,19 @@ Since submission of this proposal, there has been ongoing work to develop the fi
 
 ## Previous Work
 
-The Spring 2017 team wrote and submitted Phase I of the EPA P3 proposal, detailing a proposal to design a UASB system to provide effective wastewater treatment for small rural communities without access to wastewater infrastructure.  This proposal passed Phase I funding, providing funding for building the first model UASB reactor.  The team also conducted studies on using plate settlers, angled plastic sheets within the reactor that capture rising particles, where they concluded that they did not significantly impact solids retention.  They also found that biogas production within the reactor did not cause solids to rise out the effluent significantly.  The full details can be found in their [final research report](https://www.overleaf.com/8107719xzjdzswjvtyj#/28623295/)
+The Spring 2017 team wrote and submitted Phase I of the EPA P3 proposal, detailing a proposal to design a UASB system to provide effective wastewater treatment for small rural communities without access to wastewater infrastructure.  This proposal passed Phase I funding, providing funding for building the first model UASB reactor.  The team also conducted studies on using plate settlers, angled plastic sheets within the reactor that capture rising particles, where they concluded that they did not significantly impact solids retention.  They also found that biogas production within the reactor did not cause solids to rise out the effluent significantly.  The full details can be found in their [final research report](https://www.overleaf.com/8107719xzjdzswjvtyj#/28623295/).
 
-The Fall 2017 team began the design
+The Fall 2017 team began the design process for the UASB.  The team worked on the influent system, biogas collection system, and the effluent lines, and created [design code in Jupyter notebooks](https://github.com/AguaClara/UASB/tree/master/Jupyter%20Notebook%20Files).  The team also had its initial meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment plant.  The team went over the design with Ed, and secured a space in the plant to set up and test the reactor using influent wastewater.  
 
+In Spring 2018, the team focused more on specific components of the design, particularly the influent system and biogas storage.  While previously the team had assumed the system would have continuous flow, a deeper dive into the hydraulics revealed that this would require around 6 millimeter to achieve our desired exit velocity.  Given this, the team decided to move to a pulse flow system where wastewater is collected and then dumped all at once to achieve high flowrate.  
 
+Meeting with Ed Gottlieb once again, he suggested two methods of pulse flow. The first is a tipping bucket system, where wastewater collects in a bucket on a pivot that will tip and dump all at once, then return to its original position.  The second suggestion was to use a siphon to pull water through a tube and into the reactor.  The rest of the semester was spent investigating these two systems to determine the most effective option.
+
+During Spring 2018 the team also applied for Phase II of the EPA P3 Grant, this time for $75,000.  The application, found [here](https://docs.google.com/document/d/1ejsyrxgZOtswRr5hx-XJ22QQtn4LzLtoVheMF-YvFrs/edit), focused primarily on the design of a second testing reactor to run in parallel with new modifications to test the efficacy of the system.  This funding would also be used for establishing a testing system in Honduras for field data.
 
 ## Influent Flow System
 
-One major design goal for the summer was to finish the influent system that delivers wastewater to the bottom of the reactor from a holding tank.
+One major design goal for the summer was to finish design of the influent system that delivers wastewater to the bottom of the reactor from a holding tank.
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Geo%20Slant.png?raw=true">
 <p>
@@ -44,20 +83,34 @@ One major design goal for the summer was to finish the influent system that deli
 </p>
 </center>
 
-#### Continuous versus Pulse Flow
+### Tipping Bucket versus Siphon System
 
-When design of the influent system began in Spring 2018, the team assumed flow into the reactor would be continuous and at a roughly constant rate. This is an assumption to facilitate design, as in reality wastewater production will generally rise during the day and lower at night. However, doing the initial calculations reveals that sustaining continuous flow would require a pipe diameter on the order of 10 mm, which would clog easily and create major problems with the flow system.  
+One of the leading questions from the Spring 2018 semester was whether to use the tipping bucket of siphon system to deliver wastewater.  The summer team researched siphons and discussed with the AguaClara program director, Dr. Monroe Weber-Shirk, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.  The pros and cons of each system are listed below.
 
-During a meeting with Ed Gottlieb, an operator at the Ithaca Area Wastewater Treatment Plant, the idea of a pulse flow system was suggested, which would collect wastewater, then deliver it in larger "pulses" to achieve the hydraulic parameters needed.  Mr. Gottlieb's two suggested possible methods were a tipping bucket system or a siphon.  
+***Tipping Bucket***
 
-#### Tipping Bucket versus Siphon System
+**Pros:**
+* Simple to manufacture, uses low cost parts that are easy to obtain
+* Known system used in amusement parks, designs available
 
-The summer team researched siphons and discussed with the AguaClara program director, Dr. Monroe Weber-Shirk, potential design flaws - specifically the diameter of pipe that should be used. The main concern was that if too large a pipe was used, water would be able to pass through the siphon before it had filled to the level needed to create a pulse of a specific volume.
+**Cons**
+* Uses moving parts, which are subject to wear and may break over time much more rapidly than most systems
+* Stirs up wastewater with each dump, increasing chance of splashing and potential bad odors
 
-Ultimately, the team was unable to find detailed enough engineering guidelines on how to design for a siphon using pulse flow, and chose to use a tipping bucket system. An added benefit of using a tipping bucket system is that we only need to add an influent tank and one bucket to our previous reactor design, whereas a siphon would almost certainly require some further design modifications.
+
+***Siphon System***
+
+**Pros:**
+* No moving parts
+
+**Cons:**
+* Potential for clogs and settling in standing  pipes
+* Unknown system, little design guidelines on how it works
 
 
-#### Hydraulic Parameters
+Ultimately, given the simplicity of the tipping bucket design, and the lack of documentation on siphons, the team decided to move forward with the tipping bucket system.  
+
+### Hydraulic Parameters
 
 Built within the design of the influent systems are a number of hydraulic constraints that must be met for the flow to work properly.  These are summarized in Table 1 below.
 
@@ -77,124 +130,7 @@ Built within the design of the influent systems are a number of hydraulic constr
 | Bucket Dump Volume               | ~20 L           | No           | Constraints are: time to fill bucket and relative volume to reactor capacity. A large dump volume allows more time for the bucket to fill, slowing down wear and tear. But the dump volume should also be a relatively small fraction of the total reactor volume so as to be negligible in volume calculations. 20 L chosen as it is the volume of easily available 5-gallon buckets while fulfilling these constraints |
 | Wastewater Generation per Person | 10.8 L/hr       | No           | Rule of Thumb from Monroe   |
 
-
 From these constraints, the general head loss equation for a circular pipe can be used to determine the head loss needed to achieve the desired exit velocity, given a specific diameter of pipe.  The [head loss trick](https://aguaclara.github.io/Textbook/Review/Review_Fluid_Mechanics.html#head-loss-elevation-difference-trick) is used to do this, and has been used in all further calculations for minor loss coefficients in our design.
-
-
-#### Design of Tipping Bucket system
-
-Given these parameters, the team started to design the tipping bucket system.  Design began by looking into tipping bucket systems online; however, since tipping buckets are generally only used in water parks, it was difficult to find any detailed design processes for these systems. At this point, the team was left with two choices: try to complete a mathematical model of the tipping bucket system (using free-body diagrams), or create a physical model of the tipping bucket system and test it in many configurations to find the optimal design.  Given time constraints and lack of expertise, the team decided to fabricate a tipping bucket it and test it physically.
-
-
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Timmy_the_Tipping_Bucket.jpg?raw=true">
-<p>
-<em>Figure 2: Timmy the Tipping Bucket</em>
-</p>
-</center>
-
-Pictured above is the first design of the tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 extrusion aluminium bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
-
-* Location of the pivot on the bucket is very important for operation.  Height of the pieces controls how much water is collected before dumping.  Horizontal positioning of the pivot determines the angle the bucket rests at and how soon it will tip.
-
-* The bucket needs to be designed so that it will not rest completely tipped down, and return to its original position to fill in more wastewater.  This can be achieved either by controlling the height of the bucket so that is cannot rotate completely (making it hit the bottom of the tank) or by controlling the rotation. The rotation can either be controlled by adding a counterweight that will return the bucket to its original position, or adjusting the horizontal location of the pivot to ensure it will return.
-
-After discussing the design more with Monroe, the team settled on a new design, pictured below:
-
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Tipping_Bucket.png?raw=true">
-<p>
-<em>Figure 3: Influent System with Tipping Bucket</em>
-</p>
-</center>
-
-This tipping bucket is created with a 5 gallon bucket (chosen as they are easy to purchase) with two plastic rods on either side, attached through a hose clamp.  These circular pieces will rest in the brackets on either side of the influent tank, where they can roll freely to allow the bucket to dump.  This greatly reduces friction and wear of mechanical parts.
-
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_System_Brackets_Pivots.png?raw=true">
-<p>
-<em>Figure 4: Rectangular bracket with the "roller pivot"</em>
-</p>
-</center>
-
-There will be a hose clamp around the bucket that the roller pivots will be attached onto. The use of a hose clamp instead of directly welding the roller pivots to the bucket allows us to adjust the position of the pivots easily during initial benchtop tests without drilling new holes in the bucket. It will also allow easy replacement of the bucket system if necessary, since components of the tipping bucket system will inevitably eventually fail.
-
-This model became the teams the first design of the tipping bucket function.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
-
-
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping_Bucket_Off_Centered_Pivots.png?raw=true">
-<p>
-<em>Figure 5: Top view of tipping bucket showing the off-centered pivots</em>
-</p>
-</center>
-
-After discussing this problem further, the team considered two possible options.  The first was to purchase a square bucket to use in the same manner.  The second was to create a frame for the bucket that would provide a straight pivot without hindering tipping.  Since materials were available, and it provided much more flexibility for testing, the team moved forward with the second option.
-
-The frame is pictured below, attached to the 5-gallon bucket used within the system.  1-inch by 1-inch aluminum 80-20 bars were used to create a modular base around the bucket that could be easily extended or compressed to fit the dimensions of the bucket snugly.  
-
-<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
-<p>
-<em>Figure 6: Tipping bucket mounted on the aluminum frame for bench top testing</em>
-</p>
-</center>
-
-Two additional pieces were then added extending down from the 80-20 square to the bottom of the bucket.  These pieces extended 1 inch below the bucket, allowing an L-bracket to be attached below.  This was securely attached to the bottom of the bucket, locking it in place.  When testing the bucket, this could be easily moved downwards, and the L-bracket moved up to hold the bucket in place.
-
-Finally, a double sided screw piece was added to the pivot rods to allow them to attach to the 80-20 extrusion bars.  This piece was added by facing the rods with a lathe, and drilling the pieces in.  All of the this was done with the help of the shop managers.  With these pieces in, the rods can be easily moved laterally along the bucket and then tightened.
-
-#### Design of Influent Tank
-
-Another crucial part of the design  is the influent tank.  This tank will capture all wastewater from the tipping bucket, and distribute it evenly across both influent pipes for flow control.  To prevent any splashing of wastewater, the tipping bucket will be completely contained within the influent tank.
-
-The crucial design aspects of the tank are listed below:
-
-* The tank **must be tall enough** to completely contain the tipping bucket, and prevent any splashing of wastewater out of the tank
-
-* The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for longer roller pivots, and reduce the structural strength of the bucket (since deflection of a rod is proportional to some power of length)
-
-* The dimensions of the tank must be such that they **create the required amount of hydraulic head from one dump of the tipping bucket**.  
-This can be achieved by choosing the appropriate geometry at the bottom of the tank to ensure the required height increase of the water level per volume of dump.
-
-* The tank **must evenly split flow between the two pipes**.  This can be designed by changing the geometry of the pipes based on where the water is dumped, but most importantly, there should always be a small volume of water in the tank even when all the water from one dump has been drained out. This is to provide enough volume within tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.
-
-* The tank should be **easy to source**. It should be easily purchasable at the correct dimensions, or easy to fabricate.
-
-
-Summarized in a table:
-
-| Parameter | Value | Justification |
-|:-------------- |:-----  |------------- |
-|Height|$\geq$ 40 cm| Height of bucket plus 4 cm error|
-|Width|35 cm |30 cm for bucket diameter plus 5 cm for both pivot pieces|
-|Length|$\geq$ 60 cm|Height of bucket plus extra space to allow free rotation.  Requires closer examination in fusion|
-
-
-
-
-The team began by designing the tank as a simple, rectangular box.  However, given the constraints on the dimensions of the box, it was impossible to get the required hydraulic head gain from bucket, as summarized in the code below:
-
-```python
-from aide_design.play import*
-
-width = 35 * u.cm
-length = 60 * u.cm
-area = width * length
-bucket_vol = 15 * u.L  #Assuming the bucket fills 75%
-head_gain = (bucket_vol / area).to(u.cm)
-print("One dump of the bucket gives", head_gain, "of hydraulic head")
-# Prints: One dump of the bucket gives
-#7.143 centimeter of hydraulic head
-```
-Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the influent tank.
-
-After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.
-<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Tank.jpg?raw=true">
-<p>
-<em>Figure 7: Close up of the influent system showing the larger cylindrical pipe segments</em>
-</p>
-</center>
-
-The addition of the cylindrical pipe segments serves two purposes:
-1. The flow is split into two influent pipes almost equally.
-2. Since the diameter of the cylinder segments is larger than that of the influent pipe, the descending sewage velocity in it will be lower. This allows air bubbles to escape from the wastewater which is desirable.
-
 
 ### Hydraulic Code
 
@@ -297,6 +233,128 @@ def check_pipe_vel(exit_vel, large_pipe_diam, small_pipe_diam):
 
 ```
 
+### Tipping Bucket Design
+
+After discarding the idea of using siphons, the team started to design the tipping bucket system given these parameters.  Design began by looking into tipping bucket systems online but it was hard to find any detailed schematics since these buckets are mostly used only in water parks. The team was thus left with two choices: try to model a tipping bucket system mathematically, or create a physical model of the tipping bucket system and find the optimal design via trial and error. Due to constraints of time and expertise on the team, the latter was decided upon.
+
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Timmy_the_Tipping_Bucket.jpg?raw=true">
+<p>
+<em>Figure 2: Timmy the Tipping Bucket</em>
+</p>
+</center>
+
+Pictured above is the first design of the tipping bucket system.  It was created with a small plastic lab beaker, two screws, and 80-20 extrusion aluminum bars with connectors used to provide a pivot for the screws.  This was mostly created to give the team a general sense of how tipping buckets work, not to collect specific data.  This model offered a few insights for the design:
+
+* Location of the pivot on the bucket is very important for operation.  
+  - Height of the pieces controls how much water is collected before dumping.  
+  - Horizontal positioning of the pivot determines the angle the bucket rests at and how soon it will tip.
+
+* The bucket needs to be designed so that it will not rest completely tipped down, and return to its original position to fill in more wastewater.  
+  - This can be achieved either by controlling the height of the bucket so that is cannot rotate completely (making it hit the bottom of the tank) or by controlling the rotation.
+    - The rotation can either be controlled by adding a counterweight that will return the bucket to its original position, or adjusting the horizontal location of the pivot to ensure it will return.
+
+After discussing the design more with Monroe, the team settled on a new design, pictured below:
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Tipping_Bucket.png?raw=true">
+<p>
+<em>Figure 3: Influent System with Tipping Bucket</em>
+</p>
+</center>
+
+This tipping bucket is created with a 5 gallon bucket (chosen as they are easy to purchase) with two plastic rods on either side, attached through a hose clamp.  These circular pieces will rest in the brackets on either side of the influent tank, where they can roll freely to allow the bucket to dump.  This greatly reduces friction and wear of mechanical parts.
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_System_Brackets_Pivots.png?raw=true">
+<p>
+<em>Figure 4: Rectangular bracket with the "roller pivot"</em>
+</p>
+</center>
+
+There will be a hose clamp around the bucket that the roller pivots will be attached onto. The use of a hose clamp instead of directly welding the roller pivots to the bucket allows us to adjust the position of the pivots easily during initial benchtop tests without drilling new holes in the bucket. It will also allow easy replacement of the bucket system if necessary, since components of the tipping bucket system will eventually fail.
+
+**ADD VIDEO HERE THAT EXPLAINS DESIGN**
+
+This model became the first design of the tipping bucket.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
+
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping_Bucket_Off_Centered_Pivots.png?raw=true">
+<p>
+<em>Figure 5: Top view of tipping bucket showing the off-centered pivots</em>
+</p>
+</center>
+
+After discussing this problem further, the team considered two possible options.  The first was to purchase a square bucket to use in the same manner.  The second was to create a frame for the bucket that would provide a straight pivot without hindering tipping.  Since materials were available, and it provided much more flexibility for testing, the team moved forward with the second option.
+
+The frame is pictured below, attached to the 5-gallon bucket used within the system.  1-inch by 1-inch 80-20 aluminum extrusion bars were used to create a modular base around the bucket that could be easily extended or compressed to fit the dimensions of the bucket snugly.  
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/Tipping%20Bucket-%20Brackets%20Labeled.png">
+<p>
+<em>Figure 6: Tipping bucket mounted on the aluminum frame for bench top testing</em>
+</p>
+</center>
+
+Two additional pieces were then added extending down from the 80-20 square to the bottom of the bucket.  These pieces extended 1 inch below the bucket, allowing an L-bracket to be attached below.  This was securely attached to the bottom of the bucket, locking it in place.  When testing the bucket, this could be easily moved downwards, and the L-bracket moved up to hold the bucket in place.
+
+Finally, a double sided screw piece was added to the pivot rods to allow them to attach to the 80-20 extrusion bars.  This piece was added by facing the rods with a lathe, and drilling the pieces in.  All of the this was done with the help of the shop managers.  With these pieces in, the rods can be easily moved laterally along the bucket and then tightened.
+
+### Influent Tank Design
+
+Another crucial part of the design  is the influent tank.  This tank will capture all wastewater from the tipping bucket, and distribute it evenly across both influent pipes for flow control.  To prevent any splashing of wastewater, the tipping bucket will be completely contained within the influent tank.
+
+The crucial design aspects of the tank are listed below:
+
+* The tank **must be tall enough** to completely contain the tipping bucket and prevent any splashing of wastewater out of the tank
+
+* The tank **must be just wide enough** to contain the bucket and the two brackets.  If the tank is wider, that will require more material for longer roller pivots, and reduce the structural strength of the bucket (since deflection of a rod is proportional to some power of length)
+
+* The dimensions of the tank must be such that they **create the required amount of hydraulic head from one dump of the tipping bucket**.  
+This can be achieved by choosing the appropriate geometry at the bottom of the tank to ensure the required height increase of the water level per volume of dump.
+
+* The tank **must evenly split flow between the two pipes**.  This can be designed by changing the geometry of the pipes based on where the water is dumped, but most importantly, there should always be a small volume of water in the tank even when all the water from one dump has been drained out. This is to provide enough volume within tank where the **descending sewage velocity is below 0.2 m/s** to allow air bubbles to escape.
+
+* The tank should be **easy to source**. It should be easily purchasable at the correct dimensions, or easy to fabricate.
+
+
+Summarized in a table:
+
+| Parameter | Value | Justification |
+|:-------------- |:-----  |------------- |
+|Height|$\geq$ 40 cm| Height of bucket plus 4 cm error|
+|Width|35 cm |30 cm for bucket diameter plus 5 cm for both pivot pieces|
+|Length|$\geq$ 60 cm|Height of bucket plus extra space to allow free rotation.  Requires closer examination in fusion|
+
+
+
+
+The team began by designing the tank as a simple, rectangular box.  However, given the constraints on the dimensions of the box, it was impossible to get the required hydraulic head gain from bucket, as summarized in the code below:
+
+```python
+from aide_design.play import*
+
+width = 35 * u.cm
+length = 60 * u.cm
+area = width * length
+bucket_vol = 15 * u.L  #Assuming the bucket fills 75%
+head_gain = (bucket_vol / area).to(u.cm)
+print("One dump of the bucket gives", head_gain, "of hydraulic head")
+# Prints: One dump of the bucket gives
+#7.143 centimeter of hydraulic head
+```
+Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the influent tank.
+
+After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Tank.jpg?raw=true">
+<p>
+<em>Figure 7: Close up of the influent system showing the larger cylindrical pipe segments</em>
+</p>
+</center>
+
+The addition of the cylindrical pipe segments serves two purposes:
+1. The flow is split into two influent pipes almost equally.
+2. Since the diameter of the cylinder segments is larger than that of the influent pipe, the descending sewage velocity in it will be lower. This allows air bubbles to escape from the wastewater which is desirable.
+
+
+
 ### Influent System Geometry <a name="InfSysGeo"></a>
 
 There are two designs the team is considering for the influent system geometry.  Each is summarized below, and the design functions are utilized to check the important parameters for each system to allow the team to compare and contrast possible designs.
@@ -355,43 +413,29 @@ print(Max_vel)
 
 ```
 
-### Design 2: Top Entry
+#### Design 2: Top Entry
 
-Our second potential design has the influent tank directly on top of the UASB system, and the influent pipes coming straight down into the reactor.  This reduces fabrication challenges and prevents any problems with particles settling or clogging in the pipes, but requires careful design as the influent tank is far above the resting water level.  Since the pipes will go straight through the biogas lid, this will also require the welds around the influent pipes to be gas tight.  
+Our second potential design has the influent tank directly on top of the UASB system, and the influent pipes coming straight down into the reactor.
 
-**ADD IMAGE**
+**Advantages:**
+* This design is easier to fabricate.
+* There will likely be fewer clogging issues since there are no bends.
 
-**Design Parameters** - unfilled parameters still need to be calculated
-| Parameter                    | Value         | Notes                                                             |
-| ---------------------------- | ------------- | ----------------------------------------------------------------- |
-| UASB Height                  | 7 ft          | Based on tank dimensions, unset                                   |
-| UASB Diameter                | 3 ft          | Based on tank dimensions, unset                                   |
-| Dump Volume                  | 16 Liters     | Calculated during tipping bucket tests                            |
-| Minor Loss Coefficient       | 1             |Straight pipe, 1  |
-| Pipe Roughness               | 0.0015 mm     | Standard pipe roughness for PVC                                   |
-| Temp                         | 23$^{\circ}$C | Average Temp in Honduras                                          |
-| Large Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
-| Small Influent Pipe Diameter |               | Determined through Hydraulic Code to meet specifications          |
-| Total Pipe Length            | 7 feet        | Roughly UASB Height                                               |
-| Number of Influent Pipes     |               | Determined from hydraulic calculations                            |
+**Disadvantages:**
+* This geometry will require some redesigning of our influent system since the influent tank will now be far above the water level in the reactor.
+* Since the pipes will go straight through the biogas lid, this will also require the welds around the influent pipes to be gas tight.  
 
+Since this design was only discussed towards the and of the summer, there are no hydraulic calculations or schematics for it yet. This is something that can be worked on in the future semesters.
 
-**Hydraulic Calculations**
-```python
-
-
-
-```
-
-### Testing the Tipping Bucket
-#### Tapioca Tests
-
+## Benchtop Testing (Tapioca Tests)
+### Goals
 To attempt to model and understand flow patterns within the UASB system, the team ran tests through a model sludge bed within a scaled down model UASB system. Crushed tapioca was chosen to simulate the reactor sludge due to its similarity in texture and density to the actual reactor sludge.
 
 The goal of the tapioca tests is to study the flow patterns within the UASB reactor by injecting dye, and to check for conditions under which the reactor is likely to fail - either due to clogging, or due to preferential flow which may create dead zones in the sludge.
 
 Testing has begun with one influent pipe and eventually will be done with two influent pipes as well. If one influent pipe is sufficient to fluidize the sludge blanket, fabrication of the UASB would become a lot easier. However, the code would need to be updated to accommodate this change, and scaling up to larger reactors in the future would be more difficult.
 
+### Setup
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
 Most observations for this test were made qualitatively, and the system was also raised up so that a cell phone camera could be used to record flow patterns from the bottom of the system.  
@@ -404,9 +448,8 @@ Most observations for this test were made qualitatively, and the system was also
 
 The tests that have been performed were done at a low flow rate of 6.33 mL/s, which translates to an exit velocity of 0.2 m/s. So far, the dyed water appeared to spread out along the bottom of the beaker, rather than puncturing the tapioca blanket. Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
-The functions below calculate the flow rate needed to pro
-
-Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse.
+### Code
+Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse:
 
 ```python
 
@@ -505,13 +548,11 @@ print(v2.to(u.ml/u.s))
 
 ```
 
-### Biogas Capture System
+## Biogas Capture System
 
-## Biogas Capture
+As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating (just like propane).  Biogas capture is an important aspect of the UASB design since it allows the UASB to provide a valuable byproduct that can be used to fuel kitchens in the communities served. Also, it is important to prevent the release of this biogas into the atmosphere directly since methane is a harmful greenhouse gas.
 
-As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.  Capturing this biogas is an important design process for the UASB, as it allows the UASB to produce a valuable product that can provide heating or cooking energy for the communities served by the UASB.
-
-This section is broken into two parts.  **Biogas Production Calculations** details our model of biogas production to quantify how much biogas is produced over time.  **Biogas Storage System** details our design of the biogas storage system.
+This section is broken into two parts:  **Biogas Production Calculations** details our model of biogas production to quantify how much biogas is produced over time, and  **Biogas Storage System** details our design of the biogas storage system.
 
 ### Biogas Production Calculations
 
@@ -674,6 +715,16 @@ print("The storage volume required to store", time_stor, "of biogas is", vol_sto
 The team has begun preliminary discussions with Monroe regarding the Biogas Capture system. A meeting with Ed Gottlieb from the Ithaca wastewater plant has been scheduled for August 3, 2018 to discuss integrating the UASB plant into the Ithaca wastewater plant, as well as to discuss biogas collection. Research to find biogas storage bags is ongoing.
 
 A possible biogas balloon has been found on [Amazon](https://www.amazon.com/PUXIN-Material-Biogas-Storage-Balloon/dp/B07FKS1W6J/ref=sr_1_1?ie=UTF8&qid=1532020224&sr=8-1&keywords=biogas+bag), although the details will be finalized only after the meeting with Ed.
+
+## Documentation
+
+
+
+
+## Meeting with Ed 8/3/18
+
+
+
 
 ## Fabrication Manual
 
