@@ -267,7 +267,7 @@ def head_gain_per_dump(dump_vol, nom_diam, pipe_height, tank_width, tank_length)
    added first to pipes, then additional volume fills the
    influent tank.  Pipe_height is total length of pipe above
    water level set by effluent line.  Assumes schedule 40 pipe.
-   For influent system with no standing water in pipes,
+   For influent system with no space in pipes above standing water level,
    set pipe height to 0.
 
   """
@@ -278,7 +278,7 @@ def head_gain_per_dump(dump_vol, nom_diam, pipe_height, tank_width, tank_length)
   else:
     tank_fill_vol = dump_vol - pipe_vol
     #volume filling influent tank after pipes are full
-    tank_headgain = tank_fill_vol / tank_width * tank_length
+    tank_headgain = tank_fill_vol / (tank_width * tank_length)
     #calculate headgain from tank fill volume
     headgain = tank_headgain + pipe_height
   return headgain
@@ -319,7 +319,7 @@ Our first design for the system has the pipes enter from the side of the UASB, a
 | Dump Volume                  | 16 Liters          | Calculated during tipping bucket tests                            |
 | Minor Loss Coefficient       | 4                  | Design includes two elbows (1.5 each) plus 1 |
 | Pipe Roughness               | 0.0015 mm          | Standard pipe roughness for PVC                                   |
-| Temp                         | $\geq$23$^{\circ}$C | Minimum Temp in Honduras                                          |
+| Temp                         | $\geq$16$^{\circ}$C | Minimum Temp in Honduras                                          |
 | Large Influent Pipe Diameter |                    | Determined through Hydraulic Code to meet specifications          |
 | Small Influent Pipe Diameter |                    | Determined through Hydraulic Code to meet specifications          |
 | Total Pipe Length            | 10 feet            | Roughly UASB Height + UASB Diameter                               |
@@ -345,7 +345,7 @@ pipe_A = pc.area_circle(target_diam)
 # incorporate all kinetic energy
 # as minor loss
 K_minor = 1
-Temp = 23 * u.degC # average temp in Honduras
+Temp = 16 * u.degC # minimum temp in Honduras
 Nu = pc.viscosity_kinematic(Temp)
 Pipe_Rough = 0.0015 * u.mm
 FlowRate = pc.flow_pipe \
