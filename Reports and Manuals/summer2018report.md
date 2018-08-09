@@ -731,21 +731,24 @@ On August 3rd, 2018, the UASB team went to meet with Ed Gottlieb, an operator an
 
 ### Design Suggestions
 Mr. Gottlieb offered a few other ideas to update our design.  For the influent system, he suggested attaching the influent system directly to the tank to make it one solid unit.  This attachment depends on the location of the influent tank, for a top influent system the tank can just be mounted on the top of the tank itself using a cylindrical pipe welded on to the top, but for the influent system coming in from the side of the tank, we would need to attach the tank to the side using a ring system.  This would of course need to be supported well since the tank would contain large loads of wastewater.
-The influent pipe flow geometry was also discussed.  Mr. Gottlieb mentioned how in typical anaerobic digesters like the ones used in the IAWWTF, there is a mechanical mixer used to stir the water and increase digestion.  While our design will ideally not use mechanical parts, he suggested changing the exit port of the influent tube to create mixing through jets
+The influent pipe flow geometry was also discussed.  Mr. Gottlieb mentioned how in typical anaerobic digesters like the ones used in the IAWWTF, there is a mechanical mixer used to stir the water and increase digestion.  While our design will ideally not use mechanical parts, he suggested changing the exit port of the influent tube to create mixing through jets.  His design, sketched below, would cap the bottom of the pipe and cut holes in the sides every 90 degrees.  These holes would allow wastewater to exit at a high velocity and would split flow in four directions to increase the spread. The main concern for this design would be possible clogs in the systems.  Careful design of the sizing and spacing of the exit holes would be required to prevent this.  
 
-<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/influent_jet_sketch.jpg">
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_jets_sketch.JPG?raw=true">
 <p>
-<em>Figure X: </em>
+<em>Figure X: The proposed influent pipe slots to increase mixing</em>
 </p>
 </center>
+
+
 
 
 ### Sampling and Data collection
 
 
+
 ### Space for Pilot Reactor
 
-
+Another important discussion from the meeting was the location for our pilot scale UASB.  
 
 ## Further Issues and Future Work
 
