@@ -22,20 +22,26 @@
   - [Influent System Geometry <a name="InfSysGeo"></a>](#influent-system-geometry-a-nameinfsysgeoa)
     - [Design 1: Side Entry](#design-1-side-entry)
     - [Design 2: Top Entry](#design-2-top-entry)
-- [Benchtop Testing](#benchtop-testing)
-  - [Tapioca Tests](#tapioca-tests)
-    - [Goals](#goals)
+- [Benchtop Testing (Tapioca Tests)](#benchtop-testing-tapioca-tests)
+  - [Goals](#goals)
+  - [Setup](#setup)
+  - [Code](#code)
 - [Biogas Capture System](#biogas-capture-system)
-- [Biogas Capture](#biogas-capture)
-  - [Biogas Production Calculations](#biogas-production-calculations)
+  - [Biogas Production](#biogas-production)
     - [Design Parameters](#design-parameters)
-    - [Code](#code)
-  - [Biogas Storage System](#biogas-storage-system)
+    - [Code](#code-1)
+  - [Biogas Storage](#biogas-storage)
     - [Lid design](#lid-design)
       - [Design 1: Hydraulic Seal](#design-1-hydraulic-seal)
       - [Design 2: Full Seal](#design-2-full-seal)
     - [Capture System Design](#capture-system-design)
-    - [Code](#code-1)
+    - [Code](#code-2)
+- [Documentation](#documentation)
+- [Meeting with Ed 8/3/18](#meeting-with-ed-8318)
+  - [Design Suggestions](#design-suggestions)
+  - [Sampling and Data collection](#sampling-and-data-collection)
+  - [Space for Pilot Reactor](#space-for-pilot-reactor)
+- [Further Issues and Future Work](#further-issues-and-future-work)
 - [Fabrication Manual](#fabrication-manual)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -438,11 +444,11 @@ Testing has begun with one influent pipe and eventually will be done with two in
 ### Setup
 The first UASB was modeled using a simple plastic beaker. Tapioca that had been soaked in water for 1.0 hours was used to model the sludge blanket. The beaker was filled to approximately 70% of its volume with the expanded tapioca. A 0.25 inch metal influent pipe was attached to tubing which was attached to a pump. Water was pumped into the beaker through the tube and the influent pipe, which emptied into the bottom center of the beaker perpendicular to the base of the beaker. Red dye enters the influent tube from another pump to allow for a better visualization of the flow patterns.
 
-Most observations for this test were made qualitatively, and the system was also raised up so that a cell phone camera could be used to record flow patterns from the bottom of the system.  
+Most observations for this test were made qualitatively, and the system was also raised up so that a cell phone camera could be inserted under it to record flow patterns from the bottom of the system.  
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Tapioca%20Test.JPG?raw=true">
 <p>
-<em>Figure 9: Set Up of the Tapioca Experiment Using One Influent Pipe</em>
+<em>Figure 9: Setup of the Tapioca Experiment Using One Influent Pipe</em>
 </p>
 </center>
 
@@ -674,7 +680,7 @@ An important aspect of UASB design is the capture and storage of biogas produced
 |:--------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------- |
 | Gas Bag         | (1) Flexible and easy connection on top of next to reactor (2) **Cheap and cost effective** (3) Easy to transport for reactor to kitchen use (4) Visual representation of gas volume | (1) Fragility and Leakage (2) Require frequent replacement - are these materials available locally?      |
 | Fixed Lid       | (1) Durability (2) No concerns about movement (3) Can use prefabricated barrel                                                       | (1) Water displaced during gas compression may need to be recaptured, requiring additional information |
-| Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate  |
+| Floating Lid    | (1) Water level moves with gas (2) Same concept as fixed lid (3) Visual representation of gas level            | (1) Low gas production will just cause water displacement (2) Track system hard to fabricate (3) Wastewater is exposed to air and can get between the grooves on the lid and make it gross  |
 
 After consideration of these options, the gas bag system was decided upon because it is cost effective and transportable for community settings where one community may share this resource.  This system is similar to other "bag" collection systems at traditional wastewater treatment facilities such as the Ithaca Area Wastewater Treatment Facility.
 
@@ -723,9 +729,9 @@ Since the overall goal for the UASB project is to have a full design that can be
 * The [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md) documents the entire design process for the UASB, and contains all relevant information on each component of the UASB and how the design was determined.
 * The [UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md) documents the entire process of fabricating the reactor.  This will serve as a full instruction manual for building the full UASB in the future.  
 
-These documents will collect information from the semester reports and serve to easily transfer knowledge to any interested parties.  As of now they are working documents that are updated with each step forward in design.  
+These documents will collect information from the semester reports and serve to transfer knowledge to any interested parties easily.  As of now they are working documents that are updated with each step forward in design.  
 
-## Meeting with Ed 8/3/18
+## Meeting with Ed from IAWWTF 8/3/18
 
 On August 3rd, 2018, the UASB team went to meet with Ed Gottlieb, an operator and our contact at the Ithaca Area Wastewater Treatment Facility (IAWWTF).  The full meeting notes can be found [here]().  The important notes are summarized below.
 
