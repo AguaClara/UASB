@@ -552,9 +552,9 @@ print(v2.to(u.ml/u.s))
 
 As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating (just like propane).  Biogas capture is an important aspect of the UASB design since it allows the UASB to provide a valuable byproduct that can be used to fuel kitchens in the communities served. Also, it is important to prevent the release of this biogas into the atmosphere directly since methane is a harmful greenhouse gas.
 
-This section is broken into two parts:  **Biogas Production Calculations** details our model of biogas production to quantify how much biogas is produced over time, and  **Biogas Storage System** details our design of the biogas storage system.
+This section is broken into two parts:  **Biogas Production** details our model of biogas production to quantify how much biogas is produced over time, and  **Biogas Storage** details our design of the biogas storage system.
 
-### Biogas Production Calculations
+### Biogas Production
 
 Biogas production is quantified using the following equation, taken from the [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf):
 
@@ -655,7 +655,7 @@ Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp, 0.7)
 print(Q_Biogas.to(u.L/u.day))
 ```
 
-### Biogas Storage System
+### Biogas Storage
 
 #### Lid design
 
@@ -718,12 +718,36 @@ A possible biogas balloon has been found on [Amazon](https://www.amazon.com/PUXI
 
 ## Documentation
 
+Since the overall goal for the UASB project is to have a full design that can be fabricated in Honduras or other areas abroad, documentation of our entire design process is crucially important.  During this summer we have created two documents to meet this goal.
 
+* The [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md) documents the entire design process for the UASB, and contains all relevant information on each component of the UASB and how the design was determined.
+* The [UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md) documents the entire process of fabricating the reactor.  This will serve as a full instruction manual for building the full UASB in the future.  
 
+These documents will collect information from the semester reports and serve to easily transfer knowledge to any interested parties.  As of now they are working documents that are updated with each step forward in design.  
 
 ## Meeting with Ed 8/3/18
 
+On August 3rd, 2018, the UASB team went to meet with Ed Gottlieb, an operator and our contact at the Ithaca Area Wastewater Treatment Facility (IAWWTF).  The full meeting notes can be found [here]().  The important notes are summarized below.
 
+### Design Suggestions
+Mr. Gottlieb offered a few other ideas to update our design.  For the influent system, he suggested attaching the influent system directly to the tank to make it one solid unit.  This attachment depends on the location of the influent tank, for a top influent system the tank can just be mounted on the top of the tank itself using a cylindrical pipe welded on to the top, but for the influent system coming in from the side of the tank, we would need to attach the tank to the side using a ring system.  This would of course need to be supported well since the tank would contain large loads of wastewater.
+The influent pipe flow geometry was also discussed.  Mr. Gottlieb mentioned how in typical anaerobic digesters like the ones used in the IAWWTF, there is a mechanical mixer used to stir the water and increase digestion.  While our design will ideally not use mechanical parts, he suggested changing the exit port of the influent tube to create mixing through jets
+
+<center><img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/influent_jet_sketch.jpg">
+<p>
+<em>Figure X: </em>
+</p>
+</center>
+
+
+### Sampling and Data collection
+
+
+### Space for Pilot Reactor
+
+
+
+## Further Issues and Future Work
 
 
 ## Fabrication Manual
