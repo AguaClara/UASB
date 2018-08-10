@@ -750,7 +750,7 @@ Mr. Gottlieb mentioned how in typical anaerobic digesters like the ones used in 
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_jets_sketch.JPG?raw=true">
 <p>
-<em>Figure X: The proposed influent pipe slots to increase mixing</em>
+<em>Figure 10: The proposed influent pipe slots to increase mixing</em>
 </p>
 </center>
 
@@ -771,7 +771,7 @@ Another important discussion from the meeting was the location for our pilot sca
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/IAWWTF_Lime_Room.JPG?raw=true">
 <p>
-<em>Figure X: Picture of the lime room at the Ithaca Area Wastewater Treatment Facility</em>
+<em>Figure 11: Picture of the lime room at the Ithaca Area Wastewater Treatment Facility</em>
 </p>
 </center>
 
@@ -781,10 +781,23 @@ There are however a few issues that need to be worked out before the team can in
 * A method of quantifying and analyzing the biogas produced needs to be determined, since the IAWWTF only runs $CO_2$ tests on their biogas.
 
 ## Further Issues and Future Work
+
 ### Determining Influent Geometry
 
-### Choosing Tank for Reactor
+#### Number of Influent Pipes
+More benchtop testing needs to be done to compare the performance of a reactor with one influent pipe versus a reactor with two. If one influent pipe works satisfactorily, it will be preferred fabrication-wise.
+
+#### Direction of Pipe Entry
+The UASB reactor design needs to be reevaluated to see if the influent system can be mounted on top of the reactor. If this is possible, headloss calculations will have to be redone, and the modified design will have to be redrawn with a straight influent pipe/pipes coming in from the top.
 
 ### Removal of Fats, Oils and Greases
+The buildup of fats, oils and greases (FOG) in the UASB reactor is both inevitable and undesirable, and their periodic removal is necessary. As of now, little thought has been put into how this can be achieved. Hopefully, the team can come up with a more concrete design plan next semester on how to skim off the FOG from the top of the reactor.
 
 ### Quantifying Biogas Production
+
+### Choosing Tank for Reactor
+Pressure calculations will have to be performed with the biogas amounts expected inside the UASB to see how much pressure the tank should be able to withstand. Depending on these results, a tank of appropriate wall thickness and composition will have to be settled on.
+
+Another option to consider, although this will be more cumbersome, is to return to our original plan of fabricating the reactor out of a large PVC pipe. This in turn will require some research on how much pressure the welds and the PVC pipe itself are able to withstand.
+
+### Geometry of Effluent Line
