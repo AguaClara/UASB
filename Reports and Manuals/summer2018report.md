@@ -778,7 +778,7 @@ Another important discussion from the meeting was the location for our pilot sca
 There are however a few issues that need to be worked out before the team can install the UASB plant here:
 * The lime room has lead paint that needs to be dealt with before any student goes in to work there.
 * The team needs to finalize whether the UASB reactor will be fabricated in the IAWWTF or in the AguaClara lab and then transported to the lime room.
-* A method of quantifying and analyzing the biogas produced needs to be determined, since the IAWWTF only runs $CO_2$ tests on their biogas.
+* A method of quantifying and analyzing the biogas produced needs to be determined, since the IAWWTF only runs $CO_2$ tests on their biogas. 
 
 ## Further Issues and Future Work
 
