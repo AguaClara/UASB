@@ -8,7 +8,7 @@
 ## Index
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
 
 - [Abstract](#abstract)
 - [Introduction](#introduction)
@@ -37,12 +37,16 @@
     - [Capture System Design](#capture-system-design)
     - [Code](#code-2)
 - [Documentation](#documentation)
-- [Meeting with Ed 8/3/18](#meeting-with-ed-8318)
+- [Meeting with Ed from IAWWTF 8/3/18](#meeting-with-ed-from-iawwtf-8318)
   - [Design Suggestions](#design-suggestions)
   - [Sampling and Data collection](#sampling-and-data-collection)
+  - [Sludge Weir](#sludge-weir)
   - [Space for Pilot Reactor](#space-for-pilot-reactor)
 - [Further Issues and Future Work](#further-issues-and-future-work)
-- [Fabrication Manual](#fabrication-manual)
+  - [Determining Influent Geometry](#determining-influent-geometry)
+  - [Choosing Tank for Reactor](#choosing-tank-for-reactor)
+  - [Removal of Fats, Oils and Greases](#removal-of-fats-oils-and-greases)
+  - [Quantifying Biogas Production](#quantifying-biogas-production)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -556,7 +560,7 @@ print(v2.to(u.ml/u.s))
 
 ## Biogas Capture System
 
-As organic waste passes through the sludge blanket portion of the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating (just like propane).  Biogas capture is an important aspect of the UASB design since it allows the UASB to provide a valuable byproduct that can be used to fuel kitchens in the communities served. Also, it is important to prevent the release of this biogas into the atmosphere directly since methane is a harmful greenhouse gas.
+As organic waste passes through the sludge blanket within the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating (just like propane).  Biogas capture is an important aspect of the UASB design since it allows the UASB to provide a valuable byproduct that can be used to fuel kitchens in the communities served. Also, it is important to prevent the release of this biogas into the atmosphere directly since methane is a harmful greenhouse gas.
 
 This section is broken into two parts:  **Biogas Production** details our model of biogas production to quantify how much biogas is produced over time, and  **Biogas Storage** details our design of the biogas storage system.
 
@@ -729,15 +733,20 @@ Since the overall goal for the UASB project is to have a full design that can be
 * The [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md) documents the entire design process for the UASB, and contains all relevant information on each component of the UASB and how the design was determined.
 * The [UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md) documents the entire process of fabricating the reactor.  This will serve as a full instruction manual for building the full UASB in the future.  
 
-These documents will collect information from the semester reports and serve to transfer knowledge to any interested parties easily.  As of now they are working documents that are updated with each step forward in design.  
+These documents will collect information from the semester reports and serve to transfer knowledge to any interested parties easily.  As of now they are working documents that are updated with each step forward in design, and can be found in the UASB GitHub repository.
 
 ## Meeting with Ed from IAWWTF 8/3/18
 
-On August 3rd, 2018, the UASB team went to meet with Ed Gottlieb, an operator and our contact at the Ithaca Area Wastewater Treatment Facility (IAWWTF).  The full meeting notes can be found [here]().  The important notes are summarized below.
+On August 3rd, 2018, the UASB team went to meet with Ed Gottlieb, an operator and our contact at the Ithaca Area Wastewater Treatment Facility (IAWWTF).  The full meeting notes can be found [here](https://docs.google.com/document/d/1cRop_DmhqtXv0CZsjxDTgQIUG10BLNKvFaBgHCgnx_U/edit).  The important notes are summarized below.
 
 ### Design Suggestions
-Mr. Gottlieb offered a few other ideas to update our design.  For the influent system, he suggested attaching the influent system directly to the tank to make it one solid unit.  This attachment depends on the location of the influent tank, for a top influent system the tank can just be mounted on the top of the tank itself using a cylindrical pipe welded on to the top, but for the influent system coming in from the side of the tank, we would need to attach the tank to the side using a ring system.  This would of course need to be supported well since the tank would contain large loads of wastewater.
-The influent pipe flow geometry was also discussed.  Mr. Gottlieb mentioned how in typical anaerobic digesters like the ones used in the IAWWTF, there is a mechanical mixer used to stir the water and increase digestion.  While our design will ideally not use mechanical parts, he suggested changing the exit port of the influent tube to create mixing through jets.  His design, sketched below, would cap the bottom of the pipe and cut holes in the sides every 90 degrees.  These holes would allow wastewater to exit at a high velocity and would split flow in four directions to increase the spread. The main concern for this design would be possible clogs in the systems.  Careful design of the sizing and spacing of the exit holes would be required to prevent this.  
+Mr. Gottlieb offered a few other ideas to update our design.  
+
+* **Fixing influent tank to UASB reactor**
+For the influent system, he suggested attaching the influent system directly to the tank to make it one solid unit.  This attachment depends on the location of the influent tank, for a top influent system the tank can just be mounted on the top of the tank itself using a cylindrical pipe welded on to the top, but for the influent system coming in from the side of the tank, we would need to attach the tank to the side using a ring system.  This would of course need to be supported well since the tank would contain large loads of wastewater.
+
+* **Maximize mixing of wastewater UASB within reactor**
+Mr. Gottlieb mentioned how in typical anaerobic digesters like the ones used in the IAWWTF, there is a mechanical mixer used to stir the water and increase digestion.  While our design will ideally not use mechanical parts, he suggested changing the exit port of the influent tube to create mixing through jets.  His design, sketched below, would cap the bottom of the pipe and cut holes in the sides every 90 degrees.  These holes would allow wastewater to exit at a high velocity and would split flow in four directions to increase the spread. The main concern for this design would be possible clogs in the systems.  Careful design of the sizing and spacing of the exit holes would be required to prevent this.  
 
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent_jets_sketch.JPG?raw=true">
 <p>
@@ -749,16 +758,33 @@ The influent pipe flow geometry was also discussed.  Mr. Gottlieb mentioned how 
 
 
 ### Sampling and Data collection
+Mr. Gottlieb mentioned that the IAWWTF would already have all the necessary data on the influent wastewater. Thus, the team needs to only figure out a way to get regular samples from the pilot UASB in the IAWWTF and have them analyzed in a lab.
 
-l
+### Sludge Weir
+The following design ideas were discussed:
+* The sludge weir should ideally have clear pipes so operators can see what is happening inside
+* The design can be as simple as an angled pipe coming out of the sludge bed.
+* It is important to ensure that the flow remains a trickle since too much sludge flowing through the weir too quickly would create a hollow cone in the sludge bed.
 
 ### Space for Pilot Reactor
+Another important discussion from the meeting was the location for our pilot scale UASB.  The team received a tour of the whole plant, including the lime room which is where the UASB prototype will be installed.
 
-Another important discussion from the meeting was the location for our pilot scale UASB.  
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/IAWWTF_Lime_Room.JPG?raw=true">
+<p>
+<em>Figure X: Picture of the lime room at the Ithaca Area Wastewater Treatment Facility</em>
+</p>
+</center>
+
+There are however a few issues that need to be worked out before the team can install the UASB plant here:
+* The lime room has lead paint that needs to be dealt with before any student goes in to work there.
+* The team needs to finalize whether the UASB reactor will be fabricated in the IAWWTF or in the AguaClara lab and then transported to the lime room.
+* A method of quantifying and analyzing the biogas produced needs to be determined, since the IAWWTF only runs $CO_2$ tests on their biogas.
 
 ## Further Issues and Future Work
+### Determining Influent Geometry
 
+### Choosing Tank for Reactor
 
-## Fabrication Manual
+### Removal of Fats, Oils and Greases
 
-The team started to write a [fabrication manual](https://github.com/AguaClara/UASB/blob/master/UASBfabricationmanual.md) this summer that will document the total fabrication process so later teams can recreate the UASB system. This working document can be found in our Github repository.
+### Quantifying Biogas Production
