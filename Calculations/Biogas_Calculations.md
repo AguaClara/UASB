@@ -1,7 +1,7 @@
 ## Biogas Calculations
 
 ### Introduction
-Biogas is a mixture of methane, carbon dioxide, and other trace gases that are produced naturally through anaerobic breakdown of BOD. As waste runs through the UASB reactor, biogas is naturally produced, and rises up through the reactor. Biogas serves as a potential energy source, and if properly stored can be utilized for cooking, heating, or power generation. If biogas is not utilized in this way, it must be burned off with a pilot light or similar apparatus to reduce greenhouse gas emissions.
+Biogas is a mixture of methane, carbon dioxide, and other trace gases that are produced naturally through anaerobic breakdown of BOD. As waste runs through the UASB reactor, biogas is naturally produced, and rises up through the reactor. Biogas serves as a potential energy source, and if properly stored can be utilized for cooking, heating, or power generation. If biogas is not utilized in this way, it should be burned off with a pilot light or similar apparatus to reduce greenhouse gas emissions.
 
 In order to capture biogas, we aimed to design a simple system that could be implemented in rural areas with small populations, and still provide biogas for home use in a simple and safe way. We also want to minimize any leakages of biogas to the environment, for safety and environmental concerns.
 
