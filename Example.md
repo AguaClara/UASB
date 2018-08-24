@@ -5,7 +5,7 @@ This is the example file to give a basic intro on GitHub.  This file will be use
 
 ### Overview on GitHub
 
-- What is Git and GitHub and how are they difference?
+- What is Git and GitHub and how are they difference?*
 
   - **Git** is a Version Control System (VCS). Git allows you to have fine control over the changes you make to your files and revert any changes if necessary. Also, it allows you to make different "versions" of your files and edit them separately from each other.
   - **GitHub** is a cloud storage service for the files that you maintain with Git. The basic functions of Git on your computer can also be used online at github.com. Additionally, GitHub offers collaborative tools for managing tasks within a subteam, discussing issues and problems, and accepting edits to your files.
