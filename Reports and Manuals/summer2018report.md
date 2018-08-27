@@ -5,7 +5,7 @@
 ### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
 
-## Index
+## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -282,8 +282,6 @@ This tipping bucket is created with a 5 gallon bucket (chosen as they are easy t
 
 There will be a hose clamp around the bucket that the roller pivots will be attached onto. The use of a hose clamp instead of directly welding the roller pivots to the bucket allows us to adjust the position of the pivots easily during initial benchtop tests without drilling new holes in the bucket. It will also allow easy replacement of the bucket system if necessary, since components of the tipping bucket system will eventually fail.
 
-**ADD VIDEO HERE THAT EXPLAINS DESIGN**
-
 This model became the first design of the tipping bucket.  However, after beginning fabrication, the team realized that the design would not work due to the geometry of the bucket and the attached pivot rods.  Since the bucket was circular, any placement of the rod off of the center would lead the rods to point orthogonally outwards and not form a straight pivot.  This is shown the figure below.
 
 
@@ -307,6 +305,31 @@ Two additional pieces were then added extending down from the 80-20 square to th
 
 Finally, a double sided screw piece was added to the pivot rods to allow them to attach to the 80-20 extrusion bars.  This piece was added by facing the rods with a lathe, and drilling the pieces in.  All of the this was done with the help of the shop managers.  With these pieces in, the rods can be easily moved laterally along the bucket and then tightened.
 
+#### Tipping Bucket Trials
+
+| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (center of pivot to base of bucket) (cm)  | Height Filled (cm)| Volume Filled (L)| Emptied Completely|
+| -------- | ----------------|--------------- | --------- | ---------| -------|
+| 1    | 0.25  | 16.5 | 21 | 14.8 | yes |
+| 2 | 0.5 | 16.5| 22 | 15.56 | yes|
+|3   | 0.5  | 19.3  |  x | x | no|
+|4   | 0.5  | 18.5  |  x |  x | no |
+|5   | 0.75  |  18.5 |  22 | 15.56  | yes |
+| 6  |   0.75|   15.5|  22 | 15.56  | yes  |
+|7   |  0.5 |  15.5 | 23  | 16.26  | yes |
+
+The calculation for the volume in Liters filled of the bucket is shown below.
+
+```python
+from aide_design.play import*
+bucket_height = 23 * u.cm
+bucket_diam = 30* u.cm
+area = pc.area_circle(bucket_diam)
+vol = area * bucket_height
+print(vol.to(u.L))
+ ```
+
+Trial 7 of the tipping bucket yielded the more successful results in that the bucket filled the most, while still emptying out all the way. Trials where the bucket did not empty completely were voided because water left in the bucket would cause a build-up of organic matter. Further testing will need to be done once a final design has been decided.
+
 ### Influent Tank Design
 
 Another crucial part of the design  is the influent tank.  This tank will capture all wastewater from the tipping bucket, and distribute it evenly across both influent pipes for flow control.  To prevent any splashing of wastewater, the tipping bucket will be completely contained within the influent tank.
@@ -325,7 +348,7 @@ This can be achieved by choosing the appropriate geometry at the bottom of the t
 * The tank should be **easy to source**. It should be easily purchasable at the correct dimensions, or easy to fabricate.
 
 
-Summarized in a table:
+The parameters, with a 5-gallon bucket mounted inside, are summarized in the table below:
 
 | Parameter | Value | Justification |
 |:-------------- |:-----  |------------- |
@@ -352,7 +375,8 @@ print("One dump of the bucket gives", head_gain, "of hydraulic head")
 ```
 Next, the team considered adding more material into the bottom of the tank (adding sloped walls, making it more pyramidal).  Since there would be less volume in the bottom of the tank, this would allow hydraulic head to be gained per dump of the bucket.  However, after running more calculations it was determined that it was very challenging to meet this criteria and still fit the bucket fully within the influent tank.
 
-After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.
+After further discussion with Monroe, a new design to solve this problem was suggested.  Instead of a sloped tank, the tank would remain rectangular, and larger pipes along the bottom would be added, which would then connect to the influent pipes.  The interface of the larger pipes would be sloped in order to prevent solids from accumulating.
+
 <center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20Tank.jpg?raw=true">
 <p>
 <em>Figure 7: Close up of the influent system showing the larger cylindrical pipe segments</em>
@@ -363,11 +387,9 @@ The addition of the cylindrical pipe segments serves two purposes:
 1. The flow is split into two influent pipes almost equally.
 2. Since the diameter of the cylinder segments is larger than that of the influent pipe, the descending sewage velocity in it will be lower. This allows air bubbles to escape from the wastewater which is desirable.
 
-
-
 ### Influent System Geometry <a name="InfSysGeo"></a>
 
-There are two designs the team is considering for the influent system geometry.  Each is summarized below, and the design functions are utilized to check the important parameters for each system to allow the team to compare and contrast possible designs.
+There are two designs the team is considering for the influent system geometry.  Each is summarized below, and the design functions are utilized to check the important parameters for each system to allow the team to compare and contrast possible designs.  Design work in the Fall 2018 semester will determine the optimal geometry for the system.
 
 #### Design 1: Side Entry
 
@@ -407,20 +429,7 @@ filltime = bucket_filltime(UASB_design[1], 16 * u.L)
 The team then ensured that the velocity within the pipe is below 0.2 m/s, given the pipe diameter, to allow air bubbles to escape.  
 
 ```python
-# Calculate the maximum velocity through the large diameter
-# pipe when hydraulic head is largest after a dump
-pipe_A = pc.area_circle(target_diam)
-# incorporate all kinetic energy
-# as minor loss
-K_minor = 1
-Temp = 16 * u.degC # minimum temp in Honduras
-Nu = pc.viscosity_kinematic(Temp)
-Pipe_Rough = 0.0015 * u.mm
-FlowRate = pc.flow_pipe \
-(target_diam, total_hl, pipe_hl, Nu, Pipe_Rough, K_minor)
-Max_vel = (FlowRate / pipe_A).to(u.m / u.s)
-print(Max_vel)
-
+# Todo: write design code for system.
 ```
 
 #### Design 2: Top Entry
@@ -428,7 +437,7 @@ print(Max_vel)
 Our second potential design has the influent tank directly on top of the UASB system, and the influent pipes coming straight down into the reactor.
 
 **Advantages:**
-* This design is easier to fabricate.
+* This design is easier to fabricate due to the straight pipes.
 * There will likely be fewer clogging issues since there are no bends.
 
 **Disadvantages:**
@@ -456,7 +465,7 @@ Most observations for this test were made qualitatively, and the system was also
 </p>
 </center>
 
-The tests that have been performed were done at a low flow rate of 6.33 mL/s, which translates to an exit velocity of 0.2 m/s. So far, the dyed water appeared to spread out along the bottom of the beaker, rather than puncturing the tapioca blanket. Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
+The tests that have been performed were done at a low flow rate of 6.33 mL/s, which translates to an exit velocity of 0.2 m/s. In initial tests, the dyed water appeared to spread out along the bottom of the beaker, rather than puncturing the tapioca blanket. Multiple tests will be run at different flow rates which will be calculated based on the exit velocities of interest. In addition, test will be run using both one and two influent pipes, and the results will be compared.
 
 ### Code
 Below is the code used to calculate the flow rate needed to produce certain exit velocities from the influent pipe, as well as the code used to calculate the amount of water dumped per pulse:
@@ -560,9 +569,9 @@ print(v2.to(u.ml/u.s))
 
 ## Biogas Capture System
 
-As organic waste passes through the sludge blanket within the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together are known as biogas.  This gas has a fairly high energy density, and can be burned for heating (just like propane).  Biogas capture is an important aspect of the UASB design since it allows the UASB to provide a valuable byproduct that can be used to fuel kitchens in the communities served. Also, it is important to prevent the release of this biogas into the atmosphere directly since methane is a harmful greenhouse gas.
+As organic waste passes through the sludge blanket within the UASB reactor, it is broken down by anaerobic bacteria in a complex biological process that ends with methanogenesis.  A key product of this process is methane and carbon dioxide, which together, along with some trace gasses form biogas.  This gas has a fairly high energy density, and can be burned for heating similar to propane.  Biogas capture is an important aspect of the UASB design since it allows the UASB to provide a valuable byproduct that can be used to fuel kitchens in the communities served. Also, it is important to prevent the release of this biogas into the atmosphere directly since methane is a harmful greenhouse gas.
 
-This section is broken into two parts:  **Biogas Production** details our model of biogas production to quantify how much biogas is produced over time, and  **Biogas Storage** details our design of the biogas storage system.
+This section is broken into two parts:  **Biogas Production** details our model of biogas production to quantify how much biogas is produced over time, and **Biogas Storage** details our design of the biogas storage system.
 
 ### Biogas Production
 
@@ -618,7 +627,7 @@ It is important to note that this equation only gives an approximation of the ac
 |:--------------------------------------------------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
 |          COD Removal Efficiency, ```COD_eff```           |                  70%                  | Based on [Van Lier Report](https://courses.edx.org/c4x/DelftX/CTB3365STx/asset/Chap_4_Van_Lier_et_al.pdf) |
 | Percent of COD directed to Sludge Production ```Y_obs``` |              23%               | Based on [Anaerobic Reactors](https://www.iwapublishing.com/sites/default/files/ebooks/9781780402116.pdf).  Chose highest value of removal to get minimum production value |
-|                     Pressure ```P```                     |                 1 atm                 |                            Biogas produced will be stored at very low pressure                            |
+|                     Pressure ```P```                     |                 1 atm                 |                            Biogas produced will expand against a bag and be at very low pressures                            |
 |                   Temperature ```T```                    |            25 $^{\circ} C$             |                                  Assuming optimal biological conditions                                   |
 
 
@@ -627,7 +636,11 @@ It is important to note that this equation only gives an approximation of the ac
 from aide_design.play import*
 import doctest
 def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
-"""Calculates  molar, mass, and volumetric production rate of biogas within reactor.  Inputs are the flow rate of wastewater into the reactor (volume/time), the Carbonaceous Oxygen Demand of the influent wastewater (mass/volume), the average temperature inside the reactor, and the efficiency of COD removal within the system.  Mass rate conversion done using the ideal gas law.
+"""Calculates  molar, mass, and volumetric production rate of biogas within reactor.  
+Inputs are the flow rate of wastewater into the reactor (volume/time), the
+Carbonaceous Oxygen Demand of the influent wastewater (mass/volume), the average
+temperature inside the reactor, and the efficiency of COD removal within the system.
+Mass rate conversion done using the ideal gas law.
 
 
 
@@ -670,6 +683,18 @@ print(Q_Biogas.to(u.L/u.day))
 #### Lid design
 
 ##### Design 1: Hydraulic Seal
+
+Initial designs of the UASB system utilized a hydraulic seal to keep biogas within the headspace of the reactor.  This system is pictured in the figure below.
+
+<center><img src="https://github.com/AguaClara/UASB/blob/b46ba6ad949bb7b7a98aa3e0e3fb412821c91e9c/Images/Biogas%20Lid%20Closeup.jpg?raw=true">
+<p>
+<em>Figure X: Hydraulic Seal System to Store Biogas</em>
+</p>
+</center>
+
+In this lid, biogas produced within the sludge blanket of the reactor would rise up and enter the cylindrical lid space.  With an increase in gas, the pressure within the lid would increase as well, forcing the water downwards and out through the effluent tube.
+
+The lid is surrounded by a ring of water with height set by the effluent line.  This water would hydraulically seal the biogas within the headspace until the gas pushed the water level down below the height of the lid space, breaking the seal and allowing gas to escape.  Thus, by increasing the height of the lid the total amount of gas captured before offgassing could be increased.
 
 ##### Design 2: Full Seal
 
@@ -778,7 +803,7 @@ Another important discussion from the meeting was the location for our pilot sca
 There are however a few issues that need to be worked out before the team can install the UASB plant here:
 * The lime room has lead paint that needs to be dealt with before any student goes in to work there.
 * The team needs to finalize whether the UASB reactor will be fabricated in the IAWWTF or in the AguaClara lab and then transported to the lime room.
-* A method of quantifying and analyzing the biogas produced needs to be determined, since the IAWWTF only runs $CO_2$ tests on their biogas. 
+* A method of quantifying and analyzing the biogas produced needs to be determined, since the IAWWTF only runs $CO_2$ tests on their biogas.
 
 ## Further Issues and Future Work
 
