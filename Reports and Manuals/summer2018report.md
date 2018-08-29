@@ -83,6 +83,30 @@ Meeting with Ed Gottlieb once again, he suggested two methods of pulse flow. The
 
 During Spring 2018 the team also applied for Phase II of the EPA P3 Grant, this time for $75,000.  The application, found [here](https://docs.google.com/document/d/1ejsyrxgZOtswRr5hx-XJ22QQtn4LzLtoVheMF-YvFrs/edit), focused primarily on the design of a second testing reactor to run in parallel with new modifications to test the efficacy of the system.  This funding would also be used for establishing a testing system in Honduras for field data.
 
+## What is a UASB?
+
+Upflow Anaerobic Sludge Blanket, or UASB reactors, are wastewater treatment systems that utilized biological organisms to break apart waste and treat water.  UASB systems are used for primary treatment, removing suspended solids ($TSS$) and biological oxygen demand ($BOD$), but not removing pathogens or nutrients such as nitrogen and phosphorus.  Currently, UASB systems are primarily used in India for wastewater treatment.
+
+Wastewater enters the UASB through the bottom reactor and slowly flows upwards through the reactor before leaving through an exit tube or weir.  As it flows upwards, it encounters the sludge blanket, a mass of bacterial, organic matter, and other particulates.  The bacteria in the sludge blankets form large colonies that form a conglomerate known as a granule.
+
+<center><img src="https://github.com/AguaClara/UASB/blob/master/Images/Conventional_UASB.PNG?raw=true">
+<p>
+<em>Figure 1: A typical UASB system</em>
+</p>
+</center>
+
+As wastewater passes through the sludge blanket, organic matter is captured by the bacteria and consumed for their metabolic processes.  Most of these bacteria are methanogens, organisms that convert organics to methane ($CH_4$).  Other gases are produced in the process, including carbon dioxide ($CO_2$) and hydrogen sulfide ($H_2S$, forming a mixture known as biogas.  This biogas rises through the fluid and is captured in the top section.  Since methane is high in energy content, it can then be used for heating, cooking, or energy production.  
+
+Finally, the clarified wastewater rises above the sludge blanket and leaves through the effluent line.  Solids are retained, either through decomposition within the sludge blanket or through pieces designed to alter flow to settle solids.  Eventually the sludge blanket will grow above the desired level and will need to be removed through some form of sludge weir or effluent line.  These solids can then be dried and disposed of.
+
+Since UASB systems only served as primary treatment, the effluent will go to some form of secondary treatment to remove additional BOD, TSS, as well as limiting nutrients such as nitrogen and phosphorus.  Finally, the waste will be chlorinated to kill pathogens and then released into the environment.  
+
+## Fusion Model
+
+One major goal for the summer was to create a Computer Aided Design (CAD) model of our UASB.  This was accomplished using Fusion 360, an open source CAD software that is free for students.  [You can look at the model here](https://cornell47.autodesk360.com/g/shares/SH7f1edQT22b515c761e1224485004ae7e44?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0IBOAEx4GYeAFgBsAWgBMjAGY8xQgKwTxjLl3H8A7KoBGEABwQd-IZrQBfEAF0gA) or through the link on our Github repository.  To see the entire project and contribute, ask to join the AguaClara group on Fusion.
+
+Another conclusion reached this summer is that the team will eventually be moved to using [OnShape](https://www.onshape.com/), a similar CAD software that is entirely browser based.  During the coming semesters we will push to make another model in OnShape to continue the design work.
+
 ## Influent Flow System
 
 One major design goal for the summer was to finish design of the influent system that delivers wastewater to the bottom of the reactor from a holding tank.
@@ -696,7 +720,15 @@ In this lid, biogas produced within the sludge blanket of the reactor would rise
 
 The lid is surrounded by a ring of water with height set by the effluent line.  This water would hydraulically seal the biogas within the headspace until the gas pushed the water level down below the height of the lid space, breaking the seal and allowing gas to escape.  Thus, by increasing the height of the lid the total amount of gas captured before offgassing could be increased.
 
+After gas had built up within the system, a valve could be opened from a pipe running off the top to release it.  Once released, gas would flow from the high pressure zone within the lid to the lower pressure capture system.  This gas could then be collected and the valve closed once again to begin a second collection.
+
+Upon further review of the design, a couple of crucial problems were identified.  First is that this design allows open wastewater to be exposed to the air.  This could allow odors to escape the system, and could also allow oxygen to enter the system, damaging the anaerobic habitat.  Additionally, this system would require the contents to be stored under pressure for longer periods of time, which would complicate fabrication as we would need to use a separate material for the lid that was pressure resistant.  Finally, there would be no direct way of checking the system for the gas overflow condition.  While there are mathematical models to predict gas production rate and thus the amount of time until the gas overflowed, these are subject to variability and potential error as well.
+
+Given these problems, another design was developed for the lid space, detailed below.
+
 ##### Design 2: Full Seal
+
+The second design for the lid space utilized a full seal of the top of the system, essentially just using a sealed UASB system. As many prefabricated tanks, such as the one pictured below, utilize  
 
 #### Capture System Design
 
