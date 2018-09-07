@@ -1,22 +1,23 @@
 # UASB
 
+Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wastewater treatment systems to be cheaper, simpler to fabricate, and easy to implement to provide affordable wastewater treatment across the world.  For more information, read our [research reports](https://github.com/AguaClara/UASB/tree/master/Reports%20and%20Manuals) or see our latest [poster presentation](https://github.com/AguaClara/UASB/blob/master/Posters%20and%20Presentations/UASB_NEGSWS_2018_Poster.ppt) from the 2018 NEGSWS conference.
 
-See a model of our UASB here: [Model UASB](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q)
+Check our a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q)
 
 ## Research Advisor:
-Zoe Maisel (zam7)
+Zac Chen (zc76)
 
 ## Team Members:
 Ian Cullings (idc25)
 
 Ananya Gangadhar (ag757)
 
-Isa Kaminsky (imk28)
+Nina Blahut (nab238)
 
-Aly Storch (ats228)
+Cara Smith (cjs354)
 
 ## Semester Goals:
-In Summer 2018, the UASB team will be working on finishing the designs of all UASB components. More specifically, we will finalize the tipping bucket influent system dimensions, and design a biogas storage system. We will also set up benchtop tests to model flow within the UASB reactor. Should time permit, the team also aims to start fabricating the UASB reactor prototype that will be tested in the Ithaca Area Wastewater Treatment Facility in the near future.
+In Fall 2018, the team will be finalizing design of the UASB system and beginning fabrication of our first model.  Additionally, the team will be conducting flow control tests using a model sludge blanket system to determine optimal flow patterns and test for critical failure modes within the UASB.  Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
 
 
 ## Links to Reports and Presentations
