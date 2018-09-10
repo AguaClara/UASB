@@ -8,7 +8,7 @@
 
 This document serves as a full guide for the fabrication of the AguaClara UASB reactor.  Each section below details the fabrication process for the individual components of the UASB reactor.  
 
-These sections are divided into the following subsections:
+These sections are divided into the following sub-sections:
 * Fusion Model: Includes photos of our fusion model and a link to a full assembly
 * Materials: Lists all the materials used to fabricate, and how they were sourced
 * Fabrication steps: Detailed step by step instructions on how to fabricate the system.  Includes photos from fabrication of the first system
