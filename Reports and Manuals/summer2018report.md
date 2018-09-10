@@ -61,7 +61,7 @@ In many countries without proper access to wastewater treatment, such as Hondura
 
 Organic matter within wastewater is degraded by biologically by aquatic bacteria, consuming dissolved oxygen and harming life in the process.  In extreme cases this can deplete oxygen enough to create dead zones where aquatic species like fish are killed.  Nutrients such as nitrogen and phosphorus contained in wastewater can lead to explosive algal growth in waterways, which also depletes oxygen levels and can create dead zones through a process known as [eutrophication](https://oceanservice.noaa.gov/facts/eutrophication.html).
 
-Finally, fecal matter from wastewater is a major contributor to the spread of infectious waterborne diseases including Cholera, Salmonella, and Diarrhea.  Pollution of waterways where others source their water from leads to the rapid spread of these diseases, particularly in areas downstream of other communities.
+Finally, fecal matter from wastewater is a major contributor to the spread of infectious waterborne diseases including cholera, salmonella, and diarrhea.  Pollution of waterways where others source their water from leads to the rapid spread of these diseases, particularly in areas downstream of other communities.
 
 Currently in the United States effective municipal wastewater treatment facilities have long retention times, require large land areas, and have a high fixed cost per capita. Implementing these systems in smaller communities leads to high fixed costs per capita and large levels of infrastructure, both of which are often unattainable for smaller communities.  Because of this, many communities across the world forgo wastewater treatment altogether and discharge wastewater directly into the environment.  
 
