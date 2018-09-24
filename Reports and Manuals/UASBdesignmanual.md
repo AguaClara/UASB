@@ -2,7 +2,7 @@
 
 ## Summer 2018
 
-###Ian Cullings, Ananya Gangadhar, Isa Kaminsky
+### Ian Cullings, Ananya Gangadhar, Isa Kaminsky
 
 ## Introduction
 
@@ -13,6 +13,7 @@ This document serves to detail the entire design process of the UASB system.  Wh
 Initial design of the UASB models the 1 L/s plant closely, and thus assumed the use of a 3' diameter PVC pipe for the base of the tank, as the design required a bend in the pipe for the plate settlers.  Since the UASB system requires no bends and is completely vertical, it was proposed to use a prefabricated plastic tank instead.  
 
 The advantages of the prefabricated tank are:
+
 * Lower overall costs
 * Easier fabrication of bottom and top of tank (since the tank is already sealed)
 * Higher structural stability, particularly at bottom of tank

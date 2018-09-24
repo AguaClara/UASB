@@ -4,7 +4,7 @@
 
 ### Ian Cullings, Isa Kaminsky, Ananya Gangadhar
 
-Hello
+
 
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -58,7 +58,7 @@ Over the summer of 2018, the UASB team's main goal has been to finish a complete
 
 ## Introduction
 
-In many countries without proper access to wastewater treatment, such as Honduras, wastewater is directly released into the environment without treatment.  Typical domestic wastewater released this way contained organics and fecal matter which lead to many adverse affects on the environment and human health.  
+Our introduction: In many countries without proper access to wastewater treatment, such as Honduras, wastewater is diresctly released into the environment without treatment.  Typical domestic wastewater released this way contained organics and fecal matter which lead to many adverse affects on the environment and human health.  
 
 Organic matter within wastewater is degraded by biologically by aquatic bacteria, consuming dissolved oxygen and harming life in the process.  In extreme cases this can deplete oxygen enough to create dead zones where aquatic species like fish are killed.  Nutrients such as nitrogen and phosphorus contained in wastewater can lead to explosive algal growth in waterways, which also depletes oxygen levels and can create dead zones through a process known as [eutrophication](https://oceanservice.noaa.gov/facts/eutrophication.html).
 

@@ -2,7 +2,7 @@
 
 Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wastewater treatment systems to be cheaper, simpler to fabricate, and easy to implement to provide affordable wastewater treatment across the world.  For more information, read our [research reports](https://github.com/AguaClara/UASB/tree/master/Reports%20and%20Manuals) or see our latest [poster presentation](https://github.com/AguaClara/UASB/blob/master/Posters%20and%20Presentations/UASB_NEGSWS_2018_Poster.ppt) from the 2018 NEGSWS conference.
 
-Check our a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q)
+Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q)
 
 ## Research Advisor:
 Zac Chen (zc76)
