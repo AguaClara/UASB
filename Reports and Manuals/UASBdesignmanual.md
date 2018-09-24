@@ -2,7 +2,7 @@
 
 ## Summer 2018
 
-###Ian Cullings, Ananya Gangadhar, Isa Kaminsky
+### Ian Cullings, Ananya Gangadhar, Isa Kaminsky
 
 ## Introduction
 
