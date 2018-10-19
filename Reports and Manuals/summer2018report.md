@@ -859,3 +859,7 @@ Pressure calculations will have to be performed with the biogas amounts expected
 Another option to consider, although this will be more cumbersome, is to return to our original plan of fabricating the reactor out of a large PVC pipe. This in turn will require some research on how much pressure the welds and the PVC pipe itself are able to withstand.
 
 ### Geometry of Effluent Line
+
+
+### EPA Funding Assurance
+This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.

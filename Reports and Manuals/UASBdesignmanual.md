@@ -512,3 +512,7 @@ print("The storage volume required to store", time_stor, "of biogas is", vol_sto
 ```
 
 #### Effluent Tube Settler
+
+
+### EPA Funding Assurance
+This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.

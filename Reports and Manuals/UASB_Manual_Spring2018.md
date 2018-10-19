@@ -577,6 +577,9 @@ A rough timeline of the project is summarized below.  The overall goal is for de
 * Find fabrication space for UASB
 * Fabricate Reactor
 
+### EPA Funding Assurance
+This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
+
 ## Bibliography
 Abbasi, T., & Abbasi, S. A. (2012). Formation and impact of granules in fostering clean energy production and wastewater treatment in upflow anaerobic sludge blanket (UASB) reactors. Renewable and Sustainable Energy Reviews, 16(3), 1696–1708. https://doi.org/10.1016/j.rser.2011.11.017
 
