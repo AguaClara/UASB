@@ -23,6 +23,9 @@ In Fall 2018, the team will be finalizing design of the UASB system and beginnin
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
+### Fall 2018
+[Symposium Presentation](https://docs.google.com/presentation/d/1w-d5YQ5Ck9oUmswyk0-IZ2s0v9SY-O7ztUVHQlB3yNs/edit#slide=id.g346a079b2f_0_0)
+
 ### Summer 2018
 
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)  
