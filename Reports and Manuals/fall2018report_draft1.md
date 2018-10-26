@@ -165,9 +165,6 @@ Place the small-scale UASB reactor on lab bench. Use brackets to secure a 5/8 in
 
 ## ProCoDa Method File
 
-<<<<<<< HEAD
-<!--
-=======
 The ProCoDa file used for the Tapicoa tests has three states:
 
 ![Setp](https://github.com/AguaClara/UASB/blob/master/Images/statel.PNG?raw=true)
@@ -177,7 +174,6 @@ The ProCoDa file used for the Tapicoa tests has three states:
 * Pause: System turns off during set time and then turns on
 
 The set points are listed below:
->>>>>>> 199f9109290553ce11bd6e2c12b61c8e15855002
 
 ![Setp](https://github.com/AguaClara/UASB/blob/master/Images/setp.PNG?raw=true)
 
@@ -189,8 +185,6 @@ The set points are listed below:
 * Run time: The time the pump should run at the calculated speed.  For our experiments this was 3 seconds.
 * Pause time: The time the system remains in the pause state before running.  For our experiments, this was 30 seconds.
 
-<<<<<<< HEAD
-=======
 For our initial experiments, red dye was loaded into the system manually by running the pump until a set amount of dye was visible in the tubing, then injected through running the water pump.  In future quantitative tests this will be controlled through ProCoDa as well using the second pump.
 
 ## Results and Analysis
@@ -214,7 +208,6 @@ Overall, the tapioca tests are still in the early stages, and a lot more tests w
 This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
 
 <!--
->>>>>>> 199f9109290553ce11bd6e2c12b61c8e15855002
 ## Methods
 Explain the techniques you have used to acquire additional data and insights. Reserve fine detail for the Manual at the end of the report, but use this section to give an overview with enough detail for the reader to understand your Results and Analysis. Describe your apparatus, and have a justification for every decision you made and every parameter you chose in the design of the apparatus. Be especially careful to detail the conditions your experiments were conducted under, as this information is especially important for interpreting your results
 
