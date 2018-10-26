@@ -26,18 +26,17 @@
 [EM: Hello, UASB team! For context, my comments will be underneath the paragraph in which I am referring to. Any questions, as always, contact aguaclaragraders@gmail.com!]
 
 ## Abstract
-Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor originally developed in an EPA P3 proposal. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB.
+Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor.. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB.
 
-For Fall 2018, the team will continue design work on the UASB with the goal of completing a full design.  Once this is done, the team will begin preparations for fabrication and implementation of the UASB at the Ithaca Area Wastewater Treatment Plant (IAWWTF).  Additionally, the team will conduct research on the flow patterns through the UASB, to ensure the reactor to will work optimally and not short-circuit.  
+For Fall 2018, the team will continue design work on the UASB with the goal of completing a full design.  Once this is done, the team will begin preparations for fabrication and implementation of the UASB at the Ithaca Area Wastewater Treatment Plant (IAWWTF).  Another goal for the semester is to begin researching flow patterns through the UASB to optimize treatment and prevent short-circuiting.
 
-[EM: Great start - very clear and easy to understand. I would take out the part about the EPA proposal, it's not relevant.]
+[EM: Great start - very clear and easy to understand. I would take out the part about the EPA proposal, it's not relevant.  Addressed -IC]
 
 ## Introduction
 
 Many countries in the world lack proper access to wastewater treatment and release their wastewater directly into the environment untreated. The organic and fecal matter present in domestic water can cause harmful effects to the environment and on human health.
 
-Organic matter in wastewater is broken down by bacteria that feed on it, consuming oxygen in the process. Depletion of dissolved oxygen levels in water can threaten and kill aquatic life.
-Additionally, nutrients such as nitrogen and phosphorus present in high concentrations in wastewater can lead to explosive algal growth in waterways, which depletes oxygen levels and can create dead zones through a process known as [eutrophication](https://oceanservice.noaa.gov/facts/eutrophication.html). Fecal matter in wastewater can also cause the spread of infectious waterborne diseases like cholera, salmonella, and diarrhea, making it a huge threat to public health.
+Organic matter in wastewater is broken down by bacteria that feed on it, consuming oxygen in the process. Depletion of dissolved oxygen levels in water can threaten and kill aquatic life.  Additionally, nutrients such as nitrogen and phosphorus present in high concentrations in wastewater can lead to explosive algal growth in waterways, which depletes oxygen levels and can create dead zones through a process known as [eutrophication](https://oceanservice.noaa.gov/facts/eutrophication.html). Fecal matter in wastewater can also cause the spread of infectious waterborne diseases like cholera, salmonella, and diarrhea, making it a huge threat to public health.
 
 The current technology in the United States for treating municipal wastewater requires long retention times, large land areas and high monetary and energy costs. The large infrastructure and associated costs make conventional wastewater treatment unfeasible for small communities, who then resort to directly discharging their wastewater into streams. This problem can be addressed with the use of Upflow Anaerobic Sludge Blanket (UASB) reactors.
 
@@ -52,19 +51,19 @@ In January 2017, a novel pilot scale UASB reactor design was created by AguaClar
 
 [EM: ^^^]
 
-UASBs are currently being used for wastewater treatment to varying degrees of success. In 2005, Sato et. al performed a case study done on 16 full-scale UASBs in the Yamuna River Basin in India [(Sato, 2005)](https://www.sciencedirect.com/science/article/pii/S0301479705002860). The study found that the concentration of pollutants in effluent from these UASBs usually did not meet the effluent standards of most developing countries (Sato, 2005). Despite the failure of the aforementioned UASB reactors to bring wastewater to effluent standards, the study is significant in showing that UASBs are an affordable option for wastewater treatment and emphasizes the importance of designing a UASB reactor that produces effluent, which meets discharge standards.
+UASB reactors are currently being used for wastewater treatment to varying degrees of success. In 2005, Sato et. al performed a case study done on 16 full-scale UASBs in the Yamuna River Basin in India [(Sato, 2005)](https://www.sciencedirect.com/science/article/pii/S0301479705002860). The study found that the concentration of pollutants in effluent from these UASBs usually did not meet the effluent standards of most developing countries (Sato, 2005). Despite the failures of UASB reactors, the study is significant in showing that UASBs are an affordable option for wastewater treatment.   The study also emphasizes the importance of redesigning a UASB reactor to produce acceptable discharge standards.
 
-[EM: Last sentence is awkward.]
+[EM: Last sentence is awkward. Addressed -IC]
 
-One of the main drawbacks of UASB digesters is that there is long initial start-up period before steady-state conditions are achieved; this time is usually in the range of several months [(Wang, 2018)](https://link.springer.com/article/10.1007%2Fs11356-017-0457-5
-). There are methods to decrease startup time such as increasing load, optimizing temperature for anaerobic digestion, using a sufficient amount of sludge, and adding metal or an inert carrier. A 2018 study concluded that the addition of $FeCl_3$ during the initial stage of the UASB start-up to promote granulation combined with the addition of ZVI during the middle stage of reactor start-up is highly effective in reducing the initial start-up period (Wang, 2018). Once the team fabricates the pilot UASB, studies similar to this one will be useful in strategizing how to speed up the start-up period to test UASB quicker.
+One of the main drawbacks of UASB reactors is that there is long initial start-up period before steady-state conditions are achieved; this time is usually in the range of several months [(Wang, 2018)](https://link.springer.com/article/10.1007%2Fs11356-017-0457-5
+). Methods to decrease startup time include increasing load, optimizing temperature for anaerobic digestion, using a sufficient amount of sludge, and adding metal or an inert carrier. Wang et al. concluded that the addition of $FeCl_3$ during the initial stage of the UASB start-up to promote granulation combined with the addition of ZVI during the middle stage of reactor start-up is highly effective in reducing the initial start-up period (Wang, 2018). Once the team fabricates the pilot UASB, studies similar to this one will be useful in strategizing how to speed up the start-up period to test UASB quicker.
 
 [EM: Be consistent with the way you refer to the reactor; will it be 'UASBs' or 'UASB digester?' Also, the sentence "A 2018 study concluded..." is long and a bit confusing. Is the start-up period in which the FeCl3 is added different than the start-up period that is looking to be shortened?]
 
-In general UASB systems, removal of total suspended solids (TSS) is inversely proportional to upflow velocity within the reactor. This parameter is difficult to minimize, as decreasing upflow velocity requires decreasing flow rate, which reduces the total amount of wastewater treated. A study was done in Argentina comparing efficiency of reactors at various upflow velocities and various sludge blanket heights. At lower upflow velocities, the height of the sludge blanket didn't impact efficiency greatly provided the height was near 2/5 the height of the tank. At higher upflow velocities, it was found that a sludge blanket height of 0.92m in a 2.5m tall reactor provided optimal conditions compared to higher sludge blanket heights  [(Seghezzo, 2018)](https://www.researchgate.net/publication/266880587_The_effect_of_sludge_discharges_and_upflow_velocity_on_the_removal_of_suspended_solids_in_a_UASB_reactor_treating_settled_sewage_at_moderate_temperatures).
+In typical UASB reactors, removal of total suspended solids (TSS) is inversely proportional to upflow velocity within the reactor. This parameter is difficult to minimize, as decreasing upflow velocity requires decreasing flow rate, which reduces the total amount of wastewater treated, reducing reactor efficiency. *Seghezzo et al.* compared efficiency of reactors at various upflow velocities and various sludge blanket heights. At lower upflow velocities, the height of the sludge blanket didn't impact efficiency significantly provided the height was roughly 2/5 the height of the tank. At higher upflow velocities, it was found that a sludge blanket height of 0.92 $m$ in a 2.5 $m$ tall reactor provided optimal conditions compared to higher sludge blanket heights.  [(Seghezzo, 2018)](https://www.researchgate.net/publication/266880587_The_effect_of_sludge_discharges_and_upflow_velocity_on_the_removal_of_suspended_solids_in_a_UASB_reactor_treating_settled_sewage_at_moderate_temperatures).
 
-At this height, TSS removal remains above 90% and VSS removal above 80% when the upflow velocity was between 0.30-0.7m/hr, but the best was at 0.48m/hr (TSS removal of 95%, VSS of 90%) An efficient operation could be around 0.5m/hr and height of sludge blanket= 1-2m
-If you wanted to go higher, at .85m/hr -wash out won’t occur, but might not be quite as efficient
+At this height, TSS removal remains above 90% and volatile suspended solids (VSS) removal above 80% when the upflow velocity was between 0.30-0.7 $m/hr$, but the best was at 0.48 $m/hr$ (TSS removal of 95%, VSS of 90%) An efficient operation could be around 0.5 $m/hr$ and height of sludge blanket= 1-2 $m$.
+If you wanted to go higher, at .85m/hr -wash out won’t occur, but might not be quite as efficient.
 Overall low upflow velocities and taller sludge blankets tend to be the way to go. Another paper recommends an upflow velocity between 0.25m/hr and 0.8m/hr, corroborating these claims [(Ghangrekar, 2012)](https://nptel.ac.in/courses/105105048/M21L35.pdf)
 
 [EM: Provide the whole word of an acronym before just using the acronym (e.g. VSS). Above paragraph is messy; it is too wordy, lacking correct punctuation, and a bit informal.]
@@ -132,6 +131,17 @@ The final goal of the team this semester is to begin prepping for fabrication.  
 Our full task map is included below:
 
 ![Task Map](https://github.com/AguaClara/UASB/blob/master/Images/taskmap_fall2018.JPG?raw=true)
+
+## Lab Experiments
+
+### Tapioca Tests
+
+#### Methods
+
+#### Experimental Procedure
+
+#### Results
+
 
 <!--
 
