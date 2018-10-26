@@ -153,17 +153,11 @@ The behavior of the mini-reactor during tapioca tests has been somewhat on par w
 
 But in a properly functioning UASB reactor, the wastewater will then spread out evenly as it travels through the sludge blanket, so that it has the maximal possible surface contact with the granules in the sludge blanket. This has not happened in our tests. The team added red dye to influent water in order to follow the path of water through the model reactor. As shown, the reactor has been slightly lifted off the lab bench so a camera can be placed below and record the water movement at the opening of the influent tube. In doing so, the team observed the formation of preferential pathways through the tapioca layer. Preferential pathways are what happens when when incoming wastewater forms a tunnel through the sludge blanket and shoots through that tunnel instead of distributing itself evenly throughout the sludge blanket. As a result of preferential pathways, wastewater only gets contact with a very small portion of the surface area of the sludge blanket and hydraulic retention time is decreased, so the wastewater is not adequately cleaned. The testing showed the formation of preferential pathways along the walls of the reactor and along the influent tube.
 
-
-**GIF of tapioca test**
-
-
+<!--
 
 #### Experimental Procedure
 
 #### Results
-
-
-<!--
 
 ## Methods
 Explain the techniques you have used to acquire additional data and insights. Reserve fine detail for the Manual at the end of the report, but use this section to give an overview with enough detail for the reader to understand your Results and Analysis. Describe your apparatus, and have a justification for every decision you made and every parameter you chose in the design of the apparatus. Be especially careful to detail the conditions your experiments were conducted under, as this information is especially important for interpreting your results
