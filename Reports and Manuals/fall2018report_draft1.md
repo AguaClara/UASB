@@ -69,7 +69,7 @@ Additionally, [Lattinga et. al. (1993)](https://ac.els-cdn.com/096085249390038D/
 #### Summer 2016
 The UASB team was formed in the Summer of 2016. At that point, the objective of the team was to design and implement a functional lab-scale UASB reactor to treat synthetic black water. Blackwater is wastewater from toilets. In the summer of 2016, the UASB team constructed four small-scale UASB reactors and found that those small-scale reactors could successfully treat synthetic wastewater. The team also found that increased wastewater concentration and higher residence times resulted in higher biogas removal and increased COD removal.
 
-<!--[EM: Define blackwater if not mentioned earlier in report. Adressed-NB]-->
+<!--[EM: Define blackwater if not mentioned earlier in report. Addressed-NB]-->
 
 #### Fall 2016
 In the fall of 2016, the UASB team underwent several changes. First, the team altered the design of the small-scale UASB reactors by implementing shorter and narrower influent lines. The team also changed the synthetic wastewater recipe; more specifically, the team substituted glucose with insoluble carbon compounds. The team also researched retention time in the reactors with fluoride tracer tests, and found a HRT of 3.22 hours in one of the reactors,  close to the target of 4 hours.
@@ -120,7 +120,7 @@ One major part of the design process will be writing code to model designs of th
 
 Because AguaClara is moving from Fusion 360 to Onshape, UASB also plans to create an updated CAD model of the UASB reactor on OnShape. If this cannot be accomplished the semester, it will be accomplished next semester. Two members of the team have volunteered to be trained on OnShape within the upcoming months.
 
-<!--[EM: Fix grammar and spelling mistakes. Adressed -CJMS]-->
+<!--[EM: Fix grammar and spelling mistakes. Addressed -CJMS]-->
 
 The final goal of the team this semester is to begin prepping for fabrication.  This includes locating and ordering materials, making fabrication and safety plans, and learning fabrication techniques such as plastic welding.  With this groundwork laid, the team can begin fabrication easily and have a full plan on how to proceed.
 
@@ -152,7 +152,7 @@ Place the small-scale UASB reactor on lab bench. Use brackets to secure a 5/8 in
 3. Pour tapioca into small-scale reactor until it is ¾ full.
 4. Use leveler to ensure that the influent pipe is perpendicular to the bottom of the reactor.
 6. Inject a plug of red dye to the influent water.  
-7. Pump water into small-scale UASB reactor through the influent pipe.
+7. Use ProCoda to pump water into small-scale UASB reactor through the influent pipe.
 8. Observe the flow of red dye through the tapioca layer and the movement of the tapioca blanket.
 9. Repeat steps 1 through 8 using different flow rates and length of flow rate pulse.
 10. Clean up.
@@ -185,7 +185,7 @@ The set points are listed below:
 * Run time: The time the pump should run at the calculated speed.  For our experiments this was 3 seconds.
 * Pause time: The time the system remains in the pause state before running.  For our experiments, this was 30 seconds.
 
-For our initial experiments, t
+For our initial experiments, red dye was loaded into the system manually by running the pump until a set amount of dye was visible in the tubing, then injected through running the water pump.  In future quantitative tests this will be controlled through ProCoDa as well using the second pump.
 
 ## Results and Analysis
 
@@ -198,14 +198,11 @@ But in a properly functioning UASB reactor, the wastewater will then spread out 
 ### Future Work
 The team will need to rethink the design for the UASB reactor’s influent system. It must be altered to force wastewater to flow more evenly through the sludge blanket to eliminate preferential pathways.
 
-The team has a few ideas on how to combat this problem. One idea is changing the number of influent pipes. While the majority of tests have been done with a single influent pipe, two pipes could lead to the wastewater being distributed more evenly among the sludge blanket. This will be a key area for the team’s tests in the upcoming month. So far, the team has only run an experiment with two tubes once, and very little could be concluded from that experiment due to significant leakage at the connection where the influent tube split off into two separate tubes. Once the connection is corrected, the team will resume tapioca tests.
+The team has a few ideas on how to combat this problem. One idea is to change the number of influent pipes. While the majority of tests have been done with a single influent pipe, two pipes could lead to the wastewater being distributed more evenly among the sludge blanket. This will be a key area for the team’s tests in the upcoming month. So far, the team has only run an experiment with two tubes once, and very little could be concluded from that experiment due to significant leakage at the connection where the influent tube split off into two separate tubes. Once the connection is corrected, the team will resume tapioca tests.
 
 Another idea is to change the geometry of the influent pipe, perhaps to something resembling a sprinkler. Again, the team needs to keep in mind that making pipes too small will cause clogging, and then no wastewater will flow through any part of the bed. If this were to be tested, this component would need to be designed and then fabricated.
 
-Overall, the tapioca tests are still in the early stages, and a lot more tests will need to be run before an optimal flow rate and influent design is established. There are still several options that need to be explored before a definite one is chosen, and that will take time.
-
-
-
+Overall, the tapioca tests are still in the early stages, and a lot more tests will need to be run before an optimal flow rate and influent design is established.
 
 ### EPA Funding Assurance
 This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
