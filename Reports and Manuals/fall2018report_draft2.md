@@ -26,11 +26,11 @@
 [Shuo: Hello UASB! I'll write my comments in the square brackets like this. Feel free to delete them when you revise or update your report. Basically the second report looks good, despite some typos and format issues. You can still improve your report by revising your conclusion and analysis part, which can be more readable with more graphs. Looking forward to your third report draft!]
 
 ## Abstract
-Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of modified, pilot-scale UASB reactor.. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB. 
+Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design of a pilot-scale UASB reactor. A UASB reactor treats wastewater anaerobically and produces biogas as a byproduct. Working towards that goal, the team has created Python code to record the design process and calculations for this AguaClara UASB.
 
 For Fall 2018, the team will continue design work on the UASB with the goal of completing a full design.  Once this is done, the team will begin preparations for fabrication and implementation of the UASB at the Ithaca Area Wastewater Treatment Plant (IAWWTF).  Another goal for the semester is to begin researching flow patterns through the UASB to optimize treatment and prevent short-circuiting.
 
-[Concise and clear abstract overall. There's a typo after "reactor" in the first paragraph.]
+[RESOLVED-AG-Concise and clear abstract overall. There's a typo after "reactor" in the first paragraph.]
 
 ## Introduction
 
@@ -44,9 +44,11 @@ UASB reactors are used for primary treatment and clarify wastewater by removing 
 
 UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes.
 
-In January 2017, a novel pilot scale UASB reactor design was created by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally.  The team later applied for Phase II funding from the same organization to support development and implementation of additional reactors for testing.
+In January 2017, a novel gravity-powered UASB reactor was designed by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally. The team later applied for Phase II funding from the same organization to support development and implementation of additional reactors for testing.
 
-[The introduction is a good lead-in to the report and the function and importance of UASB were well explained. You are encouraged to briefly talk about the process of your experiment in this part.]
+This semester, the team will focus on benchtop testing of the various components of the UASB reactor, and simulate the movement of water through the sludge blanket in order to better understand flow patterns within the reactor and possible failure modes.
+
+[RESOLVED-AG-The introduction is a good lead-in to the report and the function and importance of UASB were well explained. You are encouraged to briefly talk about the process of your experiment in this part.]
 ## Literature Review and Previous Work
 
 <!--[EM: ^^^ Resolved - AG]-->
@@ -60,17 +62,17 @@ One of the main drawbacks of UASB reactors is that there is long initial start-u
 
 <!--[EM: Be consistent with the way you refer to the reactor; will it be 'UASBs' or 'UASB digester?' Also, the sentence "A 2018 study concluded..." is long and a bit confusing. Is the start-up period in which the FeCl3 is added different than the start-up period that is looking to be shortened?  Addressed -IC]-->
 
-In typical UASB reactors, studies have found that removal of total suspended solids (TSS) is inversely proportional to upflow velocity within the reactor.  This parameter is difficult to minimize since decreasing upflow velocity requires decreasing flow rate, which reduces the total amount of wastewater treated, reducing reactor efficiency. *Seghezzo et al.* compared efficiency of reactors at various upflow velocities and various sludge blanket heights. At lower upflow velocities, the height of the sludge blanket didn't impact efficiency significantly provided the height was roughly 2/5 the height of the tank. At higher upflow velocities, it was found that a sludge blanket height of 0.92 $m$ in a 2.5 $m$ tall reactor provided optimal conditions compared to higher sludge blanket heights.  [(Seghezzo, 2018)](https://www.researchgate.net/publication/266880587_The_effect_of_sludge_discharges_and_upflow_velocity_on_the_removal_of_suspended_solids_in_a_UASB_reactor_treating_settled_sewage_at_moderate_temperatures). The model reactor at these dimensions removed 80% of the TSS and 90% of the volatile suspended solids (VSS).  The overall findings of the paper suggested lower upflow velocities and taller sludge blankets are optimal for UASB efficiency.
+In typical UASB reactors, studies have found that removal of total suspended solids (TSS) is inversely proportional to upflow velocity within the reactor.  This parameter is difficult to minimize since decreasing upflow velocity requires decreasing flow rate, which reduces the total amount of wastewater treated, reducing reactor efficiency. *Seghezzo et al.* compared efficiency of reactors at various upflow velocities and various sludge blanket heights. At lower upflow velocities, the height of the sludge blanket did not impact efficiency significantly, provided the height was roughly 2/5 the height of the tank. At higher upflow velocities, it was found that a sludge blanket height of 0.92m in a 2.5m tall reactor provided optimal conditions compared to higher sludge blanket heights.  [(Seghezzo, 2018)](https://www.researchgate.net/publication/266880587_The_effect_of_sludge_discharges_and_upflow_velocity_on_the_removal_of_suspended_solids_in_a_UASB_reactor_treating_settled_sewage_at_moderate_temperatures). The model reactor at these dimensions removed 80% of the TSS and 90% of the volatile suspended solids (VSS).  The overall findings of the paper suggested lower upflow velocities and taller sludge blankets are optimal for UASB efficiency.
 
-[Show the units and chemical formulas in appropriate format. You may find something useful here: https://confluence.cornell.edu/display/AGUACLARA/Style+Guide+for+Figures%2C+Tables%2C+and+Equations]
+[MAYBE RESOLVED?-AG-Show the units and chemical formulas in appropriate format. You may find something useful here: https://confluence.cornell.edu/display/AGUACLARA/Style+Guide+for+Figures%2C+Tables%2C+and+Equations]
 
 Additionally, [Lattinga et. al. (1993)](https://ac.els-cdn.com/096085249390038D/1-s2.0-096085249390038D-main.pdf?_tid=c83c2cd0-507e-4bba-a527-852fb5b2d0ed&acdnat=1537204715_6f79df9120ffd2cb0883ce08f1828336) highlights how the process of granulation within the UASB reactor is positively impacted by high upflow velocities within the UASB reactor and low hydraulic retention times. Both of these studies will be important when designing for UASB efficiency.  
 
 ## Timeline of UASB
 #### Summer 2016
-The UASB team was formed in the Summer of 2016. At that point, the objective of the team was to design and implement a functional lab-scale UASB reactor to treat synthetic black water. Blackwater is wastewater from toilets. In the summer of 2016, the UASB team constructed four small-scale UASB reactors and found that those small-scale reactors could successfully treat synthetic wastewater. The team also found that increased wastewater concentration and higher residence times resulted in higher biogas removal and increased COD removal.
+The UASB team was formed in the Summer of 2016. At that point, the objective of the team was to design and implement a functional lab-scale UASB reactor to treat synthetic black water. Blackwater is wastewater from toilets. In the summer of 2016, the UASB team constructed four small-scale UASB reactors and found that those small-scale reactors could successfully treat synthetic wastewater. The team also found that increased wastewater concentration and higher residence times resulted in higher biogas removal and increased Chemical Oxygen Demand (COD) removal.
 
-[Define COD (chemical oxygen demand).]
+[RESOLVED-AG-Define COD (chemical oxygen demand).]
 
 #### Fall 2016
 In the fall of 2016, the UASB team underwent several changes. First, the team altered the design of the small-scale UASB reactors by implementing shorter and narrower influent lines. The team also changed the synthetic wastewater recipe; more specifically, the team substituted glucose with insoluble carbon compounds. The team also researched retention time in the reactors with fluoride tracer tests, and found a HRT of 3.22 hours in one of the reactors,  close to the target of 4 hours.
@@ -143,11 +145,11 @@ A scaled-down model UASB reactor was fabricated over the summer using a PVC pipe
 
 ![Bethany the prototype UASB reactor](https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true)
 
-###Set Up
+### Set Up
 
 [Fix the format here. Preview your report before submitting it.]
 
-Place the small-scale UASB reactor on lab bench. Use brackets to secure a 5/8 inch pipe so that it is positioned perpendicular to the bottom of the reactor and it extends to about .5 cm above the bottom of the small-scale reactor. Attach the influent pipe to a 600 RMP. Attach a red dye pump to the influent line of water.
+Place the small-scale UASB reactor on the lab bench. Use brackets to secure a 5/8 inch pipe so that it is positioned perpendicular to the bottom of the reactor and it extends to about .5 cm above the bottom of the small-scale reactor. Attach the influent pipe to a 600 RMP. Attach a red dye pump to the influent line of water.
 
 ### Experimental Procedure
 
@@ -191,17 +193,21 @@ The set points are listed below:
 
 For our initial experiments, red dye was loaded into the system manually by running the pump until a set amount of dye was visible in the tubing, then injected through running the water pump.  In future quantitative tests this will be controlled through ProCoDa as well using the second pump.
 
-## Results and Analysis
+## Results
 
-During tests, the team uses ProCoda to pump water through an influent pipe down the center of the small-scale reactor. The influent pipe extends to about a half of a centimeter above the reactor’s bottom. Once influent water hits the bottom of the reactor, it travels upwards through the layer of tapioca. Then, when the the water level in the reactor reaches the height of the effluent tube, water exits the reactor
+During tests, the team uses ProCoDa to pump water through an influent pipe down the center of the small-scale reactor. The influent pipe extends to about a half of a centimeter above the reactor’s bottom. Once influent water hits the bottom of the reactor, it travels upwards through the layer of tapioca. Then, when the the water level in the reactor reaches the height of the effluent tube, water exits the reactor
 
 The behavior of the mini-reactor during tapioca tests has been somewhat on par with that of a functional UASB reactor. In the team’s initial tests with a 100 RPM pump, there was no observable fluidization of the the tapioca blanket; however, the transition to a 600 RPM pump and subsequent increase of influent flow rate resulted in the partial fluidization of the tapioca. The layer of tapioca did not lift entirely off the bottom of the reactor, but there was noticeable stretching of the tapioca layer as influent wastewater traveled through it, and the sludge blanket did indeed stretch uniformly.
 
-But in a properly functioning UASB reactor, the wastewater will then spread out evenly as it travels through the sludge blanket, so that it has the maximal possible surface contact with the granules in the sludge blanket. This has not happened in our tests. The team added red dye to influent water in order to follow the path of water through the model reactor. As shown, the reactor has been slightly lifted off the lab bench so a camera can be placed below and record the water movement at the opening of the influent tube. In doing so, the team observed the formation of preferential pathways through the tapioca layer. Preferential pathways are what happens when when incoming wastewater forms a tunnel through the sludge blanket and shoots through that tunnel instead of distributing itself evenly throughout the sludge blanket. As a result of preferential pathways, wastewater only gets contact with a very small portion of the surface area of the sludge blanket and hydraulic retention time is decreased, so the wastewater is not adequately cleaned. The testing showed the formation of preferential pathways along the walls of the reactor and along the influent tube.
+## Analysis
+In a properly functioning UASB reactor, the wastewater will spread out evenly as it travels through the sludge blanket, so that it has the maximal possible surface contact with the granules in the sludge blanket. This has not happened in our tests. The team added red dye to influent water in order to follow the path of water through the model reactor.
 
-[Can you provide some diagrams to illustrate the results you have? And when comparing the properly functioning UASB reactor and the result you have, can you also explain more about it and the possible reasons? You can also separate results from analysis.]
+As shown, the reactor has been slightly lifted off the lab bench so a camera can be placed below and record the water movement at the opening of the influent tube. In doing so, the team observed the formation of preferential pathways through the tapioca layer. Preferential pathways occur when incoming wastewater forms a tunnel through the sludge blanket and shoots through the tunnel instead of distributing evenly throughout the sludge blanket. As a result of preferential pathways, wastewater only gets contact with a very small portion of the surface area of the sludge blanket and hydraulic retention time is decreased, so the wastewater is not adequately cleaned. The testing showed the formation of preferential pathways along the walls of the reactor and along the influent tube.
+
+[PARTIALLY RESOLVED-AG-Can you provide some diagrams to illustrate the results you have? And when comparing the properly functioning UASB reactor and the result you have, can you also explain more about it and the possible reasons? You can also separate results from analysis.]
+
 ### Future Work
-The team will need to rethink the design for the UASB reactor’s influent system. It must be altered to force wastewater to flow more evenly through the sludge blanket to eliminate preferential pathways.
+The design for the UASB influent system must be altered to force the flow of wastewater more evenly through the sludge blanket in order to eliminate preferential pathways.
 
 The team has a few ideas on how to combat this problem. One idea is to change the number of influent pipes. While the majority of tests have been done with a single influent pipe, two pipes could lead to the wastewater being distributed more evenly among the sludge blanket. This will be a key area for the team’s tests in the upcoming month. So far, the team has only run an experiment with two tubes once, and very little could be concluded from that experiment due to significant leakage at the connection where the influent tube split off into two separate tubes. Once the connection is corrected, the team will resume tapioca tests.
 
@@ -351,8 +357,9 @@ $u$, $w$: x-velocity, z-velocity components
 # Add/Delete/Change this Template as you see Fit
 When using this template keep in mind that this serves three purposes. The first is to provide your team feedback on your progress, assumptions, and conclusions. The second is to keep your team focused on what you are learning and doing for AguaClara. Another is to educate future teams on what you've learned and done. This document should be comprehensive, consistent, and well-written. With that in mind, add, subtract, or move sections. Reach out to the RAs and graders for help with figuring out what should or shouldn't include. Focus on how wonderful a reference you are making through this and work hard on communicating amongst yourselves and with future teammates. (Delete this section before submitting) -->
 
-
+<!--
 ```python
 # To convert the document from markdown to pdf
 pandoc Name_of_this_file.md -o TeamName_Research_Report.pdf
 ```
+-->
