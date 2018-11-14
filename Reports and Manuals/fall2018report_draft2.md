@@ -20,8 +20,20 @@
     - [Spring 2018](#spring-2018)
     - [Summer 2018](#summer-2018)
 - [Fall 2018 Goals](#fall-2018-goals)
+- [Lab Experiments](#lab-experiments)
+- [Tapioca Tests](#tapioca-tests)
+  - [Experimental Apparatus](#experimental-apparatus)
+  - [Set Up](#set-up)
+  - [Experimental Procedure](#experimental-procedure)
+  - [Cleaning Procedure](#cleaning-procedure)
+- [ProCoDa Method File](#procoda-method-file)
+- [Results](#results)
+- [Analysis](#analysis)
+  - [Future Work](#future-work)
+  - [EPA Funding Assurance](#epa-funding-assurance)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<div style = “text-align:center”>
 
 [Shuo: Hello UASB! I'll write my comments in the square brackets like this. Feel free to delete them when you revise or update your report. Basically the second report looks good, despite some typos and format issues. You can still improve your report by revising your conclusion and analysis part, which can be more readable with more graphs. Looking forward to your third report draft!]
 
@@ -132,12 +144,11 @@ Our full task map is included below:
 ![Task Map](https://github.com/AguaClara/UASB/blob/master/Images/taskmap_fall2018.JPG?raw=true)
 
 [The task map above looks good, but using a flowchart instead of a photo might be better.]
-## Lab Experiments
+# Lab Experiments
 
 ## Tapioca Tests
 In the past few weeks, the UASB team has started a series of “tapioca tests” to get a better idea on how influent wastewater will travel through a sludge blanket in the current design for the UASB reactor. Because it would be costly and wasteful to use an actual sludge blanket during the early testing stages, the team has chosen tapioca to model a sludge blanket. Tapioca has similar material properties to sludge, is inexpensive, and readily available.
 
-Pictured below is the small-scale model of the UASB reactor that the team has been using for tapioca tests. So far, the tests have been only qualitative to get a better idea for how influent wastewater will travel through the sludge blanket, and whether a pulse flow is effective.
 
 ### Experimental Apparatus
 
@@ -147,18 +158,18 @@ A scaled-down model UASB reactor was fabricated over the summer using a PVC pipe
 
 ### Set Up
 
-[Fix the format here. Preview your report before submitting it.]
+[RESOLVED-AG-Fix the format here. Preview your report before submitting it.]
 
-Place the small-scale UASB reactor on the lab bench. Use brackets to secure a 5/8 inch pipe so that it is positioned perpendicular to the bottom of the reactor and it extends to about .5 cm above the bottom of the small-scale reactor. Attach the influent pipe to a 600 RMP. Attach a red dye pump to the influent line of water.
+Place Bethany, the small-scale UASB reactor on the lab bench. Use brackets to secure a 5/8 inch pipe so that it is positioned perpendicular to the bottom of the reactor and it extends to about .5 cm above the bottom of the small-scale reactor. Attach the influent pipe to a 600 RMP. Attach a red dye pump to the influent line of water.
 
 ### Experimental Procedure
 
 1. Prepare tapioca by mixing equal parts tapioca and water.
 2. Wait ten minutes for tapioca pearls to expand in water.
-3. Pour tapioca into small-scale reactor until it is ¾ full.
+3. Pour tapioca into Bethany until it is ¾ full.
 4. Use leveler to ensure that the influent pipe is perpendicular to the bottom of the reactor.
 6. Inject a plug of red dye to the influent water.  
-7. Use ProCoda to pump water into small-scale UASB reactor through the influent pipe.
+7. Use ProCoda to pump water into Bethany through the influent pipe.
 8. Observe the flow of red dye through the tapioca layer and the movement of the tapioca blanket.
 9. Repeat steps 1 through 8 using different flow rates and length of flow rate pulse.
 10. Clean up.
@@ -202,9 +213,32 @@ The behavior of the mini-reactor during tapioca tests has been somewhat on par w
 ## Analysis
 In a properly functioning UASB reactor, the wastewater will spread out evenly as it travels through the sludge blanket, so that it has the maximal possible surface contact with the granules in the sludge blanket. This has not happened in our tests. The team added red dye to influent water in order to follow the path of water through the model reactor.
 
-As shown, the reactor has been slightly lifted off the lab bench so a camera can be placed below and record the water movement at the opening of the influent tube. In doing so, the team observed the formation of preferential pathways through the tapioca layer. Preferential pathways occur when incoming wastewater forms a tunnel through the sludge blanket and shoots through the tunnel instead of distributing evenly throughout the sludge blanket. As a result of preferential pathways, wastewater only gets contact with a very small portion of the surface area of the sludge blanket and hydraulic retention time is decreased, so the wastewater is not adequately cleaned. The testing showed the formation of preferential pathways along the walls of the reactor and along the influent tube.
+![Preliminary Dye Tests](https://github.com/AguaClara/UASB/blob/master/Images/UASB_Red_Dye_Tapioca_Test.PNG?raw=true)
 
-[PARTIALLY RESOLVED-AG-Can you provide some diagrams to illustrate the results you have? And when comparing the properly functioning UASB reactor and the result you have, can you also explain more about it and the possible reasons? You can also separate results from analysis.]
+The reactor has been slightly lifted off the lab bench so a camera can be placed below and record the water movement at the opening of the influent tube. In doing so, the team observed the formation of preferential pathways through the tapioca layer. Preferential pathways occur when incoming wastewater forms a tunnel through the sludge blanket and shoots through the tunnel instead of distributing evenly throughout the sludge blanket. As a result of preferential pathways, wastewater only gets contact with a very small portion of the surface area of the sludge blanket and hydraulic retention time is decreased, so the wastewater is not adequately cleaned. The testing showed the formation of preferential pathways along the walls of the reactor and along the influent tube, which can be seen in the tapioca — only portions of which made contact with the dye.
+
+[RESOLVED-AG-Can you provide some diagrams to illustrate the results you have? And when comparing the properly functioning UASB reactor and the result you have, can you also explain more about it and the possible reasons? You can also separate results from analysis.]
+
+## Design Modifications
+
+With the help of Monroe, the team decided to find a new substance to model our sludge blanket. While tapioca has a similar consistency to sludge, it degrades much too quickly to be a feasible testing substitute. Chia seeds and other grains will be tested as a possible replacement. The team has also started setting up a photometer, which will be used for future tests.
+
+Modifications were also made to the influent system. Instead of one large opening for wastewater to flow out the influent pipe, the team has capped this opening and drilled 4 holes near the bottom of the point, guessing that influent wastewater will now be forced to spread out, thereby decreasing the likelihood of preferential paths from forming.
+
+
+
+![Modified Influent Pipe](https://github.com/AguaClara/UASB/blob/master/Images/Modified_Influent_Pipe_Drawing.JPG?raw=true)
+
+The UASB team is plans to run these new tests by the end of the month so that the results of the experiments can be listed on the final research report.
+
+## Gates Grant
+
+[Section will be edited later tonignt] -CJMS
+The UASB team has written and submitted a grant proposal for the Gates Grand Challenges Round 22 for Innovation for WASH in Urban Settings. In the proposal, the team suggested a two step system for wastewater treatment in developing urban settings. The first step is to separate domestic wastewater into blackwater (water from flush toilets) and greywater (water from sinks, laundry, etc.). An eighteen-month plan for the implementation of an UASB reactor in Honduras was developed.
+The next step is to treat blackwater with our UASB design. Writing the proposal was a useful exercise in technical writing and developing a more concrete idea for the implementation of our UASB. If chosen, UASB would receive  for Phase I and up to one million dollars if also selected for Phase II.
+
+The schematic below summarizes the idea proposed in the Gates Proposal.
+![Schematic for System Idea](https://github.com/AguaClara/UASB/blob/master/Images/gates%20grant%20schematic.png?raw=true)
 
 ### Future Work
 The design for the UASB influent system must be altered to force the flow of wastewater more evenly through the sludge blanket in order to eliminate preferential pathways.
@@ -214,6 +248,8 @@ The team has a few ideas on how to combat this problem. One idea is to change th
 Another idea is to change the geometry of the influent pipe, perhaps to something resembling a sprinkler. Again, the team needs to keep in mind that making pipes too small will cause clogging, and then no wastewater will flow through any part of the bed. If this were to be tested, this component would need to be designed and then fabricated.
 
 Overall, the tapioca tests are still in the early stages, and a lot more tests will need to be run before an optimal flow rate and influent design is established.
+
+The first thing the UASB team needs to do before continuing these tests is set up and calibrate a photometer. Then, the team will run the effluent line of the small-scale UASB reactor through photometer, so that the concentration of red dye can be measured. The team plans to inject a plug of red dye into the influent line of the small-scale UASB reactor and then measure the concentration of red dye over a period of time to get quantitative results for hydraulic residence time in the small-scale reactor and how water is flowing through the model sludge blanket. If water is flowing through the sludge blanket evenly, then the red dye in the effluent should come out in a concentration similar to that of which it was in the influent.
 
 ### EPA Funding Assurance
 This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
