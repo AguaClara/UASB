@@ -8,29 +8,31 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Abstract](#abstract)
-- [Introduction](#introduction)
-- [Literature Review and Previous Work](#literature-review-and-previous-work)
-- [Timeline of UASB](#timeline-of-uasb)
-    - [Summer 2016](#summer-2016)
-    - [Fall 2016](#fall-2016)
-    - [Spring 2017](#spring-2017)
-    - [Summer 2017](#summer-2017)
-    - [Fall 2017](#fall-2017)
-    - [Spring 2018](#spring-2018)
-    - [Summer 2018](#summer-2018)
-- [Fall 2018 Goals](#fall-2018-goals)
+  - [Abstract](#abstract)
+  - [Introduction](#introduction)
+  - [Literature Review and Previous Work](#literature-review-and-previous-work)
+  - [Timeline of UASB](#timeline-of-uasb)
+      - [Summer 2016](#summer-2016)
+      - [Fall 2016](#fall-2016)
+      - [Spring 2017](#spring-2017)
+      - [Summer 2017](#summer-2017)
+      - [Fall 2017](#fall-2017)
+      - [Spring 2018](#spring-2018)
+      - [Summer 2018](#summer-2018)
+  - [Fall 2018 Goals](#fall-2018-goals)
 - [Lab Experiments](#lab-experiments)
-- [Tapioca Tests](#tapioca-tests)
-  - [Experimental Apparatus](#experimental-apparatus)
-  - [Set Up](#set-up)
-  - [Experimental Procedure](#experimental-procedure)
-  - [Cleaning Procedure](#cleaning-procedure)
-- [ProCoDa Method File](#procoda-method-file)
-- [Results](#results)
-- [Analysis](#analysis)
-  - [Future Work](#future-work)
-  - [EPA Funding Assurance](#epa-funding-assurance)
+  - [Tapioca Tests](#tapioca-tests)
+    - [Experimental Apparatus](#experimental-apparatus)
+    - [Set Up](#set-up)
+    - [Experimental Procedure](#experimental-procedure)
+    - [Cleaning Procedure](#cleaning-procedure)
+  - [ProCoDa Method File](#procoda-method-file)
+  - [Results](#results)
+  - [Analysis](#analysis)
+  - [Design Modifications](#design-modifications)
+- [Gates Grant](#gates-grant)
+- [Future Work](#future-work)
+- [EPA Funding Assurance](#epa-funding-assurance)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <div style = “text-align:center”>
@@ -127,7 +129,9 @@ The Summer team continued work on hydraulic design of the UASB system.  The majo
 ## Fall 2018 Goals
 
 This semester, the team will finalize the UASB reactor design before fabrication. First, bench top tests will be performed to study the flow patterns through the sludge, which will be simulated using tapioca. Tapioca was chosen to use for a model of a sludge blanket because tapioca has material properties similar to that of sludge.
-These tests will allow us to test various reactor and influent conditions and check for failure. The UASB reactor design can be modified based on the results of the tapioca tests. The team plans on consulting Dr. Monroe Weber-Shirk and Dr. Todd Cowen for the details of the hydraulic design of the reactor and conducting literature searches for reactor designs. After these steps, the final dimensions of the reactor, up flow velocity, thickness of the sludge blanket and number of influent pipes can be determined.
+These tests will allow us to test various reactor and influent conditions and check for failure. The UASB reactor design can be modified based on the results of the tapioca tests. The team plans on consulting Dr. Monroe Weber-Shirk and Dr. Todd Cowen for the details of the hydraulic design of the reactor and conducting literature searches for reactor designs. After these steps, the final dimensions of the reactor, upflow velocity, thickness of the sludge blanket and number of influent pipes can be determined.
+
+
 
 <!--[EM: How was it decided to use tapioca.. and are there drawbacks to using it? The answer to this is not necessarily relevant in the goals section, but it is something to keep in mind while writing the rest of the future report. Also, fix for grammar and punctuation mistakes. Addressed -NB]-->
 
@@ -140,6 +144,7 @@ Because AguaClara is moving from Fusion 360 to Onshape, UASB also plans to creat
 The final goal of the team this semester is to begin prepping for fabrication.  This includes locating and ordering materials, making fabrication and safety plans, and learning fabrication techniques such as plastic welding.  With this groundwork laid, the team can begin fabrication easily and have a full plan on how to proceed.
 
 Our full task map is included below:
+<div style = “text-align:center”>
 
 ![Task Map](https://github.com/AguaClara/UASB/blob/master/Images/taskmap_fall2018.JPG?raw=true)
 
@@ -231,7 +236,7 @@ Modifications were also made to the influent system. Instead of one large openin
 
 The UASB team is plans to run these new tests by the end of the month so that the results of the experiments can be listed on the final research report.
 
-## Gates Grant
+# Gates Grant
 
 [Section will be edited later tonignt] -CJMS
 The UASB team has written and submitted a grant proposal for the Gates Grand Challenges Round 22 for Innovation for WASH in Urban Settings. In the proposal, the team suggested a two step system for wastewater treatment in developing urban settings. The first step is to separate domestic wastewater into blackwater (water from flush toilets) and greywater (water from sinks, laundry, etc.). An eighteen-month plan for the implementation of an UASB reactor in Honduras was developed.
@@ -240,7 +245,7 @@ The next step is to treat blackwater with our UASB design. Writing the proposal 
 The schematic below summarizes the idea proposed in the Gates Proposal.
 ![Schematic for System Idea](https://github.com/AguaClara/UASB/blob/master/Images/gates%20grant%20schematic.png?raw=true)
 
-### Future Work
+# Future Work
 The design for the UASB influent system must be altered to force the flow of wastewater more evenly through the sludge blanket in order to eliminate preferential pathways.
 
 The team has a few ideas on how to combat this problem. One idea is to change the number of influent pipes. While the majority of tests have been done with a single influent pipe, two pipes could lead to the wastewater being distributed more evenly among the sludge blanket. This will be a key area for the team’s tests in the upcoming month. So far, the team has only run an experiment with two tubes once, and very little could be concluded from that experiment due to significant leakage at the connection where the influent tube split off into two separate tubes. Once the connection is corrected, the team will resume tapioca tests.
@@ -251,7 +256,7 @@ Overall, the tapioca tests are still in the early stages, and a lot more tests w
 
 The first thing the UASB team needs to do before continuing these tests is set up and calibrate a photometer. Then, the team will run the effluent line of the small-scale UASB reactor through photometer, so that the concentration of red dye can be measured. The team plans to inject a plug of red dye into the influent line of the small-scale UASB reactor and then measure the concentration of red dye over a period of time to get quantitative results for hydraulic residence time in the small-scale reactor and how water is flowing through the model sludge blanket. If water is flowing through the sludge blanket evenly, then the red dye in the effluent should come out in a concentration similar to that of which it was in the influent.
 
-### EPA Funding Assurance
+# EPA Funding Assurance
 This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
 
 <!--
