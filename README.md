@@ -25,9 +25,9 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 ### Fall 2018
 [Symposium Presentation](https://docs.google.com/presentation/d/1w-d5YQ5Ck9oUmswyk0-IZ2s0v9SY-O7ztUVHQlB3yNs/edit#slide=id.g346a079b2f_0_0)
-[Gates Foundation Gates Propral]{https://drive.google.com/open?id=0BxPs_BdCDBA_bDh1VktVdmV2U2VEVkp3UjI3UkxwQ3JGWHJn)
-### Summer 2018
+[Gates Foundation Gates Proposal](https://drive.google.com/open?id=0BxPs_BdCDBA_bDh1VktVdmV2U2VEVkp3UjI3UkxwQ3JGWHJn)
 
+### Summer 2018
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)  
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md)  
 [UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md)  
