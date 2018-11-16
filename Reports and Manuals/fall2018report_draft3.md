@@ -146,9 +146,9 @@ The final goal of the team this semester is to begin prepping for fabrication.  
 Our full task map is included below:
 <div style = “text-align:center”>
 
-![Task Map](https://github.com/AguaClara/UASB/blob/master/Images/taskmap_fall2018.JPG?raw=true)
+![Task Map](https://github.com/AguaClara/UASB/blob/master/Images/task_map_F18.jpg?raw=true)
 
-[The task map above looks good, but using a flowchart instead of a photo might be better.]
+[The task map above looks good, but using a flowchart instead of a photo might be better. Addressed IC]
 # Lab Experiments
 
 ## Tapioca Tests
