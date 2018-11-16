@@ -238,12 +238,13 @@ The UASB team is plans to run these new tests by the end of the month so that th
 
 # Gates Grant
 
-[Section will be edited later tonignt] -CJMS
-The UASB team has written and submitted a grant proposal for the Gates Grand Challenges Round 22 for Innovation for WASH in Urban Settings. In the proposal, the team suggested a two step system for wastewater treatment in developing urban settings. The first step is to separate domestic wastewater into blackwater (water from flush toilets) and greywater (water from sinks, laundry, etc.). An eighteen-month plan for the implementation of an UASB reactor in Honduras was developed.
-The next step is to treat blackwater with our UASB design. Writing the proposal was a useful exercise in technical writing and developing a more concrete idea for the implementation of our UASB. If chosen, UASB would receive  for Phase I and up to one million dollars if also selected for Phase II.
+CJMS
+UASB has written and submitted a grant proposal for the Gates Grand Challenges Round 22 for Innovation for WASH in Urban Settings. In the proposal, the team suggested a two step system for wastewater treatment in developing urban settings. The first step is to separate domestic wastewater into blackwater (water from flush toilets) and greywater (water from sinks, laundry, etc.). An eighteen-month plan for the implementation of an UASB reactor in Honduras was developed. The next step is to treat blackwater with our UASB design.
 
+If chosen, UASB would receive $100,000 for Phase I and up to one million dollars if also selected for Phase II.
 The schematic below summarizes the idea proposed in the Gates Proposal.
 ![Schematic for System Idea](https://github.com/AguaClara/UASB/blob/master/Images/gates%20grant%20schematic.png?raw=true)
+The proposal can be read [here](https://github.com/AguaClara/UASB/blob/master/README.md)
 
 # Future Work
 The design for the UASB influent system must be altered to force the flow of wastewater more evenly through the sludge blanket in order to eliminate preferential pathways.
