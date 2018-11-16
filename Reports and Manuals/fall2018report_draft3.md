@@ -230,20 +230,18 @@ With the help of Monroe, the team decided to find a new substance to model our s
 
 Modifications were also made to the influent system. Instead of one large opening for wastewater to flow out the influent pipe, the team has capped this opening and drilled 4 holes near the bottom of the point, guessing that influent wastewater will now be forced to spread out, thereby decreasing the likelihood of preferential paths from forming.
 
-
-
 ![Modified Influent Pipe](https://github.com/AguaClara/UASB/blob/master/Images/Modified_Influent_Pipe_Drawing.JPG?raw=true)
 
 The UASB team is plans to run these new tests by the end of the month so that the results of the experiments can be listed on the final research report.
 
-# Gates Grant
+## Gates Grant
 UASB has written and submitted a grant proposal for the Gates Grand Challenges Round 22 for Innovation for WASH in Urban Settings. In the proposal, the team suggested a system for wastewater treatment in developing urban settings by initially separating domestic wastewater into its two components: blackwater (water from flush toilets) and greywater (water from sinks, laundry, etc.). Then the blackwater would be treated via our UASB reactor.
 
 An eighteen-month plan for the implementation of an UASB reactor in Honduras was developed, along with an estimated budget. If chosen, UASB would receive $100,000 for Phase I and up to one million dollars if also selected for Phase II.
 The schematic below summarizes the idea proposed in the Gates Proposal.
 ![Schematic for System Idea](https://github.com/AguaClara/UASB/blob/master/Images/gates%20grant%20schematic.png?raw=true)
 
-The proposal can be read [here](https://github.com/AguaClara/UASB/blob/master/README.md)
+The proposal can be read [here](https://github.com/AguaClara/UASB/blob/master/README.md).
 
 # Future Work
 The design for the UASB influent system must be altered to force the flow of wastewater more evenly through the sludge blanket in order to eliminate preferential pathways.
