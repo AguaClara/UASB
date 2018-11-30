@@ -62,7 +62,7 @@ UASB reactors rely on gravity to clarify wastewater and biological processes to 
 
 In January 2017, a novel gravity-powered UASB reactor was designed by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally. The team later applied for Phase II funding from the same organization to support development and implementation of additional reactors for testing.
 
-This semester [**CEO: change to In the Fall 2018 semester for future clarity**], the team will focus on benchtop testing of the various components of the UASB reactor, and simulate the movement of water through the sludge blanket in order to better understand flow patterns within the reactor and possible failure modes.
+In the Fall 2018 semester, the team will focus on benchtop testing of the various components of the UASB reactor, and simulate the movement of water through the sludge blanket in order to better understand flow patterns within the reactor and possible failure modes.
 
 [RESOLVED-AG-The introduction is a good lead-in to the report and the function and importance of UASB were well explained. You are encouraged to briefly talk about the process of your experiment in this part.]
 
@@ -92,21 +92,21 @@ Additionally, [Lattinga et. al. (1993)](https://ac.els-cdn.com/096085249390038D/
 
 ## Timeline of UASB
 #### Summer 2016
-The UASB team was formed in the Summer of 2016. At that point, the objective of the team was to design and implement a functional lab-scale UASB reactor to treat synthetic black water. Blackwater [**CEO: one word or 2? be consistent**] is wastewater from toilets. In the summer of 2016, the UASB team constructed four small-scale UASB reactors and found that those small-scale reactors could successfully treat synthetic wastewater. The team also found that increased wastewater concentration and higher residence times resulted in higher biogas removal and increased Chemical Oxygen Demand (COD) removal.
+The UASB team was formed in the Summer of 2016. At that point, the objective of the team was to design and implement a functional lab-scale UASB reactor to treat synthetic blackwater. Blackwater [**CEO: one word or 2? be consistent**] is wastewater from toilets. In the summer of 2016, the UASB team constructed four small-scale UASB reactors and found that those small-scale reactors could successfully treat synthetic wastewater. The team also found that increased wastewater concentration and higher residence times resulted in higher biogas removal and increased Chemical Oxygen Demand (COD) removal.
 
 [RESOLVED-AG-Define COD (chemical oxygen demand).]
 
 #### Fall 2016
-In the fall of 2016, the UASB team underwent several changes. First, the team altered the design of the small-scale UASB reactors by implementing shorter and narrower influent lines. The team also changed the synthetic wastewater recipe; more specifically, the team substituted glucose with insoluble carbon compounds. The team also researched retention time in the reactors with fluoride tracer tests, and found a HRT of 3.22 hours in one of the reactors,  close to the target of 4 hours.
+In the fall of 2016, the UASB team underwent several changes. First, the team altered the design of the small-scale UASB reactors by implementing shorter and narrower influent lines. The team also changed the synthetic wastewater recipe. More specifically, the team substituted glucose with insoluble carbon compounds. The team also researched retention time in the reactors with fluoride tracer tests, and found a HRT of 3.22 hours in one of the reactors (close to the target of 4 hours).
 
 #### Spring 2017
-During the Spring of 2017, the team worked on assessing the efficiency of two modifications to the UASB reactor: plate settlers and the submerged gas collection lid. After conducting granule settling tests, the team was unable to conclude whether or not plate settlers significantly improve solid retention time. The team also conducted a Submerged Gas Capture Lid Test and concluded that a check valve would be useful to allow for continuous collection into a gas tank without loss of biogas.
+During the spring of 2017, the team worked on assessing the efficiency of two modifications to the UASB reactor: plate settlers and the submerged gas collection lid. After conducting granule settling tests, the team was unable to conclude whether or not plate settlers significantly improve solid retention time. The team also conducted a Submerged Gas Capture Lid Test and concluded that a check valve would be useful to allow for continuous collection into a gas tank without loss of biogas.
 
 #### Summer 2017
-In the summer of 2017, the UASB team continued with similar research and testing to that of the Spring 2017 semester. This time, the team determined that plate settlers were not required for a full scale reactor; instead, a smaller settling apparatus, such as a sloped exit weir, can achieve similar sludge retention time (SRT).
+In the summer of 2017, the UASB team continued with similar research and testing to that of the Spring 2017 semester. This time, the team determined that plate settlers were not required for a full scale reactor. Instead, a smaller settling apparatus, such as a sloped exit weir, can achieve similar sludge retention time (SRT).
 
 #### Fall 2017
-During the Fall of 2017, the UASB team made several strides. Firstly, the team settled on the critical design assumptions for the fabrication of a UASB reactor at the IAWWTF . The critical design assumptions were as follows: a reactor diameter of 3 feet, a reactor height of 7 feet, a 4 hour hydraulic residence time, a flow rate of .036 L/s. The  team also designed a biogas capture lid. In this system, as biogas is produced in the reactor, it displaces water out from under the lid. Then, gas is stored there until it is manually removed.
+During the fall of 2017, the UASB team made several strides. Firstly, the team settled on the critical design assumptions for the fabrication of a UASB reactor at the IAWWTF . The critical design assumptions were as follows: a reactor diameter of 3 feet, a reactor height of 7 feet, a 4 hour hydraulic residence time, a flow rate of .036 L/s. The  team also designed a biogas capture lid. In this system, as biogas is produced in the reactor, it displaces water out from under the lid. Gas is then stored there until it is manually removed.
 
 The team also wrote Python calculations in Jupyter notebook (available on GitHub) to estimate biogas production based on COD input.
 
@@ -119,7 +119,7 @@ UASB continued efforts to improve the design of the pilot-scale UASB reactor in 
 
 <!--[EM: Fix grammar and spelling errors (the UASB.. team? reactor?) Addressed NB]-->
 
-UASB also worked on biogas production. The team wrote code to estimate biogas production rate based on flow rate through the reactor, the COD concentration of influent, and the temperature of the reactor. The team decided on a gas bag system to store biogas because it is flexible, easy to connect to the reactor, affordable, and easily transported. The team also wrote code to determine the required volume and dimensions for the lid of the biogas system. The team also looked into a fats, oils and greases (FOG) removal system. The concluded that manual skimming of FOG could always be used as a backup option.
+UASB also worked on biogas production. The team wrote code to estimate biogas production rate based on the flow rate through the reactor, the COD concentration of influent, and the temperature of the reactor. The team decided on a gas bag system to store biogas as it is flexible, easy to connect to the reactor, affordable, and easily transported. The team also wrote code to determine the required volume and dimensions for the lid of the biogas system. The team also looked into a fats, oils and greases (FOG) removal system. The concluded that manual skimming of FOG could always be used as a backup option.
 
 <!--[EM: The sentences in this paragraph are long and busy. Consider revising and making it a bit simpler. Addressed -NB]-->
 
@@ -130,7 +130,7 @@ Lastly, the team wrote code to calculate the optimal size of the pilot UASB reac
 <!--[EM: When was it decided that plate settlers are actually required in a full-scale reactor (assuming conclusions from the Summer 2017 team was correct)? Addressed NB]-->
 
 #### Summer 2018
-The Summer team continued work on hydraulic design of the UASB system.  The major design project was creating the tipping bucket system to deliver wastewater in pulses.  The system consists of a pivoting bucket which fills with wastewater before tipping and delivering the wastewater in a large pulse at a high flow rate.  After brainstorming the idea, the team designed and tested models to determine optimal design and flow rates for the system.  The team also continued developing code for the entire system, and made a Computer Aided Design (CAD) [model of the UASB reactor](https://cornell47.autodesk360.com/g/shares/SH7f1edQT22b515c761e1224485004ae7e44?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0IBOAEx4GYeAFgBsAWgBMjAGY8xQgKwTxjLl3H8A7KoBGEABwQd-IZrQBfEAF0gA) using Fusion 360.
+The summer team continued work on the hydraulic design of the UASB system.  The major design project was creating the tipping bucket system to deliver wastewater in pulses.  The system consists of a pivoting bucket which fills with wastewater before tipping and delivering the wastewater in a large pulse at a high flow rate.  After brainstorming the idea, the team designed and tested models to determine optimal design and flow rates for the system.  The team also continued developing code for the entire system, and made a Computer Aided Design (CAD) [model of the UASB reactor](https://cornell47.autodesk360.com/g/shares/SH7f1edQT22b515c761e1224485004ae7e44?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0IBOAEx4GYeAFgBsAWgBMjAGY8xQgKwTxjLl3H8A7KoBGEABwQd-IZrQBfEAF0gA) using Fusion 360.
 
 <!--[EM: What is a tipping bucket system? Addressed -NB]-->
 
@@ -140,14 +140,9 @@ This semester [**CEO: as above specifiy the semester even in paragraph**], the t
 These tests will allow us to test various reactor and influent conditions and check for failure. The UASB reactor design can be modified based on the results of the tapioca tests. The team plans on consulting Dr. Monroe Weber-Shirk and Dr. Todd Cowen for the details of the hydraulic design of the reactor and conducting literature searches for reactor designs. After these steps, the final dimensions of the reactor, upflow velocity, thickness of the sludge blanket and number of influent pipes can be determined.
 
 
-
-<!--[EM: How was it decided to use tapioca.. and are there drawbacks to using it? The answer to this is not necessarily relevant in the goals section, but it is something to keep in mind while writing the rest of the future report. Also, fix for grammar and punctuation mistakes. Addressed -NB]-->
-
 One major part of the design process will be writing code to model designs of the reactor.  Since the UASB reactor can have many design approaches, it is important to create flexible code that can test different positions and determine the required parameters.  The team will be writing this code within the design manual and testing it rigorously to get the best design solution.
 
 Because AguaClara is moving from Fusion 360 to Onshape, UASB also plans to create an updated CAD model of the UASB reactor on OnShape. If this cannot be accomplished the semester, it will be accomplished next semester. Two members of the team have volunteered to be trained on OnShape within the upcoming months. [**CEO: There is supposedly an easy way to move some designs from Fusion to Onshape...I don't know exactly what it is but I know it's possible...**]
-
-<!--[EM: Fix grammar and spelling mistakes. Addressed -CJMS]-->
 
 The final goal of the team this semester is to begin prepping for fabrication.  This includes locating and ordering materials, making fabrication and safety plans, and learning fabrication techniques such as plastic welding.  With this groundwork laid, the team can begin fabrication easily and have a full plan on how to proceed.
 
@@ -165,15 +160,13 @@ In the past few weeks [**CEO be sure to adjust this wording before the final dra
 
 ### Experimental Apparatus
 
-A scaled-down model UASB reactor was fabricated over the summer using a PVC pipe. Geometric similarity was maintained. A flat PVC sheet was then welded on the the [**CEO: double word**] bottom of the pipe segment, thus creating a usable UASB prototype. An effluent line was drilled in at about 70% of the way to the top of the reactor. A pipe attached to this opening allows excess water to exit the reactor. An image of this model reactor (hereby christened Bethany) is shown below.
+A scaled-down model UASB reactor was fabricated over the summer using a PVC pipe. Geometric similarity was maintained. A flat PVC sheet was then welded on the  bottom of the pipe segment, thus creating a usable UASB prototype. An effluent line was drilled in at about 70% of the way to the top of the reactor. A pipe attached to this opening allows excess water to exit the reactor. An image of this model reactor (hereby christened Bethany) is shown below.
 
-![Bethany the prototype UASB reactor](https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true)
+![the prototype UASB reactor](https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true)
 
 ### Set Up
 
-[RESOLVED-AG-Fix the format here. Preview your report before submitting it.]
-
-Place Bethany, the small-scale UASB reactor on the lab bench. Use brackets to secure a 5/8 inch pipe so that it is positioned perpendicular to the bottom of the reactor and it extends to about .5 cm above the bottom of the small-scale reactor. Attach the influent pipe to a 600 RMP. Attach a red dye pump to the influent line of water.
+Place the small-scale UASB reactor on the lab bench. Use brackets to secure a 5/8 inch pipe so that it is positioned perpendicular to the bottom of the reactor and it extends to about .5 cm above the bottom of the small-scale reactor. Attach the influent pipe to a 600 RMP. Attach a red dye pump to the influent line of water.
 
 ### Experimental Procedure
 
@@ -212,16 +205,18 @@ The set points are listed below:
 * Flow rate: Desired flow rate of system, in $ml/s$
 * Tubing size: Integer corresponding to tubing size, found on [AguaClara Confluence](https://confluence.cornell.edu/display/AGUACLARA/Auto+Tutorial+for+Peristaltic+Pumps)
 * Pump speed: calculates desired pump speed (in rpm) using ProCoDa function
-* Run time: The time the pump should run at the calculated speed.  For our [**no personal pronouns!**] experiments this was 3 seconds.
-* Pause time: The time the system remains in the pause state before running.  For our [**no personal pronouns!**] experiments, this was 30 seconds.
+* Run time: The time the pump should run at the calculated speed.  For the experiments this was 3 seconds.
+* Pause time: The time the system remains in the pause state before running.  For the experiments, this was 30 seconds.
 
-For our [**no personal pronouns!**] initial experiments, red dye was loaded into the system manually by running the pump until a set amount of dye was visible in the tubing, then injected through running the water pump.  In future quantitative tests this will be controlled through ProCoDa as well using the second pump.
+For our the initial experiments, red dye was loaded into the system manually by running the pump until a set amount of dye was visible in the tubing, then injected through running the water pump.  In future quantitative tests this will be controlled through ProCoDa as well using the second pump.
 
 ## Results
 
 During tests, the team uses ProCoDa to pump water through an influent pipe down the center of the small-scale reactor. The influent pipe extends to about a half of a centimeter above the reactor’s bottom. Once influent water hits the bottom of the reactor, it travels upwards through the layer of tapioca. Then, when the the water level in the reactor reaches the height of the effluent tube, water exits the reactor
 
 The behavior of the mini-reactor during tapioca tests has been somewhat on par with that of a functional UASB reactor. In the team’s initial tests with a 100 RPM pump, there was no observable fluidization of the the tapioca blanket; however, the transition to a 600 RPM pump and subsequent increase of influent flow rate resulted in the partial fluidization of the tapioca. The layer of tapioca did not lift entirely off the bottom of the reactor, but there was noticeable stretching of the tapioca layer as influent wastewater traveled through it, and the sludge blanket did indeed stretch uniformly.
+
+![Marbles]()
 
 [**CEO: do you have data for this section? if you have measurements of expansion they could be useful here to compare with values from the literature you might expect**]
 
@@ -238,7 +233,14 @@ The reactor has been slightly lifted off the lab bench so a camera can be placed
 
 ## Design Modifications
 
-With the help of Monroe, the team decided to find a new substance to model our sludge blanket. While tapioca has a similar consistency to sludge, it degrades much too quickly to be a feasible testing substitute. Chia seeds and other grains will be tested as a possible replacement. The team has also started setting up a photometer, which will be used for future tests. [**CEO: mention briefly how the photometer will be used**]
+With the help of Monroe, the team decided to find a new substance to model our sludge blanket. While tapioca has a similar consistency to sludge, it degrades much too quickly to be a feasible testing substitute. Chia seeds were chosen as a replacement to model the sludge blanket since they do not degrade as quickly as tapioca does.
+
+In order to prepare the model sludge blanket from chia seeds, the team placed the chia seeds in water and waited approximately 20 minutes for the seeds to expand. The chia seeds were somewhat buoyant in water. Some of the chia seeds sank to the bottom of the container and others stuck together on the water's surface. When the team placed the expanded
+
+
+The team has also started setting up a photometer, which will be used for future tests. [**CEO: mention briefly how the photometer will be used** addressed NB]
+
+***The first thing the UASB team needs to do before continuing these tests is set up and calibrate a photometer. Then, the team will run the effluent line of the small-scale UASB reactor through photometer, so that the concentration of red dye can be measured. The team plans to inject a plug of red dye into the influent line of the small-scale UASB reactor and then measure the concentration of red dye over a period of time to get quantitative results for hydraulic residence time in the small-scale reactor and how water is flowing through the model sludge blanket. If water is flowing through the sludge blanket evenly, then the red dye in the effluent should come out in a concentration similar to that of which it was in the influent.*** From "future work" can modify to fit it in -CJMS
 
 Modifications were also made to the influent system. Instead of one large opening for wastewater to flow out the influent pipe, the team has capped this opening and drilled 4 holes near the bottom of the point, guessing that influent wastewater will now be forced to spread out, thereby decreasing the likelihood of preferential paths from forming.
 
@@ -262,9 +264,7 @@ The team has a few ideas on how to combat this problem. One idea is to change th
 
 Another idea is to change the geometry of the influent pipe, perhaps to something resembling a sprinkler. Again, the team needs to keep in mind that making pipes too small will cause clogging, and then no wastewater will flow through any part of the bed. If this were to be tested, this component would need to be designed and then fabricated.
 
-Overall, the tapioca tests are still in the early stages, and a lot more tests [**CEO: colloquial ,consider rephrasing**]  will need to be run before an optimal flow rate and influent design is established.
-
-The first thing the UASB team needs to do before continuing these tests is set up and calibrate a photometer. Then, the team will run the effluent line of the small-scale UASB reactor through photometer, so that the concentration of red dye can be measured. The team plans to inject a plug of red dye into the influent line of the small-scale UASB reactor and then measure the concentration of red dye over a period of time to get quantitative results for hydraulic residence time in the small-scale reactor and how water is flowing through the model sludge blanket. If water is flowing through the sludge blanket evenly, then the red dye in the effluent should come out in a concentration similar to that of which it was in the influent.
+Our team structure will be changing next semester. If AguaClara is able to recruit enough members in January, UASB will be split into two teams; one team focused on fabrication of a full-scale reactor (as well as any code or CAD modeling needed), and the other will be focused research, continuing the testing from this semester.
 
 # EPA Funding Assurance
 This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
