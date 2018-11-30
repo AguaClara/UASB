@@ -202,7 +202,7 @@ During tests, the team uses ProCoDa to pump water through an influent pipe down 
 The behavior of the mini-reactor during tapioca tests has been somewhat on par with that of a functional UASB reactor. In the team’s initial tests with a 100 RPM pump, there was no observable fluidization of the the tapioca blanket; however, the transition to a 600 RPM pump and subsequent increase of influent flow rate resulted in the partial fluidization of the tapioca. The layer of tapioca did not lift entirely off the bottom of the reactor, but there was noticeable stretching of the tapioca layer as influent wastewater traveled through it, and the sludge blanket did indeed stretch uniformly.
 
 ![Marbles](https://github.com/AguaClara/UASB/blob/master/Images/marble_reactor.jpeg?raw=true)
-[**ZC: This image appears rotated on GitHub**]
+[**ZC: This image appears rotated on GitHub. Also include a stanalone figure caption and reference the figure in the text.**]
 
 [**CEO: do you have data for this section? if you have measurements of expansion they could be useful here to compare with values from the literature you might expect** ]
 
@@ -210,7 +210,7 @@ The behavior of the mini-reactor during tapioca tests has been somewhat on par w
 In a properly functioning UASB reactor, the wastewater will spread out evenly as it travels through the sludge blanket, so that it has the maximal possible surface contact with the granules in the sludge blanket. This has not happened in the tests yet. The team added red dye to influent water in order to follow the path of water through the model reactor.
 
 ![Preliminary Dye Tests](https://github.com/AguaClara/UASB/blob/master/Images/UASB_Red_Dye_Tapioca_Test.PNG?raw=true)
-######Above, the tapioca is not an even shade of pink because the dye has not evenly distributed itself due to preferential pathways
+[**ZC: There is a formatting problem here**]######Above, the tapioca is not an even shade of pink because the dye has not evenly distributed itself due to preferential pathways
 The reactor has been slightly lifted off the lab bench so a camera can be placed below and record the water movement at the opening of the influent tube. In doing so, the team observed the formation of preferential pathways through the tapioca layer. Preferential pathways occur when incoming wastewater forms a tunnel through the sludge blanket and shoots through the tunnel instead of distributing evenly throughout the sludge blanket. As a result of preferential pathways, wastewater only gets contact with a very small portion of the surface area of the sludge blanket and hydraulic retention time is decreased, so the wastewater is not adequately cleaned. The testing showed the formation of preferential pathways along the walls of the reactor and along the influent tube, which can be seen in the tapioca — only portions of which made contact with the dye.
 
 [**CEO: add a caption to the figure to better show why this image is included. As it is now, it simply shows what the experiment looked like but without explanation of what the reader should be getting from it** -Adressed CJMS]
@@ -223,6 +223,7 @@ Firstly, modifications were made to the influent system. Instead of one large op
 ![Modified Influent Pipe](https://github.com/AguaClara/UASB/blob/master/Images/Modified_Influent_Pipe_Drawing.JPG?raw=true)
 
 In order to begin collecting quantitative data, the team set up a photometer. The photometer will be used in testing to determine how water is flowing through the sludge blanket. A plug of red dye will be injected to the influent pipe in the UASB. Then, the photometer will measure the concentration of red dye coming out of the model UASB reactor in the effluent tube. If the reactor is functioning properly, the red dye will flow evenly through the model sludge blanket, so all the dye will come out of the effluent tube at the same time, which will be indicated by a spike of red dye concentration coming out of the effluent tube. The photometer will be used to measure whether or not the red dye concentration in the effluent tube is changing as expected for a functional UASB.    [**CEO: mention briefly how the photometer will be used** -addressed NB]
+[**ZC: A figure with the experimental apparatus (whether photo or diagram) would help explain this better and assist future teams replicate your work if needed**]
 
 The decision to use a photometer to collect quantitative data made tapioca an unsuitable sludge blanket because tapioca gives off a residue in water, which makes it too cloudy for the photometer to measure red dye concentration. Chia seeds were chosen as a replacement to model the sludge blanket since they do not degrade as quickly as tapioca does.
 
