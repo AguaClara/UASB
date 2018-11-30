@@ -15,7 +15,7 @@
   - [Literature Review and Previous Work](#literature-review-and-previous-work)
   - [Timeline of UASB](#timeline-of-uasb)
       - [Summer 2016](#summer-2016)
-      - [Fall 2016](#fall-2016)
+      - [2016](#fall-2016)
       - [Spring 2017](#spring-2017)
       - [Summer 2017](#summer-2017)
       - [Fall 2017](#fall-2017)
@@ -136,7 +136,7 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
 ## Fall 2018 Goals
 
-This semester [**CEO: as above specifiy the semester even in paragraph**], the team will finalize the UASB reactor design before fabrication. First, bench top tests will be performed to study the flow patterns through the sludge, which will be simulated using tapioca. Tapioca was chosen to use for a model of a sludge blanket because tapioca has material properties similar to that of sludge.
+In the fall semester of 2018 [**CEO: as above specify the semester even in paragraph**], the team will finalize the UASB reactor design before fabrication. First, bench top tests will be performed to study the flow patterns through the sludge, which will be simulated using tapioca. Tapioca was chosen to use for a model of a sludge blanket because tapioca has material properties similar to that of sludge.
 These tests will allow us to test various reactor and influent conditions and check for failure. The UASB reactor design can be modified based on the results of the tapioca tests. The team plans on consulting Dr. Monroe Weber-Shirk and Dr. Todd Cowen for the details of the hydraulic design of the reactor and conducting literature searches for reactor designs. After these steps, the final dimensions of the reactor, upflow velocity, thickness of the sludge blanket and number of influent pipes can be determined.
 
 
@@ -144,7 +144,7 @@ One major part of the design process will be writing code to model designs of th
 
 Because AguaClara is moving from Fusion 360 to Onshape, UASB also plans to create an updated CAD model of the UASB reactor on OnShape. If this cannot be accomplished the semester, it will be accomplished next semester. Two members of the team have volunteered to be trained on OnShape within the upcoming months. [**CEO: There is supposedly an easy way to move some designs from Fusion to Onshape...I don't know exactly what it is but I know it's possible...**]
 
-The final goal of the team this semester is to begin prepping for fabrication.  This includes locating and ordering materials, making fabrication and safety plans, and learning fabrication techniques such as plastic welding.  With this groundwork laid, the team can begin fabrication easily and have a full plan on how to proceed.
+The final goal of the team in the fall 2018 semester is to begin prepping for fabrication.  This includes locating and ordering materials, making fabrication and safety plans, and learning fabrication techniques such as plastic welding.  With this groundwork laid, the team can begin fabrication easily and have a full plan on how to proceed.
 
 Our full task map is included below:
 <div style = “text-align:center”>
@@ -216,7 +216,7 @@ During tests, the team uses ProCoDa to pump water through an influent pipe down 
 
 The behavior of the mini-reactor during tapioca tests has been somewhat on par with that of a functional UASB reactor. In the team’s initial tests with a 100 RPM pump, there was no observable fluidization of the the tapioca blanket; however, the transition to a 600 RPM pump and subsequent increase of influent flow rate resulted in the partial fluidization of the tapioca. The layer of tapioca did not lift entirely off the bottom of the reactor, but there was noticeable stretching of the tapioca layer as influent wastewater traveled through it, and the sludge blanket did indeed stretch uniformly.
 
-![Marbles]()
+![Marbles](https://github.com/AguaClara/UASB/blob/master/Images/marble_reactor.jpeg?raw=true)
 
 [**CEO: do you have data for this section? if you have measurements of expansion they could be useful here to compare with values from the literature you might expect**]
 
@@ -233,12 +233,18 @@ The reactor has been slightly lifted off the lab bench so a camera can be placed
 
 ## Design Modifications
 
+In order to begin collecting quantitative data, the team set up a photometer. The photometer will be used in testing to determine how water is flowing through the sludge blanket. If[**CEO: mention briefly how the photometer will be used** addressed NB]
+
+
 With the help of Monroe, the team decided to find a new substance to model our sludge blanket. While tapioca has a similar consistency to sludge, it degrades much too quickly to be a feasible testing substitute. Chia seeds were chosen as a replacement to model the sludge blanket since they do not degrade as quickly as tapioca does.
 
-In order to prepare the model sludge blanket from chia seeds, the team placed the chia seeds in water and waited approximately 20 minutes for the seeds to expand. The chia seeds were somewhat buoyant in water. Some of the chia seeds sank to the bottom of the container and others stuck together on the water's surface. When the team placed the expanded
 
 
-The team has also started setting up a photometer, which will be used for future tests. [**CEO: mention briefly how the photometer will be used** addressed NB]
+
+In order to prepare the model sludge blanket from chia seeds, the team placed the chia seeds in water and waited approximately 20 minutes for the seeds to expand. The chia seeds were somewhat buoyant in water. Some of the chia seeds sank to the bottom of the container and others stuck together on the water's surface. When the team placed the expanded chia seeds inside the model UASB reactor and began to run water through the model UASB reactor, it became clear that chia seeds are not an effective model for the sludge blanket. Firstly, chia seeds are to sticky; the seeds stick to each other, which prevents water from flowing through them, and they stick to the walls and sides of the reactor. Secondly, the chia seeds were prone to flowing out of the effluent tube, which caused frequent clogging and would render photometer readings meaningless.
+
+Upon realizing that chia seeds were not usable for modeling the sludge blanket, the team decided that glass beads would be a possible alternative. With that in
+
 
 ***The first thing the UASB team needs to do before continuing these tests is set up and calibrate a photometer. Then, the team will run the effluent line of the small-scale UASB reactor through photometer, so that the concentration of red dye can be measured. The team plans to inject a plug of red dye into the influent line of the small-scale UASB reactor and then measure the concentration of red dye over a period of time to get quantitative results for hydraulic residence time in the small-scale reactor and how water is flowing through the model sludge blanket. If water is flowing through the sludge blanket evenly, then the red dye in the effluent should come out in a concentration similar to that of which it was in the influent.*** From "future work" can modify to fit it in -CJMS
 
