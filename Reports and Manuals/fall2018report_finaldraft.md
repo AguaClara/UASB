@@ -5,6 +5,8 @@
 
 [**CEO: This is a very good report. Great job adjusting the format where it makes sense. The only thing that seems out of place is the Gates Grant description...but I'm not sure where else you would put that..so it is fine how it is. Requires only minor edits.**]
 
+[**ZC: All or most figures are missing a figure caption. Figure captions should be stand-alone i.e. I should be able to understand what the figure it showing without having to search through the report for its reference. Each figure should also be referenced in-text.**]
+
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -43,6 +45,8 @@ Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has
 
 For Fall 2018, the team will continue design work on the UASB with the goal of completing a full design.  Once this is done, the team will begin preparations for fabrication and implementation of the UASB at the Ithaca Area Wastewater Treatment Plant (IAWWTF).  Another goal for the semester is to begin researching flow patterns through the UASB to optimize treatment and prevent short-circuiting.
 
+[**ZC: Make sure to use past tense throughout the report once you finalize**]
+
 ## Introduction
 
 Many countries in the world lack proper access to wastewater treatment and release their wastewater directly into the environment untreated. The organic and fecal matter present in domestic water can cause harmful effects to the environment and on human health.
@@ -52,8 +56,10 @@ Organic matter in wastewater is broken down by bacteria that feed on it, consumi
 The current technology in the United States for treating municipal wastewater requires long retention times, large land areas and high monetary and energy costs. The large infrastructure and associated costs make conventional wastewater treatment unfeasible for small communities, who then resort to directly discharging their wastewater into streams. This problem can be addressed with the use of Upflow Anaerobic Sludge Blanket (UASB) reactors.
 
 UASB reactors are used for primary treatment and clarify wastewater by removing suspended solids organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). Organic carbon in the wastewater flowing up through the sludge blanket is consumed by the microbes residing within the sludge.  UASB reactors also produce methane as a by-product of anaerobic digestion.  This methane can be captured and burned for energy production or heating.
+[**ZC: Bacteria and archaea make up a microbial community in each sludge granule i.e. the microbes are the sludge. Also define anaerobic digestion**]
 
 UASB reactors rely on gravity to clarify wastewater and biological processes to remove organic matter and convert it to biogas. They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes.
+[**ZC: This is a mischaracterization of what a UASB is. Utilizing gravity to power a UASB hydraulically was first proposed in the EPA Phase I proposal. It has never been implemented in literature. Typical UASB reactors still require a constant energy input for pumping like other wastewater treatment systems. Note that the energy input is lower than more conventional primary clarification methods such as activated sludge.**]
 
 In January 2017, a novel gravity-powered UASB reactor was designed by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally. The team later applied for Phase II funding from the same organization to support development and implementation of additional reactors for testing.
 
@@ -66,13 +72,13 @@ In the Fall 2018 semester, the team will focus on benchtop testing of the variou
 UASB reactors are currently being used for wastewater treatment to varying degrees of success. In 2005, Sato et. al performed a case study done on 16 full-scale UASBs in the Yamuna River Basin in India [(Sato, 2005)](https://www.sciencedirect.com/science/article/pii/S0301479705002860). The study found that the concentration of pollutants in effluent from these UASBs usually did not meet the effluent standards of most developing countries (Sato, 2005). Despite the failings of UASB reactors, the study is significant in showing that these reactors are an affordable option for wastewater treatment.   The study also emphasizes the importance of redesigning a UASB reactor to produce acceptable discharge standards.
 
 One of the main drawbacks of UASB reactors is that there is a long initial start-up period before steady-state conditions are achieved; this time is usually in the range of several months [(Wang, 2018)](https://link.springer.com/article/10.1007%2Fs11356-017-0457-5
-). Methods to decrease startup time include increasing load, optimizing temperature for anaerobic digestion, using a sufficient amount of sludge, and adding metal or an inert carrier. Wang et al. concluded that the addition of $FeCl_3$ during the initial stage of the UASB reactor start-up to promote granulation combined with the addition of Zero Valence Ions (ZVI) during the middle stage of reactor start-up is highly effective in reducing the initial start-up period (Wang, 2018). Once the team fabricates the pilot UASB, studies similar to this one will be useful in strategizing how to speed up the start-up period to test UASB quicker.
+). Methods to decrease startup time include increasing load, optimizing temperature for anaerobic digestion, using a sufficient amount of sludge, and adding metal or an inert carrier. Wang et al. concluded that the addition of $FeCl_3$ [**ZC: The formatting here doesn't show up on GitHub**]during the initial stage of the UASB reactor start-up to promote granulation combined with the addition of Zero Valence Ions (ZVI) during the middle stage of reactor start-up is highly effective in reducing the initial start-up period (Wang, 2018). Once the team fabricates the pilot UASB, studies similar to this one will be useful in strategizing how to speed up the start-up period to test UASB quicker.
 
 In typical UASB reactors, studies have found that removal of total suspended solids (TSS) is inversely proportional to upflow velocity within the reactor.  This parameter is difficult to minimize since decreasing upflow velocity requires decreasing flow rate, which reduces the total amount of wastewater treated, reducing reactor efficiency. *Seghezzo et al.* compared efficiency of reactors at various upflow velocities and various sludge blanket heights. At lower upflow velocities, the height of the sludge blanket did not impact efficiency significantly, provided the height was roughly 2/5 the height of the tank. At higher upflow velocities, it was found that a sludge blanket height of 0.92m in a 2.5m tall reactor provided optimal conditions compared to higher sludge blanket heights.  [(Seghezzo, 2018)](https://www.researchgate.net/publication/266880587_The_effect_of_sludge_discharges_and_upflow_velocity_on_the_removal_of_suspended_solids_in_a_UASB_reactor_treating_settled_sewage_at_moderate_temperatures). The model reactor at these dimensions removed 80% of the TSS and 90% of the volatile suspended solids (VSS).  The overall findings of the paper suggested lower upflow velocities and taller sludge blankets are optimal for UASB efficiency.
 
 [MAYBE RESOLVED?-AG-Show the units and chemical formulas in appropriate format. You may find something useful here: https://confluence.cornell.edu/display/AGUACLARA/Style+Guide+for+Figures%2C+Tables%2C+and+Equations]
 
-Additionally, [Lattinga et. al. (1993)](https://ac.els-cdn.com/096085249390038D/1-s2.0-096085249390038D-main.pdf?_tid=c83c2cd0-507e-4bba-a527-852fb5b2d0ed&acdnat=1537204715_6f79df9120ffd2cb0883ce08f1828336) highlights how the process of granulation within the UASB reactor is positively impacted by high upflow velocities within the UASB reactor and low hydraulic retention times. Both of these studies will be important when designing for UASB efficiency.  
+Additionally, [Lattinga et. al. (1993)](https://ac.els-cdn.com/096085249390038D/1-s2.0-096085249390038D-main.pdf?_tid=c83c2cd0-507e-4bba-a527-852fb5b2d0ed&acdnat=1537204715_6f79df9120ffd2cb0883ce08f1828336) [**ZC: Lettinga**]highlights how the process of granulation within the UASB reactor is positively impacted by high upflow velocities within the UASB reactor and low hydraulic retention times. Both of these studies will be important when designing for UASB efficiency.  
 
 [**CEO:Do these studies contradict each other? How will you optimize both in your desgin?**]
 
@@ -115,6 +121,7 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
 ## Fall 2018 Goals
 
+[**ZC: Again, update sentence structure to past tense once the report is finalized**]
 In the fall semester of 2018 [**CEO: as above specify the semester even in paragraph**-Addressed CJMS], the team will finalize the UASB reactor design before fabrication. First, bench top tests will be performed to study the flow patterns through the sludge, which will be simulated using tapioca. Tapioca was chosen to use for a model of a sludge blanket because tapioca has material properties similar to that of sludge.
 These tests will allow us to test various reactor and influent conditions and check for failure. The UASB reactor design can be modified based on the results of the tapioca tests. The team plans on consulting Dr. Monroe Weber-Shirk and Dr. Todd Cowen for the details of the hydraulic design of the reactor and conducting literature searches for reactor designs. After these steps, the final dimensions of the reactor, upflow velocity, thickness of the sludge blanket and number of influent pipes can be determined.
 
@@ -138,7 +145,7 @@ The major research focus the fall semester of 2018 was running a series of “ta
 
 ### Experimental Apparatus
 
-A scaled-down model UASB reactor was fabricated over the summer using a PVC pipe. Geometric similarity was maintained. A flat PVC sheet was then welded on the  bottom of the pipe segment, thus creating a usable UASB prototype. An effluent line was drilled in at about 70% of the way to the top of the reactor. A pipe attached to this opening allows excess water to exit the reactor. An image of this model reactor (hereby christened Bethany) is shown below.
+A scaled-down model UASB reactor was fabricated over the summer using a PVC pipe. Geometric similarity was maintained. A flat PVC sheet was then welded on the  bottom of the pipe segment, thus creating a usable UASB prototype. An effluent line was drilled in at about 70% of the way to the top of the reactor. A pipe attached to this opening allows excess water to exit the reactor. An image of this model reactor (hereby christened Bethany) is shown below. [**ZC: Please use professional/academic language when referring to objects by alternative names. Recall that this information is published online and represents AguaClara.**]
 
 ![the prototype UASB reactor](https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true)
 
@@ -195,6 +202,7 @@ During tests, the team uses ProCoDa to pump water through an influent pipe down 
 The behavior of the mini-reactor during tapioca tests has been somewhat on par with that of a functional UASB reactor. In the team’s initial tests with a 100 RPM pump, there was no observable fluidization of the the tapioca blanket; however, the transition to a 600 RPM pump and subsequent increase of influent flow rate resulted in the partial fluidization of the tapioca. The layer of tapioca did not lift entirely off the bottom of the reactor, but there was noticeable stretching of the tapioca layer as influent wastewater traveled through it, and the sludge blanket did indeed stretch uniformly.
 
 ![Marbles](https://github.com/AguaClara/UASB/blob/master/Images/marble_reactor.jpeg?raw=true)
+[**ZC: This image appears rotated on GitHub**]
 
 [**CEO: do you have data for this section? if you have measurements of expansion they could be useful here to compare with values from the literature you might expect** ]
 
