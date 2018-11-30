@@ -149,7 +149,7 @@ The final goal of the team in the fall 2018 semester is to begin prepping for fa
 Our full task map is included below:
 <div style = “text-align:center”>
 
-![Task Map](https://github.com/AguaClara/UASB/blob/master/Images/task_map_F18.jpg?raw=true)
+![Task Map](https:/v c           18.jpg?raw=true)
 
 [The task map above looks good, but using a flowchart instead of a photo might be better. Addressed IC]
 # Lab Experiments
@@ -233,7 +233,7 @@ The reactor has been slightly lifted off the lab bench so a camera can be placed
 
 ## Design Modifications
 
-In order to begin collecting quantitative data, the team set up a photometer. The photometer will be used in testing to determine how water is flowing through the sludge blanket. If[**CEO: mention briefly how the photometer will be used** addressed NB]
+In order to begin collecting quantitative data, the team set up a photometer. The photometer will be used in testing to determine how water is flowing through the sludge blanket. A plug of red dye will be injected to the influent pipe in the UASB. Then, the photometer will measure the concentration of red dye coming out of the model UASB reactor in the effluent tube. If the reactor is functioning properly, the red dye will come out of the [**CEO: mention briefly how the photometer will be used** addressed NB]
 
 
 With the help of Monroe, the team decided to find a new substance to model our sludge blanket. While tapioca has a similar consistency to sludge, it degrades much too quickly to be a feasible testing substitute. Chia seeds were chosen as a replacement to model the sludge blanket since they do not degrade as quickly as tapioca does.
@@ -244,7 +244,7 @@ With the help of Monroe, the team decided to find a new substance to model our s
 In order to prepare the model sludge blanket from chia seeds, the team placed the chia seeds in water and waited approximately 20 minutes for the seeds to expand. The chia seeds were somewhat buoyant in water. Some of the chia seeds sank to the bottom of the container and others stuck together on the water's surface. When the team placed the expanded chia seeds inside the model UASB reactor and began to run water through the model UASB reactor, it became clear that chia seeds are not an effective model for the sludge blanket. Firstly, chia seeds are to sticky; the seeds stick to each other, which prevents water from flowing through them, and they stick to the walls and sides of the reactor. Secondly, the chia seeds were prone to flowing out of the effluent tube, which caused frequent clogging and would render photometer readings meaningless.
 
 Upon realizing that chia seeds were not usable for modeling the sludge blanket, the team decided that glass beads would be a possible alternative. With that in
-
+![Chia Seed Tests](https://github.com/AguaClara/UASB/blob/master/Images/The%20UASB%20Apocalypse.jpg)
 
 ***The first thing the UASB team needs to do before continuing these tests is set up and calibrate a photometer. Then, the team will run the effluent line of the small-scale UASB reactor through photometer, so that the concentration of red dye can be measured. The team plans to inject a plug of red dye into the influent line of the small-scale UASB reactor and then measure the concentration of red dye over a period of time to get quantitative results for hydraulic residence time in the small-scale reactor and how water is flowing through the model sludge blanket. If water is flowing through the sludge blanket evenly, then the red dye in the effluent should come out in a concentration similar to that of which it was in the influent.*** From "future work" can modify to fit it in -CJMS
 
