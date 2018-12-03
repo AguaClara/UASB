@@ -5,7 +5,7 @@
 
 [**CEO: This is a very good report. Great job adjusting the format where it makes sense. The only thing that seems out of place is the Gates Grant description...but I'm not sure where else you would put that..so it is fine how it is. Requires only minor edits.**]
 
-[**ZC: All or most figures are missing a figure caption. Figure captions should be stand-alone i.e. I should be able to understand what the figure it showing without having to search through the report for its reference. Each figure should also be referenced in-text.**]
+[Resolved-AG **ZC: All or most figures are missing a figure caption. Figure captions should be stand-alone i.e. I should be able to understand what the figure it showing without having to search through the report for its reference. Each figure should also be referenced in-text.**]
 
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -56,9 +56,9 @@ Organic matter in wastewater is broken down by bacteria that feed on it, consumi
 The current technology in the United States for treating municipal wastewater requires long retention times, large land areas and high monetary and energy costs. The large infrastructure and associated costs make conventional wastewater treatment unfeasible for small communities, who then resort to directly discharging their wastewater into streams. This problem can be addressed with the use of Upflow Anaerobic Sludge Blanket (UASB) reactors.
 
 UASB reactors are used for primary treatment and clarify wastewater by removing suspended solids organic matter ([Chong et. al, 2012](https://www.sciencedirect.com/science/article/pii/S0043135412002400?via%3Dihub)). Organic carbon in the wastewater flowing up through the sludge blanket is consumed by the microbes residing within the sludge through the process of anaerobic digestion, which is when bacteria break down biodegradable material without needing oxygen to do so. The paticular bacteria in the sludge blanket produce methane as a by-product of anaerobic digestion. This methane can be captured and burned for energy production or heating.
-[**ZC: Bacteria and archaea make up a microbial community in each sludge granule i.e. the microbes are the sludge. Also define anaerobic digestion** -Fixed CJMS]
+[**ZC: Bacteria and archaea make up a microbial community in each sludge granule i.e. the microbes are the sludge. Also define anaerobic digestion -Fixed CJMS**]
 
-UASB reactors, due to their anaerobic processes, are already less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes, but they still require an electrical energy input. However, the UASB reactor designed by AguaClara is completely gravity-powered.[**ZC: This is a mischaracterization of what a UASB is. Utilizing gravity to power a UASB hydraulically was first proposed in the EPA Phase I proposal. It has never been implemented in literature. Typical UASB reactors still require a constant energy input for pumping like other wastewater treatment systems. Note that the energy input is lower than more conventional primary clarification methods such as activated sludge.** [Fixed CJMS] In January 2017, a novel gravity-powered UASB reactor was designed by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally. The team later applied for Phase II funding from the same organization to support development and implementation of additional reactors for testing.
+UASB reactors are already less energy intensive than many other forms of preliminary wastewater treatment, but they still require an electrical energy input. However, the UASB reactor designed by AguaClara is completely gravity-powered.[**ZC: This is a mischaracterization of what a UASB is. Utilizing gravity to power a UASB hydraulically was first proposed in the EPA Phase I proposal. It has never been implemented in literature. Typical UASB reactors still require a constant energy input for pumping like other wastewater treatment systems. Note that the energy input is lower than more conventional primary clarification methods such as activated sludge.-Fixed CJMS**] In January 2017, a novel gravity-powered UASB reactor was designed by AguaClara for the EPA People, Prosperity and the Planet (P3) [Student Design Competition proposal](https://docs.google.com/document/d/1geug1EyFjCRLQgO79vTOXUUFia3RBw3bhaIHPUiqu44/edit?usp=sharing). This reactor was designed to improve the accessibility of wastewater treatment for small communities. The proposed UASB reactor design identified areas to improve conventional reactor design, making the system cheaper and easier to fabricate and implement globally. The team later applied for Phase II funding from the same organization to support development and implementation of additional reactors for testing.
 
 In the Fall 2018 semester, the team will focus on benchtop testing of the various components of the UASB reactor, and simulate the movement of water through the sludge blanket in order to better understand flow patterns within the reactor and possible failure modes.
 
@@ -75,7 +75,7 @@ In typical UASB reactors, studies have found that removal of total suspended sol
 
 [MAYBE RESOLVED?-AG-Show the units and chemical formulas in appropriate format. You may find something useful here: https://confluence.cornell.edu/display/AGUACLARA/Style+Guide+for+Figures%2C+Tables%2C+and+Equations]
 
-Additionally, [Lattinga et. al. (1993)](https://ac.els-cdn.com/096085249390038D/1-s2.0-096085249390038D-main.pdf?_tid=c83c2cd0-507e-4bba-a527-852fb5b2d0ed&acdnat=1537204715_6f79df9120ffd2cb0883ce08f1828336) [**ZC: Lettinga**]highlights how the process of granulation within the UASB reactor is positively impacted by high upflow velocities within the UASB reactor and low hydraulic retention times. Both of these studies will be important when designing for UASB efficiency.  
+Additionally, [Lettinga et. al. (1993)](https://ac.els-cdn.com/096085249390038D/1-s2.0-096085249390038D-main.pdf?_tid=c83c2cd0-507e-4bba-a527-852fb5b2d0ed&acdnat=1537204715_6f79df9120ffd2cb0883ce08f1828336) [**ZC: Lettinga** Addressed IC]highlights how the process of granulation within the UASB reactor is positively impacted by high upflow velocities within the UASB reactor and low hydraulic retention times. Both of these studies will be important when designing for UASB efficiency.  
 
 [**CEO:Do these studies contradict each other? How will you optimize both in your desgin?**]
 
@@ -115,20 +115,20 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
 ## Fall 2018 Goals
 
-[**ZC: Again, update sentence structure to past tense once the report is finalized**]
+[**ZC: Again, update sentence structure to past tense once the report is finalized** ADDRESSED NB]
 
-In the fall semester of 2018, the team aimed to finalize the UASB reactor design before fabrication. While the team did not accomplish this goal, the team began to address this goal with bench top tests to study the flow patterns through sludge.Tapioca was chosen to use for a model of a sludge blanket because tapioca has material properties similar to that of sludge. The goal of these tests was to inform the team on failure conditions in the model UASB reactor.
+In the fall semester of 2018, the team aimed to finalize the UASB reactor design before fabrication. While the team did not accomplish this goal, the team began to address this goal with bench top tests to study the flow patterns through sludge.  Tapioca was chosen to use for a model of a sludge blanket because tapioca has material properties similar to that of sludge. The goal of these tests was to inform the team on failure conditions in the model UASB reactor.
 
-Another goal for the Fall 2018 semester was to write code to model designs of the reactor.  Since the UASB reactor can have many design approaches, it is important to create flexible code that can test different positions and determine the required parameters. This semester, the team starte After these steps, the final dimensions of the reactor, upflow velocity, thickness of the sludge blanket and number of influent pipes can be determined.
+Another goal for the Fall 2018 semester was to write code to model designs of the reactor.  Since the UASB reactor can have many design approaches, it is important to create flexible code that can test different positions and determine the required parameters. This semester, the team started writing the code to determine the dimensions of the effluent tube of the model reactor. Once this goal has been completed, the final dimensions of the reactor, upflow velocity, thickness of the sludge blanket and number of influent pipes can be determined.
 
-Because AguaClara has moved from Fusion 360 to Onshape, UASB also aimed to create an updated CAD model of the UASB reactor on OnShape. This goal was not accomplished the semester. The team will consult with AIDE to see if there is a simple way to move the design from Fusion.
+Because AguaClara has moved from Fusion 360 to Onshape, UASB also aimed to create an updated CAD model of the UASB reactor on OnShape. This goal was not accomplished the semester, but the team will consult with AIDE to see if there is a simple way to move the design from Fusion.
 
-The final goal of the team in the fall 2018 semester was to begin prepping for fabrication. This includes locating and ordering materials, making fabrication and safety plans, and learning fabrication techniques such as plastic welding. While the team did not locate nor order materials, members got fabrication experience during benchtop tests as well as safety training.
+The final goal for the team in the fall 2018 semester was to begin prepping for fabrication. This includes locating and ordering materials, making fabrication and safety plans, and learning fabrication techniques such as plastic welding. While the team did not locate nor order materials, members got fabrication experience during bench top tests as well as safety training.
 Our full task map is included below:
 <div style = “text-align:center”>
 
 <p align="center">
-  <img src="https://github.com/AguaClara/UASB/blob/master/Images/task_map_F18.jpg?raw=true" width="500px" /></p>
+  <img src="https://github.com/AguaClara/UASB/blob/master/Images/task_map_F18.jpg?raw=true" width="800px" /></p>
 <p align="center">Fig. x: Lab scale model UASB reactor<p>
 
 [The task map above looks good, but using a flowchart instead of a photo might be better. Addressed IC]
@@ -189,7 +189,7 @@ The ProCoDa file used for the Tapioca tests has three states:
 The set points are listed below:
 <p align="center">
   <img src="https://github.com/AguaClara/UASB/blob/master/Images/setp.PNG?raw=true" width="300px" /></p>
-<p align="center">Fig. x: ProCodA Setup for experiments<p align="center">
+<p align="center">Fig. x: ProCoDa Setup for experiments<p align="center">
 
 * ON: Turns system on
 * OFF: Turns system off
@@ -211,8 +211,6 @@ The behavior of the mini-reactor during tapioca tests has been somewhat on par w
 
 [**ZC: This image appears rotated on GitHub. Also include a standalone figure caption and reference the figure in the text.**]
 
-[**CEO: do you have data for this section? if you have measurements of expansion they could be useful here to compare with values from the literature you might expect** ]
-
 ## Analysis
 In a properly functioning UASB reactor, the wastewater will spread out evenly as it travels through the sludge blanket, so that it has the maximal possible surface contact with the granules in the sludge blanket. This has not happened in the tests yet. The team added red dye to influent water in order to follow the path of water through the model reactor.
 
@@ -231,7 +229,7 @@ Firstly, modifications were made to the influent system. Instead of one large op
   <img src="https://github.com/AguaClara/UASB/blob/master/Images/Modified_Influent_Pipe_Drawing.JPG?raw=true" width="250px" /></p>
 <p align="center">Fig. x: Schematic for modified influent pipe<p>
 
-In order to begin collecting quantitative data, the team set up a photometer. The photometer will be used in testing to determine how water is flowing through the sludge blanket. A plug of red dye will be injected to the influent pipe in the UASB. Then, the photometer will measure the concentration of red dye coming out of the model UASB reactor in the effluent tube. If the reactor is functioning properly, the red dye will flow evenly through the model sludge blanket, so all the dye will come out of the effluent tube at the same time, which will be indicated by a spike of red dye concentration coming out of the effluent tube. The photometer will be used to measure whether or not the red dye concentration in the effluent tube is changing as expected for a functional UASB.    [**CEO: mention briefly how the photometer will be used** -addressed NB]
+In order to begin collecting quantitative data, the team set up a photometer. The photometer will be used in testing to determine how water is flowing through the sludge blanket. A plug of red dye will be injected to the influent pipe in the UASB. Then, the photometer will measure the concentration of red dye coming out of the model UASB reactor in the effluent tube. If the reactor is functioning properly, the red dye will flow evenly through the model sludge blanket, so all the dye will come out of the effluent tube at the same time, which will be indicated by a spike of red dye concentration coming out of the effluent tube. The photometer will be used to measure whether or not the red dye concentration in the effluent tube is changing as expected for a functional UASB.  
 [**ZC: A figure with the experimental apparatus (whether photo or diagram) would help explain this better and assist future teams replicate your work if needed**]
 
 The decision to use a photometer to collect quantitative data made tapioca an unsuitable sludge blanket because tapioca gives off a residue in water, which makes it too cloudy for the photometer to measure red dye concentration. Chia seeds were chosen as a replacement to model the sludge blanket since they do not degrade as quickly as tapioca does.
@@ -260,7 +258,7 @@ An eighteen-month plan for the implementation of an UASB reactor in Honduras was
 The schematic below summarizes the idea proposed in the Gates Proposal.
 
 <p align="center">
-  <img src="https://github.com/AguaClara/UASB/blob/master/Images/gates%20grant%20schematic.png?raw=true" width="500px" /></p>
+  <img src="https://github.com/AguaClara/UASB/blob/master/Images/gates%20grant%20schematic.png?raw=true" width="800px" /></p>
 <p align="center">Fig. x: Flow chart used in the Gates Grant proposal<p>
 
 The proposal can be read [here](https://github.com/AguaClara/UASB/blob/master/README.md).
