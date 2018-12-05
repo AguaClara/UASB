@@ -2,7 +2,7 @@
 
 Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wastewater treatment systems to be cheaper, simpler to fabricate, and easy to implement to provide affordable wastewater treatment across the world.  For more information, read our [research reports](https://github.com/AguaClara/UASB/tree/master/Reports%20and%20Manuals) or see our latest [poster presentation](https://github.com/AguaClara/UASB/blob/master/Posters%20and%20Presentations/UASB_NEGSWS_2018_Poster.ppt) from the 2018 NEGSWS conference.
 
-Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q)
+Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q).
 
 ## Research Advisor:
 Zac Chen (zc76)
@@ -27,6 +27,8 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 [Symposium Presentation](https://docs.google.com/presentation/d/1w-d5YQ5Ck9oUmswyk0-IZ2s0v9SY-O7ztUVHQlB3yNs/edit#slide=id.g346a079b2f_0_0)
 
 [Gates Foundation Grant Proposal](https://drive.google.com/open?id=0BxPs_BdCDBA_bDh1VktVdmV2U2VEVkp3UjI3UkxwQ3JGWHJn)
+
+Final Presentation: [Video](https://www.youtube.com/watch?v=lyPVWBxlnw8&index=15&list=PLhsGtpY8ipdZTn2HPI6C2uH44ADmc0Ra6) [Slides](https://docs.google.com/presentation/d/17VSZtK-qtNIQHiA1AVwJNL2szjhn5LMRihntjjkhFzg/edit?usp=sharing)
 
 ### Summer 2018
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)  
