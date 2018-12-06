@@ -30,6 +30,8 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 Final Presentation: [Video](https://www.youtube.com/watch?v=lyPVWBxlnw8&index=15&list=PLhsGtpY8ipdZTn2HPI6C2uH44ADmc0Ra6) [Slides](https://docs.google.com/presentation/d/17VSZtK-qtNIQHiA1AVwJNL2szjhn5LMRihntjjkhFzg/edit?usp=sharing)
 
+[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/fall2018report.md)
+
 ### Summer 2018
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)  
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md)  
