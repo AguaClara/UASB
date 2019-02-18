@@ -1,10 +1,11 @@
+
+
+##Methods
+
 ##design for influent system
 
 For the influent system, we have decided to move forward with the Summer 2018 team's plan for a tipping bucket that leads into separate pipes that then enter the reactor through the
  side. The summer 2018 UASB team suggested 2 pipes, but after considering the results of the tapioca tests performed by the fall 2018 team, the spring 2019 UASB team has decided to use four influent pipes to promote evenly distributed flow through the sludge blanket.
-
-
-
 
 ```python
 # Import tools
@@ -42,11 +43,7 @@ def UASB_Size(diam, height, HRT, sludge_percent):
 
 According to this function, based on our decided tank size of 3 ft diameter with 7 ft height, a 4 hr HRT, and 70% sludge percentage, the required average flowrate for sludge in the reactor is .068 l/s. The team then used average flow rate and desired exit velocity to calculate necessary headloss in order to find the necessary height of the tipping bucket. The summer 2018 listed acceptable ranges of exit velocity from .03 m/s (lower end to scour particles from inflent pipes)to 1 m/s (any faster likely to cause preferential pathways). Somewhat arbitrarily, the team picked .07 m/s as its desired exit velocity. The team also somewhat decided to use 3 in diameter influenet pipes in its design based on previous teams research.
 
-    QUESTION:: DOES THIS FUNCTION ACTUALLY WORK CAUSE ITS USING HEADLOSS EQN FOR WATER BUT WERE DEALING WITH WASTE WATER!!
 
-IDEA FOR NEW CODE TO DECIDE HEIGHT!!
-
-flow from tiping bucket will be divided into # of influent pipes. then those pipes will go into four separate pipes. we can get rough idea of headloss through each pipe. then use that to calculate necessary head
   ```python
 
 def calculate_head(target_exitvel, nom_diam, pipe_length, Kminor, Temp,
@@ -133,19 +130,15 @@ The parameters for the holding tank, with a 5-gallon bucket mounted inside, are 
 |Length|$\geq$ 60 cm|Height of bucket plus extra space to allow free rotation.  Requires closer examination in fusion|
 
 
-The holding tank will empty into the flow dividing tank, which is essentially just a smaller tank that is partitioned into four equal sections. An important note is that the bottom of the holding tank will slope down into the dividing tank in order to prevent settling in the holding tank.
+The holding tank will empty into the flow dividing tank, which is essentially just a smaller tank that is partitioned into four equal sections.
+
+For the flow dividing tank, we chose a 6 gallon 14" by 10" by 10" polethylene tank. We chose that tank so that the four 3 inch diameter pipes could fit while minimizing the horizontal space around them to prevent settling as much as possible. The bucket will then be divided into four sections with 1.5"
 
 Descending wastewater must go thoruogh the dividing tank at a rate slow enought to allow for gas bubbles to escape.
-The bottom of the holding tank will then slope gradually into the four influent pipes to decrease settling.
+The bottom of the holding tank will then lead into the four influent pipes to decrease settling.
 
-**NEW IDEA**
 
-instead of a separate tank to divide flow, why not just deepen the holding tank and add dividers to the bottom of that?
 
-**HOW LONG DOES FLOW DIVIDER SECTION NEED TO BE?**
-
-Assuming that the flow divider will extend for 6 inches (chosen arbitrarily) this means that the influent pipes will start at a height of
-52.8 inches. Then those pipes will need to connect to their respective points of influennce.
 
 ```python
 ```
