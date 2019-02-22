@@ -76,10 +76,9 @@ With that in mind, the team calculated height at which the flow dividing bucket 
 For the flow dividing tank, we chose a 6 gallon 12" by 12" by 12" polethylene tank (https://www.usplastic.com/catalog/item.aspx?itemid=124470). The bucket will be divided into four equally sized sections by walls of 1.5" thickness. We chose this tank so that four 3.5” diameter holes (to house influent pipes) and two 1.5” wide dividing walls could fit on the bottom area of the tank while also minimizing the horizontal space around holes because settling could occur there.
 
 
-
-Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown below
+Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20Divide.png?raw=true">
-
+Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
 
 
 
