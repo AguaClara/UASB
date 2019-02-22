@@ -86,18 +86,18 @@ Figure 2. A view from above of the holding tank, which leads into the flow divid
 
 
 Figure 3. Side view of the holding tank, which leads into the flow dividing tank.
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/CAD%20holding%20tank:flow%20divide%20side%20view.png?raw=true">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Side%20View%20Holding%20Tank.png?raw=true">
 
 
 Figure 4. The dimensions for bottom of the flow dividing tank.  (measurements are in inches)
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/flow%20dividing%20tank%20dimensions%20.png?raw=true">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Bottom%20Dividing%20Tank.png?raw=true">
 
 Since the flow dividing bucket is 12” tall, the top of the influent pipes will begin at 46.8” above the ground.
 
 Each inlet pipe will then carray wastewater to a point on the bottom of the reactor. The team has positioned the four points of influence are as far away from each other as possible on the bottom of the reactor. The bottom of the UASB reactor has a diameter of 3 ft. So, if the center of the reactor is considered to be the origin, then the four points of influence on the bottom of the reactor in polar coordinates will be: (9”, $pi$/4 rad), (.9”, 3$pi$/4 rad), (9”, -$pi$/4 rad), (9”, -3$pi$/4 rad)
 
-Figure 4. The points of influence on the bottom of the reactor.
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/points%20of%20inflluence%20.png?raw=true">
+Figure 5. The points of influence on the bottom of the reactor.
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Points%20of%20Influence.png?raw=true">
 
 After the team decided on the locations for the points of influence on the bottom of the reactor, it moved on to deciding how to connect each pipe from the flow divider to its respective point of influence. In doing so, the team took effort to reduce head loss of the pipes and make the exiting velocity at each point of influence as equal as possible.
 
@@ -111,7 +111,7 @@ Next, the team decided where the influent pipes would enter the side of the reac
 Based on the height of the flow dividing bucket and the height of the points of entry on the side of the reactor, the team determined the length of influent tube sections. Dimensions are summarized in the sketch below, which is a side view of the UASB. Supports for the flow dividing bucket are not included.
 
 Figure 6. UASB reactor dimensions
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB%20dimensions%20.png?raw=true">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Reactor%20Dimensions.png?raw=true">
 
 
 The dimensions still need to be slightly altered to account for the size of elbows.
