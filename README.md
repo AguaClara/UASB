@@ -29,7 +29,7 @@ Rafael Heryapriadi (rh563)
 
 
 ## Semester Goals:
-In Fall 2018, the team will be finalizing design of the UASB system and beginning fabrication of our first model.  Additionally, the team will be conducting flow control tests using a model sludge blanket system to determine optimal flow patterns and test for critical failure modes within the UASB.  Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
+In Spring 2019, UASB will be finalizing design of the UASB system and beginning fabrication of our first model. UASB Research will be doing benchtop tests to reduce preferential pathways, working on the influent design, and integrating the tipping bucket system worked on during Summer 2018 into the design. UASB Design will finish design of the UASB reactor, create a CAD model in OnShape, and begin fabrication Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
 
 
 ## Links to Reports and Presentations
