@@ -113,11 +113,12 @@ Figure 6. UASB reactor dimensions
 
 
 The dimensions still need to be slightly altered to account for the size of elbows.
-<img src="https://
+
+Figure 7. Influent bucket system
+<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Influent%20System.png?raw=true">
 
 
 Figure 8. Bucket system without tank
-
 <img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Bucket%20and%20Frame.png?raw=true">
 
 
