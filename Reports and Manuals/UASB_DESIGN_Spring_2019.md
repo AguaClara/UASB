@@ -118,7 +118,7 @@ The dimensions still need to be slightly altered to account for the size of elbo
 
 Figure 8. Bucket system without tank
 
-<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Bucket%20and%20Frame.png>?raw=true">
+<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Bucket%20and%20Frame.png?raw=true">
 
 
 ##Future Work
