@@ -5,7 +5,7 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q).
 
 ## Research Advisor:
-Zac Chen (zc76)
+Ananya Gangadhar (ag757)
 
 ## Team Members:
 Ian Cullings (idc25)
