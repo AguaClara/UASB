@@ -44,6 +44,8 @@
 
 ## Literature Review and Previous Work
 
+**NOT FINISHED**
+
   A paper published by Tamil Nadu Agricultural University did a study in 2013 on a Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 m^3 and that the optimum organic loading rate was observed to be 2.67 COD  m^-3 per day. When the reactor operated at 3 days HRT the efficiency of the reactor was 70%. The reactor was also designed to collect gas to use for energy. This study done at a papaya fruit processing factory, where the reactor cost   Rs. 80,000, showed that the gas utilized had a payback period of 3 to 4 years . It also proved that the UASB provides onsite solutions to waste management problems.
 
  https://www.sciencedirect.com/science/article/pii/S0960852411013964
@@ -83,21 +85,41 @@ Lastly, the team wrote code to calculate the optimal size of the pilot UASB reac
 The summer team continued work on the hydraulic design of the UASB system.  The major design project was creating the tipping bucket system to deliver wastewater in pulses.  The system consists of a pivoting bucket which fills with wastewater before tipping and delivering the wastewater in a large pulse at a high flow rate.  After brainstorming the idea, the team designed and tested models to determine optimal design and flow rates for the system.  The team also continued developing code for the entire system, and made a Computer Aided Design (CAD) [model of the UASB reactor](https://cornell47.autodesk360.com/g/shares/SH7f1edQT22b515c761e1224485004ae7e44?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0IBOAEx4GYeAFgBsAWgBMjAGY8xQgKwTxjLl3H8A7KoBGEABwQd-IZrQBfEAF0gA) using Fusion 360.
 
 #### Fall 2018
+
+**NOT FINISHED** 
    The result shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent wastewater travelled through it. The team added red dye to the influent to follow the path of the flow of water, and found that the formation of preferential pathways through the tapioca layer which lead to inefficient treatment. The team then came out idea of spreading the inlet flow by drilling four holes near the bottom to decrease the preferential paths. 
   Using the photometer, the team wanted to test how water is flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube is changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration. 
   The team then tried to used chia seeds instead of tapioca, and resulted in a worse scenario because chia seed was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marble as the sludge blanket due to the time constrained. As predicted, this material was too heavy for the influent water to lift them. 
 
 ## Spring 2019 Goals
 
-  There are a few goals UASB Research wants to accomplish this semester. The first is the inlet system of the UASB. The UASB team was dissatisfied with the model inlet design used during the fall; the single inlet tube, whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket. When the water is not evenly distributed, the reactor is less efficient; some sludge granules are not getting into contact with the wastewater, and therefore they cannot degrade the organic material in the wastewater.  
-
-  The team has sketched out a few designs - all with four openings in the inlet - to better distribute the flow. An idea to put in a manifold was shut down over concerns of clogging. UASB-R has already got the parts in order to create one of the designs, and the contruction and testing of that design will be accomplished after UASB-R finishes its first task of the semester: 
-
-  The model inlet tube last semester was has to be inserted in the side of the UASB tank, so the February goal of 
-
+  There are a few goals UASB Research wants to accomplish this semester. The first is the inlet system of the UASB. The UASB team was dissatisfied with the model inlet design used during the fall; the single inlet tube, whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket. When the water is not evenly distributed, the reactor is less efficient; some sludge granules are not getting into contact with the wastewater, and therefore they cannot degrade the organic material in the wastewater. There was also a significant problem: the inlet tube was inserted directly above the UASB reactor, but this is where the biogas capturing system needs to be on the UASB reactor. The old design is shown below:
+  
+  <p align="center">
+  <img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true" width="400px" /></p>
+<p align="center">Fig. 1: Old lab scale model of UASB reactor<p>
+  
+  Between these two problems, and the fact UASB's old inlet system vanished in early February, a new model-scale inlet system desperately needs to be created. The team has sketched out a few designs - all with four openings in the inlet, in order to better distribute flow. An idea to put in a manifold was shut down over concerns of clogging. UASB-R has already got the parts in order to create one of the designs, and the contruction of that design has started. This is Design #1, without the attachment with the four openings. 
+  
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/R%20Prototype.jpeg?raw=true" width="250px" /></p>
 <p align="center">Fig. 2: Beginnings of the first inlet design of 2019
+  
+ As one can see, the inlet tube enters on the right side of the tank with a horizontal component. UASB is also interested what would happen if the inlet tube was inserted lower down. Would the water velocity be the same? Does one design have more head loss than the other? The two competing designs sketched below will be what UASB will be testing out.
+ 
+ <p align="center">
+<img src="xxxxxxxxxxxxxxx" width="250px" /></p>
+<p align="center">Fig. 3: Two competing designs
+
+After UASB-R settles on one design, the rest of the semester will be devoted to:
+
+- Constructing and testing the four-opening attachment for the lab bench model 
+
+- Run tests to determine pulse flow vs continuous flow. Orginally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity, but new research has been pointing toward continuous flow.
+
+Both these tests will be run using actual sludge granules from the Aanheuser-Busch Plant in Syracuse, NY. One of our members will be going there to pick up the sludge on March 9th.
+
+- Lastly, keep in close contact with UASB Design and see if there are any features they would like UASB Research to test in the lab.
 
 ### Key Contacts
 
