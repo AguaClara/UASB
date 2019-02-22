@@ -1,8 +1,8 @@
-##UASB Design, Spring 2019
+## UASB Design, Spring 2019
 By Nina Blahut, Shania Fang,  Emily Liu, Kanha Matai
 February 22, 2019
 
-##Abstract
+## Abstract
 Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design for a pilot-scale, gravity-powered UASB reactor. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product.
 
 Over Spring 2019, the UASB-Design team's main goal has been to finalize the design for the UASB and work on fabrication of the entire system for testing and data collection at the Ithaca Area Wastewater Plant before implementation in Honduras. So far, the team has completed the design dimensions for the influent system and began an onshape CAD design.
@@ -10,7 +10,7 @@ Over Spring 2019, the UASB-Design team's main goal has been to finalize the desi
 ##Introduction
 The completion of a pilot UASB reactor that will be tested with real wastewater at the Ithaca Area Wastewater Treatment will be a big step for AguaClara’s venture into sustainable wastewater treatment. There is still much that needs to be further discovered and refined, such whether or not the tipping bucket system will be useful in eliminating preferential pathways, the effluent system design, and the gas capture system.
 
-##Literature Review and Previous Work
+## Literature Review and Previous Work
 
 Water pollution is a global issue yet many areas in the world still lack wastewater treatment plants. Water, being a universal solvent, contains dissolved fecal and urine matter, harmful chemicals, and pathogens which makes it harder to separate these compounds.  Leaving wastewater untreated and releasing it directly back into the environment can cause devastating effects on both the environment and human health.
 
@@ -40,9 +40,9 @@ The team researched preferential pathways by doing bench tests. The team fabrica
 In the Spring 2019 semester, the team will focus on building and assembling a UASB pilot-scale reactor to be tested in Ithaca’s Wastewater Treatment Plant by the Summer of 2020.
 
 
-##Methods
+## Methods
 
-##Design for Influent System
+## Design for Influent System
 
 In this section, the team will explain how it made decisions regarding the design for the influent system.
 
