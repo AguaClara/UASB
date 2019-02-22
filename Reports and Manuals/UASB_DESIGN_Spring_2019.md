@@ -78,7 +78,7 @@ For the flow dividing tank, we chose a 6 gallon 12" by 12" by 12" polethylene ta
 
 
 Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
-<img src=”https://github.com/AguaClara/UASB/blob/master/Images/CAD%20top%20view%20flow%20divide.png?raw=true">
+<img src=”https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20Divide.png?raw=true">
 Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
 
 
