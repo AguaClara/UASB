@@ -105,11 +105,11 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/R%20Prototype.jpeg?raw=true" width="250px" /></p>
 <p align="center">Fig. 2: Beginnings of the first inlet design of 2019
   
- As one can see, the inlet tube enters on the right side of the tank with a horizontal component. UASB is also interested what would happen if the inlet tube was inserted lower down. Would the water velocity be the same? Does one design have more head loss than the other? The two competing designs sketched below will be what UASB will be testing out.
+ As one can see, the inlet tube enters on the right side of the tank with a horizontal component. UASB is also interested what would happen if the inlet tube was inserted lower down. Would the water velocity be the same? Does one design have more head loss than the other? The two competing designs, as shown below, will be what UASB will be testing out.
  
  <p align="center">
-<img src="xxxxxxxxxxxxxxx" width="250px" /></p>
-<p align="center">Fig. 3: Two competing designs
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Sketch%20UASB-R.jpeg?raw=true" width="250px" /></p>
+<p align="center">Fig. 3: Two competing designs; sketch does not include effluent design or biogas capture system.
 
 After UASB-R settles on one design, the rest of the semester will be devoted to:
 
