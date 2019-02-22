@@ -26,8 +26,6 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-
-
 ## Abstract
 
   For the past two years, the AguaClara Upflow Anaerobic Sludge Blanket Team, also known has UASB, has been in the works of designing and fabricating a pilot-scale Upflow Anaerboic Sludge Blanket reactor, a system which treats wastewater via anaerobic digestion, producing biogas in the process. UASB's design is completely gravity-powered and is a low cost solution to treating wastewater in rural communities that cannot afford typical wastewater treatment plants.
@@ -93,8 +91,25 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
   There are a few goals UASB Research wants to accomplish this semester. The first is the inlet system of the UASB. The UASB team was dissatisfied with the model inlet design used during the fall; the single inlet tube, whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket. When the water is not evenly distributed, the reactor is less efficient; some sludge granules are not getting into contact with the wastewater, and therefore they cannot degrade the organic material in the wastewater.  
 
-  The team has sketched out a few designs - all with four openings in the inlet - to better distribute the flow. An idea to put in a manifold was shut down over concerns of clogging. UASB-R has already got the parts in order to create one of the designs, and the contruction and testing of that design will be accomplished after UASB-R
+  The team has sketched out a few designs - all with four openings in the inlet - to better distribute the flow. An idea to put in a manifold was shut down over concerns of clogging. UASB-R has already got the parts in order to create one of the designs, and the contruction and testing of that design will be accomplished after UASB-R finishes its first task of the semester: 
 
-The inlet tube has to be inserted in the side of the UASB tank, so the February goal of 
+  The model inlet tube last semester was has to be inserted in the side of the UASB tank, so the February goal of 
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/R%20Prototype.jpeg?raw=true" width="250px" /></p>
+<p align="center">Fig. 2: Beginnings of the first inlet design of 2019
+
+### Key Contacts
+
+The team has listed some key contacts for the UASB project so all members will know who to reach out to. They are summarized in the table below.
+
+| Name                | Role                                                              | Email                             |
+| ------------------- | ----------------------------------------------------------------- | --------------------------------- |
+| Dr. Ruth Richardson | Faculty Advisor                                                   | water.ruth@gmail.com              |
+| Ed Gottlieb         | Wastewater plant operator, primary contact at Wastewater facility | EGottlieb@cityofithaca.org        |
+| Robert Cleeton      | Contact at Anheuser-Bush, source for anaerobic granules           | robert.cleeton@anheuser-busch.com |
 
 
+
+# EPA Funding Assurance
+This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
