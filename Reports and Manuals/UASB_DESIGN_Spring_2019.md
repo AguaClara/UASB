@@ -16,7 +16,7 @@ Water pollution is a global issue yet many areas in the world still lack wastewa
 
 https://water.usgs.gov/edu/wuww.html
 
-Wastewater contains decaying organic matter and nutrients such as phosphorus and nitrogen which can cause algae blooms and eutrophication, reducing the amount of oxygen available in waters and making it harder for aquatic life to survive. These water pollutants are killing marine birds, crustaceans, sea weeds, and many other organisms. Human health is also directly affected by these disease causing pathogens in wastewaters. They destroying crop production, infecting our food supply, and water-borne diseases. Health risk associated with wastewater includes respiratory disease, cancer, diarrheal disease, a neurological disorder, and cardiovascular disease(Mehtab Haseena, 2017).
+Wastewater contains decaying organic matter and nutrients such as phosphorus and nitrogen which can cause algae blooms and eutrophication, reducing the amount of oxygen available in waters and making it harder for aquatic life to survive. These water pollutants are killing marine birds, crustaceans, sea weeds, and many other organisms. Human health is also directly affected by these disease causing pathogens in wastewaters. Health risk associated with wastewater includes respiratory disease, cancer, diarrheal disease, a neurological disorder, and cardiovascular disease(Mehtab Haseena, 2017).
 
 http://www.alliedacademies.org/articles/water-pollution-and-human-health-7925.html
 
@@ -78,25 +78,26 @@ For the flow dividing tank, we chose a 6 gallon 12" by 12" by 12" polethylene ta
 
 
 Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
-<img src=”https://github.com/AguaClara/UASB/blob/master/Images/CAD%20top%20view%20flow%20divide.png?raw=true">
+<img src=”https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20Divide.png?raw=true">
+
 Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
 
 
 
 
 Figure 3. Side view of the holding tank, which leads into the flow dividing tank.
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/CAD%20holding%20tank:flow%20divide%20side%20view.png?raw=true">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Side%20View%20Holding%20Tank.png?raw=true">
 
 
 Figure 4. The dimensions for bottom of the flow dividing tank.  (measurements are in inches)
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/flow%20dividing%20tank%20dimensions%20.png?raw=true">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Bottom%20Dividing%20Tank.png?raw=true">
 
 Since the flow dividing bucket is 12” tall, the top of the influent pipes will begin at 46.8” above the ground.
 
 Each inlet pipe will then carray wastewater to a point on the bottom of the reactor. The team has positioned the four points of influence are as far away from each other as possible on the bottom of the reactor. The bottom of the UASB reactor has a diameter of 3 ft. So, if the center of the reactor is considered to be the origin, then the four points of influence on the bottom of the reactor in polar coordinates will be: (9”, $pi$/4 rad), (.9”, 3$pi$/4 rad), (9”, -$pi$/4 rad), (9”, -3$pi$/4 rad)
 
 Figure 4. The points of influence on the bottom of the reactor.
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/points%20of%20inflluence%20.png?raw=true">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Points%20of%20Influence.png?raw=true">
 
 After the team decided on the locations for the points of influence on the bottom of the reactor, it moved on to deciding how to connect each pipe from the flow divider to its respective point of influence. In doing so, the team took effort to reduce head loss of the pipes and make the exiting velocity at each point of influence as equal as possible.
 
@@ -110,7 +111,7 @@ Next, the team decided where the influent pipes would enter the side of the reac
 Based on the height of the flow dividing bucket and the height of the points of entry on the side of the reactor, the team determined the length of influent tube sections. Dimensions are summarized in the sketch below, which is a side view of the UASB. Supports for the flow dividing bucket are not included.
 
 Figure 6. UASB reactor dimensions
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB%20dimensions%20.png?raw=true">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Reactor%20Dimensions.png?raw=true">
 
 
 The dimensions still need to be slightly altered to account for the size of elbows.
