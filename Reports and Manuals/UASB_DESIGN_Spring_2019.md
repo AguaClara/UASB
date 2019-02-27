@@ -66,8 +66,9 @@ The parameters for the holding tank, with a 5-gallon bucket mounted inside, are 
 |Width|35 cm |30 cm for bucket diameter plus 5 cm for both pivot pieces|
 |Length|$\geq$ 60 cm|Height of bucket plus extra space to allow free rotation.|
 
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/Timmy_the_Tipping_Bucket.jpg?raw=true">
 Figure 1: A picture of the tipping bucket design fabricated by the Summer 2018 Team
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Timmy_the_Tipping_Bucket.jpg?raw=true">
+
 
 From the holding tank, wastewater will empty into a flow dividing bucket. The purpose of the flow dividing bucket is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing bucket is partitioned into four equal sections. Each of the four sections then empties out into a separate inlet pipe. It is imperative that each section in the flow dividing bucket is full of wastewater before the wastewater starts flowing into the influent pipes.
 
@@ -76,9 +77,9 @@ With that in mind, the team calculated height at which the flow dividing bucket 
 For the flow dividing tank, we chose a 6 gallon 12" by 12" by 12" polethylene tank (https://www.usplastic.com/catalog/item.aspx?itemid=124470). The bucket will be divided into four equally sized sections by walls of 1.5" thickness. We chose this tank so that four 3.5” diameter holes (to house influent pipes) and two 1.5” wide dividing walls could fit on the bottom area of the tank while also minimizing the horizontal space around holes because settling could occur there.
 
 
-Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
+Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown below
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20Divide.png?raw=true">
-Figure 2. A view from above of the holding tank, which leads into the flow dividing tank is shown above
+
 
 
 
