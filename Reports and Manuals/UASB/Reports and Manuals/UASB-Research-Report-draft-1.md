@@ -1,7 +1,7 @@
 # UASB Research: Spring 2019 Research Report
 
 ###  Cara Smith, Rafael Heryapriadi, and Jahin Aishee
-#### February 21, 2019
+#### March 14th, 2019
 
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -19,8 +19,12 @@
       - [Fall 2017](#fall-2017)
       - [Spring 2018](#spring-2018)
       - [Summer 2018](#summer-2018)
-      - [Fall 2018](#fall-2018) 
+      - [Fall 2018](#fall-2018)
   - [Spring 2019 Goals](#spring-2019-goals)
+  - [Lab Experiments](#lab-experiments)
+    - [Results](#results)
+    - [Analysis](#analysis)
+  - [Conclusion](#conclusion)
 - [EPA Funding Assurance](#epa-funding-assurance)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -33,18 +37,20 @@
   This semester, the UASB Team divided into the two sister teams of UASB Research (UASB-R) and UASB Design (UASB-D). UASB Research is focused on benchtop testing of a model UASB, researching ways to increase the reactor's efficiency, and test out designs in lab before being implemented by UASB Design.
 
 ## Introduction
-  
-   When communities do not have access to wastewater treatment, they are forced to dump untreated wastewater directly to the environment. It ends up in our rivers, streams, lakes, and oceans, and underground water sources tapped for well water (Yahner and Taylor, 2018). Wastewater contains organic and fecal matter can lead to harmful effects on the environment: nutrients, such as nitrogen and phosphorus, can invade water sources causing algae blooms, and heavy metals and other inorganic material can pollute bodies of water (Gao, 2017). 
-   
-  Untreated wastewater also is a big public health risk: wastewater can carry hundreds of different pathogens that can make a human very ill. Pathogens may be transmitted by direct contact with sewage, by eating food or drinking water contaminated with sewage, or through contact with human, animal, or insect carriers. Typhoid fever, cholera and especially diarrhea are common, waterborne diseases that often pop up in areas with improper wastewater treatment.
-  
-  It is difficult for many communities to find technology that can offer a reasonable, inexpensive way of treating wastewater. The United States treats its wastewater with technology that involves large retention times and huge wastewater treatment plants that take up significant amounts of land. American wastewater treatment plants also require a large energy input and are expensive to set up and run.
-  
-  UASB’s reactor seeks to reduce the challenges of setting up wastewater treatment systems in developing countries. An UASB reactor working by pumping wastewater into the bottom of a large tank filled with colonies of methane-producing, anerobic bacteria, that form a structure called a sludge blanket. As the wastewater works its way up through the sludge blanket, the bacteria break down the organic and fecal matter and produce methane as a by-product. This has two benefits: one, this removes harmful particles in wastewater, and two, the methane automatically bubbles up to the top of the tank, where it can be collected and be burned as an energy source or heating. The water will then exit out the effluent pipe, where it can then go through a secondary treatment such as chlorination. UASB’s design, unlike other UASB reactors, is also completely gravity-powered and therefore requires zero electrical energy input.
+
+   When communities do not have access to wastewater treatment, they are forced to dump untreated wastewater directly to the environment. It eventually ends up in our rivers, streams, lakes, and oceans, and underground water sources tapped for well water (Yahner and Taylor, 2018). Wastewater contains organic and fecal matter, which can have harmful effects on the environment. Nutrients, such as nitrogen and phosphorus, can invade water sources causing algae blooms, and heavy metals and other inorganic material can pollute bodies of water (Gao, 2017).
+
+  Untreated wastewater also is a big public health risk, since wastewater can carry hundreds of different pathogens that can make a human very ill. Pathogens may be transmitted by direct contact with sewage, by eating food or drinking water contaminated with sewage, or through contact with human, animal, or insect carriers. Typhoid fever, cholera and especially diarrhea are common waterborne diseases that are often found in areas with improper wastewater treatment.
+
+  It is difficult for many communities to find technology that can offer a reasonable, inexpensive way of treating wastewater. The United States treats its wastewater with technology that involves large retention times and take up significant amounts of land. American wastewater treatment plants also require a large energy input, because they are usually designed for densely populated urban areas, and are therefore expensive to set up and run.
+
+  UASB’s reactor seeks to reduce the challenges of setting up wastewater treatment systems in developing countries. An UASB reactor works by pumping wastewater into the bottom of a large tank filled with colonies of methane-producing, anerobic bacteria, that form a structure called a sludge blanket. As the wastewater works its way up through the sludge blanket, the bacteria break down the organic and fecal matter and produce methane as a by-product. This has two benefits: one, this removes harmful particles in wastewater, and two, the methane automatically bubbles up to the top of the tank, where it can be collected and be burned as an energy source or heating. The water will then exit out the effluent pipe, where it can then go through a secondary treatment such as chlorination. UASB’s design, unlike other UASB reactors, is also completely gravity-powered and therefore requires zero electrical energy input. However, similar to an AguaClara plant, it requires an elevation difference to flow the wastewater through the UASB tank. This will be taken care of as long as the reactor is placed downhill from the wastewater source (e.g. a village).
+
+  [INSERT DIAGRAM]
 
 ## Literature Review and Previous Work
 
-  Tamil Nadu Agricultural University did a study in 2013 on a Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 m^3 and that the optimum organic loading rate or the amount of water per unit of water was observed to be 2.67 chemical oxygen demand m^-3 per day. When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000, showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems. (Jeyapandiyan, 2014)
+  Tamil Nadu Agricultural University did a study in 2013 on a Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 $m^3$ and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67$m^-3$ per day This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000, showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems. (Jeyapandiyan, 2014)
 
   From the writing “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) shows that UASD reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove biodegradable organic compound, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The writing also mentioned the importance of  a pre-treatment and post treatment units, and gave examples of how undeveloped countries like India does not have a back up by academic institution for this process when they compared it to Brazil where the country have invested in fundamental and applied research to bridge the academic and consultant. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore to point out the importance of the pre-treatment process, Jules B. Van Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: the operation and maintenance of the treatment plants.(Lier, 2010)
 
@@ -86,10 +92,10 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
   During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules for not readily available, and the team considered it to be wasteful for early testing stages, the team decided to use tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. They used the tapioca to identify preferential paths in the reactor.
 
   The benchtop model was a scaled down version of a real UASB reactor, made using pvc. The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
-  
+
   The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” travelled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer, which lif it happened in a real UASB reactor, would lead to inefficient treatment. The team then came out idea of spreading the inlet flow by drilling four holes near the bottom to decrease the preferential paths, but it was not completed by the end of 2018.
 
-  So then a photometer was used to more accurately depict how the water is flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube is changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration. 
+  So then a photometer was used to more accurately depict how the water is flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube is changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration.
 The team then tried to used chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
 
 
@@ -97,32 +103,53 @@ The team then tried to used chia seeds instead of tapioca, which resulted in a w
 ## Spring 2019 Goals
 
   There are a few goals UASB Research wants to accomplish this semester. The first is the inlet system of the UASB. The UASB team was dissatisfied with the model inlet design used during the fall; the single inlet tube, whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket. When the water is not evenly distributed, the reactor is less efficient; some sludge granules are not getting into contact with the wastewater, and therefore they cannot degrade the organic material in the wastewater. There was also a significant problem: the inlet tube was inserted directly above the UASB reactor, but this is where the biogas capturing system needs to be on the UASB reactor. The old design is shown below:
-  
+
   <p align="center">
   <img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true" width="400px" /></p>
 <p align="center">Fig. 1: Old lab scale model of UASB reactor<p>
-  
-  Between these two problems, and the fact UASB's old inlet system vanished in early February, a new model-scale inlet system desperately needs to be created. The team has sketched out a few designs - all with four openings in the inlet, in order to better distribute flow. An idea to put in a manifold was shut down over concerns of clogging. UASB-R has already got the parts in order to create one of the designs, and the contruction of that design has started. This is Design #1, without the attachment with the four openings. 
-  
+
+  Between these two problems, and the fact UASB's old inlet system vanished in early February, a new model-scale inlet system desperately needs to be created. The team has sketched out a few designs - all with four openings in the inlet, in order to better distribute flow. An idea to put in a manifold was shut down over concerns of clogging. UASB-R has already got the parts in order to create one of the designs, and the contruction of that design has started. This is Design #1, without the attachment with the four openings.
+
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/R%20Prototype.jpeg?raw=true" width="250px" /></p>
 <p align="center">Fig. 2: Beginnings of the first inlet design of 2019
-  
+
  As one can see, the inlet tube enters on the right side of the tank with a horizontal component. UASB is also interested what would happen if the inlet tube was inserted lower down. Would the water velocity be the same? Does one design have more head loss than the other? The two competing designs, as shown below, will be what UASB will be testing out.
- 
+
  <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Sketch%20UASB-R.jpeg?raw=true" width="250px" /></p>
 <p align="center">Fig. 3: Two competing designs; sketch does not include effluent design or biogas capture system.
 
 After UASB-R settles on one design, the rest of the semester will be devoted to:
 
-- Constructing and testing the four-opening attachment for the lab bench model 
+- Constructing and testing the four-opening attachment for the lab bench model
 
 - Run tests to determine pulse flow vs continuous flow. Orginally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity, but new research has been pointing toward continuous flow.
 
 Both these tests will be run using actual sludge granules from the Aanheuser-Busch Plant in Syracuse, NY. One of our members will be going there to pick up the sludge on March 9th.
 
 - Lastly, keep in close contact with UASB Design and see if there are any features they would like UASB Research to test in the lab.
+
+## Lab Experiments
+### Current Testing:
+In order to test for fastest velocity of water of water we created the Exit Velocity Experiment, in which we designed inlet systems in different heights of a benchtop model of the water tank shown in Figure 4. After the reactor was built, the team tested it on Tuesday the 12th of March, 2019 with only water to check for reactor performance. However, realizing there were leaks between the drilled hole and the 0.5 inches inlet pipe, the team made fixed it by drilling a larger hole and attaching a *certain* <!-- change name--> connection with a seal tape to prevent the leak.
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/0625E55A-A03A-4D96-8646-0B8E1F3820A9.jpeg?raw=true" width="400px" /></p>
+<p align="center">Fig. 4: The leak from the old reactor (circled red)<p>
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/New%20UASB.jpeg?raw=true" width="400px" /></p>
+<p align="center">Fig. 5: the fixed connection <p>
+The team was now able to perform a test experiment with old sludge that was refrigerated to keep the bacteria alive. This experiment was only the primitive stages towards the Exit Velocity Experiment once the new sludge arrives.
+
+### Future Testing:
+After the initialization of the tank for the Exit Velocity Experiment, the next step is to gather Volume Data with and without sludge to check whether a higher versus a lower inlet allows for a greater output of water thus lower headloss using ProCoDa data. The team will monitor differing input water velocity, time, and output volume of water and analyze thier relationships to justify which inlet height has the least headloss. Once a proper height is fixed, the team will move onto testing the Water Distribution Inlet with the sludge to check for preferential paths.
+
+The Water Distribution Inlet consists of four different pipes that will be represented using *certain* <!-- change name--> connections within a benchtop model of the tank to allow for more water to come into contact with the sludge thus acquire a higher efficiency towards cleaning the water. preferential Paths are This test will be more research based with focus on gathering data on preferential paths to inform UASB-Design team how the water will flow and interact with the sludge in the real reactor. Further specifications of this test will be defined and noted.
+
+
+
+### Results
+### Analysis
 
 ### Key Contacts
 
@@ -132,7 +159,7 @@ The team has listed some key contacts for the UASB project so all members will k
 | ------------------- | ----------------------------------------------------------------- | --------------------------------- |
 | Dr. Ruth Richardson | Faculty Advisor                                                   | water.ruth@gmail.com              |
 | Ed Gottlieb         | Wastewater plant operator, primary contact at Wastewater facility | EGottlieb@cityofithaca.org        |
-| Robert Cleeton      | Contact at Anheuser-Bush, source for anaerobic granules           | robert.cleeton@anheuser-busch.com |
+| N/A      | Contact at Anheuser-Bush, source for anaerobic granules           | N/A|
 
 
 
