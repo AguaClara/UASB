@@ -211,7 +211,7 @@ t_drain #is our major constraint. we want time to be slow enough so that
 def t_drain():
   ##time for the flow dividing tank to drain. This time should be slow enough so that in case the bucket initially fills up just one division of flow dividing tank, it will not begin emptying out until overflow reaches other sections BUT fast enough so that the tank completely drains out between successive dumps of the tipping bucket for self cleaning purposes.  
 
-
-
+def D_pipes():
+  ##diameter of influent pipes based on the desired time for the flow dividing tank to drain and geometry of the flow dividing tank. 
 
 ```
