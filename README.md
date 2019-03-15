@@ -7,19 +7,31 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q).
 
 ## Research Advisor:
-Zac Chen (zc76)
+Ananya Gangadhar (ag757)
 
 ## Team Members:
-Ian Cullings (idc25)
 
-Ananya Gangadhar (ag757)
+### UASB Design:
 
 Nina Blahut (nab238)
 
+Kanha Matai (km694)
+
+Shania Fang (sf449)
+
+Emily Liu (ezl5)
+
+### UASB Research: 
+
 Cara Smith (cjs354)
 
+Jahin Aishee (sta48)
+
+Rafael Heryapriadi (rh563)
+
+
 ## Semester Goals:
-In Fall 2018, the team will be finalizing design of the UASB system and beginning fabrication of our first model.  Additionally, the team will be conducting flow control tests using a model sludge blanket system to determine optimal flow patterns and test for critical failure modes within the UASB.  Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
+In Spring 2019, UASB will be finalizing design of the UASB system and beginning fabrication of our first model. UASB Research will be doing benchtop tests to reduce preferential pathways, working on the influent design, and integrating the tipping bucket system worked on during Summer 2018 into the design. UASB Design will finish design of the UASB reactor, create a CAD model in OnShape, and begin fabrication Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
 
 
 ## Links to Reports and Presentations
