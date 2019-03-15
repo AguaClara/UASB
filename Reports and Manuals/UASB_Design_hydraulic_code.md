@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 vol_d=16.26 * u.L #volume from one dump of the tipping bucket. This will need to be confirmed with testing once we have fabricated altered design for tipping bucket
 
 def max_t_drain(vol_dump, Q):
-  """time between dumps of tipping bucket, this should be maximum drain time so that the bucket will empty out between each dump, for cleaning and clog identification.
-  t=vol_dump/Q"""
+  """time between dumps of tipping bucket, this should be maximum drain time so that the bucket will empty out between each dump, for cleaning and clog identification."""
+  t=vol_dump/Q
   return t.to(u.s)
 
 def H_walls(vol_dump, W_FDT, t_walls,overflow_H):
@@ -90,6 +90,7 @@ def D_pipe(W_FDT, t_drain, n_90el, H_walls, overflow_H):
 Q_test= .08 * (u.L/u.s)#flow rate entering the UASB from Summer 2018 report
 t_drain_test=max_t_drain(vol_d, Q_test)
 print(t_drain_test)
+print(overflow_test)
 D=D_pipe(W_FDT_test, t_drain_test, n_90el_test, H_walls_test, overflow_test)
 
 def upflow_vel(t_drain_even, UASB_diameter, vol_dump):

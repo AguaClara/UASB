@@ -236,10 +236,6 @@ def influent_K(n_90el):
   return influent_K
 
 
-<<<<<<< HEAD
-def D_pipes():
-  ##diameter of influent pipes based on the desired time for the flow dividing tank to drain and geometry of the flow dividing tank. 
-=======
 def D_pipe(W_FDT, t_drain, n_90el, H_walls, overflow_H):
   """This function returns the best diameter pipe to get the desired t_drain, given a flow dividing tank and goal drain time for the flow dividing tank. This is calculated based on case where flow divides evenly between sections and does not start draining until dump is complete."""
   A_FDT=W_FDT**2
@@ -255,7 +251,6 @@ t_drain_test=max_t_drain(vol_d, Q_test)
 print(t_drain_test)
 D=D_pipe(W_FDT_test, t_drain_test, n_90el_test, H_walls_test, overflow_test)
 
->>>>>>> a5294a5390921dc26a109aa0af41275f7b5a5b61
 
 def upflow_velocity(W_FDT, t_drain, vol_dump, UASB_radius):
   """this function will estimate the upflow velocity of the influent water in the UASB under conditions which flow is dividing evenly, and draining completely bewteen dumps."""
