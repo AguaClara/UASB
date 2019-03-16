@@ -7,7 +7,7 @@ Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has
 
 During [Perhaps during instead of over. This is just a stylistic preference] Spring 2019, the UASB-Design team's main goal will be [want to use future tense] to  finalize the design for the UASB and support the design with substantial Python code and CAD designs. So far, the team has completed a general CAD design on Onshape for the entire UASB reactor.
 
-##Introduction
+## Introduction
 In the past, AguaClara has focused on creating sustainable and inexpensive drinking water treatment; however, it is currently expanding to wastewater treatment. Previously, AguaClara has struggled in finding the demand for wastewater treatment plants in Nicaragua or Honduras. This was due to the difficulty in explaining the importance of investing a substantial amount into a system that would not directly affect the health of the people in the community. Now that it has become more apparent of the important, and receiving funding from EPA, AguaClara can now develop their wastewater systems, including the completion of a pilot UASB reactor. The pilot UASB reactor will be tested with influent wastewater entering Ithaca Area Wastewater Treatment Facility (IAWWTF), which  will be a big step for AguaClara’s venture into sustainable wastewater treatment. [I suggest that you briefly explain that AguaClara only has experience in drinking water treatment since this intro is BEFORE literature review where that is explained. The assumed audience is not me, but someone who is unfamiliar with AguaClara]
 
  In an UASB reactor, wastewater will flow through a sludge blanket, composed of millions of methane-producing bacteria which will consume many of the organic pollutants in the water. As a result, wastewater can now be recycled for recreational activities and put back into the environment safely. There is still much that needs to be further discovered and refined, such as whether or not the tipping bucket system will be useful in eliminating preferential pathways, the effluent system design, and the methane gas capture system.
@@ -296,7 +296,7 @@ plt.title('Estimated Flow Dividing Tank versus Pipe Diameter for Even Flow Divis
 upflow_vels=(np.zeros(len(D_avail)))*(u.m/u.s) #this array will store the upflow velocities for input UASB design with severable possible diameters
 #The plot shows that as influent pipe diameter increases, the flow dividing tank decreases. This figure will be used to select a diameter for the final design, once the team has decided on the optimal drain time.
 
- for i in range(0,len(D_avail)):
+for i in range(0,len(D_avail)):
   t_even_drains[i]= t_drain_even(D_avail[i], W_FDT, H_walls_test,overflow_test, n_90el_test)
   upflow_vels[i]=upflow_vel(t_even_drains[i], UASB_diameter,vol_dump)
 
@@ -308,13 +308,13 @@ plt.ylim((0, .001))   # set the ylim to bottom, top
 #The plot shows that estimated up flow velocity increases as pipe diameter increases. Again, the team will use this information later on in choosing influent pipe diameter size.
 
 
+# The following plot shows the time it takes for the flow dividing tank or a section of the flow dividing tank to drain vs the width of the flow dividing tank
 xArray = u.Quantity(np.arange(5,21), u.inch) #width of tank
 section_FDT = plt.plot(xArray, t_drain_fail_case(1*u.inch, xArray, H_walls(vol_d, xArray, t_walls_test, overflow_test), n_90el_test), label='One Section of FDT')
 entire_FDT = plt.plot(xArray, t_drain_even(1*u.inch, xArray, H_walls(vol_d, xArray, t_walls_test, overflow_test), overflow_test, n_90el_test), label='Entire FDT')
-
 plt.xlabel('Width of FDT (in.)')
 plt.ylabel('Time taken to Drain (sec.)')
-plt.title('Time Taken for One Section of the Flow Dividing to Drain vs. Width of Flow Dividing Tank')
+plt.title('Time Taken to Drain vs. Width of Flow Dividing Tank')
 plt.minorticks_on()
 plt.grid(which = 'major')
 plt.grid(which = 'minor')
@@ -324,7 +324,7 @@ plt.show()
 
 ```
 
-##Future Work for Python Documentation
+## Future Work for Python Documentation
 In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test more possible combinations with ease. Finally, the team must analyze the resulting drain times and up flow velocities from several designs to determine the optimal design for the UASB influent system, and then use that to update the onShape model. The team will need to do testing with the tipping bucket to make a more informed decision about optimal drain time.
 
 
