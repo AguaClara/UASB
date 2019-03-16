@@ -124,7 +124,7 @@ The team then tried to used chia seeds instead of tapioca, which resulted in a w
 
  <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Sketch%20UASB-R.jpeg?raw=true" width="250px" /></p>
-<p align="center">Fig. 4: Two competing designs; sketch does not include effluent design or biogas capture system.
+<p align="center">Fig. 4: Two competing designs; sketch does not include effluent design or the biogas capture system.
 
 After UASB-R settles on one design, the rest of the semester will be devoted to:
 
