@@ -1,6 +1,6 @@
 ## UASB Design, Spring 2019
 By Nina Blahut, Shania Fang,  Emily Liu, Kanha Matai
-February 22, 2019
+March 15, 2019
 
 ## Abstract
 Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has been working on a detailed design for a pilot-scale, gravity-powered UASB reactor. A UASB reactor treats wastewater anaerobically and produces biogas as a by-product.
@@ -313,10 +313,10 @@ plt.show()
 
 ```
 
-##Future Work for Python Documentation
+### Future Work for Python Documentation
 In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test the available combinations with ease to determine the optimal design for the UASB influent system, and then use that to update the onShape model. The team also needs to do testing with the tipping bucket to make a more informed decision about optimal drain time.
 
-##Bibliography
+## Bibliography
 
 
 - AOS Treatment Solutions. “How Much Energy Does a Wastewater Treatment Plant Use?” AOS Treatment Solutions, AOS Treatment Solutions, LLC, March 1 2018, https://aosts.com/how-much-energy-does-wastewater-treatment-plant-use/
