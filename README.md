@@ -32,6 +32,7 @@ In Spring 2019, UASB will be finalizing design of the UASB system and beginning 
 
 ### Spring 2019 
 [UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
+
 [UASB Research Midway Sympsium Presentation](https://docs.google.com/presentation/d/16dHgmKHNWGlfNtnFJCDmcLqVt-cf6zIizj0rtyb3dFw/edit#slide=id.g543cdd4dd4_5_142)
 
 ## Links to Reports and Presentations
