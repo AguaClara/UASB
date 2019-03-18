@@ -1,7 +1,5 @@
 # UASB
 
-test
-
 Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wastewater treatment systems to be cheaper, simpler to fabricate, and easy to implement to provide affordable wastewater treatment across the world.  For more information, read our [research reports](https://github.com/AguaClara/UASB/tree/master/Reports%20and%20Manuals) or see our latest [poster presentation](https://github.com/AguaClara/UASB/blob/master/Posters%20and%20Presentations/UASB_NEGSWS_2018_Poster.ppt) from the 2018 NEGSWS conference.
 
 Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=https://a360.co/2LMNbKj&source=gmail&ust=1535475294039000&usg=AFQjCNG3p9fQK7KLNr6EPFl1qCGYQ2mL7Q).
@@ -29,12 +27,11 @@ Jahin Aishee (sta48)
 
 Rafael Heryapriadi (rh563)
 
-### Spring 2019 
-[UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
-
 ## Semester Goals:
 In Spring 2019, UASB will be finalizing design of the UASB system and beginning fabrication of our first model. UASB Research will be doing benchtop tests to reduce preferential pathways, working on the influent design, and integrating the tipping bucket system worked on during Summer 2018 into the design. UASB Design will finish design of the UASB reactor, create a CAD model in OnShape, and begin fabrication Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
 
+### Spring 2019 
+[UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
