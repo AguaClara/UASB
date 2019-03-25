@@ -364,8 +364,6 @@ plt.title('Estimated Upflow Velocity if UASB Operates Properly')
 plt.ylim((0, .001))   # set the ylim to bottom, top
 #The plot shows that estimated up flow velocity increases as pipe diameter increases. Again, the team will use this information later on in choosing influent pipe diameter size.
 
-=======
->>>>>>> 120da37df68a4be7a2828020aac2cc0d239fd293
 
 xArray = u.Quantity(np.arange(5,21), u.inch) #width of tank
 section_FDT = plt.plot(xArray, t_drain_fail_case(1*u.inch, xArray, H_walls(vol_d, xArray, t_walls_test, overflow_test), n_90el_test), label='One Section of FDT')
