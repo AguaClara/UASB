@@ -279,7 +279,7 @@ print(upflow_vel_test)
 ##NOW USING HYDRAULIC CODE TO TEST DIFFERENT DESIGN OPTIONS
 
 ##will graph drain times versus different pipe sizes with other parameters preset for reasons which are explained in the comment next to each variable assignment.
-D_avail= ([.75, 1.0, 1.25, 1.5])*u.inch#array of available HPDE pipes ranging in size from
+D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch#array of available HPDE pipes ranging in size from
 n_90el= 3 #set n_90el to 3 because there are 3 elbows in each influent pipe in the current design
 W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump,with a square bottom and made of HDPE is readily available online
 overflow= 1 *u.inch #set overflow as 1 inch--this could be modified to increase driving head if necessary
@@ -300,7 +300,7 @@ plt.title('Estimated Flow Dividing Tank versus Pipe Diameter for Even Flow Divis
 #now, graphing upflow velocity vs pipe diameter
 upflow_vels=(np.zeros(len(D_avail)))*(u.m/u.s) #this array will store the upflow velocities for input UASB design with severable possible diameters
 
- for i in range(0,len(D_avail)):
+for i in range(0,len(D_avail)):
   t_even_drains[i]= t_drain_even(D_avail[i], W_FDT, H_walls_test,overflow_test, n_90el_test)
   upflow_vels[i]=upflow_vel(t_even_drains[i], UASB_diameter,vol_dump)
 
@@ -308,7 +308,7 @@ plt.scatter(D_avail,upflow_vels)
 plt.xlabel('Influent Pipe Diameter (inch)')
 plt.ylabel('Estimated Upflow Velocity (m/s)')
 plt.title('Estimated Upflow Velocity if UASB Operates Properly')
-plt.ylim((0, .001))   # set the ylim to bottom, top
+plt.ylim((0, .01))   # set the ylim to bottom, top
 
 
 def upflow_vel(t_drain_even, UASB_diameter, vol_dump):
