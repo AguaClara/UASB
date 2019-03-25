@@ -193,9 +193,9 @@ def H_walls(vol_dump, W_FDT, t_walls,overflow_H):
   H_walls=H_walls.to(u.inch)
   return H_walls
 
-
+W_FDT= (9+15/16)*u.inch
 W_FDT_test= 12*u.inch #width of flow dividing walls
-t_walls_test=1.5*u.inch
+t_walls_test=.25*u.inch
 vol_dump_test=17 *u.L
 overflow_test=1*u.inch  
 
@@ -230,7 +230,7 @@ def t_drain_fail_case(D_pipe, W_FDT, H_walls, n_90el):
 ##Testing the function  t_fail_case
 D_pipe_test=1*u.inch
 n_90el_test=3
-t_drain_fail_case_test=t_drain_fail_case(D_pipe_test, W_FDT_test, H_walls_test, n_90el_test)
+t_drain_fail_case_test=t_drain_fail_case(D_pipe_test, W_FDT, H_walls_test, n_90el_test)
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_fail_case_test, ' to drain.')
 
 def t_drain_even(D_pipe, W_FDT, H_walls, overflow_H, n_90el):
@@ -242,11 +242,11 @@ def t_drain_even(D_pipe, W_FDT, H_walls, overflow_H, n_90el):
   return t_drain.to(u.s)
 
 
-t_drain_even_test=t_drain_even(D_pipe_test, W_FDT_test, H_walls_test,overflow_test, n_90el_test)  
+t_drain_even_test=t_drain_even(D_pipe_test, W_FDT, H_walls_test,overflow_test, n_90el_test)  
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_even_test, ' to drain.')
 
 
-t_drain_even_test=t_drain_even(D_pipe_test, W_FDT_test, H_walls_test,overflow_test, n_90el_test)  
+t_drain_even_test=t_drain_even(D_pipe_test, W_FDT, H_walls_test,overflow_test, n_90el_test)  
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_even_test, ' to drain.')
 
 def D_pipe(W_FDT, t_drain, n_90el, H_walls, overflow_H):
@@ -349,7 +349,7 @@ plt.title('Estimated Flow Dividing Tank versus Pipe Diameter for Even Flow Divis
 upflow_vels=(np.zeros(len(D_avail)))*(u.m/u.s) #this array will store the upflow velocities for input UASB design with severable possible diameters
 #The plot shows that as influent pipe diameter increases, the flow dividing tank decreases. This figure will be used to select a diameter for the final design, once the team has decided on the optimal drain time.
 
- for i in range(0,len(D_avail)):
+for i in range(0,len(D_avail)):
   t_even_drains[i]= t_drain_even(D_avail[i], W_FDT, H_walls_test,overflow_test, n_90el_test)
   upflow_vels[i]=upflow_vel(t_even_drains[i], UASB_diameter,vol_dump)
 
