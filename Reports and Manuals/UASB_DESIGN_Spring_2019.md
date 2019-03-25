@@ -241,13 +241,10 @@ def t_drain_even(D_pipe, W_FDT, H_walls, overflow_H, n_90el):
   t_drain=8*A_FDT/(np.pi*D_pipe**2)*(HG*K_tot/(2*pc.gravity))**.5 #from equation (97) in FCM_derivations section in AguaClara textbook
   return t_drain.to(u.s)
 
-<<<<<<< HEAD
-=======
 
 t_drain_even_test=t_drain_even(D_pipe_test, W_FDT_test, H_walls_test,overflow_test, n_90el_test)  
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_even_test, ' to drain.')
 
->>>>>>> 120da37df68a4be7a2828020aac2cc0d239fd293
 
 t_drain_even_test=t_drain_even(D_pipe_test, W_FDT_test, H_walls_test,overflow_test, n_90el_test)  
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_even_test, ' to drain.')
@@ -263,12 +260,12 @@ def D_pipe(W_FDT, t_drain, n_90el, H_walls, overflow_H):
 ##Testing D_pipe function
 Q_test= .08 * (u.L/u.s)#flow rate entering the UASB from Summer 2018 report
 t_drain_test=max_t_drain(vol_d, Q_test)
-<<<<<<< HEAD
+
 =======
 print(t_drain_test)
 print(overflow_test)
 D=D_pipe(W_FDT_test, t_drain_test, n_90el_test, H_walls_test, overflow_test)
->>>>>>> 120da37df68a4be7a2828020aac2cc0d239fd293
+
 
 def upflow_vel(t_drain_even, UASB_diameter, vol_dump):
   """this function calculates an estimate for upflow velocity in the UASB reactor assuming that water from the dump is divided evenly into sections and does not start draining until dump is complete. Ideally, this velocity will be as fast settling velocity of sludge particles, which is approximately .007 m/s, to make a fluidized sludge blanket. """
@@ -318,9 +315,6 @@ plt.title('Estimated Upflow Velocity if UASB Operates Properly')
 plt.ylim((0, .001))   # set the ylim to bottom, top
 
 
-
-
-<<<<<<< HEAD
 def upflow_vel(t_drain_even, UASB_diameter, vol_dump):
   """this function calculates an estimate for upflow velocity in the UASB reactor assuming that water from the dump is divided evenly into sections and does not start draining until dump is complete. Ideally, this velocity will be as fast settling velocity of sludge particles, which is approximately .007 m/s, to make a fluidized sludge blanket. """
   UASB_Q_dump=vol_dump/t_drain_even ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
@@ -390,7 +384,6 @@ plt.show()
 ```
 
 ##Future Work for Python Documentation
-<<<<<<< HEAD
 In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test more possible combinations with ease. Finally, the team must analyze the resulting drain times and up flow velocities from several designs to determine the optimal design for the UASB influent system, and then use that to update the onShape model. The team will need to do testing with the tipping bucket to make a more informed decision about optimal drain time.
 
 In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test the available combinations with ease to determine the optimal design for the UASB influent system, and then use that to update the OnShape model. The team also needs to do testing with the tipping bucket to make a more informed decision about optimal drain time.
