@@ -261,10 +261,6 @@ def D_pipe(W_FDT, t_drain, n_90el, H_walls, overflow_H):
 Q_test= .08 * (u.L/u.s)#flow rate entering the UASB from Summer 2018 report
 t_drain_test=max_t_drain(vol_d, Q_test)
 
-=======
-print(t_drain_test)
-print(overflow_test)
-D=D_pipe(W_FDT_test, t_drain_test, n_90el_test, H_walls_test, overflow_test)
 
 
 def upflow_vel(t_drain_even, UASB_diameter, vol_dump):
