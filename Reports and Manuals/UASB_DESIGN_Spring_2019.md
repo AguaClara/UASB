@@ -222,7 +222,7 @@ def influent_K(n_90el):
 
 def t_drain_fail_case(D_pipe, W_FDT, H_walls, n_90el):
   """ this function is meant to test fail case, to see how long it will take a section to drain in the case that all of the water from a tipping bucket dump goes into only one section of the flow dividing tank """
-  A_FDT=W_FDT**2 #calculate the area of the flow dividing tank
+  A_FDT=W_FDT**2/4 #calculate the area of one section of the flow dividing tank
   K_tot=influent_K(n_90el)
   t_drain=8*A_FDT/(np.pi*D_pipe**2)*(H_walls*K_tot/(2*pc.gravity))**.5 #from equation (97) in FCM_derivations section in AguaClara textbook
   return t_drain.to(u.s)
@@ -235,7 +235,7 @@ print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of
 
 def t_drain_even(D_pipe, W_FDT, H_walls, overflow_H, n_90el):
   """This function returns the estimated drain time from the FDT in the case that water from the tipping bucket fills up the sections evenly and quickly, so that water doesn't start draining until each section is full of water/there is water overflowing the dividing walls. headgain=headgain per dump """
-  A_FDT=W_FDT**2 #calculate the area of the flow dividing tank
+  A_FDT=W_FDT**2/4 #calculate the area of the flow dividing tank (assuming the thickness of the walls)
   K_tot=influent_K(n_90el)
   HG= head_gain_per_dump(H_walls, overflow_H)
   t_drain=8*A_FDT/(np.pi*D_pipe**2)*(HG*K_tot/(2*pc.gravity))**.5 #from equation (97) in FCM_derivations section in AguaClara textbook
