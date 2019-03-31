@@ -86,6 +86,10 @@ print(vol.to(u.L))
 
 Based on the Summer 2018 team's results, the pivots will be positioned 5 cm horizontal from the center of the tipping bucket and 15.5 cm above the base of the bucket (both measurements are made from the center of the pivot). The volume of one tip from the tipping bucket is expected to be 16.26 liters.
 
+## Redesigning the Tipping Bucket
+The 2019 spring team has decided to remake the original metal frame from an HDPE sheet. The team ordered HDPE sheet and cut it into rods to replicate the geometry of the original frame that was constructed from 80/20 extrusions. The team determined that a 1 inch 48" by 24" sheet.
+
+## Flow Dividing Tank
 
 From the holding tank, wastewater will empty into a flow dividing tank. The purpose of the flow dividing tank is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing tank is partitioned into four equal sections. Each of the four sections then empties out into a separate inlet pipe. It is imperative that each section in the flow dividing tank is full of wastewater before the wastewater starts flowing into the influent pipes so that each pipe will distribute the same amount of water inside the reactor. It is also desirable for the flow dividing tank to empty out completely between each dump of the tipping bucket as a de-clogging mechanism. These constraints mean that the flow dividing tank should be similar in volume to the tipping bucket, the bottom of the flow dividing tank should be in line with the water line in the reactor, and the diameter of influent pipes should be small enough so that the pipes only start emptying into the larger tank once the flow dividing tank is full. All of these constrains are further described and investigated in the section: Python Documentation.
 
@@ -159,12 +163,14 @@ The team will also rely on hydraulic code from previous teams to get an estimate
 
 The optimal height and cross-sectional area for the influent pipes to be entering the tank still needs to be determined so that the flow of wastewater passing through the sludge will be around .0069 m/s - .02778 m/s . It is desirable for the upflow velocity to be faster than the velocity of the sludge granules settling to keep the bed fluidized but not too fast where the granules will washout because of inadequate residence time. The research team is currently testing whether the entry of influent pipes above the sludge or the entry of influent pipes close to the bottom will result in less preferential pathways. Once UASB design receive this information, the team can finalize on the sections of the length of the pipes that will be vertical and horizontal.
 
+## Redesigning the Tipping Bucket
+In order to
 
 
 ## Python Documentation
 This python documentation is used to determine the relationship between drain time from the flow tank, diameter of the influent pipes, geometry of the flow dividing tank, and resulting up flow velocity, so that the team can make better informed design decisions. The code is below, and comments have been added for clarity.
 
-From the holding tank, wastewater will empty into a flow dividing bucket. The purpose of the flow dividing bucket is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing bucket is partitioned into four equal sections. Each of the four sections drains into a separate inlet pipe. It is desired that each section in the flow dividing bucket is full of wastewater before the wastewater starts flowing into the influent pipes, to ensure even flow. It is also desirable for the flow dividing tank to empty out completely between each dump of the tipping bucket as a de-clogging mechanism. These constraints mean that the flow dividing tank should be similar in volume to the tipping bucket and the bottom of the flow dividing tank should be in line with the water line in the reactor. Lastly, the time it takes for the flow dividing tank to drain should be slow enough so that in case the bucket initially fills up just one division of flow dividing tank, it will not begin emptying out until overflow reaches other sections, but fast enough so that the tank completely drains out between successive dumps of the tipping bucket for self cleaning purposes and so that up flow velocity of influent water is fast enough to lift settling sludge particles. This drain time is determined by the diameter of the influent pipes and the head gain per dump of the tipping bucket, and the ensuing code will be used to determine the optimal combination of influent pipe diameter and flow dividing tank geometry to achieve said drain time.
+The time it takes for the flow dividing tank to drain should be slow enough so that in case the bucket initially fills up just one division of flow dividing tank, it will not begin emptying out until overflow reaches other sections, but fast enough so that the tank completely drains out between successive dumps of the tipping bucket for self cleaning purposes and so that up flow velocity of influent water is fast enough to lift settling sludge particles. This drain time is determined by the diameter of the influent pipes and the head gain per dump of the tipping bucket, and the ensuing code will be used to determine the optimal combination of influent pipe diameter and flow dividing tank geometry to achieve said drain time.
 
 
 Important note is that the water level of the reactor is set at the same height as the bottom of the flow dividing tank.
@@ -193,9 +199,9 @@ def H_walls(vol_dump, W_FDT, t_walls,overflow_H):
   H_walls=H_walls.to(u.inch)
   return H_walls
 
-
+W_FDT= (9+15/16)*u.inch
 W_FDT_test= 12*u.inch #width of flow dividing walls
-t_walls_test=1.5*u.inch
+t_walls_test=.25*u.inch
 vol_dump_test=17 *u.L
 overflow_test=1*u.inch  
 
@@ -222,7 +228,7 @@ def influent_K(n_90el):
 
 def t_drain_fail_case(D_pipe, W_FDT, H_walls, n_90el):
   """ this function is meant to test fail case, to see how long it will take a section to drain in the case that all of the water from a tipping bucket dump goes into only one section of the flow dividing tank """
-  A_FDT=W_FDT**2 #calculate the area of the flow dividing tank
+  A_FDT=W_FDT**2/4 #calculate the area of one section of the flow dividing tank
   K_tot=influent_K(n_90el)
   t_drain=8*A_FDT/(np.pi*D_pipe**2)*(H_walls*K_tot/(2*pc.gravity))**.5 #from equation (97) in FCM_derivations section in AguaClara textbook
   return t_drain.to(u.s)
@@ -230,26 +236,23 @@ def t_drain_fail_case(D_pipe, W_FDT, H_walls, n_90el):
 ##Testing the function  t_fail_case
 D_pipe_test=1*u.inch
 n_90el_test=3
-t_drain_fail_case_test=t_drain_fail_case(D_pipe_test, W_FDT_test, H_walls_test, n_90el_test)
+t_drain_fail_case_test=t_drain_fail_case(D_pipe_test, W_FDT, H_walls_test, n_90el_test)
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_fail_case_test, ' to drain.')
 
 def t_drain_even(D_pipe, W_FDT, H_walls, overflow_H, n_90el):
   """This function returns the estimated drain time from the FDT in the case that water from the tipping bucket fills up the sections evenly and quickly, so that water doesn't start draining until each section is full of water/there is water overflowing the dividing walls. headgain=headgain per dump """
-  A_FDT=W_FDT**2 #calculate the area of the flow dividing tank
+  A_FDT=W_FDT**2/4 #calculate the area of the flow dividing tank (assuming the thickness of the walls)
   K_tot=influent_K(n_90el)
   HG= head_gain_per_dump(H_walls, overflow_H)
   t_drain=8*A_FDT/(np.pi*D_pipe**2)*(HG*K_tot/(2*pc.gravity))**.5 #from equation (97) in FCM_derivations section in AguaClara textbook
   return t_drain.to(u.s)
 
-<<<<<<< HEAD
-=======
 
-t_drain_even_test=t_drain_even(D_pipe_test, W_FDT_test, H_walls_test,overflow_test, n_90el_test)  
+t_drain_even_test=t_drain_even(D_pipe_test, W_FDT, H_walls_test,overflow_test, n_90el_test)  
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_even_test, ' to drain.')
 
->>>>>>> 120da37df68a4be7a2828020aac2cc0d239fd293
 
-t_drain_even_test=t_drain_even(D_pipe_test, W_FDT_test, H_walls_test,overflow_test, n_90el_test)  
+t_drain_even_test=t_drain_even(D_pipe_test, W_FDT, H_walls_test,overflow_test, n_90el_test)  
 print('If the influent pipes have a diameter of', D_pipe_test, 'and the width of the flow dividing tank is', W_FDT_test, 'then if all of the water went into only one section of of the flow dividing tank, that sections would take', t_drain_even_test, ' to drain.')
 
 def D_pipe(W_FDT, t_drain, n_90el, H_walls, overflow_H):
@@ -263,12 +266,8 @@ def D_pipe(W_FDT, t_drain, n_90el, H_walls, overflow_H):
 ##Testing D_pipe function
 Q_test= .08 * (u.L/u.s)#flow rate entering the UASB from Summer 2018 report
 t_drain_test=max_t_drain(vol_d, Q_test)
-<<<<<<< HEAD
-=======
-print(t_drain_test)
-print(overflow_test)
-D=D_pipe(W_FDT_test, t_drain_test, n_90el_test, H_walls_test, overflow_test)
->>>>>>> 120da37df68a4be7a2828020aac2cc0d239fd293
+
+
 
 def upflow_vel(t_drain_even, UASB_diameter, vol_dump):
   """this function calculates an estimate for upflow velocity in the UASB reactor assuming that water from the dump is divided evenly into sections and does not start draining until dump is complete. Ideally, this velocity will be as fast settling velocity of sludge particles, which is approximately .007 m/s, to make a fluidized sludge blanket. """
@@ -286,7 +285,7 @@ print(upflow_vel_test)
 ##NOW USING HYDRAULIC CODE TO TEST DIFFERENT DESIGN OPTIONS
 
 ##will graph drain times versus different pipe sizes with other parameters preset for reasons which are explained in the comment next to each variable assignment.
-D_avail= ([.75, 1.0, 1.25, 1.5])*u.inch#array of available HPDE pipes ranging in size from
+D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch#array of available HPDE pipes ranging in size from
 n_90el= 3 #set n_90el to 3 because there are 3 elbows in each influent pipe in the current design
 W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump,with a square bottom and made of HDPE is readily available online
 overflow= 1 *u.inch #set overflow as 1 inch--this could be modified to increase driving head if necessary
@@ -307,7 +306,7 @@ plt.title('Estimated Flow Dividing Tank versus Pipe Diameter for Even Flow Divis
 #now, graphing upflow velocity vs pipe diameter
 upflow_vels=(np.zeros(len(D_avail)))*(u.m/u.s) #this array will store the upflow velocities for input UASB design with severable possible diameters
 
- for i in range(0,len(D_avail)):
+for i in range(0,len(D_avail)):
   t_even_drains[i]= t_drain_even(D_avail[i], W_FDT, H_walls_test,overflow_test, n_90el_test)
   upflow_vels[i]=upflow_vel(t_even_drains[i], UASB_diameter,vol_dump)
 
@@ -315,12 +314,9 @@ plt.scatter(D_avail,upflow_vels)
 plt.xlabel('Influent Pipe Diameter (inch)')
 plt.ylabel('Estimated Upflow Velocity (m/s)')
 plt.title('Estimated Upflow Velocity if UASB Operates Properly')
-plt.ylim((0, .001))   # set the ylim to bottom, top
+plt.ylim((0, .01))   # set the ylim to bottom, top
 
 
-
-
-<<<<<<< HEAD
 def upflow_vel(t_drain_even, UASB_diameter, vol_dump):
   """this function calculates an estimate for upflow velocity in the UASB reactor assuming that water from the dump is divided evenly into sections and does not start draining until dump is complete. Ideally, this velocity will be as fast settling velocity of sludge particles, which is approximately .007 m/s, to make a fluidized sludge blanket. """
   UASB_Q_dump=vol_dump/t_drain_even ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
@@ -339,7 +335,8 @@ print(upflow_vel_test)
 ##will graph drain times versus different pipe sizes with other parameters preset for reasons which are explained in the comment next to each variable assignment.
 D_avail= ([.75, 1.0, 1.25, 1.5])*u.inch#array of available HPDE pipes. More research needs to be done to find additional HDPE pipe sources/sizes.
 n_90el= 3 #set n_90el to 3 because there are 3 elbows in each influent pipe in the current design
-W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump,with a square bottom and made of HDPE is readily available online
+W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump,with a square bottom and made of HDPE is readily available online https://www.usplastic.com/catalog/item.aspx?itemid=30661
+
 overflow= 1 *u.inch #set overflow as 1 inch--this could be modified to increase driving head if necessary
 t_even_drains=(np.zeros(len(D_avail)))*u.s #this array will store the estimated drain time for input UASB design with severable possible diameters
 UASB_diameter=3*u.ft
@@ -349,17 +346,13 @@ vol_dump = 16.26 *u.L
 for i in range(0,len(D_avail)): #populate t_even_drains
   t_even_drains[i]= t_drain_even(D_avail[i], W_FDT, H_walls_test,overflow_test, n_90el_test)
 
-#graph drain times vs diameter
-plt.scatter(D_avail, t_even_drains)
-plt.xlabel('Influent Pipe Diameter (inch)')
-plt.ylabel('Flow Dividing Tank Drain Time (sec)')
-plt.title('Estimated Flow Dividing Tank versus Pipe Diameter for Even Flow Division Case')
+
 
 #now, graphing upflow velocity vs pipe diameter
 upflow_vels=(np.zeros(len(D_avail)))*(u.m/u.s) #this array will store the upflow velocities for input UASB design with severable possible diameters
 #The plot shows that as influent pipe diameter increases, the flow dividing tank decreases. This figure will be used to select a diameter for the final design, once the team has decided on the optimal drain time.
 
- for i in range(0,len(D_avail)):
+for i in range(0,len(D_avail)):
   t_even_drains[i]= t_drain_even(D_avail[i], W_FDT, H_walls_test,overflow_test, n_90el_test)
   upflow_vels[i]=upflow_vel(t_even_drains[i], UASB_diameter,vol_dump)
 
@@ -370,8 +363,6 @@ plt.title('Estimated Upflow Velocity if UASB Operates Properly')
 plt.ylim((0, .001))   # set the ylim to bottom, top
 #The plot shows that estimated up flow velocity increases as pipe diameter increases. Again, the team will use this information later on in choosing influent pipe diameter size.
 
-=======
->>>>>>> 120da37df68a4be7a2828020aac2cc0d239fd293
 
 xArray = u.Quantity(np.arange(5,21), u.inch) #width of tank
 section_FDT = plt.plot(xArray, t_drain_fail_case(1*u.inch, xArray, H_walls(vol_d, xArray, t_walls_test, overflow_test), n_90el_test), label='One Section of FDT')
@@ -390,10 +381,9 @@ plt.show()
 ```
 
 ##Future Work for Python Documentation
-<<<<<<< HEAD
 In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test more possible combinations with ease. Finally, the team must analyze the resulting drain times and up flow velocities from several designs to determine the optimal design for the UASB influent system, and then use that to update the onShape model. The team will need to do testing with the tipping bucket to make a more informed decision about optimal drain time.
 
-In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test the available combinations with ease to determine the optimal design for the UASB influent system, and then use that to update the OnShape model. The team also needs to do testing with the tipping bucket to make a more informed decision about optimal drain time.
+In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test the available combinations with ease to determine the optimal design for the UASB influent system, and then use that to update the OnShape model.
 
 ##Bibliography
 
