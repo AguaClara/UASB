@@ -2,7 +2,7 @@
 By Nina Blahut, Shania Fang,  Emily Liu, Kanha Matai
 March 15, 2019
 
-**[Hi friends! This is Sidney. I will be adding comments to your report in these bolded square brackets as well as resolving addressed comments.]**
+**[Hi friends! This is Sidney. I will be adding comments to your report in these bolded square brackets as well as resolving addressed comments. I created a new file with grades because it seems like you guys updated your report before I was able to grade, so this is the version of your report submitted to us at the deadline.]**
 
 **[Overall: Good job! I see that you addressed most of Felix's comments an fixed some of the grammar stuff. There are still grammar issues scattered throughout the report, so go back and proofread thoroughly!! Sometimes you repeat similar paragraphs which is really confusing. Also, please refer to your figures in the actual text of your report to make sure it is absolutely clear to someone skimming your report which figures go with which piece of content. Write in consistent past tense for anything you do this semester or have done in previous semesters!!]**
 
