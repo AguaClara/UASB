@@ -378,8 +378,126 @@ plt.legend(loc = 'upper right', ncol = 2)
 plt.tight_layout()
 plt.show()
 
+```
+```python
+import aguaclara.core.head_loss as minorloss
+"""Flocculator design.
+This module aims to provide constants and functions to define both hydraulic
+(head loss, retention time, drain time etc.) and geometric (influent pipe diameter, flow dividing tank geometry, UASB cannister dimensions,
+etc.) values that specify a UASB design."""
+class UASB:
+  def __init__(
+          self,
+          Q = 20 * u.L/u.s,
+          temp = 25 * u.degC,
+          cannister_diam = 3 * u.ft,
+          effluent_H = 5 * u.ft, #based on estimate that the 7ft tall cannister is ~70% full of water  
+          vol_dump = 16.26 * u.L, #dump vol from previous team's design--subject to change once current team tests new tipping bucket design
+          W_FDT = 9.937 * u.inch, #https://www.usplastic.com/catalog/item.aspx?itemid=66355&catid=
+          FDT_H = 16.8125 * u.inch,
+          FDT_walls_t = .5 * u.inch,
+          overflow_H = 1 * u.inch, #come up with justification for this
+          pipe_diam = 1 * u.inch,
+          n_elbows = 4,
+          pipe_roughness = .000003 * u.m
+  ):
+      """Instantiate a UASB object, representing a real UASB component.
+      :param Q: Flow rate of water water through the UASB.
+      :type Q: float * u.L/u.s
+      :param temp: Water temperature of the UASB
+      :type temp: float * u.degC
+      :param cannister_diam: diameter of the UASB cannister
+      :type cannister_diam: float * u.ft
+      :param effluent_H: height of effluent line in UASB
+      :type effluent_H: float * u.ft
+      :param vol_dump: volume of one complete dump from tipping bucket
+      :type vol_dump: float * u.L
+      :param W_FDT: width of the inside of flow dividing tank
+      :type W_FDT: float* u.inch
+      :param FDT_H: height of the flow dividing tank
+      :type FDT_H: float * u.inch
+      :param FDT_walls_t: thickness of the walls of the flow dividing tank
+      :type FDT_walls_t: float * u.inch
+      :param overflow_H: desired height that wasteawater from one dump of the tipping bucket overflows the flow dividing walls
+      :type overflow_H: float * u.inch
+      :param pipe_diam: ID of the influent pipes
+      :type pipe_diam: float * u.inch
+      :param n_elbows: number of 90 degree elbows per influent pipe
+      :type n_elbows: float * dimensionless
+      :param pipe_roughness: roughness of influent pipes
+      :type pipe_roughness: float * u.m
+      :returns: object
+      :rtype: UASB
+      """
+      self.Q = Q
+      self.temp = temp
+      self.cannister_diam = cannister_diam
+      self.effluent_H = effluent_H
+      self.vol_dump = vol_dump
+      self.W_FDT = W_FDT
+      self.FDT_H = FDT_H
+      self.FDT_walls_t = FDT_walls_t
+      self.overflow_H = overflow_H
+      self.pipe_diam = pipe_diam
+      self.n_elbows = n_elbows
+
+  @property
+  def H_walls(self):
+      """Calculates the height of the flow dividing walls, so that if a complete tip were to fill the flow dividing tank before it started draining out, the height of water would overflow the flow dividing walls by the desired height"""
+      H_walls=(self.vol_dump-self.overflow_H*self.W_FDT**2)/(self.W_FDT**2-self.FDT_walls_t*self.W_FDT-self.FDT_walls_t*(self.W_FDT-self.FDT_walls_t)) #calculate H_walls by setting vol_dump equal to volume inside flow dividing system accounting for the volume that the flow dividing walls occupy
+      H_walls=H_walls.to(u.inch)
+      return H_walls
+
+  @property
+  def head_gain_per_dump(self):
+      """Calculates head gain if flow splits evenly in the flow dividing tank and does not start emptying out until the tip is over."""
+      HG=self.H_walls+self.overflow_H
+      HG=HG.to(u.inch)
+      return HG
+
+  @property
+  def vol_cannister(self):
+      """Calculates the volume of wastewater in the reactor assuming that the water level inside the cannister does not exceed that of the effluent line"""
+      vol=(pc.area_circle(self.cannister_diam)*self.effluent_H).to(u.L)
+      return vol
+
+  @property
+  def HRT(self):
+      """Calculates the retention time of wastewater inside the UASB reactor """
+      return self.vol_cannister/self.Q
 
 
+  @property
+  def FDT_section_area(self):
+      """calculates the area of one section of the flow dividing tank"""
+      return (self.W_FDT/2-1/2*self.FDT_walls_t)**2
+
+  @property
+  def FDT_area(self):
+    """calculates the area of one section of the flow dividing tank"""
+    return self.W_FDT**2
+
+  @property
+  def influent_K(n_90el):
+      """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major lossess."""
+      k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.FDT_area, self.FDT_section_area,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
+      k_val_FDT_exit_reduction=minorloss.k_valuereduction(self.FDT_section_area, pc.area_circle(self.pipe_diam), self.Q, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from flow dividing tank to influent pipe
+      influent_K=n_90el*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+k_val_FDT_ent_reduction+k_val_FDT_exit_reduction+minorloss.PIPE_ENTRANCE_K_MINOR #QUESTION: should this include a term for entrance k val?
+      return influent_K
+
+  @property
+  def t_drain(self):
+        """This function returns the estimated drain time from the FDT in the case that water from the tipping bucket fills up the sections evenly and quickly, so that water doesn't start draining until each section is full of water/there is water overflowing the dividing walls. headgain=headgain per dump """
+        t_drain=8*self.FDT_section_area/(np.pi*self.pipe_diam**2)*(self.head_gain_per_dump*self.influent_K/(2*pc.gravity))**.5 #from equation (97) in FCM_derivations section in AguaClara textbook
+        return t_drain.to(u.s)
+
+  @property
+  def upflow_vel(self):
+      """this function calculates an estimate for upflow velocity in the UASB reactor assuming that water from the dump is divided evenly into sections and does not start draining until dump is complete. Ideally, this velocity will be as fast settling velocity of sludge particles, which is approximately .007 m/s, to make a fluidized sludge blanket. """
+      UASB_Q_dump=self.vol_dump/self.t_drain ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
+      UASB_CA=pc.area_circle(UASB_diameter)
+      up_vel=UASB_Q_dump/UASB_CA
+      return up_vel.to(u.m/u.s)
 ```
 
 ##Future Work for Python Documentation
