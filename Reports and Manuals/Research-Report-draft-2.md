@@ -139,7 +139,7 @@ After UASB-R settles on one design, the rest of the semester will be devoted to:
 Both these tests will be run using actual sludge granules from the Aanheuser-Busch Plant in Syracuse, NY. One of our members will be going there to pick up the sludge on March 9th.
 
 - Lastly, keep in close contact with UASB Design and see if there are any features they would like UASB Research to test in the lab.
-
+**[Is this supposed to be your Methods section? I'm confused.]**
 ## Lab Experiments
 
 ### Current Testing: Results and Analysis
