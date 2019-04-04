@@ -384,7 +384,7 @@ import aguaclara.core.head_loss as minorloss
 """Flocculator design.
 This module aims to provide constants and functions to define both hydraulic
 (head loss, retention time, drain time etc.) and geometric (influent pipe diameter, flow dividing tank geometry, UASB cannister dimensions,
-etc.) values that specify a UASB design."""
+etc.) values that specify a UASB design.,"""
 class UASB:
   def __init__(
           self,
@@ -398,7 +398,7 @@ class UASB:
           FDT_walls_t = .5 * u.inch,
           overflow_H = 1 * u.inch, #come up with justification for this
           pipe_diam = 1 * u.inch,
-          n_elbows = 4,
+          n_elbows = 3,
           pipe_roughness = .000003 * u.m
   ):
       """Instantiate a UASB object, representing a real UASB component.
@@ -440,7 +440,7 @@ class UASB:
       self.overflow_H = overflow_H
       self.pipe_diam = pipe_diam
       self.n_elbows = n_elbows
-
+      self.pipe_roughness = pipe_roughness
   @property
   def H_walls(self):
       """Calculates the height of the flow dividing walls, so that if a complete tip were to fill the flow dividing tank before it started draining out, the height of water would overflow the flow dividing walls by the desired height"""
@@ -478,10 +478,10 @@ class UASB:
     return self.W_FDT**2
 
   @property
-  def influent_K(n_90el):
+  def influent_K(self):
       """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major lossess."""
-      k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.FDT_area, self.FDT_section_area,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
-      k_val_FDT_exit_reduction=minorloss.k_valuereduction(self.FDT_section_area, pc.area_circle(self.pipe_diam), self.Q, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from flow dividing tank to influent pipe
+      k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.W_FDT, self.W_FDT/2-1/2*self.FDT_walls_t,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
+      k_val_FDT_exit_reduction=minorloss.k_value_reduction(self.W_FDT/2-1/2*self.FDT_walls_t, self.pipe_diam, self.Q, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from flow dividing tank to influent pipe
       influent_K=n_90el*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+k_val_FDT_ent_reduction+k_val_FDT_exit_reduction+minorloss.PIPE_ENTRANCE_K_MINOR #QUESTION: should this include a term for entrance k val?
       return influent_K
 
@@ -498,6 +498,36 @@ class UASB:
       UASB_CA=pc.area_circle(UASB_diameter)
       up_vel=UASB_Q_dump/UASB_CA
       return up_vel.to(u.m/u.s)
+
+
+ #calculates k value as water goes from flow dividing tank to influent pipe
+print(k_val_FDT_exit_reduction)
+print(myUASB.pipe_roughness.to(u.mm))
+myUASB=UASB(temp = 20 * u.degC, pipe_diam=1.5*u.inch )
+print(myUASB.temp)
+print(myUASB.t_drain)
+print(myUASB.upflow_vel)
+
+
+D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
+
+drain_times=np.zeros(len(D_avail))*u.s
+upflow_vels=np.zeros(len(D_avail))*u.m/u.s
+for i in range(0,len(D_avail)):
+  myUASB=UASB(pipe_diam=D_avail[i])
+  drain_times[i]=myUASB.t_drain
+  upflow_vels[i]=myUASB.upflow_vel
+
+plt.scatter(D_avail, drain_times)
+plt.title('Pipe Diameter vs Drain Time')
+plt.xlabel('Pipe Diameter (Inches)')
+plt.ylabel('Drain time (Seconds)')
+
+plt.scatter(D_avail, upflow_vels)
+plt.title('Pipe Diameter vs Upflow Velocity')
+plt.xlabel('Pipe Diameter (Inches)')
+plt.ylabel('Upflow Velocity (Meters/second)')
+plt.ylim(0, .01)
 ```
 
 ##Future Work for Python Documentation
