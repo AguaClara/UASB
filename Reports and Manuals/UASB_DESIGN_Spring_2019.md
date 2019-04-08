@@ -388,18 +388,19 @@ etc.) values that specify a UASB design.,"""
 class UASB:
   def __init__(
           self,
-          Q = 20 * u.L/u.s,
+          Q = 8 * u.L/u.s, #NOTE: change to HRT and solve for Q
           temp = 25 * u.degC,
           cannister_diam = 3 * u.ft,
           effluent_H = 5 * u.ft, #based on estimate that the 7ft tall cannister is ~70% full of water  
-          vol_dump = 16.26 * u.L, #dump vol from previous team's design--subject to change once current team tests new tipping bucket design
+          vol_dump = 16.26 * u.L, #NOTE: dump vol from previous team's design--subject to change once current team tests new tipping bucket design
           W_FDT = 9.937 * u.inch, #https://www.usplastic.com/catalog/item.aspx?itemid=66355&catid=
           FDT_H = 16.8125 * u.inch,
-          FDT_walls_t = .5 * u.inch,
-          overflow_H = 1 * u.inch, #come up with justification for this
+          FDT_walls_t = .25 * u.inch,
+          overflow_H = 1 * u.inch, #NOTE: come up with justification for this
           pipe_diam = 1 * u.inch,
           n_elbows = 3,
-          pipe_roughness = .000003 * u.m
+          pipe_roughness = .000003 * u.m,
+          time_dump = 2* u.s
   ):
       """Instantiate a UASB object, representing a real UASB component.
       :param Q: Flow rate of water water through the UASB.
@@ -441,6 +442,7 @@ class UASB:
       self.pipe_diam = pipe_diam
       self.n_elbows = n_elbows
       self.pipe_roughness = pipe_roughness
+      self.time_dump = time_dump
   @property
   def H_walls(self):
       """Calculates the height of the flow dividing walls, so that if a complete tip were to fill the flow dividing tank before it started draining out, the height of water would overflow the flow dividing walls by the desired height"""
@@ -474,15 +476,29 @@ class UASB:
 
   @property
   def FDT_area(self):
-    """calculates the area of one section of the flow dividing tank"""
+    """calculates the area the flow dividing tank"""
     return self.W_FDT**2
+
+  @property
+  def equivPipeRadiusFDT(self):
+    """calculates the equivalent hydraulic radius of one section of the flow dividing tank"""
+    radius=4*self.FDT_section_area/(4*(self.W_FDT/2-1/2*self.FDT_walls_t))
+    return radius
+
+  @property
+  def pulseQSec(self):
+    """calcultes flow rate during pulse in one section of influent system"""
+    Q=self.vol_dump/self.time_dump/4
+    return Q
 
   @property
   def influent_K(self):
       """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major lossess."""
-      k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.W_FDT, self.W_FDT/2-1/2*self.FDT_walls_t,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
-      k_val_FDT_exit_reduction=minorloss.k_value_reduction(self.W_FDT/2-1/2*self.FDT_walls_t, self.pipe_diam, self.Q, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from flow dividing tank to influent pipe
-      influent_K=n_90el*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+k_val_FDT_ent_reduction+k_val_FDT_exit_reduction+minorloss.PIPE_ENTRANCE_K_MINOR #QUESTION: should this include a term for entrance k val?
+      #k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.W_FDT, self.W_FDT/2-1/2*self.FDT_walls_t,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
+      #k_val_FDT_exit_reduction=minorloss.k_value_reduction(self.equivPipeRadiusFDT, self.pipe_diam, self.pulseQsec, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness)
+       #calculates k value as water goes from flow dividing tank to influent pipe
+      influent_K=n_90el*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR #QUESTION: should this include a term for entrance k val?
+      print("influent k is", influent_K)
       return influent_K
 
   @property
@@ -500,13 +516,6 @@ class UASB:
       return up_vel.to(u.m/u.s)
 
 
- #calculates k value as water goes from flow dividing tank to influent pipe
-print(k_val_FDT_exit_reduction)
-print(myUASB.pipe_roughness.to(u.mm))
-myUASB=UASB(temp = 20 * u.degC, pipe_diam=1.5*u.inch )
-print(myUASB.temp)
-print(myUASB.t_drain)
-print(myUASB.upflow_vel)
 
 
 D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
@@ -549,7 +558,8 @@ In the future, the team plants to instantiate a UASB object to represent a real 
 - Mehtab Haseena*, Muhammad Faheem Malik, Asma Javed, Sidra Arshad, Nayab Asif, Sharon Zulfiqar and Jaweria Hanif. “Water pollution and human health.” Environmental Risk Assessment and Remediation,Allied Academies, July 13 2017, http://www.alliedacademies.org/articles/water-pollution-and-human-health-7925.html
 
 
-- MGOe. “Wastewater Treatment Plants.”Your Community Energy Company, Madison Gas and Electric Company, 2019, https://www.mge.com/saving-energy/business/bea/article_detail.htm?nid=%202431
+- MGOe. “Wastewater Treatment Plants.”Your Community Energy C
+ompany, Madison Gas and Electric Company, 2019, https://www.mge.com/saving-energy/business/bea/article_detail.htm?nid=%202431
 
 
 - Perlman, Howard. “Wastewater Treatment Water Use.” The USGS Water Science School, US Geological Survey, Dec. 2 2016, https://water.usgs.gov/edu/wuww.html
