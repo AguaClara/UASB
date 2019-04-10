@@ -370,6 +370,7 @@ plt.show()
 ```
 ```python
 import aguaclara.core.head_loss as minorloss
+
 """Flocculator design.
 This module aims to provide constants and functions to define both hydraulic
 (head loss, retention time, drain time etc.) and geometric (influent pipe diameter, flow dividing tank geometry, UASB cannister dimensions,
@@ -486,7 +487,7 @@ class UASB:
       #k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.W_FDT, self.W_FDT/2-1/2*self.FDT_walls_t,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
       #k_val_FDT_exit_reduction=minorloss.k_value_reduction(self.equivPipeRadiusFDT, self.pipe_diam, self.pulseQsec, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness)
        #calculates k value as water goes from flow dividing tank to influent pipe
-      influent_K=n_90el*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR #QUESTION: should this include a term for entrance k val?
+      influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR #QUESTION: should this include a term for entrance k val?
       print("influent k is", influent_K)
       return influent_K
 
