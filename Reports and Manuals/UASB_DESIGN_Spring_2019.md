@@ -370,6 +370,16 @@ plt.show()
 ```
 ```python
 import aguaclara.core.head_loss as minorloss
+from aguaclara.core.units import unit_registry as u
+from aguaclara.core import physchem as pc
+from aguaclara.core import pipes as pipes
+from aguaclara.core import head_loss as HL
+from aguaclara.core import utility as ut
+from aguaclara.core import constants as con
+from aguaclara.research import floc_model as fm
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 """Flocculator design.
 This module aims to provide constants and functions to define both hydraulic
@@ -390,7 +400,8 @@ class UASB:
           pipe_diam = 1 * u.inch,
           n_elbows = 3,
           pipe_roughness = .000003 * u.m,
-          time_dump = 2* u.s
+          time_dump = 2* u.s,
+          UASB_diameter = 3 * u.ft
   ):
       """Instantiate a UASB object, representing a real UASB component.
       :param Q: Flow rate of water water through the UASB.
@@ -433,6 +444,7 @@ class UASB:
       self.n_elbows = n_elbows
       self.pipe_roughness = pipe_roughness
       self.time_dump = time_dump
+      self.UASB_diameter = UASB_diameter
   @property
   def H_walls(self):
       """Calculates the height of the flow dividing walls, so that if a complete tip were to fill the flow dividing tank before it started draining out, the height of water would overflow the flow dividing walls by the desired height"""
@@ -501,7 +513,7 @@ class UASB:
   def upflow_vel(self):
       """this function calculates an estimate for upflow velocity in the UASB reactor assuming that water from the dump is divided evenly into sections and does not start draining until dump is complete. Ideally, this velocity will be as fast settling velocity of sludge particles, which is approximately .007 m/s, to make a fluidized sludge blanket. """
       UASB_Q_dump=self.vol_dump/self.t_drain ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
-      UASB_CA=pc.area_circle(UASB_diameter)
+      UASB_CA=pc.area_circle(self.UASB_diameter)
       up_vel=UASB_Q_dump/UASB_CA
       return up_vel.to(u.m/u.s)
 
