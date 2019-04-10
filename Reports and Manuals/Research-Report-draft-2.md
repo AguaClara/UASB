@@ -159,7 +159,9 @@ In order to test for where the inlet tube should be inserted into the UASB react
 
 The team was now able to perform a test experiment with old sludge. While sludge can stay alive in a suspended state in a fridge for up to year, UASB-R **[Use consistent naming conventions. You use UASB Research and UASB-R and interchange pretty randomly. If you define a shortened term "UASB-R", why not use it throughout the paper?]** only has a small amount at the moment. The plan was to get more sludge in early March, but AguaClara's contact for sludge granules  has retired from his job and is unable to obtain them anymore. Prof. Ruth Richardson of the CEE department is working to find a new person to get sludge granules from. The small amount will be enough to finish the testing and experiments described below.
 
-* UASB Research started to testing tthe velocities of
+* NEW STUFF UASB Research started to testing tthe velocities of
+[Video 1](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
+[Video 2](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a)
 
 
 It should also be stated that the team is working off the same [UASB model](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
