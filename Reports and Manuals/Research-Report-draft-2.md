@@ -5,7 +5,7 @@
 
 **[Hi friends! This is Sidney. I will be adding comments to your report in these bolded square brackets as well as resolving addressed comments.]**
 
-**[Overall: Good job! It would be awesome if you could match the naming convention of your report file name to UASB Design's so it's easier to find your report (i.e. change your file name to "UASB_RESEARCH_Spring 2019.md"). Use past tense through the report for anything you accomplish this semester or will accomplish this semester/ have accomplished in previous semesters. This will make it easier for you when you go back at the end of the semester, so you don't have to change everything to past tense for the final draft (you'll already have written it all in past tense)! You have a few grammar mistakes littered through report. Please go back and do a thorough proofreading! Some of the naming and style is not consistent through the report. Otherwise, everything looks pretty organized and flows nicely.]**
+**[Overall: Good job! It would be awesome if you could match the na ming convention of your report file name to UASB Design's so it's easier to find your report (i.e. change your file name to "UASB_RESEARCH_Spring 2019.md"). Use past tense through the report for anything you accomplish this semester or will accomplish this semester/ have accomplished in previous semesters. This will make it easier for you when you go back at the end of the semester, so you don't have to change everything to past tense for the final draft (you'll already have written it all in past tense)! You have a few grammar mistakes littered through report. Please go back and do a thorough proofreading! Some of the naming and style is not consistent through the report. Otherwise, everything looks pretty organized and flows nicely.]**
 
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -159,9 +159,14 @@ In order to test for where the inlet tube should be inserted into the UASB react
 
 The team was now able to perform a test experiment with old sludge. While sludge can stay alive in a suspended state in a fridge for up to year, UASB-R **[Use consistent naming conventions. You use UASB Research and UASB-R and interchange pretty randomly. If you define a shortened term "UASB-R", why not use it throughout the paper?]** only has a small amount at the moment. The plan was to get more sludge in early March, but AguaClara's contact for sludge granules  has retired from his job and is unable to obtain them anymore. Prof. Ruth Richardson of the CEE department is working to find a new person to get sludge granules from. The small amount will be enough to finish the testing and experiments described below.
 
+* UASB Research started to testing tthe velocities of
+
+
 It should also be stated that the team is working off the same [UASB model](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
 
-### Future Testing: **[Why did you put a : here? Use consistent style.]**
+
+
+### Future Testing **[Why did you put a : here? Use consistent style. FIXED CJMS]**
 Now that fabrication is complete, the team's next step is to gather volume data with and without sludge to check whether a higher versus a lower inlet allows for a greater output of water thus lower headloss. The team will monitor differing input water velocity, time, and output volume of water and analyze their relationships to justify which inlet height has the least headloss. Once a proper height is fixed, the team will move onto testing the inlet, with the sludge blanket, to check for preferential paths.
 
 The inlet consists of four different openings. The idea behind this is that it will allow for more wastewater to come into contact with the sludge, thus making the UASB reactor more efficient by taking a greater proportion of pollutants out of the wastewater. The inlet is still currently being worked on; a few parts need to be ordered and shipped, and an onshape model of the design is in the process of being created.
