@@ -432,7 +432,7 @@ class UASB:
       :returns: object
       :rtype: UASB
       """
-      #self.Q = Q
+
       self.temp = temp
       self.cannister_diam = cannister_diam
       self.effluent_H = effluent_H
@@ -523,7 +523,7 @@ D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
 
 myUASB=UASB()
 print('The height of walls in the flow dividing tank should be', myUASB.H_walls)
-print('The maximum flow of wastewater this UASB can handle is', myUASB.Qmax)
+print('The maximum flow of wastewater this UASB can handle is', (myUASB.Qmax).to(u.L/u.s))
 
 drain_times=np.zeros(len(D_avail))*u.s
 upflow_vels=np.zeros(len(D_avail))*u.m/u.s
@@ -555,10 +555,13 @@ A major restriction on the influent system for the UASB was ensuring the ability
 
 **Fig. 12: Pipe Diameter vs Upflow Velocity**
 
-From the restriction from the settling velocity and the corresponding up-flow velocities from
+From the restriction from the settling velocity and the corresponding up-flow velocities from pipe diameters, the UASB design team decided to utilize an influent pipe with 1.5 inch diameter.
+
+Other takeaways from the python are that the height of walls in the flow dividing tank should be 9.522 inch and the maximum flow of wastewater this UASB can handle is 0.0695 liter / second.
+
+All of these calculations were based on the parameters that were initialized in the UASB object. Temperature is 25 degree celcius, the cannister diameter is 3 ft. The height of the effluent pipe is 5 feet. The volume of one dump from the tipping bucket is 16.26 L. The width of the flow dividing tank is 9.937 inches, the height of the flow dividing tank is 16.8125 inches, the thickeness of the flow dividing walls are 1/4 inch, there are 3 elbows per influent pipe, and HRT is 4 hours.
 
 ##Bibliography
-
 
 - AOS Treatment Solutions. “How Much Energy Does a Wastewater Treatment Plant Use?” AOS Treatment Solutions, AOS Treatment Solutions, LLC, March 1 2018, https://aosts.com/how-much-energy-does-wastewater-treatment-plant-use/
 
