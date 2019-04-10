@@ -34,33 +34,34 @@ AguaClara, on the other hand, has designed a UASB reactor that solely relies on 
 In Summer 2018 the team worked on the hydraulic design of the UASB system and created a tipping bucket system which delivered wastewater in large pulses at a high flow rate. The team had two possible designs for the influent system--one option was for influent tubes to enter either at the top of the UASB reactor, and the alternative was for influent tubes to enter the UASB reactor at the bottom. The team also focused on biogas storage and decided that a gas bag system was the best option. In a gas bag system, gas will flow out of a pipe in the lid of the UASB into a gas bag. Pros of the gas bag system are that it is inexpensive and allows for the easy transport of biogas to communities for use. **[Could you briefly explain these three types of storage? ADRESSED NB]**
 
 **Fall 2018**
-Preferential pathways in wastewater treatment occur when incoming wastewater forms a tunnel through the sludge blanket instead of flowing evenly through the blanket; consequently, not all of the wastewater gets in contact with sludge granules, and thus not effectively treated. In Fall 2018, the UASB team researched preferential pathways in UASB by doing bench tests. The team fabricated a small scale UASB reactor used chia seeds, marbles, and tapioca to simulate sludge. **[The Fall 2018]** UASB team found that preferential flow patterns were likely to occur. The team concluded that it will likely be necessary to have several influential pipes to promote the even distribution of wastewater flow and decrease preferential pathways. **[Always refer to figures you use in the text.]**
+Preferential pathways in wastewater treatment occur when incoming wastewater forms a tunnel through the sludge blanket instead of flowing evenly through the blanket; consequently, not all of the wastewater gets in contact with sludge granules, and thus not effectively treated. In Fall 2018, the UASB team researched preferential pathways in UASB by doing bench tests. The team fabricated a small scale UASB reactor used chia seeds, marbles, and tapioca to simulate sludge. The Fall 2018 UASB team found that preferential flow patterns were likely to occur. The team concluded that it will likely be necessary to have several influential pipes to promote the even distribution of wastewater flow and decrease preferential pathways. The image below shows a tapioca test from the Fall 2018 semester. The uneven distribution of red dye through the tapioca layer indicates that preferential pathways are forming. **[Always refer to figures you use in the text. ADRESSED NB]**
 
 ![Red Dye Test](https://github.com/AguaClara/UASB/blob/master/Images/UASB_Red_Dye_Tapioca_Test.PNG?raw=true)
 
 **Fig. 1: Preliminary dye tests with tapioca showing preferential pathways<p>**
 
-
-In the Spring 2019 semester, the team will focus on finalizing the UASB pilot-scale reactor design which will be tested in Ithaca’s Wastewater Treatment Plant by the Summer of 2020.
-
+**Spring 2019**
+In the Spring 2019 semester, the team focused on finalizing the UASB pilot-scale reactor design which will be fabricated and tested in Ithaca’s Wastewater Treatment Plant in the Summer of 2020.
+**[Use past tense when talking about current or previous semester's work ADRESSED NB]**
 
 ## Methods
 
 ### Design for Influent System
 
-In this section, the team will explain how it made decisions regarding the design for the influent system.
+This section explains how the Spring 2019 team made decisions regarding the design for the influent system.
 
-For the influent system, the team has decided to move forward with the Summer 2018 team's design in which a tipping bucket empties wastewater into a holding tank, which will then empty into a flow dividing bucket connected to influent pipes that lead into the side of the reactor. The team will also move forward with the Summer 2018 team’s plan to use a [300 gallon reactor tank](https://www.plastic-mart.com/product/17049/300-gallon-plastic-tank-rotoplas-590314-590315) that has a 36” diameter and 72” height.
+For the influent system, the team decided to move forward with the Summer 2018 team's design in which a tipping bucket empties wastewater into a holding tank, which will then empty into a flow dividing bucket connected to influent pipes that lead into the side of the reactor. The Summer 2018 team's tipping bucket design is included below in Figure 2.
 
-The team has decided to use high density polyethylene (HDPE) for the majority of the plastic parts of the UASB, such as the influent pipes and the 300 gallon reactor tank, will need to be welded together. HDPE was chosen because it is durable and corrosion resistant, and large tanks made of HDPE, unlike PVC, are available. HDPE can mainly be welded together with other HDPE materials whereas welding it with PVC or LDPE wouldn't be feasible.
+A design for the tipping bucket was completed by the summer 2018 team. **[Refer to your figure in the text. ADRESSED NB]**
 
-A design for the tipping bucket was completed by the summer 2018 team.
 ![Summer 2018 tipping bucket design](https://github.com/AguaClara/UASB/blob/master/Images/Influent_Tank_Tipping_Bucket.png?raw=true)
-
 **Figure 2. Summer 2018 Final Tipping Bucket design**
 
-This semester, the team realized an issue with the previous team's tipping bucket design: the frame for the tipping bucket is metal. This is an issue because the metal frame would get wet from splashing water and then rust. To combat this issue, the team will alter the design of the tipping bucket, so that there are no metal parts. The revised tipping bucket will be made by welding HDPE plates to the sides of a 5 gallon HDPE bucket, then welding HDPE rods onto those plates, which will be used to mount the tipping bucket in the holding tank.
+The team also chose move forward with the Summer 2018 team’s plan to use a [300 gallon reactor tank](https://www.plastic-mart.com/product/17049/300-gallon-plastic-tank-rotoplas-590314-590315) that has a 36” diameter and 72” height.
 
+The team decided to use high density polyethylene (HDPE) for the majority of the plastic parts of the UASB, such as the influent pipes and the 300 gallon reactor tank, will need to be welded together. HDPE was chosen because it is durable and corrosion resistant, and large tanks made of HDPE, unlike PVC, are available. HDPE can be welded together with other HDPE materials whereas welding it with PVC or LDPE is not be feasible.
+
+This semester, the team realized an issue with the previous team's tipping bucket design: the frame for the tipping bucket is metal. This is an issue because the metal frame would get wet from splashing water and then rust. To combat this issue, the team altered the design of the tipping bucket, so that there are no metal parts. **[Use consistent past tense. ADDRESSED NB]**
 
 Certain elements from the previous team's tipping bucket design, including the volume of the tipping bucket and the locations of the pivots with respect to the bucket's center will remain the same. The previous team determined the optimal location of pivots by performing tests with pivots in various positions and selecting the locations in which the tipping bucket filled the most while still emptying completely.
 
@@ -92,55 +93,48 @@ Based on the Summer 2018 team's results, the pivots will be positioned 5 cm hori
 The 2019 spring team has decided to remake the original metal frame from an HDPE sheet. The team ordered HDPE sheet and cut it into rods to replicate the geometry of the original frame that was constructed from 80/20 extrusions. The team determined that a 1 inch 48" by 24" sheet.
 
 ## Flow Dividing Tank
-
-From the holding tank, wastewater will empty into a flow dividing tank. The purpose of the flow dividing tank is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing tank is partitioned into four equal sections. Each of the four sections then empties out into a separate inlet pipe. It is imperative that each section in the flow dividing tank is full of wastewater before the wastewater starts flowing into the influent pipes so that each pipe will distribute the same amount of water inside the reactor. It is also desirable for the flow dividing tank to empty out completely between each dump of the tipping bucket as a de-clogging mechanism. These constraints mean that the flow dividing tank should be similar in volume to the tipping bucket, the bottom of the flow dividing tank should be in line with the water line in the reactor, and the diameter of influent pipes should be small enough so that the pipes only start emptying into the larger tank once the flow dividing tank is full. All of these constrains are further described and investigated in the section: Python Documentation.
-
-From the holding tank, wastewater will empty into a flow dividing tank. The purpose of the flow dividing tank is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing tank is partitioned into four equal sections. Each of the four sections then empties out into a separate inlet pipe. It is imperative that each section in the flow dividing tank is full of wastewater before the wastewater starts flowing into the influent pipes so that each pipe will distribute the same amount of water inside the reactor. It is also desirable for the flow dividing tank to empty out completely between each dump of the tipping bucket as a de-clogging mechanism. These constraints mean that the flow dividing tank should be similar in volume to the tipping bucket, the bottom of the flow dividing tank should be in line with the water line in the reactor, and the diameter of influent pipes should be small enough so that the pipes only start emptying into the larger tank once the flow dividing tank is full. All of these constrains are delved in
-
-
-In order for the de-clogging mechanism to occur, the water level inside of the reactor will be just above the bottom of the flow dividing tank. Assuming that the reactor is about 80% full of liquid, the height of the water in the reactor would be roughly 5 ft[diagram showing the heights of water in both flow dividing tank and reactor would be helpful - <we will implement the diagram once the new CAD has been made>]. The team can set this level during the startup phase by adding water/sludge to the reactor until the desired height is reached. Based on the previous calculation, the team decided that the bottom of the flow dividing tank should be at a height of 58.8 inches to ensure the flow dividing tank completely empties.
-
-The Summer 2018 UASB team suggested 2 influent pipes, but after considering the results of the tapioca tests performed by the Fall 2018 team, the Spring 2019 UASB team decided to use four influent pipes to promote more even distribution of flow through the sludge blanket. The Summer 2018 UASB team also suggested that the influent pipe diameter range from 75-100mm to reduce clogging. However, the current team has decided to decrease the diameter of the influent pipe to range from 1-2 inches. The team made that decision based on two constraints: a diameter much smaller than one inch would be more likely to cause clogging and a diameter much larger than one inch would be less effective in promoting even flow through influent tubes. Larger pipes will not restrict water flow as well as smaller pipes; thus, if the tipping bucket unevenly distributes the water into the flow dividing tank and leads to larger pipes, more water can enter certain pipes than others, which would result in more of an uneven flow in comparison to a flow dividing tank that leads to smaller pipes. These constraints will be explained in more depth in the python documentation. [GO BACK AND REPHRASE THIS ONCE WE HAVE WORKED OUT THE CODE MORE]
-
+Wastewater from the tipping bucket is dumped into a flow dividing tank. The purpose of the flow dividing tank is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing tank is partitioned into four equal sections. Figure 3 shows a top view of these sections. Each of the four sections drains into a separate inlet pipe. The figures below illustrate the flow dividing tank. **[It would be useful to use a drawing here to explain if you have one. ADRESSED NB]**  
 
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20Divide.png?raw=true">
 
 **Figure 3. Top view of the holding tank, which leads into the flow dividing tank.**
 
-
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Side%20View%20Holding%20Tank.png?raw=true">
 
 **Figure 4. Side view of the holding tank, which leads into the flow dividing tank.**
-
-[Nice figures]
 
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Bottom%20Dividing%20Tank.png?raw=true">
 
 **Figure 5. The dimensions for bottom of the flow dividing tank. (In inches)**
 
-Each inlet pipe will then carry wastewater to a point on the bottom of the reactor. The team has positioned the four points of influence are as far away from each other as possible on the bottom of the reactor. The bottom of the UASB reactor has a diameter of 3 ft. So, if the center of the reactor is considered to be the origin, then the four points of influence on the bottom of the reactor in polar coordinates will be: (9”, $pi$/4 rad), (.9”, 3$pi$/4 rad), (9”, -$pi$/4 rad), (9”, -3$pi$/4 rad)
+It is imperative that each section in the flow dividing tank is full of wastewater before the wastewater starts flowing into the influent pipes so that each pipe will distribute the same amount of water inside the reactor. It is also desirable for the flow dividing tank to empty out completely between each dump of the tipping bucket as a de-clogging mechanism. These constraints mean that the flow dividing tank should be similar in volume to the tipping bucket, the bottom of the flow dividing tank should be in line with the water line in the reactor, and the diameter of influent pipes should be small enough so that the pipes drain slowly enough to allow for wastewater to overflow into all sections of the flow dividing case, in case the wastewater from the tipping bucket fills up only one section first. All of these constraints **[constraints ADRESSED NB]** are further described and investigated in the Python Documentation section. **[in the Python Documentation section. ADRESSED NB]**
+
+In order for the de-clogging mechanism to occur, the water level inside the reactor's canister must be in line with the bottom of the flow dividing tank. Assuming that the reactor is about 80% full of liquid, the height of the water in the reactor would be roughly 5 ft. The team can set this level during the startup phase by adding water/sludge to the reactor until the desired height is reached. With that in mind, the bottom of the flow dividing tank should also be located at a height of roughly 5 ft.
+
+##Influent Pipes
+The Summer 2018 UASB team suggested 2 influent pipes, but after considering the results of the tapioca tests performed by the Fall 2018 team, the Spring 2019 UASB team decided to use four influent pipes to promote more even distribution of flow through the sludge blanket. The Summer 2018 UASB team also suggested that the influent pipe diameter range from 75-100mm to reduce clogging. However, the current team decided to decrease the diameter of the influent pipe to range from 1-2 inches. The team made that decision based on two constraints: a diameter much smaller than one inch would be more likely to cause clogging and result in a too-slow upflow velocity of wastewater through the reactor, and a diameter much larger than one inch would be less effective in promoting even flow through influent tubes.
+
+
+Each inlet pipe will then carry wastewater to a point on the bottom of the reactor. The team has positioned the four points of influence are as far away from each other as possible on the bottom of the reactor. The bottom of the UASB reactor has a diameter of 3 ft. So, if the center of the reactor is considered to be the origin, then the four points of influence on the bottom of the reactor in polar coordinates will be: (9”, $pi$/4 rad), (.9”, 3$pi$/4 rad), (9”, -$pi$/4 rad), (9”, -3$pi$/4 rad). Figure four illustrates the locations of the points of influence to the bottom of the reactor.
 
 
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Points%20of%20Influence.png?raw=true">
 
 **Figure 6. The points of influence on the bottom of the reactor.**
 
-After deciding on the locations for the points of influence on the bottom of the reactor, the team discussed ways to reduce head loss from horizontal piping. Thus, the holding tank will be attached to the side of the reactor to reduce head loss but to also reduce settling and to ensure the reactor is compact. In addition, the team discussed how to connect each pipe from the flow divider to its respective point of influence. In doing so, the team attempted to reduce head loss of the pipes and make the exiting velocity at each point of influence as equal as possible. [Looks like a run-on sentence..]
+After deciding on the locations for the points of influence on the bottom of the reactor, the team discussed ways to the amount of horizontal piping because settling of wastewater is more likely to occur in horizontal pipe. The team decided to attach attached the holding tank to the side of the reactor to to reduce settling and to ensure the reactor is compact.
 
-The pipes carrying wastewater away from the flow dividing bucket are vertical. Then, the wastewater needs to be directed to enter the side of the reactor in the horizontal direction (horizontal entry was decided for ease of fabrication, since it would be difficult to drill ellipses into the UASB reactor to allow for diagonal entry). The team considered using 135 degree elbows instead of 90 degree elbows to minimize horizontal flow, as settling is more likely to occur in horizontal pipes. However, after floating the idea at a technical feedback session, the team realized that such pipes may not be readily available in Honduras, and decided to use [90 degree](https://www.homedepot.com/p/3-in-PVC-DWV-90-Degree-H-x-H-Vent-Elbow-C4807VHD3/205799553) elbows in the design.
+Wastewater flow from the flow dividing bucket drains into vertical pipes. The wastewater needs to be directed to enter the side of the reactor through horizontal pipes. Horizontal entry was decided for ease of fabrication, since it would be difficult to drill ellipses into the UASB reactor to allow for diagonal entry. The team considered using 135 degree elbows instead of 90 degree elbows to minimize horizontal flow, as settling is more likely to occur in horizontal pipes. However, after floating the idea at a technical feedback session, the team realized that such pipes may not be readily available in Honduras, and decided to use [90 degree](https://www.homedepot.com/p/3-in-PVC-DWV-90-Degree-H-x-H-Vent-Elbow-C4807VHD3/205799553) elbows in the design.
 
-Next, the team decided the influent pipes would enter the same side of the reactor. The pipes will enter the reactor horizontally near the bottom of the reactor to limit the vertical length of influent pipe inside the sludge blanket because during tapioca tests in fall 2018 semester, the team noticed that preferential pathways tended to form around vertical sections of pipe in the sludge blanket. With that in mind, the team decided to have points enter the reactor near the ground to reduce the amount of vertical pipe running through the sludge blanket. The team decided to have pipes enter the reactor at heights of 10 inches and 20 inches above the ground (where the distance is measured from the bottom of the pipe). Then, each pipe will travel horizontally until it is above its respective point of influence, at which point water will be directed down to the bottom of the reactor with a 90 degree elbow. Finally, each pipe will travel vertically until it is 1 inch above the bottom of the reactor. At this point, wastewater will exit into the reactor, hit the bottom, and then begin flowing upwards through the sludge blanket.
+Next, the team decided where the influent pipes enter the reactor. During tapioca tests in fall 2018 semester, the team noticed that preferential pathways tended to form around vertical sections of pipe in the sludge blanket. With that in mind, the team decided to have pipes enter the reactor near the ground to reduce the amount of vertical pipe running through the sludge blanket. The team decided to have pipes enter the reactor at heights of 10 inches and 20 inches above the ground (where the distance is measured from the bottom of the pipe). Then, each pipe extends horizontally until it is above its respective point of influence, at which point the pipe is directed down to the bottom of the reactor with a 90 degree elbow. Finally, each pipe will travel vertically until it is 1 inch above the bottom of the reactor. At this point, wastewater will exit into the reactor, hit the bottom, and then begin flowing upwards through the sludge blanket.
 
 ![Reactor Influent Design](https://github.com/AguaClara/UASB/blob/master/Images/pipe%20influent%20system.PNG?raw=true)
 **Figure 7. Influent Design Entering Reactor**
-[If you have more diagrams to demonstrate where the pipes enter the reactor that would be great. Pictures of the reactor would also help, even if they are subject to future changes]
-
 
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/full%20plant%20-%20design%201.PNG?raw=true">
 
 **Figure 8. Full UASB Design 1**
 
-[Agree with ananya this pic is a little busy]
 
 
 <img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Influent%20System.png?raw=true">
@@ -160,22 +154,15 @@ After deciding that the majority of the UASB reactor will be made up of HDPE, mo
 For the effluent system a valve needs to be added at the end to ensure there will be consistent effluent flow and make maintenance accessibility easier. Since the effluent pipe will begin extruding out from the UASB reactor upwards at 60 degrees to make sure the sludge granules settle back into the reactor, the team also has to figure out a way to add a pipe going vertically upwards through the effluent pipe to make sure atmospheric pressure is the same throughout. If atmospheric pressure can be maintained through the fabrication of the vertical pipe, the effluent pipe will ideally bend at the middle from upwards 60 degrees to a downwards vertical pipe that empties the effluent. Unfortunately, finding 30 degree connections are rather difficult to find in Honduras, so the team has yet to settle on a design of the effluent pipe.
 
 Initially to support the influent system and pipes, the team had decided to use 80/20 extrusions; however, upon further consideration of the environment in which the reactor will be tested, the team will prioritize materials that are resistant to rusting and easily maintained but also able to support heavy objects.
+Upon completing the design for the frame, the team will fabricate the influent system based on its design and begin testing it with water.
 
-The team will also rely on hydraulic code from previous teams to get an estimate for the exit velocity of water entering the UASB. Upon completing the design for the frame, the team will fabricate the influent system based on its design and begin testing it with water.
-
-The optimal height and cross-sectional area for the influent pipes to be entering the tank still needs to be determined so that the flow of wastewater passing through the sludge will be around .0069 m/s - .02778 m/s . It is desirable for the upflow velocity to be faster than the velocity of the sludge granules settling to keep the bed fluidized but not too fast where the granules will washout because of inadequate residence time. The research team is currently testing whether the entry of influent pipes above the sludge or the entry of influent pipes close to the bottom will result in less preferential pathways. Once UASB design receive this information, the team can finalize on the sections of the length of the pipes that will be vertical and horizontal.
-
-## Redesigning the Tipping Bucket
-In order to
-
+The optimal height and cross-sectional area for the influent pipes to be entering the tank still needs to be determined so that the flow of wastewater passing through the sludge will be between .0069 m/s - .02778 m/s . It is desirable for the upflow velocity to be faster than the velocity of the sludge granules settling to keep the bed fluidized but not so fast that the granules washout because of inadequate residence time. The research team is currently testing whether the entry of influent pipes above the sludge or the entry of influent pipes close to the bottom will result in less preferential pathways. Once UASB design receive this information, the team can finalize on the sections of the length of the pipes that will be vertical and horizontal.
 
 ## Python Documentation
 This python documentation is used to determine the relationship between drain time from the flow tank, diameter of the influent pipes, geometry of the flow dividing tank, and resulting up flow velocity, so that the team can make better informed design decisions. The code is below, and comments have been added for clarity.
 
 The time it takes for the flow dividing tank to drain should be slow enough so that in case the bucket initially fills up just one division of flow dividing tank, it will not begin emptying out until overflow reaches other sections, but fast enough so that the tank completely drains out between successive dumps of the tipping bucket for self cleaning purposes and so that up flow velocity of influent water is fast enough to lift settling sludge particles. This drain time is determined by the diameter of the influent pipes and the head gain per dump of the tipping bucket, and the ensuing code will be used to determine the optimal combination of influent pipe diameter and flow dividing tank geometry to achieve said drain time.
 
-
-Important note is that the water level of the reactor is set at the same height as the bottom of the flow dividing tank.
 ```python
 from aguaclara.core.units import unit_registry as u
 from aguaclara.core import physchem as pc
@@ -517,9 +504,6 @@ class UASB:
       up_vel=UASB_Q_dump/UASB_CA
       return up_vel.to(u.m/u.s)
 
-
-
-
 D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
 
 drain_times=np.zeros(len(D_avail))*u.s
@@ -540,11 +524,7 @@ plt.xlabel('Pipe Diameter (Inches)')
 plt.ylabel('Upflow Velocity (Meters/second)')
 plt.ylim(0, .01)
 ```
-
-##Future Work for Python Documentation
-In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test more possible combinations with ease. Finally, the team must analyze the resulting drain times and up flow velocities from several designs to determine the optimal design for the UASB influent system, and then use that to update the onShape model. The team will need to do testing with the tipping bucket to make a more informed decision about optimal drain time.
-
-In the future, the team plants to instantiate a UASB object to represent a real UASB. The team will also do additional research to import more available HDPE tank dimensions and HDPE pipe sizing, so that it can test the available combinations with ease to determine the optimal design for the UASB influent system, and then use that to update the OnShape model.
+##Analysis of Python Documentation
 
 ##Bibliography
 
