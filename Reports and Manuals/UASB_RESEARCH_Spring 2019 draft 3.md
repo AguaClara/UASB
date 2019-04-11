@@ -5,7 +5,7 @@
 
 **[Hi friends! This is Sidney. I will be adding comments to your report in these bolded square brackets as well as resolving addressed comments.]**
 
-**[Overall: Good job! It would be awesome if you could match the na ming convention of your report file name to UASB Design's so it's easier to find your report (i.e. change your file name to "UASB_RESEARCH_Spring 2019.md"). Use past tense through the report for anything you accomplish this semester or will accomplish this semester/ have accomplished in previous semesters. This will make it easier for you when you go back at the end of the semester, so you don't have to change everything to past tense for the final draft (you'll already have written it all in past tense)! You have a few grammar mistakes littered through report. Please go back and do a thorough proofreading! Some of the naming and style is not consistent through the report. Otherwise, everything looks pretty organized and flows nicely.]**
+**[Overall: Good job! It would be awesome if you could match the na ming convention of your report file name to UASB Design's so it's easier to find your report (i.e. change your file name to "UASB_RESEARCH_Spring 2019.md").(finished) Use past tense through the report for anything you accomplish this semester or will accomplish this semester/ have accomplished in previous semesters. This will make it easier for you when you go back at the end of the semester, so you don't have to change everything to past tense for the final draft (you'll already have written it all in past tense)! You have a few grammar mistakes littered through report. Please go back and do a thorough proofreading! Some of the naming and style is not consistent through the report. Otherwise, everything looks pretty organized and flows nicely.]**
 
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -59,9 +59,9 @@
 
 ## Literature Review and Previous Work
 
-  Tamil Nadu Agricultural University did a study in 2013 on a **[an]** Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 $m^3$ and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67$m^-3$ **[Add {} around -3 so that it becomes a superscript]** per day **[.]** This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000, showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems. [(Jeyapandiyan, 2014)](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004) **[Move the period to include the citation.]**
+  Tamil Nadu Agricultural University did a study in 2013 on an **[an DONE]** Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 $m^3$ and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67$m^{-3}$ **[Add {} around -3 so that it becomes a superscript DONE]** per day. **[. DONE]** This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000, showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems [(Jeyapandiyan, 2014).](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004) **[Move the period to include the citation. DONE]**
 
-  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) shows that **[Grammatically incorrect?]** UASD **[UASB?]** reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove biodegradable organic compound, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when they compared it to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: the operation and maintenance of the treatment plants.[(Lier, 2010)](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes) **[Move the period to include the citation.]**
+  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the **[Grammatically incorrect? DONE]** UASB **[UASB? DONE]** reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when they compared it to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes) **[Move the period to include the citation. DONE]**
 
 
 ## Timeline of UASB
@@ -100,51 +100,51 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
   During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules for not readily available, and the team considered it to be wasteful for early testing stages, the team decided to use tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways cause an uneven distribution of wastewater flow throughout the reactor, making the UASB reactor less efficient.
 
-  The benchtop model was a scaled down version of a real UASB reactor, made using pvc **[Did you define PVC already? Should be capitalized.]**. The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
+  The benchtop model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC) **[Did you define PVC already? Should be capitalized. DONE]**. The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
 
   The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” traveled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer. The team then came up with the idea of spreading the inlet flow by drilling four holes near the bottom to decrease the preferential paths, but it was not completed by the end of 2018.
 
   So then a photometer was used to more accurately depict how the water was flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube was changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration.
 
-The team then tried to used **[use]** chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
+The team then tried to use **[use DONE]** chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
 
 
 
 ## Spring 2019 Goals
 
-  There are a few goals UASB Research wants to accomplish this semester. **[Use past tense.]** The first is the inlet system of the UASB. The UASB team was dissatisfied with the model inlet design used during the fall; the single inlet tube, whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket. When the water is not evenly distributed, the reactor is less efficient; some sludge granules are not getting into contact with the wastewater, and therefore they cannot degrade the organic material in the wastewater. There was also a significant problem: the inlet tube was inserted directly above the UASB reactor, but this is where the biogas capturing system needs to be on the UASB reactor. The old design is shown below:
+  The goal of this semester was to redefine the inlet system to allow even distribution of influent water and biogas capture. **[Use past tense. DONE]** The model inlet design used during the fall, the single inlet tube whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket leading to an inefficient reactor, thus less water purification. That is due to some sludge granules not getting into contact with the wastewater, and therefore not degrading the organic matter in the wastewater. Another significant problem with the previous inlet design was that the inlet tube was inserted directly above the UASB reactoras shown in Figure 2, where the biogas capturing system must be.
 
   <p align="center">
   <img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true" width="400px" /></p>
 <p align="center">Fig. 2: Old lab scale model of UASB reactor<p>
 
-  Between these two problems, and the fact UASB's old inlet system vanished in early February, a new model-scale inlet system desperately needs to be created. The team has sketched out a few designs - all with four openings in the inlet, in order to better distribute flow. An idea to put in a manifold was shut down over concerns of clogging. UASB-R has already got the parts in order to create one of the designs, and the contruction of that design has started. This is Design #1, without the attachment with the four openings.
+  With the aforementioned problems, and the fact that UASB's old model was lost, creating a new model-scale inlet was a given. The team first sketched a few inlet designs with four openings to better distribute water flow. An idea of utilizing a manifold was shut down over concerns of clogging. With finalized designs UASB-R got the parts to construct a new model and started fabrication. Shown in Figure 3 is Design #1 excluding the attachment with the four openings.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/R%20Prototype.jpeg?raw=true" width="250px" /></p>
 <p align="center">Fig. 3: Beginnings of the first inlet design of 2019
 
- As one can see, the inlet tube enters on the right side of the tank with a horizontal component. UASB is also interested what would happen if the inlet tube was inserted lower down. Would the water velocity be the same? Does one design have more head loss than the other? The two competing designs, as shown below, will be what UASB will be testing out.
+ As one can see, the inlet tube enters on the right side of the tank with a horizontal component. UASB-R also thought of inserting the inlet tube at a lower height to see if the water velocity be the could be higher or cause less head loss. The two designs are shown in Figure 4. However, after consulting with a research advisor, it was apparent that an inlet tube at a lower height would not be beneficial.
 
  <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Sketch%20UASB-R.jpeg?raw=true" width="250px" /></p>
 <p align="center">Fig. 4: Two competing designs; sketch does not include effluent design or the biogas capture system.
 
-After UASB-R settles on one design, the rest of the semester will be devoted to:
+The list below was the more detailed goals of UASB-R this semester:
 
-- Constructing and testing the four-opening attachment for the lab bench model
+- Construct and test the four inlet tube attachment using sludge granules*
+- Test to see whether pulse flow vs continuous is flow more efficient using sludge granules*
+    (Orginally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity,       but new research has been pointing toward continuous flow.)
+- contact with UASB Design for any bench testing
 
-- Run tests to determine pulse flow vs continuous flow. Orginally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity, but new research has been pointing toward continuous flow.
+/* The sludge granules were from the Aanheuser-Busch Plant in Syracuse, NY.
 
-Both these tests will be run using actual sludge granules from the Aanheuser-Busch Plant in Syracuse, NY. One of our members will be going there to pick up the sludge on March 9th.
-
-- Lastly, keep in close contact with UASB Design and see if there are any features they would like UASB Research to test in the lab.
-**[Is this supposed to be your Methods section? I'm confused.]**
+**[Is this supposed to be your Methods section? I'm confused. DONE]**
 ## Lab Experiments
 
 ### Current Testing: Results and Analysis
 
-In order to test for where the inlet tube should be inserted into the UASB reactor, we created an experiment to test the exit velocity of the water as it is taken out through the effluent tube. We designed two different inlet systems that come in at two different heights of the benchtop model, as shown in Figure 4. The system was fabricated, the team tested it with only water (no sludge) to check for reactor performance. However, realizing there were leaks between the drilled hole and the 0.5 inches inlet pipe, the team made **[Grammar?]** fixed it by drilling a larger hole and attaching a threaded fitting with seal tape to prevent leaks.
+In order to test where the inlet tube should be inserted into the UASB reactor, the UASB-R team created an experiment that examined the exit velocity of the water from the effluent tube. Inlet systems that come in at two different heights of the benchtop model as shown in Figure 4 was created. To check for reactor performance the team only used water (no sludge). However, realizing there were leaks between the drilled hole and the 0.5" inlet pipe, the team **[Grammar? DONE]** the team drilled a larger hole and attached seal tape to the threaded fitting to prevent leaks.
 
 
 
@@ -157,9 +157,9 @@ In order to test for where the inlet tube should be inserted into the UASB react
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/New%20UASB.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 6: the fixed connection
 
-The team was now able to perform a test experiment with old sludge. While sludge can stay alive in a suspended state in a fridge for up to year, UASB-R **[Use consistent naming conventions. You use UASB Research and UASB-R and interchange pretty randomly. If you define a shortened term "UASB-R", why not use it throughout the paper?]** only has a small amount at the moment. The plan was to get more sludge in early March, but AguaClara's contact for sludge granules  has retired from his job and is unable to obtain them anymore. Prof. Ruth Richardson of the CEE department is working to find a new person to get sludge granules from. The small amount will be enough to finish the testing and experiments described below.
+The team was able to perform a test experiment with old sludge. While sludge can stay alive in a suspended state in a fridge for up to one year. With only a small amount of sludge left **[Use consistent naming conventions. You use UASB Research and UASB-R and interchange pretty randomly. If you define a shortened term "UASB-R", why not use it throughout the paper? DONE]** plan was to get more sludge in early March, but AguaClara's contact for sludge granules retired and was unable to obtain them. Thus the team contacted Prof. Ruth Richardson of the CEE department to figure out where to get sludge granules from. The small amount was enough to complete the testing below.
 
-* NEW STUFF UASB Research started to testing tthe velocities of
+* NEW UASB Research -- testing the exit velocities
 [Video 1](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
 [Video 2](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a)
 
@@ -176,7 +176,7 @@ The inlet consists of four different openings. The idea behind this is that it w
  This test will be more research-based, with focus on gathering data on preferential paths to inform UASB-Design team how the water will flow and interact with the sludge in the real reactor. Further specifications of this test will be defined and noted.
 
 
-### Key Contacts **[Why is this a subsection of Lab Experiments?]**
+## Key Contacts **[Why is this a subsection of Lab Experiments? DONE]**
 
 The team has listed some key contacts for the UASB project so all members will know who to reach out to. They are summarized in the table below.
 
