@@ -188,5 +188,5 @@ The team has listed some key contacts for the UASB project so all members will k
 
 
 
-# EPA Funding Assurance
+## EPA Funding Assurance
 This article was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
