@@ -189,10 +189,10 @@ The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8.
 
 
 Video recordings of some of the testing can be found [here](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
-and [here]. (https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a)
+and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
 
 
-## Future Testing
+## Future Work
 
 ### Fabricating Lab-size Tipping bucket system
 
@@ -206,7 +206,7 @@ To fabricate the system, the transparent material will be used so the team can s
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig.
 
-
+The fabrication has just begun. Once finished, the team will be testing the model tipping bucket system to see if the the flow is being evenly distributed into the inlets. If it is not, UASB Research and UASB Design will work on coming up ideas to fix this problem, a process which most likely will be postponed to the next semester, depending on how long fabrication and testing takes.
 
 ## Key Contacts **[Why is this a subsection of Lab Experiments? DONE]**
 
