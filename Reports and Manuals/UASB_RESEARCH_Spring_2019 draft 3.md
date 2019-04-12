@@ -26,8 +26,8 @@
       - [Fall 2018](#fall-2018)
   - [Spring 2019 Goals](#spring-2019-goals)
   - [Lab Experiments](#lab-experiments)
-      - Methods(#methods)
-      - Results and Analysis(#results-and-analysis)
+      - [Methods](#methods)
+      - [Results and Analysis](#results-and-analysis)
   - [Conclusion: Future Work](#future-work)
 - [EPA Funding Assurance](#epa-funding-assurance)
 
