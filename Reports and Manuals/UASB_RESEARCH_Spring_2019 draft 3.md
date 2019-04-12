@@ -190,7 +190,7 @@ Based on the sketch, the red section represents a wastewater tank to hold wastew
 To fabricate the system, the transparent material will be used so the team can see through what is happening inside the tank. The tank is fabricated using the plastic container, and the 4-pipe-outlet system is fabricated with .5" thick plastic sheet. The plastic sheet is cut into square with perimeter of 3" with total of 5 sides. The 4 sides are for the wall, and the other side is used to enclosed the bottom of the box. the 4 pieces of cut plastic then are glued together using a PVC glue.
 
 <p align="center">
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true"width="250px"/></p>
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig.
 
 
