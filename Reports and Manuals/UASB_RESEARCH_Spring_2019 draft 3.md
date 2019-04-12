@@ -69,7 +69,7 @@ A recent, updated model in OnShape has also been created by UASB-Design [UASB mo
 
   Tamil Nadu Agricultural University did a study in 2013 on an **[an DONE]** Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 $m^3$ and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67$m^{-3}$ **[Add {} around -3 so that it becomes a superscript DONE]** per day. **[. DONE]** This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000 ($1160), showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems [(Jeyapandiyan, 2014).](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004) **[Move the period to include the citation. DONE]**
 
-  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the **[Grammatically incorrect? DONE]** UASB **[UASB? DONE]** reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when they compared it to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes) **[Move the period to include the citation. DONE]**
+  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the **[Grammatically incorrect? DONE]** UASB **[UASB? DONE]** reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when they compared it to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes)
 
 
 ## Timeline of UASB
@@ -108,19 +108,19 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
   During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules for not readily available, and the team considered it to be wasteful for early testing stages, the team decided to use tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways cause an uneven distribution of wastewater flow throughout the reactor, making the UASB reactor less efficient.
 
-  The benchtop model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC) **[Did you define PVC already? Should be capitalized. DONE]**. The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
+  The benchtop model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC). The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
 
   The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” traveled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer. The team then came up with the idea of spreading the inlet flow by drilling four holes on the inlet tube near the bottom to decrease the preferential paths, but it was not completed by the end of 2018.
 
   So then a photometer was used to more accurately depict how the water was flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube was changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration.
 
-The team then tried to use **[use DONE]** chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
+The team then tried to use chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
 
 
 
 ## Spring 2019 Goals
 
-  The goal of this semester was to redefine the inlet system to allow even distribution of influent water and biogas capture. **[Use past tense. DONE]** The model inlet design used during the fall, the single inlet tube whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket leading to an inefficient reactor, thus less water purification. That is due to some sludge granules not getting into contact with the wastewater, and therefore not degrading the organic matter in the wastewater. Another significant problem with the previous inlet design was that the inlet tube was inserted directly above the UASB reactor, but this is where the biogas capturing system must be.
+  The goal of this semester was to redefine the inlet system to allow even distribution of influent water and biogas capture.  The model inlet design used during the fall, the single inlet tube whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket leading to an inefficient reactor, thus less water purification. That is due to some sludge granules not getting into contact with the wastewater, and therefore not degrading the organic matter in the wastewater. Another significant problem with the previous inlet design was that the inlet tube was inserted directly above the UASB reactor, but this is where the biogas capturing system must be.
 
   With the aforementioned problems, and the fact that UASB's old model was lost, creating a new model-scale inlet was a necessity. The team first sketched a few inlet designs with four openings to better distribute water flow. An idea of utilizing a manifold was shut down over concerns of clogging. With finalized designs UASB-R got the parts to construct a new model and started fabrication. Shown in Figure 3 is Design #1 excluding the attachment with the four openings.
 
@@ -175,7 +175,7 @@ The four inlet system is shown below. The goal was less about fabricating an mod
 <p align="center">Fig. 7 - The inlet system with four openings
 
 
-The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect the team's results. Pictures and vidoe recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
+The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor, using ProCoDa at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect the team's results. Pictures and vidoe recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
 
  <p align="center">
 <img src= "https://github.com/AguaClara/UASB/blob/master/Images/IMG_0815%20(1).JPG?raw=true" width="250px"/></p>
@@ -184,22 +184,26 @@ The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8.
 
  ###  Results and Analysis
 
+As water moved through the reactor, the initial burst of dye. started to spread through the lower part of the reactor. The dyed water was not reaching each part of the blanket uniformly for the first 10-20s (Fig. 9 and 10).
 
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0806%20(1).JPG?raw=true" width="250px"/></p>
-<p align="center">Fig. 9 Front view of the reactor
+<p align="center">Fig. 9 - Front view of the reactor
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0808%20(1).JPG?raw=true" width="250px"/></p>
 <p align="center">Fig. 10 - Back view of the reactor
 
+But we found that preferential pathways (which would look like a long, mostly vertical stripe of white tapioca) were not indeed forming. The water was eventually reaching each part of the tapioca and not selectively choosing certain pathways, as shown in Fig. 11 after running the water for about 40 seconds during one of the tests.
+
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0844.JPG?raw=true" width="250px"/></p>
 <p align="center">Fig. 11 - Reactor after dye has spread further
 
-Video recordings of some of the testing can be found [here](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
-and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
+The team knows this is not a perfect, final solution - during a meeting w/ Professor Weber-Shirk, Professor Richardson and the rest of the wastewater teams, there was a debate on coming up with a way to check to see that the sludge blanket itself, not just a tapioca model, is being evenly fluidized in an UASB reactor. But this idea will need to be researched further before it can be implemented.
+
+Video recordings of some of the testing can be found [here](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U) and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
 
 
 ## Future Work
@@ -214,15 +218,13 @@ To fabricate the system, the transparent material will be used so the team can s
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
-<p align="center">Fig. 12 Sketch of the tipping bucket system. Inlet tubes not included
+<p align="center">Fig. 12 - Sketch of the tipping bucket system. Inlet tubes not included
 
 The fabrication has just begun. Once finished, the team will be testing the model tipping bucket system to see if the the flow is being evenly distributed into the inlets. If it is not, UASB Research and UASB Design will work on coming up ideas to fix this problem, a process which most likely will be postponed to the next semester, depending on how long fabrication and testing takes.
 
-## Key Contacts **[Why is this a subsection of Lab Experiments? DONE]**
+## Key Contacts
 
-Th
-
-e team has listed some key contacts for the UASB project so all members will know who to reach out to. They are summarized in the table below.
+The team has listed some key contacts for the UASB project so all members will know who to reach out to. They are summarized in the table below.
 
 | Name                | Role                                                              | Email                             |
 | ------------------- | ----------------------------------------------------------------- | --------------------------------- |
