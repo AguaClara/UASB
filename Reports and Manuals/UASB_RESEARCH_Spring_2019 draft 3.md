@@ -170,6 +170,20 @@ UASB_R starting pumping water through the UASB inlet at different flow rates and
 
 ### Methods - Part II
 
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0681%20(1).JPG?raw=true" width="250px"/></p>
+<p align="center">Fig.7
+  
+ <p align="center">
+<img src= "https://github.com/AguaClara/UASB/blob/master/Images/IMG_0815%20(1).JPG?raw=true" width="250px"/></p>
+<p align="center">Fig.8
+  
+  
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0824%20(1).JPG?raw=true" width="250px"/></p>
+<p align="center">Fig.9
+  
+
 ###  Results and Analysis
 
 * NEW UASB Research -- testing the exit velocities
