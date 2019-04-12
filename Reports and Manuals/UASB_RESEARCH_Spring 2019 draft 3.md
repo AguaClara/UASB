@@ -112,13 +112,13 @@ The team then tried to use **[use DONE]** chia seeds instead of tapioca, which r
 
 ## Spring 2019 Goals
 
-  The goal of this semester was to redefine the inlet system to allow even distribution of influent water and biogas capture. **[Use past tense. DONE]** The model inlet design used during the fall, the single inlet tube whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket leading to an inefficient reactor, thus less water purification. That is due to some sludge granules not getting into contact with the wastewater, and therefore not degrading the organic matter in the wastewater. Another significant problem with the previous inlet design was that the inlet tube was inserted directly above the UASB reactoras shown in Figure 2, where the biogas capturing system must be.
+  The goal of this semester was to redefine the inlet system to allow even distribution of influent water and biogas capture. **[Use past tense. DONE]** The model inlet design used during the fall, the single inlet tube whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket leading to an inefficient reactor, thus less water purification. That is due to some sludge granules not getting into contact with the wastewater, and therefore not degrading the organic matter in the wastewater. Another significant problem with the previous inlet design was that the inlet tube was inserted directly above the UASB reactors shown in Figure 2, where the biogas capturing system must be.
 
   <p align="center">
   <img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true" width="400px" /></p>
 <p align="center">Fig. 2: Old lab scale model of UASB reactor<p>
 
-  With the aforementioned problems, and the fact that UASB's old model was lost, creating a new model-scale inlet was a given. The team first sketched a few inlet designs with four openings to better distribute water flow. An idea of utilizing a manifold was shut down over concerns of clogging. With finalized designs UASB-R got the parts to construct a new model and started fabrication. Shown in Figure 3 is Design #1 excluding the attachment with the four openings.
+  With the aforementioned problems, and the fact that UASB's old model was lost, creating a new model-scale inlet was a necessity. The team first sketched a few inlet designs with four openings to better distribute water flow. An idea of utilizing a manifold was shut down over concerns of clogging. With finalized designs UASB-R got the parts to construct a new model and started fabrication. Shown in Figure 3 is Design #1 excluding the attachment with the four openings.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/R%20Prototype.jpeg?raw=true" width="250px" /></p>
@@ -132,20 +132,20 @@ The team then tried to use **[use DONE]** chia seeds instead of tapioca, which r
 
 The list below was the more detailed goals of UASB-R this semester:
 
-- Construct and test the four inlet tube attachment using sludge granules*
+- Construct and test the four inlet tube attachment using sludge granules.
 - Test to see whether pulse flow vs continuous is flow more efficient using sludge granules*
     (Orginally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity,       but new research has been pointing toward continuous flow.)
-- contact with UASB Design for any bench testing
+- Keep with UASB Design for any bench testing - specifically working on a design to evenly distribute wastewater flow through the inlet when the tipping bucket releases the wastewater.
 
-/* The sludge granules were from the Aanheuser-Busch Plant in Syracuse, NY.
 
 **[Is this supposed to be your Methods section? I'm confused. DONE]**
-## Lab Experiments
+## Lab Experiments - Methods
 
 ### Current Testing: Results and Analysis
 
-In order to test whether the UASB-R team created an experiment that examined the exit velocity of the water from the effluent tube. Inlet systems that come in at two different heights of the benchtop model as shown in Figure 4 was created. It was later apparent that the different heights would not make a significant change to the efficiency of the reactor. However, to check for reactor performance with an inlet tube attached the team only used water (no sludge). Realizing there were leaks between the drilled hole and the 0.5" inlet pipe, the team **[Grammar? DONE]** the team drilled a larger hole and attached seal tape to the threaded fitting to prevent leaks.
+The UASB-R team created an experiment that examined the exit velocity of the water from the effluent tube. Inlet systems that come in at two different heights of the benchtop model as shown in Figure 4 were designed and created.
 
+UASB-R started to test the first design (the sketch on the right in Fig. 4 and shown in Fig. 5) using only tap water (no sludge). There were several leaks coming from the two elbows because the parts were old. These were replaced. Also, the team discovered leaks between the drilled hole and the 0.5" inlet pipe, so the team drilled a larger hole and attached seal tape to the threaded fitting to prevent leaks, as shown in Fig. 6.
 
 
 <p align="center">
@@ -157,28 +157,44 @@ In order to test whether the UASB-R team created an experiment that examined the
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/New%20UASB.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 6: the fixed connection
 
-The team was able to perform a test experiment with old sludge. While sludge can stay alive in a suspended state in a fridge for up to one year. With only a small amount of sludge left **[Use consistent naming conventions. You use UASB Research and UASB-R and interchange pretty randomly. If you define a shortened term "UASB-R", why not use it throughout the paper? DONE]** plan was to get more sludge in early March, but AguaClara's contact for sludge granules retired and was unable to obtain them. Thus the team contacted Prof. Ruth Richardson of the CEE department to figure out where to get sludge granules from. The small amount was enough to complete the testing below.
+The UASB-R was able to start performing a test experiments with old sludge. NOTE: While sludge can stay alive in a suspended state in a fridge for up to one year. With only a small amount of sludge left, the team planned to get more sludge in early March. Unfortunately, due to AguaClara's contact for sludge granules at the Aanheuser-Busch Plant in Syracuse, NY. has retired, and both Prof. Ruth Richardson of the CEE department and UASB-R having been unable to find a new contact as of mid-April, plans to get more sludge granules have stalled. Thankfully, the small amount is enough to finish this semester's testing.
+
+As UASB-R was about to start collecting data, the team consulted with Monroe and a few members of AguaClara. It became apparent that the different heights would not make a significant change to the efficiency of the reactor, and unfortunately, the experiment was scrapped.
+
 
 * NEW UASB Research -- testing the exit velocities
 [Video 1](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
 [Video 2](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a)
 
 
-It should also be stated that the team is working off the same [UASB model](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
+It should also be stated that the team is working off the same [UASB model](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b
 
+0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
+
+### Fabricating Lab-size Tipping bucket system
+
+To test out the pulse inlet flow, the team is continuing the idea from last year using tipping bucket. Based on the 2018 tipping bucket that has been fabricated, this year the research team is going to fabricate the inlet system of four pipes where the tipping bucket is pouring the waste water as it shown in Figure ...
+
+Based on the sketch, the red section represents a wastewater tank to hold wastewater where the tipping bucket is attach, and the black box located on the bottom is the 4 pipes outlet system that deliver the waste water evenly to the sludge blanket reactor.  
+
+To fabricate the system, the transparent material will be used so the team can see through what is happening inside the tank. The tank is fabricated using the plastic container, and the 4-pipe-outlet system is fabricated with .5" thick plastic sheet. The plastic sheet is cut into square with perimeter of 3" with total of 5 sides. The 4 sides are for the wall, and the other side is used to enclosed the bottom of the box. the 4 pieces of cut plastic then are glued together using a PVC glue.
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true"width="250px"/></p>
+<p align="center">Fig.
 
 
 ### Future Testing **[Why did you put a : here? Use consistent style. FIXED CJMS]**
-Now that fabrication is complete, the team's next step is to gather volume data with and without sludge to check whether a higher versus a lower inlet allows for a greater output of water thus lower headloss. The team will monitor differing input water velocity, time, and output volume of water and analyze their relationships to justify which inlet height has the least headloss. Once a proper height is fixed, the team will move onto testing the inlet, with the sludge blanket, to check for preferential paths.
 
-The inlet consists of four different openings. The idea behind this is that it will allow for more wastewater to come into contact with the sludge, thus making the UASB reactor more efficient by taking a greater proportion of pollutants out of the wastewater. The inlet is still currently being worked on; a few parts need to be ordered and shipped, and an onshape model of the design is in the process of being created.
 
- This test will be more research-based, with focus on gathering data on preferential paths to inform UASB-Design team how the water will flow and interact with the sludge in the real reactor. Further specifications of this test will be defined and noted.
+
 
 
 ## Key Contacts **[Why is this a subsection of Lab Experiments? DONE]**
 
-The team has listed some key contacts for the UASB project so all members will know who to reach out to. They are summarized in the table below.
+Th
+
+e team has listed some key contacts for the UASB project so all members will know who to reach out to. They are summarized in the table below.
 
 | Name                | Role                                                              | Email                             |
 | ------------------- | ----------------------------------------------------------------- | --------------------------------- |
