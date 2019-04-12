@@ -5,7 +5,7 @@
 
 **[Hi friends! This is Sidney. I will be adding comments to your report in these bolded square brackets as well as resolving addressed comments.]**
 
-**[Overall: Good job! It would be awesome if you could match the na ming convention of your report file name to UASB Design's so it's easier to find your report (i.e. change your file name to "UASB_RESEARCH_Spring 2019.md").(finished) Use past tense through the report for anything you accomplish this semester or will accomplish this semester/ have accomplished in previous semesters. This will make it easier for you when you go back at the end of the semester, so you don't have to change everything to past tense for the final draft (you'll already have written it all in past tense)! You have a few grammar mistakes littered through report. Please go back and do a thorough proofreading! Some of the naming and style is not consistent through the report. Otherwise, everything looks pretty organized and flows nicely.]**
+**[Overall: Good job! It would be awesome if you could match the naming convention of your report file name to UASB Design's so it's easier to find your report (i.e. change your file name to "UASB_RESEARCH_Spring 2019.md").(finished) Use past tense through the report for anything you accomplish this semester or will accomplish this semester/ have accomplished in previous semesters. This will make it easier for you when you go back at the end of the semester, so you don't have to change everything to past tense for the final draft (you'll already have written it all in past tense)! You have a few grammar mistakes littered through report. Please go back and do a thorough proofreading! Some of the naming and style is not consistent through the report. Otherwise, everything looks pretty organized and flows nicely.]**
 
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -25,7 +25,9 @@
       - [Summer 2018](#summer-2018)
       - [Fall 2018](#fall-2018)
   - [Spring 2019 Goals](#spring-2019-goals)
-  - [Lab Experiments: Results and Analysis](#lab-experiments)
+  - [Lab Experiments](#lab-experiments)
+      - Methods(#methods)
+      - Results and Analysis(#results-and-analysis)
   - [Conclusion: Future Work](#future-work)
 - [EPA Funding Assurance](#epa-funding-assurance)
 
@@ -56,6 +58,10 @@
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/AC_SideView.PNG?raw=true" width="250px"
 /></p>
 <p align="center">Fig. 1a and 1b: Diagram of a traditional UASB Reactor (front and side views)
+
+A recent, updated model in OnShape has also been created by UASB-Design [UASB model](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b
+
+0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
 
 ## Literature Review and Previous Work
 
@@ -171,12 +177,11 @@ UASB_R starting pumping water through the UASB inlet at different flow rates and
 [Video 2](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a)
 
 
-It should also be stated that the team is working off the same [UASB model](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b
 
-0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
 
-### Future Testing
-#### Fabricating Lab-size Tipping bucket system
+## Future Testing
+
+### Fabricating Lab-size Tipping bucket system
 
 To test out the pulse inlet flow, the team is continuing the idea from last year using tipping bucket. Based on the 2018 tipping bucket that has been fabricated, this year the research team is going to fabricate the inlet system of four pipes where the tipping bucket is pouring the waste water as it shown in Figure ...
 
