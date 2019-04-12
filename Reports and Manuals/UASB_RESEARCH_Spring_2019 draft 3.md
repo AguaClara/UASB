@@ -189,8 +189,8 @@ The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8.
 <p align="center">Fig.9
   
   
- <p align="center">
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0807.JPG?raw=true" width="250px"/></p>
+<p align="center">
+<img src="" width="250px"/></p>
 <p align="center">Fig.9
 
 
