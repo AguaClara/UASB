@@ -27,8 +27,10 @@
   - [Spring 2019 Goals](#spring-2019-goals)
   - [Lab Experiments](#lab-experiments)
       - [Methods](#methods)
+      - [Methods - Part II](#methods-part-II)
       - [Results and Analysis](#results-and-analysis)
   - [Conclusion: Future Work](#future-work)
+      - [Fabricating a Model Tipping Bucket System](#fabricating-a-model-tipping-bucket-system
 - [EPA Funding Assurance](#epa-funding-assurance)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -194,7 +196,7 @@ and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
 
 ## Future Work
 
-### Fabricating Lab-size Tipping bucket system
+### Fabricating a Model Tipping Bucket System
 
 To test out the pulse inlet flow, the team is continuing the idea from last year using tipping bucket. Based on the 2018 tipping bucket that has been fabricated, this year the research team is going to fabricate the inlet system of four pipes where the tipping bucket is pouring the waste water as it shown in Figure ...
 
