@@ -187,11 +187,9 @@ The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8.
 <p align="center">Fig.9
   
 
-* NEW UASB Research -- testing the exit velocities
-[Video 1](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
-[Video 2](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a)
 
-
+Video recordings of some of the testing can be found [here](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
+and [here]. (https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a)
 
 
 ## Future Testing
