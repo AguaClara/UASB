@@ -173,11 +173,11 @@ The four inlet system is shown below. The goal was less about fabricating an mod
 <p align="center">Fig. 7 - The inlet system with four openings
   
   
-The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect our resultd. Pictures and vidoe recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
+The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect the team's results. Pictures and vidoe recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
   
  <p align="center">
 <img src= "https://github.com/AguaClara/UASB/blob/master/Images/IMG_0815%20(1).JPG?raw=true" width="250px"/></p>
-<p align="center"> Fig. 8 - The tapioca-filled UASB reacotr, pre-testing.
+<p align="center"> Fig. 8 - The tapioca-filled UASB reacotor, pre-testing.
   
   
  ###  Results and Analysis
