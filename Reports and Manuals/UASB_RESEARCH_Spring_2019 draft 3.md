@@ -118,11 +118,7 @@ The team then tried to use **[use DONE]** chia seeds instead of tapioca, which r
 
 ## Spring 2019 Goals
 
-  The goal of this semester was to redefine the inlet system to allow even distribution of influent water and biogas capture. **[Use past tense. DONE]** The model inlet design used during the fall, the single inlet tube whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket leading to an inefficient reactor, thus less water purification. That is due to some sludge granules not getting into contact with the wastewater, and therefore not degrading the organic matter in the wastewater. Another significant problem with the previous inlet design was that the inlet tube was inserted directly above the UASB reactors shown in Figure 2, where the biogas capturing system must be.
-
-  <p align="center">
-  <img src="https://github.com/AguaClara/UASB/blob/master/Images/UASB_prototype.png?raw=true" width="400px" /></p>
-<p align="center">Fig. 2: Old lab scale model of UASB reactor<p>
+  The goal of this semester was to redefine the inlet system to allow even distribution of influent water and biogas capture. **[Use past tense. DONE]** The model inlet design used during the fall, the single inlet tube whose goal was to deliver wastewater to the bottom of the reactor, was not spreading out the water evenly throughout the model sludge blanket leading to an inefficient reactor, thus less water purification. That is due to some sludge granules not getting into contact with the wastewater, and therefore not degrading the organic matter in the wastewater. Another significant problem with the previous inlet design was that the inlet tube was inserted directly above the UASB reactor, but this is where the biogas capturing system must be.
 
   With the aforementioned problems, and the fact that UASB's old model was lost, creating a new model-scale inlet was a necessity. The team first sketched a few inlet designs with four openings to better distribute water flow. An idea of utilizing a manifold was shut down over concerns of clogging. With finalized designs UASB-R got the parts to construct a new model and started fabrication. Shown in Figure 3 is Design #1 excluding the attachment with the four openings.
 
@@ -166,25 +162,30 @@ UASB-R started to test the first design (the sketch on the right in Fig. 4 and s
 
 The UASB-R was able to start performing a test experiments with old sludge. NOTE: While sludge can stay alive in a suspended state in a fridge for up to one year. With only a small amount of sludge left, the team planned to get more sludge in early March. Unfortunately, due to AguaClara's contact for sludge granules at the Aanheuser-Busch Plant in Syracuse, NY. has retired, and both Prof. Ruth Richardson of the CEE department and UASB-R having been unable to find a new contact as of mid-April, plans to get more sludge granules have stalled. Thankfully, the small amount is enough to finish this semester's testing.
 
-UASB_R starting pumping water through the UASB inlet at different flow rates and calculating the exit velocity as the water exited the reactor. However, after consulting with a research advisor, it was apparent that an inlet tube at a lower height would not be beneficial. The different heights would not make a significant change to the efficiency of the reactor, and the lower inlet would just make the system harder to clean and fix if anything broke. The remainder of the testing, and some data initially collected, was scrapped. But the testing did give halp the team learn ProCoDa - the software used to run the pump - better, and the design fabricated was able to be easily reused into the next task of the semester.
+UASB_R starting pumping water through the UASB inlet at different flow rates and calculating the exit velocity as the water exited the reactor. However, after consulting with a research advisor, it was apparent that an inlet tube at a lower height would not be beneficial. The different heights would not make a significant change to the efficiency of the reactor, and the lower inlet would just make the system harder to clean and fix if anything broke. The remainder of the testing, and some data initially collected, was scrapped. But the testing did help the team learn ProCoDa - the software used to run the pump - better, and the design fabricated was able to be easily reused into the next task of the semester.
 
 ### Methods - Part II
 
+The four inlet system is shown below. The goal was less about fabricating an model that would perfectly emulate the inlet system and more about getting a simple design fabricating quickly, with materials already in the lab, that would provide four openings for the water to flow into the reactor tank, so the team could test the hypothesis: that a greater number of inlets would reduce preferential pathways through the sludge blanket. There is would be no use using this more complicated design if it were to give the same results as the initial one-inlet design from last semester.
+
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0681%20(1).JPG?raw=true" width="250px"/></p>
-<p align="center">Fig.7
+<p align="center">Fig. 7 - The inlet system with four openings
+  
+  
+The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect our resultd. Pictures and vidoe recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
   
  <p align="center">
 <img src= "https://github.com/AguaClara/UASB/blob/master/Images/IMG_0815%20(1).JPG?raw=true" width="250px"/></p>
-<p align="center">Fig.8
+<p align="center"> Fig. 8 - The tapioca-filled UASB reacotr, pre-testing.
   
   
+ ###  Results and Analysis
+ 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0824%20(1).JPG?raw=true" width="250px"/></p>
 <p align="center">Fig.9
   
-
-###  Results and Analysis
 
 * NEW UASB Research -- testing the exit velocities
 [Video 1](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
