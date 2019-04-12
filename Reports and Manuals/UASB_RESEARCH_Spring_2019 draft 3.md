@@ -192,7 +192,7 @@ As water moved through the reactor, the initial burst of dye. started to spread 
 <p align="center">Fig. 9 - Front view of the reactor
 
 <p align="center">
-<img src="" width="250px"/></p>
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0808%20(1).JPG?raw=true" width="250px"/></p>
 <p align="center">Fig. 10 - Back view of the reactor
 
 But we found that preferential pathways (which would look like a long, mostly vertical stripe of white tapioca) were not indeed forming. The water was eventually reaching each part of the tapioca and not selectively choosing certain pathways, as shown in Fig. 11 after running the water for about 40 seconds during one of the tests.
