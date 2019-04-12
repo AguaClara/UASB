@@ -173,26 +173,30 @@ The four inlet system is shown below. The goal was less about fabricating an mod
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0681%20(1).JPG?raw=true" width="250px"/></p>
 <p align="center">Fig. 7 - The inlet system with four openings
-  
-  
+
+
 The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect the team's results. Pictures and vidoe recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
-  
+
  <p align="center">
 <img src= "https://github.com/AguaClara/UASB/blob/master/Images/IMG_0815%20(1).JPG?raw=true" width="250px"/></p>
 <p align="center"> Fig. 8 - The tapioca-filled UASB reacotor, pre-testing.
-  
-  
- ###  Results and Analysis
- 
-<p align="center">
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0824%20(1).JPG?raw=true" width="250px"/></p>
-<p align="center">Fig.9
-  
-  
-<p align="center">
-<img src="" width="250px"/></p>
-<p align="center">Fig.9
 
+
+ ###  Results and Analysis
+
+
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0806%20(1).JPG?raw=true" width="250px"/></p>
+<p align="center">Fig. 9 Front view of the reactor
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0808%20(1).JPG?raw=true" width="250px"/></p>
+<p align="center">Fig. 10 - Back view of the reactor
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0844.JPG?raw=true" width="250px"/></p>
+<p align="center">Fig. 11 - Reactor after dye has spread further
 
 Video recordings of some of the testing can be found [here](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U)
 and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
@@ -202,7 +206,7 @@ and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
 
 ### Fabricating a Model Tipping Bucket System
 
-To test out the pulse inlet flow, the team is continuing the idea from last year using tipping bucket. Based on the 2018 tipping bucket that has been fabricated, this year the research team is going to fabricate the inlet system of four pipes where the tipping bucket is pouring the waste water as it shown in Figure ...
+To test out the pulse inlet flow, the team is continuing the idea from last year using tipping bucket. Based on the 2018 tipping bucket that has been fabricated, this year the research team is going to fabricate the inlet system of four pipes where the tipping bucket is pouring the waste water as it shown in Figure 12.
 
 Based on the sketch, the red section represents a wastewater tank to hold wastewater where the tipping bucket is attach, and the black box located on the bottom is the 4 pipes outlet system that deliver the waste water evenly to the sludge blanket reactor.
 
@@ -210,7 +214,7 @@ To fabricate the system, the transparent material will be used so the team can s
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
-<p align="center">Fig.
+<p align="center">Fig. 12 Sketch of the tipping bucket system. Inlet tubes not included
 
 The fabrication has just begun. Once finished, the team will be testing the model tipping bucket system to see if the the flow is being evenly distributed into the inlets. If it is not, UASB Research and UASB Design will work on coming up ideas to fix this problem, a process which most likely will be postponed to the next semester, depending on how long fabrication and testing takes.
 
