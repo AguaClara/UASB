@@ -40,7 +40,7 @@
 
   For the past two years, the AguaClara Upflow Anaerobic Sludge Blanket Team, also known has UASB, has been in the works of designing and fabricating a pilot-scale Upflow Anaerboic Sludge Blanket reactor, a system which treats wastewater via anaerobic digestion, producing biogas in the process. UASB's design is completely gravity-powered and is a low cost solution to treating wastewater in rural communities that cannot afford typical wastewater treatment plants.
 
-  This semester, the UASB Team divided into the two sister teams of UASB Research (UASB-R) and UASB Design (UASB-D). UASB Research is focused on benchtop testing of a model UASB, researching ways to increase the reactor's efficiency, and test out designs in lab before being implemented by UASB Design.
+  This semester, the UASB Team divided into the two sister teams of UASB Research (UASB-R) and UASB Design (UASB-D). UASB-R is focused on benchtop testing of a model UASB, researching ways to increase the reactor's efficiency, and test out designs in lab before being implemented by UASB Design.
 
 ## Introduction
 
@@ -67,9 +67,9 @@ A recent, updated model in OnShape has also been created by UASB-Design [UASB mo
 
 ## Literature Review and Previous Work
 
-  Tamil Nadu Agricultural University did a study in 2013 on an **[an DONE]** Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 $m^3$ and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67$m^{-3}$ **[Add {} around -3 so that it becomes a superscript DONE]** per day. **[. DONE]** This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000 ($1160), showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems [(Jeyapandiyan, 2014).](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004) **[Move the period to include the citation. DONE]**
+  Tamil Nadu Agricultural University did a study in 2013 on an Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 $m^3$ and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67$m^{-3}$ per day. This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000 ($1160), showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems [(Jeyapandiyan, 2014).](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004)
 
-  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the **[Grammatically incorrect? DONE]** UASB **[UASB? DONE]** reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when they compared it to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes)
+  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the UASB reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when they compared it to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes)
 
 
 ## Timeline of UASB
@@ -141,9 +141,6 @@ The list below was the more detailed goals of UASB-R this semester:
     (Orginally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity,       but new research has been pointing toward continuous flow.)
 - Keep with UASB Design for any bench testing - specifically working on a design to evenly distribute wastewater flow through the inlet when the tipping bucket releases the wastewater.
 
-
-**[Is this supposed to be your Methods section? I'm confused. DONE]**
-
 ## Lab Experiments
 
 ### Methods
@@ -162,9 +159,9 @@ UASB-R started to test the first design (the sketch on the right in Fig. 4 and s
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/New%20UASB.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 6: the fixed connection
 
-The UASB-R was able to start performing a test experiments with old sludge. NOTE: While sludge can stay alive in a suspended state in a fridge for up to one year. With only a small amount of sludge left, the team planned to get more sludge in early March. Unfortunately, due to AguaClara's contact for sludge granules at the Aanheuser-Busch Plant in Syracuse, NY. has retired, and both Prof. Ruth Richardson of the CEE department and UASB-R having been unable to find a new contact as of mid-April, plans to get more sludge granules have stalled. Thankfully, the small amount is enough to finish this semester's testing.
+The UASB-R was able to start performing experiments with old sludge. NOTE: While sludge can stay alive in a suspended state in a fridge for up to one year, with only a small amount of sludge left, the team planned to get more sludge in early March. Unfortunately, due to AguaClara's contact for sludge granules at the Aanheuser-Busch Plant in Syracuse, NY retiring, both Prof. Ruth Richardson of the CEE department and UASB-R have been unable to find a new contact as of mid-April, and plans to get more sludge granules have stalled. Thankfully, the small amount was enough to finish this semester's testing.
 
-UASB_R starting pumping water through the UASB inlet at different flow rates and calculating the exit velocity as the water exited the reactor. However, after consulting with a research advisor, it was apparent that an inlet tube at a lower height would not be beneficial. The different heights would not make a significant change to the efficiency of the reactor, and the lower inlet would just make the system harder to clean and fix if anything broke. The remainder of the testing, and some data initially collected, was scrapped. But the testing did help the team learn ProCoDa - the software used to run the pump - better, and the design fabricated was able to be easily reused into the next task of the semester.
+UASB_R started pumping water through the UASB inlet at different flow rates and calculating the exit velocity. However, after consulting with a research advisor, it was apparent that an inlet tube at a lower height would not be beneficial as the different heights would not make a significant difference to the efficiency of the reactor. Also, the lower inlet would make the system harder to clean and fix if anything broke. Thus, the remainder of the testing and some data initially collected was scrapped, but this initial testing helped the team learn more about ProCoDa -- the software used to run the pump, and the design fabricated was reused in the next task of the semester.
 
 ### Methods - Part II
 
@@ -184,8 +181,7 @@ The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8.
 
  ###  Results and Analysis
 
-As water moved through the reactor, the initial burst of dye. started to spread through the lower part of the reactor. The dyed water was not reaching each part of the blanket uniformly for the first 10-20s (Fig. 9 and 10).
-
+As water moved through the reactor, the initial burst of dye spread throughout the lower part of the reactor, however the dyed water did not reach the sludge blanket uniformly for the first 10-20s (Fig. 9 and 10), which could lead to delay in wastewater treatment on a bigger scale.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0806%20(1).JPG?raw=true" width="250px"/></p>
@@ -201,7 +197,7 @@ But we found that preferential pathways (which would look like a long, mostly ve
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0844.JPG?raw=true" width="250px"/></p>
 <p align="center">Fig. 11 - Reactor after dye has spread further
 
-The team knows this is not a perfect, final solution - during a meeting w/ Professor Weber-Shirk, Professor Richardson and the rest of the wastewater teams, there was a debate on coming up with a way to check to see that the sludge blanket itself, not just a tapioca model, is being evenly fluidized in an UASB reactor. But this idea will need to be researched further before it can be implemented.
+As the solution wasn't deemed perfect since during a meeting with Professor Weber-Shirk, Professor Richardson and the rest of the wastewater teams, there was a debate on coming up with a way to check if the sludge blanket itself not just a tapioca model is being evenly fluidized in an UASB reactor. However, this idea would have to researched further before it can be implemented.
 
 Video recordings of some of the testing can be found [here](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U) and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
 
@@ -210,17 +206,17 @@ Video recordings of some of the testing can be found [here](https://drive.google
 
 ### Fabricating a Model Tipping Bucket System
 
-To test out the pulse inlet flow, the team is continuing the idea from last year using tipping bucket. Based on the 2018 tipping bucket that has been fabricated, this year the research team is going to fabricate the inlet system of four pipes where the tipping bucket is pouring the waste water as it shown in Figure 12.
+To test out the pulse inlet flow thoroughly, the team continued the idea of using the tipping bucket from 2018. Based on that tipping bucket, this year's UASB-R fabricated an inlet system using four pipes, where the tipping bucket pours the waste water, as shown in Figure 12.
 
-Based on the sketch, the red section represents a wastewater tank to hold wastewater where the tipping bucket is attach, and the black box located on the bottom is the 4 pipes outlet system that deliver the waste water evenly to the sludge blanket reactor.
+Based on the sketch in Figure 12, the red section represents a wastewater tank that holds wastewater before the tipping bucket, and the black box located on the bottom are the four pipe outlet system that deliver the waste water evenly to the sludge blanket reactor.
 
-To fabricate the system, the transparent material will be used so the team can see through what is happening inside the tank. The tank is fabricated using the plastic container, and the 4-pipe-outlet system is fabricated with .5" thick plastic sheet. The plastic sheet is cut into square with perimeter of 3" with total of 5 sides. The 4 sides are for the wall, and the other side is used to enclosed the bottom of the box. the 4 pieces of cut plastic then are glued together using a PVC glue.
+A transparent material was used to fabricate this system, so the team could observe what happens inside the tank. The tank was fabricated using the plastic containers, and the four pipe outlet system was fabricated using .5" thick plastic sheet. The plastic sheet was cut into squares with a perimeter of 3" and with a total of five sides. The four sides were for the wall, and the other side was used to enclose the bottom of the box. The four pieces of cut plastic then were glued together using PVC glue.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 12 - Sketch of the tipping bucket system. Inlet tubes not included
 
-The fabrication has just begun. Once finished, the team will be testing the model tipping bucket system to see if the the flow is being evenly distributed into the inlets. If it is not, UASB Research and UASB Design will work on coming up ideas to fix this problem, a process which most likely will be postponed to the next semester, depending on how long fabrication and testing takes.
+The fabrication recently begun. The team has looked into testing the model of the tipping bucket system itself to see if the the flow is being evenly distributed into the four pipe inlet system. If not, UASB-R and UASB-D planned to work on new ideas to fix the problem. This process may be postponed to next semester depending on how long fabrication and testing takes.
 
 ## Key Contacts
 
