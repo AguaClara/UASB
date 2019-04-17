@@ -1,4 +1,4 @@
-## UASB Design, Spring 2019
+achieve## UASB Design, Spring 2019
 By Nina Blahut, Shania Fang,  Emily Liu, Kanha Matai
 March 15, 2019
 
@@ -93,7 +93,7 @@ Based on the Summer 2018 team's results, the pivots will be positioned 5 cm hori
 The 2019 spring team decided to remake the original metal frame from an HDPE sheet. The team ordered HDPE sheet and cut it into rods to replicate the geometry of the original frame that was constructed from 80/20 extrusions. The team determined that a 1 inch thick 48" by 24" sheet would be sufficient material and strenght of 1 inch would be sufficient to hold up the bucket.
 
 ## Flow Dividing Tank
-Wastewater from the tipping bucket is dumped into a flow dividing tank. The purpose of the flow dividing tank is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing tank is partitioned into four equal sections. Figure 3 shows a top view of these sections. Each of the four sections drains into a separate inlet pipe. The figures below illustrate the flow dividing tank. 
+Wastewater from the tipping bucket is dumped into a flow dividing tank. The purpose of the flow dividing tank is to ensure that the four influent pipes receive an equal inflow of wastewater.  The flow dividing tank is partitioned into four equal sections. Figure 3 shows a top view of these sections. Each of the four sections drains into a separate inlet pipe. The figures below illustrate the flow dividing tank.
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20Divide.png?raw=true">
 
 **Figure 3. Top view of the holding tank, which leads into the flow dividing tank.**
@@ -396,7 +396,7 @@ class UASB:
           FDT_H = 16.8125 * u.inch, #this was selected as bucket for flow dividing tank because it is similar in volume to volume of dump from tipping bucket, square, and HDPE (and not many other buckets fit all of these criteria)
           FDT_walls_t = .25 * u.inch,
           overflow_H = 1 * u.inch, #NOTE: come up with justification for this
-          pipe_diam = 1 * u.cm,
+          pipe_diam = 1 * u.inch,
           n_elbows = 3,
           pipe_roughness = .000003 * u.m,
           time_dump = 2* u.s,
@@ -542,6 +542,108 @@ plt.xlabel('Pipe Diameter (Inches)')
 plt.ylabel('Upflow Velocity (Meters/second)')
 plt.ylim(0, .01)
 ```
+
+##Python for New Smaller/Clear Reactors for Testing at IAWTTF
+```python
+
+class UASB:
+  def __init__(
+          self,
+          temp = 10 * u.degC, #estimated temp at IAAWTF #NOTE: get a better estimate
+          effluent_H = 5 * u.ft, #based on estimate that the 7ft tall canister is ~70% full of water  
+          vol_dump = 4 * u.L, #NOTE: dump vol from previous team's design/4 since we are doing about a quarter of the size from previous design--subject to change once current team tests new tipping bucket design
+          pipe_diam = 1 * u.inch,
+          n_elbows = 2,
+          pipe_roughness = .000003 * u.m, #NOTE: change to PVC pipe roughness
+          time_dump = 2* u.s, #NOTE: get better value with actual testing
+          UASB_diameter = 10 * u.inch,
+          HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment
+          target_upflow_vel= 0.0004 * u.m/u.s #target up flow velocity to fluidize sludge blanket
+
+  ):
+      """Instantiate a UASB object, representing a real UASB component.
+      :param Q: Flow rate of water water through the UASB.
+      :type Q: float * u.L/u.s
+      :param temp: Water temperature of the UASB
+      :type temp: float * u.degC
+      :param cannister_diam: diameter of the UASB cannister
+      :type cannister_diam: float * u.ft
+      :param effluent_H: height of effluent line in UASB
+      :type effluent_H: float * u.ft
+      :param vol_dump: volume of one complete dump from tipping bucket
+      :type vol_dump: float * u.L
+      :param W_FDT: width of the inside of flow dividing tank
+      :type W_FDT: float* u.inch
+      :param FDT_H: height of the flow dividing tank
+      :type FDT_H: float * u.inch
+      :param FDT_walls_t: thickness of the walls of the flow dividing tank
+      :type FDT_walls_t: float * u.inch
+      :param overflow_H: desired height that wasteawater from one dump of the tipping bucket overflows the flow dividing walls
+      :type overflow_H: float * u.inch
+      :param pipe_diam: ID of the influent pipes
+      :type pipe_diam: float * u.inch
+      :param n_elbows: number of 90 degree elbows per influent pipe
+      :type n_elbows: float * dimensionless
+      :param pipe_roughness: roughness of influent pipes
+      :type pipe_roughness: float * u.m
+      :returns: object
+      :rtype: UASB
+      """
+
+      self.temp = temp
+
+      self.effluent_H = effluent_H
+      self.vol_dump = vol_dump
+      self.pipe_diam = pipe_diam
+      self.n_elbows = n_elbows
+      self.pipe_roughness = pipe_roughness
+      self.time_dump = time_dump
+      self.UASB_diameter = UASB_diameter
+      self.HRT = HRT
+      self.target_upflow_vel=target_upflow_vel
+
+
+  @property
+  def flow_rate_max(self):
+  """this function estimates the max flow rate, given min HRT and volume of fluid inside canister, that the UASB can handle"""
+  Qmax=self.UASB_diameter/self.HRT
+  return Qmax
+
+  @property
+  def minor_losses(self):
+  """This function calculates  the total minor losses as water drains from the holding tank into the 'canister' aka the 10 inch clear PVC pipe"""
+  influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR
+  return influent_K
+
+  @property
+  def drain_time_target(self):
+  """This function calculates the target drain time of one dump of the tipping bucket to achieve the desired upflow velocity in the canister."""
+  
+
+  @property
+  def HG_per_dump(self):
+  """This function calculates the neccesary head gain per dump to achieve target upflow velocity and assuming that the water level in the canister is in line with the bottom of the larger pipe that connects the holding tank to the 1 inch influent pipe """
+
+  UASB_Q_dump=self.vol_dump/self.t_drain ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
+  UASB_CA=pc.area_circle(self.UASB_diameter)
+  up_vel=UASB_Q_dump/UASB_CA
+
+  @property
+  def diam_connect_pipe(self):
+  """This function determines the necessary diameter of the pipe, which connects the holding tank to the influent pipe to acheive the desired head gain per dump, assuming that the water level in the canister is in line with the bottom of the larger pipe that connects the holding tank to the 1 inch influent pipe."""
+
+  @property
+  def bucket_fill_time(self):
+  """This function determines the estimated time it will take the tipping bucket to fill, using the estimated volume of one dump from the new, smaller tipping bucket size and the flow rate of water entering the UASB, according to the funciton flow_rate_max"""
+
+  @property
+  def drain_time(self):
+  """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the pipe (which connects the 1 inch pipe to the holding tank) is in line with the water level in the cannister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up"""
+
+
+
+
+```
 ##Analysis of Python Documentation
 A major restriction on the influent system for the UASB was ensuring the ability to suspend the sludge particles in the reactor. This was dictated by the settling velocity for sludge particles. After conducting research into finding the settling velocity, the UASB team found that the velocity varies with density of sludge particles, ranging from 0.0009 m/s to 0.0167 m/s ((Miranda, Borges, & Monteggia 2017). As the 0.0167 cm/s up-flow occurs are exceptionally high densities of sludge, we would be requiring up-flow velocities closer the mean settling velocity of 0.0004m/s. Below are figures showing the calculated correlation between the pipe diameter and the drain time of the flow dividing tank, from which the up-flow velocity in the reactor was deduced.
 
@@ -581,3 +683,69 @@ ompany, Madison Gas and Electric Company, 2019, https://www.mge.com/saving-energ
 
 
 - Perlman, Howard. “Wastewater Treatment Water Use.” The USGS Water Science School, US Geological Survey, Dec. 2 2016, https://water.usgs.gov/edu/wuww.html
+
+
+
+According to 3 sources, BOD:COD ratio for untreated waste water is around 0.6.
+([Anil Kumar, Purnima Dhall, Rita Khumar, 2010](https://www.sciencedirect.com/science/article/pii/S0964830510000107))
+([Ilias 3, 2010](https://cgi.tu-harburg.de/~awwweb/wbt/emwater/lessons/lesson_a1/lm_pg_1068.html))
+([Liyang Yang, Hyun-Sang Shin, jin Hur, 2014](https://cgi.tu-harburg.de/~awwweb/wbt/emwater/lessons/lesson_a1/lm_pg_1068.html))
+
+Data of average BOD concentration from the last week of each month from 8/18/19- 3/18/19 from Ithaca's Wastewater Treatment Plant will be averaged altogether.
+
+**Table 2. BOD Concentration from last week of each month from 8/18/19 to 3/18/19**
+| Month                         | BOD Concentration Data 1 | BOD Concentration Data 2 | Average |
+| ----------------------------- | ------------------------ | ------------------------ | ------- |
+| September                     | 138                      | 140                      | 139     |
+| October                       | 164                      | 169                      | 166.5   |
+| November                      | 183                      | N/A                      | 183     |
+| December                      | 170                      | 239                      | 204.5   |
+| January                       | 174                      | 98                       | 136     |
+| February                      | 164                      | 155                      | 159.5   |
+| Average BOD Conc of all month |                          |                          | 164.75  |
+| Average COD Conc of all month |                          |                          | 274.6   |
+
+```python
+from aide_design.play import*
+import doctest
+def BiogasFlow(Q, COD_Load, Temp, COD_removal_eff):
+"""Calculates  molar, mass, and volumetric production rate of biogas within reactor.  
+Inputs are the flow rate of wastewater into the reactor (volume/time), the
+Carbonaceous Oxygen Demand of the influent wastewater (mass/volume), the average
+temperature inside the reactor, and the efficiency of COD removal within the system.
+Mass rate conversion done using the ideal gas law.
+
+"""
+    COD_removed = COD_Load * COD_removal_eff #calculate COD broken down by reactor
+    Y_obs = 0.23 # Upper limit of sludge production
+    CH4prod_mass = (Q * COD_removed) - (Y_obs * Q * COD_Load) #Gives mass CH_4 produced per unit time
+    CH4prod_moles = CH4prod_mass * 0.0623 * (u.mole/u.g) #Convert mass to moles using flipped atomic weight
+
+    # Calculate correction factor for operational temperature of the reactor
+    Pressure = 1 * u.atm
+    K_COD = 64 * (u.g / u.mol)
+    R = 0.08206 * ((u.atm * u.L) / (u.mol * u.degK))
+    K = (P * K_COD) / (R * T)
+    #Calculate the volumetric flow rate of methane production
+    Q_CH4 = COD_CH4 / K # per second
+    return Q_CH4
+
+
+doctest.testmod(verbose=True)
+
+
+# Flow rate through UASB reactor
+Flow_design = UASB_design[1]
+print(Flow_design)
+Temp = 25 * u.degC  # Assuming mesophilic conditions
+Removal_eff = 0.7 # 70% removal efficiency
+
+#Approximate loading rates for domestic wastewater
+COD_Load_min = 100 * (u.mg / u.L)
+COD_Load_mid = 200 * (u.mg / u.L)
+COD_Load_max = 300 * (u.mg / u.L)
+
+Q_Biogas = BiogasFlow(Flow_design, COD_Load_mid, Temp, 0.7)
+#Calculating size of storage device
+print(Q_Biogas.to(u.L/u.day))
+```
