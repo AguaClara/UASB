@@ -367,6 +367,9 @@ plt.tight_layout()
 plt.show()
 
 ```
+
+
+
 ```python
 import aguaclara.core.head_loss as minorloss
 from aguaclara.core.units import unit_registry as u
@@ -380,7 +383,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-"""Flocculator design.
+"""UASB design.
 This module aims to provide constants and functions to define both hydraulic
 (head loss, retention time, drain time etc.) and geometric (influent pipe diameter, flow dividing tank geometry, UASB cannister dimensions,
 etc.) values that specify a UASB design.,"""
@@ -521,6 +524,7 @@ class UASB:
 D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
 
 myUASB=UASB()
+
 print('The height of walls in the flow dividing tank should be', myUASB.H_walls)
 print('The maximum flow of wastewater this UASB can handle is', (myUASB.Qmax).to(u.L/u.s))
 
@@ -542,26 +546,58 @@ plt.xlabel('Pipe Diameter (Inches)')
 plt.ylabel('Upflow Velocity (Meters/second)')
 plt.ylim(0, .01)
 ```
+##New Smaller/Clear Reactors for Testing at IAWTTF
+**somebody needs to write up meeting notes to explain change in direction for project.***
+
+##Design Process for the Smaller, Clear Reactors
+
+The team used design decisions from the previous iteration of the UASB to inform its decisions on the scaled design. The team identified constraint to the, and then used those constraints to figure out additional parameters.
+
+**add CAD model or at least a sketch of new UASB design**
+
+As is seen from the model above, in the new UASB design, waste water flows from the tipping bucket (or not, if it is one of the UASB's that is meant to test functionality without a tipping bucket) to the drain tank , to the influent pipe, into the UASB canister.
+
+The previous design for the UASB used a 36" diameter canister. The smaller design will use a 10" clear PVC pipe instead. The 10" PVC clear pipe was decided on so that multiple reactors could fit in the available space at the IAWWTF, and so that happenings inside of the UASB will be visible. The height of the UASB will stay the same, at about 7 ft **figure out height constraint reasoning***
+
+Since the UASB is being scaled down from the previous tipping bucket, it was determined that the volume of the tipping bucket should also be decreased. In the previous design, the tipping bucket dump volume was 16.26 L and was fabricated from a 5 gallon bucket. The team calculated that to cause a similar change in height inside the reactor (2.476 cm in previous design), the new tipping bucket should have a dump volume of approximately 1.255 L, and found that a 1/2 gallon bucket would be the most practical size to fabricate the new tipping bucket. Those calculations are shown below in python.
+
+```python
+#determine the dump volume of the new tipping bucket using previous design and new canister dimensions, so that the height change in the UASB stays the same from previous to new design.
+dump_vol_previous = 16.26*u.L #previous size of tipping bucket
+UASB_canister_diameter_previous = 36 * u.inch
+surface_area_canister_previous = pc.area_circle(UASB_canister_diameter_previous)
+height_increase_pulse = dump_vol_previous/surface_area_canister_previous
+print(height_increase_pulse.to(u.cm))
+UASB_canister_diameter_new = 10 * u.inch
+surface_area_cannister_new = pc.area_circle(UASB_canister_diameter_new)
+dump_vol_target = height_increase_pulse * surface_area_cannister_new
+print (dump_vol_target.to(u.gal))
+```
+
+Next, the team used the target tipping bucket volume of 1.255 L to inform its design of the drain tank. The team decided that the drain tank should be similar in volume to that of the tipping bucket, and have a diameter such that its height is approximately the same as the height of the desired head gain per dump from the tipping bucket.
+
+The desired headgain per dump of the tipping bucket was determined
 
 ##Python for New Smaller/Clear Reactors for Testing at IAWTTF
+
 ```python
 
-class UASB:
+
+class UASBtest:
   def __init__(
           self,
           temp = 10 * u.degC, #estimated temp at IAAWTF #NOTE: get a better estimate
           effluent_H = 5 * u.ft, #based on estimate that the 7ft tall canister is ~70% full of water  
-          vol_dump = 4 * u.L, #NOTE: dump vol from previous team's design/4 since we are doing about a quarter of the size from previous design--subject to change once current team tests new tipping bucket design
+          vol_dump = 1.255 * u.L, #NOTE: dump vol from previous team's design/4 since we are doing about a quarter of the size from previous design--subject to change once current team tests new tipping bucket design
           pipe_diam = 1 * u.inch,
           n_elbows = 2,
-          pipe_roughness = .000003 * u.m, #NOTE: change to PVC pipe roughness
+          pipe_roughness = .0015 * u.mm, # PVC pipe roughness
           time_dump = 2* u.s, #NOTE: get better value with actual testing
           UASB_diameter = 10 * u.inch,
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment
-          target_upflow_vel= 0.4 * u.mm/u.s #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 3 * u.inch #diameter of the pipe that connects the holding tank to influent pipe
-
-  ):
+          target_upflow_vel= 0.4 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
+          diameter_drain_pipe= 3 * u.inch #diameter of the pipe that connects the holding tank to influent pipe (subject to change)
+):
       """Instantiate a UASB object, representing a real UASB component.
       :param Q: Flow rate of water water through the UASB.
       :type Q: float * u.L/u.s
@@ -573,14 +609,6 @@ class UASB:
       :type effluent_H: float * u.ft
       :param vol_dump: volume of one complete dump from tipping bucket
       :type vol_dump: float * u.L
-      :param W_FDT: width of the inside of flow dividing tank
-      :type W_FDT: float* u.inch
-      :param FDT_H: height of the flow dividing tank
-      :type FDT_H: float * u.inch
-      :param FDT_walls_t: thickness of the walls of the flow dividing tank
-      :type FDT_walls_t: float * u.inch
-      :param overflow_H: desired height that wasteawater from one dump of the tipping bucket overflows the flow dividing walls
-      :type overflow_H: float * u.inch
       :param pipe_diam: ID of the influent pipes
       :type pipe_diam: float * u.inch
       :param n_elbows: number of 90 degree elbows per influent pipe
@@ -590,9 +618,7 @@ class UASB:
       :returns: object
       :rtype: UASB
       """
-
       self.temp = temp
-
       self.effluent_H = effluent_H
       self.vol_dump = vol_dump
       self.pipe_diam = pipe_diam
@@ -605,46 +631,84 @@ class UASB:
       self.diameter_drain_pipe=diameter_drain_pipe
 
   @property
+  def UASB_area(self):
+      """This function calculates the surface area of the UASB canister """
+      area= pc.area_circle(self.UASB_diameter)
+      return area
+
+
+  @property
+  def volume_UASB(self):
+    """this function calculates volume of liquid inside UASB reactor, not including pipes"""
+    vol=pc.area_circle(self.UASB_diameter)*self.effluent_H
+    return vol
+
+  @property
   def flow_rate_max(self):
-  """this function estimates the max flow rate, given min HRT and volume of fluid inside canister, that the UASB can handle"""
-  Qmax=self.UASB_diameter/self.HRT
-  return Qmax
+    """this function estimates the max flow rate, given min HRT and volume of fluid inside canister, that the UASB can handle"""
+    Qmax=(self.volume_UASB)/self.HRT
+    return Qmax
 
   @property
-  def minor_losses(self):
-  """This function calculates  the aggregate minor loss coefficient of the drain system from the holding tank into the 'canister' aka the 10 inch clear PVC pipe"""
-  influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR
-  return influent_K
-
-  @property
-  def drain_time_target(self):
-  """This function calculates the target drain time of one dump of the tipping bucket to achieve the desired upflow velocity in the canister."""
-
+  def aggregate_k(self):
+    """This function calculates  the aggregate minor loss coefficient of the drain system from the holding tank into the 'canister' aka the 10 inch clear PVC pipe"""
+    influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR
+    return influent_K
 
   @property
   def HG_per_dump(self):
-  """This function calculates the neccesary head gain per dump to achieve target upflow velocity and assuming that the water level in the canister is in line with the bottom of the larger pipe that connects the holding tank to the 1 inch influent pipe """
-
-  UASB_Q_dump=self.vol_dump/self.t_drain ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
-  UASB_CA=pc.area_circle(self.UASB_diameter)
-  up_vel=UASB_Q_dump/UASB_CA
+    """This function calculates the head gain per dump, assuming that the water level in the canister is in line with the bottom of the "drain pipe" that connects the holding tank to the 1 inch influent pipe """
+    HG=self.vol_dump/self.diameter_drain_pipe
+    return HG
 
   @property
-  def diam_drain_pipe(self):
-  """This function determines the necessary diameter of the pipe, which connects the holding tank to the influent pipe to acheive the desired head gain per dump, assuming that the water level in the canister is in line with the bottom of the larger pipe that connects the holding tank to the 1 inch influent pipe."""
-
-  @property
-  def bucket_fill_time(self):
-  """This function determines the estimated time it will take the tipping bucket to fill, using the estimated volume of one dump from the new, smaller tipping bucket size and the flow rate of water entering the UASB, according to the funciton flow_rate_max"""
+  def area_drain_pipe(self):
+    area=pc.area_circle(self.diameter_drain_pipe)
+    return area
 
   @property
   def drain_time(self):
-  """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the drain pipe (which connects the 1 inch pipe to the holding tank) is in line with the water level in the cannister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up"""
+    """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the drain pipe (which connects the 1 inch pipe to the holding tank) is in line with the water level in the canister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up/fast enough to produce desired up flow velocity in the tank"""
+    #NOTE: should we include minor loss from holding tank to drain tank, or assume water just starts from drain tank
+    time = 8*self.area_drain_pipe/(np.pi*self.pipe_diam**2)*(self.HG_per_dump*self.aggregate_k/(2*pc.gravity))**(1/2)
+    return time    
+
+  @property
+  def upflow_velocity(self):
+    """this function estimates the upflow velocity in the cannister during a pulse."""
+    UASB_Q_dump=self.vol_dump/self.t_drain ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
+    up_vel=UASB_Q_dump/self.UASB_area
+    return up_vel.to(u.m/u.s)
+
+  @property
+  def bucket_fill_time(self):
+    """This function determines the estimated time it will take the tipping bucket to fill, using the estimated volume of one dump from the new, smaller tipping bucket size and the flow rate of water entering the UASB, according to the function flow_rate_max"""
+    UASB_Q_dump=self.vol_dump/self.t_drain ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
+    up_vel=UASB_Q_dump/self.UASB_area
+    return up_vel.to(u.m/u.s)
 
 
+drain_times=np.zeros(len(D_avail))*u.s
+upflow_vels=np.zeros(len(D_avail))*u.m/u.s
+for i in range(0,len(D_avail)):
+  myUASB=UASBtest(pipe_diam=D_avail[i])
+  drain_times[i]=UASBtest.drain_time
+  upflow_vels[i]=UASBtest.upflow_velocity
 
+plt.scatter(D_avail, drain_times)
+plt.title('Pipe Diameter vs Drain Time')
+plt.xlabel('Pipe Diameter (Inches)')
+plt.ylabel('Drain time (Seconds)')
 
+plt.scatter(D_avail, upflow_vels)
+plt.title('Pipe Diameter vs Upflow Velocity')
+plt.xlabel('Pipe Diameter (Inches)')
+plt.ylabel('Upflow Velocity (Meters/second)')
+plt.ylim(0, .01)
 ```
+
+
+
 ##Analysis of Python Documentation
 A major restriction on the influent system for the UASB was ensuring the ability to suspend the sludge particles in the reactor. This was dictated by the settling velocity for sludge particles. After conducting research into finding the settling velocity, the UASB team found that the velocity varies with density of sludge particles, ranging from 0.0009 m/s to 0.0167 m/s ((Miranda, Borges, & Monteggia 2017). As the 0.0167 cm/s up-flow occurs are exceptionally high densities of sludge, we would be requiring up-flow velocities closer the mean settling velocity of 0.0004m/s. Below are figures showing the calculated correlation between the pipe diameter and the drain time of the flow dividing tank, from which the up-flow velocity in the reactor was deduced.
 
