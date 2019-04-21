@@ -656,21 +656,21 @@ class UASBtest:
     return influent_K
 
   @property
-  def HG_per_dump(self):
-    """This function calculates the head gain per dump, assuming that the water level in the canister is in line with the bottom of the "drain pipe" that connects the holding tank to the 1 inch influent pipe """
-    HG=self.vol_dump/self.diameter_drain_pipe
-    return HG
-
-  @property
   def area_drain_pipe(self):
     area=pc.area_circle(self.diameter_drain_pipe)
     return area
 
   @property
+  def HG_per_dump(self):
+    """This function calculates the head gain per dump, assuming that the water level in the canister is in line with the bottom of the "drain pipe" that connects the holding tank to the 1 inch influent pipe """
+    HG=self.vol_dump/self.area_drain_pipe
+    return HG
+
+  @property
   def drain_time(self):
     """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the drain pipe (which connects the 1 inch pipe to the holding tank) is in line with the water level in the canister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up/fast enough to produce desired up flow velocity in the tank"""
     #NOTE: should we include minor loss from holding tank to drain tank, or assume water just starts from drain tank
-    time = 8*self.area_drain_pipe/(np.pi*self.pipe_diam**2)*(self.HG_per_dump*self.aggregate_k/(2*pc.gravity))**(1/2)
+    time = 8*self.area_drain_pipe/(np.pi*(self.pipe_diam)**2)*(self.HG_per_dump*self.aggregate_k/(2*pc.gravity))**(1/2)
     return time    
 
   @property
@@ -687,7 +687,11 @@ class UASBtest:
     up_vel=UASB_Q_dump/self.UASB_area
     return up_vel.to(u.m/u.s)
 
-
+D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
+test=UASBtest()
+x=test.drain_time
+print(x)
+print(x)
 drain_times=np.zeros(len(D_avail))*u.s
 upflow_vels=np.zeros(len(D_avail))*u.m/u.s
 for i in range(0,len(D_avail)):
