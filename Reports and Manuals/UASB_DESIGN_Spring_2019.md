@@ -558,7 +558,8 @@ class UASB:
           time_dump = 2* u.s, #NOTE: get better value with actual testing
           UASB_diameter = 10 * u.inch,
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment
-          target_upflow_vel= 0.0004 * u.m/u.s #target up flow velocity to fluidize sludge blanket
+          target_upflow_vel= 0.4 * u.mm/u.s #target up flow velocity to fluidize sludge blanket
+          diameter_drain_pipe= 3 * u.inch #diameter of the pipe that connects the holding tank to influent pipe
 
   ):
       """Instantiate a UASB object, representing a real UASB component.
@@ -601,7 +602,7 @@ class UASB:
       self.UASB_diameter = UASB_diameter
       self.HRT = HRT
       self.target_upflow_vel=target_upflow_vel
-
+      self.diameter_drain_pipe=diameter_drain_pipe
 
   @property
   def flow_rate_max(self):
@@ -611,14 +612,14 @@ class UASB:
 
   @property
   def minor_losses(self):
-  """This function calculates  the total minor losses as water drains from the holding tank into the 'canister' aka the 10 inch clear PVC pipe"""
+  """This function calculates  the aggregate minor loss coefficient of the drain system from the holding tank into the 'canister' aka the 10 inch clear PVC pipe"""
   influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR
   return influent_K
 
   @property
   def drain_time_target(self):
   """This function calculates the target drain time of one dump of the tipping bucket to achieve the desired upflow velocity in the canister."""
-  
+
 
   @property
   def HG_per_dump(self):
@@ -629,7 +630,7 @@ class UASB:
   up_vel=UASB_Q_dump/UASB_CA
 
   @property
-  def diam_connect_pipe(self):
+  def diam_drain_pipe(self):
   """This function determines the necessary diameter of the pipe, which connects the holding tank to the influent pipe to acheive the desired head gain per dump, assuming that the water level in the canister is in line with the bottom of the larger pipe that connects the holding tank to the 1 inch influent pipe."""
 
   @property
@@ -638,7 +639,7 @@ class UASB:
 
   @property
   def drain_time(self):
-  """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the pipe (which connects the 1 inch pipe to the holding tank) is in line with the water level in the cannister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up"""
+  """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the drain pipe (which connects the 1 inch pipe to the holding tank) is in line with the water level in the cannister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up"""
 
 
 
