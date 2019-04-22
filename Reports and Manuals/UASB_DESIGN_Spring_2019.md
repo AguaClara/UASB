@@ -385,7 +385,7 @@ import matplotlib.pyplot as plt
 
 """UASB design.
 This module aims to provide constants and functions to define both hydraulic
-(head loss, retention time, drain time etc.) and geometric (influent pipe diameter, flow dividing tank geometry, UASB cannister dimensions,
+(head loss, retention time, drain time etc.) and geometric (influent pipe diameter, flow dividing tank geometry, UASB canister dimensions,
 etc.) values that specify a UASB design.,"""
 class UASB:
   def __init__(
@@ -524,6 +524,7 @@ class UASB:
 D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
 
 myUASB=UASB()
+print(myUASB.time_dump)
 
 print('The height of walls in the flow dividing tank should be', myUASB.H_walls)
 print('The maximum flow of wastewater this UASB can handle is', (myUASB.Qmax).to(u.L/u.s))
@@ -562,6 +563,18 @@ The previous design for the UASB used a 36" diameter canister. The smaller desig
 Since the UASB is being scaled down from the previous tipping bucket, it was determined that the volume of the tipping bucket should also be decreased. In the previous design, the tipping bucket dump volume was 16.26 L and was fabricated from a 5 gallon bucket. The team calculated that to cause a similar change in height inside the reactor (2.476 cm in previous design), the new tipping bucket should have a dump volume of approximately 1.255 L, and found that a 1/2 gallon bucket would be the most practical size to fabricate the new tipping bucket. Those calculations are shown below in python.
 
 ```python
+import aguaclara.core.head_loss as minorloss
+from aguaclara.core.units import unit_registry as u
+from aguaclara.core import physchem as pc
+from aguaclara.core import pipes as pipes
+from aguaclara.core import head_loss as HL
+from aguaclara.core import utility as ut
+from aguaclara.core import constants as con
+from aguaclara.research import floc_model as fm
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 #determine the dump volume of the new tipping bucket using previous design and new canister dimensions, so that the height change in the UASB stays the same from previous to new design.
 dump_vol_previous = 16.26*u.L #previous size of tipping bucket
 UASB_canister_diameter_previous = 36 * u.inch
@@ -576,7 +589,6 @@ print (dump_vol_target.to(u.gal))
 
 Next, the team used the target tipping bucket volume of 1.255 L to inform its design of the drain tank. The team decided that the drain tank should be similar in volume to that of the tipping bucket, and have a diameter such that its height is approximately the same as the height of the desired head gain per dump from the tipping bucket.
 
-The desired headgain per dump of the tipping bucket was determined
 
 ##Python for New Smaller/Clear Reactors for Testing at IAWTTF
 
@@ -686,6 +698,10 @@ class UASBtest:
     UASB_Q_dump=self.vol_dump/self.t_drain ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
     up_vel=UASB_Q_dump/self.UASB_area
     return up_vel.to(u.m/u.s)
+
+test=UASBtest()
+test.drain_time.to(u.s)
+
 
 D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
 test=UASBtest()
