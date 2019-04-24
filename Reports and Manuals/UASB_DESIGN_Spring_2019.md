@@ -600,33 +600,36 @@ Next the team moved on to find the dimensions of the holding tank for the smalle
 
 class holdingtank:
   def __init__(
-  self,
-  height_TB=(7+3/8)*u.inch,
-  diameter_TB=7*u.inch,
-  thickness_sheet_frame=.5*u.inch, #NOTE: 1/4 inch? discuss...
-  length_pivot=2*u.inch, #NOTE: I made this up
-  pi_pivbuckheight= (15.5/23) #ratio of pivot height to tipping bucket height from Summer 2018 design
-  ):
-  self.height_TB=height_TB
-  self.diameter_TB=diameter_TB
-  self.thickness_sheet_frame=thickness_sheet_frame
-  self.pi_pivbuckheight=pi_pivbuckheight
+      self,
+      height_TB=(7+3/8)*u.inch,
+      diameter_TB=7*u.inch,
+      thickness_sheet_frame=.5*u.inch, #NOTE: 1/4 inch? discuss...
+      length_pivot=2*u.inch, #NOTE: I made this up
+      pi_pivbuckheight= (15.5/23) #ratio of pivot height to tipping bucket height from Summer 2018 design
+):
+    self.height_TB=height_TB
+    self.diameter_TB=diameter_TB
+    self.thickness_sheet_frame=thickness_sheet_frame
+    self.pi_pivbuckheight=pi_pivbuckheight
 
 
 @property
 def min_height(self):
-  min_height=height_TB + 2*u.inch
+  min_height=self.height_TB+2*u.inch
   return min_height
 
 @property
 def min_length(self):
-  min_length=height_TB+5*u.inch #min width accounts for how tipping bunket needs to be horizontal ot clomplete a dump and also for teh entrance into the drain pipe/extra space on the bottom of the holding tank for stability around where the hoe will be drilled
+  min_length=(self.height_TB**2+self.height_TB**2)**(.5)+5*u.inch #min width accounts for how tipping bunket needs to be horizontal ot clomplete a dump and also for theh entrance into the drain pipe/extra space on the bottom of the holding tank for stability around where the hoe will be drilled
   return min_length
 
 @property
 def min_width(self):
-  min_w=diameter_TB*4*u.inch
+  min_w=self.diameter_TB*4*u.inch
   return min_w
+
+testing=holdingtank()
+print(testing.min_length)
 
 
 ```
@@ -789,8 +792,10 @@ plt.ylabel('Upflow Velocity (Meters/second)')
 plt.ylim(0, .02)
 
 
-pre=UASBtest(diameter_drain_pipe=4*u.inch)
+pre=UASBtest(diameter_drain_pipe=3*u.inch)
 print(pre.length_drain_pipe.to(u.inch))
+print(pre.upflow_velocity.to(u.mm/u.s))
+print(pre.drain_time.to(u.s))
 
 @property
 """Got BiogasFlow code from Spring 2018"""
