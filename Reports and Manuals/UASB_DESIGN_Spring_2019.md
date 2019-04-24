@@ -584,16 +584,70 @@ print(height_increase_pulse.to(u.cm))
 UASB_canister_diameter_new = 10 * u.inch
 surface_area_cannister_new = pc.area_circle(UASB_canister_diameter_new)
 dump_vol_target = height_increase_pulse * surface_area_cannister_new
-print (dump_vol_target.to(u.L))
+print (dump_vol_target.to(u.gal))
+
+#determine new bucket size for tipping bucket based on the ratio of previous dump volume to bucket volume
+
+pi_TB=5.*u.gal/ (16.23*u.L)
+bucket_size=(pi_TB*dump_vol_target).to(u.gal)
+print(bucket_size)
+#Based on this analysis, bucket size for the new tipping bucket should be .3865 gallon. Since .3865 gallon buckets are not available, the team chose the closest bucket size available, which was 1/2 gallon.
+```
+Next the team moved on to find the dimensions of the holding tank for the smaller tipping bucket. The dimensions of the tipping bucket are 7" diameter and 7 3/8" height. The holding tank needs to be large enough to house the tipping bucket, but not so large to waste space. The team also considered where on the bottom of the holding tank the drain pipe should be connected so that water from a dump of the tipping bucket is most likely to land in the drain pipe rather than the bottom of the holding tank.
+
+
+```python
+
+class holdingtank:
+  def __init__(
+  self,
+  height_TB=(7+3/8)*u.inch,
+  diameter_TB=7*u.inch,
+  thickness_sheet_frame=.5*u.inch, #NOTE: 1/4 inch? discuss...
+  length_pivot=2*u.inch, #NOTE: I made this up
+  pi_pivbuckheight= (15.5/23) #ratio of pivot height to tipping bucket height from Summer 2018 design
+  ):
+  self.height_TB=height_TB
+  self.diameter_TB=diameter_TB
+  self.thickness_sheet_frame=thickness_sheet_frame
+  self.pi_pivbuckheight=pi_pivbuckheight
+
+
+@property
+def min_height(self):
+  min_height=height_TB + 2*u.inch
+  return min_height
+
+@property
+def min_length(self):
+  min_length=height_TB+5*u.inch #min width accounts for how tipping bunket needs to be horizontal ot clomplete a dump and also for teh entrance into the drain pipe/extra space on the bottom of the holding tank for stability around where the hoe will be drilled
+  return min_length
+
+@property
+def min_width(self):
+  min_w=diameter_TB*4*u.inch
+  return min_w
+
+
 ```
 
-Next, the team used the target tipping bucket volume of 1.255 L to inform its design of the drain tank. The team decided that the drain tank should be similar in volume to that of the tipping bucket, and have a diameter such that its height is approximately the same as the height of the desired head gain per dump from the tipping bucket.
 
+Next, the team used the target tipping bucket volume of 1.255 L to inform its design of the drain tank. The team decided that the drain pipe should be similar in volume to that of the tipping bucket, and have a diameter such that its height is approximately the same as the height of the desired head gain per dump from the tipping bucket. Below are the calculations for the dimensions of the new holding tank written in python code.
 
 ##Python for New Smaller/Clear Reactors for Testing at IAWTTF
 
 ```python
-
+import aguaclara.core.head_loss as minorloss
+from aguaclara.core.units import unit_registry as u
+from aguaclara.core import physchem as pc
+from aguaclara.core import pipes as pipes
+from aguaclara.core import head_loss as HL
+from aguaclara.core import utility as ut
+from aguaclara.core import constants as con
+from aguaclara.research import floc_model as fm
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 class UASBtest:
   def __init__(
@@ -601,14 +655,16 @@ class UASBtest:
           temp = 10 * u.degC, #estimated temp at IAAWTF #NOTE: get a better estimate
           effluent_H = 5 * u.ft, #based on estimate that the 7ft tall canister is ~70% full of water  
           vol_dump = 1.255 * u.L, #NOTE: dump vol from previous team's design/4 since we are doing about a quarter of the size from previous design--subject to change once current team tests new tipping bucket design
-          pipe_diam = 1.5 * u.inch,
+          pipe_diam = 1.0 * u.inch,
           n_elbows = 2,
           pipe_roughness = .0015 * u.mm, # PVC pipe roughness
           time_dump = 2* u.s, #NOTE: get better value with actual testing
           UASB_diameter = 10 * u.inch,
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment
           target_upflow_vel= 0.4 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 3 * u.inch #diameter of the pipe that connects the holding tank to influent pipe (subject to change)
+          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe (subject to change)
+          descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
+          ww_gen_rate = 10.8 * u.L/u.hr #Wastewater Generation per Person
 ):
       """Instantiate a UASB object, representing a real UASB component.
       :param Q: Flow rate of water water through the UASB.
@@ -641,6 +697,7 @@ class UASBtest:
       self.HRT = HRT
       self.target_upflow_vel=target_upflow_vel
       self.diameter_drain_pipe=diameter_drain_pipe
+      self.descending_sewage_vel=descending_sewage_vel
 
   @property
   def UASB_area(self):
@@ -707,20 +764,18 @@ class UASBtest:
 test=UASBtest()
 test.drain_time.to(u.s)
 
-drain_pipe_avail = ([2, 2.5, 3, 3.5, 4, 4.5, 5]) * u.inch
-D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
+drain_pipe_avail = ([1.5, 2, 3, 4, 6, 4, 6]) * u.inch
+#D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
 test=UASBtest()
 print(test.drain_time.to(u.s))
 
-drain_times=np.zeros(len(D_avail))*u.s
-upflow_vels=np.zeros(len(D_avail))*u.m/u.s
+drain_times=np.zeros(len(drain_pipe_avail))*u.s
+upflow_vels=np.zeros(len(drain_pipe_avail))*u.m/u.s
 for i in range(0,len(D_avail)):
   test=UASBtest(diameter_drain_pipe=drain_pipe_avail[i])
   drain_times[i]=test.drain_time
   upflow_vels[i]=test.upflow_velocity
 
-pre=UASBtest(diameter_drain_pipe=3*u.inch)
-print(pre.length_drain_pipe.to(u.inch))
 
 plt.scatter(drain_pipe_avail, drain_times)
 plt.title('Drain Pipe Diameter vs Drain Time')
@@ -732,6 +787,10 @@ plt.title('Drain Pipe Diameter vs Upflow Velocity')
 plt.xlabel('Drain Pipe Diameter (Inches)')
 plt.ylabel('Upflow Velocity (Meters/second)')
 plt.ylim(0, .02)
+
+
+pre=UASBtest(diameter_drain_pipe=4*u.inch)
+print(pre.length_drain_pipe.to(u.inch))
 
 @property
 """Got BiogasFlow code from Spring 2018"""
