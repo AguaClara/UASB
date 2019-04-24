@@ -613,20 +613,20 @@ class holdingtank:
     self.pi_pivbuckheight=pi_pivbuckheight
 
 
-@property
-def min_height(self):
-  min_height=self.height_TB+2*u.inch
-  return min_height
+  @property
+  def min_height(self):
+    min_height=self.height_TB+2*u.inch
+    return min_height
 
-@property
-def min_length(self):
-  min_length=(self.height_TB**2+self.height_TB**2)**(.5)+5*u.inch #min width accounts for how tipping bunket needs to be horizontal ot clomplete a dump and also for theh entrance into the drain pipe/extra space on the bottom of the holding tank for stability around where the hoe will be drilled
-  return min_length
+  @property
+  def min_length(self):
+    min_length=((self.height_TB+self.thickness_sheet_frame)**2+self.height_TB**2)**(.5)#min width accounts for how tipping bunket needs to be horizontal ot clomplete a dump and also for theh entrance into the drain pipe/extra space on the bottom of the holding tank for stability around where the hoe will be drilled
+    return min_length
 
-@property
-def min_width(self):
-  min_w=self.diameter_TB*4*u.inch
-  return min_w
+  @property
+  def min_width(self):
+    min_w=self.diameter_TB*4*u.inch
+    return min_w
 
 testing=holdingtank()
 print(testing.min_length)
@@ -652,6 +652,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+np.cos(60*u.degrees)
 class UASBtest:
   def __init__(
           self,
@@ -668,6 +669,10 @@ class UASBtest:
           diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe (subject to change)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr #Wastewater Generation per Person
+          angle_effluent=60*u.degrees #angle of effluent line in degrees
+          angle_sludge_weir=60*u.degrees #angle of sludge weir
+          percent_sludge= .7 #based on summer 2018
+
 ):
       """Instantiate a UASB object, representing a real UASB component.
       :param Q: Flow rate of water water through the UASB.
@@ -701,6 +706,7 @@ class UASBtest:
       self.target_upflow_vel=target_upflow_vel
       self.diameter_drain_pipe=diameter_drain_pipe
       self.descending_sewage_vel=descending_sewage_vel
+      self.percent_sluge=percent_sludge
 
   @property
   def UASB_area(self):
