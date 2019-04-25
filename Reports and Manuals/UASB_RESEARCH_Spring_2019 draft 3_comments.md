@@ -60,7 +60,7 @@
 /></p>
 <p align="center">Fig. 1a and 1b: Diagram of a traditional UASB Reactor (front and side views)
 
-A recent, updated model in OnShape has also been created by UASB-Design [UASB model](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b
+A recent, updated model in OnShape has also been created by UASB-Design [(UASB model)](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b
 
 0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
 
