@@ -60,9 +60,7 @@
 /></p>
 <p align="center">Fig. 1a and 1b: Diagram of a traditional UASB Reactor (front and side views)
 
-A recent, updated model in OnShape has also been created by UASB-Design [(UASB model)](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b
-
-0cca297e07f2/e/01184b12f18fae4acc6559c3) as UASB-Design.
+A recent, updated model in OnShape has also been created by [(UASB-Design).](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/01184b12f18fae4acc6559c3)
 
 **[A bit of an error on the caption here I think? Seems that the link got severed. But your figures are great. If they could be a bit bigger that would be perfect. If that's not possible it's okay. ]**
 ## Literature Review and Previous Work
