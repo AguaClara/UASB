@@ -216,7 +216,10 @@ A transparent material was used to fabricate this system, so the team could obse
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 12 - Sketch of the tipping bucket system. Inlet tubes not included
 
-The fabrication recently begun. The team has looked into testing the model of the tipping bucket system itself to see if the the flow is being evenly distributed into the four pipe inlet system. If not, UASB-R and UASB-D planned to work on new ideas to fix the problem. This process may be postponed to next semester depending on how long fabrication and testing takes.
+The fabrication recently begun. The team has looked into testing the model of the tipping bucket system itself to see if the flow is being evenly distributed into the four pipe inlet system. If not, UASB-R and UASB-D planned to work on new ideas to fix the problem. This process may be postponed to next semester depending on how long fabrication and testing takes.
+
+The system will be called "the flow distribution system", and it has 2 compartments. The top compartment is functioned to hold the wastewater and prevent it from spilling where the bottom compartment will be the distribution channel. The top compartment is fabricated using a xxxxxxx container while the bottom compartment is fabricated by cutting the transparent PVC
+
 
 ## Key Contacts
 
