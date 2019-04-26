@@ -60,7 +60,7 @@
 /></p>
 <p align="center">Fig. 1a and 1b: Diagram of a traditional UASB Reactor (front and side views)
 
-A recent, updated model in OnShape has also been created by [(UASB-Design).](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/01184b12f18fae4acc6559c3)
+A recent, updated model in OnShape has also been created by [UASB-Design.](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/01184b12f18fae4acc6559c3)
 
 **[A bit of an error on the caption here I think? Seems that the link got severed. But your figures are great. If they could be a bit bigger that would be perfect. If that's not possible it's okay. ]**
 ## Literature Review and Previous Work
@@ -161,12 +161,12 @@ UASB-R started to test the first design (the sketch on the right in Fig. 4 and s
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/New%20UASB.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 6: the fixed connection
 
-The UASB-R was able to start performing experiments with old sludge. NOTE: While sludge can stay alive in a suspended state in a fridge for up to one year, with only a small amount of sludge left, the team planned to get more sludge in early March. Unfortunately, due to AguaClara's contact for sludge granules at the Aanheuser-Busch Plant in Syracuse, NY retiring, both Prof. Ruth Richardson of the CEE department and UASB-R ~~have been unable to find a new~~ [did not have a] contact as of mid-April, and plans to get more sludge granules have stalled. Thankfully, the small amount was enough to finish this semester's testing.
+The UASB-R was able to start performing experiments with old sludge. NOTE: While sludge can stay alive in a suspended state in a fridge for up to one year, with only a small amount of sludge left, the team planned to get more sludge in early March. Unfortunately, due to AguaClara's contact for sludge granules at the Aanheuser-Busch Plant in Syracuse, NY retiring, both Prof. Ruth Richardson of the CEE department and UASB-R ~~have been unable to find a new~~ **[did not have a]** contact as of mid-April, and plans to get more sludge granules have stalled. Thankfully, the small amount was enough to finish this semester's testing.
 
 UASB_R started pumping water through the UASB inlet at different flow rates and calculating the exit velocity. However, after consulting with a research advisor, it ~~was~~ **[became]** apparent that an inlet tube at a lower height would not be beneficial as the different heights would not make a significant difference to the efficiency of the reactor. Also, the lower inlet would make the system harder to clean and fix if anything **[were to break]** ~~broke~~. Thus, the remainder of the testing and some data initially collected was scrapped, but this initial testing helped the team learn more about ProCoDa ~~--~~ (the software used to run the pump), and the design fabricated was reused in the next task of the semester. [This last part of sentence is a bit odd. Don't know what you mean by the "design fabricated".. Did you mean the reactor shown in Fig 6?]
 
 [I would recommend placing some of the math that you had done to determine that the lower height would not be beneficial in this section. It is also unclear why you haven't included any of the data that you had collected.]
-### Methods - Part II
+#### Simulating The Tipping Bucket 
 
 The four inlet system is shown below. The goal was less about fabricating an model that would perfectly emulate the inlet system and more about ~~getting~~ **[fabricating]** a simple design ~~fabricating~~ quickly ~~,~~ with materials already in the lab ~~,~~ that would provide four openings for the water to flow into the reactor tank ~~,~~ **[. This was done]** so **[that]** the team could test the hypothesis: that a greater number of inlets would reduce preferential pathways through the sludge blanket. There is would be no use using this more complicated design if it were to give the same results as the initial one-inlet design from last semester.
 
@@ -213,7 +213,7 @@ To test out the pulse inlet flow thoroughly, the team continued the idea of usin
 
 Based on the sketch in Figure 12, the red section represents a wastewater tank that holds wastewater before **[entering?]** the tipping bucket, and the black box located on the bottom are the four pipe outlet system that deliver the waste water evenly to the sludge blanket reactor.
 
-A transparent material was used to fabricate this system, so the team could observe what happens inside the tank. The tank was fabricated using the plastic containers, and the four pipe outlet system was fabricated using .5" thick plastic sheet. The plastic sheet was cut into squares with a perimeter of 3" and with a total of five sides. The four sides were for the wall, and the other side was used to enclose the bottom of the box. The four pieces of cut plastic then were glued together using PVC glue.
+A clear PVC sheet was used to fabricate this system, so the team could observe what happens inside the tank. The tank was fabricated using the plastic containers, and the four pipe outlet system was fabricated using .5" thick plastic sheet. The plastic sheet was cut into squares with a perimeter of 3" and with a total of five sides. The four sides were for the wall, and the other side was used to enclose the bottom of the box. The four pieces of cut plastic then were glued together using PVC glue.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
