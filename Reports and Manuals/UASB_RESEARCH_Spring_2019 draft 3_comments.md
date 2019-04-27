@@ -26,9 +26,14 @@
   - [Spring 2019 Goals](#spring-2019-goals)
   - [Lab Experiments](#lab-experiments)
       - [Methods](#methods)
-      - [Methods - Part II](#methods-part-II)
+        - [Figuring Out the Inlet Position](#Figuring-Out-the-Inlet-Position)
+        - [Testing the Inlet System](#Testing-the-Inlet-System)
       - [Results and Analysis](#results-and-analysis)
-  - [Conclusion: Future Work](#future-work))
+      - [Model Tipping Bucket System](#model-tipping-bucket-system)
+          - [Fabrication](#fabrication)
+          - [Experiments](#Experiments)
+          - [Data and Analysis](#data-and-analysis)
+  - [Conclusion: Future Work](#future-work)
 - [EPA Funding Assurance](#epa-funding-assurance)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -144,6 +149,8 @@ Below is a formal, more detailed list of **[contains fixed CJMS]** the goals of 
 
 ### Methods
 
+#### Figuring Out the Inlet Position
+
  UASB-R created an experiment that examined the exit velocity of the water from the effluent tube. Inlet systems that come in at two different heights of the benchtop model as shown in Figure 4 were designed and created.
 
 **[Is there any experimental data on exit velocity recorded that you can show? Or are these experiments just based on observation? " read below we explain it I swear"]**
@@ -165,6 +172,7 @@ The UASB-R was started experimenting with old sludge. Note: While sludge can sta
 UASB_R started pumping water through the UASB inlet at different flow rates and calculating the exit velocity. However, after consulting with a research advisor, it became **[became Addressed CJMS]** apparent that an inlet tube at a lower height would not be beneficial as the different heights would not make a significant difference to the efficiency of the reactor. Also, the lower inlet would make the system harder to clean and fix if anything were to break **[were to break Addressed CJMS]** . Thus, the remainder of the testing and some data initially collected on the exit flow velocity was scrapped, but this initial testing helped the team learn more about ProCoDa - the software used to run the pump - and the design in Fig. 6 was able to be reused in the next task of the semester. **[This last part of sentence is a bit odd. Don't know what you mean by the "design fabricated".. Did you mean the reactor shown in Fig 6? Addressed CJMS]**
 
 **[I would recommend placing some of the math that you had done to determine that the lower height would not be beneficial in this section. It is also unclear why you haven't included any of the data that you had collected. Addressed JA (since after talking to Monroe  we learned this testing was pointless we scrapped all the data as)]**
+
 #### Testing the Inlet System
 
 The four inlet system is shown below. The goal was less about fabricating an model that would perfectly emulate the inlet system and more about fabricating a simple design quickly, with materials already in the lab,  that would provide four, 1/2" openings for the water to flow into the reactor tank. This was done so that **[. This was done]** **[that] FIXED CJMS** the team could test the hypothesis: that a greater number of inlets would reduce preferential pathways through the sludge blanket. There is would be no use using this more complicated design if it were to give the same results as the initial one-inlet design from last semester.
@@ -204,9 +212,11 @@ However, UASB-R knew this wasn't a perfect solution, despite the significant imp
 Video recordings of some of the testing can be found [here](https://drive.google.com/open?id=1_VGCU7eiPV4JmfQAUlWmPip_AhztPh2U) and [here](https://drive.google.com/open?id=1ANP1-9QebNSnVUzGvlk4KH14PmZ7Fq4a).
 
 
-### Fabricating a Model Tipping Bucket System
+### Model Tipping Bucket System
 
-To test out the pulse inlet flow thoroughly, the team continued the idea of using the tipping bucket from 2018. Based on that tipping bucket, this year's UASB-R fabricated an inlet system using four pipes, where the tipping bucket pours the waste water, as shown in Figure 12.
+#### Fabrication
+
+To test out the pulse inlet flow thoroughly, the team continued the idea of using the tipping bucket from 2018. Based on that tipping bucket, UASB-R fabricated an inlet system using four pipes, where the tipping bucket pours the waste water, as shown in Figure 12.
 
 Based on the sketch in Figure 12, the red section represents a wastewater tank that holds wastewater before entering **[entering? FIXED CJMS]** the tipping bucket, and the black box located on the bottom of the drawing is the four pipe outlet system that deliver the waste water evenly to the sludge blanket reactor. The system can be called ***"the flow distribution system"***
 
@@ -217,23 +227,25 @@ A clear PVC sheet was used to fabricate this system, so the team could observe w
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 12 - Sketch of the tipping bucket system. Inlet tubes not included
 
-The fabrication recently begun. The team has looked into testing the model of the tipping bucket system itself to see if the flow is being evenly distributed into the four pipes inlet system. If not, UASB-R and UASB-D planned to work on new ideas to fix the problem. This process may be postponed to next semester depending on how long fabrication and testing takes.
+#### Experiments
 
-## Experiments
-After the model has been fabricated, the team moved forward to test out if the flow is evenly distributed in "the flow distribution system". To mimic the real tipping bucket, the team manually pour a 500 mL water into the system by hand, and see the distribution of the flow. The method to measure if the flow is evenly distributed is putting four small plastic bottles underneath each of the pipe to collect the water flow through. After that the water has been collected, then it can be measure by putting the water into a beaker.
+After the model had been fabricated, the team moved forward to test out if the flow would evenly distributed in the aptly-named flow distribution system. To mimic the real tipping bucket, the team manually pour a 500mL water into the system by hand, and looked at the distribution of the flow. Four small plastic bottles (each labeled as Quadrant 1, 2, 3 and 4) were put underneath each pipe to collect the amount of water that had flowed through each tube. The volume was then measured by pouring the contents of each bottle into a graduated cylinder.
 
-Because the experiment is done by manually pouring water into the system, the team understand that it would be an error during the experiment especially to maintain a steady pour. To anticipate this situation, the team decided to pour the water from 4 different sides and see if this method will create a pattern on how the water has been collected by the plastic bottle.
-
-The experiments is done by pouring water from each side of the system twice, therefore there are 8 data of the volume of water from each bottle that has been collected. The water collected from each quadrant then measured with a beaker. However, from the 500 mL volume of the initial water, not all of the water flow through to the 4 plastic bottles because there is area in the top bucket that hold it. This happened because the shape of the bucket that has a slanted area that collect the water. The detail can be seen in the figure 13.
+Our setup is shown below:
 
 
-## Data Analysis
+Because the experiment is done by manually pouring water into the system, the team understand that it would be an error during the experiment. To anticipate this situation, the team decided to pour the water from each of the 4 sides of the system and see if what side it was poured from affected the volume of water collected in each bottle. Each side was done twice for a total of 8 trials.
 
-***do the analysis and connect it to the picture***
+** Note for the data analysis below: The volumes in the four bottles do not add up to the 500mL volume of the initial water because a small amount stayed in the top section. This happened because the shape of the plastic container has a slanted area that unintentionally collected the water.
+
+
+#### Data Analysis and Results
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/1.png?raw=true" width="300px"/></p>
-<p align="center">Fig. 13 - A top view of the Model Water Distribution Tank.
+<p align="center">Fig. 14 - A top view of the Model Water Distribution Tank.
+
+
 
 ```python
 from aguaclara.play import *
