@@ -235,7 +235,7 @@ Our setup is shown below:
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0895.JPG?raw=true" width="250px"/></p>
-<p align="center">Fig. 13 - Flow Distribution Set uo
+<p align="center">Fig. 13 - Flow Distribution Set-up
 
 
 Because the experiment is done by manually pouring water into the system, the team understand that it would be an error during the experiment. To anticipate this situation, the team decided to pour the water from each of the 4 sides of the system and see if what side it was poured from affected the volume of water collected in each bottle. Each side was done twice for a total of 8 trials.
