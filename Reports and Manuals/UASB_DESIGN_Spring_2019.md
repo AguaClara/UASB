@@ -657,24 +657,24 @@ class UASBtest:
   def __init__(
           self,
           temp = 10 * u.degC, #estimated temp at IAAWTF #NOTE: get a better estimate
-          water_level_height = 7 * u.ft, #this is the height of the water in the UASB/height of the effluent  
-          vol_dump = 1.225 * u.L, #NOTE: dump vol from previous team's design/4 since we are doing about a quarter of the size from previous design--subject to change once current team tests new tipping bucket design
-          pipe_diam = 1 * u.inch,
+          water_level_height = 7 * u.ft, #this is the height of the water in the UASB/height of the effluent. #NOTE: this leaves an extra foot of the 8 foot canister, could consider reducing the amount of "safety" space
+          vol_dump = 1.225 * u.L, #this is the volume of one dump of the tipping bucket. It is based on previous dump volume adjusted to give same height change in canister with new, smaller canister diameter #QUESTION: perhaps this should be smaller so as to reduce maximum up flow velocity slightly, but increase frequency--that would reduce necessary length of tube settler... a down side is that it may make "de-clogging" mechanism ineffective
+          pipe_diam = 1 * u.inch, #diameter of the influent pipe
           n_elbows = 2,
           pipe_roughness = .0015 * u.mm, # PVC pipe roughness
-          time_dump = 2* u.s, #NOTE: get better value with actual testing
+          time_dump = 2* u.s, #NOTE: get better value with actual testing, this is a rough estimate
           UASB_diameter = 10 * u.inch,
-          UASB_height = 8 * u.ft, #NOTE: this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
+          UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 0.4 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe (subject to change)
+          diameter_drain_pipe= 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe (subject to change, 4 inches was chosen so that the area was similar to that of one section in drain tank in previous design.) #NOTE: we could consider making this larger to reduce head gain per dump/reduce up flow velocity BUT, larger pipes are expensive #NOTE: we could also consider doing away entirely with the drain pipe in the design for the smaller reactors.
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_effluent=60*u.degrees ,#angle of effluent line in degrees
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
           percent_sludge= .7, #based on summer 2018
-          effluent_pipe_diameter=1*u.inch,
-          target_capture_velocity = .12 * u.mm/u.s #target capture velocity for the tube settler #QUESTION: does this change for wastwater??
+          effluent_pipe_diameter= 1*u.inch, #NOTE: it may be good to make this smaller as to allow for a shorter effluent tube, BUT that may cause additional clogging.
+          target_capture_velocity = .12 * u.mm/u.s #target capture velocity for the tube settler #QUESTION: does this change for wastewater??
 
 
 ):
@@ -715,6 +715,7 @@ class UASBtest:
       self.effluent_pipe_diameter=effluent_pipe_diameter
       self.target_capture_velocity=target_capture_velocity
       self.angle_effluent=angle_effluent
+      self.ww_gen_rate=ww_gen_rate
 
   @property
   def UASB_area(self):
@@ -724,7 +725,7 @@ class UASBtest:
 
   @property
   def volume_UASB(self):
-    """this function calculates volume of liquid inside UASB reactor, not including pipes"""
+    """this function calculates volume of liquid inside UASB reactor, not including influent pipes"""
     vol=self.UASB_area*self.water_level_height
     return vol
 
@@ -765,6 +766,7 @@ class UASBtest:
 
   @property
   def length_drain_pipe(self):
+    """This function calculates the length of the drain pipe necessary so that the volume of 1 dump from the tipping bucket fills the drain pipe""" #NOTE: this adds an extra 1/2 inch of length to the drain pipe, could consider removing that
     h=(self.HG_per_dump+1/2*u.inch).to(u.inch)
     return h
 
@@ -772,20 +774,21 @@ class UASBtest:
   def drain_time(self):
     """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the drain pipe (which connects the 1.5 inch pipe to the holding tank) is in line with the water level in the canister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up/fast enough to produce desired up flow velocity in the tank"""
     #NOTE: should we include minor loss from holding tank to drain tank, or assume water just starts from drain tank
+    #NOTE: drain time also might drastically underestimate actual drain time, since all the water from the tipping bucket won't necessarily go straight into the drain pipe from the tipping bucket, but could linger around the bottom of the holding tank.  
     time = 8*self.area_drain_pipe/(np.pi*(self.pipe_diam)**2)*(self.HG_per_dump*self.aggregate_k/(2*pc.gravity))**(1/2)
     return time    
 
 
   @property
   def upflow_velocity_pulse(self):
-    """this function estimates the upflow velocity in the canister during a pulse."""
+    """this function estimates the upflow velocity in the canister during a pulse by dividing the time it takes for a dump from the tipping bucket to drain into the system to get a "pulse flow rate" and then dividing that by the cross sectional area of the UASB to get an estimate for "pulse up flow velocity" """
     UASB_Q_dump=self.vol_dump/self.drain_time ##calculate flow rate through UASB as water from a dump of tipping bucket flows through the system
     up_vel=UASB_Q_dump/self.UASB_area
     return up_vel.to(u.m/u.s)
 
   @property
   def length_tube_settler_pulse(self):
-    """this function estimates the length of the tube settler based on pulse flow through the UASB"""
+    """this function estimates the length of the tube settler based on upflow velocity during pulse flow through the UASB"""
     L=self.effluent_pipe_diameter/(np.cos(self.angle_effluent))*(self.upflow_velocity_pulse/self.target_capture_velocity-np.sin(self.angle_effluent))
     return L
 
@@ -796,12 +799,19 @@ class UASBtest:
     up_vel=UASB_Q_dump/self.UASB_area
     return up_vel.to(u.m/u.s)
 
+  @property
+  def num_people_served(self):
+    """This function estimates the number of people that could be served by a UASB reactor of this size"""
+    num=self.ww_gen_rate/self.flow_rate_avg
+    num=num.to(u.dimensionless)
+    return num
 
 test=UASBtest()
 (test.upflow_velocity_pulse).to(u.mm/u.s)
 (test.length_tube_settler_cont).to(u.inch)
 (test.length_tube_settler_pulse).to(u.inch)
 (test.flow_rate_avg).to(u.L/u.s)
+print((test.num_people_served).to(u.dimensionless))
 
 drain_pipe_avail = ([1.5, 2, 3, 4, 6, 4, 6]) * u.inch
 D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
