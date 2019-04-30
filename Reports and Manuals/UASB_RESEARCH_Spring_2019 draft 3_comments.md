@@ -1,7 +1,7 @@
 # UASB Research: Spring 2019 Research Report
 
 ###  Cara Smith, Rafael Heryapriadi, and Jahin Aishee
-#### April 27th, 2019
+#### April 25th, 2019
 
 **[Felix: Hey I'm going to be making comments in these square brackets. After addressing any comments please write within the brackets "-Addressed __" with the individual's initials in the __ space. They will be deleted in the next report.]**
 
@@ -220,15 +220,12 @@ To test out the pulse inlet flow thoroughly, the team continued the idea of usin
 
 Based on the sketch in Figure 12, the red section represents a wastewater tank that holds wastewater before entering **[entering? FIXED CJMS]** the tipping bucket, and the black box located on the bottom of the drawing is the four pipe outlet system that deliver the waste water evenly to the sludge blanket reactor. The system can be called ***"the flow distribution system"***
 
+A clear PVC sheet was used to fabricate this system, so the team could observe what happens inside the tank. The tank was fabricated using the a plastic gallon container, and the four pipes outlet system was fabricated using half inch thick plastic sheet. The plastic sheet was cut into squares with a perimeter of 3" and with a total of five sides. The four sides were for the wall, and the other side was used to enclose the bottom of the box. The four pieces of cut plastic then were glued together using PVC glue. The four 1/2 inch  diameter holes were drilled into the bottom and then four of 1/2 inches pipes were attach into them.
+
+
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
 <p align="center">Fig. 12 - Sketch of the tipping bucket system. Inlet tubes not included
-
-A clear PVC sheet was used to fabricate the bottom part of the system, so the team could observe what happens inside the tank. The upper part of the system was fabricated using a 6 quarts plastic gallon container with the diameter of 8", and the four pipes outlet system was fabricated using half inch thick plastic sheet. The clear PVC sheet was cut into squares with a perimeter of 3" and with a total of five sides. The four sides were for the wall, and the other side was used to enclose the bottom of the box. The four pieces of cut plastic then were glued together using PVC glue. The four 1/2 inch  diameter holes were drilled into the bottom and then four of 1/2 inches pipes were attach into them.
-
-<p align="center">
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/FlowDistributionSystem.JPG?raw=true " width="250px"/></p>
-<p align="center">Fig. 12.a - The Tipping bucket system
 
 #### Experiments
 
@@ -236,13 +233,6 @@ After the model had been fabricated, the team moved forward to test out if the f
 
 Our setup is shown below:
 
-<p align="center">
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0895.JPG?raw=true" width="250px"/></p>
-<p align="center">Fig. 13 - Flow Distribution Set-up
-
-
-
-NEW LINK 
 
 Because the experiment is done by manually pouring water into the system, the team understand that it would be an error during the experiment. To anticipate this situation, the team decided to pour the water from each of the 4 sides of the system and see if what side it was poured from affected the volume of water collected in each bottle. Each side was done twice for a total of 8 trials.
 
@@ -255,14 +245,12 @@ Because the experiment is done by manually pouring water into the system, the te
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/1.png?raw=true" width="300px"/></p>
 <p align="center">Fig. 14 - A top view of the Model Water Distribution Tank.
 
-The data collected in mL after tipping the tipping bucket on the Water distribution system:
+
 
 ```python
 from aguaclara.play import *
 
-#nomenClature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
-
-Front1st= ([135, 107]) * u.mL
+Front1st= [135, 107]
 Front2nd= [150, 119]
 Front3rd= [125, 134]
 Front4th= [70, 100]
@@ -284,8 +272,6 @@ Right4th= [93, 87]
 
 
 ```
-
-A few things to note: only two trials each is not ideal. Next semester the team can attempt more trials; unfortunately time was extremely limited and this was simply the amount UASB-R could accomplish in a very short period of time. However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring. One, usually the two bottles further away from the side that was being poured from obtained more liquid than the two bottles closer to the side. For example, when it was being poured from the backside, the 3rd and 4th quadrants had more liquid and than 1st and 2nd. Two, as a natural follow-up from the first conclusion, the flow was not being distributed evenly; in none of the eight trials were the volumes even close to each other. This suggests either 1. the tipping bucket must be angled with significant precision, 2. The flow distribution system was be redesigned to account for the front two openings getting less water than the back two openings, or 3. The inlet should split up into four opening later in the UASB reactor (i.e.in the tank).
 
 ## Key Contacts
 
