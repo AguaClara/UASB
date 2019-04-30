@@ -227,22 +227,19 @@ Based on the sketch in Figure 12, the red section represents a wastewater tank t
 A clear PVC sheet was used to fabricate the bottom part of the system, so the team could observe what happens inside the tank. The upper part of the system was fabricated using a 6 quarts plastic gallon container with the diameter of 8", and the four pipes outlet system was fabricated using half inch thick plastic sheet. The clear PVC sheet was cut into squares with a perimeter of 3" and with a total of five sides. The four sides were for the wall, and the other side was used to enclose the bottom of the box. The four pieces of cut plastic then were glued together using PVC glue. The four 1/2 inch  diameter holes were drilled into the bottom and then four of 1/2 inches pipes were attach into them.
 
 <p align="center">
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/FlowDistributionSystem.JPG?raw=true " width="250px"/></p>
-<p align="center">Fig. 12.a - The Tipping bucket system
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Flowdistribution2.JPG?raw=true" width="250px"/></p>
+<p align="center">Fig. 12.a - the flow distribution system with 4 half inch pipes.
 
 #### Experiments
 
-After the model had been fabricated, the team moved forward to test out if the flow would evenly distributed in the aptly-named flow distribution system. To mimic the real tipping bucket, the team manually pour a 500mL water into the system by hand, and looked at the distribution of the flow. Four small plastic bottles (each labeled as Quadrant 1, 2, 3 and 4) were put underneath each pipe to collect the amount of water that had flowed through each tube. The volume was then measured by pouring the contents of each bottle into a graduated cylinder.
+After the model had been fabricated, the team moved forward to test out if the flow would evenly distributed in the aptly-named flow distribution system. To mimic the real tipping bucket, the team manually pour a 500mL water into the flow distribution system by hand, and looked at the distribution of the flow. Four small plastic bottles (each labeled as Quadrant 1, 2, 3 and 4) were put underneath each pipe to collect the amount of water that had flowed through each tube. The volume was then measured by pouring the contents of each bottle into a graduated cylinder.
 
-Our setup is shown below:
+The tipping bucket then was elevated so the small plastic bottles can be place beneath it. The elevation is done by placing the flow distribution system between two even holder as shown below.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0895.JPG?raw=true" width="250px"/></p>
 <p align="center">Fig. 13 - Flow Distribution Set-up
 
-
-
-NEW LINK 
 
 Because the experiment is done by manually pouring water into the system, the team understand that it would be an error during the experiment. To anticipate this situation, the team decided to pour the water from each of the 4 sides of the system and see if what side it was poured from affected the volume of water collected in each bottle. Each side was done twice for a total of 8 trials.
 
@@ -259,28 +256,53 @@ The data collected in mL after tipping the tipping bucket on the Water distribut
 
 ```python
 from aguaclara.play import *
+from aguaclara.core.units import unit_registry as u
+from aguaclara.core import physchem as pc
+from aguaclara.core import constants as con
+import numpy as np
+import matplotlib.pyplot as plt
+from aide_design.play import *
+import math
 
 #nomenClature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
 
 Front1st= ([135, 107]) * u.mL
-Front2nd= [150, 119]
-Front3rd= [125, 134]
-Front4th= [70, 100]
+Front2nd= [150, 119]* u.mL
+Front3rd= [125, 134]* u.mL
+Front4th= [70, 100]* u.mL
 
-Back1st= [85, 88]
-Back2nd= [105, 102]
-Back3rd= [175, 147]
-Back4th= [125, 116]
+Back1st= [85, 88]* u.mL
+Back2nd= [105, 102]* u.mL
+Back3rd= [175, 147]* u.mL
+Back4th= [125, 116]* u.mL
 
-Left1st= [130, 107]
-Left2nd= [105, 91]
-Left3rd= [125, 133]
-Left4th= [70, 114]
+Left1st= [130, 107]* u.mL
+Left2nd= [105, 91]* u.mL
+Left3rd= [125, 133]* u.mL
+Left4th= [70, 114]* u.mL
 
-Right1st= [90, 112]
-Right2nd= [126, 110]
-Right3rd= [153, 152]
-Right4th= [93, 87]
+Right1st= [90, 112]* u.mL
+Right2nd= [126, 110]* u.mL
+Right3rd= [153, 152]* u.mL
+Right4th= [93, 87]* u.mL
+
+
+Horizontal_Array = ["1st", "2nd", "3rd", "4th"]
+Front_Array = [Front1st, Front2nd, Front3rd, Front4th]
+Back_Array= [Back1st, Back2nd, Back3rd, Back4th]
+Left_Array= [Left1st, Left2nd, Left3rd, Left4th]
+Right_Array= [Right1st, Right2nd, Right3rd, Right4th]
+
+Vis_Array = pc.viscosity_kinematic(Temp_Array)
+Area = math.pi*0.04
+Rey_Array = pc.re_pipe(Area/2,0.4,Vis_Array)
+
+plt.plot(Horizontal_Array,Front_Array)
+plt.xlabel('Temperature(K)')
+plt.ylabel('Reynolds Number')
+plt.title('Tempurature Vs. Reynolds Number')
+plt.show()
+plt.savefig('./')
 
 
 ```
