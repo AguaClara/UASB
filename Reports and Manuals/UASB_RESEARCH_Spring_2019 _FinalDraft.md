@@ -253,7 +253,7 @@ The data collected in mL after tipping the tipping bucket on the Water distribut
 
 ```python
 from aguaclara.play import *
-// nomenclature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
+//nomenclature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
 Front1st= [135, 107]
 Front2nd= [150, 119]
 Front3rd= [125, 134]
