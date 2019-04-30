@@ -249,11 +249,11 @@ Because the experiment is done by manually pouring water into the system, the te
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/1.png?raw=true" width="300px"/></p>
 <p align="center">Fig. 14 - A top view of the Model Water Distribution Tank.
 
-
+The data collected in mL after tipping the tipping bucket on the Water distribution system:
 
 ```python
 from aguaclara.play import *
-
+// nomenclature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
 Front1st= [135, 107]
 Front2nd= [150, 119]
 Front3rd= [125, 134]
