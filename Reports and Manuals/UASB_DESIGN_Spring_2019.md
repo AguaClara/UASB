@@ -674,9 +674,11 @@ class UASBtest:
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
           percent_sludge= .7, #based on summer 2018
           effluent_pipe_diameter= 1*u.inch, #NOTE: it may be good to make this smaller as to allow for a shorter effluent tube, BUT that may cause additional clogging.
-          target_capture_velocity = .12 * u.mm/u.s #target capture velocity for the tube settler #QUESTION: does this change for wastewater??
-
-
+          target_capture_velocity = .12 * u.mm/u.s, #target capture velocity for the tube settler #QUESTION: does this change for wastewater??
+          #Property of the tube settler. The slowest settling particle that the tube settler captures reliably. THEREFORE: capture velocity<up flow velocity
+          diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sluge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
+          rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
+          rho_water=1 *u.g/u.mL
 ):
       """Instantiate a UASB object, representing a real UASB component.
       :param Q: Flow rate of water water through the UASB.
@@ -787,6 +789,12 @@ class UASBtest:
     return up_vel.to(u.m/u.s)
 
   @property
+  def capture_velocity_granule(self):
+    """This function calculates the capture velocity of sludge granules based on literature values for the density/diameter of sludge granules and the method of calculating terminal velocity in the floc blanket""" #NOTE: In hindsight, probably not good to use floc model to
+    vel_term=self.diam_sludge_granules*pc.gravity/(18*pc.viscosity_kinematic(self.temp))*(self.rho_sludge-self.rho_water)/self.rho_water
+    return vel_term
+
+  @property
   def length_tube_settler_pulse(self):
     """this function estimates the length of the tube settler based on upflow velocity during pulse flow through the UASB"""
     L=self.effluent_pipe_diameter/(np.cos(self.angle_effluent))*(self.upflow_velocity_pulse/self.target_capture_velocity-np.sin(self.angle_effluent))
@@ -807,7 +815,7 @@ class UASBtest:
     return num
 
 test=UASBtest()
-(test.upflow_velocity_pulse).to(u.mm/u.s)
+(test.upflow_velocity_pulse).to(u.m/u.hr) #note: according to this study, https://nptel.ac.in/courses/105105048/M21L34.pdf high upflow velocity of 6-12 m/hr fluidizes sludge blanket
 (test.length_tube_settler_cont).to(u.inch)
 (test.length_tube_settler_pulse).to(u.inch)
 (test.flow_rate_avg).to(u.L/u.s)
