@@ -658,16 +658,16 @@ class UASBtest:
           self,
           temp = 10 * u.degC, #estimated temp at IAAWTF #NOTE: get a better estimate
           water_level_height = 7 * u.ft, #this is the height of the water in the UASB/height of the effluent. #NOTE: this leaves an extra foot of the 8 foot canister, could consider reducing the amount of "safety" space
-          vol_dump = 1.225 * u.L, #this is the volume of one dump of the tipping bucket. It is based on previous dump volume adjusted to give same height change in canister with new, smaller canister diameter #QUESTION: perhaps this should be smaller so as to reduce maximum up flow velocity slightly, but increase frequency--that would reduce necessary length of tube settler... a down side is that it may make "de-clogging" mechanism ineffective
-          pipe_diam = 1 * u.inch, #diameter of the influent pipe
+           #this is the volume of one dump of the tipping bucket. It is based on previous dump volume adjusted to give same height change in canister with new, smaller canister diameter #QUESTION: perhaps this should be smaller so as to reduce maximum up flow velocity slightly, but increase frequency--that would reduce necessary length of tube settler... a down side is that it may make "de-clogging" mechanism ineffective
+          pipe_diam = 1.5 * u.inch, #diameter of the influent pipe
           n_elbows = 2,
           pipe_roughness = .0015 * u.mm, # PVC pipe roughness
           time_dump = 2* u.s, #NOTE: get better value with actual testing, this is a rough estimate
-          UASB_diameter = 10 * u.inch,
+          UASB_diameter = 8 * u.inch,
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 0.4 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe (subject to change, 4 inches was chosen so that the area was similar to that of one section in drain tank in previous design.) #NOTE: we could consider making this larger to reduce head gain per dump/reduce up flow velocity BUT, larger pipes are expensive #NOTE: we could also consider doing away entirely with the drain pipe in the design for the smaller reactors.
+          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe (subject to change, 4 inches was chosen so that the area was similar to that of one section in drain tank in previous design.) #NOTE: we could consider making this larger to reduce head gain per dump/reduce up flow velocity BUT, larger pipes are expensive #NOTE: we could also consider doing away entirely with the drain pipe in the design for the smaller reactors.
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_effluent=60*u.degrees ,#angle of effluent line in degrees
@@ -678,7 +678,9 @@ class UASBtest:
           #Property of the tube settler. The slowest settling particle that the tube settler captures reliably. THEREFORE: capture velocity<up flow velocity
           diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sluge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
-          rho_water=1 *u.g/u.mL
+          rho_water=1 *u.g/u.mL,
+          lift= 5*u.cm
+
 ):
       """Instantiate a UASB object, representing a real UASB component.
       :param Q: Flow rate of water water through the UASB.
@@ -702,7 +704,6 @@ class UASBtest:
       """
       self.temp = temp
       self.water_level_height = water_level_height
-      self.vol_dump = vol_dump
       self.pipe_diam = pipe_diam
       self.n_elbows = n_elbows
       self.pipe_roughness = pipe_roughness
@@ -718,12 +719,18 @@ class UASBtest:
       self.target_capture_velocity=target_capture_velocity
       self.angle_effluent=angle_effluent
       self.ww_gen_rate=ww_gen_rate
+      self.lift=lift
 
   @property
   def UASB_area(self):
     """This function calculates the surface area of the UASB canister """
     area= pc.area_circle(self.UASB_diameter)
     return area
+
+  @property
+  def vol_dump(self):
+    vol=self.lift*self.UASB_area
+    return vol
 
   @property
   def volume_UASB(self):
@@ -746,7 +753,7 @@ class UASBtest:
   @property
   def length_tube_settler_cont(self):
     """this function estimates the length of the tube settler based on continuous flow through the UASB... NOT the flow during the pulse"""
-    L=self.effluent_pipe_diameter/(np.cos(self.angle_effluent))*(self.upflow_vel_avg/self.target_capture_velocity-np.sin(self.angle_effluent))
+    L=self.effluent_pipe_diameter/(np.cos(self.angle_effluent))*(self.upflow_vel_avg/self.upflow_vel_avg-np.sin(self.angle_effluent))
     return L
 
   @property
@@ -797,7 +804,7 @@ class UASBtest:
   @property
   def length_tube_settler_pulse(self):
     """this function estimates the length of the tube settler based on upflow velocity during pulse flow through the UASB"""
-    L=self.effluent_pipe_diameter/(np.cos(self.angle_effluent))*(self.upflow_velocity_pulse/self.target_capture_velocity-np.sin(self.angle_effluent))
+    L=self.effluent_pipe_diameter/(np.cos(self.angle_effluent))*(self.upflow_velocity_pulse/self.upflow_velocity_pulse-np.sin(self.angle_effluent))
     return L
 
   @property
@@ -814,48 +821,24 @@ class UASBtest:
     num=num.to(u.dimensionless)
     return num
 
+(0.0009 *u.m/u.s).to(u.mm/u.s)
+(0.0167 *u.m/u.s ).to(u.mm/u.s)
+
+
+test.lift/.4
+
 test=UASBtest()
-(test.upflow_velocity_pulse).to(u.m/u.hr) #note: according to this study, https://nptel.ac.in/courses/105105048/M21L34.pdf high upflow velocity of 6-12 m/hr fluidizes sludge blanket
-(test.length_tube_settler_cont).to(u.inch)
-(test.length_tube_settler_pulse).to(u.inch)
-(test.flow_rate_avg).to(u.L/u.s)
-print((test.num_people_served).to(u.dimensionless))
+print('upflow velocity is',(test.upflow_velocity_pulse).to(u.mm/u.s))#note: according to this study, https://nptel.ac.in/courses/105105048/M21L34.pdf high upflow velocity of 6-12 m/hr fluidizes sludge blanket
+print('dump volume is',test.vol_dump.to(u.gal))
 
-drain_pipe_avail = ([1.5, 2, 3, 4, 6, 4, 6]) * u.inch
-D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch
-test=UASBtest()
-print(test.drain_time.to(u.s))
-
-drain_times=np.zeros(len(drain_pipe_avail))*u.s
-upflow_vels=np.zeros(len(drain_pipe_avail))*u.m/u.s
-for i in range(0,len(D_avail)):
-  test=UASBtest(diameter_drain_pipe=drain_pipe_avail[i])
-  drain_times[i]=test.drain_time
-  upflow_vels[i]=test.upflow_velocity
+print('average upflow velocity is',(test.upflow_vel_avg).to(u.mm/u.s))
 
 
-plt.scatter(drain_pipe_avail, drain_times)
-plt.title('Drain Pipe Diameter vs Drain Time')
-plt.xlabel('Drain Pipe Diameter (Inches)')
-plt.ylabel('Drain time (Seconds)')
-
-plt.scatter(drain_pipe_avail, upflow_vels)
-plt.title('Drain Pipe Diameter vs Upflow Velocity')
-plt.xlabel('Drain Pipe Diameter (Inches)')
-plt.ylabel('Upflow Velocity (Meters/second)')
-plt.ylim(0, .02)
-
-
-pre=UASBtest(diameter_drain_pipe=3*u.inch)
-print(pre.length_drain_pipe.to(u.inch))
-print(pre.upflow_velocity_pulse.to(u.m/u.hr)) #Note: this is similar to settling velocity of sludge granules found in literature, which ranged from 22.8 to 98.89 m/hr
-print(pre.drain_time.to(u.s))
+```
 
 
 
-
-
-
+```
 
 @property
 """Got BiogasFlow code from Spring 2018"""
@@ -913,6 +896,10 @@ Q_Biogas = BiogasFlow(Flow_design, COD_ITHACA, Temp, 0.7)
 print(Q_Biogas.to(u.L/u.day))
 
 print((3.6*u.m).to(u.feet))
+
+(0.0009 *u.m/u.s).to(u.m/u.hr)
+
+(0.0167 *u.m/u.s).to(u.m/u.hr)
 ```
 
 
