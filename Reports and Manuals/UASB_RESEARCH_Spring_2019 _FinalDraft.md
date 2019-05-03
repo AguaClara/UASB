@@ -248,11 +248,13 @@ Because the experiment is done by manually pouring water into the system, the te
 
 #### Data Analysis and Results
 
+As mentioned earlier the tipping bucket experiment, to test whether the water would be evenly distributed through the four pipes of the inlet system, UASB_R created a model with four partitions and tipped water from four different sides. A detailed top view of the model is shown in Figure 14.
+
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/1.png?raw=true" width="300px"/></p>
 <p align="center">Fig. 14 - A top view of the Model Water Distribution Tank.
 
-The data collected in mL after tipping the tipping bucket on the Water distribution system:
+The team, then collected data by measuring how much water went through each partition which is modeled by the code below.
 
 ```python
 from aguaclara.play import *
@@ -264,48 +266,116 @@ import matplotlib.pyplot as plt
 from aide_design.play import *
 import math
 
+#The list of Data Collected is shown below
 #nomenClature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
 
-Front1st= ([135, 107]) * u.mL
-Front2nd= [150, 119]* u.mL
-Front3rd= [125, 134]* u.mL
-Front4th= [70, 100]* u.mL
+Front1st= [135, 107]
+Front2nd= [150, 119]
+Front3rd= [125, 134]
+Front4th= [70, 100]
 
-Back1st= [85, 88]* u.mL
-Back2nd= [105, 102]* u.mL
-Back3rd= [175, 147]* u.mL
-Back4th= [125, 116]* u.mL
+Back1st= [85, 88]
+Back2nd= [105, 102]
+Back3rd= [175, 147]
+Back4th= [125, 116]
 
-Left1st= [130, 107]* u.mL
-Left2nd= [105, 91]* u.mL
-Left3rd= [125, 133]* u.mL
-Left4th= [70, 114]* u.mL
+Left1st= [130, 107]
+Left2nd= [105, 91]
+Left3rd= [125, 133]
+Left4th= [70, 114]
 
-Right1st= [90, 112]* u.mL
-Right2nd= [126, 110]* u.mL
-Right3rd= [153, 152]* u.mL
-Right4th= [93, 87]* u.mL
+Right1st= [90, 112]
+Right2nd= [126, 110]
+Right3rd= [153, 152]
+Right4th= [93, 87]
+
+#The average of the two trials are taken to plot the graph
+
+F1st = (Front1st[0]+Front1st[1])/2
+F2nd = (Front2nd[0]+Front2nd[1])/2
+F3rd = (Front3rd[0]+Front3rd[1])/2
+F4th = (Front4th[0]+Front4th[1])/2
+
+B1st = (Back1st[0]+Back1st[1])/2
+B2nd = (Back2nd[0]+Back2nd[1])/2
+B3rd = (Back3rd[0]+Back3rd[1])/2
+B4th = (Back4th[0]+Back4th[1])/2
+
+L1st = (Left1st[0]+Left1st[1])/2
+L2nd = (Left2nd[0]+Left2nd[1])/2
+L3rd = (Left3rd[0]+Left3rd[1])/2
+L4th = (Left4th[0]+Left4th[1])/2
+
+R1st = (Right1st[0]+Right1st[1])/2
+R2nd = (Right2nd[0]+Right2nd[1])/2
+R3rd = (Right3rd[0]+Right3rd[1])/2
+R4th = (Right4th[0]+Right4th[1])/2
 
 
-Horizontal_Array = ["1st", "2nd", "3rd", "4th"]
-Front_Array = [Front1st, Front2nd, Front3rd, Front4th]
-Back_Array= [Back1st, Back2nd, Back3rd, Back4th]
-Left_Array= [Left1st, Left2nd, Left3rd, Left4th]
-Right_Array= [Right1st, Right2nd, Right3rd, Right4th]
+Horizontal_Array = ["1st", "2nd", "3rd", "4th"] #array used to indicate quadrant number
+Front_Array = [F1st, F2nd, F3rd, F4th] #array containing the values of discharge
+Back_Array= [B1st, B2nd, B3rd, B4th] #array containing the values of discharge
+Left_Array= [L1st, L2nd, L3rd, L4th] #array containing the values of discharge
+Right_Array= [R1st, R2nd, R3rd, R4th] #array containing the values of discharge
 
-Vis_Array = pc.viscosity_kinematic(Temp_Array)
-Area = math.pi*0.04
-Rey_Array = pc.re_pipe(Area/2,0.4,Vis_Array)
-
-plt.plot(Horizontal_Array,Front_Array)
-plt.xlabel('Temperature(K)')
-plt.ylabel('Reynolds Number')
-plt.title('Tempurature Vs. Reynolds Number')
+#Ploting the graph of water distribution from
+index = np.arange(len(Horizontal_Array))
+plt.bar(index,Front_Array)
+plt.xlabel('Quadrant Number', fontsize = 18)
+plt.xticks(index, Horizontal_Array, fontsize=12, rotation=30)
+plt.ylabel('Average Discharge (mL)', fontsize = 18)
+plt.yticks(fontsize=12)
+plt.title('Water Distribution Through Quadrants From The Front', fontsize = 20)
 plt.show()
 plt.savefig('./')
 
+plt.bar(index,Back_Array)
+plt.xlabel('Quadrant Number', fontsize = 18)
+plt.xticks(index, Horizontal_Array, fontsize=12, rotation=30)
+plt.ylabel('Average Discharge (mL)', fontsize = 18)
+plt.yticks(fontsize=12)
+plt.title('Water Distribution Through Quadrants From The Back', fontsize = 20)
+plt.show()
+plt.savefig('./')
+
+plt.bar(index,Left_Array)
+plt.xlabel('Quadrant Number', fontsize = 18)
+plt.xticks(index, Horizontal_Array, fontsize=12, rotation=30)
+plt.ylabel('Average Discharge (mL)', fontsize = 18)
+plt.yticks(fontsize=12)
+plt.title('Water Distribution Through Quadrants From The Left', fontsize = 20)
+plt.show()
+plt.savefig('./')
+
+plt.bar(index,Right_Array)
+plt.xlabel('Quadrant Number', fontsize = 18)
+plt.xticks(index, Horizontal_Array, fontsize=12, rotation=30)
+plt.ylabel('Average Discharge (mL)', fontsize = 18)
+plt.yticks(fontsize=12)
+plt.title('Water Distribution Through Quadrants From The Right', fontsize = 20)
+plt.show()
+plt.savefig('./')
 
 ```
+
+The code above normalizes the data attained from each quadrant and produces the graphs shown below.
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/front.png?raw=true" width="400px"/></p>
+<p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the front.
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Back.png?raw=true" width="400px"/></p>
+<p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the back.
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Left.png?raw=true" width="400px"/></p>
+<p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the left.
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Right.png?raw=true" width="400px"/></p>
+<p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the right.
+
 
 A few things to note: only two trials each is not ideal. Next semester the team can attempt more trials; unfortunately time was extremely limited and this was simply the amount UASB-R could accomplish in a very short period of time. However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring. One, usually the two bottles further away from the side that was being poured from obtained more liquid than the two bottles closer to the side. For example, when it was being poured from the backside, the 3rd and 4th quadrants had more liquid and than 1st and 2nd. Two, as a natural follow-up from the first conclusion, the flow was not being distributed evenly; in none of the eight trials were the volumes even close to each other. This suggests either 1. the tipping bucket must be angled with significant precision, 2. The flow distribution system was be redesigned to account for the front two openings getting less water than the back two openings, or 3. The inlet should split up into four opening later in the UASB reactor (i.e.in the tank).
 
