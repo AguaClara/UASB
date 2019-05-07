@@ -112,7 +112,7 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
   The benchtop model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC). The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
 
-**[A picture of benchtop model would be nice here - We actually put our old benchtop model photo further down so I'm not gonna put it here again (sorry!) -CJMS]**
+**[A picture of benchtop model would be nice here (We put our old benchtop model photo further down! - CJMS)]**
 
   The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” traveled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer. The team then came up with the idea of spreading the inlet flow by drilling four holes on the inlet tube near the bottom to decrease the preferential paths, but it was not completed by the end of 2018.
 
@@ -379,6 +379,10 @@ The code above normalizes the data attained from each quadrant and produces the 
 
 A few things to note: only two trials each is not ideal. Next semester the team can attempt more trials; unfortunately time was extremely limited and this was simply the amount UASB-R could accomplish in a very short period of time. However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring. One, usually the two bottles further away from the side that was being poured from obtained more liquid than the two bottles closer to the side. For example, when it was being poured from the backside, the 3rd and 4th quadrants had more liquid and than 1st and 2nd. Two, as a natural follow-up from the first conclusion, the flow was not being distributed evenly; in none of the eight trials were the volumes even close to each other. This suggests either 1. the tipping bucket must be angled with significant precision, 2. The flow distribution system was be redesigned to account for the front two openings getting less water than the back two openings, or 3. The inlet should split up into four opening later in the UASB reactor (i.e. in the tank).
 
+## Future Work
+
+This summer, a mix of UASB-D and UASB-R members from this semester will be staying over the summer to work on UASB. The summer UASB team will be building small-scale but fully functional UASB reactors at the Ithaca Area Wastewater Treatment Facility, using research done this semester and semesters past. What occurs over the summer will strongly direct what UASB-R chooses to work on in the fall of 2019. Some ideas have already been brought up, such as working on the dynamics of the sludge blanket: how long it takes to grow, how long does it take to settle after a pulse of water, etc., which could either involve experiments or researching these questions by going through literature. Continuing working on the flow distribution system is also on the table, but there is a currently a debate whether more testing would be worth it, or if the proposed design for the flow distribution system will be sufficient for an UASB reactor. But UASB-R will most likely focus on researching and solving problems that are discovered over the summer in the process of making and testing these UASB reactors. Therefore, a concrete, specific list of goals for UASB-R next semester will not be formed until later this summer.
+
 ## Key Contacts
 
 The team has listed some key contacts for the UASB project so all members will know who to reach out to. They are summarized in the table below.
@@ -389,9 +393,8 @@ The team has listed some key contacts for the UASB project so all members will k
 | Ed Gottlieb         | Wastewater plant operator, primary contact at Wastewater facility | EGottlieb@cityofithaca.org        |
 | N/A      | Contact at Anheuser-Bush, source for anaerobic granules           | N/A|
 
-## Future Work
 
-- UASB-R is waiting to meet with UASB-D to mutually decide on how the two teams should split up the work that needs to be done next semester. This section will therefore be updated later.
+
 
 ## EPA Funding Assurance
 This article was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
