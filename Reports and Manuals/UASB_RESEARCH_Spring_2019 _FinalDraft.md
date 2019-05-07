@@ -69,7 +69,7 @@ A recent, updated model in OnShape has also been created by [UASB-Design.](https
 **[A bit of an error on the caption here I think? Seems that the link got severed. But your figures are great. If they could be a bit bigger that would be perfect. If that's not possible it's okay. Addressed JA]**
 ## Literature Review and Previous Work
 
-  Tamil Nadu Agricultural University did a study in 2013 on an Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 m<sup>-3</sup> and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67 m<sup>-3</sup>/kg per day **[Correct me if I'm wrong but isn't COD measured in units of mass/volume? Adressed JA]** . This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000 ($1160), showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems [(Jeyapandiyan, 2014).](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004)
+  Tamil Nadu Agricultural University did a study in 2013 on an Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 m<sup>-3</sup> and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67 kgm<sup>-3</sup> per day **[Correct me if I'm wrong but isn't COD measured in units of mass/volume? Adressed JA]** . This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000 ($1160), showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems [(Jeyapandiyan, 2014).](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004)
 
   From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the UASB reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when ~~they~~ compared ~~it~~ to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore**[,]** to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP~~’~~s revealed that there are many factors that are as important as a good design: [most importantly,] the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes)
 
@@ -85,7 +85,7 @@ In the fall of 2016, the UASB team underwent several changes. First, the team al
 During the spring of 2017, the team worked on assessing the efficiency of two modifications to the UASB reactor: plate settlers and the submerged gas collection lid. After conducting granule settling tests, the team was unable to conclude whether or not plate settlers significantly improve solid retention time. The team also conducted a Submerged Gas Capture Lid Test and concluded that a check valve would be useful to allow for continuous collection into a gas tank without loss of biogas.
 
 #### Summer 2017
-In the summer of 2017, the UASB team continued with similar research and testing to that of the Spring 2017 semester. This time, the team determined that large, bulky plate settlers were not required for a full scale reactor. Instead, a smaller settling apparatus, such as a sloped exit weir, can achieve similar sludge retention time (SRT). **[What is the implication of not requiring plate settlers? Does this save space in the UASB design? FIXED CJMS]**
+In the summer of 2017, the UASB team continued with similar research and testing to that of the Spring 2017 semester. This time, the team determined that large, bulky plate settlers were not required for a full scale reactor. Instead, a smaller settling apparatus, such as a sloped exit weir, can achieve similar sludge retention time(SRT). **[What is the implication of not requiring plate settlers? Does this save space in the UASB design? FIXED CJMS]**
 
 #### Fall 2017
 During the fall of 2017, the UASB team made several strides. Firstly, the team settled on the critical design assumptions for the fabrication of a UASB reactor at the Ithaca Area Wastewater Treatment Facility (IAWWTF). The critical design assumptions were as follows: a reactor diameter of 3 feet, a reactor height of 7 feet, a 4 hour hydraulic residence time, and **[and FIXED CJMS]** a flow rate of .036 L/s. The  team also designed a biogas capture lid. In this system, as biogas is produced in the reactor, it displaces water out from under the lid. Gas is then stored there until it is manually removed.
@@ -116,7 +116,7 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
   The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” traveled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer. The team then came up with the idea of spreading the inlet flow by drilling four holes on the inlet tube near the bottom to decrease the preferential paths, but it was not completed by the end of 2018.
 
-  So then a photometer was used to more accurately depict how the water was flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube was changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration.
+  Afterwards, UASB tried to use a photometer to more accurately depict how the water was flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube was changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration.
 
 The team then tried to use chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
 
@@ -132,7 +132,7 @@ The team then tried to use chia seeds instead of tapioca, which resulted in a wo
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/R%20Prototype.jpeg?raw=true" width="250px" /></p>
 <p align="center">Fig. 3: Beginnings of the first inlet design of 2019
 
- As one can see, the inlet tube **[horizontally Addressed CJMS]** enters on the right side of the tank, perpendicular to the tank wall. UASB-R also thought of inserting the inlet tube at a lower height to see if the water velocity ~~be the~~ could be higher or cause less head loss. The two designs are shown in Figure 4.
+ As one can see, the inlet tube **[horizontally Addressed CJMS]** enters on the right side of the tank, perpendicular to the tank wall. UASB-R also thought of inserting the inlet tube at a lower height to see if the water velocity and/or the headloss differed depending on where the inlet was inserted. The two designs are shown in Figure 4.
 
  <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Sketch%20UASB-R.jpeg?raw=true" width="250px" /></p>
@@ -141,8 +141,8 @@ The team then tried to use chia seeds instead of tapioca, which resulted in a wo
 Below is a formal, more detailed list of **[contains fixed CJMS]** the goals of UASB-R this semester:
 
 - Construct and test the four inlet tube attachment using sludge granules.
-- Test to see whether pulse flow vs continuous is flow more efficient using sludge granules*
-    (Orginally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity,       but new research has been pointing toward continuous flow.)
+- Test to see whether pulse flow vs continuous is flow more efficient using sludge granules
+    - Originally, UASB was under the impression pulse flow would increase efficiency in the UASB reactor by increasing upflow velocity, but UASB Design has been pointing toward continuous flow. Thus, we mainly research with continuous flow.
 - Keep with UASB Design for any bench testing - specifically working on a design to evenly distribute wastewater flow through the inlet when the tipping bucket releases the wastewater.
 
 ## Lab Experiments
@@ -169,7 +169,7 @@ UASB-R tested the first design (the sketch on the right in Fig. 4 and shown in F
 
 The UASB-R was started experimenting with old sludge. Note: While sludge can stay alive in a suspended state in a fridge for up to one year, with only a small amount of sludge left, the team planned to get more sludge in early March. Unfortunately, due to AguaClara's contact for sludge granules at the Aanheuser-Busch Plant in Syracuse, NY retiring, both Prof. Ruth Richardson of the CEE department and UASB-R did not have a contact **[did not have a Addressed JA]** so plans to get more sludge granules were stalled. Thankfully, the small amount was enough to finish this semester's testing.
 
-UASB_R started pumping water through the UASB inlet at different flow rates and calculating the exit velocity. However, after consulting with a research advisor, it became **[became Addressed CJMS]** apparent that an inlet tube at a lower height would not be beneficial as the different heights would not make a significant difference to the efficiency of the reactor. Also, the lower inlet would make the system harder to clean and fix if anything were to break **[were to break Addressed CJMS]** . Thus, the remainder of the testing and some data initially collected on the exit flow velocity was scrapped, but this initial testing helped the team learn more about ProCoDa - the software used to run the pump - and the design in Fig. 6 was able to be reused in the next task of the semester. **[This last part of sentence is a bit odd. Don't know what you mean by the "design fabricated".. Did you mean the reactor shown in Fig 6? Addressed CJMS]**
+UASB-R started pumping water through the UASB inlet at different flow rates and calculating the exit velocity. However, after consulting with a research advisor, it became **[became Addressed CJMS]** apparent that an inlet tube at a lower height would not be beneficial as the different heights would not make a significant difference to the efficiency of the reactor. Also, the lower inlet would make the system harder to clean and fix if anything were to break **[were to break Addressed CJMS]** . Thus, the remainder of the testing and some data initially collected on the exit flow velocity was scrapped, but this initial testing helped the team learn more about ProCoDa - the software used to run the pump - and the design in Fig. 6 was able to be reused in the next task of the semester. **[This last part of sentence is a bit odd. Don't know what you mean by the "design fabricated".. Did you mean the reactor shown in Fig 6? Addressed CJMS]**
 
 **[I would recommend placing some of the math that you had done to determine that the lower height would not be beneficial in this section. It is also unclear why you haven't included any of the data that you had collected. Addressed JA (since after talking to Monroe  we learned this testing was pointless we scrapped all the data as)]**
 
@@ -248,7 +248,8 @@ Because the experiment is done by manually pouring water into the system, the te
 
 #### Data Analysis and Results
 
-As mentioned earlier the tipping bucket experiment, to test whether the water would be evenly distributed through the four pipes of the inlet system, UASB_R created a model with four partitions and tipped water from four different sides. A detailed top view of the model is shown in Figure 14.
+As mentioned earlier the tipping bucket experiment, to test whether the water would be evenly distributed through the four pipes of the inlet system, UASB-R created a model with four partitions and tipped water from four different sides. A detailed top view of the model is shown in Figure 14.
+
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/1.png?raw=true" width="300px"/></p>
@@ -269,27 +270,28 @@ import math
 #The list of Data Collected is shown below
 #nomenClature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
 
-Front1st= [135, 107]
-Front2nd= [150, 119]
-Front3rd= [125, 134]
-Front4th= [70, 100]
+Front1st= [135, 107]*u.mL
+Front2nd= [150, 119]*u.mL
+Front3rd= [125, 134]*u.mL
+Front4th= [70, 100]*u.mL
 
-Back1st= [85, 88]
-Back2nd= [105, 102]
-Back3rd= [175, 147]
-Back4th= [125, 116]
+Back1st= [85, 88]*u.mL
+Back2nd= [105, 102]*u.mL
+Back3rd= [175, 147]*u.mL
+Back4th= [125, 116]*u.mL
 
-Left1st= [130, 107]
-Left2nd= [105, 91]
-Left3rd= [125, 133]
-Left4th= [70, 114]
+Left1st= [130, 107]*u.mL
+Left2nd= [105, 91]*u.mL
+Left3rd= [125, 133]*u.mL
+Left4th= [70, 114]*u.mL
 
-Right1st= [90, 112]
-Right2nd= [126, 110]
-Right3rd= [153, 152]
-Right4th= [93, 87]
+Right1st= [90, 112]*u.mL
+Right2nd= [126, 110]*u.mL
+Right3rd= [153, 152]*u.mL
+Right4th= [93, 87]*u.mL
 
-#The average of the two trials are taken to plot the graph
+#The average of the two trials are taken to normalize the trial values so that they can be graphed and analyzed
+#nomenClature: the initial of the side the water wastipped from+quadrant number
 
 F1st = (Front1st[0]+Front1st[1])/2
 F2nd = (Front2nd[0]+Front2nd[1])/2
@@ -319,8 +321,8 @@ Left_Array= [L1st, L2nd, L3rd, L4th] #array containing the values of discharge
 Right_Array= [R1st, R2nd, R3rd, R4th] #array containing the values of discharge
 
 #Ploting the graph of water distribution from
-index = np.arange(len(Horizontal_Array))
-plt.bar(index,Front_Array)
+index = np.arange(len(Horizontal_Array)) #this is used to assign the quadrant numbers to a variable which can be used to mark the horizontal axis of the bar graph
+plt.bar(index,Front_Array) #graphs the plot
 plt.xlabel('Quadrant Number', fontsize = 18)
 plt.xticks(index, Horizontal_Array, fontsize=12, rotation=30)
 plt.ylabel('Average Discharge (mL)', fontsize = 18)
@@ -375,6 +377,69 @@ The code above normalizes the data attained from each quadrant and produces the 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Right.png?raw=true" width="400px"/></p>
 <p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the right.
+
+According to the graphs above, it can be seen that for the tipping bucket tests done from the front and the left the distribution of water through the quadrants is fairly equal, but the distribution of water through the quadrants from the back and the right are skewed higher towards the third quadrant. To check whether this difference is significant a linear regression test was performed, as can be seen below.
+
+```python
+from aguaclara.play import *
+from aguaclara.core.units import unit_registry as u
+from aguaclara.core import physchem as pc
+from aguaclara.core import constants as con
+import numpy as np
+import matplotlib.pyplot as plt
+from aide_design.play import *
+import math
+
+#The list of Data Collected is shown below
+#nomenClature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
+
+Front1st= [135, 107]*u.mL
+Front2nd= [150, 119]*u.mL
+Front3rd= [125, 134]*u.mL
+Front4th= [70, 100]*u.mL
+
+Back1st= [85, 88]*u.mL
+Back2nd= [105, 102]*u.mL
+Back3rd= [175, 147]*u.mL
+Back4th= [125, 116]*u.mL
+
+Left1st= [130, 107]*u.mL
+Left2nd= [105, 91]*u.mL
+Left3rd= [125, 133]*u.mL
+Left4th= [70, 114]*u.mL
+
+Right1st= [90, 112]*u.mL
+Right2nd= [126, 110]*u.mL
+Right3rd= [153, 152]*u.mL
+Right4th= [93, 87]*u.mL
+
+#The average of the two trials are taken to normalize the trial values so that they can be graphed and analyzed
+#nomenClature: the initial of the side the water wastipped from+quadrant number
+
+F1st = (Front1st[0]+Front1st[1])/2
+F2nd = (Front2nd[0]+Front2nd[1])/2
+F3rd = (Front3rd[0]+Front3rd[1])/2
+F4th = (Front4th[0]+Front4th[1])/2
+
+B1st = (Back1st[0]+Back1st[1])/2
+B2nd = (Back2nd[0]+Back2nd[1])/2
+B3rd = (Back3rd[0]+Back3rd[1])/2
+B4th = (Back4th[0]+Back4th[1])/2
+
+L1st = (Left1st[0]+Left1st[1])/2
+L2nd = (Left2nd[0]+Left2nd[1])/2
+L3rd = (Left3rd[0]+Left3rd[1])/2
+L4th = (Left4th[0]+Left4th[1])/2
+
+R1st = (Right1st[0]+Right1st[1])/2
+R2nd = (Right2nd[0]+Right2nd[1])/2
+R3rd = (Right3rd[0]+Right3rd[1])/2
+R4th = (Right4th[0]+Right4th[1])/2
+
+```
+
+
+
 
 
 A few things to note: only two trials each is not ideal. Next semester the team can attempt more trials; unfortunately time was extremely limited and this was simply the amount UASB-R could accomplish in a very short period of time. However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring. One, usually the two bottles further away from the side that was being poured from obtained more liquid than the two bottles closer to the side. For example, when it was being poured from the backside, the 3rd and 4th quadrants had more liquid and than 1st and 2nd. Two, as a natural follow-up from the first conclusion, the flow was not being distributed evenly; in none of the eight trials were the volumes even close to each other. This suggests either 1. the tipping bucket must be angled with significant precision, 2. The flow distribution system was be redesigned to account for the front two openings getting less water than the back two openings, or 3. The inlet should split up into four opening later in the UASB reactor (i.e. in the tank).
