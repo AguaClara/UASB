@@ -71,7 +71,7 @@ A recent, updated model in OnShape has also been created by [UASB-Design.](https
 
   Tamil Nadu Agricultural University did a study in 2013 on an Upflow Anaerobic Sludge Blanket Reactor that was designed to handle 8,800 liters per day of influent wastewater where they found that the most effective volume of the reactor was 8.84 m<sup>-3</sup> and that the optimum organic loading rate or the amount of water per unit of water was observed to have a chemical oxygen demand (COD) of 2.67 kgm<sup>-3</sup> per day **[Correct me if I'm wrong but isn't COD measured in units of mass/volume? Adressed JA]** . This is the amount of oxygen needed to break down the wastewater's organic contents (so a high COD value is an indicator of a high amount of organic pollution). When the reactor operated at 3 days hydraulic retention time, or the length of time water has to sit in the reactor, the efficiency of the reactor was 70%. The reactor was also designed to collect gas that could be utilized for energy. This study done at a papaya fruit processing factory, where the reactor cost only Rs. 80,000 ($1160), showed that the gas used as energy had a payback period of 3 to 4 years, which is a fast payback period compared to solar panels. It also proved that the UASB provides onsite solutions to waste management problems [(Jeyapandiyan, 2014).](https://www.worldscientific.com/doi/abs/10.1142/9781848165434_0004)
 
-  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the UASB reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when ~~they~~ compared ~~it~~ to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore**[,]** to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP~~’~~s revealed that there are many factors that are as important as a good design: [most importantly,] the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes)
+  From the article “Anearobic Treatment Using UASB Reactors: Engineering and Operational Aspects” (Jules B. Van Lier et al.) it's apparent that the UASB reactor consists of 4 functional units: Primary Clarifier to remove the non biodegradable solids, Biological Reactor (secondary treatment) to remove organic compounds, Secondary Clarifier to treat effluent in the settler zone, and Sludge Digester to stabilize and improve dewatering characteristics. The article also discusses the importance of a pre-treatment and post treatment units, and gave examples of how developing countries like India do not have the support from academic institutions for researching this process when ~~they~~ compared ~~it~~ to Brazil, a country that has invested in fundamental and applied research in the subject matter. What Brazil has done, resulted in a large variety of STP (Sewage Treatment Plant)  in which the anaerobic technology is combined with adequate post treatment that offering cost-effective solution. Therefore **[,]** to point out the importance of the pre-treatment process, Lier mentioned that “without an efficient pretreatment treatment, the design, operation and maintenance of UASB reactors become an impossible job”. The site visit of full-scale STP’s revealed that there are many factors that are as important as a good design: [most importantly,] the operation and maintenance of the treatment plants [(Lier, 2010).](https://www.researchgate.net/publication/308072163_Design_of_Upflow_Anaerobic_Sludge_Blanket_UASB_reactor_for_Jam_Industry_Wastes)
 
 
 ## Timeline of UASB
@@ -175,20 +175,20 @@ UASB-R started pumping water through the UASB inlet at different flow rates and 
 
 #### Testing the Inlet System
 
-The four inlet system is shown below. The goal was less about fabricating an model that would perfectly emulate the inlet system and more about fabricating a simple design quickly, with materials already in the lab,  that would provide four, 1/2" openings for the water to flow into the reactor tank. This was done so that **[. This was done]** **[that] FIXED CJMS** the team could test the hypothesis: that a greater number of inlets would reduce preferential pathways through the sludge blanket. There is would be no use using this more complicated design if it were to give the same results as the initial one-inlet design from last semester.
+The four inlet system is shown below. The goal was less about fabricating an model that would perfectly emulate the inlet system and more about fabricating a simple design quickly, with materials already in the lab,  that would provide four openings for the water to flow into the reactor tank. The 1/2" pvc pipe split into two pipes using a wye connector, and those two pipes each had their own wye connector to split the pipe into two, creating four 1/2" openings. This was done so that **[. This was done]** **[that] FIXED CJMS** the team could test the hypothesis: that a greater number of inlets would reduce preferential pathways through the sludge blanket. There is would be no use using this more complicated design if it were to give the same results as the initial one-inlet design from last semester.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0681%20(1).JPG?raw=true" width="250px"/></p>
 <p align="center">Fig. 7 - The inlet system with four openings
 
 
-The reactor tank was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor, using ProCoDa at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect the team's results. Pictures and video **[video Addressed CJMS]** recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
+The reactor tank (made from a 4 and a 1/2" pvc pipe welded to a sheet of pvc at the bottom) was filled with tapioca and a bit of water, as shown in Fig. 8. A small amount of 20.0 g/ml solution of red dye was added to the tube that connects the pump and inlet, and water was pumped through the reactor, using ProCoDa at a flow rate of 1.0 ml/s. This one done four times. After each test, the tapioca was taken out of the reactor and rinsed with water to remove any leftover dye that would affect the team's results. Pictures and video **[video Addressed CJMS]** recordings were taken to compare the results of each tests with each other and the tapioca tests with the one-inlet design from last semester.
 
  <p align="center">
 <img src= "https://github.com/AguaClara/UASB/blob/master/Images/IMG_0815%20(1).JPG?raw=true" width="250px"/></p>
 <p align="center"> Fig. 8 - The tapioca-filled UASB reacotor, pre-testing.
 
-**[You guys should have a materials list to recreate both apparatuses that you have created, or at least make a note to refer to your sister team's report for materials. From the rubric "Clearly explain your apparatus and experiments. Provide enough detail for future team members and people unconnected to AguaClara to reproduce your experiments and apparatus"]**
+**[You guys should have a materials list to recreate both apparatuses that you have created, or at least make a note to refer to your sister team's report for materials. From the rubric "Clearly explain your apparatus and experiments. Provide enough detail for future team members and people unconnected to AguaClara to reproduce your experiments and apparatus" FIXED CJMS]**
  ###  Results and Analysis
 
 As water moved through the reactor, the initial burst of dye spread throughout the lower part of the reactor, however the dyed water did not reach the sludge blanket uniformly for the first 10-20s (Fig. 9 and 10), which could lead to delay in wastewater treatment on a bigger scale.
@@ -205,7 +205,7 @@ But we found that preferential pathways (which would look like a long, mostly ve
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/IMG_0844.JPG?raw=true" width="250px"/></p>
-<p align="center">Fig. 11 - Reactor after dye has spread further
+<p align="center">Fig. 11 - Reactor after the dye had spread further
 
 However, UASB-R knew this wasn't a perfect solution, despite the significant improvements. During a meeting with Professor Weber-Shirk, Professor Richardson and the rest of the wastewater teams, there was a debate on how to check if the sludge blanket itself (and not just the tapioca model) is being properly fluidized in an UASB reactor. **[This sentence doesn't read quite smoothly. I would reorganize this sentence Addressed CJMS**] However, this idea would have to researched further before it can be implemented.
 
@@ -216,9 +216,9 @@ Video recordings of some of the testing can be found [here](https://drive.google
 
 #### Fabrication
 
-To test out the pulse inlet flow thoroughly, the team continued the idea of using the tipping bucket from 2018. Based on that tipping bucket, UASB-R fabricated an inlet system using four pipes, where the tipping bucket pours the waste water, as shown in Figure 12.
+The team continued the idea of using the tipping bucket from 2018 (i.e. where the wastewater flows out of a tipping bucket into the inlet after a certain amount of wastewater is collected to create a pulsed flow). Based on this idea, UASB-R fabricated an inlet system using four pipes, where the tipping bucket pours the wastewater, as shown in Figure 12.
 
-Based on the sketch in Figure 12, the red section represents a wastewater tank that holds wastewater before entering **[entering? FIXED CJMS]** the tipping bucket, and the black box located on the bottom of the drawing is the four pipe outlet system that deliver the waste water evenly to the sludge blanket reactor. The system can be called ***"the flow distribution system"***
+Based on the sketch in Figure 12, the red section represents a wastewater tank that holds wastewater before entering **[entering? FIXED CJMS]** the tipping bucket, and the black box located on the bottom of the drawing is the four pipe outlet system that deliver the waste water evenly to the sludge blanket reactor. The system can be called the "flow distribution system".
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/BC6EE48D-AAA1-43AC-A45D-0C40D29D7809.jpeg?raw=true" width="250px"/></p>
@@ -241,7 +241,7 @@ The tipping bucket then was elevated so the small plastic bottles can be place b
 <p align="center">Fig. 13 - Flow Distribution Set-up
 
 
-Because the experiment is done by manually pouring water into the system, the team understand that it would be an error during the experiment. To anticipate this situation, the team decided to pour the water from each of the 4 sides of the system and see if what side it was poured from affected the volume of water collected in each bottle. Each side was done twice for a total of 8 trials.
+Because the experiment is done by manually pouring water into the system, the team understood that it would be an error during this experiment. To anticipate this situation, the team decided to pour the water from each of the 4 sides of the system and see if what side it was poured from affected the volume of water collected in each bottle. Each side was done twice for a total of 8 trials.
 
 ** Note for the data analysis below: The volumes in the four bottles do not add up to the 500mL volume of the initial water because a small amount stayed in the top section. This happened because the shape of the plastic container has a slanted area that unintentionally collected the water.
 
@@ -256,6 +256,10 @@ As mentioned earlier the tipping bucket experiment, to test whether the water wo
 <p align="center">Fig. 14 - A top view of the Model Water Distribution Tank.
 
 The team, then collected data by measuring how much water went through each partition which is modeled by the code below.
+
+```python
+print("hello")
+```
 
 ```python
 from aguaclara.play import *
@@ -357,7 +361,6 @@ plt.yticks(fontsize=12)
 plt.title('Water Distribution Through Quadrants From The Right', fontsize = 20)
 plt.show()
 plt.savefig('./')
-
 ```
 
 The code above normalizes the data attained from each quadrant and produces the graphs shown below.
@@ -413,34 +416,13 @@ Right2nd= [126, 110]*u.mL
 Right3rd= [153, 152]*u.mL
 Right4th= [93, 87]*u.mL
 
-#The average of the two trials are taken to normalize the trial values so that they can be graphed and analyzed
-#nomenClature: the initial of the side the water wastipped from+quadrant number
+Volume_Array= [135, 107, 150, 119, 125, 134, 70, 100, 85, 88, 105, 102, 175, 147, 125, 116, 130, 107, 105, 91, 125, 133, 70, 114, 90, 112, 126, 110, 153, 152, 93, 87]
 
-F1st = (Front1st[0]+Front1st[1])/2
-F2nd = (Front2nd[0]+Front2nd[1])/2
-F3rd = (Front3rd[0]+Front3rd[1])/2
-F4th = (Front4th[0]+Front4th[1])/2
-
-B1st = (Back1st[0]+Back1st[1])/2
-B2nd = (Back2nd[0]+Back2nd[1])/2
-B3rd = (Back3rd[0]+Back3rd[1])/2
-B4th = (Back4th[0]+Back4th[1])/2
-
-L1st = (Left1st[0]+Left1st[1])/2
-L2nd = (Left2nd[0]+Left2nd[1])/2
-L3rd = (Left3rd[0]+Left3rd[1])/2
-L4th = (Left4th[0]+Left4th[1])/2
-
-R1st = (Right1st[0]+Right1st[1])/2
-R2nd = (Right2nd[0]+Right2nd[1])/2
-R3rd = (Right3rd[0]+Right3rd[1])/2
-R4th = (Right4th[0]+Right4th[1])/2
-
-```
 
 
 
 
+```
 
 A few things to note: only two trials each is not ideal. Next semester the team can attempt more trials; unfortunately time was extremely limited and this was simply the amount UASB-R could accomplish in a very short period of time. However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring. One, usually the two bottles further away from the side that was being poured from obtained more liquid than the two bottles closer to the side. For example, when it was being poured from the backside, the 3rd and 4th quadrants had more liquid and than 1st and 2nd. Two, as a natural follow-up from the first conclusion, the flow was not being distributed evenly; in none of the eight trials were the volumes even close to each other. This suggests either 1. the tipping bucket must be angled with significant precision, 2. The flow distribution system was be redesigned to account for the front two openings getting less water than the back two openings, or 3. The inlet should split up into four opening later in the UASB reactor (i.e. in the tank).
 
