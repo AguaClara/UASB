@@ -344,6 +344,26 @@ plt.xlabel('Pipe Diameter (Inches)')
 plt.ylabel('Upflow Velocity (Meters/second)')
 plt.ylim(0, .01)
 ```
+
+## Analysis of Python Documentation
+A major restriction on the influent system for the UASB was ensuring the ability to suspend the sludge particles in the reactor. This was dictated by the settling velocity for sludge particles. After conducting research into finding the settling velocity, the UASB team found that the velocity varies with density of sludge particles, ranging from 0.0009 m/s to 0.0167 m/s ((Miranda, Borges, & Monteggia 2017). As the 0.0167 cm/s up-flow occurs are exceptionally high densities of sludge, we would be requiring up-flow velocities closer the mean settling velocity of 0.0004m/s. Below are figures showing the calculated correlation between the pipe diameter and the drain time of the flow dividing tank, from which the up-flow velocity in the reactor was deduced.
+
+
+![Pipe Diameter vs Drain Time](https://github.com/AguaClara/UASB/blob/master/Images/Pipe%20Diamter%20vs%20Drain%20Time.png?raw=true)
+
+**Fig. 11: Pipe Diameter vs Drain Time**
+
+![Pipe Diameter vs Upflow Velocity](https://github.com/AguaClara/UASB/blob/master/Images/Pipe%20Diameter%20vs%20Upflow%20Velocity.png?raw=true)
+
+**Fig. 12: Pipe Diameter vs Upflow Velocity**
+
+From the restriction from the settling velocity and the corresponding up-flow velocities from pipe diameters, the UASB design team decided to utilize an influent pipe with 1.5 inch diameter.
+
+Other takeaways from the python are that the height of walls in the flow dividing tank should be 9.522 inch and the maximum flow of wastewater this UASB can handle is 0.0695 liter / second.
+
+All of these calculations were based on the parameters that were initialized in the UASB object. Temperature is 25 degree celcius, the cannister diameter is 3 ft. The height of the effluent pipe is 5 feet. The volume of one dump from the tipping bucket is 16.26 L. The width of the flow dividing tank is 9.937 inches, the height of the flow dividing tank is 16.8125 inches, the thickeness of the flow dividing walls are 1/4 inch, there are 3 elbows per influent pipe, and HRT is 4 hours.
+
+
 ## New Smaller/Clear Reactors for Testing at IAWTTF
 The UASB design team went over details of implementing the reactor at the IAWWTF with Ed Gottlieb, who is the contact at the IAWWTF, Ruth Richardson, and Monroe Weber-Shirk.
 
@@ -359,11 +379,9 @@ The second space is the current space that AguaClara UASB has reserved for a lon
 
 ## Design Process for the Smaller, Clear Reactors
 
-The team used design decisions from the previous iteration of the UASB to inform its decisions on the scaled design. The team decided that the major constraint for the UASB reactor was that the up flow velocity during pulsated flow was
+The team used design decisions from the previous iteration of the UASB to inform its decisions on the scaled design.
 
-The team used those constraints to detemine additional design specifications for the UASB reactors.
-
-Major changes from the larger UASB design to the smaller UASBs are that there is only one influent pipe in the reactor, there is no flow dividing tank (it is replaced by the "drain pipe," and the tipping bucket will be placed on top of the UASB canister.
+Major changes from the larger UASB design to the smaller UASBs are that there is only one influent pipe in the reactor, there is no flow dividing tank (it is replaced by the "drain pipe"), and the tipping bucket will be placed on top of the UASB canister.
 
 **add CAD model or at least a sketch of new UASB design**
 
@@ -373,12 +391,28 @@ The previous design for the UASB used a 36" diameter canister. The smaller desig
 
 To clean the reactor, it might be manually/physically cleaned in the inside or magnetic scraper might be used. For it to work, the magnet must be strong enough to go through the walls of the reactor.
 
+**add pictures of the drain pipe**
+
 The drain pipe connects the holding tank, which houses the tipping bucket, to the influent pipe. Its purpose is to slow down incoming wastewater, to allow gas bubbles to escape. It is the same volume as one dump from the tipping bucket.  Its bottom is in line with the water level inside the canister, which means that the head gain per dump is the volume of one dump of the tipping bucket divided by the cross sectional area of the drain pipe.
 
+Another important element of the design is the effluent system.
 
-A couple of options were considered to ensure the stability of the six reactors. It was proposed that an attachment would be put on top of all the six reactors to link them all together. A hole would be drilled through the wall, and an anchor would be put through the hole and sealed to stabilize all of the reactors in a row. Straps would be put around each of the reactors and hooked onto the anchor in the wall. Triangular pieces were also considered to support the round bottom cap of the reactor and keep the reactor from tipping over. Ultimately the team decided to use flanges and blind flanges as end caps for the top and bottom of the reactor. That way, large, flat bolts can be used to the stabilize the reactor from the bottom, and the tipping bucket can be placed on top of the reactor, so that additional support is not required for the tipping bucket.
+**add picture of the effluent from final presentation ***
 
-The code below shows the final dimensions that have been decided on for the UASB pilot scale reactors. These dimensions are carefully chosen, so that the upflow velocity during a pulse from the tipping bucket is fast enough to fluidize of the sludge blanket. If the code is run, it will display a table of important dimensiosn of the UASB reactor.
+At first, the team thought that the effluent tube would need to be at a 60 degree angle to prevent sludge granule washout, similar to a tube settler; however, the team realized that the washout will not be a concern, since the average up flow velocity in the UASB canister is so slow. Since washout is not a concern, the design will use a horizontal effluent pipe to maximize the allowable height of the sludge blanket in the UASB reactor. The upside down T shape (indicated by green arrow) will be at a height of approximately 7 feet because the desired the water level because it maximizes the usage of space, but prevents overflow in the case of an accident. The actual effluent line will be about 10 cm below the water line in the canister to prevent biogas from entering the effluent in case the water level dips abnormally low. In addition, water will enter the effluent pipe through holes on the top of the pipe, as indicated by the teal arrows, so that rising biogas bubbles do not enter the effluent. Lastly, the upwards pointing pipe, as indicated by the red arrow, will maintain atmospheric pressure inside the reactor, so that the effluent doesn’t suck biogas out from inside the reactor.
+
+**add pictures of flanges**
+
+The team decided to use flanges and blind flanges as end caps for the top and bottom of the reactor. That way, large, flat bolts can be used to the stabilize the reactor from the bottom, and the tipping bucket can be placed on top of the reactor, so that additional support is not required for the tipping bucket.
+
+**add pictures of FOG removal system form presentation**
+
+A FOG removal system was also incorporated into the UASB design to prevent excess FOG from accumulating. A sketch of the FOG removal system is pictured above. The way it works is that the bottom of a funnel will be about in line with that the water level in the canister, and then attached to a pipe that leads down and has a valve on it. That way, as FOG collect on the surface, they will be pushed up into the funnel, since they are less dense than water. Then, the valve can be opened to empty out those FOG. The half circle hanging below the funnel is the gas bubble deflector, which will block methane gas bubbles from escaping out of the FOG removal system.
+
+
+The major constraint for the UASB reactor is that the up flow velocity during pulsated flow be high enough to fluidize the sludge blanket. According to our literature review, this corresponds to an up flow velocity of about 16.7 mm/s (Miranda, Borges, & Monteggia 2017). The team used that constraint as a guide to determine design specifications for the UASB reactors.
+
+The code below relates the geometry of the UASB reactor, the change in the water level during a pulse, and the average pulse up flow velocity. It's current state shows the final dimensions that have been decided on for the fabrication of the UASB pilot scale reactors. These dimensions are chosen, so that the up flow velocity during a pulse from the tipping bucket is fast enough to fluidize of the sludge blanket. If the code is run, it will display a table of important dimensions of the UASB reactor.
 
 ## Python for New Smaller/Clear Reactors for Testing at IAWTTF
 
@@ -399,22 +433,21 @@ import matplotlib.pyplot as plt
 class UASBtest:
   def __init__(
           self,
-          temp = 10 * u.degC, #estimated temp at IAAWTF #NOTE: get a better estimate
-          water_level_height = 7 * u.ft, #this is the height of the water in the UASB/height of the effluent. #NOTE: this leaves an extra foot of the 8 foot canister, could consider reducing the amount of "safety" space
-           #this is the volume of one dump of the tipping bucket. It is based on previous dump volume adjusted to give same height change in canister with new, smaller canister diameter #QUESTION: perhaps this should be smaller so as to reduce maximum up flow velocity slightly, but increase frequency--that would reduce necessary length of tube settler... a down side is that it may make "de-clogging" mechanism ineffective
+          temp = 10 * u.degC, #estimated temp at IAAWTF
+          water_level_height = 7 * u.ft, #this is the height of the water in the UASB/height of the effluent. #NOTE: this leaves an extra foot of the 8 foot canister for safety.
           pipe_diam = 1.5 * u.inch, #diameter of the influent pipe
-          n_elbows = 2,
+          n_elbows = 2, #the number of elbows in the influent pipe
           pipe_roughness = .0015 * u.mm, # PVC pipe roughness
           time_dump = 2* u.s, #NOTE: get better value with actual testing, this is a rough estimate
           UASB_diameter = 10 * u.inch,
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
-          target_upflow_vel= 0.4 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe (subject to change, 4 inches was chosen so that the area was similar to that of one section in drain tank in previous design.) #NOTE: we could consider making this larger to reduce head gain per dump/reduce up flow velocity BUT, larger pipes are expensive #NOTE: we could also consider doing away entirely with the drain pipe in the design for the smaller reactors.
+          target_upflow_vel= 16.7 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
+          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
-          percent_sludge= .7, #based on summer 2018
+          percent_sludge= .7, #based on summer 2018 team research
           diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sludge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
           rho_water=1 *u.g/u.mL,
@@ -489,12 +522,6 @@ class UASBtest:
     return up_v
 
   @property
-  def length_tube_settler_cont(self):
-    """this function estimates the length of the tube settler based on continuous flow through the UASB... NOT the flow during the pulse"""
-    L=self.effluent_pipe_diameter/(np.cos(self.angle_effluent))*(self.upflow_vel_avg/self.upflow_vel_avg-np.sin(self.angle_effluent))
-    return L
-
-  @property
   def aggregate_k(self):
     """This function calculates  the aggregate minor loss coefficient of the drain system from the holding tank into the 'canister' aka the 10 inch clear PVC pipe"""
     influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR
@@ -547,19 +574,32 @@ class UASBtest:
     num=num.to(u.dimensionless)
     return num
 
-
-
-
-
 test=UASBtest()
-print('upflow velocity is',(test.upflow_velocity_pulse_average).to(u.mm/u.s))#note: according to this study, https://nptel.ac.in/courses/105105048/M21L34.pdf high upflow velocity of 6-12 m/hr fluidizes sludge blanket
-print('dump volume is',test.vol_dump.to(u.gal))
 
-print('average upflow velocity is',(test.upflow_vel_avg).to(u.mm/u.s))
+data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe'],
+       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, test.upflow_velocity_pulse_average, test.vol_dump, test.length_drain_pipe, test.diameter_drain_pipe]}
 
+
+df=pd.DataFrame(data)
+print(df)
 
 ```
 
+## Analysis
+
+UASB element                       Measurement
+0               Diameter Canister                         10 inch
+1          Diameter Influent Pipe                        1.5 inch
+2    Number of Elbows in Influent                               2
+3  Average Up flow Pulse Velocity          0.02044 meter / second
+4      Tipping Bucket Dump Volume  0.2534 centimeter * meter ** 2
+5               Length Drain Pipe                      22.37 inch
+6             Diameter Drain Pipe                          3 inch
+
+The combination of design specifications, as shown above, results in an estimated average pulse up flow velocity of 20.44 mm/s. The estimated up flow is probably faster than what it actually will be, since it will take water additional time to make its way from the holding pipe to the drain pipe, and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse up flow velocity is a bit higher than the target of 16.4 mm/s. The has team decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
+
+The list of materials can be accessed at this link:
+**add link that Kanha and I complete today**
 
 
 ```
@@ -627,24 +667,6 @@ print((3.6*u.m).to(u.feet))
 ```
 
 
-
-## Analysis of Python Documentation
-A major restriction on the influent system for the UASB was ensuring the ability to suspend the sludge particles in the reactor. This was dictated by the settling velocity for sludge particles. After conducting research into finding the settling velocity, the UASB team found that the velocity varies with density of sludge particles, ranging from 0.0009 m/s to 0.0167 m/s ((Miranda, Borges, & Monteggia 2017). As the 0.0167 cm/s up-flow occurs are exceptionally high densities of sludge, we would be requiring up-flow velocities closer the mean settling velocity of 0.0004m/s. Below are figures showing the calculated correlation between the pipe diameter and the drain time of the flow dividing tank, from which the up-flow velocity in the reactor was deduced.
-
-
-![Pipe Diameter vs Drain Time](https://github.com/AguaClara/UASB/blob/master/Images/Pipe%20Diamter%20vs%20Drain%20Time.png?raw=true)
-
-**Fig. 11: Pipe Diameter vs Drain Time**
-
-![Pipe Diameter vs Upflow Velocity](https://github.com/AguaClara/UASB/blob/master/Images/Pipe%20Diameter%20vs%20Upflow%20Velocity.png?raw=true)
-
-**Fig. 12: Pipe Diameter vs Upflow Velocity**
-
-From the restriction from the settling velocity and the corresponding up-flow velocities from pipe diameters, the UASB design team decided to utilize an influent pipe with 1.5 inch diameter.
-
-Other takeaways from the python are that the height of walls in the flow dividing tank should be 9.522 inch and the maximum flow of wastewater this UASB can handle is 0.0695 liter / second.
-
-All of these calculations were based on the parameters that were initialized in the UASB object. Temperature is 25 degree celcius, the cannister diameter is 3 ft. The height of the effluent pipe is 5 feet. The volume of one dump from the tipping bucket is 16.26 L. The width of the flow dividing tank is 9.937 inches, the height of the flow dividing tank is 16.8125 inches, the thickeness of the flow dividing walls are 1/4 inch, there are 3 elbows per influent pipe, and HRT is 4 hours.
 
 ## Bibliography
 
