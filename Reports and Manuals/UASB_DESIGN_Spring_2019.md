@@ -434,7 +434,6 @@ class UASBtest:
   def __init__(
           self,
           temp = 10 * u.degC, #estimated temp at IAAWTF
-          water_level_height = 7 * u.ft, #this is the height of the water in the UASB/height of the effluent. #NOTE: this leaves an extra foot of the 8 foot canister for safety.
           pipe_diam = 1.5 * u.inch, #diameter of the influent pipe
           n_elbows = 2, #the number of elbows in the influent pipe
           pipe_roughness = .0015 * u.mm, # PVC pipe roughness
@@ -443,7 +442,7 @@ class UASBtest:
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 16.7 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+          diameter_drain_pipe= 3.5 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -476,7 +475,6 @@ class UASBtest:
       :rtype: UASB
       """
       self.temp = temp
-      self.water_level_height = water_level_height
       self.pipe_diam = pipe_diam
       self.n_elbows = n_elbows
       self.pipe_roughness = pipe_roughness
@@ -492,6 +490,7 @@ class UASBtest:
       self.ww_gen_rate=ww_gen_rate
       self.lift=lift
 
+
   @property
   def UASB_area(self):
     """This function calculates the surface area of the UASB canister """
@@ -502,6 +501,28 @@ class UASBtest:
   def vol_dump(self):
     vol=self.lift*self.UASB_area
     return vol
+
+  @property
+  def area_drain_pipe(self):
+    area=pc.area_circle(self.diameter_drain_pipe)
+    return area
+
+  @property
+  def HG_per_dump(self):
+    """This function calculates the head gain per dump, assuming that the water level in the canister is in line with the bottom of the "drain pipe" that connects the holding tank to the 1 inch influent pipe """
+    HG=self.vol_dump/self.area_drain_pipe
+    return HG
+
+  @property
+  def length_drain_pipe(self):
+    """This function calculates the length of the drain pipe necessary so that the volume of 1 dump from the tipping bucket fills the drain pipe""" #NOTE: this adds an extra 1/2 inch of length to the drain pipe, could consider removing that
+    h=(self.HG_per_dump+1/2*u.inch).to(u.inch)
+    return h  
+
+  @property
+  def water_level_height(self):
+    """This function determines the height of the water level in the reactor. The water level is supposed to be in line with the bottom of the drain pipe and the drain pipe is attached directly to the holding tank, so the water level is equal to the length of the drain pipe subtracted from the total height of the clear PVC pipe that serves as the UASB reactor"""   
+    return self.UASB_height-self.length_drain_pipe
 
   @property
   def volume_UASB(self):
@@ -526,23 +547,6 @@ class UASBtest:
     """This function calculates  the aggregate minor loss coefficient of the drain system from the holding tank into the 'canister' aka the 10 inch clear PVC pipe"""
     influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR
     return influent_K
-
-  @property
-  def area_drain_pipe(self):
-    area=pc.area_circle(self.diameter_drain_pipe)
-    return area
-
-  @property
-  def HG_per_dump(self):
-    """This function calculates the head gain per dump, assuming that the water level in the canister is in line with the bottom of the "drain pipe" that connects the holding tank to the 1 inch influent pipe """
-    HG=self.vol_dump/self.area_drain_pipe
-    return HG
-
-  @property
-  def length_drain_pipe(self):
-    """This function calculates the length of the drain pipe necessary so that the volume of 1 dump from the tipping bucket fills the drain pipe""" #NOTE: this adds an extra 1/2 inch of length to the drain pipe, could consider removing that
-    h=(self.HG_per_dump+1/2*u.inch).to(u.inch)
-    return h
 
   @property
   def drain_time(self):
@@ -576,8 +580,8 @@ class UASBtest:
 
 test=UASBtest()
 
-data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe'],
-       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, test.upflow_velocity_pulse_average, test.vol_dump, test.length_drain_pipe, test.diameter_drain_pipe]}
+data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height'],
+       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, test.upflow_velocity_pulse_average, test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height]}
 
 
 df=pd.DataFrame(data)
@@ -596,7 +600,7 @@ UASB element                       Measurement
 5               Length Drain Pipe                      22.37 inch
 6             Diameter Drain Pipe                          3 inch
 
-The combination of design specifications, as shown above, results in an estimated average pulse up flow velocity of 20.44 mm/s. The estimated up flow is probably faster than what it actually will be, since it will take water additional time to make its way from the holding pipe to the drain pipe, and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse up flow velocity is a bit higher than the target of 16.4 mm/s. The has team decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
+The combination of design specifications, as shown above, results in an estimated average pulse up flow velocity of 17.52 mm/s. The estimated up flow is probably faster than what it actually will be, since it will take water additional time to make its way from the holding pipe to the drain pipe, and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse up flow velocity is a bit higher than the target of 16.4 mm/s. The has team decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
 
 The list of materials can be accessed at this link:
 **add link that Kanha and I complete today**
