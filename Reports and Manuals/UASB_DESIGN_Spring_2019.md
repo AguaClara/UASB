@@ -215,7 +215,7 @@ HG_per_dump_test=head_gain_per_dump(H_walls_test, overflow_test)
 print(HG_per_dump_test)
 
 def influent_K(n_90el):
-  """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major lossess."""
+  """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major losses."""
   influent_K=n_90el*HL.EL90_K_MINOR+HL.PIPE_EXIT_K_MINOR+HL.PIPE_ENTRANCE_K_MINOR
   return influent_K
 
@@ -280,7 +280,7 @@ print(upflow_vel_test)
 ##will graph drain times versus different pipe sizes with other parameters preset for reasons which are explained in the comment next to each variable assignment.
 D_avail= ([ .75, 1.0, 1.25, 1.5, 2, 2.5, 3])*u.inch#array of available HPDE pipes ranging in size from
 n_90el= 3 #set n_90el to 3 because there are 3 elbows in each influent pipe in the current design
-W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump,with a square bottom and made of HDPE is readily available online
+W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump, with a square bottom and made of HDPE is readily available online
 overflow= 1 *u.inch #set overflow as 1 inch--this could be modified to increase driving head if necessary
 t_even_drains=(np.zeros(len(D_avail)))*u.s #this array will store the estimated drain time for input UASB design with severable possible diameters
 UASB_diameter=3*u.ft
@@ -328,7 +328,7 @@ print(upflow_vel_test)
 ##will graph drain times versus different pipe sizes with other parameters preset for reasons which are explained in the comment next to each variable assignment.
 D_avail= ([.75, 1.0, 1.25, 1.5])*u.inch#array of available HPDE pipes. More research needs to be done to find additional HDPE pipe sources/sizes.
 n_90el= 3 #set n_90el to 3 because there are 3 elbows in each influent pipe in the current design
-W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump,with a square bottom and made of HDPE is readily available online https://www.usplastic.com/catalog/item.aspx?itemid=30661
+W_FDT= (9+15/16)*u.inch  #this was selected as the width for the flow dividing tank because a bucket, which similar in volume to that of a tipping bucket dump, with a square bottom and made of HDPE is readily available online https://www.usplastic.com/catalog/item.aspx?itemid=30661
 
 overflow= 1 *u.inch #set overflow as 1 inch--this could be modified to increase driving head if necessary
 t_even_drains=(np.zeros(len(D_avail)))*u.s #this array will store the estimated drain time for input UASB design with severable possible diameters
@@ -395,7 +395,7 @@ etc.) values that specify a UASB design.,"""
 class UASB:
   def __init__(
           self,
-          #Q = 8 * u.L/u.s, #NOTE: this refers to the instaneous Q during a dump from the tipping bucket, assuming that the tipping bucket is ~16 L and takes two seconds to dump
+          #Q = 8 * u.L/u.s, #NOTE: this refers to the instantaneous Q during a dump from the tipping bucket, assuming that the tipping bucket is ~16 L and takes two seconds to dump
           temp = 25 * u.degC, #average temperature in Honduras
           cannister_diam = 3 * u.ft,
           effluent_H = 5 * u.ft, #based on estimate that the 7ft tall canister is ~70% full of water  
@@ -416,7 +416,7 @@ class UASB:
       :type Q: float * u.L/u.s
       :param temp: Water temperature of the UASB
       :type temp: float * u.degC
-      :param cannister_diam: diameter of the UASB cannister
+      :param cannister_diam: diameter of the UASB canister
       :type cannister_diam: float * u.ft
       :param effluent_H: height of effluent line in UASB
       :type effluent_H: float * u.ft
@@ -428,7 +428,7 @@ class UASB:
       :type FDT_H: float * u.inch
       :param FDT_walls_t: thickness of the walls of the flow dividing tank
       :type FDT_walls_t: float * u.inch
-      :param overflow_H: desired height that wasteawater from one dump of the tipping bucket overflows the flow dividing walls
+      :param overflow_H: desired height that wastewater from one dump of the tipping bucket overflows the flow dividing walls
       :type overflow_H: float * u.inch
       :param pipe_diam: ID of the influent pipes
       :type pipe_diam: float * u.inch
@@ -471,7 +471,7 @@ class UASB:
 
   @property
   def vol_cannister(self):
-      """Calculates the volume of wastewater in the reactor assuming that the water level inside the cannister does not exceed that of the effluent line"""
+      """Calculates the volume of wastewater in the reactor assuming that the water level inside the canister does not exceed that of the effluent line"""
       vol=(pc.area_circle(self.cannister_diam)*self.effluent_H).to(u.L)
       return vol
 
@@ -505,7 +505,7 @@ class UASB:
 
   @property
   def influent_K(self):
-      """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major lossess."""
+      """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major losses."""
       #k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.W_FDT, self.W_FDT/2-1/2*self.FDT_walls_t,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
       #k_val_FDT_exit_reduction=minorloss.k_value_reduction(self.equivPipeRadiusFDT, self.pipe_diam, self.pulseQsec, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness)
        #calculates k value as water goes from flow dividing tank to influent pipe
@@ -552,10 +552,26 @@ plt.xlabel('Pipe Diameter (Inches)')
 plt.ylabel('Upflow Velocity (Meters/second)')
 plt.ylim(0, .01)
 ```
-##New Smaller/Clear Reactors for Testing at IAWTTF
+## New Smaller/Clear Reactors for Testing at IAWTTF
 **somebody needs to write up meeting notes to explain change in direction for project.***
+The UASB design team went over details of implementing the reactor at the IAWWTF with Ed Gottlieb, who is the contact at the IAWWTF, Ruth Richardson, and Monroe Weber-Shirk.
 
-##Design Process for the Smaller, Clear Reactors
+The plan moving forward consists of having six, ten inch diameter and seven feet tall reactors instead of one three feet diameter and seven feet tall reactor. There are still parameters of the designs that are not completely solidified, and few papers for literature review to support specific numbers for said parameters. Having six reactors will help substantiate results, test whether or not pulsated flow of the tipping bucket is making the reactor more effective in cleaning wastewater, and serve as a basis for future improvements such as how changing flow rates can affect reactor efficiency.
+
+There are some protocols and expectations for working in the IAWWTF facility. The gates are normally locked on weekdays from 5:30 PM-6:30 AM and opened on weekends 8:00 AM-2:00 PM. To get in and out of IAWWTF, sign-in/sign-out sheets must be signed in the administrative building. When taking samples from the wastewater treatment, release forms must be filled out.
+
+The grant given to IAWWTF was originally ten thousand dollars and now it is five thousand. An additional portion of grant can be given for supplies and construction if needed. Lab tests will be done at IAWWTF and will focus mainly on COD and biogas production (methane). There is an email that lists out all the lab testing costs. Graduate Student Egidio Tentori, who is a part of Professor Ruth Richardson’s research group, might work at the lab in IAWWTF because he has experience with wastewater sample and analysis. Students can also participate in lab tests but will need to find out the schedule of the lab. Jose will also need to train the students. There is not a subcontractor form yet, but the IAWWTF’s contact in the legal department for the city, Corrine, will come up with it.
+
+At the IAWWTF, there are two spaces that can be chosen. The first space has piping with wastewater at least six feet above the ground. Wastewater flow can be split evenly by filling a reservoir with wastewater and splitting the water with six pumps. There is a gutter in the room for effluent, and a sump pump can lift the wastewater back up to the pipe it came from. However this space has lead paint which will take at least a year to be removed, and there is uncertainty as to how long the space can be reserved for. There are other companies that might bid for the space and use it for their own research. There is also a question of whether there is enough ventilation to get rid of the methane.
+
+The second space is the current space that AguaClara UASB has reserved for a longer period of time. The space is also a newly renovated building. However it is a no-explosion zone, so regular pumps cannot be placed inside. The regular pumps can only be placed outside and have electrical wires run around the outside space. If pumps are placed inside the space, it must be ensured that the pumps and pipeline are explosion proof, which can be expensive. Solids would also need to be specially screened so that pumps do not clog from something like an extremely thin wire. The space can fit six reactors with a cross-sectional area of two feet by two feet, but the reactors would need to be placed carefully. It is also difficult to access the wastewater because it is roughly thirty feet below ground level; therefore, explosion proof peristaltic pumps would be needed to lift the water. However, thirty feet is the limit to how high water can be pumped up on Earth, so multiple explosion proof pumps may be needed.
+
+To clean the reactor, it might be manually/physically cleaned in the inside or magnetic scraper might be used. For it to work, the magnet must be strong enough to go through the walls of the reactor.
+
+There are a couple of options to ensure the stability of the six reactors. It was proposed that an attachment would be put on top of all the six reactors to link them all together. A hole would be drilled through the wall, and an anchor would be put through the hole and sealed to stabilize all of the reactors in a row. Straps would be put around each of the reactors and hooked onto the anchor in the wall. Triangular pieces were also considered to support the round bottom cap of the reactor and keep the reactor from tipping over. However, since the team has decided to use flanges on the top and bottom of the reactor, large, flat bolts can be attached to the flanges to stabilize the reactor.
+
+
+## Design Process for the Smaller, Clear Reactors
 
 The team used design decisions from the previous iteration of the UASB to inform its decisions on the scaled design. The team identified constraint to the, and then used those constraints to figure out additional parameters.
 
@@ -625,7 +641,7 @@ class holdingtank:
 
   @property
   def min_length(self):
-    min_length=((self.height_TB+self.thickness_sheet_frame)**2+self.height_TB**2)**(.5)#min width accounts for how tipping bunket needs to be horizontal ot clomplete a dump and also for theh entrance into the drain pipe/extra space on the bottom of the holding tank for stability around where the hoe will be drilled
+    min_length=((self.height_TB+self.thickness_sheet_frame)**2+self.height_TB**2)**(.5)#min width accounts for how tipping bucket needs to be horizontal to complete a dump and also for the entrance into the drain pipe/extra space on the bottom of the holding tank for stability around where the hole will be drilled
     return min_length
 
   @property
@@ -642,7 +658,7 @@ print(testing.min_length)
 
 Next, the team used the target tipping bucket volume of 1.255 L to inform its design of the drain tank. The team decided that the drain pipe should be similar in volume to that of the tipping bucket, and have a diameter such that its height is approximately the same as the height of the desired head gain per dump from the tipping bucket. Below are the calculations for the dimensions of the new holding tank written in python code.
 
-##Python for New Smaller/Clear Reactors for Testing at IAWTTF
+## Python for New Smaller/Clear Reactors for Testing at IAWTTF
 
 ```python
 import aguaclara.core.head_loss as minorloss
@@ -681,7 +697,7 @@ class UASBtest:
           effluent_pipe_diameter= 1*u.inch, #NOTE: it may be good to make this smaller as to allow for a shorter effluent tube, BUT that may cause additional clogging.
           target_capture_velocity = .12 * u.mm/u.s, #target capture velocity for the tube settler #QUESTION: does this change for wastewater??
           #Property of the tube settler. The slowest settling particle that the tube settler captures reliably. THEREFORE: capture velocity<up flow velocity
-          diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sluge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
+          diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sludge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
           rho_water=1 *u.g/u.mL,
           lift= 5*u.cm
@@ -692,7 +708,7 @@ class UASBtest:
       :type Q: float * u.L/u.s
       :param temp: Water temperature of the UASB
       :type temp: float * u.degC
-      :param cannister_diam: diameter of the UASB cannister
+      :param cannister_diam: diameter of the UASB canister
       :type cannister_diam: float * u.ft
       :param effluent_H: height of effluent line in UASB
       :type effluent_H: float * u.ft
@@ -909,7 +925,7 @@ print((3.6*u.m).to(u.feet))
 
 
 
-##Analysis of Python Documentation
+## Analysis of Python Documentation
 A major restriction on the influent system for the UASB was ensuring the ability to suspend the sludge particles in the reactor. This was dictated by the settling velocity for sludge particles. After conducting research into finding the settling velocity, the UASB team found that the velocity varies with density of sludge particles, ranging from 0.0009 m/s to 0.0167 m/s ((Miranda, Borges, & Monteggia 2017). As the 0.0167 cm/s up-flow occurs are exceptionally high densities of sludge, we would be requiring up-flow velocities closer the mean settling velocity of 0.0004m/s. Below are figures showing the calculated correlation between the pipe diameter and the drain time of the flow dividing tank, from which the up-flow velocity in the reactor was deduced.
 
 
@@ -927,7 +943,7 @@ Other takeaways from the python are that the height of walls in the flow dividin
 
 All of these calculations were based on the parameters that were initialized in the UASB object. Temperature is 25 degree celcius, the cannister diameter is 3 ft. The height of the effluent pipe is 5 feet. The volume of one dump from the tipping bucket is 16.26 L. The width of the flow dividing tank is 9.937 inches, the height of the flow dividing tank is 16.8125 inches, the thickeness of the flow dividing walls are 1/4 inch, there are 3 elbows per influent pipe, and HRT is 4 hours.
 
-##Bibliography
+## Bibliography
 
 - AOS Treatment Solutions. “How Much Energy Does a Wastewater Treatment Plant Use?” AOS Treatment Solutions, AOS Treatment Solutions, LLC, March 1 2018, https://aosts.com/how-much-energy-does-wastewater-treatment-plant-use/
 
