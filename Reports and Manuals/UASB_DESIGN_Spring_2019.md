@@ -442,7 +442,7 @@ class UASBtest:
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 16.7 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 3.5 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -450,7 +450,7 @@ class UASBtest:
           diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sludge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
           rho_water=1 *u.g/u.mL,
-          lift= 5*u.cm,
+          lift= 5*u.cm, #5 cm
           effluent_pipe_diameter=1*u.inch
 
 ):
@@ -580,6 +580,7 @@ class UASBtest:
 
 test=UASBtest()
 
+(test.num_people_served)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height'],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, test.upflow_velocity_pulse_average, test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height]}
 
@@ -591,14 +592,16 @@ print(df)
 
 ## Analysis
 
-UASB element                       Measurement
-0               Diameter Canister                         10 inch
-1          Diameter Influent Pipe                        1.5 inch
-2    Number of Elbows in Influent                               2
-3  Average Up flow Pulse Velocity          0.02044 meter / second
-4      Tipping Bucket Dump Volume  0.2534 centimeter * meter ** 2
-5               Length Drain Pipe                      22.37 inch
-6             Diameter Drain Pipe                          3 inch
+UASB element             Measurement
+0               Diameter Canister                 10 inch
+1          Diameter Influent Pipe                1.5 inch
+2    Number of Elbows in Influent                       2
+3  Average Up flow Pulse Velocity  0.01752 meter / second
+4      Tipping Bucket Dump Volume           0.6693 gallon
+5               Length Drain Pipe              16.57 inch
+6             Diameter Drain Pipe                3.5 inch
+7              Water Level Height              6.619 foot
+
 
 The combination of design specifications, as shown above, results in an estimated average pulse up flow velocity of 17.52 mm/s. The estimated up flow is probably faster than what it actually will be, since it will take water additional time to make its way from the holding pipe to the drain pipe, and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse up flow velocity is a bit higher than the target of 16.4 mm/s. The has team decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
 
