@@ -468,7 +468,7 @@ class UASBtest:
   def __init__(
           self,
           temp = 10 * u.degC, #estimated temp at IAAWTF
-          pipe_diam = 1.5 * u.inch, #diameter of the influent pipe
+          pipe_diam = 1.0 * u.inch, #diameter of the influent pipe
           n_elbows = 2, #the number of elbows in the influent pipe
           pipe_roughness = .0015 * u.mm, # PVC pipe roughness
           time_dump = 2* u.s, #NOTE: get better value with actual testing, this is a rough estimate
