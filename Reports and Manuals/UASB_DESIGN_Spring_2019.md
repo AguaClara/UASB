@@ -650,7 +650,7 @@ print(df)
 The combination of design specifications, as shown above, results in an estimated average pulse upflow velocity of 17.52 mm/s. The estimated upflow velocity is probably faster than the actual upflow velocity because water will take additional time to make its way from the holding pipe to the drain pipe and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse upflow velocity is a bit higher than the target of 16.4 mm/s. The team has decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
 
 The list of materials can be accessed at this link:
-**add link that Kanha and I complete today**
+[UASB Materials](https://docs.google.com/spreadsheets/d/1ICbSms1pXwmJEjIxRHFmrAhcx-y6EK_8H0kFIyB1OXM/edit?usp=sharing)
 
 
 ```
