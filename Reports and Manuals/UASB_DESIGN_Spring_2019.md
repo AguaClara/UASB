@@ -11,7 +11,7 @@ Since Spring 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) Team has
 
 During Spring 2019, the UASB-Design team's main goal was to finalize the design for the UASB and support the design with substantial Python code and CAD designs. So far, the team has completed a general CAD design on Onshape for the entire UASB reactor and used python coding to predict how the geometry of the UASB design will influence the up flow velocity of wastewater through the reactor.
 
-##Introduction
+## Introduction
 In the past, AguaClara has focused on creating sustainable and inexpensive drinking water treatment, and has recently expanded to wastewater treatment. Previously, AguaClara has struggled to find demand for wastewater treatment plants in Nicaragua or Honduras because people were reluctant to invest in a **[a "-Addressed EL"]** system that would not directly affect the health of community members. Fortunately, a growth in awareness in regards to the importance of wastewater treatment as well as funding from EPA for the development of wastewater treatment technologies allowed AguaClara to move forward with its venture into sustainable wastewater treatment. One project AguaClara established for its undertaking in wastewater treatment that of designing and fabricating pilot scale UASB reactor. Upon completion, the pilot UASB reactor will be tested with wastewater at the Ithaca Area Wastewater Treatment Facility (IAWWTF).
 
 
@@ -346,7 +346,7 @@ plt.ylim(0, .01)
 ```
 
 ## Analysis of Python Documentation
-A major restriction on the influent system for the UASB was ensuring the ability to suspend the sludge particles in the reactor. This was dictated by the settling velocity for sludge particles. After conducting research into finding the settling velocity, the UASB team found that the velocity varies with density of sludge particles, ranging from 0.0009 m/s to 0.0167 m/s ((Miranda, Borges, & Monteggia 2017). As the 0.0167 cm/s up-flow occurs are exceptionally high densities of sludge, we would be requiring up-flow velocities closer the mean settling velocity of 0.0004m/s. Below are figures showing the calculated correlation between the pipe diameter and the drain time of the flow dividing tank, from which the up-flow velocity in the reactor was deduced.
+A major restriction on the influent system for the UASB was ensuring the ability to suspend the sludge particles in the reactor. This was dictated by the settling velocity for sludge particles. After conducting research into finding the settling velocity, the UASB team found that the velocity varies with density of sludge particles, ranging from 0.0009 m/s to 0.0167 m/s ((Miranda, Borges, & Monteggia 2017). As the 0.0167 cm/s up-flow occurs are exceptionally high densities of sludge, UASB Design would be requiring up-flow velocities closer the mean settling velocity of 0.0004m/s. Below are figures showing the calculated correlation between the pipe diameter and the drain time of the flow dividing tank, from which the up-flow velocity in the reactor was deduced.
 
 
 ![Pipe Diameter vs Drain Time](https://github.com/AguaClara/UASB/blob/master/Images/Pipe%20Diamter%20vs%20Drain%20Time.png?raw=true)
@@ -361,7 +361,32 @@ From the restriction from the settling velocity and the corresponding up-flow ve
 
 Other takeaways from the python are that the height of walls in the flow dividing tank should be 9.522 inch and the maximum flow of wastewater this UASB can handle is 0.0695 liter / second.
 
-All of these calculations were based on the parameters that were initialized in the UASB object. Temperature is 25 degree celcius, the cannister diameter is 3 ft. The height of the effluent pipe is 5 feet. The volume of one dump from the tipping bucket is 16.26 L. The width of the flow dividing tank is 9.937 inches, the height of the flow dividing tank is 16.8125 inches, the thickeness of the flow dividing walls are 1/4 inch, there are 3 elbows per influent pipe, and HRT is 4 hours.
+All of these calculations were based on the parameters that were initialized in the UASB object. Temperature is 25 degree celsius, the canister diameter is 3 ft. The height of the effluent pipe is 5 feet. The volume of one dump from the tipping bucket is 16.26 L. The width of the flow dividing tank is 9.937 inches, the height of the flow dividing tank is 16.8125 inches, the thickness of the flow dividing walls are 1/4 inch, there are 3 elbows per influent pipe, and HRT is 4 hours.
+
+
+
+
+**Table 1. Design Parameters for Old UASB Reactor**
+
+| UASB element      | Measurement |
+| ----------------- | ----------- |
+| Diameter Canister | 3 feet      |
+| Height Canister  | 7 feet       |
+| Diameter of Influent Pipe         | 1.5 inch            |
+| Number of Elbows                  | 12                  |
+| Average Up Flow Velocity          | 0.0695 liter/second |
+| Tipping Bucket Dump Volume        | 16.26 liters        |
+| Width of Flow Dividing Tank       | 9.9375 inches       |
+| Number of Influent Pipes          | 4                   |
+| Height of the Flow Dividing Walls |9.522 inches         |
+| Thickness of the Flow Dividing Walls  | 0.25 inch       |
+| Hydraulic Retention Time          | 4 hours             |
+
+
+
+
+
+
 
 
 ## New Smaller/Clear Reactors for Testing at IAWTTF
@@ -369,43 +394,64 @@ The UASB design team went over details of implementing the reactor at the IAWWTF
 
 The plan moving forward consists of having six, ten inch diameter and seven feet tall reactors instead of one three feet diameter and seven feet tall reactor. Having six reactors will help substantiate results, test whether or not pulsated flow of the tipping bucket is making the reactor more effective in cleaning wastewater, and serve as a basis for future improvements such as how changing flow rates can affect reactor efficiency. In addition, the smaller diameter allows for the reactors to be constructed from clear PVC pipe, so that the team can observe what is going on inside of the reactor; namely, whether or not pulsated flow is fluidizing the sludge blanket.
 
-There are some protocols and expectations for working in the IAWWTF facility. The gates are normally locked on weekdays from 5:30 PM-6:30 AM and opened on weekends 8:00 AM-2:00 PM. To get in and out of IAWWTF, sign-in/sign-out sheets must be signed in the administrative building. When taking samples from the wastewater treatment, release forms must be filled out.
-
-The grant given to IAWWTF was originally ten thousand dollars and now it is five thousand. An additional portion of grant can be given for supplies and construction if needed. Lab tests will be done at IAWWTF and will focus mainly on COD and biogas production (methane).
+There are some protocols and expectations for working in the IAWWTF facility. The gates are normally locked on weekdays from 5:30 PM-6:30 AM and opened on weekends 8:00 AM-2:00 PM. To get in and out of IAWWTF, sign-in/sign-out sheets must be signed in the administrative building. When taking samples from the wastewater treatment, release forms must be filled out. The grant given to IAWWTF was originally ten thousand dollars and now it is five thousand. An additional portion of grant can be given for supplies and construction if needed. There is an email that lists out all the lab testing costs. Lab tests will be done at IAWWTF and will focus mainly on chemical oxygen demand (COD) and biogas production (methane). Graduate Student Egidio, part of Professor Ruth Richardson’s research group, might work at the lab in IAWWTF because he has experience with wastewater sample and analysis. Students can also participate and lab tests but will need to be trained by Jose, the lead in the IAWWTF lab. In addition, UASB Design needs the lab's schedule so that the team does not interfere with IAWWTF's lab time. There is not an official subcontractor form yet for Cornell to fill out, but the IAWWTF’s contact in the legal department for the city, Corrine, will come up with something.
 
 At the IAWWTF, there are two spaces available for testing the reactors. The first space has piping with wastewater at least six feet above the ground. Wastewater flow can be split evenly by filling a reservoir with wastewater and splitting the water with six peristaltic pumps. There is a gutter in the room for effluent, and a sump pump can lift the wastewater back up to the pipe it came from. However there is uncertainty as to how long the space can be reserved for. There are other companies that might bid for the space and use it for their own research. There is also a question of whether there is enough ventilation to get rid of the methane.
 
 The second space is the current space that AguaClara UASB has reserved for a longer period of time. The space is also a newly renovated building. However it is a no-explosion zone, so regular pumps cannot be placed inside. The regular pumps can only be placed outside and have electrical wires run around the outside space. If pumps are placed inside the space, it must be ensured that the pumps and pipeline are explosion proof, which is expensive. Solids would also need to be specially screened so that pumps do not clog from something like an extremely thin wire. The space can fit six reactors with a cross-sectional area of two feet by two feet, but the reactors would need to be placed carefully. It is also difficult to access the wastewater because it is roughly thirty feet below ground level; therefore, explosion proof peristaltic pumps would be needed to lift the water. However, thirty feet is the limit to how high water can be pumped up on Earth, so multiple explosion proof pumps may be needed.
 
+Various ideas for implementation of the reactors at the IAWWTF and maintenence were discussed. To ensure the stability of the reactors, it was proposed that an attachment would be put on top of all six reactors and linked together on a rope or cord. A hole would be drilled through the wall, and an anchor attached to the rope would be put through the hole and sealed to stabilize all of the reactors in a row. Straps would be put around each of the reactors and hooked onto the anchor in the wall. Triangular pieces were also considered to support the round bottom cap of the reactor and keep the reactor from tipping over. However, since the team has decided to use flanges on the top and bottom of the reactor, large, flat bolts can be attached to the flanges to stabilize the reactor, which are shown below in Figure 17. The reactor can be manually/physically cleaned in the inside by a magnetic scraper, similar to cleaners for fish tanks. For it to work, the magnet must be strong enough to go through the walls of the reactor.
+
 ## Design Process for the Smaller, Clear Reactors
 
-The team used design decisions from the previous iteration of the UASB to inform its decisions on the scaled design.
+The team used design decisions from the previous iteration of the UASB to inform its decisions on the smaller scaled design.
 
-Major changes from the larger UASB design to the smaller UASBs are that there is only one influent pipe in the reactor, there is no flow dividing tank (it is replaced by the "drain pipe"), and the tipping bucket will be placed on top of the UASB canister.
+Major changes from the larger UASB design to the smaller UASBs include scaling the main reactor from three feet in diameter to ten inches in diameter, replacing four influent pipes with just one influent pipe, replacing the flow dividing tank with a drain pipe, and placing the tipping bucket design on top of the UASB canister.
 
-**add CAD model or at least a sketch of new UASB design**
+![Drawing of New UASB Design](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202019-05-09%20at%207.19.19%20PM.png?raw=true)
 
-As is shown the model above, in the new UASB design, waste water flows from the tipping bucket (or not, if it is one of the UASB's that is meant to test functionality without a tipping bucket) to the drain pipe, to the influent pipe, into the UASB canister, and then out of the effluent pipe.
+**Fig. 12: Sketch of New UASB Design**
 
-The previous design for the UASB used a 36" diameter canister. The smaller design will use a 10" clear PVC pipe instead. The 10" PVC clear pipe was decided on so that multiple reactors could fit in the available space at the IAWWTF, and so that happenings inside of the UASB will be visible. The height of the UASB will be 8ft, since clear PVC pipes are sold in lengths of 8 ft.
+![CAD Model of New UASB Design](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202019-05-09%20at%207.21.21%20PM.png?raw=true)
+
+**Fig. 13: CAD Model of New UASB Design**
+
+As shown in Figure 12 and 13, the new UASB design directs wastewater through an influent system such as a tipping bucket to the drain pipe, to the influent pipe, into the UASB canister, and then out of the effluent pipe. Since the purpose of having six reactors is to test as many unknowns as possible, 
+
+The previous design for the UASB used a 36" diameter canister. The smaller design will use a 10" clear PVC pipe instead. The 10" PVC clear pipe was chosen so that multiple reactors could fit in the available space at the IAWWTF. In addition, PVC pipes can more readily be bought clear, which can give the team more information as to what occurs within the reactor. The height of the UASB will be 8ft, since clear PVC pipes are sold in lengths of 8 ft.
 
 To clean the reactor, it might be manually/physically cleaned in the inside or magnetic scraper might be used. For it to work, the magnet must be strong enough to go through the walls of the reactor.
 
-**add pictures of the drain pipe**
+![CAD Model of Drain Pipe(Highlighted in Orange) ](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202019-05-09%20at%207.24.38%20PM.png?raw=true)
+
+**Fig. 14: Drain Pipe is Highlighted in Orange**
+
 
 The drain pipe connects the holding tank, which houses the tipping bucket, to the influent pipe. Its purpose is to slow down incoming wastewater, to allow gas bubbles to escape. It is the same volume as one dump from the tipping bucket.  Its bottom is in line with the water level inside the canister, which means that the head gain per dump is the volume of one dump of the tipping bucket divided by the cross sectional area of the drain pipe.
 
 Another important element of the design is the effluent system.
 
-**add picture of the effluent from final presentation ***
+![Effluent System ](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202019-05-09%20at%207.27.39%20PM.png?raw=true)
+
+**Fig. 15: Effluent System**
 
 At first, the team thought that the effluent tube would need to be at a 60 degree angle to prevent sludge granule washout, similar to a tube settler; however, the team realized that the washout will not be a concern, since the average up flow velocity in the UASB canister is so slow. Since washout is not a concern, the design will use a horizontal effluent pipe to maximize the allowable height of the sludge blanket in the UASB reactor. The upside down T shape (indicated by green arrow) will be at a height of approximately 7 feet because the desired the water level because it maximizes the usage of space, but prevents overflow in the case of an accident. The actual effluent line will be about 10 cm below the water line in the canister to prevent biogas from entering the effluent in case the water level dips abnormally low. In addition, water will enter the effluent pipe through holes on the top of the pipe, as indicated by the teal arrows, so that rising biogas bubbles do not enter the effluent. Lastly, the upwards pointing pipe, as indicated by the red arrow, will maintain atmospheric pressure inside the reactor, so that the effluent doesn’t suck biogas out from inside the reactor.
 
-**add pictures of flanges**
+![CAD Model of Flange](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202019-05-09%20at%207.31.19%20PM.png?raw=true)
+
+**Fig. 16: CAD Model of Flange**
+
+
+![Image of Flange and Gasket Being Used](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202019-05-09%20at%207.31.13%20PM.png?raw=true)
+
+**Fig. 17: Image of Flange and Gasket Being Used**
 
 The team decided to use flanges and blind flanges as end caps for the top and bottom of the reactor. That way, large, flat bolts can be used to the stabilize the reactor from the bottom, and the tipping bucket can be placed on top of the reactor, so that additional support is not required for the tipping bucket.
 
-**add pictures of FOG removal system form presentation**
+![Image of Flange and Gasket Being Used](https://github.com/AguaClara/UASB/blob/master/Images/Screen%20Shot%202019-05-09%20at%207.34.10%20PM.png?raw=true)
+
+**Fig. 18: Sketch of FOG Removal**
+
 
 A FOG removal system was also incorporated into the UASB design to prevent excess FOG from accumulating. A sketch of the FOG removal system is pictured above. The way it works is that the bottom of a funnel will be about in line with that the water level in the canister, and then attached to a pipe that leads down and has a valve on it. That way, as FOG collect on the surface, they will be pushed up into the funnel, since they are less dense than water. Then, the valve can be opened to empty out those FOG. The half circle hanging below the funnel is the gas bubble deflector, which will block methane gas bubbles from escaping out of the FOG removal system.
 
@@ -591,14 +637,22 @@ print(df)
 
 ## Analysis
 
-UASB element                       Measurement
-0               Diameter Canister                         10 inch
-1          Diameter Influent Pipe                        1.5 inch
-2    Number of Elbows in Influent                               2
-3  Average Up flow Pulse Velocity          0.02044 meter / second
-4      Tipping Bucket Dump Volume  0.2534 centimeter * meter ** 2
-5               Length Drain Pipe                      22.37 inch
-6             Diameter Drain Pipe                          3 inch
+
+**Table 2. Design Parameters for New UASB Reactor**
+
+| UASB element                   | Measurement          |
+| ------------------------------ | -------------------- |
+| Diameter of Canister           | 10 inches            |
+| Diameter of Influent Pipe      | 1.5 inches           |
+| Number of Elbows in Influent   | 2                    |
+| Average Up Flow Pulse Velocity | 0.02044 meter/second |
+| Tipping Bucket Dump Volume     | 0.2534 centimeter    |
+| Length Drain Pipe              | 22.37 inches         |
+| Diameter Drain Pipe            | 3 inches             |
+
+
+
+
 
 The combination of design specifications, as shown above, results in an estimated average pulse up flow velocity of 17.52 mm/s. The estimated up flow is probably faster than what it actually will be, since it will take water additional time to make its way from the holding pipe to the drain pipe, and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse up flow velocity is a bit higher than the target of 16.4 mm/s. The has team decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
 
@@ -669,6 +723,11 @@ print((3.6*u.m).to(u.feet))
 
 (0.0167 *u.m/u.s).to(u.m/u.hr)
 ```
+
+
+
+
+
 
 
 
