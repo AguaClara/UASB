@@ -398,7 +398,7 @@ Major changes from the larger UASB design to the smaller UASBs include scaling t
 
 **Fig. 13: CAD Model of New UASB Design**
 
-As shown in Figure 12 and 13, the new UASB design directs wastewater through a tipping bucket system to the drain pipe, to the influent pipe, into the UASB canister, and then finally out of the effluent pipe. While UASB Design plans to test the difference between pulsated flow and continuous flow at the IAWWTF, the following design is created mostly for pulsated flow.
+As shown in Figure 12 and 13, the new UASB design directs wastewater through a tipping bucket system to the drain pipe, to the influent pipe, into the UASB canister, and then finally out of the effluent pipe. While UASB Design plans to test the difference between pulsated flow and continuous flow at the IAWWTF, the following design is created mostly for pulsated flow. The sketch of Figure 12 is the most recently updated design in terms of the placement of the influent system, effluent pipe, and FOG removal; however, the CAD model in Figure 13 gives a feel for what the dimensions of the main reactor, which is the clear pipe, will look like.
 
 The previous design for the UASB used a 36" diameter HDPE canister. The smaller design will use a 10" clear PVC pipe instead. The 10" PVC clear pipe was chosen so that multiple reactors could fit in the available space at the IAWWTF. Clear piping allows people to see what is going on within the pipe, and clear PVC pipes are more common than other options for clear materials. The height of the UASB will be eight feet, since clear PVC pipes are sold in lengths of eight feet.
 
