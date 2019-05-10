@@ -285,10 +285,7 @@ class UASB:
   @property
   def influent_K(self):
       """this function calculates the minor loss coefficient of one of the influent pipes into the overall reactor. n_90elbows=number of 90 elbows in an influent pipe, D_pipe is the diameter of an influent pipe. Chose to calculate for minor loss because in the UASB design, minor losses are much more significant than major losses."""
-      #k_val_FDT_ent_reduction=minorloss.k_value_reduction(self.W_FDT, self.W_FDT/2-1/2*self.FDT_walls_t,self.Q,fitting_angle=180,rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness) #calculates k value as water goes from overflow area into one section of the flow dividing tank #QUESTION: does it make sense to use the total area of FDT/area of section instead of diameters instead of diameters? since calculation is just a ratio of the two/how much does square vs round pipeshaspe affect the k minor coefficient
-      #k_val_FDT_exit_reduction=minorloss.k_value_reduction(self.equivPipeRadiusFDT, self.pipe_diam, self.pulseQsec, fitting_angle=180, rounded=False,nu=pc.viscosity_kinematic(self.temp),pipe_rough=self.pipe_roughness)
-       #calculates k value as water goes from flow dividing tank to influent pipe
-      influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR #QUESTION: should this include a term for entrance k val?
+      influent_K=self.n_elbows*minorloss.EL90_K_MINOR+minorloss.PIPE_EXIT_K_MINOR+minorloss.PIPE_ENTRANCE_K_MINOR
       return influent_K
 
   @property
@@ -440,7 +437,7 @@ The team decided to use flanges and blind flanges as end caps for the top and bo
 A fats, oils, and greases (FOG) removal system was also incorporated into the UASB design to prevent excess FOG from accumulating. Figure 18 shows a sketch of the FOG removal system. Maximum and minimum water levels are a natural result of pulsated flow. The bottom of a funnel will be barely below the minimum water level in the canister to prevent air from above the water from entering the funnel while keeping as little water as possible from exiting the reactor. The top of the funnel will be at the same elevation as the maximum water level within the reactor. As FOG collect on the surface of the water, the shifting water level will push the FOG into the funnel, and the FOG will overflow into the pipe connected to it. The pipe leads down to a valve that can be opened to empty out the FOG collected when needed. The half circle hanging below the funnel is the gas bubble deflector, which will block methane gas bubbles from escaping out of the reactor through the FOG removal system. However, the UASB Design team recognizes that this design has limits because it leaves very little room for error in terms of water level. Therefore, the team is also considering an FOG design that is similar to a surface skimmer in fish tanks.
 
 
-The major constraint for the UASB reactor is that the upflow velocity for pulsated flow must be high enough to fluidize the sludge blanket. According to our literature review, this corresponds to an upflow velocity of about 16.7 mm/s (Miranda, Borges, & Monteggia 2017). The team used that constraint as a guide to determine design specifications for the UASB reactors.
+The major constraint for the UASB reactor is that the upflow velocity for pulsated flow must be high enough to fluidize the sludge blanket. According to our literature review, this corresponds to an upflow velocity of about 6-10 m/hr (Zheng et. al, 2014). The team used that constraint as a guide to determine design specifications for the UASB reactors.
 
 The code below relates the geometry of the UASB reactor, the change in the water level during a pulse, and the average pulse upflow velocity. Its current state shows the final dimensions that have been decided on for the fabrication of the UASB pilot scale reactors. These dimensions are chosen so that the upflow velocity during a pulse from the tipping bucket is fast enough to fluidize of the sludge blanket. If the code is run, it will display a table of important dimensions of the UASB reactor.
 
@@ -467,7 +464,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 class UASBtest:
   def __init__(
           self,
@@ -479,8 +475,8 @@ class UASBtest:
           UASB_diameter = 10 * u.inch,
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
-          target_upflow_vel= 16.7 * u.mm/u.s, #target up flow velocity to fluidize sludge blanket
-          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+          target_upflow_vel= 10 * u.m/u.hr, #target up flow velocity to fluidize sludge blanket
+          diameter_drain_pipe= 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -488,7 +484,7 @@ class UASBtest:
           diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sludge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
           rho_water=1 *u.g/u.mL,
-          lift= 5*u.cm, #5 cm
+          lift= 1*u.cm,
           effluent_pipe_diameter=1*u.inch
 
 ):
@@ -616,15 +612,15 @@ class UASBtest:
     num=num.to(u.dimensionless)
     return num
 
-test=UASBtest()
 
-(test.num_people_served)
+test=UASBtest(pipe_diam=1*u.inch)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height'],
-       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, test.upflow_velocity_pulse_average, test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height]}
+       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height]}
 
 
 df=pd.DataFrame(data)
 print(df)
+
 
 ```
 
@@ -633,21 +629,22 @@ print(df)
 
 **Table 2. Design Parameters for New UASB Reactor**
 
-| UASB element                   | Measurement          |
-| ------------------------------ | -------------------- |
-| Diameter of Canister           | 10 inches            |
-| Diameter of Influent Pipe      | 1.5 inches           |
-| Number of Elbows in Influent   | 2                    |
-| Average Upflow Pulse Velocity | 0.02044 meter/second |
-| Tipping Bucket Dump Volume     | 0.2534 centimeter    |
-| Length Drain Pipe              | 22.37 inches         |
-| Diameter Drain Pipe            | 3 inches             |
+| UASB element                  | Measurement        |
+| ----------------------------- | ------------------ |
+| Diameter of Canister          | 10 inches          |
+| Diameter of Influent Pipe     | 1 inch             |
+| Number of Elbows in Influent  | 2                  |
+| Average Upflow Pulse Velocity | 3.047 mm/s         |
+| Tipping Bucket Dump Volume    | .1399 gallon       |
+| Length Drain Pipe             | 2.961 inches       |
+| Diameter Drain Pipe           | 4 inches           |
+| Water Level height            | 7.753 foot         |
 
 
 
 
 
-The combination of design specifications, as shown above, results in an estimated average pulse upflow velocity of 17.52 mm/s. The estimated upflow velocity is probably faster than the actual upflow velocity because water will take additional time to make its way from the holding pipe to the drain pipe and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse upflow velocity is a bit higher than the target of 16.4 mm/s. The team has decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
+The combination of design specifications, as shown above, results in an estimated average pulse upflow velocity of 3.047 mm/s. The estimated upflow velocity is probably faster than the actual upflow velocity because water will take additional time to make its way from the holding pipe to the drain pipe and because major losses within the piping system are not addressed in the model. Since that is the case, it is good that the estimated average pulse upflow velocity is a bit higher than the target of 2.77 mm/s. The team has decided to use these specification in its fabrication of the UASB reactors, which will be tested at the IAWWTP.
 
 The list of materials can be accessed at this link:
 [UASB Materials](https://docs.google.com/spreadsheets/d/1ICbSms1pXwmJEjIxRHFmrAhcx-y6EK_8H0kFIyB1OXM/edit?usp=sharing)
@@ -746,7 +743,8 @@ ompany, Madison Gas and Electric Company, 2019, https://www.mge.com/saving-energ
 
 - Perlman, Howard. “Wastewater Treatment Water Use.” The USGS Water Science School, US Geological Survey, Dec. 2 2016, https://water.usgs.gov/edu/wuww.html
 
-
+- Zheng, Mingxia. "Concept and application of anaerobic suspended granular
+sludge bed (SGSB) reactor for wastewater treatment." State Key Joint Laboratory of Environmental Simulation and Pollution Control, School of Environment, Tsinghua University, Beijing 100084, China, 2013  https://link.springer.com/content/pdf/10.1007%2Fs11783-013-0597-x.pdf
 
 According to 3 sources, BOD:COD ratio for untreated waste water is around 0.6.
 ([Anil Kumar, Purnima Dhall, Rita Khumar, 2010](https://www.sciencedirect.com/science/article/pii/S0964830510000107))
