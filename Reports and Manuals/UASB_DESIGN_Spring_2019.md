@@ -484,7 +484,7 @@ class UASBtest:
           diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sludge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
           rho_water=1 *u.g/u.mL,
-          lift= 1*u.cm,
+          lift= 5*u.cm, #to make sure that lift height is significant
           effluent_pipe_diameter=1*u.inch
 
 ):
@@ -614,7 +614,7 @@ class UASBtest:
 
 
 test=UASBtest()
-data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height'],
+data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height', 'Lift'],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height]}
 
 
@@ -634,11 +634,11 @@ print(df)
 | Diameter of Canister          | 10 inches          |
 | Diameter of Influent Pipe     | 1 inch             |
 | Number of Elbows in Influent  | 2                  |
-| Average Upflow Pulse Velocity | 3.047 mm/s         |
-| Tipping Bucket Dump Volume    | .1399 gallon       |
-| Length Drain Pipe             | 2.961 inches       |
+| Average Upflow Pulse Velocity | 6.814 mm/s         |
+| Tipping Bucket Dump Volume    | .6693 gallon       |
+| Length Drain Pipe             | 12.8 inches        |
 | Diameter Drain Pipe           | 4 inches           |
-| Water Level height            | 7.753 foot         |
+| Water Level height            | 6.933 foot         |
 
 
 
