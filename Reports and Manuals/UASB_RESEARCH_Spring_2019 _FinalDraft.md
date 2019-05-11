@@ -371,27 +371,28 @@ The code above normalizes the data attained from each quadrant and produces the 
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Back.png?raw=true" width="400px"/></p>
-<p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the back.
+<p align="center">Fig. 16 - The graph above represents the water distribution through the different quadrants when the water was tipped from the back.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Left.png?raw=true" width="400px"/></p>
-<p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the left.
+<p align="center">Fig. 17 - The graph above represents the water distribution through the different quadrants when the water was tipped from the left.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Right.png?raw=true" width="400px"/></p>
-<p align="center">Fig. 15 - The graph above represents the water distribution through the different quadrants when the water was tipped from the right.
+<p align="center">Fig. 18 - The graph above represents the water distribution through the different quadrants when the water was tipped from the right.
 
-According to the graphs above, it can be seen that for the tipping bucket tests done from the front and the left the distribution of water through the quadrants is fairly equal, but the distribution of water through the quadrants from the back and the right are skewed higher towards the third quadrant. To check whether this difference is significant a linear regression test was performed, as can be seen below.
+According to the graphs above, it can be seen that for the tipping bucket tests done from the front and the left the distribution of water through the quadrants is fairly equal, but the distribution of water through the quadrants from the back and the right are skewed higher towards the third quadrant. To check whether this difference is significant a the data was modeled under a normalized curve, as can be seen below.
 
 ```python
 from aguaclara.play import *
 from aguaclara.core.units import unit_registry as u
-from aguaclara.core import physchem as pc
-from aguaclara.core import constants as con
 import numpy as np
-import matplotlib.pyplot as plt
 from aide_design.play import *
 import math
+import pandas as pd
+import seaborn as sns
+%matplotlib inline
+import statistics
 
 #The list of Data Collected is shown below
 #nomenClature: sidebuckettippedfrom+quadrantnumber = [1st trial, 2nd trial]
@@ -418,13 +419,29 @@ Right4th= [93, 87]*u.mL
 
 Volume_Array= [135, 107, 150, 119, 125, 134, 70, 100, 85, 88, 105, 102, 175, 147, 125, 116, 130, 107, 105, 91, 125, 133, 70, 114, 90, 112, 126, 110, 153, 152, 93, 87]
 
+print (statistics.mean(Volume_Array))
+print (statistics.stdev(Volume_Array))
 
-
+VA = pd.DataFrame(Volume_Array) #makes the data readable by the sns package
+sns.distplot(VA) #plots the data under a normal distribution
 
 
 ```
 
-A few things to note: only two trials each is not ideal. Next semester the team can attempt more trials; unfortunately time was extremely limited and this was simply the amount UASB-R could accomplish in a very short period of time. However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring. One, usually the two bottles further away from the side that was being poured from obtained more liquid than the two bottles closer to the side. For example, when it was being poured from the backside, the 3rd and 4th quadrants had more liquid and than 1st and 2nd. Two, as a natural follow-up from the first conclusion, the flow was not being distributed evenly; in none of the eight trials were the volumes even close to each other. This suggests either 1. the tipping bucket must be angled with significant precision, 2. The flow distribution system was be redesigned to account for the front two openings getting less water than the back two openings, or 3. The inlet should split up into four opening later in the UASB reactor (i.e. in the tank).
+Modeling the data, Figure 19 shows that all the data is within 2 standard deviations(25 mL) of the mean (115 mL). Thus it is understood that the data covers 95% of the normal bell curve, which shows a significant distribution in the data.
+
+<p align="center">
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/normal_distribution_of_data.png?raw=true" width="400px"/></p>
+<p align="center">Fig. 19 - The normalized graph of the tipping bucket test data.
+
+It can then be concluded that the differences in the data obtained are significant and that the water is not distributing fairly equally among the quadrants which doesn't ensure uniform distribution of the wastewater amongst the sludge blanket.
+
+***Qualitative and Quantitative:*** <br>
+Only two trials for each of the quadrants were done for each side of the inlet system, which is not ideal, and next semester the team will complete more trials; unfortunately time was extremely limited and UASB-R wasn't able to extensivly test for equal distribution.
+
+However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring.
+ 1. The two bottles further away from the side the water was being poured from obtained more liquid than the two bottles closer to that side. For example: when the water was being poured from the back, the 3rd and 4th quadrants had more liquid and than 1st and 2nd.
+ 2. In the eight trials the volumes were very different. from each other. This suggests that either the tipping bucket must be angled with significant precision or the flow distribution system must be redesigned to account for two of the quadrants obtaining less water or 3. The inlet should split up into four opening later in the UASB reactor (i.e. in the tank).
 
 ## Future Work
 
