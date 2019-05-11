@@ -428,20 +428,22 @@ sns.distplot(VA) #plots the data under a normal distribution
 
 ```
 
-Modeling the data, Figure 19 shows that all the data is within 2 standard deviations(25 mL) of the mean (115 mL). Thus it is understood that the data covers 95% of the normal bell curve, which shows a significant distribution in the data.
+Modeling the data, Figure 19 shows that all the data is within 2 standard deviations(25 mL) of the mean (115 mL). Thus, it is understood that the data covers 95% of the normal bell curve, which shows a significant distribution in the data.
 
 <p align="center">
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/normal_distribution_of_data.png?raw=true" width="400px"/></p>
 <p align="center">Fig. 19 - The normalized graph of the tipping bucket test data.
 
-It can then be concluded that the differences in the data obtained are significant and that the water is not distributing fairly equally among the quadrants which doesn't ensure uniform distribution of the wastewater amongst the sludge blanket.
 
 ***Qualitative and Quantitative:*** <br>
 Only two trials for each of the quadrants were done for each side of the inlet system, which is not ideal, and next semester the team will complete more trials; unfortunately time was extremely limited and UASB-R wasn't able to extensivly test for equal distribution.
 
 However, in these small trials, UASB-R noticed two very important patterns that kept reoccuring.
- 1. The two bottles further away from the side the water was being poured from obtained more liquid than the two bottles closer to that side. For example: when the water was being poured from the back, the 3rd and 4th quadrants had more liquid and than 1st and 2nd.
- 2. In the eight trials the volumes were very different. from each other. This suggests that either the tipping bucket must be angled with significant precision or the flow distribution system must be redesigned to account for two of the quadrants obtaining less water or 3. The inlet should split up into four opening later in the UASB reactor (i.e. in the tank).
+ 1. The two bottles further away from the side the water was being poured from obtained more liquid than the two bottles closer to that side. <br> *For example:* when the water was being poured from the back, the 3rd and 4th quadrants had more liquid and than 1st and 2nd.
+ 2. In the eight trials the volumes were very different from each other.
+
+
+From the modeling above, it is also understood that the differences in the data obtained are significant and that the water is not distributing fairly equally among the quadrants which doesn't ensure uniform distribution of the wastewater amongst the sludge blanket. With observation and data analysis pointing towards unequal distribution of water, the team concludes the following: either the tipping bucket must be angled with significant precision or the flow distribution system must be redesigned to account for two of the quadrants obtaining less water. Further, more it could also mean the inlet should split up into four opening later in the UASB reactor (i.e. in the tank).
 
 ## Future Work
 
