@@ -464,6 +464,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+pipes.ID_sch40(4*u.inch)
 class UASBtest:
   def __init__(
           self,
@@ -509,18 +510,18 @@ class UASBtest:
       :rtype: UASB
       """
       self.temp = temp
-      self.pipe_diam = pipe_diam
+      self.pipe_diam = pipes.ID_sch40(pipe_diam)
       self.n_elbows = n_elbows
       self.pipe_roughness = pipe_roughness
       self.time_dump = time_dump
-      self.UASB_diameter = UASB_diameter
+      self.UASB_diameter = pipes.ID_sch40(UASB_diameter)
       self.HRT = HRT
       self.target_upflow_vel=target_upflow_vel
-      self.diameter_drain_pipe=diameter_drain_pipe
+      self.diameter_drain_pipe=pipes.ID_sch40(diameter_drain_pipe)
       self.descending_sewage_vel=descending_sewage_vel
       self.percent_sluge=percent_sludge
       self.UASB_height=UASB_height
-      self.effluent_pipe_diameter=effluent_pipe_diameter
+      self.effluent_pipe_diameter=pipes.ID_sch40(effluent_pipe_diameter)
       self.ww_gen_rate=ww_gen_rate
       self.lift=lift
 
