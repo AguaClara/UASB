@@ -484,7 +484,7 @@ class UASBtest:
           diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sludge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
           rho_water=1 *u.g/u.mL,
-          lift= 5*u.cm, #to make sure that lift height is significant
+          lift= 6*u.cm, #to make sure that lift height is significant
           effluent_pipe_diameter=1*u.inch
 
 ):
@@ -550,7 +550,7 @@ class UASBtest:
   @property
   def length_drain_pipe(self):
     """This function calculates the length of the drain pipe necessary so that the volume of 1 dump from the tipping bucket fills the drain pipe""" #NOTE: this adds an extra 1/2 inch of length to the drain pipe, could consider removing that
-    h=(self.HG_per_dump+1/2*u.inch).to(u.inch)
+    h=(self.HG_per_dump).to(u.inch)
     return h  
 
   @property
@@ -613,7 +613,7 @@ class UASBtest:
     return num
 
 
-test=UASBtest()
+test=UASBtest(pipe_diam=1*u.inch, lift=6*u.cm)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height', 'Lift', ],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height, test.lift]}
 
