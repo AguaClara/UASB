@@ -35,7 +35,10 @@ In Spring 2019, UASB will be finalizing design of the UASB system and beginning 
 
 [UASB Research Midway Sympsium Presentation](https://docs.google.com/presentation/d/16dHgmKHNWGlfNtnFJCDmcLqVt-cf6zIizj0rtyb3dFw/edit#slide=id.g543cdd4dd4_5_142)
 
+[UASB Research Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_RESEARCH_Spring_2019%20_FinalDraft.md)
+
 UASB Research Final Presentation: [Video](https://www.youtube.com/watch?v=50I-fLEMWSg&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=19&t=0s) and [Google Slides](https://docs.google.com/presentation/d/1v3L7ybdluWR1yj7_Udou-K8FjN8DwOG5BR2G4cmMSgM/edit?usp=sharing)
+
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
