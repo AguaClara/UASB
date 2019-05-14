@@ -19,7 +19,7 @@ Shania Fang (sf449)
 
 Emily Liu (ezl5)
 
-### UASB Research: 
+### UASB Research:
 
 Cara Smith (cjs354)
 
@@ -30,8 +30,12 @@ Rafael Heryapriadi (rh563)
 ## Semester Goals:
 In Spring 2019, UASB will be finalizing design of the UASB system and beginning fabrication of our first model. UASB Research will be doing benchtop tests to reduce preferential pathways, working on the influent design, and integrating the tipping bucket system worked on during Summer 2018 into the design. UASB Design will finish design of the UASB reactor, create a CAD model in OnShape, and begin fabrication Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
 
-### Spring 2019 
+### Spring 2019
 [UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
+
+[UASB Design Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_DESIGN_Spring_2019.md)
+
+UASB Design Final Presentation: [Video](https://www.youtube.com/watch?v=sZ9wlcc-yXY&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=23&t=0s) and [Google Slides](https://docs.google.com/presentation/d/1P3F15WcP30vQcYFH6DK1YQSL776x-BaFhh0F1n6Q7n8/edit?usp=sharing)
 
 [UASB Research Midway Sympsium Presentation](https://docs.google.com/presentation/d/16dHgmKHNWGlfNtnFJCDmcLqVt-cf6zIizj0rtyb3dFw/edit#slide=id.g543cdd4dd4_5_142)
 
