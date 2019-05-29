@@ -614,7 +614,7 @@ class UASBtest:
     return num
 
 
-test=UASBtest(pipe_diam=1*u.inch, lift=6*u.cm)
+test=UASBtest(pipe_diam=1*u.inch, lift=5*u.cm)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height', 'Lift', ],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height, test.lift]}
 
