@@ -468,7 +468,7 @@ class UASBtest:
           time_dump = 2* u.s, #NOTE: get better value with actual testing, this is a rough estimate
           UASB_diameter = 10 * u.inch,
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
-          HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
+          HRT = 6 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 10 * u.m/u.hr, #target up flow velocity to fluidize sludge blanket
           diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
@@ -478,7 +478,7 @@ class UASBtest:
           diam_sludge_granules = .5 * u.mm, #this is the lower end of range of diameters for sludge, goes up to 3 mm https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070658/ so this would correspond to a slower setting particle
           rho_sludge= 1383 * u.g/u.L, #density of sludge granules. source:https://www.ijsr.net/archive/v4i4/SUB153022.pdf
           rho_water=1 *u.g/u.mL,
-          lift= 6*u.cm, #to make sure that lift height is significant
+          lift= 10*u.cm, #to make sure that lift height is significant
           effluent_pipe_diameter=1*u.inch,
           tippingbucket_diameter=6.25 * u.inch
 
@@ -550,8 +550,8 @@ class UASBtest:
 
   @property
   def water_level_height(self):
-    """This function determines the height of the water level in the reactor. The water level is supposed to be in line with the bottom of the drain pipe and the drain pipe is attached directly to the holding tank, so the water level is equal to the length of the drain pipe subtracted from the total height of the clear PVC pipe that serves as the UASB reactor"""
-    #NOTE: how much "safety" do we want here?
+    """This function determines the height of the water level in the reactor. The water level is supposed to be in line with the bottom of the drain pipe"""
+    #NOTE: how much "safety" do we want here? also, are
     return self.UASB_height
 
   @property
@@ -613,11 +613,11 @@ class UASBtest:
     """This function estimates the height of the pivots on the tipping bucket, so that the bucket will dump at desired volume"""
     return (self.vol_dump/pc.area_circle(self.tippingbucket_diameter)).to(u.inch)
 
-test=UASBtest(pipe_diam=1*u.inch, lift=5*u.cm)
-data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Drain Pipe', 'Diameter Drain Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
+test=UASBtest(pipe_diam=1.5*u.inch, lift=6*u.cm)
+data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Pulse Pipe', 'Diameter Pulse Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height, test.lift, test.pivot_height]}
 
-
+print((test.upflow_vel_avg).to(u.mm/u.s))
 df=pd.DataFrame(data)
 print(df)
 
