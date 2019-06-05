@@ -37,7 +37,7 @@ In Spring 2019, UASB will be finalizing design of the UASB system and beginning 
 
 UASB Design Final Presentation: [Video](https://www.youtube.com/watch?v=sZ9wlcc-yXY&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=23&t=0s) and [Google Slides](https://docs.google.com/presentation/d/1P3F15WcP30vQcYFH6DK1YQSL776x-BaFhh0F1n6Q7n8/edit?usp=sharing)
 
-[UASB Research Midway Sympsium Presentation](https://docs.google.com/presentation/d/16dHgmKHNWGlfNtnFJCDmcLqVt-cf6zIizj0rtyb3dFw/edit#slide=id.g543cdd4dd4_5_142)
+[UASB Research Midway Symposium Presentation](https://docs.google.com/presentation/d/16dHgmKHNWGlfNtnFJCDmcLqVt-cf6zIizj0rtyb3dFw/edit#slide=id.g543cdd4dd4_5_142)
 
 [UASB Research Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_RESEARCH_Spring_2019%20_Final_Report.md)
 
