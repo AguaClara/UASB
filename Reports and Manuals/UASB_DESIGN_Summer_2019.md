@@ -23,9 +23,9 @@ class UASBtest:
           time_dump = 2* u.s, #NOTE: get better value with actual testing, this is a rough estimate
           UASB_diameter = 10 * u.inch,
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
-          HRT = 6 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
+          HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 10 * u.m/u.hr, #target up flow velocity to fluidize sludge blanket
-          diameter_pulse_pipe = 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+          diameter_pulse_pipe = 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -162,7 +162,7 @@ class UASBtest:
   @property
   def num_people_served(self):
     """This function estimates the number of people that could be served by a UASB reactor of this size"""
-    num=self.ww_gen_rate/self.flow_rate_avg
+    num=self.flow_rate_avg/self.ww_gen_rate
     num=num.to(u.dimensionless)
     return num
 
@@ -191,15 +191,17 @@ class UASBtest:
     #KWH = Biogas / (700 * u.L/u.kwh) #Kilowatt Hours generated from biogas used
 
 
-test=UASBtest(pipe_diam=1.5*u.inch, lift=6*u.cm)
+test=UASBtest(pipe_diam=1.5*u.inch, lift=5*u.cm)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Pulse Pipe', 'Diameter Pulse Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_pulse_pipe, test.diameter_pulse_pipe, test.water_level_height, test.lift, test.pivot_height]}
 
-
-df=pd.DataFrame(data)
+print((test.vol_dump).to(u.L))
+#df=pd.DataFrame(data)
 #print(df)
 print(test.biogas_produced_rate)
 
 print(test.biogas_produced_rate_2)
 
 print((test.Energy_Production).to(u.kJ/u.day))
+
+print(test.num_people_served)
