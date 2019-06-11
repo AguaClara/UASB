@@ -1,6 +1,6 @@
 
 ## UASB Design, Spring 2019
-By Nina Blahut, Shania Fang,  Emily Liu, Kanha Matai, Cara Smith
+By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
 June 11, 2019
 
 ## Abstract
@@ -11,14 +11,24 @@ June 11, 2019
 
 ## Methods
 
+Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the tipping bucket to get the proper pulse volume. To make that determination, the team began testing how much water collected in the tipping bucket before dumping over with different pivot positions.
+
+The 
+
+The team has started on tipping bucket testing to determine pivot positions to get
+
 ## Design Manual
 
 So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
 
-1. To attach the 1 inch influent to the 
 
 
+1. Attach the 1 1/2" influent pipe to the 10" PVC **add specific location for hole**. Drill a 2" hole into the 10" PVC using a drill saw. Cut a ~add length~ of 1 1/2" PVC pipe. Role the 10" PVC pipe onto its side and apply primer to the 1 3/4" hole and the 1 1/2" PVC pipe. Insert the 1 1/2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the pipe. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
 
+2. Attach the 1 1/2" sludge weir to the 10" PVC pipe. First, drill an ellipse into the 10" PVC pipe. **add specific location for hole** Start by drilling a 1/4" hole at a 60 degree angle in the 10" canister. Then, attach a 1' long 1/4" rod to the drill saw with a 2" drill saw bit. Use the 1/4" hole as a guide to drill a 2" hole at a 60 degree angle.
+(Materials: Drill saw, 1' long 1/4" rod, protractor, primer, PVC cement)
+
+3. Drill two holes on opposite ends of the tipping bucket. Attach rods to each (Materials: 2 gallon plastic bucket, ...)
 
 ```python
 import aguaclara.core.head_loss as minorloss
