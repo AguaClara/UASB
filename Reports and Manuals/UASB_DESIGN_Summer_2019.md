@@ -34,6 +34,37 @@ Trial 3:
 Trial 2:
 
 
+## UASB Design, Spring 2019
+By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
+June 11, 2019
+
+## Abstract
+
+## Introduction
+
+## Literature Review and Previous Work
+
+## Methods
+
+Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the tipping bucket to get the proper pulse volume. To make that determination, the team began testing how much water collected in the tipping bucket before dumping over with different pivot positions.
+
+The 
+
+The team has started on tipping bucket testing to determine pivot positions to get
+
+## Design Manual
+
+So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
+
+
+
+1. Attach the 1 1/2" influent pipe to the 10" PVC **add specific location for hole**. Drill a 2" hole into the 10" PVC using a drill saw. Cut a ~add length~ of 1 1/2" PVC pipe. Role the 10" PVC pipe onto its side and apply primer to the 1 3/4" hole and the 1 1/2" PVC pipe. Insert the 1 1/2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the pipe. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
+
+2. Attach the 1 1/2" sludge weir to the 10" PVC pipe. First, drill an ellipse into the 10" PVC pipe. **add specific location for hole** Start by drilling a 1/4" hole at a 60 degree angle in the 10" canister. Then, attach a 1' long 1/4" rod to the drill saw with a 2" drill saw bit. Use the 1/4" hole as a guide to drill a 2" hole at a 60 degree angle.
+(Materials: Drill saw, 1' long 1/4" rod, protractor, primer, PVC cement)
+
+3. Drill two holes on opposite ends of the tipping bucket. Attach rods to each (Materials: 2 gallon plastic bucket, ...)
+
 ```python
 import aguaclara.core.head_loss as minorloss
 from aguaclara.core.units import unit_registry as u
@@ -58,9 +89,13 @@ class UASBtest:
           time_dump = 2* u.s, #NOTE: get better value with actual testing, this is a rough estimate
           UASB_diameter = 10 * u.inch,
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
-          HRT = 6 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
+          HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 10 * u.m/u.hr, #target up flow velocity to fluidize sludge blanket
+<<<<<<< HEAD
           diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+=======
+          diameter_pulse_pipe = 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+>>>>>>> 1697410529cd249fa510f8fb5760900c93854cdd
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -194,7 +229,7 @@ class UASBtest:
   @property
   def num_people_served(self):
     """This function estimates the number of people that could be served by a UASB reactor of this size"""
-    num=self.ww_gen_rate/self.flow_rate_avg
+    num=self.flow_rate_avg/self.ww_gen_rate
     num=num.to(u.dimensionless)
     return num
 
@@ -203,6 +238,7 @@ class UASBtest:
     """This function estimates the height of the pivots on the tipping bucket, so that the bucket will dump at desired volume"""
     return (self.vol_dump/pc.area_circle(self.tippingbucket_diameter)).to(u.inch)
 
+<<<<<<< HEAD
 test=UASBtest(pipe_diam=1.5*u.inch, lift=10*u.cm)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Pulse Pipe', 'Diameter Pulse Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height, test.lift, test.pivot_height]}
@@ -211,6 +247,42 @@ print((test.upflow_vel_avg).to(u.mm/u.s))
 df=pd.DataFrame(data)
 print(df)
 
+=======
+  @property
+  def biogas_produced_rate(self):
+    """This function estimates the amount of biogas that will be produced by the reactor """
+    COD=self.influent_BOD/.6
+    COD_rem = COD * .7 #Assuming .5% efficency of COD removal and conversion in reactor
+    BGMax = (COD_rem * 0.378 * self.flow_rate_avg * (u.ml/u.mg)).to(u.L/u.day) #Theoretical Production, from Fall 2014 UASB team report
+    BGMin = (COD_rem * 0.06 * self.flow_rate_avg * (u.ml/u.mg)).to(u.L/u.day)  #Production using minimum value from Van Lier report
+    BGAvg = (COD_rem * 0.16 * self.flow_rate_avg * (u.ml/u.mg)).to(u.L/u.day)#Production using average value from Spring 2014 tests
+    return [BGMax, BGAvg, BGMin]
+
+  @property
+  def biogas_produced_rate_2(self):  
+    return (self.flow_rate_avg/10).to(u.L/u.day)
+
+  @property
+  def Energy_Production(self):    
+    return (self.biogas_produced_rate_2 / (700 * (u.L/(u.kW*u.hr))))  #Hours of stove usage, given minimum efficency
+    #KWH = Biogas / (700 * u.L/u.kwh) #Kilowatt Hours generated from biogas used
 
 
+test=UASBtest(pipe_diam=1.5*u.inch, lift=5*u.cm)
+data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Pulse Pipe', 'Diameter Pulse Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
+       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_pulse_pipe, test.diameter_pulse_pipe, test.water_level_height, test.lift, test.pivot_height]}
+
+print((test.vol_dump).to(u.L))
+#df=pd.DataFrame(data)
+#print(df)
+print(test.biogas_produced_rate)
+>>>>>>> 1697410529cd249fa510f8fb5760900c93854cdd
+
+
+<<<<<<< HEAD
 ```
+=======
+print((test.Energy_Production).to(u.kJ/u.day))
+
+print(test.num_people_served)
+>>>>>>> 1697410529cd249fa510f8fb5760900c93854cdd
