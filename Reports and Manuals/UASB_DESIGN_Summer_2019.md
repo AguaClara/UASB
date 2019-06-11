@@ -1,4 +1,25 @@
 
+## UASB Design, Spring 2019
+By Nina Blahut, Shania Fang,  Emily Liu, Kanha Matai, Cara Smith
+June 11, 2019
+
+## Abstract
+
+## Introduction
+
+## Literature Review and Previous Work
+
+## Methods
+
+## Design Manual
+
+So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
+
+1. To attach the 1 inch influent to the 
+
+
+
+
 ```python
 import aguaclara.core.head_loss as minorloss
 from aguaclara.core.units import unit_registry as u
