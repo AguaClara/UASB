@@ -1,3 +1,38 @@
+Goals for tipping bucket trial:
+1. Figure out pivot points for the 1 gallon bucket to pour when the water level within the bucket reaches 2.5 L.
+2. Figure out pivot points for the 2 gallon bucket to pour when the water level within the bucket reaches 5 L.
+3.
+
+For our first tipping bucket test during the Summer of 2019, the team decided to drill directly into the bucket.
+1/4"-20 Plastic Bolt
+
+Bucket Trial
+**Table 1. Summer 2019 1 Gallon Tipping Bucket Trial Results**
+| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely| Problems |
+| -------- | ----------------|--------------- | ---------| -------|------|
+| 1    | 0.5  | 0 | 1.5 | yes | bucket would not stay straight when it contained no water |
+| 2 | 0.5 | 2 | x | x | does not tip|
+|3   | 1 | 1 | 1.8 | x | would not tip out completely |
+|4   | 1 | 2 | x |  x | does not tip |
+|5   | 1 | 1  | 2 | yes | x |
+| 6  | 1 | 1 | 2 | yes | x |
+|7   |  |  |  |  |  |
+Trial 3:
+2.2L caused the bucket to tip
+.4L left inside the bucket
+
+**Table 2. Summer 2019 2 Gallon Tipping Bucket Trial Results**
+| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely| Problems |
+| -------- | ----------------|--------------- | ---------| -------|------|
+| 1    | 1 | 1 | 2 | x | would not tip completely |
+| 2 | 1 | 1 | 4.6 | yes | x |
+|3   | 1 | 1 | 4.35 | yes | x |
+|4   | 1 | 2 | x |  x | does not tip |
+|5   | 0.75 |  18.5 |  22 | 15.56  | yes |
+| 6  |   0.75|   15.5|  22 | 15.56  | yes  |
+|7   |  0.5 |  15.5 | 23  | 16.26  | yes |
+Trial 2:
+
 
 ```python
 import aguaclara.core.head_loss as minorloss
@@ -25,7 +60,7 @@ class UASBtest:
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 6 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 10 * u.m/u.hr, #target up flow velocity to fluidize sludge blanket
-          diameter_pulse_pipe = 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -35,9 +70,7 @@ class UASBtest:
           rho_water=1 *u.g/u.mL,
           lift= 10*u.cm, #to make sure that lift height is significant
           effluent_pipe_diameter=1*u.inch,
-          tippingbucket_diameter=6.25 * u.inch,
-          influent_BOD= 152.0476 * u.mg/u.L, #the average BOD concentration at the IAWWTF from the dates: 11/18 to 2/19
-          COD_removal=.5 #assume 50% COD removal rate for biogas
+          tippingbucket_diameter=6.25 * u.inch
 
 ):
       """Instantiate a UASB object, representing a real UASB component.
@@ -68,7 +101,7 @@ class UASBtest:
       self.UASB_diameter = pipes.ID_sch40(UASB_diameter)
       self.HRT = HRT
       self.target_upflow_vel=target_upflow_vel
-      self.diameter_pulse_pipe=pipes.ID_sch40(diameter_pulse_pipe)
+      self.diameter_drain_pipe=pipes.ID_sch40(diameter_drain_pipe)
       self.descending_sewage_vel=descending_sewage_vel
       self.percent_sluge=percent_sludge
       self.UASB_height=UASB_height
@@ -76,8 +109,7 @@ class UASBtest:
       self.ww_gen_rate=ww_gen_rate
       self.lift=lift
       self.tippingbucket_diameter=tippingbucket_diameter
-      self.influent_BOD=influent_BOD
-      self.COD_removal=COD_removal
+
   @property
   def UASB_area(self):
     """This function calculates the surface area of the UASB canister """
@@ -90,25 +122,25 @@ class UASBtest:
     return vol
 
   @property
-  def area_pulse_pipe(self):
-    area=pc.area_circle(self.diameter_pulse_pipe)
+  def area_drain_pipe(self):
+    area=pc.area_circle(self.diameter_drain_pipe)
     return area
 
   @property
   def HG_per_dump(self):
-    """This function calculates the head gain per dump, assuming that the water level in the canister is in line with the bottom of the "pulse pipe" that connects the holding tank to the 1 inch influent pipe """
-    HG=self.vol_dump/self.area_pulse_pipe
+    """This function calculates the head gain per dump, assuming that the water level in the canister is in line with the bottom of the "drain pipe" that connects the holding tank to the 1 inch influent pipe """
+    HG=self.vol_dump/self.area_drain_pipe
     return HG
 
   @property
-  def length_pulse_pipe(self):
-    """This function calculates the length of the pulse pipe necessary so that the volume of 1 dump from the tipping bucket fills the pulse pipe"""
+  def length_drain_pipe(self):
+    """This function calculates the length of the drain pipe necessary so that the volume of 1 dump from the tipping bucket fills the drain pipe"""
     h=(self.HG_per_dump).to(u.inch)
     return h  
 
   @property
   def water_level_height(self):
-    """This function determines the height of the water level in the reactor. The water level is supposed to be in line with the bottom of the pulse pipe"""
+    """This function determines the height of the water level in the reactor. The water level is supposed to be in line with the bottom of the drain pipe"""
     #NOTE: how much "safety" do we want here? also, are
     return self.UASB_height
 
@@ -141,7 +173,7 @@ class UASBtest:
     """This function calculates how long it takes for a dump from the tipping bucket to drain into the tank, assuming that the bottom of the drain pipe (which connects the 1.5 inch pipe to the holding tank) is in line with the water level in the canister and does not begin draining out until the dump is complete. Note that this time should be approximately the same as the time it takes for the tipping bucket to fill up/fast enough to produce desired up flow velocity in the tank"""
     #NOTE: should we include minor loss from holding tank to drain tank, or assume water just starts from drain tank
     #NOTE: drain time also might drastically underestimate actual drain time, since all the water from the tipping bucket won't necessarily go straight into the drain pipe from the tipping bucket, but could linger around the bottom of the holding tank.  
-    time = 8*self.area_pulse_pipe/(np.pi*(self.pipe_diam)**2)*(self.HG_per_dump*self.aggregate_k/(2*pc.gravity))**(1/2)
+    time = 8*self.area_drain_pipe/(np.pi*(self.pipe_diam)**2)*(self.HG_per_dump*self.aggregate_k/(2*pc.gravity))**(1/2)
     return time    
 
 
@@ -171,35 +203,14 @@ class UASBtest:
     """This function estimates the height of the pivots on the tipping bucket, so that the bucket will dump at desired volume"""
     return (self.vol_dump/pc.area_circle(self.tippingbucket_diameter)).to(u.inch)
 
-  @property
-  def biogas_produced_rate(self):
-    """This function estimates the amount of biogas that will be produced by the reactor """
-    COD=self.influent_BOD/.6
-    COD_rem = COD * .7 #Assuming .5% efficency of COD removal and conversion in reactor
-    BGMax = (COD_rem * 0.378 * self.flow_rate_avg * (u.ml/u.mg)).to(u.L/u.day) #Theoretical Production, from Fall 2014 UASB team report
-    BGMin = (COD_rem * 0.06 * self.flow_rate_avg * (u.ml/u.mg)).to(u.L/u.day)  #Production using minimum value from Van Lier report
-    BGAvg = (COD_rem * 0.16 * self.flow_rate_avg * (u.ml/u.mg)).to(u.L/u.day)#Production using average value from Spring 2014 tests
-    return [BGMax, BGAvg, BGMin]
-
-  @property
-  def biogas_produced_rate_2(self):  
-    return (self.flow_rate_avg/10).to(u.L/u.day)
-
-  @property
-  def Energy_Production(self):    
-    return (self.biogas_produced_rate_2 / (700 * (u.L/(u.kW*u.hr))))  #Hours of stove usage, given minimum efficency
-    #KWH = Biogas / (700 * u.L/u.kwh) #Kilowatt Hours generated from biogas used
-
-
-test=UASBtest(pipe_diam=1.5*u.inch, lift=6*u.cm)
+test=UASBtest(pipe_diam=1.5*u.inch, lift=10*u.cm)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Pulse Pipe', 'Diameter Pulse Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
-       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_pulse_pipe, test.diameter_pulse_pipe, test.water_level_height, test.lift, test.pivot_height]}
+       'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height, test.lift, test.pivot_height]}
 
-
+print((test.upflow_vel_avg).to(u.mm/u.s))
 df=pd.DataFrame(data)
-#print(df)
-print(test.biogas_produced_rate)
+print(df)
 
-print(test.biogas_produced_rate_2)
 
-print((test.Energy_Production).to(u.kJ/u.day))
+
+```
