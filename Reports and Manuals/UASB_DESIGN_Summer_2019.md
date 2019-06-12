@@ -15,24 +15,30 @@ Bucket Trial
 |3   | 1 | 1 | 1.8 | x | would not tip out completely |
 |4   | 1 | 2 | x |  x | does not tip |
 |5   | 1 | 1  | 2 | yes | x |
-| 6  | 1 | 1 | 2 | yes | x |
-|7   |  |  |  |  |  |
+| 6 | 1 | 1 | 2 | yes | x |
+|7  | 1 | 1 | 2.3 | yes | x |
+| 8 | 1 | 2 | x | x | does not tip |
+|9 | 
+
 Trial 3:
 2.2L caused the bucket to tip
 .4L left inside the bucket
+Trial 7: new brackets, no zip ties, continuous pouring method
 
 **Table 2. Summer 2019 2 Gallon Tipping Bucket Trial Results**
 | Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely| Problems |
 | -------- | ----------------|--------------- | ---------| -------|------|
-| 1    | 1 | 1 | 2 | x | would not tip completely |
+| 1    | 1 | 1 | 2 | x | does not tip completely |
 | 2 | 1 | 1 | 4.6 | yes | x |
 |3   | 1 | 1 | 4.35 | yes | x |
-|4   | 1 | 2 | x |  x | does not tip |
-|5   | 0.75 |  18.5 |  22 | 15.56  | yes |
-| 6  |   0.75|   15.5|  22 | 15.56  | yes  |
-|7   |  0.5 |  15.5 | 23  | 16.26  | yes |
-Trial 2:
-
+|4   | 1 | 1.5 | 4 |  x | does not tip completely |
+|5   | 1 |  1.5 |  4.5 | x  | does not tip completely |
+| 6  | 1 | 1 | 5 | yes | x |
+|7   | 1 | 1 | 4.4 | yes | x |
+|8   | 1 | 1.5 | 4.8 | no | does not tip completely |
+| 9  | 1.25 | 1.5 |   |   |   |
+Trial 5: started using new brackets and took off zip ties that were used to support the brackets, continuous pouring method
+Trial 6: started using wall reinforcements made out of HDPE around the pivot points
 
 ## UASB Design, Spring 2019
 By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
@@ -48,7 +54,7 @@ June 11, 2019
 
 Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the tipping bucket to get the proper pulse volume. To make that determination, the team began testing how much water collected in the tipping bucket before dumping over with different pivot positions.
 
-The 
+The
 
 The team has started on tipping bucket testing to determine pivot positions to get
 
@@ -56,8 +62,10 @@ The team has started on tipping bucket testing to determine pivot positions to g
 
 So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
 
+### Tipping Bucket Influent System
 
 
+### Reactor Body
 1. Attach the 1 1/2" influent pipe to the 10" PVC **add specific location for hole**. Drill a 2" hole into the 10" PVC using a drill saw. Cut a ~add length~ of 1 1/2" PVC pipe. Role the 10" PVC pipe onto its side and apply primer to the 1 3/4" hole and the 1 1/2" PVC pipe. Insert the 1 1/2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the pipe. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
 
 2. Attach the 1 1/2" sludge weir to the 10" PVC pipe. First, drill an ellipse into the 10" PVC pipe. **add specific location for hole** Start by drilling a 1/4" hole at a 60 degree angle in the 10" canister. Then, attach a 1' long 1/4" rod to the drill saw with a 2" drill saw bit. Use the 1/4" hole as a guide to drill a 2" hole at a 60 degree angle.
