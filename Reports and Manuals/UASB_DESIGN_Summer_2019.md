@@ -18,8 +18,9 @@ Bucket Trial
 | 6 | 1 | 1 | 2 | yes | x |
 |7  | 1 | 1 | 2.3 | yes | x |
 | 8 | 1 | 2 | x | x | does not tip |
-|9 | 
-
+|9 | 0.75 | 1 | 2.5 | yes | x |
+|10 | 0.75 |1 | 2.6 | yes | x |
+|
 Trial 3:
 2.2L caused the bucket to tip
 .4L left inside the bucket
@@ -36,7 +37,13 @@ Trial 7: new brackets, no zip ties, continuous pouring method
 | 6  | 1 | 1 | 5 | yes | x |
 |7   | 1 | 1 | 4.4 | yes | x |
 |8   | 1 | 1.5 | 4.8 | no | does not tip completely |
-| 9  | 1.25 | 1.5 |   |   |   |
+| 9  | 1.5 | 1.5 | 2  | no  | does not tip completely |
+| 10 | 0.75 | 1 | 4.6 | no | does not tip completely |
+| 11 | 1.25 | 1.5 | 3.8 | no | does not tip completely |
+| 12 | 1.25 | 1.5 | 3.8 | no | does not tip compeltely |
+| 13 | 1.25 | 1.25 | 4.5 | yes | x|
+|14| 1 | 1.25 | 4.9 | yes | x |
+|15| 1 | 1.25 |
 Trial 5: started using new brackets and took off zip ties that were used to support the brackets, continuous pouring method
 Trial 6: started using wall reinforcements made out of HDPE around the pivot points
 
