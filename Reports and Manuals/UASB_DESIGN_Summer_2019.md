@@ -106,11 +106,7 @@ class UASBtest:
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 10 * u.m/u.hr, #target up flow velocity to fluidize sludge blanket
-<<<<<<< HEAD
-          diameter_drain_pipe= 3 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
-=======
           diameter_pulse_pipe = 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
->>>>>>> 1697410529cd249fa510f8fb5760900c93854cdd
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -253,7 +249,7 @@ class UASBtest:
     """This function estimates the height of the pivots on the tipping bucket, so that the bucket will dump at desired volume"""
     return (self.vol_dump/pc.area_circle(self.tippingbucket_diameter)).to(u.inch)
 
-<<<<<<< HEAD
+
 test=UASBtest(pipe_diam=1.5*u.inch, lift=10*u.cm)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Pulse Pipe', 'Diameter Pulse Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height, test.lift, test.pivot_height]}
@@ -291,13 +287,7 @@ print((test.vol_dump).to(u.L))
 #df=pd.DataFrame(data)
 #print(df)
 print(test.biogas_produced_rate)
->>>>>>> 1697410529cd249fa510f8fb5760900c93854cdd
 
-
-<<<<<<< HEAD
-```
-=======
 print((test.Energy_Production).to(u.kJ/u.day))
 
 print(test.num_people_served)
->>>>>>> 1697410529cd249fa510f8fb5760900c93854cdd
