@@ -29,23 +29,28 @@ Trial 7: new brackets, no zip ties, continuous pouring method
 **Table 2. Summer 2019 2 Gallon Tipping Bucket Trial Results**
 | Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely| Problems |
 | -------- | ----------------|--------------- | ---------| -------|------|
-| 1    | 1 | 1 | 2 | x | does not tip completely |
-| 2 | 1 | 1 | 4.6 | yes | x |
-|3   | 1 | 1 | 4.35 | yes | x |
-|4   | 1 | 1.5 | 4 |  x | does not tip completely |
-|5   | 1 |  1.5 |  4.5 | x  | does not tip completely |
-| 6  | 1 | 1 | 5 | yes | x |
-|7   | 1 | 1 | 4.4 | yes | x |
-|8   | 1 | 1.5 | 4.8 | no | does not tip completely |
-| 9  | 1.5 | 1.5 | 2  | no  | does not tip completely |
-| 10 | 0.75 | 1 | 4.6 | no | does not tip completely |
-| 11 | 1.25 | 1.5 | 3.8 | no | does not tip completely |
-| 12 | 1.25 | 1.5 | 3.8 | no | does not tip compeltely |
-| 13 | 1.25 | 1.25 | 4.5 | yes | x|
+|1| 1 | 1 | 2 | x | does not tip completely |
+|2| 1 | 1 | 4.6 | yes | x |
+|3| 1 | 1 | 4.35 | yes | x |
+|4| 1 | 1.5 | 4 |  x | does not tip completely |
+|5| 1 |  1.5 |  4.5 | x  | does not tip completely |
+|6| 1 | 1 | 5 | yes | x |
+|7| 1 | 1 | 4.4 | yes | x |
+|8| 1 | 1.5 | 4.8 | no | does not tip completely |
+|9| 1.5 | 1.5 | 2  | no  | does not tip completely |
+|10| 0.75 | 1 | 4.6 | no | does not tip completely |
+|11| 1.25 | 1.5 | 3.8 | no | does not tip completely |
+|12| 1.25 | 1.5 | 3.8 | no | does not tip compeltely |
+|13| 1.25 | 1.25 | 4.5 | yes | x|
 |14| 1 | 1.25 | 4.9 | yes | x |
-|15| 1 | 1.25 |
+|15| 1 | 1.25 | 4.6 | yes | does not tip completely |
+|16| 1 | 1.25 | 4.6 |  |  |
+
+Trial 1: bucket not properly placed on pivots, pivots stopped the rotation
 Trial 5: started using new brackets and took off zip ties that were used to support the brackets, continuous pouring method
 Trial 6: started using wall reinforcements made out of HDPE around the pivot points
+Trial 14: drilled holes very close to each other, may have affected outcome
+
 
 ## UASB Design, Spring 2019
 By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
