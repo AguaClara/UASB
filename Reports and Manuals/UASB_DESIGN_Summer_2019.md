@@ -1,6 +1,6 @@
-## UASB Design, Spring 2019
-By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
-June 28, 2019
+# UASB Design, Spring 2019
+### By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
+#### June 28, 2019
 
 ## Abstract
 
