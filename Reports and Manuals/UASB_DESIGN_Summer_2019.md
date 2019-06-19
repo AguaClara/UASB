@@ -1,60 +1,6 @@
-Goals for tipping bucket trial:
-1. Figure out pivot points for the 1 gallon bucket to pour when the water level within the bucket reaches 2.5 L.
-2. Figure out pivot points for the 2 gallon bucket to pour when the water level within the bucket reaches 5 L.
-3.
-
-For our first tipping bucket test during the Summer of 2019, the team decided to drill directly into the bucket.
-1/4"-20 Plastic Bolt
-
-Bucket Trial
-**Table 1. Summer 2019 1 Gallon Tipping Bucket Trial Results**
-| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely| Problems |
-| -------- | ----------------|--------------- | ---------| -------|------|
-| 1    | 0.5  | 0 | 1.5 | yes | bucket would not stay straight when it contained no water |
-| 2 | 0.5 | 2 | x | x | does not tip|
-|3   | 1 | 1 | 1.8 | x | would not tip out completely |
-|4   | 1 | 2 | x |  x | does not tip |
-|5   | 1 | 1  | 2 | yes | x |
-| 6 | 1 | 1 | 2 | yes | x |
-|7  | 1 | 1 | 2.3 | yes | x |
-| 8 | 1 | 2 | x | x | does not tip |
-|9 | 0.75 | 1 | 2.5 | yes | x |
-|10 | 0.75 |1 | 2.6 | yes | x |
-|
-Trial 3:
-2.2L caused the bucket to tip
-.4L left inside the bucket
-Trial 7: new brackets, no zip ties, continuous pouring method
-
-**Table 2. Summer 2019 2 Gallon Tipping Bucket Trial Results**
-| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely| Problems |
-| -------- | ----------------|--------------- | ---------| -------|------|
-|1| 1 | 1 | 2 | x | does not tip completely |
-|2| 1 | 1 | 4.6 | yes | x |
-|3| 1 | 1 | 4.35 | yes | x |
-|4| 1 | 1.5 | 4 |  x | does not tip completely |
-|5| 1 |  1.5 |  4.5 | x  | does not tip completely |
-|6| 1 | 1 | 5 | yes | x |
-|7| 1 | 1 | 4.4 | yes | x |
-|8| 1 | 1.5 | 4.8 | no | does not tip completely |
-|9| 1.5 | 1.5 | 2  | no  | does not tip completely |
-|10| 0.75 | 1 | 4.6 | no | does not tip completely |
-|11| 1.25 | 1.5 | 3.8 | no | does not tip completely |
-|12| 1.25 | 1.5 | 3.8 | no | does not tip compeltely |
-|13| 1.25 | 1.25 | 4.5 | yes | x|
-|14| 1 | 1.25 | 4.9 | yes | x |
-|15| 1 | 1.25 | 4.6 | yes | does not tip completely |
-|16| 1 | 1.25 | 4.6 |  |  |
-
-Trial 1: bucket not properly placed on pivots, pivots stopped the rotation
-Trial 5: started using new brackets and took off zip ties that were used to support the brackets, continuous pouring method
-Trial 6: started using wall reinforcements made out of HDPE around the pivot points
-Trial 14: drilled holes very close to each other, may have affected outcome
-
-
 ## UASB Design, Spring 2019
 By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
-June 11, 2019
+June 28, 2019
 
 ## Abstract
 
@@ -63,19 +9,87 @@ June 11, 2019
 ## Literature Review and Previous Work
 
 ## Methods
+Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the sides of the tipping bucket to get the proper pulse volume. The team has begun testing for pivot positions on a 1 gallon (or 3.8 L) bucket for 5 cm of lift and on a 2 gallon bucket (or 7.6 L) bucket for 10 cm of lift. According to the python calculations, 2.5 L of water is needed to create 5 cm of lift and 5 L of water is needed to create 10 cm of lift.
 
-Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the tipping bucket to get the proper pulse volume. To make that determination, the team began testing how much water collected in the tipping bucket before dumping over with different pivot positions.
+[insert picture of tipping bucket diagram, include pivots]
 
-The
+The previous Summer 2018 team had created a frame for the tipping bucket to rest in. Since then, in order to decrease cost and increase convenience during testing various, the team will not use a frame to hold the tipping bucket and will use a rectangular bucket with pivots screwed directly onto the sides of the bucket where there are the holes for the tested pivot positions instead.
 
-The team has started on tipping bucket testing to determine pivot positions to get
+[insert picture of previous team's tipping bucket]
+
+Goals for tipping bucket trial:
+1. Figure out pivot points for the 1 gallon bucket to pour when the water level within the bucket reaches 2.5 L.
+2. Figure out pivot points for the 2 gallon bucket to pour when the water level within the bucket reaches 5 L.
+3. Adjust design and materials to ensure support and decrease the speed in which materials wear down.
+
+1/4"-20 Plastic Bolt
+
+Bucket Trial
+**Table 1. Summer 2019 1 Gallon Tipping Bucket Trial Results**
+| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely|
+| -------- | ----------------|--------------- | ---------| -------|------|
+| 1    | 0.5  | 0 | 1.5 | yes |
+| 2 | 0.5 | 2 | x | x |
+|3   | 1 | 1 | 1.8 | x |
+|4   | 1 | 2 | x |  x |
+|5   | 1 | 1  | 2 | yes |
+| 6 | 1 | 1 | 2 | yes |
+|7  | 1 | 1 | 2.3 | yes |
+| 8 | 1 | 2 | x | x |
+|9 | 0.75 | 1 | 2.5 | yes |
+|10 | 0.75 |1 | 2.6 | yes |
+| 11 | 0.75 | 1 | 2.45 | yes |
+
+Trial 7: new brackets, no zip ties, continuous pouring method
+Trial 11: final test with wall reinforcements and new pivots
+
+**Table 2. Summer 2019 2 Gallon Tipping Bucket Trial Results**
+| Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely|
+| -------- | ----------------|--------------- | ---------| -------|------|
+|1| 1 | 1 | 2 | x |
+|2| 1 | 1 | 4.6 | yes |
+|3| 1 | 1 | 4.35 | yes |
+|4| 1 | 1.5 | 4 |  x |
+|5| 1 |  1.5 |  4.5 | x  |
+|6| 1 | 1 | 5 | yes |
+|7| 1 | 1 | 4.4 | yes |
+|8| 1 | 1.5 | 4.8 | no |
+|9| 1.5 | 1.5 | 2  | no  |
+|10| 0.75 | 1 | 4.6 | no |
+|11| 1.25 | 1.5 | 3.8 | no |
+|12| 1.25 | 1.5 | 3.8 | no |
+|13| 1.25 | 1.25 | 4.5 | yes |
+|14| 1 | 1.25 | 4.9 | yes |
+|15| 1 | 1.25 | 4.6 | yes |
+|16| 1 | 1.25 | 4.6 | yes |
+|17| 1 |1.25 | 4.7 | yes |
+|18| 1.25 | 1.25 | 4.5 | yes |
+|19| 1.25 | 1.25 | 4.6 | yes |
+|20| 1 | 1 | 4.4 | yes |
+|21| 0.75 | 1 | 4.9 | yes |
+|22| 0.75 | 1 | 4.9 | yes |
+Trial 1: bucket not properly placed on pivots, pivots stopped the rotation
+Trial 5: started using new brackets and took off zip ties that were used to support the brackets, continuous pouring method
+Trial 6: started using wall reinforcements made out of HDPE around the pivot points
+Trial 14: drilled holes very close to each other, may have affected outcome
+Trial 17: started using new pivots
 
 ## Design Manual
 
 So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
 
 ### Tipping Bucket Influent System
+Materials:
+| Item               | Dimensions                  | Rough Cost | Link to Item                                                        |
+| ------------------ | --------------------------- | ---------- | ------------------------------------------------------------------- |
+| LLDPE Plastic Tank | 18" x 12" x 18"             | $88.57      | https://www.usplastic.com/catalog/item.aspx?itemid=125824 |
+| LDPE Welding Rod  | 5/32" Diameter, 135ft       | $10.61        | https://www.mcmaster.com/#7889a38/=1djicjq                          |
+| LDPE Plastic Sheet | 6" x 12" x 1.5"             | $40        | https://www.mcmaster.com/#8657k337/=1djix0x                         |
+| 6.25 Gallon Bucket | 12" Diameter, 17" Height    | $7         | https://www.mcmaster.com/#4269T75                                   |
+| 12" Hose Clamp     | 12" Diameter, 1.25 cm Width | $7         | https://www.mcmaster.com/#5011t44/=1dhug64                          |
+| PVC Rod            | 1.5" Diameter, 1' Length    | $5         | https://www.mcmaster.com/#8745k22/=1dhzna2                          |
 
+1. Drill a hole using a 1/4 drill bit and
 
 ### Reactor Body
 1. Attach the 1 1/2" influent pipe to the 10" PVC **add specific location for hole**. Drill a 2" hole into the 10" PVC using a drill saw. Cut a ~add length~ of 1 1/2" PVC pipe. Role the 10" PVC pipe onto its side and apply primer to the 1 3/4" hole and the 1 1/2" PVC pipe. Insert the 1 1/2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the pipe. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
@@ -111,7 +125,7 @@ class UASBtest:
           UASB_height = 8 * u.ft, #this height refers to the height of the pipe that is used to make the UASB canister, NOT the water level in the UASB.
           HRT = 4 * u.hr, #minimum HRT of wastewater in reactor for adequate treatment NOTE: some studies have shown 6 hrs is optimal
           target_upflow_vel= 10 * u.m/u.hr, #target up flow velocity to fluidize sludge blanket
-          diameter_pulse_pipe = 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
+          diameter_drain_pipe = 4 * u.inch, #diameter of the pipe that connects the holding tank to influent pipe ( 3 inches was chosen so that the area was similar to that of one section in drain tank in previous design.)
           descending_sewage_vel= .2 * u.m/u.s, #Maximum velocity that will allow air bubbles to rise out of reactor. Must only be achieved in beginning of influent pipe systems, not throughout.
           ww_gen_rate = 10.8 * u.L/u.hr, #Wastewater Generation per Person
           angle_sludge_weir=60*u.degrees, #angle of sludge weir
@@ -255,7 +269,7 @@ class UASBtest:
     return (self.vol_dump/pc.area_circle(self.tippingbucket_diameter)).to(u.inch)
 
 
-test=UASBtest(pipe_diam=1.5*u.inch, lift=10*u.cm)
+test=UASBtest(pipe_diam=1.5*u.inch, lift=5*u.cm)
 data ={'UASB element':['Diameter Canister', 'Diameter Influent Pipe', 'Number of Elbows in Influent', 'Average Up flow Pulse Velocity', 'Tipping Bucket Dump Volume', 'Length Pulse Pipe', 'Diameter Pulse Pipe', 'Water Level Height', 'Lift', 'Pivot Height' ],
        'Measurement': [test.UASB_diameter, test.pipe_diam, test.n_elbows, (test.upflow_velocity_pulse_average).to(u.mm/u.s), test.vol_dump.to(u.gal), test.length_drain_pipe, test.diameter_drain_pipe, test.water_level_height, test.lift, test.pivot_height]}
 
@@ -263,7 +277,6 @@ print((test.upflow_vel_avg).to(u.mm/u.s))
 df=pd.DataFrame(data)
 print(df)
 
-=======
   @property
   def biogas_produced_rate(self):
     """This function estimates the amount of biogas that will be produced by the reactor """
