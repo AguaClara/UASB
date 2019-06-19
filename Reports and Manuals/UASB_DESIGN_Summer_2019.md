@@ -13,83 +13,98 @@ Since the team will be testing various lifts in the UASB reactor ranging from 1 
 
 [insert picture of tipping bucket diagram, include pivots]
 
-The previous Summer 2018 team had created a frame for the tipping bucket to rest in. Since then, in order to decrease cost and increase convenience during testing various, the team will not use a frame to hold the tipping bucket and will use a rectangular bucket with pivots screwed directly onto the sides of the bucket where there are the holes for the tested pivot positions instead.
+The previous Summer 2018 team had created a frame for the tipping bucket to rest in. However, in order to decrease cost and increase convenience during testing, the team will not use a frame to hold the tipping bucket and will use a rectangular bucket with pivots screwed directly onto the sides of the bucket where there are the holes for the tested pivot positions instead.
 
 [insert picture of previous team's tipping bucket]
 
 Goals for tipping bucket trial:
 1. Figure out pivot points for the 1 gallon bucket to pour when the water level within the bucket reaches 2.5 L.
 2. Figure out pivot points for the 2 gallon bucket to pour when the water level within the bucket reaches 5 L.
-3. Adjust design and materials to ensure support and decrease the speed in which materials wear down.
+3. Adjust design and materials for additional support and stability and decrease the speed in which materials wear down.
 
-1/4"-20 Plastic Bolt
 
-Bucket Trial
+
+*Trials with asterisks indicate adjustments made during trials that are mentioned below the tables.*
+
 **Table 1. Summer 2019 1 Gallon Tipping Bucket Trial Results**
 | Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely|
 | -------- | ----------------|--------------- | ---------| -------|------|
 | 1    | 0.5  | 0 | 1.5 | yes |
-| 2 | 0.5 | 2 | x | x |
+| 2 | 0.5 | 2 | 0 | x |
 |3   | 1 | 1 | 1.8 | x |
 |4   | 1 | 2 | x |  x |
 |5   | 1 | 1  | 2 | yes |
 | 6 | 1 | 1 | 2 | yes |
-|7  | 1 | 1 | 2.3 | yes |
+|*7  | 1 | 1 | 2.3 | yes |
 | 8 | 1 | 2 | x | x |
 |9 | 0.75 | 1 | 2.5 | yes |
 |10 | 0.75 |1 | 2.6 | yes |
-| 11 | 0.75 | 1 | 2.45 | yes |
+| ***11** | 0.75 | 1 | 2.45 | yes |
 
-Trial 7: new brackets, no zip ties, continuous pouring method
-Trial 11: final test with wall reinforcements and new pivots
+**Trial 7:** new brackets made for 1 inch pivots, no zip ties, continuous pouring method
+**Trial 11:** final test with wall reinforcements and new pivots
 
 **Table 2. Summer 2019 2 Gallon Tipping Bucket Trial Results**
 | Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely|
 | -------- | ----------------|--------------- | ---------| -------|------|
-|1| 1 | 1 | 2 | x |
-|2| 1 | 1 | 4.6 | yes |
-|3| 1 | 1 | 4.35 | yes |
-|4| 1 | 1.5 | 4 |  x |
-|5| 1 |  1.5 |  4.5 | x  |
-|6| 1 | 1 | 5 | yes |
-|7| 1 | 1 | 4.4 | yes |
-|8| 1 | 1.5 | 4.8 | no |
-|9| 1.5 | 1.5 | 2  | no  |
-|10| 0.75 | 1 | 4.6 | no |
+|1| 1 | 1 | 4.6 | yes |
+|2| 1 | 1 | 4.35 | yes |
+|3| 1 | 1.5 | 4 |  x |
+|*4| 1 |  1.5 |  4.5 | x  |
+|*5| 1 | 1 | 5 | yes |
+|6| 1 | 1 | 4.4 | yes |
+|7| 1 | 1.5 | 4.8 | no |
+|8| 1.5 | 1.5 | 2  | no  |
+|9| 0.75 | 1 | 4.6 | no |
+|10| 1.25 | 1.5 | 3.8 | no |
 |11| 1.25 | 1.5 | 3.8 | no |
-|12| 1.25 | 1.5 | 3.8 | no |
-|13| 1.25 | 1.25 | 4.5 | yes |
-|14| 1 | 1.25 | 4.9 | yes |
-|15| 1 | 1.25 | 4.6 | yes |
-|16| 1 | 1.25 | 4.6 | yes |
-|17| 1 |1.25 | 4.7 | yes |
-|18| 1.25 | 1.25 | 4.5 | yes |
-|19| 1.25 | 1.25 | 4.6 | yes |
-|20| 1 | 1 | 4.4 | yes |
-|21| 0.75 | 1 | 4.9 | yes |
-|22| 0.75 | 1 | 4.9 | yes |
-Trial 1: bucket not properly placed on pivots, pivots stopped the rotation
-Trial 5: started using new brackets and took off zip ties that were used to support the brackets, continuous pouring method
-Trial 6: started using wall reinforcements made out of HDPE around the pivot points
-Trial 14: drilled holes very close to each other, may have affected outcome
-Trial 17: started using new pivots
+|12| 1.25 | 1.25 | 4.5 | yes |
+|13| 1 | 1.25 | 4.6 | yes |
+|14| 1 | 1.25 | 4.6 | yes |
+|*15| 1 |1.25 | 4.7 | yes |
+|16| 1.25 | 1.25 | 4.5 | yes |
+|17| 1.25 | 1.25 | 4.6 | yes |
+|18| 1 | 1 | 4.4 | yes |
+|19| 0.75 | 1 | 4.9 | yes |
+|**20**| 0.75 | 1 | 4.9 | yes |
+**Trial 4:** started using new brackets made for 1 inch pivots, continuous pouring method
+**Trial 5:** started using wall reinforcements made out of HDPE around the pivot points
+**Trial 15:** started using new pivots
 
 ## Design Manual
 
 So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
 
 ### Tipping Bucket Influent System
-Materials:
-| Item               | Dimensions                  | Rough Cost | Link to Item                                                        |
-| ------------------ | --------------------------- | ---------- | ------------------------------------------------------------------- |
-| LLDPE Plastic Tank | 18" x 12" x 18"             | $88.57      | https://www.usplastic.com/catalog/item.aspx?itemid=125824 |
-| LDPE Welding Rod  | 5/32" Diameter, 135ft       | $10.61        | https://www.mcmaster.com/#7889a38/=1djicjq                          |
-| LDPE Plastic Sheet | 6" x 12" x 1.5"             | $40        | https://www.mcmaster.com/#8657k337/=1djix0x                         |
-| 6.25 Gallon Bucket | 12" Diameter, 17" Height    | $7         | https://www.mcmaster.com/#4269T75                                   |
-| 12" Hose Clamp     | 12" Diameter, 1.25 cm Width | $7         | https://www.mcmaster.com/#5011t44/=1dhug64                          |
-| PVC Rod            | 1.5" Diameter, 1' Length    | $5         | https://www.mcmaster.com/#8745k22/=1dhzna2                          |
+####Materials:
+| Item                                                           | Dimensions                     |  Cost            | Link to Item                                                                                                                             |
+| -------------------------------------------------------------- | ------------------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| LLDPE Plastic Tank                                             | 18" x 12" x 18"                | $88.57                | https://www.usplastic.com/catalog/item.aspx?itemid=125824                                                                                |
+| LDPE Welding Rod                                               | 5/32" Diameter, 135ft          | $10.61                | https://www.mcmaster.com/#7889a38/=1djicjq                                                                                               |
+| LDPE Plastic Sheet                                             | 6" x 12" x 1.5"                | $34.94                | https://www.mcmaster.com/#8657k337/=1djix0x                                                                                              |
+| 1 Gallon Rectangular Bucket **or** 2 Gallon Rectangular Bucket |                                | $$2.48$  **or** $4.09 | https://www.usplastic.com/catalog/item.aspx?itemid=123948&catid= **or** https://www.usplastic.com/catalog/item.aspx?itemid=123949&catid= |
+| Fully Threaded PVC Plastic Hex Head Screw                      | 1/4"-20 Thread Size, 3/4" Long | $8.64                 | https://www.mcmaster.com/95841a540                                                                                                       |
+| PVC Rod                                                        | 1" Diameter, 1' Length         | $5.83                 | https://www.mcmaster.com/87025K39                                                                                                        |
+| HDPE Sheet                                                               |                                |                       |                                                                                                                                          |
 
-1. Drill a hole using a 1/4 drill bit and
+####Tools Used:
+- Power drill
+  - 1/4" drill bit
+- Mill
+  - 7/32" drill bit
+- tap wrench
+  - 1/4"-20 tap
+- Welding Kit
+- Band Saw
+
+####Procedure:
+1. Measure and mark where the middle of the bucket is on both sides of the bucket with the largest surface area.
+2. Make a mark 0.75 cm horizontally from the center and 1 cm above the center on each side of the bucket. Make sure that the marks are aligned.
+3. Use a power drill and 1/4" drill bit to create a hole on the off-centered marks drawn in the previous step.
+4. Cut two pivots from the PVC rod with a band saw to appropriate size to fit within the LLDPE plastic tank
+5. Using a mill and a 7/32" drill bit, drill a hole into the middle one of the flat sides of each pivot.
+6. 
+
 
 ### Reactor Body
 1. Attach the 1 1/2" influent pipe to the 10" PVC **add specific location for hole**. Drill a 2" hole into the 10" PVC using a drill saw. Cut a ~add length~ of 1 1/2" PVC pipe. Role the 10" PVC pipe onto its side and apply primer to the 1 3/4" hole and the 1 1/2" PVC pipe. Insert the 1 1/2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the pipe. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
