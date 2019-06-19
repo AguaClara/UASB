@@ -2,11 +2,85 @@
 ### By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
 #### June 28, 2019
 
+## Table of Contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+  - [Abstract](#abstract)
+  - [Introduction](#introduction)
+  - [Literature Review and Previous Work](#literature-review-and-previous-work)
+  - [Timeline of UASB](#timeline-of-uasb)
+      - [Summer 2016](#summer-2016)
+      - [2016](#fall-2016)
+      - [Spring 2017](#spring-2017)
+      - [Summer 2017](#summer-2017)
+      - [Fall 2017](#fall-2017)
+      - [Spring 2018](#spring-2018)
+      - [Summer 2018](#summer-2018)
+      - [Fall 2018](#fall-2018)
+      - [Spring 2019](#spring-2019)
+  - [Summer 2019 Goals](#spring-2019-goals)
+  - [Methods](#methods)
+  - [Design Manual](#design-manual)
+      - [Tipping Bucket Influent System](#tipping-bucket-influent-system)
+      - [Reactor Body](#reactor-body)
+  - [Conclusion: Future Work](#future-work)
+- [EPA Funding Assurance](#epa-funding-assurance)
+
 ## Abstract
 
 ## Introduction
 
 ## Literature Review and Previous Work
+
+## Timeline of UASB
+#### Summer 2016
+The UASB team was formed in the Summer of 2016. At that point, the objective of the team was to design and implement a functional lab-scale UASB reactor to treat synthetic blackwater. Blackwater is wastewater from toilets; synthetic blackwater is a mixture of proteins, lipids and starches mixed together (usually with a few other chemicals as well; recipes for synthetic wastewater vary) In the summer of 2016, the UASB team constructed four small-scale UASB reactors and found that those small-scale reactors could successfully treat synthetic wastewater. The team also found that increased wastewater concentration and higher residence times resulted in higher biogas removal and increased Chemical Oxygen Demand (COD) removal.
+
+#### Fall 2016
+In the fall of 2016, the UASB team underwent several changes. First, the team altered the design of the small-scale UASB reactors by implementing shorter and narrower influent lines. The team also changed the synthetic wastewater recipe. More specifically, the team substituted glucose with insoluble carbon compounds. The team also researched retention time in the reactors with fluoride tracer tests, and found a HRT of 3.22 hours in one of the reactors (close to the target of 4 hours).
+
+#### Spring 2017
+During the spring of 2017, the team worked on assessing the efficiency of two modifications to the UASB reactor: plate settlers and the submerged gas collection lid. After conducting granule settling tests, the team was unable to conclude whether or not plate settlers significantly improve solid retention time. The team also conducted a Submerged Gas Capture Lid Test and concluded that a check valve would be useful to allow for continuous collection into a gas tank without loss of biogas.
+
+#### Summer 2017
+In the summer of 2017, the UASB team continued with similar research and testing to that of the Spring 2017 semester. This time, the team determined that large, bulky plate settlers were not required for a full scale reactor. Instead, a smaller settling apparatus, such as a sloped exit weir, can achieve similar sludge retention time(SRT).
+
+#### Fall 2017
+During the fall of 2017, the UASB team made several strides. Firstly, the team settled on the critical design assumptions for the fabrication of a UASB reactor at the Ithaca Area Wastewater Treatment Facility (IAWWTF). The critical design assumptions were as follows: a reactor diameter of 3 feet, a reactor height of 7 feet, a 4 hour hydraulic residence time, and a flow rate of .036 L/s. The  team also designed a biogas capture lid. In this system, as biogas is produced in the reactor, it displaces water out from under the lid. Gas is then stored there until it is manually removed.
+
+The team also wrote Python calculations in Jupyter notebook (available on GitHub) to estimate biogas production based on COD input.
+
+Next, the team decided to add plate settlers back to the effluent tube. Plate settlers are intended to prevent dislodged granules from escaping the reactor. The fall 2017 team also worked on designing a sludge weir for the UASB reactor.
+
+#### Spring 2018
+UASB continued efforts to improve the design of the pilot-scale UASB reactor in Spring 2018. A major area of focus was the influent flow system. After extensive research, the team chose top influent flow - where the wastewater flows down the inlet pipe until it reaches the bottom of tank -  in order to prevent clogs. Next, the team decided to incorporate pulse flow into the reactor to achieve the desired flow of .03 L/s. The team proposed two methods to produce pulse flow: a tipping bucket design and a siphon.
+
+UASB also worked on biogas production. The team wrote code to estimate the COD concentration of influent and the temperature of the reactor, as well as the biogas production rate based on the flow rate through the reactor. The team decided on a gas bag system to store biogas as it is flexible, easy to connect to the reactor, affordable, and easily transported. The team also wrote code to determine the required volume and dimensions for the lid of the biogas system. The team also looked into a fats, oils and greases (FOG) removal system. The conclusion was that manual skimming of FOG could always be used as a backup option.
+
+Next, the team developed the design for the pilot UASB reactor's sludge sampling and removal system. For the sludge weir, the team chose a tube with a 6 inch diameter jutting out of the reactor at the predicted height of the sludge blanket at a downwards angle with two valves.
+
+Lastly, the team wrote code to calculate the optimal size of the pilot UASB reactor's tube settler, the number of plates required, and the overall height of the settling arm.
+
+#### Summer 2018
+The summer team continued work on the hydraulic design of the UASB system.  The major design project was creating the tipping bucket system to deliver wastewater in pulses. The system consists of a pivoting bucket which fills with wastewater before tipping and delivering the wastewater in a large pulse at a high flow rate. After brainstorming the idea, the team designed and tested models to determine optimal design and flow rates for the system. The team also continued developing code for the entire system, and made a Computer Aided Design (CAD) [model of the UASB reactor](https://cornell47.autodesk360.com/g/shares/SH7f1edQT22b515c761e1224485004ae7e44?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0IBOAEx4GYeAFgBsAWgBMjAGY8xQgKwTxjLl3H8A7KoBGEABwQd-IZrQBfEAF0gA) using Fusion 360.
+
+#### Fall 2018 (SHORTEN This)
+
+  During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules were not readily available, and the team thought that using them in the early testing stages would be wasteful, the team decided to use tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways are the uneven distribution of wastewater flow throughout the reactor; the presence of these make the UASB reactor less efficient.
+
+  The benchtop model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC). The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
+
+  The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” traveled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer. The team then came up with the idea of spreading the inlet flow by drilling four holes on the inlet tube near the bottom to decrease the preferential paths, but it was not completed by the end of 2018.
+
+  Afterwards, UASB tried to use a photometer to more accurately depict how the water was flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube was changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration.
+
+The team then tried to use chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
+
+#### Spring 2019
+
+## Summer 2019 Goals
 
 ## Methods
 Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the sides of the tipping bucket to get the proper pulse volume. The team has begun testing for pivot positions on a 1 gallon (or 3.8 L) bucket for 5 cm of lift and on a 2 gallon bucket (or 7.6 L) bucket for 10 cm of lift. According to the python calculations, 2.5 L of water is needed to create 5 cm of lift and 5 L of water is needed to create 10 cm of lift.
@@ -76,7 +150,7 @@ Goals for tipping bucket trial:
 So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
 
 ### Tipping Bucket Influent System
-####Materials:
+#### Materials:
 | Item                                                           | Dimensions                     |  Cost            | Link to Item                                                                                                                             |
 | -------------------------------------------------------------- | ------------------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | LLDPE Plastic Tank                                             | 18" x 12" x 18"                | $88.57                | https://www.usplastic.com/catalog/item.aspx?itemid=125824                                                                                |
@@ -87,7 +161,7 @@ So far the team has only began practicing fabrication to develop best practices 
 | PVC Rod                                                        | 1" Diameter, 1' Length         | $5.83                 | https://www.mcmaster.com/87025K39                                                                                                        |
 | HDPE Sheet                                                               |                                |                       |                                                                                                                                          |
 
-####Tools Used:
+#### Tools Used:
 - Power drill
   - 1/4" drill bit
 - Mill
@@ -97,7 +171,7 @@ So far the team has only began practicing fabrication to develop best practices 
 - Welding Kit
 - Band Saw
 
-####Procedure:
+#### Procedure:
 1. Measure and mark where the middle of the bucket is on both sides of the bucket with the largest surface area.
 2. Make a mark 0.75 cm horizontally from the center and 1 cm above the center on each side of the bucket. Make sure that the marks are aligned.
 3. Use a power drill and 1/4" drill bit to create a hole on the off-centered marks drawn in the previous step.
@@ -324,3 +398,4 @@ print(test.biogas_produced_rate)
 print((test.Energy_Production).to(u.kJ/u.day))
 
 print(test.num_people_served)
+
