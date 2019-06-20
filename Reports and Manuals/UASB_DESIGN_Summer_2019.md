@@ -25,7 +25,8 @@
   - [Design Manual](#design-manual)
       - [Tipping Bucket Influent System](#tipping-bucket-influent-system)
       - [Reactor Body](#reactor-body)
-  - [Conclusion: Future Work](#future-work)
+  - [2019 TechConnect](#2019-techconnect)
+  - [Future Work](#future-work)
 - [EPA Funding Assurance](#epa-funding-assurance)
 
 ## Abstract
@@ -41,12 +42,8 @@ The UASB team was formed in the Summer of 2016. At that point, the objective of 
 #### Fall 2016
 In the fall of 2016, the UASB team underwent several changes. First, the team altered the design of the small-scale UASB reactors by implementing shorter and narrower influent lines. The team also changed the synthetic wastewater recipe. More specifically, the team substituted glucose with insoluble carbon compounds. The team also researched retention time in the reactors with fluoride tracer tests, and found a HRT of 3.22 hours in one of the reactors (close to the target of 4 hours).
 
-<<<<<<< HEAD
-The
-=======
 #### Spring 2017
 During the spring of 2017, the team worked on assessing the efficiency of two modifications to the UASB reactor: plate settlers and the submerged gas collection lid. After conducting granule settling tests, the team was unable to conclude whether or not plate settlers significantly improve solid retention time. The team also conducted a Submerged Gas Capture Lid Test and concluded that a check valve would be useful to allow for continuous collection into a gas tank without loss of biogas.
->>>>>>> bde1f4e98ac1c9c6341e9bc6483ea73647feba55
 
 #### Summer 2017
 In the summer of 2017, the UASB team continued with similar research and testing to that of the Spring 2017 semester. This time, the team determined that large, bulky plate settlers were not required for a full scale reactor. Instead, a smaller settling apparatus, such as a sloped exit weir, can achieve similar sludge retention time(SRT).
@@ -70,21 +67,22 @@ Lastly, the team wrote code to calculate the optimal size of the pilot UASB reac
 #### Summer 2018
 The summer team continued work on the hydraulic design of the UASB system.  The major design project was creating the tipping bucket system to deliver wastewater in pulses. The system consists of a pivoting bucket which fills with wastewater before tipping and delivering the wastewater in a large pulse at a high flow rate. After brainstorming the idea, the team designed and tested models to determine optimal design and flow rates for the system. The team also continued developing code for the entire system, and made a Computer Aided Design (CAD) [model of the UASB reactor](https://cornell47.autodesk360.com/g/shares/SH7f1edQT22b515c761e1224485004ae7e44?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0IBOAEx4GYeAFgBsAWgBMjAGY8xQgKwTxjLl3H8A7KoBGEABwQd-IZrQBfEAF0gA) using Fusion 360.
 
-#### Fall 2018 (SHORTEN This)
+#### Fall 2018
 
-  During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules were not readily available, and the team thought that using them in the early testing stages would be wasteful, the team decided to use tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways are the uneven distribution of wastewater flow throughout the reactor; the presence of these make the UASB reactor less efficient.
+  During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules were not readily available, the team decided used tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways are the uneven distribution of wastewater flow throughout the reactor; the presence of these make the UASB reactor less efficient.
 
-  The benchtop model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC). The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths. It was suggested to use a second pump for inputting the dye in the future for more accurate testing.
+  The bench top model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC). The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths.
 
-  The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” traveled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer. The team then came up with the idea of spreading the inlet flow by drilling four holes on the inlet tube near the bottom to decrease the preferential paths, but it was not completed by the end of 2018.
-
-  Afterwards, UASB tried to use a photometer to more accurately depict how the water was flowing through the sludge blanket by measuring whether or not the red dye concentration in the effluent tube was changing as expected. However, the tapioca was not a suitable material because it was too cloudy for the photometer to measure the red dye concentration.
-
-The team then tried to use chia seeds instead of tapioca, which resulted in a worse scenario;  the chia seeds was too buoyant in water and prone to flowing out of the effluent. Ultimately the team used glass marbles  as the sludge blanket due to the time constrains. As predicted, this material was too heavy for the influent water to lift them and it was back to the drawing board.
+  The result of the testing shows that the layer of tapioca did not lift entirely off the bottom of the reactor, but instead it stretched as influent “wastewater” traveled through it. The red dye in the influent revealed the formation of preferential pathways through the tapioca layer.
 
 #### Spring 2019
 
+  During the Spring 2019 Semester, the team focused on completing a design for the UASB reactors that will be fabricated and tested at the IAWWTP. The team decided to make reactor canisters out of 10" diameter clear PVC pipe, so that multiple reactors could be tested at the IAWWTP to determine whether or not pulsated flow affects reactor efficiency. To design the reactors, the team made a python class to represent the hydraulics of the UASB reactors and made an onShape model of the reactors.
+
 ## Summer 2019 Goals
+
+  The main goal for the Summer 2019 is to complete the fabrication of the UASB reactors and get them up and running at the IAWWTP. The team must get develop fabrication skills and develop best practices for the assembly of the UASB reactors. Upon doing so, the team must order new materials to build its first reactor. Then, the team will install this reactor at the IAWWTP. The team will practice startup of a UASB reactor, hopefully with the assistance of sludge granules from another source. If that reactor is successful, the team will build more reactors to test different variables and install said reactors at the IAWWTP.
+
 
 ## Methods
 Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the sides of the tipping bucket to get the proper pulse volume. The team has begun testing for pivot positions on a 1 gallon (or 3.8 L) bucket for 5 cm of lift and on a 2 gallon bucket (or 7.6 L) bucket for 10 cm of lift. According to the python calculations, 2.5 L of water is needed to create 5 cm of lift and 5 L of water is needed to create 10 cm of lift.
@@ -176,21 +174,31 @@ So far the team has only began practicing fabrication to develop best practices 
 - Band Saw
 
 #### Procedure:
+
+##Tipping Bucket
 1. Measure and mark where the middle of the bucket is on both sides of the bucket with the largest surface area.
-2. Make a mark 0.75 cm horizontally from the center and 1 cm above the center on each side of the bucket. Make sure that the marks are aligned.
-3. Use a power drill and 1/4" drill bit to create a hole on the off-centered marks drawn in the previous step.
+2. Make a mark 0.75 cm horizontally from the center and 1 cm above the center on each side of the bucket. Make sure that the marks are aligned.(This is for the design, which creates 10 cm of lift per pulse in the reactor--see table for the appropriate pivot positions for different lifts)
+3. Use a power drill and 1/4" drill bit to drill a hole on the off-centered marks drawn in the previous step.
 4. Cut two pivots from the PVC rod with a band saw to appropriate size to fit within the LLDPE plastic tank
 5. Using a mill and a 7/32" drill bit, drill a hole into the middle one of the flat sides of each pivot.
-6. 
+6. Cut two squares of 2" by 2" HDPE 1/4" sheet to reinforce the tipping bucket.
+7. Use a 7/32" screw to secure the squares of HDPE sheet to the insides of bucket and the pivots to the outsides of the bucket.
+**add picture**
+8. Weld brackets to the inside of the LDPE holding tank. Make sure the brackets are positioned so that they are at the same height in the bucket and give the bucket enough space to tip over completely.
 
 
 ### Reactor Body
-1. Attach the 1 1/2" influent pipe to the 10" PVC **add specific location for hole**. Drill a 2" hole into the 10" PVC using a drill saw. Cut a ~add length~ of 1 1/2" PVC pipe. Role the 10" PVC pipe onto its side and apply primer to the 1 3/4" hole and the 1 1/2" PVC pipe. Insert the 1 1/2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the pipe. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
+1. Drill a 2 3/8" hole into the 10" PVC using a drill saw **add location for hole**.
 
-2. Attach the 1 1/2" sludge weir to the 10" PVC pipe. First, drill an ellipse into the 10" PVC pipe. **add specific location for hole** Start by drilling a 1/4" hole at a 60 degree angle in the 10" canister. Then, attach a 1' long 1/4" rod to the drill saw with a 2" drill saw bit. Use the 1/4" hole as a guide to drill a 2" hole at a 60 degree angle.
-(Materials: Drill saw, 1' long 1/4" rod, protractor, primer, PVC cement)
+2. Cut a 2" length of 2" PVC pipe.
 
-3. Drill two holes on opposite ends of the tipping bucket. Attach rods to each (Materials: 2 gallon plastic bucket, ...)
+3. Role the 10" PVC pipe onto its side and apply primer to the 2 3/8" hole and the 2" PVC pipe. Insert the 2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the new connection. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
+
+4. Drill a 1/4" hole at a 60 degree angle in the 10" canister **add a location for hole** using a jig. Then, attach a 1' long 1/4" rod to the drill saw with a 2 3/8" drill saw bit. Use the 1/4" hole as a guide to drill a 2 3/8" hole at a 60 degree angle.
+
+5. Cut a 2" length of 2" PVC pipe.
+
+6. Role the 10" PVC pipe onto its side and apply primer to the 2 3/8" ellipse and the 2" PVC pipe. Insert the 2" PVC pipe into the hole in the 10" pipe and apply PVC cement liberally to ensure that all of the gaps are filled. Use a clamp or block to support the new connection. Allow to dry completely for 24 hours. (Materials: 1 1/2" PVC pipe, 8' length of 10" PVC pipe, drill saw, primer, PVC cement)
 
 ```python
 import aguaclara.core.head_loss as minorloss
@@ -427,3 +435,14 @@ comment.append(comment.text)
 =======
 
 >>>>>>> bde1f4e98ac1c9c6341e9bc6483ea73647feba55
+
+## 2019 TechConnect
+
+UASB (along with fellow AguaClara subteam Ram Pump) was invited to the 2019 TechConnect World Innovation Conference & Expo as the result of winning the EPA P3 Phase II grant this spring. Members of the team presented the work done to develop gravity-powered wastewater treatment through the use of UASB reactors, as well as general information on AguaClara. View the poster presentation from the conference [here](https://github.com/AguaClara/UASB/blob/master/Posters%20and%20Presentations/2019%20TechConnect%20Conference%20Poster.pdf).
+
+## Future Work
+
+
+
+# EPA Funding Assurance
+This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
