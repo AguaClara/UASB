@@ -8,10 +8,9 @@ Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=http
 Ananya Gangadhar (ag757)
 
 ## Team Members:
-
-### UASB Design:
-
 Nina Blahut (nab238)
+
+Cara Smith (cjs354)
 
 Kanha Matai (km694)
 
@@ -19,16 +18,11 @@ Shania Fang (sf449)
 
 Emily Liu (ezl5)
 
-### UASB Research:
-
-Cara Smith (cjs354)
-
-Jahin Aishee (sta48)
-
-Rafael Heryapriadi (rh563)
-
 ## Semester Goals:
-In Spring 2019, UASB will be finalizing design of the UASB system and beginning fabrication of our first model. UASB Research will be doing benchtop tests to reduce preferential pathways, working on the influent design, and integrating the tipping bucket system worked on during Summer 2018 into the design. UASB Design will finish design of the UASB reactor, create a CAD model in OnShape, and begin fabrication Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
+In Summer 2019, the team will be fabricating six UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. This will let UASB know what modifications should be made to the design. The team will also be finalizing the tipping bucket design and implement it in the UASB reactor. UASB will then test whether the flow of influent wastewater should be pulsed (via the use of a tipping bucket) or continuous to make the reactor more efficient and decrease preferential pathways through the sludge blanket.
+
+## Links to Reports and Presentations
+Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
 ### Spring 2019
 [UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
@@ -42,10 +36,6 @@ UASB Design Final Presentation: [Video](https://www.youtube.com/watch?v=sZ9wlcc-
 [UASB Research Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_RESEARCH_Spring_2019%20_Final_Report.md)
 
 UASB Research Final Presentation: [Video](https://www.youtube.com/watch?v=50I-fLEMWSg&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=19&t=0s) and [Google Slides](https://docs.google.com/presentation/d/1v3L7ybdluWR1yj7_Udou-K8FjN8DwOG5BR2G4cmMSgM/edit?usp=sharing)
-
-
-## Links to Reports and Presentations
-Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
 ### Fall 2018
 [Symposium Presentation](https://docs.google.com/presentation/d/1w-d5YQ5Ck9oUmswyk0-IZ2s0v9SY-O7ztUVHQlB3yNs/edit#slide=id.g346a079b2f_0_0)
