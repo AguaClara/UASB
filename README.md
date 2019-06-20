@@ -8,10 +8,9 @@ Check out a CAD model of our UASB [here](https://www.google.com/url?hl=en&q=http
 Ananya Gangadhar (ag757)
 
 ## Team Members:
-
-### UASB Design:
-
 Nina Blahut (nab238)
+
+Cara Smith (cjs354)
 
 Kanha Matai (km694)
 
@@ -19,16 +18,9 @@ Shania Fang (sf449)
 
 Emily Liu (ezl5)
 
-### UASB Research:
-
-Cara Smith (cjs354)
-
-Jahin Aishee (sta48)
-
-Rafael Heryapriadi (rh563)
-
 ## Semester Goals:
-In Spring 2019, UASB will be finalizing design of the UASB system and beginning fabrication of our first model. UASB Research will be doing benchtop tests to reduce preferential pathways, working on the influent design, and integrating the tipping bucket system worked on during Summer 2018 into the design. UASB Design will finish design of the UASB reactor, create a CAD model in OnShape, and begin fabrication Once fabrication is complete, the system will be implemented at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection.
+In Summer 2019, the team will be fabricating six UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. This will let UASB know what modifications should be made to the design. The team will also be finalizing the tipping bucket design and implement it in the UASB reactor. UASB will then test whether the flow of influent wastewater should be pulsed (via the use of a tipping bucket) or continuous to make the reactor more efficient and decrease preferential pathways through the sludge blanket.
+
 
 ### Spring 2019
 [UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
