@@ -13,7 +13,7 @@ June 11, 2019
 
 Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the tipping bucket to get the proper pulse volume. To make that determination, the team began testing how much water collected in the tipping bucket before dumping over with different pivot positions.
 
-The 
+The
 
 The team has started on tipping bucket testing to determine pivot positions to get
 
@@ -43,6 +43,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+pipes.OD(2*u.inch)
+6/16
 pipes.ID_sch40(4*u.inch)
 class UASBtest:
   def __init__(
@@ -236,3 +238,22 @@ print(test.biogas_produced_rate_2)
 print((test.Energy_Production).to(u.kJ/u.day))
 
 print(test.num_people_served)
+```
+```Python
+from selenium import webdriver
+from BeautifulSoup import BeautifulSoup
+import pandas as pd
+
+driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
+
+comment=[] #List to store name of the product
+driver.get("https://twitter.com/search?q=elizabeth%20warren&src=typd")
+
+
+content = driver.page_source
+soup = BeautifulSoup(content)
+for a in soup.findAll('a',href=True, attrs={'class':'js-tweet-text-containter'}):
+  comment=a.find('div', attrs={'class':'_3wU53n'})
+
+comment.append(comment.text)
+```
