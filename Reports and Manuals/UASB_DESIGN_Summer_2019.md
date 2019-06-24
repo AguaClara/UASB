@@ -9,7 +9,7 @@
 
   - [Abstract](#abstract)
   - [Introduction](#introduction)
-  - [Literature Review](#literature-review-and-previous-work)
+  - [Literature Review and Previous Work](#literature-review-and-previous-work)
   - [Timeline of UASB](#timeline-of-uasb)
       - [Summer 2016](#summer-2016)
       - [2016](#fall-2016)
@@ -34,7 +34,7 @@
 ## Introduction
 
 
-## Literature Review
+## Literature Review and Previous Work
 According to [US Geological Survey](https://water.usgs.gov/edu/wuww.html) (USGS), wastewater is any kind of water used by humans. This used water may include dissolved fecal and urine matter, harmful chemicals, pathogens, and many more pollutants. Because it is full of contaminants, it's not longer safe for use. Since water is a universal solvent, it becomes difficult to separate the water from these harmful compounds. These compounds come from a variety of sources such as household wastes from toilets, sinks, baths, and drains or from factories, farming, schools, and urban runoff. As a result, billions of gallons of wastewater are produced and yet many areas in the world still lack access to wastewater treatment plants, thus making wastewater a global issue. Leaving wastewater untreated and releasing it directly back into the environment can produce devastating effects on both the environment and human health.
 
 Wastewater can also contain decaying organic matter and nutrients such as phosphorus and nitrogen which can cause eutrophication, a term for excess nutrients. Eutrophication then causes algae blooms, leading to oxygen-deprived conditions once the large amount of algae dies off and begins to decompose. This negatively impacts the ecosystem because the lack of oxygen makes it harder for aquatic life to survive. At high concentrations, these water pollutants and organic matter are killing marine birds, crustaceans, sea weeds, and many other organisms. Having too much nitrogen in water can also be dangerous for humans because it can cause methemoglobinemia (blue baby syndrome) by preventing normal uptake of oxygen in the blood.
@@ -217,7 +217,7 @@ So far the team has only began practicing fabrication to develop best practices 
     - 2 3/8" hole saw
   - PVC Cement
   - Jig and Shim
-  - 
+  -
 
 ####Procedure:
 1. Drill a 2 3/8" hole into the 10" PVC using a drill saw **add location for hole**.
