@@ -9,7 +9,7 @@
 
   - [Abstract](#abstract)
   - [Introduction](#introduction)
-  - [Literature Review and Previous Work](#literature-review-and-previous-work)
+  - [Literature Review](#literature-review-and-previous-work)
   - [Timeline of UASB](#timeline-of-uasb)
       - [Summer 2016](#summer-2016)
       - [2016](#fall-2016)
@@ -33,7 +33,19 @@
 
 ## Introduction
 
-## Literature Review and Previous Work
+
+## Literature Review
+According to [US Geological Survey](https://water.usgs.gov/edu/wuww.html) (USGS), wastewater is any kind of water used by humans. This used water may include dissolved fecal and urine matter, harmful chemicals, pathogens, and many more pollutants. Because it is full of contaminants, it's not longer safe for use. Since water is a universal solvent, it becomes difficult to separate the water from these harmful compounds. These compounds come from a variety of sources such as household wastes from toilets, sinks, baths, and drains or from factories, farming, schools, and urban runoff. As a result, billions of gallons of wastewater are produced and yet many areas in the world still lack access to wastewater treatment plants, thus making wastewater a global issue. Leaving wastewater untreated and releasing it directly back into the environment can produce devastating effects on both the environment and human health.
+
+Wastewater can also contain decaying organic matter and nutrients such as phosphorus and nitrogen which can cause eutrophication, a term for excess nutrients. Eutrophication then causes algae blooms, leading to oxygen-deprived conditions once the large amount of algae dies off and begins to decompose. This negatively impacts the ecosystem because the lack of oxygen makes it harder for aquatic life to survive. At high concentrations, these water pollutants and organic matter are killing marine birds, crustaceans, sea weeds, and many other organisms. Having too much nitrogen in water can also be dangerous for humans because it can cause methemoglobinemia (blue baby syndrome) by preventing normal uptake of oxygen in the blood.
+
+Human health is also directly affected by a lack of wastewater treatment. Much of untreated wastewater eventually ends up in our rivers, streams, and sometimes ground water. It is often assumed that groundwater is pure and clean; however, it is possible for groundwater to be contaminated by wastewater seeping into the ground. ([Catherine Taylor & Joseph Yahner, 1996](https://engineering.purdue.edu/~frankenb/NU-prowd/disease.htm)). When wastewater reaches drinking water sources, it can pose significant health risks for the community. Pathogens in wastewater destroy crop production, infecting the food supply, and cause water-borne diseases. Some of the many bacteria, viruses, and parasites present in wastewater include: cholera, typhoid, giardiasis and  cryptosporidiosis. ([Catherine Taylor & Joseph Yahner, 1996](https://engineering.purdue.edu/~frankenb/NU-prowd/disease.htm)). Health risks associated with wastewater includes respiratory disease, cancer, diarrheal disease, a neurological disorder, and cardiovascular disease ([Mehtab Haseena, 2017](http://www.alliedacademies.org/articles/water-pollution-and-human-health-7925.html)).
+
+Some of the biggest issues that wastewater treatment plants face today are energy consumption and environmental footprints. Wastewater facilities typically have treatment processes that include preliminary treatment, sedimentation, chlorination, and processing sludge which are all electrically and fuel powered ([AOS, 2018](https://aosts.com/how-much-energy-does-wastewater-treatment-plant-use/)). In 2018, there were about 14,748 wastewater treatment plants in the US and electricity accounts for 90-95% of the total energy consumed at these facilities while the rest is accounted by fuels such as oil or natural gas. ([University of Michigan, 2019](http://css.umich.edu/factsheets/us-wastewater-treatment-factsheet)). Wastewater Treatment plants end up using up about 3% of the nation’s total energy consumption ([MGOe, 2019](https://www.mge.com/saving-energy/business/bea/article_detail.htm?nid=%202431)). However, not all countries have access or can afford the same resources such as money, infrastructure, materials, and technology, which makes having universal wastewater treatment plants not feasible in many parts of the world, especially more rural and less developed areas.
+
+Traditional UASB reactors are used as a preliminary wastewater treatment process to remove suspended solids organic matter in wastewater (Chong et. al, 2012). UASB reactors, instead of using fuel or electricity, rely mainly on gravity and biological processes to remove organic matter and convert it to biogas. UASB stands for Upflow Anaerobic Sludge Blanket and a UASB reactor is a single tank process where wastewater enters the reactor and flows upward through a suspended sludge blanket. This suspended sludge blanket is made up of cultures of anaerobic microorganisms that filters and cleans wastewater by removing organic contaminants and pathogens. UASB reactors are highly efficient in treating high COD loads, biogas formation, and provide good stabilization of solids ([M.K. Daud, 2018](https://www.hindawi.com/journals/jchem/2018/1596319/)).They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a byproduct of anaerobic digestion which can be captured and used for energy production or heating. However, these UASB reactors still rely on electricity.
+
+AguaClara, on the other hand, has designed a UASB reactor that solely relies on gravity. It’s main function is to improve the accessibility and affordability of wastewater treatment for smaller communities that don’t have access to electricity. In January 2017, this gravity-powered UASB reactor was designed for the EPA People, Prosperity and the Planet (P3) Student Design Competition proposal. The proposed UASB reactor design focused on improving reactor design, making the system cheaper and easier to fabricate so that it could be created globally. The team later applied for Phase II funding from the same organization to support the development and implementation of additional reactors for testing and received a grant of $75,000.
 
 ## Timeline of UASB
 #### Summer 2016
@@ -69,7 +81,7 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
 #### Fall 2018
 
-  During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules were not readily available, the team decided used tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways are the uneven distribution of wastewater flow throughout the reactor; the presence of these make the UASB reactor less efficient.
+  During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules were not readily available, the team used tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways are the uneven distribution of wastewater flow throughout the reactor; the presence of these make the UASB reactor less efficient.
 
   The bench top model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC). The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths.
 
@@ -96,7 +108,7 @@ The previous Summer 2018 team had created a frame for the tipping bucket to rest
 Goals for tipping bucket trial:
 1. Figure out pivot points for the 1 gallon bucket to pour when the water level within the bucket reaches 2.5 L.
 2. Figure out pivot points for the 2 gallon bucket to pour when the water level within the bucket reaches 5 L.
-3. Adjust design and materials for additional support and stability and decrease the speed in which materials wear down.
+3. Adjust design and materials for additional support and stability to prevent materials from wearing down.
 
 
 
@@ -117,8 +129,8 @@ Goals for tipping bucket trial:
 |10 | 0.75 |1 | 2.6 | yes |
 | ***11** | 0.75 | 1 | 2.45 | yes |
 
-**Trial 7:** new brackets made for 1 inch pivots, no zip ties, continuous pouring method
-**Trial 11:** final test with wall reinforcements and new pivots
+**Trial 7:** new brackets made specifically for 1 inch pivots and continuous pouring method
+**Trial 11:** final test with wall reinforcements and new pivots made out of PVC instead of HDPE
 
 **Table 2. Summer 2019 2 Gallon Tipping Bucket Trial Results**
 | Trial | Horizontal Pivot Position (from center) (cm) | Vertical Position (from center) (cm)  | Volume Poured Out (L)| Emptied Completely|
@@ -145,7 +157,7 @@ Goals for tipping bucket trial:
 |**20**| 0.75 | 1 | 4.9 | yes |
 **Trial 4:** started using new brackets made for 1 inch pivots, continuous pouring method
 **Trial 5:** started using wall reinforcements made out of HDPE around the pivot points
-**Trial 15:** started using new pivots
+**Trial 15:** started using new pivots made from PVC instead of HDPE
 
 ## Design Manual
 
@@ -153,15 +165,15 @@ So far the team has only began practicing fabrication to develop best practices 
 
 ### Tipping Bucket Influent System
 #### Materials:
-| Item                                                           | Dimensions                     |  Cost            | Link to Item                                                                                                                             |
-| -------------------------------------------------------------- | ------------------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| LLDPE Plastic Tank                                             | 18" x 12" x 18"                | $88.57                | https://www.usplastic.com/catalog/item.aspx?itemid=125824                                                                                |
-| LDPE Welding Rod                                               | 5/32" Diameter, 135ft          | $10.61                | https://www.mcmaster.com/#7889a38/=1djicjq                                                                                               |
-| LDPE Plastic Sheet                                             | 6" x 12" x 1.5"                | $34.94                | https://www.mcmaster.com/#8657k337/=1djix0x                                                                                              |
-| 1 Gallon Rectangular Bucket **or** 2 Gallon Rectangular Bucket |                                | $$2.48$  **or** $4.09 | https://www.usplastic.com/catalog/item.aspx?itemid=123948&catid= **or** https://www.usplastic.com/catalog/item.aspx?itemid=123949&catid= |
-| Fully Threaded PVC Plastic Hex Head Screw                      | 1/4"-20 Thread Size, 3/4" Long | $8.64                 | https://www.mcmaster.com/95841a540                                                                                                       |
-| PVC Rod                                                        | 1" Diameter, 1' Length         | $5.83                 | https://www.mcmaster.com/87025K39                                                                                                        |
-| HDPE Sheet                                                               |                                |                       |                                                                                                                                          |
+| Item                                                           | Purpose | Dimensions                     |  Cost            | Link to Item                                                                                                                             |
+| -------------------------------------------------------------- |-------| ------------------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| LLDPE Plastic Tank                        | Holding Tank                     | 18" x 12" x 18"                | $88.57                | https://www.usplastic.com/catalog/item.aspx?itemid=125824                                                                                |
+| LDPE Welding Rod                         | Welding Brackets to the Holding Tank                      | 5/32" Diameter, 135ft          | $10.61                | https://www.mcmaster.com/#7889a38/=1djicjq                                                                                               |
+| LDPE Plastic Sheet           |Brackets                                  | 6" x 12" x 1.5"                | $34.94                | https://www.mcmaster.com/#8657k337/=1djix0x                                                                                              |
+| 1 Gallon Rectangular Bucket **or** 2 Gallon Rectangular Bucket |   Bucket    |   No dimensions specified                      | $$2.48$  **or** $4.09 | https://www.usplastic.com/catalog/item.aspx?itemid=123948&catid= **or** https://www.usplastic.com/catalog/item.aspx?itemid=123949&catid= |
+| Fully Threaded PVC Plastic Hex Head Screw         | Secures Pivots and Support to Bucket             | 1/4"-20 Thread Size, 3/4" Long | $8.64                 | https://www.mcmaster.com/95841a540                                                                                                       |
+| PVC Rod                                  | Pivots                      | 1" Diameter, 1' Length         | $5.83                 | https://www.mcmaster.com/87025K39                                                                                                        |
+| 1/4" HDPE Sheet  | Support for sides of Bucket                                                             |                                |                       |                                                                                                                                          |
 
 #### Tools Used:
 - Power drill
@@ -174,20 +186,40 @@ So far the team has only began practicing fabrication to develop best practices 
 - Band Saw
 
 #### Procedure:
-
-##Tipping Bucket
 1. Measure and mark where the middle of the bucket is on both sides of the bucket with the largest surface area.
-2. Make a mark 0.75 cm horizontally from the center and 1 cm above the center on each side of the bucket. Make sure that the marks are aligned.(This is for the design, which creates 10 cm of lift per pulse in the reactor--see table for the appropriate pivot positions for different lifts)
+2. Make a mark 0.75 cm horizontally from the center and 1 cm above the center on each side of the bucket. Make sure that the marks are aligned.
 3. Use a power drill and 1/4" drill bit to drill a hole on the off-centered marks drawn in the previous step.
 4. Cut two pivots from the PVC rod with a band saw to appropriate size to fit within the LLDPE plastic tank
-5. Using a mill and a 7/32" drill bit, drill a hole into the middle one of the flat sides of each pivot.
-6. Cut two squares of 2" by 2" HDPE 1/4" sheet to reinforce the tipping bucket.
-7. Use a 7/32" screw to secure the squares of HDPE sheet to the insides of bucket and the pivots to the outsides of the bucket.
+5. Using a mill and a 7/32" drill bit, drill a hole into the middle of one of the flat sides of each pivot.
+6. Use a band saw to cut two squares of 2" by 2" HDPE 1/4" sheet to reinforce the sides of the tipping bucket.
+7. Drill a 1/4" hole into the middle of both squares.
+8. Use a 1/4"-20 plastic screw to secure the squares of HDPE sheet to the insides of bucket and the pivots to the outsides of the bucket.
 **add picture**
-8. Weld brackets to the inside of the LDPE holding tank. Make sure the brackets are positioned so that they are at the same height in the bucket and give the bucket enough space to tip over completely.
+9. Cut a 1" x 2" rectangle from the LDPE Plastic Sheet to create brackets.
+10. Weld brackets to the inside of the LDPE holding tank. Make sure the brackets are positioned so that they are at the same height in the tank and give the bucket enough space to tip over completely.
 
 
 ### Reactor Body
+
+#### Materials:
+| Item                                                           | Purpose | Dimensions                     |  Cost            | Link to Item                                                                                                                             |
+| -------------------------------------------------------------- |-------| ------------------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 10" Clear PVC Pipe                       | Reactor Body             | 10" diameter, 8' height               | $760.70                | https://www.mcmaster.com/49035k97                                                                               |
+| 2" PVC Pipe                        |                 | 2" diameter, 5' height          | $10.80                | https://www.mcmaster.com/48925K96                                                                                               |
+|Two 10" flanges          |                                 | 10" diameter              | $125.08                | https://www.pvcfittingsonline.com/854-100-10-schedule-80-pvc-molded-flange.html                                                        |
+|Two Bolt Kits|   Secure Flanges to the PVC Pipe    |   Bolts: 8" x 5" Long                      | $161.60 | https://www.pvcfittingsonline.com/10bk-10-bolt-kit-for-flange-to-flange-stainless-steel.html |
+| Two 10" Gaskets       | Creates water tight seal between pipe and flanges    | 10" diameter | $31.50                 | https://www.pvcfittingsonline.com/155g1258ff150-8-full-faced-epdm-gasket-6950.html                                                                                       |
+| Two 10" Blind Flanges                                 |                      | 10"   diameter      | $387.12                 | https://www.pvcfittingsonline.com/10-schedule-80-pvc-blind-flange-853-100.html                                                                                   |
+| Four Leveling Stands  |                                                             |                     4" Long 7/8"-9 Threaded Stud           |             $151.00          |                                                                 https://www.mcmaster.com/6111k249          |
+
+#### Tools Used:
+  - Power Drill
+    - 2 3/8" hole saw
+  - PVC Cement
+  - Jig and Shim
+  - 
+
+####Procedure:
 1. Drill a 2 3/8" hole into the 10" PVC using a drill saw **add location for hole**.
 
 2. Cut a 2" length of 2" PVC pipe.
@@ -446,3 +478,34 @@ UASB (along with fellow AguaClara subteam Ram Pump) was invited to the 2019 Tech
 
 # EPA Funding Assurance
 This publication [article] was developed under Assistance Agreement No. SU-83926801 awarded by the U.S. Environmental Protection Agency to Cornell University. It has not been formally reviewed by EPA. The views expressed in this document are solely those of [name of recipient or names of authors] and do not necessarily reflect those of the Agency. EPA does not endorse any products or commercial services mentioned in this publication.
+
+# Pictures
+
+**Figure 1. Testing if Rubber Cement Seals Pipes Water Tight.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/FabPracLeak.jpeg?raw=true">
+
+**Figure 2. Fabrication Practice.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Fabrication%20Practice.jpg?raw=true">
+
+**Figure 3. Tipping Bucket with Pivots.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping%20Bucket%20with%20Pivots.jpg?raw=true">
+
+**Figure 4. Top View of Tipping Bucket .**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20of%20Tipping%20Bucket%20with%20Pivots.jpg?raw=true">
+
+**Figure 5. Top View of Holding Tank with Brackets.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20of%20Holding%20Tank%20with%20Bracket%20.jpg?raw=true">
+
+
+**Figure 6. Testing Tipping Bucket with Continuous Flow.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Testing%20Tipping%20Bucket%20with%20Continuous%20Flow.jpg?raw=true">
+
+**Figure 7. Influent System.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Influent%20System.jpg?raw=true">
