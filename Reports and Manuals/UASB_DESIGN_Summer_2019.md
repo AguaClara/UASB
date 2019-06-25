@@ -30,6 +30,9 @@
 - [EPA Funding Assurance](#epa-funding-assurance)
 
 ## Abstract
+Since the spring of 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) team has been working on a the design and fabrication of a pilot-scale UASB reactor. An UASB reactor is a form of primary wastewater treatment that uses anaerobic digestion to treat the wastewater. The team has created Python code and various CAD models to record the design process and the calculations behind the reactor.
+
+In the summer of 2019, the team will be fabricating six UASB reactors at the Ithaca Area Wastewater Treatment Facility for testing and data collection.
 
 ## Introduction
 
