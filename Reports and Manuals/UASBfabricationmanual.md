@@ -82,7 +82,6 @@ To find the amount of water that was in the bucket just before tipping, the team
 Initial plans for the UASB modeled the 1 L/s plant, which used a 3 ft diameter PVC pipe as the outer base of the reactor.  However, with further exploration it was determined that a prefabricated tank could be used for the same system, offering a much cheaper alternative that could be more structurally stable and easier to build from.
 
 
-
 ## Sludge Weir
 
 ## Effluent Tube Settler
