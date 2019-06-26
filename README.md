@@ -27,32 +27,23 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 ### Spring 2019
 [UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
-
 [UASB Design Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/spring2019report_design.md)
-
 UASB Design Final Presentation: [Video](https://www.youtube.com/watch?v=sZ9wlcc-yXY&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=23&t=0s) and [Google Slides](https://docs.google.com/presentation/d/1P3F15WcP30vQcYFH6DK1YQSL776x-BaFhh0F1n6Q7n8/edit?usp=sharing)
-
 [UASB Research Midway Symposium Presentation](https://docs.google.com/presentation/d/16dHgmKHNWGlfNtnFJCDmcLqVt-cf6zIizj0rtyb3dFw/edit#slide=id.g543cdd4dd4_5_142)
-
 [UASB Research Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/spring2019report_research.md)
-
 UASB Research Final Presentation: [Video](https://www.youtube.com/watch?v=50I-fLEMWSg&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=19&t=0s) and [Google Slides](https://docs.google.com/presentation/d/1v3L7ybdluWR1yj7_Udou-K8FjN8DwOG5BR2G4cmMSgM/edit?usp=sharing)
 
 ### Fall 2018
 [Symposium Presentation](https://docs.google.com/presentation/d/1w-d5YQ5Ck9oUmswyk0-IZ2s0v9SY-O7ztUVHQlB3yNs/edit#slide=id.g346a079b2f_0_0)
-
 [Gates Foundation Grant Proposal](https://drive.google.com/open?id=0BxPs_BdCDBA_bDh1VktVdmV2U2VEVkp3UjI3UkxwQ3JGWHJn)
-
 Final Presentation: [Video](https://www.youtube.com/watch?v=lyPVWBxlnw8&index=15&list=PLhsGtpY8ipdZTn2HPI6C2uH44ADmc0Ra6) [Slides](https://docs.google.com/presentation/d/17VSZtK-qtNIQHiA1AVwJNL2szjhn5LMRihntjjkhFzg/edit?usp=sharing)
-
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/fall2018report.md)
 
 ### Summer 2018
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/summer2018report.md)  
 [UASB Design Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBdesignmanual.md)  
 [UASB Fabrication Manual](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASBfabricationmanual.md)  
-[Final Presentation](https://docs.google.com/presentation/d/1hZF6zNaL1DjUnw9Y7dfBTTy_UKkT6FQ3-bpJ3-LKSso/edit#slide=id.g3de4d76f23_0_0)  
-[Symposium Presentation](https://docs.google.com/presentation/d/1N9mBDx0nGMsFF6kK5UOlH5CoB0236ylh6cDra5ed5VQ/edit#slide=id.p)   
+[Final Presentation](https://docs.google.com/presentation/d/1hZF6zNaL1DjUnw9Y7dfBTTy_UKkT6FQ3-bpJ3-LKSso/edit#slide=id.g3de4d76f23_0_0) [Symposium Presentation](https://docs.google.com/presentation/d/1N9mBDx0nGMsFF6kK5UOlH5CoB0236ylh6cDra5ed5VQ/edit#slide=id.p)   
 
 ### Spring 2018
 
