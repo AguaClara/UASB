@@ -43,7 +43,7 @@ UASB Research Final Presentation: [Video](https://www.youtube.com/watch?v=50I-fL
 
 [Gates Foundation Grant Proposal](https://drive.google.com/open?id=0BxPs_BdCDBA_bDh1VktVdmV2U2VEVkp3UjI3UkxwQ3JGWHJn)
 
-Final Presentation: [Video](https://www.youtube.com/watch?v=lyPVWBxlnw8&index=15&list=PLhsGtpY8ipdZTn2HPI6C2uH44ADmc0Ra6) [Slides](https://docs.google.com/presentation/d/17VSZtK-qtNIQHiA1AVwJNL2szjhn5LMRihntjjkhFzg/edit?usp=sharing)
+Final Presentation: [Video](https://www.youtube.com/watch?v=lyPVWBxlnw8&index=15&list=PLhsGtpY8ipdZTn2HPI6C2uH44ADmc0Ra6) and [Slides](https://docs.google.com/presentation/d/17VSZtK-qtNIQHiA1AVwJNL2szjhn5LMRihntjjkhFzg/edit?usp=sharing)
 
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/fall2018report.md)
 
