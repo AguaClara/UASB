@@ -1,6 +1,6 @@
 # UASB - Summer 2019 Research Report
 ### By Nina Blahut, Shania Fang, Emily Liu, Kanha Matai, Cara Smith
-#### June 28, 2019
+#### July 3rd, 2019
 
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -35,6 +35,10 @@ Since the spring of 2017, the AguaClara Upflow Anaerobic Sludge Blanket (UASB) t
 In the summer of 2019, the team will be fabricating six UASB reactors at the Ithaca Area Wastewater Treatment Facility for testing and data collection.
 
 ## Introduction
+
+The organization AguaClara was founded in 2004 to focus on providing sustainable, affordable drinking water treatment in the Global South. However, the team noticed many of the communities they were serving were also in need of wastewater treatment. Traditional wastewater treatment in the United States require lots of land, long start-up times, and are expensive to build in run. This technology is not feasible for small, rural communities. Also, many wastewater treatment technologies can be prone to failure, making communities reluctant to invest.
+
+The team realized an UASB reactor could be an less expensive and sustainable to treat wastewater in these communities. It can also be made to be gravity-powered and therefore require no electricity to run. With this in mind, the team started to work on designing an UASB reactor.
 
 
 ## Literature Review and Previous Work
