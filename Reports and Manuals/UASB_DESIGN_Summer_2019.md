@@ -38,7 +38,7 @@ In the summer of 2019, the team will be fabricating six UASB reactors at the Ith
 
 The organization AguaClara was founded in 2004 to focus on providing sustainable, affordable drinking water treatment in the Global South. However, the team noticed many of the communities they were serving were also in need of wastewater treatment. Traditional wastewater treatment in the United States require lots of land, long start-up times, and are expensive to build in run. This technology is not feasible for small, rural communities. Also, many wastewater treatment technologies can be prone to failure, making communities reluctant to invest.
 
-The team realized an UASB reactor could be an less expensive and sustainable to treat wastewater in these communities. It can also be made to be gravity-powered and therefore require no electricity to run. With this in mind, the team started to work on designing an UASB reactor.
+The team realized an UASB reactor could be a less expensive and sustainable to treat wastewater in these communities. It can also be made to be gravity-powered and therefore require no electricity to run. With this in mind, the team started to work on designing an UASB reactor.
 
 
 ## Literature Review and Previous Work
@@ -52,7 +52,7 @@ Some of the biggest issues that wastewater treatment plants face today are energ
 
 Traditional UASB reactors are used as a preliminary wastewater treatment process to remove suspended solids organic matter in wastewater (Chong et. al, 2012). UASB reactors, instead of using fuel or electricity, rely mainly on gravity and biological processes to remove organic matter and convert it to biogas. UASB stands for Upflow Anaerobic Sludge Blanket and a UASB reactor is a single tank process where wastewater enters the reactor and flows upward through a suspended sludge blanket. This suspended sludge blanket is made up of cultures of anaerobic microorganisms that filters and cleans wastewater by removing organic contaminants and pathogens. UASB reactors are highly efficient in treating high COD loads, biogas formation, and provide good stabilization of solids ([M.K. Daud, 2018](https://www.hindawi.com/journals/jchem/2018/1596319/)).They are less energy intensive than other forms of preliminary wastewater treatment that use aerobic processes. UASB reactors also produce methane as a byproduct of anaerobic digestion which can be captured and used for energy production or heating. However, these UASB reactors still rely on electricity.
 
-AguaClara, on the other hand, has designed a UASB reactor that solely relies on gravity. It’s main function is to improve the accessibility and affordability of wastewater treatment for smaller communities that don’t have access to electricity. In January 2017, this gravity-powered UASB reactor was designed for the EPA People, Prosperity and the Planet (P3) Student Design Competition proposal. The proposed UASB reactor design focused on improving reactor design, making the system cheaper and easier to fabricate so that it could be created globally. The team later applied for Phase II funding from the same organization to support the development and implementation of additional reactors for testing and received a grant of $75,000.
+AguaClara, on the other hand, has designed a UASB reactor that solely relies on gravity. Its main function is to improve the accessibility and affordability of wastewater treatment for smaller communities that don’t have access to electricity. In January 2017, this gravity-powered UASB reactor was designed for the EPA People, Prosperity and the Planet (P3) Student Design Competition proposal. The proposed UASB reactor design focused on improving reactor design, making the system cheaper and easier to fabricate so that it could be created globally. The team later applied for Phase II funding from the same organization to support the development and implementation of additional reactors for testing and received a grant of $75,000.
 
 ## Timeline of UASB
 #### Summer 2016
@@ -62,7 +62,7 @@ The UASB team was formed in the Summer of 2016. At that point, the objective of 
 In the fall of 2016, the UASB team underwent several changes. First, the team altered the design of the small-scale UASB reactors by implementing shorter and narrower influent lines. The team also changed the synthetic wastewater recipe. More specifically, the team substituted glucose with insoluble carbon compounds. The team also researched retention time in the reactors with fluoride tracer tests, and found a HRT of 3.22 hours in one of the reactors (close to the target of 4 hours).
 
 #### Spring 2017
-During the spring of 2017, the team worked on assessing the efficiency of two modifications to the UASB reactor: plate settlers and the submerged gas collection lid. After conducting granule settling tests, the team was unable to conclude whether or not plate settlers significantly improve solid retention time. The team also conducted a Submerged Gas Capture Lid Test and concluded that a check valve would be useful to allow for continuous collection into a gas tank without loss of biogas.
+During the spring of 2017, the team worked on assessing the efficiency of two modifications to the UASB reactor: plate settlers and the submerged gas collection lid. After conducting granule settling tests, the team was unable to conclude whether or not plate settlers significantly improve solid retention time. The team also conducted a Submerged Gas Capture Lid Test and concluded that a check valve would be useful to allow for continuous collection into a gas tank without the loss of biogas.
 
 #### Summer 2017
 In the summer of 2017, the UASB team continued with similar research and testing to that of the Spring 2017 semester. This time, the team determined that large, bulky plate settlers were not required for a full scale reactor. Instead, a smaller settling apparatus, such as a sloped exit weir, can achieve similar sludge retention time(SRT).
@@ -98,9 +98,10 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
   During the Spring 2019 Semester, the team focused on completing a design for the UASB reactors that will be fabricated and tested at the IAWWTP. The team decided to make reactor canisters out of 10" diameter clear PVC pipe, so that multiple reactors could be tested at the IAWWTP to determine whether or not pulsated flow affects reactor efficiency. To design the reactors, the team made a python class to represent the hydraulics of the UASB reactors and made an onShape model of the reactors.
 
-## Summer 2019 Goals
+#### Summer 2019 Goals
 
-  The main goal for the Summer 2019 is to complete the fabrication of the UASB reactors and get them up and running at the IAWWTP. The team must get develop fabrication skills and develop best practices for the assembly of the UASB reactors. Upon doing so, the team must order new materials to build its first reactor. Then, the team will install this reactor at the IAWWTP. The team will practice startup of a UASB reactor, hopefully with the assistance of sludge granules from another source. If that reactor is successful, the team will build more reactors to test different variables and install said reactors at the IAWWTP.
+    The main goal for the Summer 2019 is to complete the fabrication of the UASB reactors and get them up and running at the IAWWTP. The team must develop fabrication skills and develop best practices for the assembly of the UASB reactors. As of now, the influent system is almost done. The pivot position for the tipping bucket has been found, what's left is to figure out how to drill in the drain pipe to connect the influent system to the reactor.Practice still needs to be done with drilling a 60 degree hole for the FOG removal and sludge weir pipes. Nearby breweries and wastewater treatment plants are still being contacted for sludge granules. If this pilot reactor is successful, the team will build more reactors to test different variables(such has retention time and the lift of the water within the reactor) and install said reactors at the IAWWTP.
+
 
 
 ## Methods
@@ -110,7 +111,12 @@ Since the team will be testing various lifts in the UASB reactor ranging from 1 
 
 The previous Summer 2018 team had created a frame for the tipping bucket to rest in. However, in order to decrease cost and increase convenience during testing, the team will not use a frame to hold the tipping bucket and will use a rectangular bucket with pivots screwed directly onto the sides of the bucket where there are the holes for the tested pivot positions instead.
 
-[insert picture of previous team's tipping bucket]
+**Figure 1. Influent bucket system**
+<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Influent%20System.png?raw=true">
+
+
+**Figure 2. Bucket system without tank**
+<img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Bucket%20and%20Frame.png?raw=true">
 
 Goals for tipping bucket trial:
 1. Figure out pivot points for the 1 gallon bucket to pour when the water level within the bucket reaches 2.5 L.
@@ -480,7 +486,7 @@ comment.append(comment.text)
 UASB (along with fellow AguaClara subteam Ram Pump) was invited to the 2019 TechConnect World Innovation Conference & Expo as the result of winning the EPA P3 Phase II grant this spring. Members of the team presented the work done to develop gravity-powered wastewater treatment through the use of UASB reactors, as well as general information on AguaClara. View the poster presentation from the conference [here](https://github.com/AguaClara/UASB/blob/master/Posters%20and%20Presentations/2019%20TechConnect%20Conference%20Poster.pdf).
 
 ## Future Work
-
+The main objective for the subsequent reporting period is to fabricate several UASB reactors and install them at the IAWWTF. These reactors will test varied hydraulic residence times and pulse versus continuous flow. The effluent quality will then be measured using COD tests to determine an optimal UASB reactor design.
 
 
 # EPA Funding Assurance
