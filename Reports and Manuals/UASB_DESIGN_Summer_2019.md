@@ -77,7 +77,7 @@ Next, the team decided to add plate settlers back to the effluent tube. Plate se
 #### Spring 2018
 UASB continued efforts to improve the design of the pilot-scale UASB reactor in Spring 2018. A major area of focus was the influent flow system. After extensive research, the team chose top influent flow - where the wastewater flows down the inlet pipe until it reaches the bottom of tank -  in order to prevent clogs. Next, the team decided to incorporate pulse flow into the reactor to achieve the desired flow of .03 L/s. The team proposed two methods to produce pulse flow: a tipping bucket design and a siphon.
 
-UASB also worked on biogas production. The team wrote code to estimate the COD concentration of influent and the temperature of the reactor, as well as the biogas production rate based on the flow rate through the reactor. The team decided on a gas bag system to store biogas as it is flexible, easy to connect to the reactor, affordable, and easily transported. The team also wrote code to determine the required volume and dimensions for the lid of the biogas system. The team also looked into a fats, oils and greases (FOG) removal system. The conclusion was that manual skimming of FOG could always be used as a backup option.
+UASB also worked on biogas production. The team wrote code to estimate the COD concentration of influent and the temperature of the reactor, as well as the biogas production rate based on the flow rate through the reactor. The team decided on a gas bag system to store biogas as it is flexible, easy to connect to the reactor, affordable, and easily transported. The team also wrote code to determine the required volume and dimensions for the lid of the biogas system. The team also looked into a fats, oils, and greases (FOG) removal system and concluded that manually skimming FOG could be a backup option.
 
 Next, the team developed the design for the pilot UASB reactor's sludge sampling and removal system. For the sludge weir, the team chose a tube with a 6 inch diameter jutting out of the reactor at the predicted height of the sludge blanket at a downwards angle with two valves.
 
@@ -88,7 +88,7 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
 #### Fall 2018
 
-  During the fall of 2018, the team tested a benchtop UASB model in the lab. Because actual sludge granules were not readily available, the team used tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways are the uneven distribution of wastewater flow throughout the reactor; the presence of these make the UASB reactor less efficient.
+  During the fall of 2018, the team tested a bench top UASB model in the lab. Because actual sludge granules were not readily available, the team used tapioca to model the sludge blanket. Tapioca has similar material properties as sludge, inexpensive and readily available made it a suitable alternate material. Tapioca was used to identify preferential paths in the UASB reactor. Preferential pathways are the uneven distribution of wastewater flow throughout the reactor; the presence of these make the UASB reactor less efficient.
 
   The bench top model was a scaled down version of a real UASB reactor, made using Polyvinyl Chloride (PVC). The influent was set on top perpendicular to the bottom plate and a hole was drilled at the top of the model connected with a pipe as the effluent. The team used ProCoDa software to pump the water through the influent pipe. They also added red dye to the initial pulse of water to manually to look for preferential paths.
 
@@ -96,26 +96,28 @@ The summer team continued work on the hydraulic design of the UASB system.  The 
 
 #### Spring 2019
 
-  During the Spring 2019 Semester, the team focused on completing a design for the UASB reactors that will be fabricated and tested at the IAWWTP. The team decided to make reactor canisters out of 10" diameter clear PVC pipe, so that multiple reactors could be tested at the IAWWTP to determine whether or not pulsated flow affects reactor efficiency. To design the reactors, the team made a python class to represent the hydraulics of the UASB reactors and made an onShape model of the reactors.
+  During the Spring 2019 Semester, the team focused on completing a design for the UASB reactors that will be fabricated and tested at the IAWWTP. The team decided to make reactor canisters out of 10" diameter clear PVC pipe, so that multiple reactors could be tested at the IAWWTP to determine whether or not pulsated flow affects reactor efficiency. To design the reactors, the team made a python class to represent the hydraulics of the UASB reactors and created an OnShape model of the reactor that will be fabricated in Summer 2019.
 
 #### Summer 2019 Goals
 
-    The main goal for the Summer 2019 is to complete the fabrication of the UASB reactors and get them up and running at the IAWWTP. The team must develop fabrication skills and develop best practices for the assembly of the UASB reactors. As of now, the influent system is almost done. The pivot position for the tipping bucket has been found, what's left is to figure out how to drill in the drain pipe to connect the influent system to the reactor.Practice still needs to be done with drilling a 60 degree hole for the FOG removal and sludge weir pipes. Nearby breweries and wastewater treatment plants are still being contacted for sludge granules. If this pilot reactor is successful, the team will build more reactors to test different variables(such has retention time and the lift of the water within the reactor) and install said reactors at the IAWWTP.
-
+The main goal for the Summer 2019 is to complete the fabrication of the UASB reactors and get them up and running at the IAWWTP. The team must develop fabrication skills and develop best practices for the assembly of the UASB reactors. As of now, the influent system is almost done. The pivot position for the tipping bucket has been found, what's left is to figure out how to drill in the drain pipe to connect the influent system to the reactor.Practice still needs to be done with drilling a 60 degree hole for the FOG removal and sludge weir pipes. Nearby breweries and wastewater treatment plants are still being contacted for sludge granules. If this pilot reactor is successful, the team will build more reactors to test different variables(such has retention time and the lift of the water within the reactor) and install said reactors at the IAWWTP.
 
 
 ## Methods
 Since the team will be testing various lifts in the UASB reactor ranging from 1 cm to 10 cm, the team must determine the pivot positions on the sides of the tipping bucket to get the proper pulse volume. The team has begun testing for pivot positions on a 1 gallon (or 3.8 L) bucket for 5 cm of lift and on a 2 gallon bucket (or 7.6 L) bucket for 10 cm of lift. According to the python calculations, 2.5 L of water is needed to create 5 cm of lift and 5 L of water is needed to create 10 cm of lift.
 
-[insert picture of tipping bucket diagram, include pivots]
+**Figure 3. Tipping Bucket with Pivots.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping%20Bucket%20with%20Pivots.jpg?raw=true">
+
 
 The previous Summer 2018 team had created a frame for the tipping bucket to rest in. However, in order to decrease cost and increase convenience during testing, the team will not use a frame to hold the tipping bucket and will use a rectangular bucket with pivots screwed directly onto the sides of the bucket where there are the holes for the tested pivot positions instead.
 
-**Figure 1. Influent bucket system**
+**Figure 1. Summer 2018 Influent bucket system**
 <img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Influent%20System.png?raw=true">
 
 
-**Figure 2. Bucket system without tank**
+**Figure 2. Summer 2018 Bucket system without tank**
 <img src="https://raw.githubusercontent.com/AguaClara/UASB/master/Images/CAD%20Bucket%20and%20Frame.png?raw=true">
 
 Goals for tipping bucket trial:
@@ -174,7 +176,7 @@ Goals for tipping bucket trial:
 
 ## Design Manual
 
-So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Below is a procedure for the fabrication of UASB reactors.
+So far the team has only began practicing fabrication to develop best practices for the fabrication of the UASB reactors at the IAWWTP. Here is a link to the [CAD model](https://cad.onshape.com/documents/53ab6bf4dad0f6e53a3d53e2/w/d059456663ed700ebb9a2f16/e/29660576307cd46c4ec811dc) the team designed in Spring 2019. Below is a procedure for the fabrication of UASB reactors.
 
 ### Tipping Bucket Influent System
 #### Materials:
@@ -206,10 +208,16 @@ So far the team has only began practicing fabrication to develop best practices 
 5. Using a mill and a 7/32" drill bit, drill a hole into the middle of one of the flat sides of each pivot.
 6. Use a band saw to cut two squares of 2" by 2" HDPE 1/4" sheet to reinforce the sides of the tipping bucket.
 7. Drill a 1/4" hole into the middle of both squares.
-8. Use a 1/4"-20 plastic screw to secure the squares of HDPE sheet to the insides of bucket and the pivots to the outsides of the bucket.
-**add picture**
+8. Use a 1/4"-20 plastic screw to secure the squares of HDPE sheet to the insides of bucket and the pivots to the outsides of the bucket as shown in the picture below.
+**Figure 4. Top View of Tipping Bucket .**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20of%20Tipping%20Bucket%20with%20Pivots.jpg?raw=true">
+
 9. Cut a 1" x 2" rectangle from the LDPE Plastic Sheet to create brackets.
 10. Weld brackets to the inside of the LDPE holding tank. Make sure the brackets are positioned so that they are at the same height in the tank and give the bucket enough space to tip over completely.
+ **Figure 5. Top View of Holding Tank with Brackets.**
+
+<img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20of%20Holding%20Tank%20with%20Bracket%20.jpg?raw=true">
 
 
 ### Reactor Body
@@ -457,7 +465,7 @@ print(test.biogas_produced_rate)
 print((test.Energy_Production).to(u.kJ/u.day))
 
 print(test.num_people_served)
-<<<<<<< HEAD
+
 ```
 ```Python
 from selenium import webdriver
@@ -477,9 +485,6 @@ for a in soup.findAll('a',href=True, attrs={'class':'js-tweet-text-containter'})
 
 comment.append(comment.text)
 ```
-=======
-
->>>>>>> bde1f4e98ac1c9c6341e9bc6483ea73647feba55
 
 ## 2019 TechConnect
 
@@ -502,17 +507,10 @@ This publication [article] was developed under Assistance Agreement No. SU-83926
 
 <img src="https://github.com/AguaClara/UASB/blob/master/Images/Fabrication%20Practice.jpg?raw=true">
 
-**Figure 3. Tipping Bucket with Pivots.**
 
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/Tipping%20Bucket%20with%20Pivots.jpg?raw=true">
 
-**Figure 4. Top View of Tipping Bucket .**
 
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20of%20Tipping%20Bucket%20with%20Pivots.jpg?raw=true">
 
-**Figure 5. Top View of Holding Tank with Brackets.**
-
-<img src="https://github.com/AguaClara/UASB/blob/master/Images/Top%20View%20of%20Holding%20Tank%20with%20Bracket%20.jpg?raw=true">
 
 
 **Figure 6. Testing Tipping Bucket with Continuous Flow.**
