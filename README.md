@@ -25,6 +25,15 @@ In Summer 2019, the team will be fabricating six UASB reactors at the [Ithaca Ar
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
+### Summer 2019
+
+[Final Report](https://colab.research.google.com/drive/1s9hBYEOS6vIwA9yFnDSWEvwci3EnIiCX)
+
+[Symposium Presentation](https://docs.google.com/presentation/d/1B2OLfAB8cXyKvsVm24pHKaqZokN3vj2sadxCMw0XSk0/edit?usp=sharing)
+
+[Final Presentation](https://docs.google.com/presentation/d/1RPE0hjhCuyifaz7LQ_GUe2SsEXY0jDFTsO5yGeZvuxI/edit?usp=sharing)
+
+
 ### Spring 2019
 [UASB Design Midway Symposium Presentation](https://docs.google.com/presentation/d/1phHNcaVu1WVWTlkFx7o--oDfonqaPbjHs-bbHn1JSvk/edit?usp=sharing)
 
