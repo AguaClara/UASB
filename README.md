@@ -2,25 +2,35 @@
 
 Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wastewater treatment systems to be cheaper, simpler to fabricate, and easy to implement to provide affordable wastewater treatment across the world.  For more information, read our [research reports](https://github.com/AguaClara/UASB/tree/master/Reports%20and%20Manuals) or see our latest [poster presentation](https://github.com/AguaClara/UASB/blob/master/Posters%20and%20Presentations/UASB_NEGSWS_2018_Poster.ppt) from the 2018 NEGSWS conference.
 
-Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/438b707e2dd3cc2ad7262aa2) and a model of the UASB that will be built this summer [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true)
+Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/9ad827a5eca9b7988dc2f6a0/w/b0be5680611b0cca297e07f2/e/438b707e2dd3cc2ad7262aa2) and a model of the UASB that was built Summer 2019 [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true)
 
 
 ## Research Advisor:
 Ananya Gangadhar (ag757)
 
 ## Team Members:
-Nina Blahut (nab238)
+Emily Liu (ezl5)
 
 Cara Smith (cjs354)
 
-Kanha Matai (km694)
-
 Shania Fang (sf449)
 
-Emily Liu (ezl5)
+Emily Wood (ew465)
+
+Dominic Grasso (dng35)
+
+Kyra Frederick (kcf29)
+
+Valentine Starnes (vs344)
+
+Franny Bard (fmb54)
+
+Lydia LaGorga (lcl66)
+
+Ahad Ishfaq (ai274)
 
 ## Semester Goals:
-In Summer 2019, the team will be fabricating UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. This will let UASB know what modifications should be made to the design. The team will also be finalizing the tipping bucket design and implement it in the UASB reactor. UASB will then test whether the flow of influent wastewater should be pulsed (via the use of a tipping bucket) or continuous to make the reactor more efficient and decrease preferential pathways through the sludge blanket.
+In Fall 2019, the subteam will be fabricating up to 6 UASB reactors to be installed at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. This will let UASB know what modifications should be made to the design. Using the two reactors that are already built, the subteam will first determine wheteher pulsed flow or continuous flow is better in eliminating preferential pathways and maximizing efficiency. Based on these results, parameters will be changed on subsequent reactors to test additional variables affecting UASB efficiency.  
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
