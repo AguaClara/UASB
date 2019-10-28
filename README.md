@@ -35,6 +35,10 @@ In Fall 2019, the subteam will be fabricating up to 6 UASB reactors to be instal
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
+### Fall 2019
+
+[Symposium](https://docs.google.com/presentation/d/1x1ew2WdcvU07jZCGXHaY-hbCv7GUbsf0qRcBxukfOqA/edit?usp=sharing)
+
 ### Summer 2019
 
 [Final Report](https://colab.research.google.com/drive/1s9hBYEOS6vIwA9yFnDSWEvwci3EnIiCX)
