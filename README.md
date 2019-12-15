@@ -29,6 +29,8 @@ Lydia LaGorga (lcl66)
 
 Ahad Ishfaq (ai274)
 
+Katrina Chen (kc778)
+
 ## Semester Goals:
 In Fall 2019, the subteam will be fabricating up to 6 UASB reactors to be installed at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. This will let UASB know what modifications should be made to the design. Using the two reactors that are already built, the subteam will first determine wheteher pulsed flow or continuous flow is better in eliminating preferential pathways and maximizing efficiency. Based on these results, parameters will be changed on subsequent reactors to test additional variables affecting UASB efficiency.  
 
@@ -37,7 +39,11 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 ### Fall 2019
 
-[Symposium](https://docs.google.com/presentation/d/1x1ew2WdcvU07jZCGXHaY-hbCv7GUbsf0qRcBxukfOqA/edit?usp=sharing)
+[Final Report](https://colab.research.google.com/drive/16LqSTNm3uMTZszE3yJi99dxljTtplRKP#scrollTo=XuA6PvpQyVig)
+
+[Final Presentation](https://docs.google.com/presentation/d/1B03jWEWKqqIe9lqZaGJEcVlR0hNSy2d8I6Gc4eqmSOs/edit#slide=id.g346a079b2f_0_0)
+
+[Symposium Presentation](https://docs.google.com/presentation/d/1x1ew2WdcvU07jZCGXHaY-hbCv7GUbsf0qRcBxukfOqA/edit?usp=sharing)
 
 ### Summer 2019
 
