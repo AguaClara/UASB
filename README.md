@@ -6,33 +6,31 @@ Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/do
 
 
 ## Research Advisor:
-Ananya Gangadhar (ag757)
-
-## Team Members:
-Emily Liu (ezl5)
-
 Cara Smith (cjs354)
 
-Shania Fang (sf449)
+## Team Members:
+
+*UASB Pilot Plant*
 
 Emily Wood (ew465)
 
-Dominic Grasso (dng35)
-
-Kyra Frederick (kcf29)
-
-Valentine Starnes (vs344)
-
-Franny Bard (fmb54)
-
 Lydia LaGorga (lcl66)
-
-Ahad Ishfaq (ai274)
 
 Katrina Chen (kc778)
 
+*UASB Fabrication*
+
+Emily Liu (ezl5)
+
+Franny Bard (fmb54)
+
+Tyson Reed (tnr7)
+
+Winnie Chan (wc436)
+
+
 ## Semester Goals:
-In Fall 2019, the subteam will be fabricating up to 6 UASB reactors to be installed at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) for testing and data collection. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. This will let UASB know what modifications should be made to the design. Using the two reactors that are already built, the subteam will first determine wheteher pulsed flow or continuous flow is better in eliminating preferential pathways and maximizing efficiency. Based on these results, parameters will be changed on subsequent reactors to test additional variables affecting UASB efficiency.  
+In Spring 2020, the subteam will update the pulse-flow UASB reactor installed at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) to control temperature and monitor pH. A second continuous-flow UASB reactor will be installed at the IAWWTF as well, while a 3rd is fabricated. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. The overall goal is to develop a small-scale wastewater reactor out of widely available materials. 
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
