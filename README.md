@@ -35,6 +35,9 @@ In Spring 2020, the subteam will update the pulse-flow UASB reactor installed at
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
+### Spring 2020
+[Report 1 Draft](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/Spring2020_Report1_UASB.ipynb) *Note that this report is incomplete due to the covid19 pandemic*
+
 ### Fall 2019
 
 [Final Report](https://colab.research.google.com/drive/16LqSTNm3uMTZszE3yJi99dxljTtplRKP#scrollTo=XuA6PvpQyVig)
