@@ -6,31 +6,20 @@ Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/do
 
 
 ## Research Advisor:
-Cara Smith (cjs354)
+Gaby Sibel (gvs27)
 
 ## Team Members:
 
-*UASB Pilot Plant*
-
 Emily Wood (ew465)
-
-Lydia LaGorga (lcl66)
 
 Katrina Chen (kc778)
 
-*UASB Fabrication*
+Erica Ruan (er439)
 
-Emily Liu (ezl5)
-
-Franny Bard (fmb54)
-
-Tyson Reed (tnr7)
-
-Winnie Chan (wc436)
-
+Mohamed Aden (mya27)
 
 ## Semester Goals:
-In Spring 2020, the subteam will update the pulse-flow UASB reactor installed at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) to control temperature and monitor pH. A second continuous-flow UASB reactor will be installed at the IAWWTF as well, while a 3rd is fabricated. Wastewater will be pumped through the reactors and the effluent water will be tested to determine the reactors' efficiencies. The overall goal is to develop a small-scale wastewater reactor out of widely available materials. 
+The overall goal of the Upflow Anaerobic Sludge Blanket (UASB) subteam is to develop a small-scale wastewater reactor out of widely available materials for use by rural and underserved communities. In Spring 2021, the UASB team is focusing on documentation of literature and reactor design decisions, preparation to restart prototype UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility), troubleshooting the gas collection system via lab experiments, analysis of biogas production data from Spring 2020, and potential biological modeling.
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
