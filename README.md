@@ -23,6 +23,14 @@ The overall goal of the Upflow Anaerobic Sludge Blanket (UASB) subteam is to dev
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
+### Spring 2021
+
+[Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_Spring_2021_Final_Report.ipynb)
+
+[Final Presentation](https://docs.google.com/presentation/d/1VJUNtNNqvo-r-jfFNbOlvjt-wqPUwbVtMD1n5xRVfa4/edit?usp=sharing)
+
+[Symposium Presentation](https://docs.google.com/presentation/d/1MQmt-t7iWYBUzQHHG62yvDyi7vosAw8o402Ht92KDjY/edit?usp=sharing)
+
 ### Spring 2020
 [Report 1 Draft](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/Spring2020_Report1_UASB.ipynb) *Note that this report is incomplete due to the covid19 pandemic*
 
