@@ -27,7 +27,9 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 [Final Report](https://github.com/AguaClara/UASB/blob/master/Reports%20and%20Manuals/UASB_Spring_2021_Final_Report.ipynb)
 
-[Final Presentation](https://docs.google.com/presentation/d/1VJUNtNNqvo-r-jfFNbOlvjt-wqPUwbVtMD1n5xRVfa4/edit?usp=sharing)
+[Final Presentation Slides](https://docs.google.com/presentation/d/1VJUNtNNqvo-r-jfFNbOlvjt-wqPUwbVtMD1n5xRVfa4/edit?usp=sharing)
+
+[Final Presentation Recording](https://drive.google.com/file/d/1s1WFdxjbznfWOBj2oSnwmeJ5_simZylO/view?usp=sharing)
 
 [Symposium Presentation](https://docs.google.com/presentation/d/1MQmt-t7iWYBUzQHHG62yvDyi7vosAw8o402Ht92KDjY/edit?usp=sharing)
 
