@@ -5,11 +5,9 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/5b375d42804fe92275d92ea2/w/cd20213a21780e7c93073fc1/e/88dae7ab80356e3bfbbda91f) and a model of the UASB that was built Summer 2019 [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true)
 
 ## Research Advisor:
-Gaby Sibel (gvs27)
+Ada Lian (al894)
 
 ## Team Members:
-
-Emily Wood (ew465)
 
 Katrina Chen (kc778)
 
@@ -17,8 +15,10 @@ Erica Ruan (er439)
 
 Mohamed Aden (mya27)
 
+Son-Jay Lake (svl24)
+
 ## Semester Goals:
-The overall goal of the Upflow Anaerobic Sludge Blanket (UASB) subteam is to develop a small-scale wastewater reactor out of widely available materials for use by rural and underserved communities. In Spring 2021, the UASB team is focusing on documentation of literature and reactor design decisions, preparation to restart prototype UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility), troubleshooting the gas collection system via lab experiments, analysis of biogas production data from Spring 2020, and potential biological modeling.
+The overall goal of the Upflow Anaerobic Sludge Blanket (UASB) subteam is to develop a small-scale wastewater reactor out of widely available materials for use by rural and underserved communities. In Fall 2021, the UASB team is focusing on data collection of different parameters of their prototype UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and analyzing the data to improve their reactors.
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
