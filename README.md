@@ -17,6 +17,8 @@ Mohamed Aden (mya27)
 
 Son-Jay Lake (svl24)
 
+Lydia LaGorga (lcl66)
+
 ## Semester Goals:
 The overall goal of the Upflow Anaerobic Sludge Blanket (UASB) subteam is to develop a small-scale wastewater reactor out of widely available materials for use by rural and underserved communities. In Fall 2021, the UASB team is focusing on data collection of different parameters of their prototype UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and analyzing the data to improve their reactors.
 
