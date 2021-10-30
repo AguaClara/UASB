@@ -19,8 +19,10 @@ Son-Jay Lake (svl24)
 
 Lydia LaGorga (lcl66)
 
+Jacqueline Hui (jeh362)
+
 ## Semester Goals:
-The overall goal of the Upflow Anaerobic Sludge Blanket (UASB) subteam is to develop a small-scale wastewater reactor out of widely available materials for use by rural and underserved communities. In Fall 2021, the UASB team is focusing on data collection of different parameters of their prototype UASB reactors at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and analyzing the data to improve their reactors. In addition, the team will explore the use of membrane reactors as a polishing step in series with the UASB. 
+The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating, and testing a gravity-powered wastewater treatment system for communities seeking an alternative to releasing waste directly into streams and rivers. In Fall 2021, the team reinstalled their reactor at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and will resume monitoring biogas accumulation, sludge blanket height, pH, and temperature. Additionally, the team has been exploring the use of membrane reactors as a polishing step in series with the UASB. They will establish a regular sampling system of their influent and effluent of both the UASB and membrane reactors. 
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
