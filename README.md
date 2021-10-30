@@ -29,7 +29,7 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 ### Fall 2021
 
-Symposium Presentation](https://docs.google.com/presentation/d/1ENzybKiv8SPhvO-5uDk_1CKp0heduVCXdryrDgtPlbk/edit?usp=sharing)
+[Symposium Presentation](https://docs.google.com/presentation/d/1ENzybKiv8SPhvO-5uDk_1CKp0heduVCXdryrDgtPlbk/edit?usp=sharing)
 
 ### Spring 2021
 
