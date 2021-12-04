@@ -28,7 +28,7 @@ The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating,
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
 ### Fall 2021
-[Final Report]()
+[Final Report](https://colab.research.google.com/drive/1qzlcamOqkyJDN8rIijJERTJv4F43Pt5w?usp=sharing)
 
 [Final Presentation Slides](https://docs.google.com/presentation/d/1Ot3nRdwlJb6en8-9OwirCxAKxx9BFTzwl92r2vWwAx8/edit?usp=sharing)
 
