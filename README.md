@@ -32,7 +32,7 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 [Final Presentation Slides](https://docs.google.com/presentation/d/1Ot3nRdwlJb6en8-9OwirCxAKxx9BFTzwl92r2vWwAx8/edit?usp=sharing)
 
-[Final Presesntation Recording]()
+[Final Presesntation Recording](https://drive.google.com/file/d/1IDapZdZlbHWIM27rCi-burHCQxMvY_Mj/view?usp=sharing)
 
 [Symposium Presentation Slides](https://docs.google.com/presentation/d/1ENzybKiv8SPhvO-5uDk_1CKp0heduVCXdryrDgtPlbk/edit?usp=sharing)
 
