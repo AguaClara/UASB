@@ -5,21 +5,15 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/5b375d42804fe92275d92ea2/w/cd20213a21780e7c93073fc1/e/88dae7ab80356e3bfbbda91f) and a model of the UASB that was built Summer 2019 [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true)
 
 ## Research Advisor:
-Ada Lian (al894)
+Maya Shanti (ms2664)
 
-## Team Members:
-
-Katrina Chen (kc778)
-
+## Subteam Lead: 
 Erica Ruan (er439)
 
-Mohamed Aden (mya27)
-
-Son-Jay Lake (svl24)
-
-Lydia LaGorga (lcl66)
-
-Jacqueline Hui (jeh362)
+## Team Members:
+Yuhjin Chung (yc763)
+Lindsey Conboy (llc223)
+Badyn Milstein - Touesnard (bmm98)
 
 ## Semester Goals:
 The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating, and testing a gravity-powered wastewater treatment system for communities seeking an alternative to releasing waste directly into streams and rivers. In Fall 2021, the team reinstalled their reactor at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and will resume monitoring biogas accumulation, sludge blanket height, pH, and temperature. Additionally, the team has been exploring the use of membrane reactors as a polishing step in series with the UASB. They will establish a regular sampling system of their influent and effluent of both the UASB and membrane reactors. 
@@ -29,6 +23,7 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 ### Spring 2022
 [Final Report](https://github.com/AguaClara/UASB/blob/master/UASB_2022_Spring_Report_Final.ipynb)
+
 
 ### Fall 2021
 [Final Report](https://colab.research.google.com/drive/1qzlcamOqkyJDN8rIijJERTJv4F43Pt5w?usp=sharing)
