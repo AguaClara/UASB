@@ -12,7 +12,9 @@ Erica Ruan (er439)
 
 ## Team Members:
 Yuhjin Chung (yc763)
+
 Lindsey Conboy (llc223)
+
 Badyn Milstein - Touesnard (bmm98)
 
 ## Semester Goals:
@@ -23,6 +25,10 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 ### Spring 2022
 [Final Report](https://github.com/AguaClara/UASB/blob/master/UASB_2022_Spring_Report_Final.ipynb)
+
+[Final Presentation Slides](https://docs.google.com/presentation/d/10l9S8Y8ms6iuorBsHCY9zEFBc7tsMh1PlNjEZv_JnkI/edit#slide=id.gf9fd6808d2_0_178)
+
+[Final Presentation Recording](https://drive.google.com/file/d/13lw9E4G5SqcOoBZn3P1R4t5Lg53CzLte/view?usp=sharing)
 
 
 ### Fall 2021
