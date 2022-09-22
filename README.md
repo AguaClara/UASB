@@ -17,6 +17,10 @@ Sinahy Fragoso-D. (sf435)
 
 Ruby Pascual (rp554)
 
+Susan Garcia Castro (sg2275)
+
+Simón Giraldo Trujillo (sg2274)
+
 
 ## Semester Goals:
 The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating, and testing a gravity-powered wastewater treatment system for communities seeking an alternative to releasing waste directly into streams and rivers. In Fall 2021, the team reinstalled their reactor at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and will resume monitoring biogas accumulation, sludge blanket height, pH, and temperature. Additionally, the team has been exploring the use of membrane reactors as a polishing step in series with the UASB. They will establish a regular sampling system of their influent and effluent of both the UASB and membrane reactors. 
