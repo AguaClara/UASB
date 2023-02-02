@@ -5,21 +5,16 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/5b375d42804fe92275d92ea2/w/cd20213a21780e7c93073fc1/e/88dae7ab80356e3bfbbda91f) and a model of the UASB that was built Summer 2019 [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true)
 
 ## Research Advisor:
-Katrina Chen (kc778)
+Dennis Wu (djw323)
 
 ## Subteam Lead: 
-Lindsey Conboy (llc223)
+Sinahy Fragoso-D (sf435)
 
 ## Team Members:
 Yuhjin Chung (yc763)
 
-Sinahy Fragoso-D. (sf435)
+Mateo Aranzazu (ma956)
 
-Ruby Pascual (rp554)
-
-Susan Garcia Castro (sg2275)
-
-Simón Giraldo Trujillo (sg2274)
 
 Alexander Fitenko (anf44)
 
