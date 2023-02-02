@@ -8,7 +8,7 @@ Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/do
 Dennis Wu (djw323)
 
 ## Subteam Lead: 
-Sinahy Fragoso-D (sf435)
+Sinahy Fragoso-D. (sf435)
 
 ## Team Members:
 Yuhjin Chung (yc763)
