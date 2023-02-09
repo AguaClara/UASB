@@ -26,7 +26,14 @@ The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating,
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
 ### Fall 2022
+[Final Report] 
+
+[Final Presentation Slides](https://docs.google.com/presentation/d/1FEfryvv65h2jiteY-Ja3vzv3cAgDYNjJa6IXnVjBcxk/edit)
+
+[Symposium Presentation Slides](https://docs.google.com/presentation/d/1w29VJmb_fg3tYCaVJSWGUfM7Ju_rH1WJZPtV4LA-Q0I/edit)
+
 [Symposium Presentation Recording](https://youtu.be/QvsxRgDMvi0)
+
 
 ### Spring 2022
 [Final Report](https://github.com/AguaClara/UASB/blob/master/UASB_2022_Spring_Report_Final.ipynb)
@@ -41,7 +48,7 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 [Final Presentation Slides](https://docs.google.com/presentation/d/1Ot3nRdwlJb6en8-9OwirCxAKxx9BFTzwl92r2vWwAx8/edit?usp=sharing)
 
-[Final Presesntation Recording](https://drive.google.com/file/d/1IDapZdZlbHWIM27rCi-burHCQxMvY_Mj/view?usp=sharing)
+[Final Presentation Recording](https://drive.google.com/file/d/1IDapZdZlbHWIM27rCi-burHCQxMvY_Mj/view?usp=sharing)
 
 [Symposium Presentation Slides](https://docs.google.com/presentation/d/1ENzybKiv8SPhvO-5uDk_1CKp0heduVCXdryrDgtPlbk/edit?usp=sharing)
 
