@@ -20,13 +20,23 @@ Alexander Fitenko (anf44)
 
 
 ## Semester Goals:
-The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating, and testing a gravity-powered wastewater treatment system for communities seeking an alternative to releasing waste directly into streams and rivers. In Fall 2021, the team reinstalled their reactor at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and will resume monitoring biogas accumulation, sludge blanket height, pH, and temperature. Additionally, the team has been exploring the use of membrane reactors as a polishing step in series with the UASB. They will establish a regular sampling system of their influent and effluent of both the UASB and membrane reactors. 
+The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating, and testing a gravity-powered wastewater treatment system for communities seeking an alternative to releasing waste directly into streams and rivers. In Fall 2022, the team continued working with their reactor at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and will resume monitoring biogas accumulation, COD, upflow velocity, and temperature. Additionally, the team explored the use of ProCoDA to regulate the temperature of the UASB to emulate weather conditions in Honduras. This work will continue once a functional heat tape is acquired. Currently, the team is implementing and finishing the building process to a second bioreactor. They will establish a regular sampling system of their influent and effluent of both the UASB and membrane reactors. 
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
 
-### Fall 2022
+### Spring 2023
 [Final Report] 
+
+[Final Presentation Slides]
+
+[Symposium Presentation Slides](https://docs.google.com/presentation/d/1RVAE5lF5J9mf17m-Myrn4API3UrS5vjKxlT9WLS_XQw/edit#slide=id.g1626e626e83_0_0)
+
+[Symposium Presentation Recording](https://www.youtube.com/watch?v=0cGNPLecfPA&feature=youtu.be)
+
+
+### Fall 2022
+[Final Report](https://docs.google.com/document/d/1Q2NdtVQ6EIfPIDdaxwGh91DQ_ir4Wq5SSUEbVd5VTPE/edit
 
 [Final Presentation Slides](https://docs.google.com/presentation/d/1FEfryvv65h2jiteY-Ja3vzv3cAgDYNjJa6IXnVjBcxk/edit)
 
