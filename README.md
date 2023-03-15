@@ -36,7 +36,7 @@ Note: The history of the team goes back as far as 2013; however, the current sta
 
 
 ### Fall 2022
-[Final Report](https://docs.google.com/document/d/1Q2NdtVQ6EIfPIDdaxwGh91DQ_ir4Wq5SSUEbVd5VTPE/edit
+[Final Report](https://docs.google.com/document/d/1Q2NdtVQ6EIfPIDdaxwGh91DQ_ir4Wq5SSUEbVd5VTPE/edit)
 
 [Final Presentation Slides](https://docs.google.com/presentation/d/1FEfryvv65h2jiteY-Ja3vzv3cAgDYNjJa6IXnVjBcxk/edit)
 
