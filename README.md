@@ -5,20 +5,20 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/5b375d42804fe92275d92ea2/w/cd20213a21780e7c93073fc1/e/88dae7ab80356e3bfbbda91f) and a model of the UASB that was built Summer 2019 [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true).
 
 ## Research Advisor:
-Badyn Milstein-Touesnard (bmm98@cornell.edu)
+Camden Wehrle (cw566@cornell.edu)
 
 ## Subteam Lead: 
 Alexander Fitenko (anf44@cornell.edu)
 
 ## Team Members:
-Mateo Aranzazu (ma956@cornell.edu)
+David Rha (dgr79@cornell.edu)
 
-Ruby Pascual (rp554@cornell.edu)
 
 
 
 ## Semester Goals:
-The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating, and testing a gravity-powered wastewater treatment system for communities seeking an alternative to releasing waste directly into streams and rivers. In Spring 2023, the team continued working with their reactor at the [Ithaca Area Wastewater Treatment Facility](https://www.cityofithaca.org/325/Wastewater-Treatment-Facility) and will resume monitoring biogas accumulation, COD, TSS, upflow velocity, and temperature. Additionally, the team made great progress in fabricating a second bioreactor. Currently, the team is implementing and finishing the building process to the second UASB. They will establish a regular sampling system of their influent and effluent of both UASB reactors as well as the membrane reactor. 
+The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating, and testing a gravity-powered wastewater treatment system for communities seeking an alternative to releasing waste directly into streams and rivers. Having utilized a large scale reactor at the Ithaca Wastewater Treatment Facility for the past few years, the team will now be focusing on developing lab-scale UASB reactors and researching ways to utilize the methane byproducts.
+
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
