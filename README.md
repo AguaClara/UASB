@@ -12,6 +12,7 @@ Alexander Fitenko (anf44@cornell.edu)
 
 ## Team Members:
 David Rha (dgr79@cornell.edu)
+
 Kaitlyn Canivel (kgc44@cornell.edu)
 
 
