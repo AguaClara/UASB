@@ -5,7 +5,7 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/5b375d42804fe92275d92ea2/w/cd20213a21780e7c93073fc1/e/88dae7ab80356e3bfbbda91f) and a model of the UASB that was built Summer 2019 [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true).
 
 ## Research Advisor:
-Camden Wehrle (cw566@cornell.edu)
+Badyn Milstein-Touesnard (bmm98@cornell.edu)
 
 ## Subteam Lead: 
 Alexander Fitenko (anf44@cornell.edu)
@@ -14,6 +14,8 @@ Alexander Fitenko (anf44@cornell.edu)
 David Rha (dgr79@cornell.edu)
 
 Kaitlyn Canivel (kgc44@cornell.edu)
+
+Caleb Humphreys (cjh343@cornell.edu)
 
 
 
