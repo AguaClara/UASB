@@ -15,7 +15,7 @@ David Rha (dgr79@cornell.edu)
 
 Kaitlyn Canivel (kgc44@cornell.edu)
 
-Caleb Humphreys (cjh343@cornell.edu)
+Evan Sims (ems452@cornell.edu)
 
 
 
