@@ -8,11 +8,9 @@ Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/do
 Badyn Milstein-Touesnard (bmm98@cornell.edu)
 
 ## Subteam Lead: 
-Alexander Fitenko (anf44@cornell.edu)
-
-## Team Members:
 David Rha (dgr79@cornell.edu)
 
+## Team Members:
 Kaitlyn Canivel (kgc44@cornell.edu)
 
 Evan Sims (ems452@cornell.edu)
