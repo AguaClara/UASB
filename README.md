@@ -15,7 +15,7 @@ Kaitlyn Canivel (kgc44@cornell.edu)
 
 Evan Sims (ems452@cornell.edu)
 
-
+Fiona Chen (fc379@cornell.edu)
 
 
 ## Semester Goals:
