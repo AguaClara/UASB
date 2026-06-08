@@ -9,10 +9,12 @@ Kaitlyn Canivel (kgc44@cornell.edu)
 
 ## Subteam Lead: 
 Fiona Chen (fc379@cornell.edu)
+
 Amelia Overton (aso42@cornell.edu)
 
 ## Fall Team Members:
 Quinn Wagner (qew3@cornell.edu)
+
 Ishaan Samantray (is455@cornell.edu)
 
 ## Summer Intern:
