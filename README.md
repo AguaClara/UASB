@@ -9,11 +9,14 @@ Kaitlyn Canivel (kgc44@cornell.edu)
 
 ## Subteam Lead: 
 Fiona Chen (fc379@cornell.edu)
-Amelia Overton 
+Amelia Overton (aso42@cornell.edu)
 
-## Team Members:
-Quinn Wagner 
-Ishaan Samantray
+## Fall Team Members:
+Quinn Wagner (qew3@cornell.edu)
+Ishaan Samantray (is455@cornell.edu)
+
+## Summer Intern:
+Aaron Gu (ag2698@cornell.edu)
 
 
 ## Semester Goals:
@@ -22,6 +25,18 @@ The Upflow Anaerobic Sludge Blanket (UASB) team has been designing, fabricating,
 
 ## Links to Reports and Presentations
 Note: The history of the team goes back as far as 2013; however, the current state of the team involves work done from Spring 2017 onwards.  More information on lab scale research can be located on the [AguaClara Google Drive](https://drive.google.com/drive/u/0/folders/0B_v6wpES3UAuQm03bDVNdXRhVTQ) both under "Active Subteams" and "Archived Subteams."
+
+
+## Spring 2026 
+[Final Report](https://docs.google.com/document/d/1g5Nu2TZPGvjOCqpTy8zVmvO5W5Pq7uyhv295zDyxLAY/edit?usp=sharing)
+
+[Symposium Presentation Slides](https://docs.google.com/presentation/d/1i0H8ivj1MgqYmsPRTBrISErq7SO2iYZnKlkDh1lag2E/edit?usp=sharing)
+
+## Fall 2025 
+
+[Final Report](https://docs.google.com/document/d/1cOudRuTbf-Ffel6U-SSChL-NHYK7YdfTssNvoLhBguc/edit?usp=sharing)
+
+[Symposium Presentation Slides](https://docs.google.com/presentation/d/1s8nw8OGlLCnAslsS5ZWdrLo8WkdnhNHmhSsHEAg3nuU/edit?usp=sharing)
 
 ### Fall 2024
 [Final Report](https://docs.google.com/document/d/1z35UAl7RvMDvc1pkEtToYEQFdnvx3duCt9NI0pGYmgI/edit?tab=t.0#heading=h.ttlq3klp6ffj)
