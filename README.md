@@ -4,6 +4,9 @@ Welcome to UASB!  We are redesigning Upflow Anaerobic Sludge Blanket (UASB) wast
 
 Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/documents/5b375d42804fe92275d92ea2/w/cd20213a21780e7c93073fc1/e/88dae7ab80356e3bfbbda91f) and a model of the UASB that was built Summer 2019 [here](https://github.com/AguaClara/UASB/blob/master/Images/UASB%20Summer%20Mini-Reactor.JPG?raw=true).
 
+## Technical Advisor: 
+Dr. Ruth Richardson, Associate Professor at Cornell University 
+
 ## Research Advisor:
 Kaitlyn Canivel (kgc44@cornell.edu)
 
@@ -12,7 +15,7 @@ Fiona Chen (fc379@cornell.edu)
 
 Amelia Overton (aso42@cornell.edu)
 
-## Fall Team Members:
+## Team Members:
 Quinn Wagner (qew3@cornell.edu)
 
 Ishaan Samantray (is455@cornell.edu)
