@@ -6,6 +6,7 @@ Check out a Onshape model of our proposed UASB [here](https://cad.onshape.com/do
 
 ## Technical Advisor: 
 Dr. Ruth Richardson, Associate Professor at Cornell University 
+[More about Dr. Richardson's work here] (https://richardson.cee.cornell.edu/)
 
 ## Student Research Advisor:
 Kaitlyn Canivel (kgc44@cornell.edu)
